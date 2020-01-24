@@ -4,13 +4,17 @@
   "description": "Hotel selection site",
   "main": "index.js",
   "scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"start": "webpack-dev-server",
-		"build": "webpack"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server",
+    "build": "webpack"
   },
   "author": "Komarov Vyacheslav",
   "license": "ISC",
   "devDependencies": {
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "pug": "^2.0.4",
+    "pug-loader": "^2.4.0",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.1"
