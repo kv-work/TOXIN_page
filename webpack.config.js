@@ -1,41 +1,69 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin")
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-module.exports = {
-	mode: "development",
+module.exports = (env = {}) => {
+
+	const { mode = "development" } = env;
 	
-	module: {
-		rules: [
+	const isProd = mode === "production";
+	const isDev = mode === "development";
 
-			//Loading .pug
-			{
-				test: /\.pug$/,
-				loader: "pug-loader",
-				options: {
-					pretty: true
-				}
-			},
-
-			//Loading CSS
-			{
-				test: /\.css$/,
-				use: ["style-loader", "css-loader"]
-			},
-
-			//Loading SCSS/Sass
-			{
-				test: /\.(s[ca]ss)$/,
-				use: ["style-loader", "css-loader", "sass-loader"]
-			}
-
+	function getStyleLoaders() {
+		return [
+			isProd ? MiniCssExtractPlugin.loader : 'style-loader',
+			'css-loader'
 		]
-	},
+	}
 
-	plugins: [
-			new HtmlWebpackPlugin(
-				{
-					filename: "index.html",
-					template: "./src/index.pug"}
-			)
-	]
+	function getPlugins() {
+		const plugins = [	new HtmlWebpackPlugin(
+					{	filename: "index.html",
+						template: "./src/index.pug"}
+				) ];
+
+		if (isProd) {
+			plugins.push( new MiniCssExtractPlugin() )
+		}
+
+		return plugins
+	}
+
+
+
+
+	return {
+			module: {
+				rules: [
+		
+					//Loading .pug
+					{
+						test: /\.pug$/,
+						loader: "pug-loader",
+						options: {
+							pretty: true
+						}
+					},
+		
+					//Loading CSS
+					{
+						test: /\.css$/,
+						use: getStyleLoaders()
+					},
+		
+					//Loading SCSS/Sass
+					{
+						test: /\.(s[ca]ss)$/,
+						use: [ ...getStyleLoaders(), "sass-loader"]
+					}
+		
+				]
+			},
+		
+			plugins: getPlugins()
+			
+		}
+
+	}
+
 	
-}
+	
