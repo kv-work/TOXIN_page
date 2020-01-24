@@ -1,5 +1,6 @@
-$body-color: gray;
+@import "./ui-kits/logo/logo.scss";
 
 body {
-  background-color: $body-color;
+	margin: 0;
+	padding: 0;
 }
