@@ -13,6 +13,18 @@ module.exports = {
 				options: {
 					pretty: true
 				}
+			},
+
+			//Loading CSS
+			{
+				test: /\.css$/,
+				use: ["style-loader", "css-loader"]
+			},
+
+			//Loading SCSS/Sass
+			{
+				test: /\.(s[ca]ss)$/,
+				use: ["style-loader", "css-loader", "sass-loader"]
 			}
 
 		]
