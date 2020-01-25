@@ -1,8 +1,10 @@
 extends base/base
+include ui-kits/logo/logo
 
 block variables
 	- var pageTitle = 'UIKit'
 
+
 block content
-	include ui-kits/logo/logo
+	+logo('48', '48', "#1F2041", '.25')
 	
