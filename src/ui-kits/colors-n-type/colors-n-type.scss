@@ -1,0 +1,17 @@
+@import "../logo/logo.scss";
+@import "./color/__sample/sample.scss";
+@import "./color/__name/name.scss";
+
+.logo {
+	position: absolute;
+	top: 30px;
+	left: 30px;
+}
+
+.colors-samples {
+	position: absolute;
+	top: 145px;
+	left: 149.75px;
+	margin: 0;
+	padding: 0;
+}

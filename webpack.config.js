@@ -32,6 +32,9 @@ module.exports = (env = {}) => {
 
 
 	return {
+		
+			mode,
+
 			module: {
 				rules: [
 		
@@ -54,6 +57,18 @@ module.exports = (env = {}) => {
 					{
 						test: /\.(s[ca]ss)$/,
 						use: [ ...getStyleLoaders(), "sass-loader"]
+					},
+
+					//Loadin Fonts
+					{
+						test: /\.(ttf|woff|otf|woff2|eot)$/,
+						use: [{
+							loader: 'file-loader',
+							options: {
+								outpath: 'fonts',
+								name: '[name].[ext]'
+							}
+						}]
 					}
 		
 				]
