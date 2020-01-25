@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server",
-		"build:prod": "webpack --env.mode=production",
-		"build:dev": "webpack"
+    "build:prod": "webpack --env.mode=production",
+    "build:dev": "webpack"
   },
   "author": "Komarov Vyacheslav",
   "license": "ISC",
