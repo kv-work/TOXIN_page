@@ -65,7 +65,7 @@ module.exports = (env = {}) => {
 						use: [{
 							loader: 'file-loader',
 							options: {
-								outpath: 'fonts',
+								outputPath: 'fonts',
 								name: '[name].[ext]'
 							}
 						}]

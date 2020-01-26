@@ -1,4 +1,5 @@
 @import "../logo/logo.scss";
+@import "./color/color.scss";
 @import "./color/__sample/sample.scss";
 @import "./color/__name/name.scss";
 
@@ -10,8 +11,8 @@
 
 .colors-samples {
 	position: absolute;
+	width: 269.26px;
+	height: 610px;
 	top: 145px;
 	left: 149.75px;
-	margin: 0;
-	padding: 0;
 }

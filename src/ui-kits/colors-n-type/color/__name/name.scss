@@ -1,5 +1,26 @@
-.color__name {
-	display: inline-block;
-	// line-height: 35px;
+.color__description {
+	// display: inline-block;	
+	// margin-left: 40px;
+	color: #1f2041;
+	font-size: 19px;
+	line-height: 29px;
 	// vertical-align: top;
+	//flex
+	display: grid;
+	align-items: center;
+	width: 159px;
+	height: 57px;
+
+	//for development
+	// border: 1px solid;	
+}
+
+.color__name {
+	font-family: 'Quicksand-Bold';
+	font-weight: bold;	
+}
+
+.color__hex {
+	font-family: 'Quicksand-Regular';
+	font-weight: normal;	
 }
