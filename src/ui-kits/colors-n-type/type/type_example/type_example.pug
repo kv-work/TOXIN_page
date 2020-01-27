@@ -1,0 +1,7 @@
+include ./__sample_text/sample_text
+include ./__tag_name/tag_name
+
+mixin typeExample(tagName, text)
+	.type_example
+		+tagName(tagName)
+		+sampleText(tagName, text)

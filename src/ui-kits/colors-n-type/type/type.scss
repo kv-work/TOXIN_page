@@ -1,0 +1,8 @@
+@import "./type_example/type_example.scss";
+
+.type {
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-row-gap: 50px;
+	width: 403px;
+}

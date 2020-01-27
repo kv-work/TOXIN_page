@@ -1,6 +1,6 @@
 @import "../logo/logo.scss";
-@import "./palette/palette.scss";
 @import "./color_palettes/color_palettes.scss";
+@import "./type/type.scss";
 
 .logo {
 	position: absolute;
@@ -12,4 +12,10 @@
 	position: absolute;
 	top: 145px;
 	left: 149.75px;
+}
+
+.type {
+	position: absolute;
+	top: 145px;
+	left: 846px;
 }
