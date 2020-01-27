@@ -1,13 +1,5 @@
 include ../logo/logo
-include ./color/color
 
 .colors-n-types
 	+logo('48', '48', "#1F2041", '.25')
-	.colors-samples
-		+color('#1F2041', 'Dark_Shade', '100%')
-		+color('#1F2041','Dark_Shade', '75%')
-		+color('#1F2041','Dark_Shade', '50%')
-		+color('#1F2041','Dark_Shade', '25%')
-		+color('#1F2041','Dark_Shade', '5%')
-		+color('#BC9CFF','Purple')
-		+color('#6FCF97','Green')
+	include ./color_palettes/color_palettes

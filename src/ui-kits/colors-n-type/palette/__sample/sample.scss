@@ -1,0 +1,37 @@
+.palette__sample {
+	width: 70px;
+	height: 70px;
+	border-radius: 6px;
+
+	&_coloris {
+		&_dark_shade {
+			background-color: #1F2041;
+		}
+
+		&_purple {
+			background-color: #BC9CFF;
+		}
+
+		&_green {
+			background-color: #6FCF97;
+		}
+	}
+
+	&_opacity {
+		&_75 {
+			opacity: .75;
+		}
+
+		&_50 {
+			opacity: .5;
+		}
+
+		&_25 {
+			opacity: .25;
+		}
+
+		&_5 {
+			opacity: .05;
+		}
+	}
+}

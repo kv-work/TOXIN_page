@@ -1,0 +1,24 @@
+mixin sample(colorName, opacity)
+	-
+		var className="palette__sample"+" "+"palette__sample_coloris_"+colorName.toLowerCase()
+		if (opacity) {
+			switch (opacity) {
+				case "100%" :
+					className += " "+"palette__sample_opacity"+"_100"
+					break
+				case "75%" :
+					className += " "+"palette__sample_opacity"+"_75"
+					break
+				case "50%" :
+					className += " "+"palette__sample_opacity"+"_50"
+					break
+				case "25%" :
+					className += " "+"palette__sample_opacity"+"_25"
+					break
+				case "5%" :
+					className += " "+"palette__sample_opacity"+"_5"
+					break
+			}
+		}
+		
+	div(class=className)

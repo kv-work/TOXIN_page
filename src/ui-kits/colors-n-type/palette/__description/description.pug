@@ -1,5 +1,5 @@
-mixin name(color, colorName, opacity)
-	.color__description
+mixin description(color, colorName, opacity)
+	.palette__description
 		-
 			var nameArr = colorName.split("_")
 			var nameOfColor = nameArr.join(" ")
@@ -8,5 +8,5 @@ mixin name(color, colorName, opacity)
 			} else {
 				var name = nameOfColor
 			}
-		span.color__name=name
-		span.color__hex=color
+		div.palette__name=name
+		div.palette__hex=color

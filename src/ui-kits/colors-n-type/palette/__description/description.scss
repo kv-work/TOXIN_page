@@ -1,0 +1,21 @@
+.palette {
+	&__description {
+		color: #1f2041;
+		font-size: 19px;
+		line-height: 29px;
+		width: 159px;
+		height: 57px;
+	}
+
+	&__name {
+		font-family: 'Quicksand-Bold';
+		font-weight: bold;
+		opacity: 1;	
+	}
+
+	&__hex {
+		font-family: 'Quicksand-Regular';
+		font-weight: normal;
+		opacity: 1;
+	}
+}
