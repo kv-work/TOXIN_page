@@ -61,10 +61,11 @@ module.exports = (env = {}) => {
 
 					//Loadin Fonts
 					{
-						test: /\.(ttf|woff|otf|woff2|eot)$/,
+						test: /\.(ttf|woff|otf|woff2|eot|svg)$/,
 						use: [{
 							loader: 'file-loader',
 							options: {
+								publicPath: 'fonts',
 								outputPath: 'fonts',
 								name: '[name].[ext]'
 							}
