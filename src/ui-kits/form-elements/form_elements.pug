@@ -1,0 +1,13 @@
+include ./input/input
+
+.form_elements
+	.inputs_display
+		.default
+			.style DEFAULT
+			+input("text field", "Email",false, false, false)
+		.hover_focus
+			.style HOVER/FOCUS
+			+input("text field", "this is pretty awesome", false, true, false)
+		.default.masked
+			.style DEFAULT
+			+input("masked text field", "ДД.ММ.ГГГГ", true, false, false)
