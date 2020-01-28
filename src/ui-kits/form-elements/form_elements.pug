@@ -1,13 +1,15 @@
 include ./input/input
+include ../logo/logo
+
+mixin uikitInputDisplay(style, text, placeholder, isMasked=false, isFocused=false, withDropdown=false)
+	div( class=style.split('/').join('_') )
+		span.style=style.toUpperCase()
+		+input(text, placeholder, isMasked, isFocused, withDropdown)
 
 .form_elements
+	+logo('48', '48', "#1F2041", '.25')
 	.inputs_display
-		.default
-			.style DEFAULT
-			+input("text field", "Email",false, false, false)
-		.hover_focus
-			.style HOVER/FOCUS
-			+input("text field", "this is pretty awesome", false, true, false)
-		.default.masked
-			.style DEFAULT
-			+input("masked text field", "ДД.ММ.ГГГГ", true, false, false)
+		+uikitInputDisplay("default", "text field", "Email")
+		+uikitInputDisplay("hover/focus", "text field", "This is pretty awesome", _, true)
+		+uikitInputDisplay("default", "masked text field", "ДД.ММ.ГГГГ", true)
+		

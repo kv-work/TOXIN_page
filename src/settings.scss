@@ -1,0 +1,40 @@
+$dark-100: #1f2041;
+$dark-75: rgba(31, 32, 65, .75);
+$dark-50: rgba(31, 32, 65, .5);
+$dark-25: rgba(31, 32, 65, .25);
+$dark-5: rgba(31, 32, 65, .05);
+$primary-purple: #bc9cff;
+$primary-green: #6fcf97;
+
+h1 {
+	font-family: 'Quicksand-Bold';
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 30px;
+	color: $dark-100;
+}
+
+h2 {
+	font-family: 'Quicksand-Bold';
+	font-weight: bold;
+	font-size: 19px;
+	line-height: 24px;
+	color: $dark-100;
+}
+
+h3 {
+	font-family: 'Montserrat-Bold';
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 15px;
+	text-transform: uppercase;
+	margin: 0;
+	color: $dark-100;
+}
+
+body {
+	font-family: 'Montserrat-Regular';
+	font-size: 14px;
+	line-height: 21px;
+	color: $dark-75;
+}

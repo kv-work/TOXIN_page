@@ -1,0 +1,24 @@
+@import "./input/input.scss";
+
+.inputs_display {
+	position: absolute;
+	top: 141px;
+	left: 141px;
+	width: 320px;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-row-gap: 20px;
+}
+
+.default,
+.hover_focus {
+	position: relative;
+}
+
+.style {
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 12px;
+	line-height: 15px;
+}

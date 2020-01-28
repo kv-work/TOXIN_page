@@ -1,4 +1,10 @@
-mixin input(label, placeholder, isMasked, isFocused, withDropdown)
+mixin input(label, placeholder, isMasked=false, isFocused=false, withDropdown=false)
+	-
+		var classList = "input__input"
+		if (isFocused)	{
+			classList += " input__input_isFocused"
+		}
 
-	label=label
-	input(placeholder=placeholder)
+	label.input__label
+		h3=label
+	input(class=classList placeholder=placeholder )
