@@ -1,4 +1,7 @@
-mixin dropdown()
+include ./__option/option
 
-	select.form__select
-	
+mixin dropdown(name, items)
+
+	select.form__select=name
+		- for (i=0; i<items.length; i++)
+			+option(items[i])
