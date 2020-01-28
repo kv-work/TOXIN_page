@@ -1,0 +1,13 @@
+mixin input(label, placeholder, isMasked=false, isFocused=false)
+	-
+		var classList = "form__input"
+		if (isFocused)	{
+			classList += " form__input_isFocused"
+		}
+		if (isMasked) {
+			classList += " form__input_isMasked"
+		}
+
+	label.form__input_label
+		h3=label
+	input(class=classList placeholder=placeholder )

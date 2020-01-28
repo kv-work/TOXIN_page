@@ -1,8 +1,8 @@
-include ./input/input
+include ./__input/input
 include ../logo/logo
 
 mixin uikitInputDisplay(style, text, placeholder, isMasked=false, isFocused=false, withDropdown=false)
-	div( class=style.split('/').join('_') )
+	div( class=style.split(' / ').join('_') )
 		span.style=style.toUpperCase()
 		+input(text, placeholder, isMasked, isFocused, withDropdown)
 
@@ -10,6 +10,6 @@ mixin uikitInputDisplay(style, text, placeholder, isMasked=false, isFocused=fals
 	+logo('48', '48', "#1F2041", '.25')
 	.inputs_display
 		+uikitInputDisplay("default", "text field", "Email")
-		+uikitInputDisplay("hover/focus", "text field", "This is pretty awesome", _, true)
+		+uikitInputDisplay("hover / focus", "text field", "This is pretty awesome", _, true)
 		+uikitInputDisplay("default", "masked text field", "ДД.ММ.ГГГГ", true)
 		
