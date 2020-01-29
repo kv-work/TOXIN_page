@@ -1,5 +1,6 @@
-.form__input_label h3 {
-	margin: 3.5px 0 5px;
+.form__input_label {
+	display: block;
+	padding: 3px 0 5px 0;
 }
 
 .form__input {
@@ -9,13 +10,12 @@
 	border: 1px solid rgba(31, 32, 65, 0.25);
 	box-sizing: border-box;
 	border-radius: 4px;
-	padding: 0;
+	padding-left: 15px;
 	margin: 0;
 
 	&::placeholder {
 		font-family: 'Montserrat-Regular';
 		font-size: 14px;
-		text-indent: 14px;
 		color: $dark-25;
 	}
 
