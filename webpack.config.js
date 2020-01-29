@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const webpack = require('webpack');
 
 module.exports = (env = {}) => {
 
@@ -17,9 +18,17 @@ module.exports = (env = {}) => {
 
 	function getPlugins() {
 		const plugins = [	new HtmlWebpackPlugin(
-					{	filename: "index.html",
-						template: "./src/index.pug"}
-				) ];
+											{	filename: "index.html",
+												template: "./src/index.pug"}
+											),
+
+											new webpack.ProvidePlugin(
+												{
+													$: 'jquery',
+													jQuery: 'jquery'
+												}
+											)
+										];
 
 		if (isProd) {
 			plugins.push( new MiniCssExtractPlugin() )
