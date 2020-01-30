@@ -14,5 +14,6 @@ mixin uikitInputDisplay(style, text, placeholder, isMasked = false)
 		+uikitInputDisplay("hover / focus", "text field", "This is pretty awesome")(class="form__input_isFocused")
 		
 		//- +uikitInputDisplay("default", "masked text field", "ДД.ММ.ГГГГ", true)
-		
-		+dropdown("спальни", "кровати", "ванные комнаты")
+		div.default
+			span.style DEFAULT
+			+dropdown("dropdown", ["спальни", "кровати", "ванные комнаты"])

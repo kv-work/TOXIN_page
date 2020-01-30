@@ -5,10 +5,13 @@ mixin dropdownItem(index, item)
 			p.iqdropdown-item=item 
 
 
-mixin dropdown(...items)
+mixin dropdown(label, items)
 
-	.iqdropdown
-		p.iqdropdown-selection
-		.iqdropdown-menu
-			each item, index in items
-				+dropdownItem(index+1, item)
+	.form_dropdown
+		label.form_dropdown__label
+			h3=label
+		.iqdropdown.form_dropdown__selection
+			p.iqdropdown-selection
+			.iqdropdown-menu
+				each item, index in items
+					+dropdownItem(index+1, item)
