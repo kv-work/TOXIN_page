@@ -1,26 +1,14 @@
-//- include ./__option/option
 
-//- mixin dropdown(name, items)
-
-	//- select.form__select=name
-	//- 	- for (i=0; i<items.length; i++)
-	//- 		+option(items[i])
+mixin dropdownItem(index, item)
+	.iqdropdown-menu-option(data-id="item-"+index)
+		div
+			p.iqdropdown-item=item 
 
 
-mixin dropdown()
+mixin dropdown(...items)
 
 	.iqdropdown
 		p.iqdropdown-selection
 		.iqdropdown-menu
-			.iqdropdown-menu-option(data-id="item-1")
-				div
-					p.iqdropdown-item Item 1
-					p.iqdropdown-description A short description
-			.iqdropdown-menu-option(data-id="item-2")
-				div
-					p.iqdropdown-item Item 2
-					p.iqdropdown-description A short description
-			.iqdropdown-menu-option(data-id="item-3")
-				div
-					p.iqdropdown-item Item 3
-					p.iqdropdown-description A short description
+			each item, index in items
+				+dropdownItem(index+1, item)
