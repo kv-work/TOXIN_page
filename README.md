@@ -24,13 +24,13 @@ npm start
 
 **В проекте использовались следующие инструменты:**
 1.  [webpack](https://webpack.js.org/)
-  1.1.  [css-loader](https://webpack.js.org/loaders/css-loader/)
-  1.2.  [file-loader](https://webpack.js.org/loaders/file-loader/)
-  1.3.  [html-webpack-plugin](https://webpack.js.org/plugins/html-webpack-plugin/)
-  1.4.  [mini-css-extract-plugin](https://webpack.js.org/plugins/mini-css-extract-plugin/)
-  1.5.  [pug-loader](https://github.com/pugjs/pug-loader)
-  1.6.  [sass-loader](https://webpack.js.org/loaders/sass-loader/)
-  1.7.  [style-loader](https://webpack.js.org/loaders/style-loader/)
+  *  [css-loader](https://webpack.js.org/loaders/css-loader/)
+  *  [file-loader](https://webpack.js.org/loaders/file-loader/)
+  *  [html-webpack-plugin](https://webpack.js.org/plugins/html-webpack-plugin/)
+  *  [mini-css-extract-plugin](https://webpack.js.org/plugins/mini-css-extract-plugin/)
+  *  [pug-loader](https://github.com/pugjs/pug-loader)
+  *  [sass-loader](https://webpack.js.org/loaders/sass-loader/)
+  *  [style-loader](https://webpack.js.org/loaders/style-loader/)
 
 2.  [node-sass](https://github.com/sass/node-sass)
 3.  [pug](https://pugjs.org/api/getting-started.html)
