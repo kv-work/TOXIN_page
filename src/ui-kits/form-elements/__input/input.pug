@@ -1,12 +1,12 @@
 mixin input(label, placeholder, isMasked=false)
 
-	-
-		var classList = "form_input__input"
-		if (isMasked) {
-			classList += " form_input__input_isMasked"
-		}
+  -
+    var classList = "form_input__input"
+    if (isMasked) {
+      classList += " form_input__input_isMasked"
+    }
 
-	.form_input
-		label.form_input__label
-			h3=label
-		input( class=classList placeholder=placeholder )&attributes(attributes)
+  .form_input
+    label.form_input__label
+      h3=label
+    input( class=classList placeholder=placeholder )&attributes(attributes)

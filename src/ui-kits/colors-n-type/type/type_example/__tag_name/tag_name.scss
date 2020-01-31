@@ -1,24 +1,23 @@
 .type_example__tag_name {
-	font-family: "Montserrat-Regular";
-	font-style: normal;
-	font-weight: normal;
-	text-align: right;
-	color: rgba(31, 32, 65, .25);
+  font-family: "Montserrat", Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  text-align: right;
+  color: rgba(31, 32, 65, 0.25);
 
-	&_size_h1 {
-		font-size: 24px;
-	}
+  &_size_h1 {
+    font-size: 24px;
+  }
 
-	&_size_h2 {
-		font-size: 19px;
-	}
+  &_size_h2 {
+    font-size: 19px;
+  }
 
-	&_size_h3 {
-		font-size: 12px;
-	}
+  &_size_h3 {
+    font-size: 12px;
+  }
 
-	&_size_body {
-		font-size: 14px;
-	}
-
+  &_size_body {
+    font-size: 14px;
+  }
 }

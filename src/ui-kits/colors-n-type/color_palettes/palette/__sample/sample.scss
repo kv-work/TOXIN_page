@@ -1,37 +1,37 @@
 .palette__sample {
-	width: 70px;
-	height: 70px;
-	border-radius: 6px;
+  width: 70px;
+  height: 70px;
+  border-radius: 6px;
 
-	&_coloris {
-		&_dark_shade {
-			background-color: $dark-100;
-		}
+  &_coloris {
+    &_dark_shade {
+      background-color: $dark-100;
+    }
 
-		&_purple {
-			background-color: #BC9CFF;
-		}
+    &_purple {
+      background-color: #bc9cff;
+    }
 
-		&_green {
-			background-color: #6FCF97;
-		}
-	}
+    &_green {
+      background-color: #6fcf97;
+    }
+  }
 
-	&_opacity {
-		&_75 {
-			opacity: .75;
-		}
+  &_opacity {
+    &_75 {
+      opacity: 0.75;
+    }
 
-		&_50 {
-			opacity: .5;
-		}
+    &_50 {
+      opacity: 0.5;
+    }
 
-		&_25 {
-			opacity: .25;
-		}
+    &_25 {
+      opacity: 0.25;
+    }
 
-		&_5 {
-			opacity: .05;
-		}
-	}
+    &_5 {
+      opacity: 0.05;
+    }
+  }
 }

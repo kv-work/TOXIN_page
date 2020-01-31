@@ -3,17 +3,17 @@ include ../logo/logo
 include ./__dropdown/dropdown
 
 mixin uikitInputDisplay(style, text, placeholder, isMasked = false)
-	div( class=style.split(' / ').join('_') )
-		span.style=style.toUpperCase()
-		+input(text, placeholder, isMasked)&attributes(attributes)
+  div( class=style.split(' / ').join('_') )
+    span.style=style.toUpperCase()
+    +input(text, placeholder, isMasked)&attributes(attributes)
 
 .form_elements
-	+logo('48', '48', "#1F2041", '.25')
-	.inputs_display
-		+uikitInputDisplay("default", "text field", "Email")
-		+uikitInputDisplay("hover / focus", "text field", "This is pretty awesome")(class="form__input_isFocused")
-		
-		//- +uikitInputDisplay("default", "masked text field", "ДД.ММ.ГГГГ", true)
-		div.default
-			span.style DEFAULT
-			+dropdown("dropdown", ["спальни", "кровати", "ванные комнаты"])
+  +logo('48', '48', "#1F2041", '.25')
+  .inputs_display
+    +uikitInputDisplay("default", "text field", "Email")
+    +uikitInputDisplay("hover / focus", "text field", "This is pretty awesome")(class="form__input_isFocused")
+
+    //- +uikitInputDisplay("default", "masked text field", "ДД.ММ.ГГГГ", true)
+    div.default
+      span.style DEFAULT
+      +dropdown("dropdown", ["спальни", "кровати", "ванные комнаты"])

@@ -1,7 +1,7 @@
 mixin sampleText(tagName, text)
-	- 
-		classList="type_example__sample_text"
-		if (tagName) {
-			classList += " "+classList+"_tag_"+tagName.toLowerCase()
-		}
-	div(class=classList)=text
+  - 
+    classList="type_example__sample_text"
+    if (tagName) {
+      classList += " "+classList+"_tag_"+tagName.toLowerCase()
+    }
+  div(class=classList)=text

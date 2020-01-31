@@ -1,13 +1,12 @@
 .form_dropdown {
-	&__label {
-		display: block;
-		padding: 3px 0 5px 0;
-	}
-	
-	&__selection {
-		height: 44px;
-		border: 1px solid $dark-25;
-		background-color: #fff;
-	}
+  &__label {
+    display: block;
+    padding: 3px 0 5px 0;
+  }
 
+  &__selection {
+    height: 44px;
+    border: 1px solid $dark-25;
+    background-color: #fff;
+  }
 }

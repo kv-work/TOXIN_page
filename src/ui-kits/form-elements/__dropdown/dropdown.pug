@@ -1,17 +1,17 @@
 
 mixin dropdownItem(index, item)
-	.iqdropdown-menu-option(data-id="item-"+index)
-		div
-			p.iqdropdown-item=item 
+  .iqdropdown-menu-option(data-id="item-"+index)
+    div
+      p.iqdropdown-item=item 
 
 
 mixin dropdown(label, items)
 
-	.form_dropdown
-		label.form_dropdown__label
-			h3=label
-		.iqdropdown.form_dropdown__selection
-			p.iqdropdown-selection
-			.iqdropdown-menu
-				each item, index in items
-					+dropdownItem(index+1, item)
+  .form_dropdown
+    label.form_dropdown__label
+      h3=label
+    .iqdropdown.form_dropdown__selection
+      p.iqdropdown-selection
+      .iqdropdown-menu
+        each item, index in items
+          +dropdownItem(index+1, item)

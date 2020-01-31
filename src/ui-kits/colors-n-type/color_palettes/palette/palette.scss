@@ -1,10 +1,9 @@
 @import "./__sample/sample.scss";
 @import "./__description/description.scss";
 
-
 .palette {
-	display: grid;
-	grid-template-columns: 70px 1fr;
-	grid-column-gap: 40px;
-	align-items: center;	
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  grid-column-gap: 40px;
+  align-items: center;
 }

@@ -1,35 +1,34 @@
 .form_input {
+  &__label {
+    display: block;
+    padding: 3.5px 0 5px 0;
+  }
 
-	&__label {
-		display: block;
-		padding: 3.5px 0 5px 0;
-	}
+  &__input {
+    width: 100%;
+    height: 44px;
+    background: #ffffff;
+    border: 1px solid rgba(31, 32, 65, 0.25);
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding-left: 15px;
+    margin: 0;
 
-	&__input {
-		width: 100%;
-		height: 44px;
-		background: #FFFFFF;
-		border: 1px solid rgba(31, 32, 65, 0.25);
-		box-sizing: border-box;
-		border-radius: 4px;
-		padding-left: 15px;
-		margin: 0;
+    &::placeholder {
+      font-family: "Montserrat", Arial, sans-serif;
+      font-size: 14px;
+      color: $dark-25;
+      letter-spacing: -0.01em;
+    }
 
-		&::placeholder {
-			font-family: 'Montserrat-Regular';
-			font-size: 14px;
-			color: $dark-25;
-			letter-spacing: -0.01em;
-		}
-
-		&_isFocused,
-		&:hover,
-		&:focus {
-			border-color: $dark-50;
-			outline: none;
-			&::placeholder {
-				color: $dark-75;
-			}
-		}
-	}	
+    &_isFocused,
+    &:hover,
+    &:focus {
+      border-color: $dark-50;
+      outline: none;
+      &::placeholder {
+        color: $dark-75;
+      }
+    }
+  }
 }
