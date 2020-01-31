@@ -8,7 +8,8 @@ mixin uikitInputDisplay(style, text, placeholder, isMasked = false)
     +input(text, placeholder, isMasked)&attributes(attributes)
 
 .form_elements
-  +logo('48', '48', "#1F2041", '.25')
+  .logo_wrapper
+    +logo({width: "48", height: "48", fill: "#1F2041", fillOpacity: ".25"})
   .inputs_display
     +uikitInputDisplay("default", "text field", "Email")
     +uikitInputDisplay("hover / focus", "text field", "This is pretty awesome")(class="form__input_isFocused")
