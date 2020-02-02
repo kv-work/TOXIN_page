@@ -1,20 +1,29 @@
-include ./__input/input
-include ../logo/logo
-include ./__dropdown/dropdown
+extends ../../base/base
 
-mixin uikitInputDisplay(style, text, placeholder, isMasked = false)
-  div( class=style.split(' / ').join('_') )
+block variables
+  include ./__input/input
+  include ../logo/logo
+  include ./__dropdown/dropdown
+
+  - var pageTitle = 'Form-elements'
+  
+  mixin uikitInputDisplay(style, text, placeholder, isMasked = false)
+    div( class=style.split(' / ').join('_') )
     span.style=style.toUpperCase()
     +input(text, placeholder, isMasked)&attributes(attributes)
 
-.form_elements
-  .logo_wrapper
-    +logo({width: "48", height: "48", fill: "#1F2041", fillOpacity: ".25"})
-  .inputs_display
-    +uikitInputDisplay("default", "text field", "Email")
-    +uikitInputDisplay("hover / focus", "text field", "This is pretty awesome")(class="form__input_isFocused")
 
-    //- +uikitInputDisplay("default", "masked text field", "ДД.ММ.ГГГГ", true)
-    div.default
-      span.style DEFAULT
-      +dropdown("dropdown", ["спальни", "кровати", "ванные комнаты"])
+block content
+
+
+  .form_elements
+    .logo_wrapper
+      +logo({width: "48", height: "48", fill: "#1F2041", fillOpacity: ".25"})
+    .inputs_display
+      +uikitInputDisplay("default", "text field", "Email")
+      +uikitInputDisplay("hover / focus", "text field", "This is pretty awesome")(class="form__input_isFocused")
+
+      //- +uikitInputDisplay("default", "masked text field", "ДД.ММ.ГГГГ", true)
+      div.default
+        span.style DEFAULT
+        +dropdown("dropdown", ["спальни", "кровати", "ванные комнаты"])

@@ -4,9 +4,7 @@ const webpack = require('webpack');
 
 module.exports = (env = {}) => {
 
-  const {
-    mode = "development"
-  } = env;
+  const { mode = "development" } = env;
 
   const isProd = mode === "production";
   const isDev = mode === "development";
@@ -18,10 +16,25 @@ module.exports = (env = {}) => {
     ]
   }
 
+  //Функция для настройки подключаемых plagin'ов
   function getPlugins() {
-    const plugins = [new HtmlWebpackPlugin({
+    const plugins = [
+      new HtmlWebpackPlugin({
+        chunks: ['main'],
         filename: "index.html",
         template: "./src/index.pug"
+      }),
+
+      new HtmlWebpackPlugin({
+        chunks: ['colors'],
+        filename: "colors/colors.html",
+        template: "./src/ui-kits/colors-n-type/colors-n-type.pug"
+      }),
+
+      new HtmlWebpackPlugin({
+        chunks: ['form'],
+        filename: "form/form.html",
+        template: "./src/ui-kits/form-elements/form_elements.pug"
       }),
 
       new webpack.ProvidePlugin({
@@ -31,18 +44,31 @@ module.exports = (env = {}) => {
     ];
 
     if (isProd) {
-      plugins.push(new MiniCssExtractPlugin())
+      plugins.push(new MiniCssExtractPlugin({
+        moduleFilename: ({ name }) => name === 'main' ? '[name].css' : '[name]/[name].css'
+      }))
     }
 
     return plugins
   }
 
-
-
-
+  //Объект настроек
   return {
 
     mode,
+
+    entry: {
+      'main': './src/index.js',
+      'colors': './src/ui-kits/colors-n-type/colors.js',
+      'form': './src/ui-kits/form-elements/form.js'
+    },
+
+    output: {
+      // path: __dirname,
+      filename: ({
+        chunk
+      }) => chunk.name === 'main' ? '[name].js' : '[name]/[name].js'
+    },
 
     module: {
       rules: [
@@ -84,6 +110,7 @@ module.exports = (env = {}) => {
       ]
     },
 
+    //Loading plugins
     plugins: getPlugins()
 
   }
