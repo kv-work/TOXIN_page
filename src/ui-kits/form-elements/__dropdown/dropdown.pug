@@ -5,7 +5,10 @@ mixin dropdownItem(index, item)
       p.iqdropdown-item=item 
 
 
-mixin dropdown(label, items)
+mixin dropdown(params)
+
+  -
+    const {label, items} = params
 
   .form_dropdown
     label.form_dropdown__label

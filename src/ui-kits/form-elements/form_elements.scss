@@ -3,6 +3,12 @@
 @import "./__input/input.scss";
 @import "./__dropdown/dropdown.scss";
 
+.logo_wrapper {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
 .inputs_display {
   position: absolute;
   top: 140px;

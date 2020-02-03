@@ -9,8 +9,8 @@ block variables
   
   mixin uikitInputDisplay(style, text, placeholder, isMasked = false)
     div( class=style.split(' / ').join('_') )
-    span.style=style.toUpperCase()
-    +input(text, placeholder, isMasked)&attributes(attributes)
+      span.style=style.toUpperCase()
+      +input(text, placeholder, isMasked)&attributes(attributes)
 
 
 block content
@@ -26,4 +26,4 @@ block content
       //- +uikitInputDisplay("default", "masked text field", "ДД.ММ.ГГГГ", true)
       div.default
         span.style DEFAULT
-        +dropdown("dropdown", ["спальни", "кровати", "ванные комнаты"])
+        +dropdown({label:"dropdown", items:["спальни", "кровати", "ванные комнаты"]})
