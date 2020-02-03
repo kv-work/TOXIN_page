@@ -28,6 +28,7 @@
   },
   "dependencies": {
     "item-quantity-dropdown": "^2.0.2",
-    "jquery": "^3.4.1"
+    "jquery": "^3.4.1",
+    "material-design-icons": "^3.0.1"
   }
 }
