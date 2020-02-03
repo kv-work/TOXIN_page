@@ -91,7 +91,18 @@ module.exports = (env = {}) => {
         //Loading SCSS/Sass
         {
           test: /\.(s[ca]ss)$/,
-          use: [...getStyleLoaders(), "sass-loader"]
+          use: [
+            ...getStyleLoaders(),
+            {
+              loader: 'resolve-url-loader'             
+            },
+            {
+              loader: "sass-loader",
+              options: {
+                sourceMap: true
+              }
+            }
+          ]
         },
 
         //Loadin Fonts
@@ -100,7 +111,7 @@ module.exports = (env = {}) => {
           use: [{
             loader: 'file-loader',
             options: {
-              publicPath: 'fonts',
+              publicPath: '../fonts',
               outputPath: 'fonts',
               name: '[name].[ext]'
             }
