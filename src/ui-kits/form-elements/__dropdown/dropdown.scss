@@ -1,12 +1,44 @@
+
+
 .form_dropdown {
   &__label {
     display: block;
     padding: 3px 0 5px 0;
   }
 
-  &__selection {
+  &__object {
     height: 44px;
     border: 1px solid $dark-25;
     background-color: #fff;
+    padding-right: 0;
   }
+
+  &__arrow {
+    width: 44px;
+    height: 44px;
+    font-size: 24px;
+    line-height: 44px;
+    // text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
 }
+
+.iqdropdown-selection {
+  display: none;
+}
+
+.form_dropdown__object .form_dropdown__selection {
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: $dark-75;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+}
+
+ 

@@ -19,6 +19,23 @@ $(document).ready(() => {
     }
   }
 
-  $('.iqdropdown').iqDropdown(options)
+  const defaults = {
+    maxItems: Infinity,
+    minItems: 0,
+    selectionText: 'item',
+    textPlural: 'items',
+    controls: {
+      position: 'right',
+      displayCls: 'iqdropdown-content',
+      controlsCls: 'iqdropdown-item-controls',
+      counterCls: 'counter',
+    },
+    items: {},
+    onChange: () => {},
+    beforeDecrement: () => true,
+    beforeIncrement: () => true,
+  };
+
+  $('.js_form_dropdown__object').iqDropdown(defaults)
 
 })
