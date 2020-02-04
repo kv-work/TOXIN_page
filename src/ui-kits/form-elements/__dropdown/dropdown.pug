@@ -13,11 +13,11 @@ mixin dropdown(params)
   .form_dropdown
     label.form_dropdown__label
       h3=label
-    .iqdropdown.form_dropdown__object.js_form_dropdown__object
-      p.form_dropdown__selection='Сколько гостей'
-      .form_dropdown__arrow
-        i.material-icons='expand_more'
-      p.iqdropdown-selection
+    .iqdropdown.js_form_dropdown
+      p.iqdropdown-selection="Сколько гостей"
       .iqdropdown-menu
         each item, index in items
           +dropdownItem(index+1, item)
+        .option_control_buttons
+          button="Очистить"
+          button="Применить"

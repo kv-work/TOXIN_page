@@ -20,10 +20,10 @@ $(document).ready(() => {
   }
 
   const defaults = {
-    maxItems: Infinity,
+    maxItems: 4,
     minItems: 0,
-    selectionText: 'item',
-    textPlural: 'items',
+    selectionText: 'гость',
+    textPlural: 'гостя',
     controls: {
       position: 'right',
       displayCls: 'iqdropdown-content',
@@ -36,6 +36,6 @@ $(document).ready(() => {
     beforeIncrement: () => true,
   };
 
-  $('.js_form_dropdown__object').iqDropdown(defaults)
+  $('.js_form_dropdown').iqDropdown(defaults)
 
 })
