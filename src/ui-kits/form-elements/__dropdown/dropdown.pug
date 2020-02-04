@@ -18,6 +18,6 @@ mixin dropdown(params)
       .iqdropdown-menu
         each item, index in items
           +dropdownItem(index+1, item)
-        .option_control_buttons
-          button="Очистить"
-          button="Применить"
+        .iqdropdown-menu-control-buttons
+          button.button-clear="Очистить"
+          button.button-apply="Применить"
