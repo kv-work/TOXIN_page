@@ -1,4 +1,5 @@
 //Loading scripts
+import './__input/input'
 // import "./__dropdown/dropdown"     // Ждем обновление (см. описание в dropdown.js)
 
 // Строку удалить после настройки скрипта для dropdown'а

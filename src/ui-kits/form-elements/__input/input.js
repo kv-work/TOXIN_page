@@ -1,5 +1,8 @@
-console.log("import js")
+import 'cleave.js'
 
-let input = document.querySelector(".form__input")
-
-input.addEventListener("click", (e) => console.log(e.target))
+const options = {
+  date: true,
+  datePattern: ['d', 'm', 'Y'],
+  delimiters: ['.','.']
+};
+const cleave = new Cleave('.form_input_masked .form_input__input', options)
