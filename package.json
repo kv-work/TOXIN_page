@@ -27,6 +27,7 @@
     "webpack-dev-server": "^3.10.1"
   },
   "dependencies": {
+    "cleave.js": "^1.5.3",
     "item-quantity-dropdown": "^2.0.2",
     "jquery": "^3.4.1",
     "material-icons": "^0.3.1"
