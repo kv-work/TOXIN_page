@@ -8,3 +8,7 @@ import 'item-quantity-dropdown/lib/item-quantity-dropdown.min.css';
 
 //Loading styles
 import './form_elements.scss'
+
+
+//clear input fields on page load
+$(document).ready( () => $('input').val('') )
