@@ -20,7 +20,7 @@ $(document).ready(() => {
   }
 
   const defaults = {
-    maxItems: 4,
+    maxItems: Infinity,
     minItems: 0,
     selectionText: 'гость',
     textPlural: 'гостя',

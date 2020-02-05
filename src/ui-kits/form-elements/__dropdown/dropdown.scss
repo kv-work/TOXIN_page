@@ -50,7 +50,7 @@
   border-radius: 4px;
 
   .iqdropdown-menu {
-    width: 320px;
+    width: calc(100% + 2px);
     background: #ffffff;
     border: 1px solid $dark-50;
     box-sizing: border-box;
