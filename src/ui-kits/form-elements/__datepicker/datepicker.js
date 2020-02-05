@@ -1,8 +1,14 @@
 import 'air-datepicker/dist/js/datepicker.min'
 
-const options ={
-  range: true,
-  toggleSelected: false  
-}
+$(document).ready( () => {
 
-$('.js_datepicker').datepicker(options)
+    const options = {
+      range: false,
+      toggleSelected: false,
+      multipleDatesSeparator: " - ",
+      clearButton: true  
+    }
+    
+    $('.js_datepicker').datepicker(options)
+  }
+)

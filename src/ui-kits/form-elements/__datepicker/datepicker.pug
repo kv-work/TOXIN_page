@@ -1,8 +1,9 @@
 mixin datepicker(params)
-  - var {label} =params
+  - var {label} = params
 
   .form_datepicker
     label.form_datepicker__label
       p.like_h3=label
     .form_datepicker__input
-      input(type='text' class='js_datepicker')
+      input(type="text" class="js_datepicker" placeholder="ДД.ММ.ГГГГ")
+      
