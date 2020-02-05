@@ -1,12 +1,15 @@
-mixin input(label, placeholder, isMasked=false)
+mixin input(params)
 
   -
+    var { label, placeholder, masked = false } = params
     var classList = "form_input__input"
-    if (isMasked) {
-      classList += " form_input__input_isMasked"
-    }
 
-  .form_input
+    if (masked) {
+      modClass = "form_input_masked"
+    }
+   
+
+  .form_input(class=modClass)
     label.form_input__label
-      h3=label
+      p.like_h3=label
     input( class=classList placeholder=placeholder )&attributes(attributes)
