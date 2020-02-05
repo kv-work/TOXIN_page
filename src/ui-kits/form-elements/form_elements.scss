@@ -3,6 +3,14 @@
 @import "./__input/input.scss";
 @import "./__dropdown/dropdown.scss";
 
+body {
+  min-width: 1440px;
+}
+
+.form_elements {
+  width: 1440px;
+}
+
 .logo_wrapper {
   position: absolute;
   top: 30px;

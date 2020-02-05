@@ -1,4 +1,4 @@
-extends ../../base/base
+extends ../../base/base_fix
 
 block variables
   include ./__input/input
@@ -21,7 +21,7 @@ block content
       +logo({width: "48", height: "48", fill: "#1F2041", fillOpacity: ".25"})
     .inputs_display
       +uikitInputDisplay("default", "text field", "Email")
-      +uikitInputDisplay("hover / focus", "text field", "This is pretty awesome")(class="form__input_isFocused")
+      +uikitInputDisplay("hover / focus", "text field", "This is pretty awesome")(class="form_input__input_isFocused")
 
       //- +uikitInputDisplay("default", "masked text field", "ДД.ММ.ГГГГ", true)
       div.default
