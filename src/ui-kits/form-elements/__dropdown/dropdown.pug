@@ -8,13 +8,13 @@ mixin dropdownItem(index, item)
 mixin dropdown(params)
 
   -
-    const {label, items} = params
+    const {label, text, items} = params
 
   .form_dropdown
     label.form_dropdown__label
-      h3=label
+      .like_h3=label
     .iqdropdown.js_form_dropdown
-      p.iqdropdown-selection="Сколько гостей"
+      p.iqdropdown-selection=text
       .iqdropdown-menu
         each item, index in items
           +dropdownItem(index+1, item)
