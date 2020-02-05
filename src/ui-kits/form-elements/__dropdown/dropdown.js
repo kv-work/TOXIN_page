@@ -1,3 +1,8 @@
+
+// Подождем реализации кастомного сообщения в p.iqdropdown-selection
+// Если не будет обновления библиотеке: сделать fork и роеализовать необходимые функции самому
+// Подключить fork к проекту
+
 import 'item-quantity-dropdown/lib/item-quantity-dropdown.min.js';
 import 'item-quantity-dropdown/lib/item-quantity-dropdown.min.css';
 
