@@ -32,6 +32,9 @@ block content
       
       +inputWrapper({style: "default", text: "masked text field", placeholder: "ДД.ММ.ГГГГ", masked: true})
 
-      .date_picker_wrapper
+      .datepicker_wrapper
         +datepicker({label: "date dropdown"})
         +datepicker({label: "date dropdown"})
+
+      .datepicker_ranged_wrapper
+        +datepicker( {label: "filtered date dropdown", ranged: true} )

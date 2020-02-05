@@ -2,13 +2,14 @@ import 'air-datepicker/dist/js/datepicker.min'
 
 $(document).ready( () => {
 
-    const options = {
-      range: false,
+    const rangeOpt = {
+      range: true,
       toggleSelected: false,
       multipleDatesSeparator: " - ",
-      clearButton: true  
+      clearButton: true
     }
     
-    $('.js_datepicker').datepicker(options)
+    $('.js_datepicker_ranged').datepicker(rangeOpt)
+    $('.js_datepicker').datepicker()
   }
 )

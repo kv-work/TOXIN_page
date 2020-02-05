@@ -1,9 +1,11 @@
 mixin datepicker(params)
-  - var {label} = params
+  - 
+    var {label, ranged=false} = params
+    var classList = ranged ? "js_datepicker_ranged" : "js_datepicker"
 
   .form_datepicker
     label.form_datepicker__label
       p.like_h3=label
     .form_datepicker__input
-      input(type="text" class="js_datepicker" placeholder="ДД.ММ.ГГГГ")
+      input(type="text" class=classList placeholder="ДД.ММ.ГГГГ")
       
