@@ -76,38 +76,6 @@
     padding: 0;
     border: none;
 
-    &::before {
-      font-family: "Material Icons";
-      content: "arrow_back";
-      width: 24px;
-      height: 24px;
-      display: inline-block;
-      text-align: center;
-      vertical-align: middle;
-      font-size: 24px;
-      line-height: 24px;
-      background: $primary-gradient;
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    &::after {
-      font-family: "Material Icons";
-      font-size: 24px;
-      line-height: 24px;
-      width: 24px;
-      height: 24px;
-      display: inline-block;
-      text-align: center;
-      vertical-align: middle;
-      content: "arrow_forward";
-      background: $primary-gradient;
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
     &-title {
       font-family: Quicksand, Arial, sans-serif;
       font-style: normal;
@@ -120,13 +88,71 @@
       vertical-align: middle;
     }
 
-    &-action {
-      display: none
+    &-action:nth-child(1) {
+      width: 24px;
+      height: 24px;
+      
+      &::after {
+        font-family: "Material Icons";
+        font-size: 24px;
+        line-height: 24px;
+        width: 24px;
+        height: 24px;
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+        content: "arrow_back";
+        background: $primary-gradient;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      & svg {
+        display: none;
+      }
+    }
+
+      &-action:nth-child(3) {
+        width: 24px;
+        height: 24px;
+        
+        &::after {
+          font-family: "Material Icons";
+          font-size: 24px;
+          line-height: 24px;
+          width: 24px;
+          height: 24px;
+          display: inline-block;
+          text-align: center;
+          vertical-align: middle;
+          content: "arrow_forward";
+          background: $primary-gradient;
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+      & svg {
+        display: none;
+      }    
     }
   }
 
   &--content {
     padding: 0;
+    margin-top: 20px;
+  }
+
+  &--day-name {
+    font-family: Montserrat, Arial, sans-serif;
+    font-weight: bold;
+    color: $primary-purple;
+    font-size: 12px;
+    line-height: 15px;
+    width: 40px;
+    height: 40px;
+    text-transform: none;
   }
 
   
