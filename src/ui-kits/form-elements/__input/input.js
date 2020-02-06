@@ -1,8 +1,13 @@
 import 'cleave.js'
 
-const options = {
-  date: true,
-  datePattern: ['d', 'm', 'Y'],
-  delimiters: ['.','.']
-};
-const cleave = new Cleave('.form_input_masked .form_input__input', options)
+$(document).ready( () => {
+
+  $('.form_input_masked .form_input__input').toArray().forEach(function(field){
+    new Cleave(field, {
+      date: true,
+      datePattern: ['d', 'm', 'Y'],
+      delimiters: ['.','.']
+    });
+  })
+
+})

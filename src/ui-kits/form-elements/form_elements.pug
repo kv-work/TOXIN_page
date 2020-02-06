@@ -4,6 +4,7 @@ block variables
   include ./__input/input
   include ../logo/logo
   include ./__dropdown/dropdown
+  include ./__datepicker/datepicker
 
   - var pageTitle = 'Form-elements'
 
@@ -21,7 +22,7 @@ block content
   .form_elements
     .logo_wrapper
       +logo({width: "48", height: "48", fill: "#1F2041", fillOpacity: ".25"})
-    .block_inputs
+    .block_inputs_styled
       +inputWrapper({style: "default", text: "text field", placeholder: "Email"})
       +inputWrapper({style: "hover / focus", text: "text field", placeholder: "This is pretty awesome"})(class="form_input__input_isFocused")
 
@@ -30,3 +31,15 @@ block content
         +dropdown({label:"dropdown", text: "Сколько гостей", items:["Взрослые", "Дети", "Младенцы"]})
       
       +inputWrapper({style: "default", text: "masked text field", placeholder: "ДД.ММ.ГГГГ", masked: true})
+
+    .datepicker_wrapper
+      +datepicker({label: "date dropdown"})(class="start_date")
+      +datepicker({label: "date dropdown", value: "19.08.2019"})(class="end_date")
+
+    .datepicker_wrapper_ranged
+      +datepicker( {label: "filter date dropdown", ranged: true} )
+
+    .input_wrapper_with_subscription
+      +input({ label: "subsription text field", placeholder: "Email", subscription: true })
+
+    .form_datepicker.datepicker-here="calendar"

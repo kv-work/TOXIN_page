@@ -1,0 +1,15 @@
+mixin datepicker(params)
+  - 
+    var {label, ranged=false, value=""} = params
+    var classList = ranged ? "js_datepicker_ranged" : "js_datepicker js_datepicker_masked"
+    if (value) {
+      classList += " form_datepicker__input_with_data"
+      var date = value
+    }
+
+  .form_datepicker
+    label.form_datepicker__label
+      p.like_h3=label
+    .form_datepicker__input_wrapper
+      input.form_datepicker__input(type="text" class=classList placeholder="ДД.ММ.ГГГГ" date=date)&attributes(attributes)
+      

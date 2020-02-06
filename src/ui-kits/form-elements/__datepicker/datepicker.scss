@@ -1,0 +1,80 @@
+@import 'air-datepicker/dist/css/datepicker.min';
+
+.form_datepicker {
+  &__label {
+    display: block;
+    padding: 3px 0 5px 0;
+  }
+}
+
+.form_datepicker__input_wrapper {
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: $dark-75;
+  height: 44px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #FFFFFF;
+  border: 1px solid $dark-25;
+  box-sizing: border-box;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &::after {
+    font-family: "Material Icons";
+    width: 42px;
+    height: 44px;
+    font-size: 24px;
+    line-height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content: "expand_more";
+    top: -13px;
+  }
+}
+
+.form_datepicker__input {
+  font-family: Montserrat, Arial, sans-serif;
+  padding: 1px 0 0 14px;
+  cursor: inherit;
+  border: none;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 18px;
+  color: $dark-75;
+  max-width: calc(100% - 50px);
+  
+  &::placeholder {
+    font-family: Montserrat, Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: $dark-75;
+  }
+}
+
+
+//editing plugin styles
+.form_datepicker .datepicker {
+  width: 320px;
+  background-color: #fff;
+  border: 1px solid $dark-25;
+  box-sizing: border-box;
+  box-shadow: 0 10px 20px $dark-5;
+  border-radius: 4px;
+
+  .datepicker--nav-title {
+    font-family: Quicksand, Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 24px;
+    text-align: center;
+    color: $dark-100;
+  }
+
+}
