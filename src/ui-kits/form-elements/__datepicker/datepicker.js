@@ -11,8 +11,7 @@ $(document).ready( () => {
     });
   })
 
-  //Set initial value
-  
+  //Set initial value  
   $('.js_datepicker_masked').toArray().forEach(function(field){
     const inputValue = $(field).attr('date')
     $(field).val(inputValue)
@@ -37,19 +36,16 @@ $(document).ready( () => {
       toggleSelected: false,
       multipleDatesSeparator: " - ",
       dateFormat: 'd M',
-      clearButton: true
+      clearButton: true,
+      onSelect: (formattedDate, date) => console.log(date)
     }
 
-  // const startDate = $('.js_datepicker'),
-  //         endDate   = $('.js_datepicker')[1];
+  const startDate = $('.js_datepicker.start_date'),
+          endDate   = $('.js_datepicker.end_date');
 
   const datePicker = $('.js_datepicker_ranged').datepicker(rangeOpt).data('datepicker')
 
-  // $('.js_datepicker').click( (e) => {
-    
-  //   e.preventDefault();
+  datePicker.show()
 
-  //   datePickerData.show()
-  //   })
   }
 )
