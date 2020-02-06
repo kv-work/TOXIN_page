@@ -59,22 +59,75 @@
 
 
 //editing plugin styles
-.form_datepicker .datepicker {
+.form_datepicker .datepicker {  
+  border: 1px solid $dark-25;  
+  box-shadow: 0 10px 20px $dark-5;  
+
+}
+
+.datepicker {
   width: 320px;
   background-color: #fff;
-  border: 1px solid $dark-25;
   box-sizing: border-box;
-  box-shadow: 0 10px 20px $dark-5;
   border-radius: 4px;
+  padding: 20px;
 
-  .datepicker--nav-title {
-    font-family: Quicksand, Arial, sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 19px;
-    line-height: 24px;
-    text-align: center;
-    color: $dark-100;
+  &--nav {
+    padding: 0;
+    border: none;
+
+    &::before {
+      font-family: "Material Icons";
+      content: "arrow_back";
+      width: 24px;
+      height: 24px;
+      display: inline-block;
+      text-align: center;
+      vertical-align: middle;
+      font-size: 24px;
+      line-height: 24px;
+      background: $primary-gradient;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &::after {
+      font-family: "Material Icons";
+      font-size: 24px;
+      line-height: 24px;
+      width: 24px;
+      height: 24px;
+      display: inline-block;
+      text-align: center;
+      vertical-align: middle;
+      content: "arrow_forward";
+      background: $primary-gradient;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &-title {
+      font-family: Quicksand, Arial, sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 19px;
+      line-height: 24px;
+      text-align: center;
+      color: $dark-100;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    &-action {
+      display: none
+    }
   }
 
+  &--content {
+    padding: 0;
+  }
+
+  
 }

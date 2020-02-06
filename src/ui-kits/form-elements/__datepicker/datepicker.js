@@ -37,8 +37,15 @@ $(document).ready( () => {
       multipleDatesSeparator: " - ",
       dateFormat: 'd M',
       clearButton: true,
+      navTitles: {days: 'MM yyyy'},
       onSelect: (formattedDate, date) => console.log(date)
     }
+
+const altOps = {
+  navTitles: {days: 'MM yyyy'},
+  clearButton: true,
+  inline: true
+}
 
   const startDate = $('.js_datepicker.start_date'),
           endDate   = $('.js_datepicker.end_date');
@@ -49,8 +56,8 @@ $(document).ready( () => {
 
   const date = new Date("2019-08-29")
 
-  const inlineDatepicker = $('.datepicker-here').data('datepicker')
-  // console.log(inlineDatepicker)
+  const inlineDatepicker = $('.datepicker-here').datepicker(altOps).data('datepicker')
+  console.log(inlineDatepicker)
 
   inlineDatepicker.selectDate(date)
 
