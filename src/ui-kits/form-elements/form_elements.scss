@@ -10,7 +10,7 @@ body {
 
 .form_elements {
   width: 1440px;
-  // position: relative;
+  padding: 143px 141px 150px;
 }
 
 .logo_wrapper {
@@ -19,10 +19,7 @@ body {
   left: 30px;
 }
 
-.block_inputs {
-  position: absolute;
-  top: 140px;
-  left: 141px;
+.block_inputs_styled {
   width: 320px;
   display: grid;
   grid-template-columns: 1fr;
@@ -50,4 +47,9 @@ body {
 
 .datepicker_wrapper_ranged {
   width: 266px;
+}
+
+.input_wrapper_with_subscription {
+  width: 267px;
+  box-sizing: border-box;
 }
