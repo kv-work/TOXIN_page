@@ -1,6 +1,15 @@
 import 'air-datepicker/dist/js/datepicker.min'
+import 'cleave.js'
 
 $(document).ready( () => {
+
+  $('.js_datepicker_masked').toArray().forEach(function(field){
+    new Cleave(field, {
+      date: true,
+      datePattern: ['d', 'm', 'Y'],
+      delimiters: ['.','.']
+    });
+  })
 
   $.fn.datepicker.language['my-lang'] = {
     days: ['Воскресенье','Понедельник','Вторник','Среда','Четверг','Пятница','Суббота'],
@@ -24,18 +33,18 @@ $(document).ready( () => {
       clearButton: true
     }
 
-  const startDate = $('.js_datepicker'),
-          endDate   = $('.js_datepicker')[1];
+  // const startDate = $('.js_datepicker'),
+  //         endDate   = $('.js_datepicker')[1];
 
   const datePicker = $('.js_datepicker_ranged').datepicker(rangeOpt)
 
   const datePickerData = datePicker.data('datepicker')
 
-  $('.js_datepicker').click( (e) => {
+  // $('.js_datepicker').click( (e) => {
     
-    e.preventDefault();
+  //   e.preventDefault();
 
-    datePickerData.show()
-    })
+  //   datePickerData.show()
+  //   })
   }
 )
