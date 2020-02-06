@@ -56,3 +56,25 @@
     color: $dark-75;
   }
 }
+
+
+//editing plugin styles
+.form_datepicker .datepicker {
+  width: 320px;
+  background-color: #fff;
+  border: 1px solid $dark-25;
+  box-sizing: border-box;
+  box-shadow: 0 10px 20px $dark-5;
+  border-radius: 4px;
+
+  .datepicker--nav-title {
+    font-family: Quicksand, Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 24px;
+    text-align: center;
+    color: $dark-100;
+  }
+
+}

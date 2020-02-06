@@ -45,7 +45,16 @@ $(document).ready( () => {
 
   const datePicker = $('.js_datepicker_ranged').datepicker(rangeOpt).data('datepicker')
 
-  datePicker.show()
+  // datePicker.show()
+
+  const date = new Date("2019-08-29")
+
+  const inlineDatepicker = $('.datepicker-here').data('datepicker')
+  // console.log(inlineDatepicker)
+
+  inlineDatepicker.selectDate(date)
+
+  // startDate.click( () => inlineDatepicker.hide() )
 
   }
 )
