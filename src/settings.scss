@@ -10,6 +10,8 @@ $dark-25: rgba(31, 32, 65, .25);
 $dark-5: rgba(31, 32, 65, .05);
 $primary-purple: #bc9cff;
 $primary-green: #6fcf97;
+$primary-gradient: linear-gradient(180deg, $primary-purple 0%, #8BA4F9 100%);
+$secondary-gradient: linear-gradient(180deg, $primary-green 0%, #66D2EA 100%);;
 
 h1 {
 	font-family: Quicksand, Arial, sans-serif;
