@@ -11,6 +11,13 @@ $(document).ready( () => {
     });
   })
 
+  //Set initial value
+  
+  $('.js_datepicker_masked').toArray().forEach(function(field){
+    const inputValue = $(field).attr('date')
+    $(field).val(inputValue)
+  })
+
   $.fn.datepicker.language['my-lang'] = {
     days: ['Воскресенье','Понедельник','Вторник','Среда','Четверг','Пятница','Суббота'],
     daysShort: ['Вос','Пон','Вто','Сре','Чет','Пят','Суб'],
@@ -36,9 +43,7 @@ $(document).ready( () => {
   // const startDate = $('.js_datepicker'),
   //         endDate   = $('.js_datepicker')[1];
 
-  const datePicker = $('.js_datepicker_ranged').datepicker(rangeOpt)
-
-  const datePickerData = datePicker.data('datepicker')
+  const datePicker = $('.js_datepicker_ranged').datepicker(rangeOpt).data('datepicker')
 
   // $('.js_datepicker').click( (e) => {
     
