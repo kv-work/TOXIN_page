@@ -45,7 +45,7 @@
   font-size: 14px;
   line-height: 18px;
   color: $dark-75;
-  max-width: 100px;
+  max-width: calc(100% - 50px);
   
   &::placeholder {
     font-family: Montserrat, Arial, sans-serif;
