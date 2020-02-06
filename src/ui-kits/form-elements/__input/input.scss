@@ -1,4 +1,38 @@
 .form_input {
+
+  &_with_subscription {
+    display: grid;
+    grid-template-columns: 1fr 44px;
+
+      .form_input__label {
+        grid-column: 1/3;
+      }
+
+      .form_input__input {
+        grid-column: 1/3;
+        grid-row: 2;
+        padding-right: 44px;
+      }
+      
+    &::after {
+      grid-column: 2;
+      grid-row: 2;
+      font-family: "Material Icons";
+      width: 44px;
+      height: 44px;
+      font-size: 24px;
+      line-height: 44px;
+      display: inline-block;
+      text-align: center;
+      vertical-align: middle;
+      content: 'arrow_forward';
+      cursor: pointer;
+      background: $primary-gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
   &__label {
     display: block;
     padding: 3.5px 0 5px 0;
