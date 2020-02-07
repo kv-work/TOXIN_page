@@ -3,6 +3,7 @@ import 'cleave.js'
 
 $(document).ready( () => {
 
+  //Add a mask to enter the date
   $('.js_datepicker_masked').toArray().forEach(function(field){
     new Cleave(field, {
       date: true,
@@ -17,6 +18,7 @@ $(document).ready( () => {
     $(field).val(inputValue)
   })
 
+  //config datepicker's language
   $.fn.datepicker.language['my-lang'] = {
     days: ['Воскресенье','Понедельник','Вторник','Среда','Четверг','Пятница','Суббота'],
     daysShort: ['Вос','Пон','Вто','Сре','Чет','Пят','Суб'],
@@ -30,6 +32,7 @@ $(document).ready( () => {
     firstDay: 1
   }
 
+  //Options
   const rangeOpt = {
       language: 'my-lang',
       range: true,
@@ -38,14 +41,18 @@ $(document).ready( () => {
       dateFormat: 'd M',
       clearButton: true,
       navTitles: {days: 'MM yyyy'},
+      offset: -52, //отступ от начальной позиции
       onSelect: (formattedDate, date) => console.log(date)
     }
 
-const altOps = {
-  navTitles: {days: 'MM yyyy'},
-  clearButton: true,
-  inline: true
-}
+  //unnecessary test options
+  const altOps = {
+    navTitles: {days: 'MM yyyy'},
+    clearButton: true,
+    inline: true,
+    range: true,
+    toggleSelected: false
+  }
 
   const startDate = $('.js_datepicker.start_date'),
           endDate   = $('.js_datepicker.end_date');
@@ -63,5 +70,6 @@ const altOps = {
 
   // startDate.click( () => inlineDatepicker.hide() )
 
+  $('.datepicker .datepicker--buttons').append('<span class="datepicker--button" data-action="apply">Применить</span>')
   }
 )
