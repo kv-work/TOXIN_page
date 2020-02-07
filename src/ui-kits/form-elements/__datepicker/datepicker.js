@@ -61,15 +61,6 @@ $(document).ready( () => {
 
   // datePicker.show()
 
-  const date = new Date("2019-08-29")
-
-  const inlineDatepicker = $('.datepicker-here').datepicker(altOps).data('datepicker')
-  console.log(inlineDatepicker)
-
-  inlineDatepicker.selectDate(date)
-
-  // startDate.click( () => inlineDatepicker.hide() )
-
   $('.datepicker .datepicker--buttons').append('<span class="datepicker--button" data-action="apply">Применить</span>')
   }
 )
