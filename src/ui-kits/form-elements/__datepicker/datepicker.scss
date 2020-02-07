@@ -178,12 +178,6 @@
     color: $dark-50;
     height: 40px;
 
-    &.-current- {
-      background: $secondary-gradient;
-      border-radius: 22px;
-      color: white;
-    }
-
     &.-selected-,
     &.-selected-:hover{
       background: $primary-gradient;
@@ -233,6 +227,12 @@
         opacity: .25;
       }
     }
+
+    &.-current- {
+      background: $secondary-gradient;
+      border-radius: 22px;
+      color: white;
+    }
   }
 
   &--buttons {
@@ -254,8 +254,21 @@
     line-height: 15px;
     text-transform: uppercase;
 
-    &[data-action="apply"] {
+    &-apply {
+      padding: 0;
+      display: inline-block;
+      flex: 0;
+      height: auto;
+      font-family: Montserrat, Arial, sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 15px;
+      text-transform: uppercase;
       color: $primary-purple;
+      border: none;
+      background: none;
+      cursor: pointer;
     }
 
     &[data-action="clear"] {
