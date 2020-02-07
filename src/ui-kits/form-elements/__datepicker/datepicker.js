@@ -41,49 +41,83 @@ $(document).ready( () => {
         dateFormat: 'd M',
         clearButton: true,
         navTitles: {days: 'MM yyyy'},
+        minDate: new Date(),
         offset: -52, //отступ от начальной позиции
-        onSelect: (_, date) => selectDate(date, startDate, endDate)
+        onSelect: (_, date) => selectDate(date, startDate, endDate),
+        onHide: (inst) => selectDate(inst.selectedDates, startDate, endDate)
       }
 
-    //unnecessary test options
-    const altOps = {
-      navTitles: {days: 'MM yyyy'},
-      clearButton: true,
-      inline: true,
-      range: true,
-      toggleSelected: false
-    }
-
     var startDate = $('.js_datepicker.start_date'),
-            endDate = $('.js_datepicker.end_date'),
-            filter = $('.js_datepicker_ranged');
+            endDate = $('.js_datepicker.end_date');
 
     const datePicker = $('.js_datepicker_ranged').datepicker(rangeOpt).data('datepicker')
-    
-    $('.form_datepicker').click( () => datePicker.show() )
 
-    $('.datepicker .datepicker--buttons').append('<button type="button" class="datepicker--button-apply">Применить</button>')
-    
+    //added apply button to datepicker
+    $('.datepicker .datepicker--buttons').append('<button type="button" class="datepicker--button-apply">Применить</button>') 
 
-    
+    //clear input for click
+    $('.js_datepicker').click( (e) => e.target.value = '')
+    //show datepicker
+    $('.form_datepicker').click( (e) => showCalendar(e, datePicker) )
+    //hide datepicker
+    $('.datepicker--button-apply').click( (e) => hideCalendar(e, datePicker) )
+    //input date from start or end el's
+    $('.js_datepicker').change( (e) => setDate(e.target.value, e.target, datePicker) )
+
   }
 )
 
 
 function selectDate(date, startEl, endEl) {
 
+  let startDate, endDate;
+
   switch (date.length) {
     case 1:
-      const startDate = date[0].toLocaleDateString();
-      $(startEl).val(startDate);
+      startDate = date[0].toLocaleDateString();
+      if (startEl) $(startEl).val(startDate);
       break;
     case 2:
-      const endDate = date[1].toLocaleDateString();
-      $(endEl).val(endDate)
+      endDate = date[1].toLocaleDateString();
+      startDate = date[0].toLocaleDateString();
+      if (startEl) $(startEl).val(startDate);
+      if (endEl) $(endEl).val(endDate)      
       break;
     default:
       $(startEl).val('');
       $(endEl).val('')
       break;
   }
+  
+}
+
+function showCalendar(event, calendar) {
+
+  calendar.show()
+}
+
+function hideCalendar(event, calendar) {
+
+  calendar.hide()
+}
+
+function setDate(date, input, calendar) {
+
+  const dateString = date.split('.').reverse().join('-');
+  let startDate, endDate;
+
+  if ( input.classList.contains('start_date') ) {
+
+    startDate = new Date(dateString)
+    endDate = calendar.selectedDates[1] ? calendar.selectedDates[1] : startDate
+
+  } else if ( input.classList.contains('end_date') ) {
+
+    endDate = new Date(dateString)
+    startDate = calendar.selectedDates[0] ? calendar.selectedDates[0] : new Date()
+  }
+
+  const dateArr = [startDate, endDate]    
+  calendar.selectDate(dateArr)
+
 }
