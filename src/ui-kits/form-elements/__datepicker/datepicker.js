@@ -46,8 +46,15 @@ $(document).ready(() => {
     },
     minDate: new Date(),
     offset: -52, //отступ от начальной позиции
-    
+
   }
 
-  $('.form_datepickerblock').datepickerBlock(rangeOpt)
+  const datepicker = $('.form_datepickerblock').datepickerBlock(rangeOpt)
+
+  //added apply button to datepicker
+  $('.datepicker .datepicker--buttons').append('<button type="button" class="datepicker--button-apply">Применить</button>')
+  //need realize hide datepicker after click on apply-btn
+  $('.datepicker--button-apply').click((e) => {
+    console.log(e.target)
+  })
 })
