@@ -1,19 +1,31 @@
-
-
 .form_dropdown {
   &__label {
     display: block;
     padding: 3px 0 5px 0;
   }
+
+  //input styles
+  &__input {
+    border: none;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    color: $dark-75;
+    cursor: inherit;
+    padding-left: 15px;
+
+    &::placeholder {
+      color: $dark-75;
+    }
+
+    &:hover,
+    &:focus {
+      outline: none;
+    }
+  }
 }
 
-.form_dropdown__object .form_dropdown__selection {
-  font-family: Montserrat, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 24px;
-  color: $dark-75;
-}
-
+//Добавление кнопок очистить и применить
 .iqdropdown-menu-control-buttons {
   display: flex;
   justify-content: space-between;
@@ -45,11 +57,27 @@
 
 //editing plugin styles
 .iqdropdown {
-  height: 44px;
   border: 1px solid $dark-25;
   background-color: #fff;
-  padding-right: 0;
+  padding: 0;
   border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+
+  &::after {
+    font-family: "Material Icons";
+    width: 44px;
+    height: 44px;
+    font-size: 24px;
+    line-height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content: "expand_more";
+    background: none;
+    top: -13px;
+  }
 
   .iqdropdown-menu {
     width: calc(100% + 2px);
@@ -67,35 +95,10 @@
   &.menu-open {
     border: 1px solid rgba(31, 32, 65, 0.5);
     border-radius: 4px 4px 0 0;
-
-    .iqdropdown-selection {
-      &::after {
-        background: none;
-      }
-    }
   }
 
   .iqdropdown-selection {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 18px;
-    color: $dark-75;
-
-    &::after {
-      font-family: "Material Icons";
-      width: 44px;
-      height: 44px;
-      font-size: 24px;
-      line-height: 44px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      content: "expand_more";
-      background: none;
-      top: -13px;
-    }
+    display: none;
   }
 
   .iqdropdown-menu-option {
