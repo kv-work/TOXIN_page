@@ -22,21 +22,21 @@ import {
       const datePicker = $(this).find('.js_datepicker_ranged').datepicker(settings).data('datepicker')
 
       //clear input for click
-      $(this).find('.js_datepicker').click((e) => e.target.value = '')
+      $(this).find('.js_datepicker').focus((e) => e.target.value = "")
 
       //show datepicker
       $(this).find('.form_datepicker').click((e) => showCalendar(e, datePicker))
 
       //input date from start or end el's
       $(this).find('.js_datepicker').change((e) => setDate(e.target.value, e.target, datePicker))
-      
-      
+
+
     })
 
     return this
 
   }
 
-  
+
 
 }(jQuery))
