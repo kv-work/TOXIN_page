@@ -29,7 +29,7 @@
   "dependencies": {
     "air-datepicker": "^2.2.3",
     "cleave.js": "^1.5.3",
-    "item-quantity-dropdown": "^2.0.2",
+    "item-quantity-dropdown": "git+https://github.com/rtgreen86/item-quantity-dropdown.git#custom-message",
     "jquery": "^3.4.1",
     "material-icons": "^0.3.1"
   }
