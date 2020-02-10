@@ -60,12 +60,8 @@
   height: 44px;
   border: 1px solid $dark-25;
   background-color: #fff;
-  padding: 0;
+  padding-right: 0;
   border-radius: 4px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
 
   .iqdropdown-menu {
     width: calc(100% + 2px);
@@ -76,7 +72,7 @@
     margin: 0;
     top: 42px;
     left: -1px;
-    border-radius: 0 0 4px 4px;
+    border-radius: 0 0 2px 2px;
     padding: 6px 6px 0 14px;
   }
 
@@ -84,19 +80,20 @@
     border: 1px solid rgba(31, 32, 65, 0.5);
     border-radius: 4px 4px 0 0;
 
-    & .iqdropdown-selection::after {
-      background: none;
+    .iqdropdown-selection {
+      &::after {
+        background: none;
+      }
     }
   }
 
   .iqdropdown-selection {
-    border: none;
-    font-family: Montserrat, Arial, sans-serif;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
     font-size: 14px;
-    line-height: 24px;
+    line-height: 18px;
     color: $dark-75;
-    cursor: inherit;
-    padding-left: 15px;
 
     &::after {
       font-family: "Material Icons";
@@ -155,8 +152,6 @@
       border-radius: 50%;
       padding: 0;
       justify-content: center;
-      font-size: 18px;
-      line-height: 22px;
 
       &::after {
         content: "+";
