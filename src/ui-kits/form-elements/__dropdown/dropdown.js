@@ -10,37 +10,41 @@ $(document).ready(() => {
 
   const options = {
 
-    onChange: function (id, count, totalItems) {
-      console.log(id, count, totalItems);
-      const selectionMod = $.find('p.iqdropdown-selection_modified')
-      console.log(selectionMod)
+    initialText: "Сколько гостей",
+    selectionText: "гость",
+    textPlural: "гостя",
+    moreThenFiveText: "гостей",
 
+
+    onChange: function (id, count, totalItems) {
     },
     beforeDecrement: function (id, itemCount) {
       return true;
     },
     beforeIncrement: function (id, itemCount) {
       return true;
+    },
+    setSelectionText (itemCount, totalItems) {
+
+      if (totalItems == 0) {
+        return this.initialText
+      }
+
+      if (totalItems == 1) {
+        return `1 ${this.selectionText}`
+      }
+
+      if (totalItems < 5) {
+        return `${totalItems} ${this.textPlural}`
+      }
+
+      if (totalItems >= 5) {
+        return `${totalItems} ${this.moreThenFiveText}`
+      }
+    
     }
   }
 
-  const defaults = {
-    maxItems: Infinity,
-    minItems: 0,
-    selectionText: 'гость',
-    textPlural: 'гостя',
-    controls: {
-      position: 'right',
-      displayCls: 'iqdropdown-content',
-      controlsCls: 'iqdropdown-item-controls',
-      counterCls: 'counter',
-    },
-    items: {},
-    onChange: () => {},
-    beforeDecrement: () => true,
-    beforeIncrement: () => true,
-  };
-
-  $('.js_form_dropdown').iqDropdown(defaults)
+  $('.js_form_dropdown').iqDropdown(options)
 
 })

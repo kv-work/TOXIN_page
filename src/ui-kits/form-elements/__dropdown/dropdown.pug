@@ -11,11 +11,8 @@ mixin dropdown(params)
     const {label, text, items} = params
 
   .form_dropdown
-    label.form_dropdown__label.like_h3=label
-    //- .form_dropdown__input_wrapper
-      
+    label.form_dropdown__label.like_h3=label      
     .iqdropdown.js_form_dropdown
-      input.form_dropdown__input(placeholder=text readonly)
       p.iqdropdown-selection=text
       .iqdropdown-menu
         each item, index in items
