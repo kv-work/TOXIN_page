@@ -5,6 +5,7 @@ block variables
   include ../logo/logo
   include ./__dropdown/dropdown
   include ./__datepicker/datepicker
+  include ./__checkbox/checkbox
 
   - var pageTitle = 'Form-elements'
 
@@ -41,3 +42,6 @@ block content
 
     .input_wrapper_with_subscription
       +input({ label: "subsription text field", placeholder: "Email", subscription: true })
+
+    .expandable_checkbox_wrapper
+      +expandableCheckBoxList({checkboxLabel: "expandable checkbox list",list: ["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь", "Телевизор", "Шампунь"]})

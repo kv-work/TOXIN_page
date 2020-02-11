@@ -3,6 +3,7 @@
 @import './__input/input.scss';
 @import './__dropdown/dropdown.scss';
 @import './__datepicker/datepicker.scss';
+@import './__checkbox/checkbox.scss';
 
 body {
   min-width: 1440px;
@@ -52,5 +53,10 @@ body {
 
 .input_wrapper_with_subscription {
   width: 267px;
+  box-sizing: border-box;
+}
+
+.expandable_checkbox_wrapper {
+  width: 266px;
   box-sizing: border-box;
 }
