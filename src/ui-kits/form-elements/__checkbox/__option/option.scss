@@ -1,8 +1,8 @@
-.checkbox__option {
+.checkbox__option,
+.checkbox__option_checked {
   display: grid;
   grid-template-columns: auto 1fr;
   grid-column-gap: 10px;
-  // justify-content: start;
   align-items: center;
 
   &_label {
@@ -24,4 +24,14 @@
     box-sizing: border-box;
     content: '';
   }
+}
+
+.checkbox__option_checked::before {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid $primary-purple;
+  border-radius: 4px;
+  box-sizing: border-box;
+  content: '';
 }

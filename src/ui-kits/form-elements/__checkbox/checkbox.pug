@@ -7,5 +7,7 @@ mixin expandableCheckBoxList(params)
     .checkbox__label_wrapper
       p.checkbox__label=checkboxLabel
     .checkbox__options_wrapper
-      each item in list
-        +checkOption({option: item})
+      each item, index in list
+        +checkOption(item)
+        
+        
