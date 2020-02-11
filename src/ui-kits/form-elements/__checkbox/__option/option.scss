@@ -1,0 +1,27 @@
+.checkbox__option {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-column-gap: 10px;
+  // justify-content: start;
+  align-items: center;
+
+  &_label {
+    font-family: Montserrat, Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;    
+    color: $dark-50;
+    margin: 0;
+  }
+
+  &::before {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid $dark-25;
+    border-radius: 4px;
+    box-sizing: border-box;
+    content: '';
+  }
+}

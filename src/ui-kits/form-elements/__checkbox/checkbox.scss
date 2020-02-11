@@ -1,0 +1,38 @@
+@import './__option/option.scss';
+
+.form__expandable_checkbox {
+}
+
+.checkbox__label_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  &::after {
+    font-family: "Material Icons";
+    width: 44px;
+    height: 44px;
+    font-size: 24px;
+    line-height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content: "expand_more";
+  }
+
+}
+
+.checkbox__label {
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  color: $dark-100;
+  text-transform: uppercase;
+}
+
+.checkbox__options_wrapper {
+  display: grid;
+  grid-row-gap: 10px;
+  padding-top: 3px;
+}

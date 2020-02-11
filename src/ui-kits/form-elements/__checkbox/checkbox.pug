@@ -1,0 +1,11 @@
+include ./__option/option
+
+mixin expandableCheckBoxList(params)
+  - var { checkboxLabel, list } = params
+
+  .form__expandable_checkbox
+    .checkbox__label_wrapper
+      p.checkbox__label=checkboxLabel
+    .checkbox__options_wrapper
+      each item in list
+        +checkOption({option: item})
