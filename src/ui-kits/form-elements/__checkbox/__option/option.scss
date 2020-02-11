@@ -1,5 +1,4 @@
-.checkbox__option,
-.checkbox__option_checked {
+.checkbox__option {
   display: grid;
   grid-template-columns: auto 1fr;
   grid-column-gap: 10px;
@@ -15,23 +14,42 @@
     margin: 0;
   }
 
-  &::before {
+  &_rect {
     display: inline-block;
     width: 20px;
     height: 20px;
     border: 1px solid $dark-25;
     border-radius: 4px;
     box-sizing: border-box;
-    content: '';
   }
 }
 
-.checkbox__option_checked::before {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  border: 1px solid $primary-purple;
-  border-radius: 4px;
-  box-sizing: border-box;
-  content: '';
+.checkbox__option_checked {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-column-gap: 10px;
+  align-items: center;
+
+  & .checkbox__option_rect {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border: 1px solid $primary-purple;
+    border-radius: 4px;
+    box-sizing: border-box;
+
+    &::after {
+      display: inline-block;
+      width: 6px;
+      height: 8px;
+      transform: rotate(45deg);
+      border-right: 2px solid transparent;
+      border-bottom: 2px solid transparent;
+      border-image: $primary-gradient;
+      border-image-slice: 1;
+      content: '';
+    }
+  }
 }
