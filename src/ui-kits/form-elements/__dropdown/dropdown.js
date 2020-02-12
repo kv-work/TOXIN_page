@@ -14,16 +14,18 @@ $(document).ready(() => {
     selectionText: "гость",
     textPlural: "гостя",
     moreThenFiveText: "гостей",
+    controls: {
+      controlBtnsCls: 'iqdropdown-menu-control-buttons',
+      clearBtn: true,
+      clearBtnLabel: 'Очистить',
+      applyBtn: true,
+      applyBtnLabel: 'Применить',
+    },
 
 
     onChange: function (id, count, totalItems) {
     },
-    beforeDecrement: function (id, itemCount) {
-      return true;
-    },
-    beforeIncrement: function (id, itemCount) {
-      return true;
-    },
+
     setSelectionText (itemCount, totalItems) {
 
       if (totalItems == 0) {
@@ -42,7 +44,8 @@ $(document).ready(() => {
         return `${totalItems} ${this.moreThenFiveText}`
       }
     
-    }
+    },
+    onApply: () => {}
   }
 
   $('.js_form_dropdown').iqDropdown(options)

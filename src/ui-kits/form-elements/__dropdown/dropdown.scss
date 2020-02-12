@@ -40,6 +40,8 @@
     line-height: 15px;
     text-transform: uppercase;
     color: $dark-50;
+    padding: 0;
+    border: none;
   }
 
   .button-apply {
@@ -50,6 +52,8 @@
     line-height: 15px;
     text-transform: uppercase;
     color: $primary-purple;
+    padding: 0;
+    border: none;
   }
 }
 
@@ -145,6 +149,10 @@
       }
     }
 
+    button.button-decrement-disabled {
+      opacity: 0.38;
+    }
+
     button.button-increment {
       width: 30px;
       height: 30px;
@@ -157,6 +165,10 @@
         content: "+";
         color: $dark-50;
       }
+    }
+
+    button.button-increment-disabled {
+      opacity: 0.38;
     }
 
     .icon-decrement {
