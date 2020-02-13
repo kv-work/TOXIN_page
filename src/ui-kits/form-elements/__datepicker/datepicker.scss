@@ -4,6 +4,7 @@
   &__label {
     display: block;
     padding: 3px 0 5px 0;
+    
   }
 }
 
@@ -45,7 +46,12 @@
   font-size: 14px;
   line-height: 18px;
   color: $dark-75;
-  max-width: calc(100% - 50px);
+  max-width: calc(100% - 44px);
+
+  &:hover,
+  &:focus {    
+    outline: none;
+  }
   
   &::placeholder {
     font-family: Montserrat, Arial, sans-serif;

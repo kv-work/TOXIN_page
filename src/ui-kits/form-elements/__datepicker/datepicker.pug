@@ -8,8 +8,19 @@ mixin datepicker(params)
     }
 
   .form_datepicker
-    label.form_datepicker__label
-      p.like_h3=label
+    label.form_datepicker__label.like_h3=label    
     .form_datepicker__input_wrapper
       input.form_datepicker__input(type="text" class=classList placeholder="ДД.ММ.ГГГГ" date=date)&attributes(attributes)
       
+
+mixin datepickersBlock(params)
+
+  - var {withAltInputs=false, lableStart="", labelEnd="", labelFilter, valueStart="", valueEnd="", valueFilter=""} = params
+
+  .form_datepickerblock
+    .datepicker_wrapper
+      +datepicker({label: lableStart, value: valueStart})(class="start_date")
+      +datepicker({label: labelEnd, value: valueEnd})(class="end_date")
+
+    .datepicker_wrapper_ranged
+      +datepicker( {label: labelFilter, value: valueFilter, ranged: true} )
