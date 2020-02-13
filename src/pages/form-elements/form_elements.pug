@@ -5,6 +5,7 @@ block variables
   include ../../components/logo/logo
   include ../../components/dropdown/dropdown
   include ../../components/datepicker/datepicker
+  include ../../components/icon-item/icon-item
 
   - var pageTitle = 'Form-elements'
 
@@ -43,3 +44,17 @@ block content
 
     .datepicker_wrapper_ranged
       +datepicker( {label: labelFilter, value: valueFilter, ranged: true} )
+
+    .icon_item_list_wrapper
+      .icon_item_list
+        +iconItem( {
+          icon: "insert_emoticon",
+          label: "Комфорт",
+          description: "Шумопоглощающие стены"
+          } )
+
+        +iconItem( {
+          icon: "location_city",
+          label: "Удобство",
+          description: "Окно в каждой из спален"
+          } )

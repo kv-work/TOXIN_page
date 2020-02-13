@@ -3,6 +3,7 @@
 @import '../../components/input/input.scss';
 @import '../../components/dropdown/dropdown.scss';
 @import '../../components/datepicker/datepicker.scss';
+@import '../../components/icon-item/icon-item.scss';
 
 body {
   min-width: 1440px;
@@ -53,4 +54,8 @@ body {
 .input_wrapper_with_subscription {
   width: 267px;
   box-sizing: border-box;
+}
+
+.icon_item_list_wrapper {
+  width: 291px;
 }
