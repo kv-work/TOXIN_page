@@ -1,7 +1,7 @@
 //Loading scripts
-import './__input/input'
-import './__datepicker/datepicker'
-import "./__dropdown/dropdown" 
+import '../../components/input/input'
+import '../../components/datepicker/datepicker'
+import "../../components/dropdown/dropdown" 
 
 import 'item-quantity-dropdown/lib/item-quantity-dropdown.min.css';
 

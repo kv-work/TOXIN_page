@@ -1,8 +1,8 @@
 @import '../../settings.scss';
-@import '../logo/logo.scss';
-@import './__input/input.scss';
-@import './__dropdown/dropdown.scss';
-@import './__datepicker/datepicker.scss';
+@import '../../components/logo/logo.scss';
+@import '../../components/input/input.scss';
+@import '../../components/dropdown/dropdown.scss';
+@import '../../components/datepicker/datepicker.scss';
 
 body {
   min-width: 1440px;

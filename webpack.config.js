@@ -34,7 +34,7 @@ module.exports = (env = {}) => {
       new HtmlWebpackPlugin({
         chunks: ['form'],
         filename: "form/form.html",
-        template: "./src/ui-kits/form-elements/form_elements.pug"
+        template: "./src/pages/form-elements/form_elements.pug"
       }),
 
       new webpack.ProvidePlugin({
@@ -60,7 +60,7 @@ module.exports = (env = {}) => {
     entry: {
       'main': './src/index.js',
       'colors': './src/ui-kits/colors-n-type/colors.js',
-      'form': './src/ui-kits/form-elements/form.js'
+      'form': './src/pages/form-elements/form.js'
     },
 
     output: {
