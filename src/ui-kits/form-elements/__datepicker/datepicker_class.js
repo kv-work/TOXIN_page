@@ -8,6 +8,7 @@ export default class Datepicker {
     this.$datepicker = this.$node.find('.js_datepicker_ranged');
     this.settings = {
       ...options,
+      offset: -52,
       onSelect: (_, date) => this._selectDate(date, this.startDate, this.endDate),
       onHide: (inst) => this._selectDate(inst.selectedDates, this.startDate, this.endDate)
     };
