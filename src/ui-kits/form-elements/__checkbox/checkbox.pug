@@ -1,9 +1,14 @@
 include ./__option/option
 
 mixin expandableCheckBoxList(params)
-  - var { checkboxLabel, list } = params
+  -
+    var { checkboxLabel, list={}, opened=false } = params
+    var classList = "form__expandable_checkbox"
+    if (opened) {
+      classList += " form__expandable_checkbox_opened"
+    }
 
-  .form__expandable_checkbox
+  div(class=classList)
     .checkbox__label_wrapper
       p.checkbox__label=checkboxLabel
     .checkbox__options_wrapper

@@ -44,7 +44,7 @@ block content
       +input({ label: "subsription text field", placeholder: "Email", subscription: true })
 
     .expandable_checkbox_wrapper
-      -  
+      -
         var list = [
           {label:"Завтрак"},
           {label:"Письменный стол", checked: true},
@@ -55,4 +55,18 @@ block content
           {label: "Телевизор"},
           {label: "Шампунь"}
         ]
-      +expandableCheckBoxList({checkboxLabel: "expandable checkbox list",list: list, numbersOfChecked: [1, 2, 3]})
+      +expandableCheckBoxList({checkboxLabel: "expandable checkbox list", list: list})
+
+    .expandable_checkbox_wrapper
+      -
+        var list = [
+          {label:"Завтрак"},
+          {label:"Письменный стол", checked: true},
+          {label: "Стул для кормления", checked: true},
+          {label: "Кроватка", checked: true},
+          {label: "Телевизор"},
+          {label: "Шампунь"},
+          {label: "Телевизор"},
+          {label: "Шампунь"}
+        ]
+      +expandableCheckBoxList({checkboxLabel: "expandable checkbox list", list: list, opened: true})
