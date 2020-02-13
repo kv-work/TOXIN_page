@@ -1,23 +1,22 @@
-import 'air-datepicker/dist/js/datepicker.min'
-import 'cleave.js'
-import './datepiker_block_plugin'
+import 'cleave.js';
+import Datepicker from './datepicker_class';
 
-$(document).ready(() => {
+//Add a mask to enter the date
+$('.js_datepicker_masked').toArray().forEach(function (field) {
+  new Cleave(field, {
+    date: true,
+    datePattern: ['d', 'm', 'Y'],
+    delimiters: ['.', '.']
+  });
+})
 
-  //Add a mask to enter the date
-  $('.js_datepicker_masked').toArray().forEach(function (field) {
-    new Cleave(field, {
-      date: true,
-      datePattern: ['d', 'm', 'Y'],
-      delimiters: ['.', '.']
-    });
-  })
+//Set initial value  
+$('.js_datepicker_masked').toArray().forEach(function (field) {
+  const inputValue = $(field).attr('date')
+  $(field).val(inputValue)
+})
 
-  //Set initial value  
-  $('.js_datepicker_masked').toArray().forEach(function (field) {
-    const inputValue = $(field).attr('date')
-    $(field).val(inputValue)
-  })
+const datepickerBlock = $('.form_datepickerblock').each(function () {
 
   //config datepicker's language
   $.fn.datepicker.language['my-lang'] = {
@@ -33,7 +32,6 @@ $(document).ready(() => {
     firstDay: 1
   }
 
-  //Options
   const rangeOpt = {
     language: 'my-lang',
     range: true,
@@ -45,16 +43,10 @@ $(document).ready(() => {
       days: 'MM yyyy'
     },
     minDate: new Date(),
-    offset: -52, //отступ от начальной позиции
-
+    offset: -52, //отступ от начальной позиции  
   }
 
-  const datepicker = $('.form_datepickerblock').datepickerBlock(rangeOpt)
-
-  //added apply button to datepicker
-  $('.datepicker .datepicker--buttons').append('<button type="button" class="datepicker--button-apply">Применить</button>')
-  //need realize hide datepicker after click on apply-btn
-  $('.datepicker--button-apply').click((e) => {
-    console.log(e.target)
-  })
+  const datepicker = new Datepicker(this, rangeOpt);
+  
+  return datepicker;
 })
