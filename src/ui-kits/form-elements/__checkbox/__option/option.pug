@@ -1,12 +1,7 @@
 mixin checkOption(params)
-  - 
+  -
     var { label, checked=false } = params
-    var classlist = "checkbox__option"
-    if (checked) {
-      classlist += "_checked"
-    }
 
-
-  div(class=classlist)
-    .checkbox__option_rect
-    p.checkbox__option_label=label
+  label.checkbox__option.checkbox__option_label=label
+    input.checkbox__input(type="checkbox" checked=checked)
+    
