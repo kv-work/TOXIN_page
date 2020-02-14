@@ -19,7 +19,7 @@ mixin checkboxList(params)
   div(class=classList)
     .checkbox__label_wrapper
       p.checkbox__label=checkboxLabel
-    .checkbox__options_wrapper
+    .checkbox__options
       each item, index in list
         .checkbox__option_wrapper
           +checkOption(item)
