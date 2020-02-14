@@ -6,6 +6,7 @@ block variables
   include ../../components/dropdown/dropdown
   include ../../components/datepicker/datepicker
   include ../../components/icon-item/icon-item
+  include ../../components/checkbox/checkbox
 
   - var pageTitle = 'Form-elements'
 
@@ -45,6 +46,40 @@ block content
         +dropdown({label:"dropdown", text: "Сколько гостей", items:["Спальни", "Кровати", "Ванные комнаты"], multiple: true})
 
       .expandable_checkbox_wrapper
+        -
+          var list = [
+            {label:"Завтрак"},
+            {label:"Письменный стол", checked: true},
+            {label: "Стул для кормления", checked: true},
+            {label: "Кроватка", checked: true},
+            {label: "Телевизор"},
+            {label: "Шампунь"},
+            {label: "Телевизор"},
+            {label: "Шампунь"}
+          ]
+        +checkboxList({checkboxLabel: "expandable checkbox list", list: list, type: "expandable"})
+
+      .expandable_checkbox_wrapper
+        -
+          var list = [
+            {label:"Завтрак"},
+            {label:"Письменный стол", checked: true},
+            {label: "Стул для кормления", checked: true},
+            {label: "Кроватка", checked: true},
+            {label: "Телевизор"},
+            {label: "Шампунь"},
+            {label: "Телевизор"},
+            {label: "Шампунь"}
+          ]
+        +checkboxList({checkboxLabel: "expandable checkbox list", list: list, type: "expandable", opened: true})
+
+      .rich_checkbox_buttons
+        -
+          var list = [
+            {label: "Широкий коридор", description: "Ширина коридоров в номере не менее 91 см.", checked: false},
+            {label: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист и проводит до номера."}
+          ]
+        +checkboxList({checkboxLabel: "rich checkbox buttons", list: list, type: "rich" })
 
       .icon_item_list_wrapper
         .icon_item_list
