@@ -1,0 +1,74 @@
+@import "./__option/option.scss";
+
+.form__checkbox {
+
+  .checkbox__label_wrapper {
+    height: 44px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .checkbox__label {
+    font-family: Montserrat, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    color: $dark-100;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  &_expandable {
+
+    .checkbox__label_wrapper {
+      &::after {
+        font-family: "Material Icons";
+        width: 44px;
+        height: 44px;
+        font-size: 24px;
+        line-height: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        content: "expand_more";
+      }
+    }
+
+    .checkbox__options_wrapper {
+      display: none;    
+    }
+
+    &_opened {
+      .checkbox__label_wrapper::after {
+        transform: rotate(180deg);
+      }
+
+      & .checkbox__options_wrapper {
+        display: grid;
+        grid-row-gap: 10px;     
+      }
+    }
+  }
+
+  &_rich {
+
+    .checkbox__options_wrapper {
+      display: grid;
+      grid-row-gap: 10px;
+    }
+
+    .checkbox__option_label {
+      font-weight: bold;
+      color: $dark-75;
+    }
+
+    .checkbox__option_description {
+      font-size: 12px;
+      line-height: 14px;
+      padding: 4px 5px 0 30px;
+      margin: 0;
+    }
+  }
+}

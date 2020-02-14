@@ -1,0 +1,7 @@
+mixin checkOption(params)
+  -
+    var { label, checked=false } = params
+
+  label.checkbox__option.checkbox__option_label=label
+    input.checkbox__input(type="checkbox" checked=checked)
+    
