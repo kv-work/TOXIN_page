@@ -13,6 +13,9 @@ body {
   width: 1440px;
   padding: 143px 141px 150px;
   background-color: #f4f4f6;
+  display: grid;
+  grid-template-columns: 320px auto;
+  column-gap: 126px;
 }
 
 .logo_wrapper {
