@@ -14,7 +14,8 @@ mixin dropdown(params)
   .form_dropdown
     label.form_dropdown__label.like_h3=label      
     .iqdropdown(class=classList)
-      p.iqdropdown-selection=text
-      .iqdropdown-menu
-        each item, index in items
-          +dropdownItem(index+1, item)
+      .iqdropdown-selection-wrapper
+        p.iqdropdown-selection=text
+        .iqdropdown-menu
+          each item, index in items
+            +dropdownItem(index+1, item)

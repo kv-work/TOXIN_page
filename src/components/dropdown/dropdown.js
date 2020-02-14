@@ -1,8 +1,8 @@
 import 'item-quantity-dropdown/lib/item-quantity-dropdown.min.js';
 import 'item-quantity-dropdown/lib/item-quantity-dropdown.min.css';
 
+//Creating dropdown
 $('.js_form_dropdown').iqDropdown( {
-
   initialText: "Сколько гостей",
   selectionText: "гость",
   textPlural: "гостя",
@@ -35,6 +35,7 @@ $('.js_form_dropdown').iqDropdown( {
   onApply: () => {}
 } )
 
+//Creating multiple-dropdown
 $('.js_form_dropdown_multiple').iqDropdown( {
 
   initialText: "Выберите удобства",
@@ -45,16 +46,16 @@ $('.js_form_dropdown_multiple').iqDropdown( {
   },
   onChange: function (id, count, totalItems) {},
   beforeIncrement: (id, itemCount) => itemCount[id] < 4,
-  setCustomMessage(itemCount, totalItems) {
+  setCustomMessage(itemCount, totalItems, itemLabels) {
     if (totalItems == 0) return this.initialText;
     let selectionText = '';
     
     for (let key in itemCount) {
       if (itemCount[key] > 0) {
-        selectionText += itemCount[key] + " " + key;
+        selectionText += itemCount[key] + " " + itemLabels[key] + ", ";
       }
     }
 
-    return selectionText;
+    return selectionText.toLowerCase();
   },
 } )
