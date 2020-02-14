@@ -1,6 +1,6 @@
 
 mixin dropdownItem(index, item)
-  .iqdropdown-menu-option(data-id="item-"+index)
+  .iqdropdown-menu-option(data-id=`item-${index}`)
     div
       p.iqdropdown-item=item 
 
@@ -8,11 +8,12 @@ mixin dropdownItem(index, item)
 mixin dropdown(params)
 
   -
-    const {label, text, items} = params
+    var {label, text, items, multiple=false} = params
+    var classList = (multiple) ? "js_form_dropdown_multiple" : "js_form_dropdown"
 
   .form_dropdown
     label.form_dropdown__label.like_h3=label      
-    .iqdropdown.js_form_dropdown
+    .iqdropdown(class=classList)
       p.iqdropdown-selection=text
       .iqdropdown-menu
         each item, index in items
