@@ -20,6 +20,11 @@
     margin: 0;
   }
 
+  .checkbox__options_wrapper {
+    display: grid;
+    grid-row-gap: 10px;     
+  }
+
   &_expandable {
 
     .checkbox__label_wrapper {

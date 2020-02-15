@@ -43,6 +43,16 @@ block content
         .input_wrapper_with_subscription
           +input({ label: "subsription text field", placeholder: "Email", subscription: true })
 
+      .col
+        .checkbox_buttons_wrapper
+          -
+            var list = [
+              {label: "Можно курить"},
+              {label:"Можно с питомцами", checked: true},
+              {label:"Можно пригласить гостей (до 10 человек)", checked: true}
+            ]
+          +checkboxList({checkboxLabel: "checkbox buttons", list: list})
+
     .row
       .dropdown_multiple_items_wrapper
         span.style DEFAULT
