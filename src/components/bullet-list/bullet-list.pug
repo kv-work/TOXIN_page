@@ -1,0 +1,32 @@
+mixin bulletListItem(params)
+  -
+    var { label, color } = params
+    var classList = "bullet_list__item"
+    switch (color) {
+      case 'primary gradient':
+        classList += " bullet_list__item_color_primary_gradient"
+        break
+      case "secondary gradient":
+        classList += " bullet_list__item_color_secondary_gradient"
+        break
+      case "yellow gradient":
+        classList += " bullet_list__item_color_yellow_gradient"
+        break
+      case "black gradient":
+        classList += " bullet_list__item_color_black_gradient"
+        break
+      default:
+        classList += " bullet_list__item_color_dark_25"
+        break
+    }
+
+  li(class=classList)=label
+
+mixin bulletList(params)
+  -
+    var { label, itemList } = params
+  
+  lh.bullet_list__label=label
+  ul.bullet_list__list
+    each item in itemList
+      +bulletListItem(item)
