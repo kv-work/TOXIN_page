@@ -5,6 +5,7 @@
 @import '../../components/datepicker/datepicker.scss';
 @import '../../components/icon-item/icon-item.scss';
 @import '../../components/checkbox/checkbox.scss';
+@import '../../components/bullet-list/bullet-list.scss';
 
 body {
   min-width: 1440px;
@@ -76,4 +77,8 @@ body {
 .rich_checkbox_buttons {
   width: 266px;
   box-sizing: border-box;
+}
+
+.bullet_list_wrapper {
+  width: 292px;
 }

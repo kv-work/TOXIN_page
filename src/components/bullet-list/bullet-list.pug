@@ -26,7 +26,7 @@ mixin bulletList(params)
   -
     var { label, itemList } = params
   
-  lh.bullet_list__label=label
+  lh.bullet_list__label.like_h3=label
   ul.bullet_list__list
     each item in itemList
       +bulletListItem(item)
