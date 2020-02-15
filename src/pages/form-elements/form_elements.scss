@@ -14,10 +14,14 @@ body {
 .form_elements {
   width: 1440px;
   padding: 143px 141px 150px;
-  background-color: #f4f4f6;
   display: grid;
-  grid-template-columns: 320px auto;
-  column-gap: 126px;
+  grid-template-rows: auto;
+  row-gap: 40px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .logo_wrapper {

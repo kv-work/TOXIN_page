@@ -23,56 +23,60 @@ block content
 
 
   .form_elements
-    .col
-      .logo_wrapper
-        +logo({width: "48", height: "48", fill: "#1F2041", fillOpacity: ".25"})
-      .block_inputs_styled
-        +inputWrapper({style: "default", text: "text field", placeholder: "Email"})
-        +inputWrapper({style: "hover / focus", text: "text field", placeholder: "This is pretty awesome"})(class="form_input__input_isFocused")
+    .logo_wrapper
+      +logo({width: "48", height: "48", fill: "#1F2041", fillOpacity: ".25"})
+    .row
+      .col      
+        .block_inputs_styled
+          +inputWrapper({style: "default", text: "text field", placeholder: "Email"})
+          +inputWrapper({style: "hover / focus", text: "text field", placeholder: "This is pretty awesome"})(class="form_input__input_isFocused")
 
-        .dropdown_wrapper.default
-          span.style DEFAULT
-          +dropdown({label:"dropdown", text: "Сколько гостей", items:["Взрослые", "Дети", "Младенцы"]})
-        
-        +inputWrapper({style: "default", text: "masked text field", placeholder: "ДД.ММ.ГГГГ", masked: true})
+          .dropdown_wrapper.default
+            span.style DEFAULT
+            +dropdown({label:"dropdown", text: "Сколько гостей", items:["Взрослые", "Дети", "Младенцы"]})
+          
+          +inputWrapper({style: "default", text: "masked text field", placeholder: "ДД.ММ.ГГГГ", masked: true})
 
-      .datepickers_wrapper
-        +datepickersBlock({withAltInputs: true, lableStart: "date dropdown", labelEnd: "date dropdown", labelFilter: "filter date dropdown", valueEnd: "19.08.2019"})
+        .datepickers_wrapper
+          +datepickersBlock({withAltInputs: true, lableStart: "date dropdown", labelEnd: "date dropdown", labelFilter: "filter date dropdown", valueEnd: "19.08.2019"})
 
-      .input_wrapper_with_subscription
-        +input({ label: "subsription text field", placeholder: "Email", subscription: true })
+        .input_wrapper_with_subscription
+          +input({ label: "subsription text field", placeholder: "Email", subscription: true })
 
+    .row
       .dropdown_multiple_items_wrapper
         span.style DEFAULT
         +dropdown({label:"dropdown", text: "Сколько гостей", items:["Спальни", "Кровати", "Ванные комнаты"], multiple: true})
 
-      .expandable_checkbox_wrapper
-        -
-          var list = [
-            {label:"Завтрак"},
-            {label:"Письменный стол", checked: true},
-            {label: "Стул для кормления", checked: true},
-            {label: "Кроватка", checked: true},
-            {label: "Телевизор"},
-            {label: "Шампунь"},
-            {label: "Телевизор"},
-            {label: "Шампунь"}
-          ]
-        +checkboxList({checkboxLabel: "expandable checkbox list", list: list, type: "expandable"})
+    .row
+      .col
+        .expandable_checkbox_wrapper
+          -
+            var list = [
+              {label:"Завтрак"},
+              {label:"Письменный стол", checked: true},
+              {label: "Стул для кормления", checked: true},
+              {label: "Кроватка", checked: true},
+              {label: "Телевизор"},
+              {label: "Шампунь"},
+              {label: "Телевизор"},
+              {label: "Шампунь"}
+            ]
+          +checkboxList({checkboxLabel: "expandable checkbox list", list: list, type: "expandable"})
 
-      .expandable_checkbox_wrapper
-        -
-          var list = [
-            {label:"Завтрак"},
-            {label:"Письменный стол", checked: true},
-            {label: "Стул для кормления", checked: true},
-            {label: "Кроватка", checked: true},
-            {label: "Телевизор"},
-            {label: "Шампунь"},
-            {label: "Телевизор"},
-            {label: "Шампунь"}
-          ]
-        +checkboxList({checkboxLabel: "expandable checkbox list", list: list, type: "expandable", opened: true})
+        .expandable_checkbox_wrapper
+          -
+            var list = [
+              {label:"Завтрак"},
+              {label:"Письменный стол", checked: true},
+              {label: "Стул для кормления", checked: true},
+              {label: "Кроватка", checked: true},
+              {label: "Телевизор"},
+              {label: "Шампунь"},
+              {label: "Телевизор"},
+              {label: "Шампунь"}
+            ]
+          +checkboxList({checkboxLabel: "expandable checkbox list", list: list, type: "expandable", opened: true})
 
       .rich_checkbox_buttons
         -
@@ -92,6 +96,7 @@ block content
 
         +bulletList({label: "bullet list", itemList: list})
 
+    .row
       .icon_item_list_wrapper
         .icon_item_list
           +iconItem( {
