@@ -8,6 +8,7 @@ block variables
   include ../../components/icon-item/icon-item
   include ../../components/checkbox/checkbox
   include ../../components/bullet-list/bullet-list
+  include ../../components/button/button
 
   - var pageTitle = 'Form-elements'
 
@@ -52,6 +53,16 @@ block content
               {label:"Можно пригласить гостей (до 10 человек)", checked: true}
             ]
           +checkboxList({checkboxLabel: "checkbox buttons", list: list})
+
+      .col
+        .buttons_block
+          h3.buttons_block_label buttons
+          .buttons_block_wrapper
+            +button( {label: "Click me", style: "filled"} )
+            +button( {label: "Click me", style: "filled", disabled: true } )
+            +button( {label: "Click me", style: "no fill"} )
+            +button( {label: "Click me", style: "no fill", disabled: true } )
+
 
     .row
       .dropdown_multiple_items_wrapper

@@ -6,6 +6,7 @@
 @import '../../components/icon-item/icon-item.scss';
 @import '../../components/checkbox/checkbox.scss';
 @import '../../components/bullet-list/bullet-list.scss';
+@import '../../components/button/button.scss';
 
 body {
   min-width: 1440px;
@@ -89,4 +90,17 @@ body {
 
 .checkbox_buttons_wrapper {
   width: 222px;
+}
+
+.buttons_block {
+  width: 218px;
+
+  &_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 30px;
+  }
+
+
 }
