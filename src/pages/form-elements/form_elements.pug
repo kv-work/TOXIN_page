@@ -58,10 +58,16 @@ block content
         .buttons_block
           h3.buttons_block_label buttons
           .buttons_block_wrapper
-            +button( {label: "Click me", style: "filled"} )
-            +button( {label: "Click me", style: "filled", disabled: true } )
-            +button( {label: "Click me", style: "no fill"} )
-            +button( {label: "Click me", style: "no fill", disabled: true } )
+            .buttons_block_buttons
+              +button( {label: "Click me", style: "filled"} )
+              +button( {label: "Click me", style: "filled", disabled: true } )
+              +button( {label: "Click me", style: "no fill"} )
+              +button( {label: "Click me", style: "no fill", disabled: true } )
+              .buttons_block_no_borders
+                +button( {label: "Click me", style: "no borders" } )
+                +button( {label: "Click me", style: "no borders", disabled: true } )
+            .buttons_block_with_arrow
+              +button( {label: "Перейти к оплате", style: "filled", arrow: true } )
 
 
     .row
