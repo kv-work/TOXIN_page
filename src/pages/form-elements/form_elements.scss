@@ -1,13 +1,13 @@
-@import '../../settings.scss';
-@import '../../components/logo/logo.scss';
-@import '../../components/input/input.scss';
-@import '../../components/dropdown/dropdown.scss';
-@import '../../components/datepicker/datepicker.scss';
-@import '../../components/icon-item/icon-item.scss';
-@import '../../components/checkbox/checkbox.scss';
-@import '../../components/bullet-list/bullet-list.scss';
-@import '../../components/button/button.scss';
-@import '../../components/radio-buttons/radio-buttons.scss';
+@import "../../settings.scss";
+@import "../../components/logo/logo.scss";
+@import "../../components/input/input.scss";
+@import "../../components/dropdown/dropdown.scss";
+@import "../../components/datepicker/datepicker.scss";
+@import "../../components/icon-item/icon-item.scss";
+@import "../../components/checkbox/checkbox.scss";
+@import "../../components/bullet-list/bullet-list.scss";
+@import "../../components/button/button.scss";
+@import "../../components/radio-buttons/radio-buttons.scss";
 
 body {
   min-width: 1440px;
@@ -24,6 +24,11 @@ body {
 .row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+}
+
+.col {
+  display: grid;
+  row-gap: 20px;
 }
 
 .logo_wrapper {
@@ -126,6 +131,13 @@ body {
   }
 }
 
-.radio_buttons_wrapper {
-  width: 220px;
+.radio_buttons {
+  &_wrapper {
+    width: 220px;
+  }
+
+  &_label {
+    display: inline-block;
+    padding-bottom: 13px;
+  }
 }
