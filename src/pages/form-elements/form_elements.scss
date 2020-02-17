@@ -5,6 +5,8 @@
 @import '../../components/datepicker/datepicker.scss';
 @import '../../components/icon-item/icon-item.scss';
 @import '../../components/checkbox/checkbox.scss';
+@import '../../components/bullet-list/bullet-list.scss';
+@import '../../components/button/button.scss';
 
 body {
   min-width: 1440px;
@@ -13,10 +15,14 @@ body {
 .form_elements {
   width: 1440px;
   padding: 143px 141px 150px;
-  background-color: #f4f4f6;
   display: grid;
-  grid-template-columns: 320px auto;
-  column-gap: 126px;
+  grid-template-rows: auto;
+  row-gap: 40px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .logo_wrapper {
@@ -76,4 +82,25 @@ body {
 .rich_checkbox_buttons {
   width: 266px;
   box-sizing: border-box;
+}
+
+.bullet_list_wrapper {
+  width: 292px;
+}
+
+.checkbox_buttons_wrapper {
+  width: 222px;
+}
+
+.buttons_block {
+  width: 218px;
+
+  &_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 30px;
+  }
+
+
 }

@@ -1,0 +1,11 @@
+mixin button(params)
+  -
+    var {label, style, disabled = false} = params
+    var classList = "button"
+    if (style == "filled") 
+      classList += " button_filled"
+    if (disabled) {
+      classList += " button_disabled"
+    }
+  
+  button(class=classList)=label

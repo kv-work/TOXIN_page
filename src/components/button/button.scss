@@ -1,0 +1,25 @@
+.button {
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 0;
+  border: 2px solid $primary-purple;
+  letter-spacing: -0.02em;
+  padding-right: 3px;
+  padding-bottom: 1px;
+  height: 44px;
+  border-radius: 22px;
+
+
+  &_filled {    
+    color: white;
+    background: $primary-gradient;
+    border: none;
+  }
+
+  &_disabled {
+    opacity: 0.5;
+  }
+}

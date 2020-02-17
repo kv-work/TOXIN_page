@@ -1,0 +1,28 @@
+.bullet_list {
+
+  &__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: grid;
+    row-gap: 10px;
+    padding-top: 9px;
+    padding-right: 28.59px;
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 10.43px;
+    align-items: baseline;
+
+    &::before {
+      display: inline-block;
+      width: 10.43px;
+      height: 10px;
+      background: $dark-25;
+      content: '';
+      border-radius: 50%;
+    }
+  }
+}
