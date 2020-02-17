@@ -1,7 +1,7 @@
 class ExpandableCheckboxList {
   constructor(node) {
-    this.$list = node;
-    this.$options = this.$list.find('.checkbox__options_wrapper');
+    this.$list = $(node);
+    this.$options = this.$list.find('.checkbox__options');
     
     this._attachEventHandlers()
   }

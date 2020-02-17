@@ -20,7 +20,7 @@
     margin: 0;
   }
 
-  .checkbox__options_wrapper {
+  .checkbox__options {
     display: grid;
     grid-row-gap: 10px;     
   }
@@ -58,11 +58,6 @@
   }
 
   &_rich {
-
-    .checkbox__options {
-      display: grid;
-      grid-row-gap: 10px;
-    }
 
     .checkbox__option_label {
       font-weight: bold;
