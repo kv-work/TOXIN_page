@@ -17,12 +17,13 @@
     align-items: baseline;
 
     &::before {
-      display: inline-block;
+      display: block;
       width: 10.43px;
       height: 10px;
       background: $dark-25;
       content: '';
       border-radius: 50%;
+      margin-top: 7px;
     }
   }
 }
