@@ -3,7 +3,7 @@ mixin radio(params)
     var {list:{label, checked=false}, value} = params
     var labelClass = "radio_buttons__radio_label"
     if (checked)
-      labelClass += "_checked"
+      labelClass += " radio_buttons__radio_label_checked"
   
   label.radio_buttons__radio(class=labelClass)=label
     input.radio_buttons__radio_input(type="radio" name="gender" checked=checked value=value)
