@@ -1,0 +1,6 @@
+mixin radio(params)
+  -
+    var {list:{label, checked=false}, value} = params
+  
+  label.radio_buttons__radio_label=label
+    input.radio_button__radio(type="radio" name="gender" checked=checked value=value)

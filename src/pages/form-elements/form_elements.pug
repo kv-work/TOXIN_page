@@ -9,6 +9,7 @@ block variables
   include ../../components/checkbox/checkbox
   include ../../components/bullet-list/bullet-list
   include ../../components/button/button
+  include ../../components/radio-buttons/radio-buttons
 
   - var pageTitle = 'Form-elements'
 
@@ -53,6 +54,14 @@ block content
               {label:"Можно пригласить гостей (до 10 человек)", checked: true}
             ]
           +checkboxList({checkboxLabel: "checkbox buttons", list: list})
+        
+        .radio_buttons_wrapper
+          +radioButtons({
+            list: [
+              {label: "Мужчина", checked: true},
+              {label: "Женщина"}
+            ]
+          })
 
       .col
         .buttons_block
