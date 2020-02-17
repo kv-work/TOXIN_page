@@ -7,6 +7,7 @@
 @import '../../components/checkbox/checkbox.scss';
 @import '../../components/bullet-list/bullet-list.scss';
 @import '../../components/button/button.scss';
+@import '../../components/radio-buttons/radio-buttons.scss';
 
 body {
   min-width: 1440px;
@@ -123,4 +124,8 @@ body {
   &_with_arrow {
     grid-column: 1/3;
   }
+}
+
+.radio_buttons_wrapper {
+  width: 220px;
 }
