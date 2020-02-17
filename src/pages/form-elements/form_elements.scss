@@ -8,6 +8,7 @@
 @import "../../components/bullet-list/bullet-list.scss";
 @import "../../components/button/button.scss";
 @import "../../components/radio-buttons/radio-buttons.scss";
+@import "../../components/toggle-button/toggle-button.scss";
 
 body {
   min-width: 1440px;
@@ -139,5 +140,20 @@ body {
   &_label {
     display: inline-block;
     padding-bottom: 13px;
+  }
+}
+
+.toggle_buttons {
+  &_wrapper {
+    width: 260px;
+    display: grid;
+    row-gap: 10px;
+    grid-template-rows: 19px 24px 24px;
+  }
+
+  &_label {
+    display: inline-block;
+    padding-bottom: 6px;
+    letter-spacing: -0.02em;
   }
 }

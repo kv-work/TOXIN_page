@@ -10,6 +10,7 @@ block variables
   include ../../components/bullet-list/bullet-list
   include ../../components/button/button
   include ../../components/radio-buttons/radio-buttons
+  include ../../components/toggle-button/toggle-button
 
   - var pageTitle = 'Form-elements'
 
@@ -63,6 +64,11 @@ block content
               {label: "Женщина"}
             ]
           })
+
+        .toggle_buttons_wrapper
+          h3.toggle_buttons_label toggle
+          +toggleButton({label: "Получать спецпредложения", checked: true})
+          +toggleButton({label: "Получать спецпредложения"})
 
       .col
         .buttons_block
