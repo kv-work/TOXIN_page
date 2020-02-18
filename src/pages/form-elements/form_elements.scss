@@ -9,6 +9,7 @@
 @import "../../components/button/button.scss";
 @import "../../components/radio-buttons/radio-buttons.scss";
 @import "../../components/toggle-button/toggle-button.scss";
+@import "../../components/like-button/like-button.scss";
 
 body {
   min-width: 1440px;
@@ -155,5 +156,20 @@ body {
     display: inline-block;
     padding-bottom: 6px;
     letter-spacing: -0.02em;
+  }
+}
+
+.like_buttons {  
+  display: grid;
+  grid-template-columns: 40px 40px;
+  column-gap: 10px;
+
+  &_wrapper {
+    width: 90px;
+  }
+
+  &_label {
+    display: inline-block;
+    padding-bottom: 16px;
   }
 }

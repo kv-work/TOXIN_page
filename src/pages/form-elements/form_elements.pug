@@ -11,6 +11,7 @@ block variables
   include ../../components/button/button
   include ../../components/radio-buttons/radio-buttons
   include ../../components/toggle-button/toggle-button
+  include ../../components/like-button/like-button
 
   - var pageTitle = 'Form-elements'
 
@@ -21,10 +22,7 @@ block variables
       span.style=style.toUpperCase()
       +input( {label: text, placeholder: placeholder, masked: masked} )&attributes(attributes)
 
-
 block content
-
-
   .form_elements
     .logo_wrapper
       +logo({width: "48", height: "48", fill: "#1F2041", fillOpacity: ".25"})
@@ -69,6 +67,12 @@ block content
           h3.toggle_buttons_label toggle
           +toggleButton({label: "Получать спецпредложения", checked: true})
           +toggleButton({label: "Получать спецпредложения"})
+
+        .like_buttons_wrapper
+          h3.like_buttons_label like button
+          .like_buttons
+            +likeButton( {count: 2} )
+            +likeButton( {count: 12, checked: true} )
 
       .col
         .buttons_block

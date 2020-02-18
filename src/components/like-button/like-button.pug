@@ -1,0 +1,9 @@
+mixin likeButton(params)
+  -
+    var {count, checked=false} = params
+    var labelClass = "like_button__label"
+    if (checked) 
+      labelClass += " like_button__label_checked"
+
+  label.like_button(class=labelClass)=count
+    input.like_button__input(type="checkbox" checked=checked)
