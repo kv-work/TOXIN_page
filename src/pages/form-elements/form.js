@@ -5,6 +5,7 @@ import '../../components/dropdown/dropdown'
 import '../../components/checkbox/checkbox'
 import '../../components/button/button'
 import '../../components/radio-buttons/radio-buttons'
+import '../../components/like-button/like-button'
 
 import 'item-quantity-dropdown/lib/item-quantity-dropdown.min.css';
 
