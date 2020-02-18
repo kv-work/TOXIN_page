@@ -12,6 +12,7 @@ block variables
   include ../../components/radio-buttons/radio-buttons
   include ../../components/toggle-button/toggle-button
   include ../../components/like-button/like-button
+  include ../../components/rate-button/rate-button
 
   - var pageTitle = 'Form-elements'
 
@@ -73,6 +74,11 @@ block content
           .like_buttons
             +likeButton( {count: 2} )
             +likeButton( {count: 12, checked: true} )
+
+        .rate_buttons_wrapper
+          h3.rate_buttons__label rate button
+          +rateButton( {name: "rate_1",rate: 3} )
+          +rateButton( {name: "rate_2", rate: 4} )
 
       .col
         .buttons_block

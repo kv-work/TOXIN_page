@@ -10,6 +10,7 @@
 @import "../../components/radio-buttons/radio-buttons.scss";
 @import "../../components/toggle-button/toggle-button.scss";
 @import "../../components/like-button/like-button.scss";
+@import "../../components/rate-button/rate-button.scss";
 
 body {
   min-width: 1440px;
@@ -171,5 +172,18 @@ body {
   &_label {
     display: inline-block;
     padding-bottom: 16px;
+  }
+}
+
+.rate_buttons {
+  &_wrapper {
+    display: grid;
+    grid-template-columns: 120px 120px;
+    column-gap: 20px;
+    row-gap: 6px;
+  }
+
+  &__label {
+    grid-column: 1/3;
   }
 }

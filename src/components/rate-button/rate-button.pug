@@ -1,0 +1,8 @@
+mixin rateButton(params)
+  -
+    var { name, rate } = params
+    var n = 0
+
+  .rate_button
+    while n < 5
+      input.rate_button__input(type="radio" name=name checked=(n++ == rate))
