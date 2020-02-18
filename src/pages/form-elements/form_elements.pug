@@ -13,6 +13,7 @@ block variables
   include ../../components/toggle-button/toggle-button
   include ../../components/like-button/like-button
   include ../../components/rate-button/rate-button
+  include ../../components/range-slider/range-slider
 
   - var pageTitle = 'Form-elements'
 
@@ -81,6 +82,10 @@ block content
           +rateButton( {name: "rate_2", rate: 4} )
 
       .col
+        .range_slider_wrapper
+          +rangeSlider()
+
+
         .buttons_block
           h3.buttons_block_label buttons
           .buttons_block_wrapper
@@ -94,7 +99,6 @@ block content
                 +button( {label: "Click me", style: "no borders", disabled: true } )
             .buttons_block_with_arrow
               +button( {label: "Перейти к оплате", style: "filled", arrow: true } )
-
 
     .row
       .dropdown_multiple_items_wrapper
