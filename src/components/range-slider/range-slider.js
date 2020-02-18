@@ -24,8 +24,8 @@ class Slider {
 
   _renderVal($slider, $display) {
     
-    const dataFrom = $slider.data('from') + '₽';
-    const dataTo = $slider.data('to') + '₽';
+    const dataFrom = $slider.data('from').toString().replace(/(\d)(?=(\d{3})+$)/g, '$1 ') + '₽';
+    const dataTo = $slider.data('to').toString().replace(/(\d)(?=(\d{3})+$)/g, '$1 ') + '₽';
     const data = dataFrom + ' - ' + dataTo;
     $display.html(data)
   }
