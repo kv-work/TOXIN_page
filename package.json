@@ -32,6 +32,7 @@
     "ion-rangeslider": "^2.3.1",
     "item-quantity-dropdown": "git+https://github.com/kv-work/item-quantity-dropdown.git#custom-dropdown",
     "jquery": "^3.4.1",
-    "material-icons": "^0.3.1"
+    "material-icons": "^0.3.1",
+    "paginationjs": "^2.1.5"
   }
 }
