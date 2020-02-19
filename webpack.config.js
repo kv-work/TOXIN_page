@@ -4,7 +4,9 @@ const webpack = require('webpack');
 
 module.exports = (env = {}) => {
 
-  const { mode = "development" } = env;
+  const {
+    mode = "development"
+  } = env;
 
   const isProd = mode === "production";
   const isDev = mode === "development";
@@ -45,7 +47,9 @@ module.exports = (env = {}) => {
 
     if (isProd) {
       plugins.push(new MiniCssExtractPlugin({
-        moduleFilename: ({ name }) => name === 'main' ? '[name].css' : '[name]/[name].css'
+        moduleFilename: ({
+          name
+        }) => name === 'main' ? '[name].css' : '[name]/[name].css'
       }))
     }
 
@@ -72,7 +76,6 @@ module.exports = (env = {}) => {
 
     module: {
       rules: [
-
         //Loading .pug
         {
           test: /\.pug$/,
@@ -91,10 +94,11 @@ module.exports = (env = {}) => {
         //Loading SCSS/Sass
         {
           test: /\.(s[ca]ss)$/,
+          exclude: /img/,
           use: [
             ...getStyleLoaders(),
             {
-              loader: 'resolve-url-loader'             
+              loader: 'resolve-url-loader'
             },
             {
               loader: "sass-loader",
@@ -108,11 +112,26 @@ module.exports = (env = {}) => {
         //Loadin Fonts
         {
           test: /\.(ttf|woff|otf|woff2|eot|svg)$/,
+          exclude: /img/,
           use: [{
             loader: 'file-loader',
             options: {
               publicPath: '../fonts',
               outputPath: 'fonts',
+              name: '[name].[ext]'
+            }
+          }]
+        },
+
+        //Loading images
+        {
+          test: /\.(png|gif|jpeg|jpg|svg)$/,
+          exclude: /fonts/,
+          use: [{
+            loader: 'file-loader',
+            options: {
+              publicPath: '../img',
+              outputPath: 'img',
               name: '[name].[ext]'
             }
           }]
