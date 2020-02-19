@@ -1,19 +1,17 @@
-import 'paginationjs'
+import 'paginationjs/dist/pagination.min.js'
+import "paginationjs/dist/pagination.css";
 
 $('.js-pagination').pagination({
-  dataSource: [1, 2, 3, 4, 5],
-  callback: function(data, pagination) {
-    // template method of yourself
-    var html = simpleTemplating(data);
-    $('#data-container').html(html);
-  }
+  dataSource: function(done){
+    const numberOfPages = $('.js-pagination')[0].dataset.pages;
+    let result = [];
+    for (var i = 1; i <= numberOfPages; i++) {
+        result.push(i);
+    }
+    done(result);
+  },
+  pageSize: 1,
+  pageRange: 1,
+  autoHidePrevious: true,
+  autoHideNext: true,
 })
-
-function simpleTemplating(data) {
-  var html = '<ul>';
-  $.each(data, function(index, item){
-      html += '<li>'+ item +'</li>';
-  });
-  html += '</ul>';
-  return html;
-}
