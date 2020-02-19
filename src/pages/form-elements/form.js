@@ -7,6 +7,7 @@ import '../../components/button/button'
 import '../../components/radio-buttons/radio-buttons'
 import '../../components/like-button/like-button'
 import '../../components/range-slider/range-slider'
+import '../../components/pagination/pagination'
 
 import 'item-quantity-dropdown/lib/item-quantity-dropdown.min.css';
 

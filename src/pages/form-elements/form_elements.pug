@@ -15,6 +15,7 @@ block variables
   include ../../components/rate-button/rate-button
   include ../../components/range-slider/range-slider
   include ../../components/comment-block/comment-block
+  include ../../components/pagination/pagination
 
   - var pageTitle = 'Form-elements'
 
@@ -100,6 +101,10 @@ block content
                 +button( {label: "Click me", style: "no borders", disabled: true } )
             .buttons_block_with_arrow
               +button( {label: "Перейти к оплате", style: "filled", arrow: true } )
+
+        .pagination_block_wrapepr
+          h3.pagination_block_wrapper_label pagination
+          +pagination({numberOfPages: 15, description: "1 – 12 из 100+ вариантов аренды"})
 
     .row
       .dropdown_multiple_items_wrapper
