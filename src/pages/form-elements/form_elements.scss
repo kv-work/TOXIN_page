@@ -12,6 +12,7 @@
 @import "../../components/like-button/like-button.scss";
 @import "../../components/rate-button/rate-button.scss";
 @import "../../components/range-slider/range-slider.scss";
+@import "../../components/comment-block/comment-block.scss";
 
 body {
   min-width: 1440px;
@@ -83,10 +84,6 @@ body {
 .expandable_checkbox_wrapper {
   width: 266px;
   box-sizing: border-box;
-}
-
-.icon_item_list_wrapper {
-  width: 291px;
 }
 
 .rich_checkbox_buttons {
@@ -191,4 +188,12 @@ body {
 
 .range_slider_wrapper {
   width: 266px;
+}
+
+.icon_item_list_wrapper {
+  width: 291px;
+}
+
+.comment_block_wrapper {
+  width: 711px;
 }

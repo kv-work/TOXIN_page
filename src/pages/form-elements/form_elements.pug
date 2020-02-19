@@ -14,6 +14,7 @@ block variables
   include ../../components/like-button/like-button
   include ../../components/rate-button/rate-button
   include ../../components/range-slider/range-slider
+  include ../../components/comment-block/comment-block
 
   - var pageTitle = 'Form-elements'
 
@@ -167,3 +168,14 @@ block content
             label: "Удобство",
             description: "Окно в каждой из спален"
             } )
+
+      .comment_block_wrapper
+        +commentBlock({
+          name: "Мурад Сарафанов",
+          date: "5 дней назад",
+          comment: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
+          likes: {
+            count: "12",
+            checked: true
+          }})
+      
