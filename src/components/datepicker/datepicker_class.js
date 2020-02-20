@@ -8,21 +8,19 @@ export default class Datepicker {
     // this.$datepicker = this.$node.find('.js_datepicker_ranged');
     this.settings = {
       ...options,
-      offset: -52,
       onSelect: (_, date) => this._selectDate(date, this.startDate, this.endDate),
       onHide: (inst) => this._selectDate(inst.selectedDates, this.startDate, this.endDate)
     };
 
-    // this._render();
-    // this._addApplyButton();
-    // this._attachEventHandlers();
+    this._render();
+    this._addApplyButton();
+    this._attachEventHandlers();
   }
 
   _attachEventHandlers() {
     const { $node, startDate, endDate, datepickerData, $applyBtn, _setDate } = this;
-
+    
     //start date element event handlers
-    startDate.focus( (e) => e.target.value = '' );
     startDate.change( (e) => _setDate(e.target.value, e.target, datepickerData) )
 
     //end date element event handlers
@@ -39,7 +37,7 @@ export default class Datepicker {
   }
 
   _render() {
-    this.datepickerData = this.$datepicker.datepicker(this.settings).data('datepicker');
+    this.datepickerData = this.startDate.datepicker(this.settings).data('datepicker');
   }
 
   _addApplyButton() {

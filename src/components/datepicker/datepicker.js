@@ -38,6 +38,7 @@ const datepicker = $('.js_datepicker_ranged').datepicker({
   multipleDatesSeparator: " - ",
   dateFormat: 'd M',
   clearButton: true,
+  offset: 17,
   navTitles: {
     days: 'MM yyyy'
   },
