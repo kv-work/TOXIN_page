@@ -1,5 +1,5 @@
 mixin datepicker(params)
-  - 
+  -
     var {label, ranged=false, value=""} = params
     var classList = ranged ? "js_datepicker_ranged" : "js_datepicker js_datepicker_masked"
     if (value) {
@@ -15,12 +15,8 @@ mixin datepicker(params)
 
 mixin datepickersBlock(params)
 
-  - var {withAltInputs=false, lableStart="", labelEnd="", labelFilter, valueStart="", valueEnd="", valueFilter=""} = params
+  - var {lableStart="", labelEnd="", valueStart="", valueEnd=""} = params
 
   .form_datepickerblock
-    .datepicker_wrapper
-      +datepicker({label: lableStart, value: valueStart})(class="start_date")
-      +datepicker({label: labelEnd, value: valueEnd})(class="end_date")
-
-    .datepicker_wrapper_ranged
-      +datepicker( {label: labelFilter, value: valueFilter, ranged: true} )
+    +datepicker({label: lableStart, value: valueStart})(class="start_date")
+    +datepicker({label: labelEnd, value: valueEnd})(class="end_date")

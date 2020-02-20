@@ -5,7 +5,7 @@ export default class Datepicker {
     this.$node = $(node);
     this.startDate = this.$node.find('.start_date');
     this.endDate = this.$node.find('.end_date');
-    this.$datepicker = this.$node.find('.js_datepicker_ranged');
+    // this.$datepicker = this.$node.find('.js_datepicker_ranged');
     this.settings = {
       ...options,
       offset: -52,
@@ -13,9 +13,9 @@ export default class Datepicker {
       onHide: (inst) => this._selectDate(inst.selectedDates, this.startDate, this.endDate)
     };
 
-    this._render();
-    this._addApplyButton();
-    this._attachEventHandlers();
+    // this._render();
+    // this._addApplyButton();
+    // this._attachEventHandlers();
   }
 
   _attachEventHandlers() {

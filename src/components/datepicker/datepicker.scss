@@ -1,11 +1,19 @@
 @import 'air-datepicker/dist/css/datepicker.min';
 
 .form_datepicker {
+
   &__label {
     display: block;
     padding: 3px 0 5px 0;
     
   }
+}
+
+.form_datepickerblock {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 150px 150px;
+  grid-column-gap: 20px;
 }
 
 .form_datepicker__input_wrapper {
