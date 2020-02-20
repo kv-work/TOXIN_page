@@ -24,7 +24,11 @@ export default class Datepicker {
     startDate.change( (e) => _setDate(e.target.value, e.target, datepickerData) )
 
     //end date element event handlers
-    endDate.focus( (e) => e.target.value = '' );
+    endDate.focus( (e) => {
+      e.target.value = '';
+      const startDate = datepickerData.selectedDates[0];
+      datepickerData.selectDate(startDate);
+    } );
     endDate.change( (e) => _setDate(e.target.value, e.target, datepickerData) )
 
     //apply button event handlers
