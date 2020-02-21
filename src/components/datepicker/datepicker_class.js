@@ -1,51 +1,72 @@
 import 'air-datepicker/dist/js/datepicker.min';
 
 export default class Datepicker {
-  constructor(node, options) {    
+  constructor(node, options) {
     this.$node = $(node);
-    this.startDate = this.$node.find('.start_date');
-    this.endDate = this.$node.find('.end_date');
-    // this.$datepicker = this.$node.find('.js_datepicker_ranged');
-    this.settings = {
+    this.isSeparated = this.$node.hasClass('js_form_datepicker_separated');
+    this.wrapper = this.$node.find('.form_datepicker_wrapper');
+    this.data = this.$node.find('input').data()
+
+    if (this.isSeparated) {
+      this.$datepicker = this.$node.find('.js_datepicker_separated');
+    } else {
+      this.$datepicker = this.$node.find('.js_datepicker');
+    }
+
+    if (this.isSeparated) this._addEndDateInput();
+
+    this.settings = (!this.isSeparated) ? options : {
       ...options,
-      onSelect: (_, date) => this._selectDate(date, this.startDate, this.endDate),
-      onHide: (inst) => this._selectDate(inst.selectedDates, this.startDate, this.endDate)
+      onSelect: (_, date) => this._selectDate(date, this.$datepicker, this.$endDate),
+      onHide: (inst) => this._selectDate(inst.selectedDates, this.$datepicker, this.$endDate)
     };
 
     this._render();
+    
     this._addApplyButton();
     this._attachEventHandlers();
   }
 
   _attachEventHandlers() {
-    const { $node, startDate, endDate, datepickerData, $applyBtn, _setDate } = this;
-    
-    //start date element event handlers
-    startDate.change( (e) => _setDate(e.target.value, e.target, datepickerData) )
+    const { $node, $endDate, $datepicker, datepickerData, $applyBtn, _setDate } = this;
 
-    //end date element event handlers
-    endDate.focus( (e) => {
-      e.target.value = '';
-      const startDate = datepickerData.selectedDates[0];
-      datepickerData.selectDate(startDate);
-    } );
-    endDate.change( (e) => _setDate(e.target.value, e.target, datepickerData) )
+    $node.click(() => datepickerData.show())
+
+    // start date element event handlers
+    if (this.isSeparated) {
+      $datepicker.change((e) => _setDate(e.target.value, e.target, datepickerData))
+    }
+
+    if (this.isSeparated) {
+      // end date element event handlers
+      $endDate.focus((e) => {
+        e.target.value = '';
+        const startDate = datepickerData.selectedDates[0];
+        datepickerData.selectDate(startDate);
+      });
+
+      $endDate.change((e) => _setDate(e.target.value, e.target, datepickerData))
+    }
+
 
     //apply button event handlers
     $applyBtn.click((e) => {
       console.log(e.target)
     })
-
-    $node.find('.form_datepicker').click( () => datepickerData.show() );
-    
   }
 
   _render() {
-    this.datepickerData = this.startDate.datepicker(this.settings).data('datepicker');
+    this.datepickerData = this.$datepicker.datepicker(this.settings).data('datepicker');
+  }
+
+  _addEndDateInput() {
+    const { labelSecond, valueSecond } = this.data;
+
+    this.$endDate = this.$node.append('<div class="form_datepicker_wrapper"><label class="form_datepicker__label like_h3">' + labelSecond + '</label><div class="form_datepicker__input_wrapper"><input class="form_datepicker__end_date_input js_datepicker_masked" type="text" class=classList placeholder="ДД.ММ.ГГГГ" data-date=' + valueSecond + ' /></div></div>').find('.form_datepicker__end_date_input')
   }
 
   _addApplyButton() {
-    this.$applyBtn = this.datepickerData.$datepicker.find('.datepicker--buttons').append('<button type="button" class="datepicker--button-apply">Применить</button>')     
+    this.$applyBtn = this.datepickerData.$datepicker.find('.datepicker--buttons').append('<button type="button" class="datepicker--button-apply">Применить</button>').find('.datepicker--button-apply')
   }
 
   _selectDate(date, startEl, endEl) {

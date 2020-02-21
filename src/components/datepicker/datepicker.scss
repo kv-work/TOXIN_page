@@ -9,7 +9,7 @@
   }
 }
 
-.form_datepickerblock {
+.js_form_datepicker_separated {  
   width: 100%;
   display: grid;
   grid-template-columns: 150px 150px;
@@ -45,7 +45,8 @@
   }
 }
 
-.form_datepicker__input {
+.form_datepicker__input,
+.form_datepicker__end_date_input {
   font-family: Montserrat, Arial, sans-serif;
   padding: 1px 0 0 14px;
   cursor: inherit;

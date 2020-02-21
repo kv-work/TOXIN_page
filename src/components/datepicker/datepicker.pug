@@ -1,22 +1,23 @@
 mixin datepicker(params)
   -
-    var {label, ranged=false, value=""} = params
-    var classList = ranged ? "js_datepicker_ranged" : "js_datepicker js_datepicker_masked"
+    var {label, separated=false, labelSecond="", value="", valueSecond=""} = params
+    var classList = separated ? "js_datepicker_separated js_datepicker_masked" : "js_datepicker"
+    var classListBlock = separated ? "form_datepicker js_form_datepicker_separated" : "form_datepicker js_form_datepicker"
     if (value) {
-      classList += " form_datepicker__input_with_data"
       var date = value
     }
 
-  .form_datepicker
-    label.form_datepicker__label.like_h3=label    
-    .form_datepicker__input_wrapper
-      input.form_datepicker__input(type="text" class=classList placeholder="ДД.ММ.ГГГГ" date=date)&attributes(attributes)
-      
 
-mixin datepickersBlock(params)
-
-  - var {lableStart="", labelEnd="", valueStart="", valueEnd=""} = params
-
-  .form_datepickerblock
-    +datepicker({label: lableStart, value: valueStart})(class="start_date")
-    +datepicker({label: labelEnd, value: valueEnd})(class="end_date")
+  div(class=classListBlock)
+    .form_datepicker_wrapper
+      label.form_datepicker__label.like_h3=label    
+      .form_datepicker__input_wrapper
+        input.form_datepicker__input(
+          type="text" 
+          class=classList 
+          placeholder="ДД.ММ.ГГГГ" 
+          data-date=date 
+          data-separated=separated 
+          data-label-second=labelSecond 
+          data-value-second=valueSecond
+        )
