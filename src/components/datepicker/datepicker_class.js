@@ -30,14 +30,12 @@ export default class Datepicker {
   _attachEventHandlers() {
     const { $node, $endDate, $datepicker, datepickerData, $applyBtn, _setDate } = this;
 
-    $node.click(() => datepickerData.show())
+    $node.click(() => datepickerData.show())    
 
-    // start date element event handlers
     if (this.isSeparated) {
+      // start date element event handlers
       $datepicker.change((e) => _setDate(e.target.value, e.target, datepickerData))
-    }
 
-    if (this.isSeparated) {
       // end date element event handlers
       $endDate.focus((e) => {
         e.target.value = '';
@@ -45,7 +43,10 @@ export default class Datepicker {
         datepickerData.selectDate(startDate);
       });
 
-      $endDate.change((e) => _setDate(e.target.value, e.target, datepickerData))
+      $endDate.change((e) => {
+        
+        _setDate(e.target.value, e.target, datepickerData)
+      })
     }
 
 
@@ -62,7 +63,7 @@ export default class Datepicker {
   _addEndDateInput() {
     const { labelSecond, valueSecond } = this.data;
 
-    this.$endDate = this.$node.append('<div class="form_datepicker_wrapper"><label class="form_datepicker__label like_h3">' + labelSecond + '</label><div class="form_datepicker__input_wrapper"><input class="form_datepicker__end_date_input js_datepicker_masked" type="text" class=classList placeholder="ДД.ММ.ГГГГ" data-date=' + valueSecond + ' /></div></div>').find('.form_datepicker__end_date_input')
+    this.$endDate = this.$node.append('<div class="form_datepicker_wrapper"><label class="form_datepicker__label like_h3">' + labelSecond + '</label><div class="form_datepicker__input_wrapper"><input class="form_datepicker__end_date_input js_datepicker_masked end_date" type="text" class=classList placeholder="ДД.ММ.ГГГГ" data-date=' + valueSecond + ' /></div></div>').find('.form_datepicker__end_date_input')
   }
 
   _addApplyButton() {
@@ -92,6 +93,7 @@ export default class Datepicker {
   }
 
   _setDate(date, input, calendar) {
+    console.log(date)
     const dateString = date.split('.').reverse().join('-');
     let startDate, endDate;
 

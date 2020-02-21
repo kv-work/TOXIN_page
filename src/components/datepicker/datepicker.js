@@ -2,12 +2,6 @@ import 'air-datepicker/dist/js/datepicker.min';
 import 'cleave.js';
 import Datepicker from './datepicker_class';
 
-//Set initial value  
-$('.js_datepicker_masked').toArray().forEach(function (field) {
-  const inputValue = $(field).attr('data-date')
-  $(field).val(inputValue)
-})
-
 const datepickerBlocks = $('.js_form_datepicker, .js_form_datepicker_separated').each(function () {
   //config datepicker's language
   $.fn.datepicker.language['my-lang'] = {
@@ -38,6 +32,12 @@ const datepickerBlocks = $('.js_form_datepicker, .js_form_datepicker_separated')
   const datepicker = new Datepicker(this, options);
 
   return datepicker;
+})
+
+//Set initial value  
+$('.js_datepicker_masked').toArray().forEach(function (field) {
+  const inputValue = $(field).attr('data-date')
+  $(field).val(inputValue)
 })
 
 //Add a mask to enter the date
