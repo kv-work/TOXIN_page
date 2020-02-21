@@ -1,5 +1,6 @@
 import 'paginationjs/dist/pagination.min.js'
 import "paginationjs/dist/pagination.css";
+import './pagination.scss';
 
 $('.js-pagination').pagination({
   dataSource: function(done){

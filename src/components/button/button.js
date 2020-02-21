@@ -1,3 +1,5 @@
+import './button.scss';
+
 class Button {
   constructor(node) {
     this.$this = $(node)

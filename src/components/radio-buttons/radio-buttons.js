@@ -1,3 +1,5 @@
+import './radio-buttons.scss';
+
 class Radio {
   constructor(node) {
     this.$this = $(node)

@@ -1,3 +1,5 @@
+import './like-button.scss'
+
 class LikeButton {
   constructor(node) {
     this.$this = $(node);

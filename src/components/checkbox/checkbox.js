@@ -1,3 +1,5 @@
+import './checkbox.scss';
+
 class ExpandableCheckboxList {
   constructor(node) {
     this.$list = $(node);

@@ -1,4 +1,5 @@
 import 'cleave.js'
+import './input.scss'
 
 $(document).ready( () => {
 
