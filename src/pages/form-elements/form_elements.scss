@@ -7,7 +7,7 @@ body {
 
 .form_elements {
   width: 1440px;
-  padding: 143px 141px 150px;
+  padding: 140px 141px 150px;
   display: grid;
   grid-template-rows: auto;
   row-gap: 40px;
@@ -16,6 +16,7 @@ body {
 .row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  column-gap: 126px;
 }
 
 .col {
@@ -34,6 +35,10 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   grid-row-gap: 20px;
+}
+
+.style  {
+  text-transform: uppercase;
 }
 
 .default,

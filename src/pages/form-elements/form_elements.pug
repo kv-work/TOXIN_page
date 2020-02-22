@@ -33,14 +33,22 @@ block content
     .row
       .col      
         .block_inputs_styled
-          +inputWrapper({style: "default", text: "text field", placeholder: "Email"})
-          +inputWrapper({style: "hover / focus", text: "text field", placeholder: "This is pretty awesome"})(class="form_input__input_isFocused")
+          div.input_wrapper( class="default" )
+            span.style="default"
+            +input( {label: "text field", placeholder: "Email"} )
+          div.input_wrapper( class="hover_focus" )
+            span.style="hover / focus"
+            +input( {label: "text field", placeholder: "This is pretty awesome"} )(class="form_input__input_isFocused")
+          
 
           .dropdown_wrapper.default
             span.style DEFAULT
             +dropdown({label:"dropdown", text: "Сколько гостей", items:["Взрослые", "Дети", "Младенцы"]})
+
+          div.input_wrapper( class="default" )
+            span.style="default"
+            +input( {label: "masked text field", placeholder: "ДД.ММ.ГГГГ", masked: true} )
           
-          +inputWrapper({style: "default", text: "masked text field", placeholder: "ДД.ММ.ГГГГ", masked: true})
 
         .datepickers_wrapper
           +datepicker({label: "date dropdown", separated: true, labelSecond: "date dropdown", valueSecond: "19.08.2019"})
