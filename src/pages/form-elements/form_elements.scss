@@ -14,14 +14,17 @@ body {
 }
 
 .row {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  column-gap: 126px;
+  column-gap: 112px;
 }
 
 .col {
+  position: relative;
+  max-width: 320px;
   display: grid;
-  row-gap: 20px;
+  row-gap: 15px;
 }
 
 .logo_wrapper {
@@ -30,27 +33,42 @@ body {
   left: 30px;
 }
 
-.block_inputs_styled {
-  width: 320px;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-row-gap: 20px;
-}
-
 .style  {
   text-transform: uppercase;
 }
 
-.default,
-.hover_focus {
+.input_wrapper {
   position: relative;
+
+  &.hover_focus {
+    padding-top: 2.45px;
+  }
+
+  &.masked {
+    padding-top: 5px;
+  }
 }
 
 .style {
   color: $dark-50;
-  float: right;
+  position: absolute;
+  right: 0;
   font-size: 12px;
   line-height: 15px;
+
+  &.hover_focus {
+    top: 5px;
+    letter-spacing: -0.02em;
+  }
+}
+
+.dropdown_wrapper {
+  padding-top: 2px;
+
+  & .style {
+    padding-bottom: 5px;
+    top: 3px;
+  }
 }
 
 .datepickers_wrapper {
@@ -129,12 +147,13 @@ body {
 
   &_label {
     display: inline-block;
-    padding-bottom: 13px;
+    padding-bottom: 14px;
   }
 }
 
 .toggle_buttons {
   &_wrapper {
+    padding-top: 2.5px;
     width: 260px;
     display: grid;
     row-gap: 10px;
@@ -144,7 +163,7 @@ body {
   &_label {
     display: inline-block;
     padding-bottom: 6px;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
   }
 }
 
@@ -154,6 +173,7 @@ body {
   column-gap: 10px;
 
   &_wrapper {
+    padding-top: 1px;
     width: 90px;
   }
 
@@ -165,10 +185,11 @@ body {
 
 .rate_buttons {
   &_wrapper {
+    padding-top: 3px;
     display: grid;
     grid-template-columns: 120px 120px;
     column-gap: 20px;
-    row-gap: 6px;
+    row-gap: 7px;
   }
 
   &__label {

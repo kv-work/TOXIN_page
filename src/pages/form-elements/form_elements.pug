@@ -19,36 +19,26 @@ block variables
 
   - var pageTitle = 'Form-elements'
 
-  mixin inputWrapper(params)
-    - var {style, text, placeholder, masked = false} = params
-
-    div.input_wrapper( class=style.split(' / ').join('_') )
-      span.style=style.toUpperCase()
-      +input( {label: text, placeholder: placeholder, masked: masked} )&attributes(attributes)
-
 block content
   .form_elements
     .logo_wrapper
       +logo({width: "48", height: "48", fill: "#1F2041", fillOpacity: ".25"})
     .row
-      .col      
-        .block_inputs_styled
-          div.input_wrapper( class="default" )
-            span.style="default"
-            +input( {label: "text field", placeholder: "Email"} )
-          div.input_wrapper( class="hover_focus" )
-            span.style="hover / focus"
-            +input( {label: "text field", placeholder: "This is pretty awesome"} )(class="form_input__input_isFocused")
-          
+      .col
+        div.input_wrapper.default
+          span.style="default"
+          +input( {label: "text field", placeholder: "Email"} )
+        div.input_wrapper( class="hover_focus" )
+          span.style.hover_focus="hover / focus"
+          +input( {label: "text field", placeholder: "This is pretty awesome"} )(class="form_input__input_isFocused")
 
-          .dropdown_wrapper.default
-            span.style DEFAULT
-            +dropdown({label:"dropdown", text: "Сколько гостей", items:["Взрослые", "Дети", "Младенцы"]})
+        .dropdown_wrapper.default
+          span.style DEFAULT
+          +dropdown({label:"dropdown", text: "Сколько гостей", items:["Взрослые", "Дети", "Младенцы"]})
 
-          div.input_wrapper( class="default" )
-            span.style="default"
-            +input( {label: "masked text field", placeholder: "ДД.ММ.ГГГГ", masked: true} )
-          
+        .input_wrapper.default.masked
+          span.style="default"
+          +input( {label: "masked text field", placeholder: "ДД.ММ.ГГГГ", masked: true} )
 
         .datepickers_wrapper
           +datepicker({label: "date dropdown", separated: true, labelSecond: "date dropdown", valueSecond: "19.08.2019"})
@@ -56,8 +46,8 @@ block content
         .datepicker_wrapper_filtered
           +datepicker({label: "filter date dropdown"})
 
-        .input_wrapper_with_subscription
-          +input({ label: "subsription text field", placeholder: "Email", subscription: true })
+          .input_wrapper_with_subscription
+            +input({ label: "subsription text field", placeholder: "Email", subscription: true })
 
       .col
         .checkbox_buttons_wrapper
