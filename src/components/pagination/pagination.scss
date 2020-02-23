@@ -1,6 +1,17 @@
 @import "../../settings.scss";
 
 .pagination_block {
+
+  &__pagination {
+    padding-bottom: 8px;
+  }
+
+  &__description {
+    padding-left: 6px;
+  }
+}
+
+.pagination_block {
   &__pagination {
     & .paginationjs-pages {
       & li {
