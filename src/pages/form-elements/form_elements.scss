@@ -25,6 +25,10 @@ body {
   min-width: 320px;
   display: flex;
   flex-direction: column;
+  
+  &:nth-child(2) {
+    padding-left: 54px;
+  }
 }
 
 .logo_wrapper {
