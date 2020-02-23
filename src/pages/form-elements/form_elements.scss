@@ -23,8 +23,8 @@ body {
 .col {
   position: relative;
   max-width: 320px;
-  display: grid;
-  row-gap: 15px;
+  display: flex;
+  flex-direction: column;
 }
 
 .logo_wrapper {
@@ -41,11 +41,12 @@ body {
   position: relative;
 
   &.hover_focus {
+    margin-top: 16px;
     padding-top: 2.45px;
   }
 
   &.masked {
-    padding-top: 5px;
+    margin-top: 20px;
   }
 }
 
@@ -63,7 +64,8 @@ body {
 }
 
 .dropdown_wrapper {
-  padding-top: 2px;
+  position: relative;
+  margin-top: 16px;
 
   & .style {
     padding-bottom: 5px;
@@ -73,16 +75,18 @@ body {
 
 .datepickers_wrapper {
   width: 320px;
-
+  margin-top: 37px;;
 }
 
 .datepicker_wrapper_filtered {
   width: 266px;
+  margin-top: 38px;
 }
 
 .input_wrapper_with_subscription {
   width: 267px;
   box-sizing: border-box;
+  margin-top: 38px;
 }
 
 .dropdown_multiple_items_wrapper {
