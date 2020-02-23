@@ -108,9 +108,22 @@ block content
           +pagination({numberOfPages: 15, description: "1 – 12 из 100+ вариантов аренды"})
 
     .row
-      .dropdown_multiple_items_wrapper
-        span.style DEFAULT
-        +dropdown({label:"dropdown", text: "Сколько гостей", items:["Спальни", "Кровати", "Ванные комнаты"], multiple: true})
+      .col
+        .dropdown_multiple_items_wrapper
+          span.style DEFAULT
+          +dropdown({label:"dropdown", text: "Сколько гостей", items:["Спальни", "Кровати", "Ванные комнаты"], multiple: true})
+        
+        .dropdown_multiple_items_expanded_wrapper
+          span.style expanded
+          +dropdown({label:"dropdown", text: "Сколько гостей", items:["Спальни", "Кровати", "Ванные комнаты"], multiple: true})
+      
+      .col
+        .dropdown_wrapper_expanded
+          +dropdown({label:"dropdown", text: "Сколько гостей", items:["Взрослые", "Дети", "Младенцы"]})
+
+      .col
+        .dropdown_wrapper_expanded
+          +dropdown({label:"dropdown", text: "Сколько гостей", items:["Взрослые", "Дети", "Младенцы"]})
 
     .row
       .col

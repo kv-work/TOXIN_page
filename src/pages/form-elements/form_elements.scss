@@ -7,7 +7,7 @@ body {
 
 .form_elements {
   width: 1440px;
-  padding: 140px 141px 150px;
+  padding: 140px 141px 150px 140px;
   display: grid;
   grid-template-rows: auto;
   row-gap: 40px;
@@ -18,6 +18,10 @@ body {
   display: grid;
   grid-template-columns: 320px auto 320px;
   column-gap: 72px;
+
+  &:nth-child(3) {
+    padding-top: 57px;
+  }
 }
 
 .col {
@@ -27,7 +31,7 @@ body {
   flex-direction: column;
   
   &:nth-child(2) {
-    padding-left: 54px;
+    padding-left: 55px;
   }
 }
 
@@ -43,6 +47,7 @@ body {
 
 .input_wrapper {
   position: relative;
+  margin-left: 1px;
 
   &.hover_focus {
     margin-top: 16px;
@@ -75,16 +80,22 @@ body {
     padding-bottom: 5px;
     top: 3px;
   }
+
+  &_expanded {
+    width: 320px;
+  }
 }
 
 .datepickers_wrapper {
   width: 320px;
-  margin-top: 37px;;
+  margin-top: 37px;
+  margin-left: 1px;
 }
 
 .datepicker_wrapper_filtered {
   width: 266px;
   margin-top: 38px;
+  margin-left: 1px;
 }
 
 .input_wrapper_with_subscription {
@@ -93,8 +104,19 @@ body {
   margin-top: 38px;
 }
 
-.dropdown_multiple_items_wrapper {
+.dropdown_multiple_items {
+  
+  &_wrapper {
   width: 267px;
+  position: relative;
+  }
+
+  &_expanded_wrapper {
+    margin-top: 17px;
+    width: 266px;
+    position: relative;
+    height: 184px;
+  }
 }
 
 .expandable_checkbox_wrapper {
