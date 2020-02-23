@@ -4,7 +4,7 @@
 .form__checkbox {
 
   .checkbox__label_wrapper {
-    height: 44px;
+    height: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -19,16 +19,22 @@
     color: $dark-100;
     text-transform: uppercase;
     margin: 0;
+    padding: 3px 0 17px 0;
   }
 
   .checkbox__options {
     display: grid;
-    grid-row-gap: 10px;     
+    grid-row-gap: 10px;
   }
 
   &_expandable {
 
     .checkbox__label_wrapper {
+
+      & .checkbox__label {
+        padding: 0;
+      }
+
       &::after {
         font-family: "Material Icons";
         width: 44px;
