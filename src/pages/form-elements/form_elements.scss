@@ -249,8 +249,14 @@ body {
   padding-top: 3px;
 }
 
-.icon_item_list_wrapper {
-  width: 291px;
+.icon_item_list {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 20px;
+
+  &_wrapper {
+    width: 291px;
+  }
 }
 
 .comment_block_wrapper {
