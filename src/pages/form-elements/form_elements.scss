@@ -122,15 +122,21 @@ body {
 .expandable_checkbox_wrapper {
   width: 266px;
   box-sizing: border-box;
+
+  &:nth-child(2) {
+    margin-top: 20px;
+  }
 }
 
 .rich_checkbox_buttons {
   width: 266px;
   box-sizing: border-box;
+  padding-top: 12px;
 }
 
 .bullet_list_wrapper {
   width: 292px;
+  padding-top: 10px;
 }
 
 .checkbox_buttons_wrapper {
