@@ -1,17 +1,42 @@
-@import './settings.scss';
+@import "./settings.scss";
+
+h1 {
+	font-family: Quicksand, OpenSans, sans-serif;
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 29px;
+	color: $dark-100;
+}
+
+h2 {
+	font-family: Quicksand, OpenSans, sans-serif;
+	font-weight: bold;
+	font-size: 19px;
+	line-height: 23px;
+	color: $dark-100;
+}
+
+h3,
+.like_h3 {
+	font-family: Montserrat, Arial, sans-serif;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 15px;
+	text-transform: uppercase;
+	margin: 0;
+	color: $dark-100;
+}
 
 body {
-  margin: 0;
+	font-family: Montserrat, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 24px;
+  color: $dark-75;
   padding: 0;
+  margin: 0;
 }
 
-.colors-n-types {
-  position: relative;
-  height: 900px;
-  background-color: #fff;
-}
-
-.form_elements {
-  position: relative;
-  height: 1853px;
+p {
+  padding: 0;
+  margin: 0;
 }
