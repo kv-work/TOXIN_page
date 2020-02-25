@@ -169,7 +169,7 @@ block content
               {label: "Телевизор"},
               {label: "Шампунь"}
             ]
-          +checkboxList({checkboxLabel: "expandable checkbox list", list: list, type: "expandable"})
+          +checkboxList({checkboxLabel: "expandable checkbox list", list, type: "expandable"})
 
         .expandable_checkbox_wrapper
           -
@@ -183,7 +183,7 @@ block content
               {label: "Телевизор"},
               {label: "Шампунь"}
             ]
-          +checkboxList({checkboxLabel: "expandable checkbox list", list: list, type: "expandable", opened: true})
+          +checkboxList({checkboxLabel: "expandable checkbox list", list, type: "expandable", opened: true})
 
       .col
         .rich_checkbox_buttons
@@ -192,18 +192,18 @@ block content
               {label: "Широкий коридор", description: "Ширина коридоров в номере не\u00A0менее 91 см.", checked: false},
               {label: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист и проводит до номера."}
             ]
-          +checkboxList({checkboxLabel: "rich checkbox buttons", list: list, type: "rich" })
+          +checkboxList({checkboxLabel: "rich checkbox buttons", list, type: "rich" })
 
       .col
         .bullet_list_wrapper
           -
-            var list = [
+            var itemList = [
               {label: "Нельзя с питомцами"},
               {label: "Без вечеринок и мероприятий"},
               {label: "Время прибытия — после 13:00, а выезд до 12:00"}
             ]
 
-          +bulletList({label: "bullet list", itemList: list})
+          +bulletList({label: "bullet list", itemList})
 
     .row
       .col

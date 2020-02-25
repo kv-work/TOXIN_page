@@ -23,21 +23,29 @@
     outline: none;
   }
 
+  &_disabled {
+    border: 2px solid transparentize($primary-purple, 0.5);
+  }
+
   &_no_borders {
     width: auto;
     border: none;
     letter-spacing: 0;
     height: auto;
+
+    &.button_disabled {
+      color: $dark-50;
+    }
   }
 
   &_filled {
     color: white;
     background: $primary-gradient;
     border: none;
-  }
 
-  &_disabled {
-    opacity: 0.5;
+    &.button_disabled {
+      opacity: .5;
+    }
   }
 
   &_with_arrow {
