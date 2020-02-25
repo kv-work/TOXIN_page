@@ -63,7 +63,7 @@ export default class Datepicker {
   _addEndDateInput() {
     const { labelSecond, valueSecond } = this.data;
 
-    this.$endDate = this.$node.append('<div class="form_datepicker_wrapper"><label class="form_datepicker__label like_h3">' + labelSecond + '</label><div class="form_datepicker__input_wrapper"><input class="form_datepicker__end_date_input js_datepicker_masked end_date" type="text" class=classList placeholder="ДД.ММ.ГГГГ" data-date=' + valueSecond + ' /></div></div>').find('.form_datepicker__end_date_input')
+    this.$endDate = this.$node.append('<div class="form_datepicker_wrapper"><label class="form_datepicker__label like_h3">' + labelSecond + '</label><div class="form_datepicker__input_wrapper"><input class="form_datepicker__end_date_input js_datepicker_masked" type="text" class=classList placeholder="ДД.ММ.ГГГГ" data-date=' + valueSecond + ' /></div></div>').find('.form_datepicker__end_date_input')
   }
 
   _addApplyButton() {
@@ -93,16 +93,17 @@ export default class Datepicker {
   }
 
   _setDate(date, input, calendar) {
-    console.log(date)
+
     const dateString = date.split('.').reverse().join('-');
     let startDate, endDate;
 
     if (input.classList.contains('start_date')) {
+      console.log("start")
 
       startDate = new Date(dateString)
       endDate = calendar.selectedDates[1] ? calendar.selectedDates[1] : startDate
 
-    } else if (input.classList.contains('end_date')) {
+    } else if (input.classList.contains('form_datepicker__end_date_input')) {
 
       endDate = new Date(dateString)
       startDate = calendar.selectedDates[0] ? calendar.selectedDates[0] : new Date()
