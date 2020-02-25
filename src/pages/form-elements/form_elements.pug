@@ -33,8 +33,14 @@ block content
           +input( {label: "text field", placeholder: "This is pretty awesome"} )(class="form_input__input_isFocused")
 
         .dropdown_wrapper.default
+          -
+            var items = [
+              {itemLabel: "Взрослые", itemCount: 0},
+              {itemLabel: "Дети", itemCount: 0},
+              {itemLabel: "Младенцы", itemCount: 0},
+            ]
           span.style DEFAULT
-          +dropdown({label:"dropdown", text: "Сколько гостей", items:["Взрослые", "Дети", "Младенцы"]})
+          +dropdown({label:"dropdown", text: "Сколько гостей", items})
 
         .input_wrapper.default.masked
           span.style="default"
@@ -110,20 +116,44 @@ block content
     .row
       .col
         .dropdown_multiple_items_wrapper
+          -
+            var items = [
+              {itemLabel: "Спальни", itemCount: 2},
+              {itemLabel: "Кровати", itemCount: 2},
+              {itemLabel: "Ванные комнаты", itemCount: 0},
+            ]
           span.style DEFAULT
-          +dropdown({label:"dropdown", text: "Сколько гостей", items:["Спальни", "Кровати", "Ванные комнаты"], multiple: true})
+          +dropdown({label:"dropdown", text: "Сколько гостей", items, multiple: true})
         
         .dropdown_multiple_items_expanded_wrapper
+          -
+            var items = [
+              {itemLabel: "Спальни", itemCount: 2},
+              {itemLabel: "Кровати", itemCount: 2},
+              {itemLabel: "Ванные комнаты", itemCount: 0},
+            ]
           span.style expanded
-          +dropdown({label:"dropdown", text: "Сколько гостей", items:["Спальни", "Кровати", "Ванные комнаты"], multiple: true})
+          +dropdown({label:"dropdown", text: "Сколько гостей", items, multiple: true})(class="menu-open")
       
       .col
         .dropdown_wrapper_expanded
-          +dropdown({label:"dropdown", text: "Сколько гостей", items:["Взрослые", "Дети", "Младенцы"]})
+          -
+            var items = [
+              {itemLabel: "Взрослые", itemCount: 0},
+              {itemLabel: "Дети", itemCount: 0},
+              {itemLabel: "Младенцы", itemCount: 0},
+            ]
+          +dropdown({label:"dropdown", text: "Сколько гостей", items})(class="menu-open")
 
       .col
         .dropdown_wrapper_expanded
-          +dropdown({label:"dropdown", text: "Сколько гостей", items:["Взрослые", "Дети", "Младенцы"]})
+          -
+            var items = [
+              {itemLabel: "Взрослые", itemCount: 2},
+              {itemLabel: "Дети", itemCount: 1},
+              {itemLabel: "Младенцы", itemCount: 0},
+            ]
+          +dropdown({label:"dropdown", text: "Сколько гостей", items})(class="menu-open")
 
     .row
       .col

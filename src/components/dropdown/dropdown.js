@@ -53,7 +53,11 @@ $('.js_form_dropdown_multiple').iqDropdown( {
     
     for (let key in itemCount) {
       if (itemCount[key] > 0) {
-        selectionText += itemCount[key] + " " + itemLabels[key] + ", ";
+        if (selectionText.length == 0) {
+          selectionText += itemCount[key] + ' ' + itemLabels[key];
+        } else {
+          selectionText += ', ' + itemCount[key] + ' ' + itemLabels[key];
+        } 
       }
     }
 
