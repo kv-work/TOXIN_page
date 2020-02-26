@@ -92,6 +92,10 @@
   border-radius: 4px;
   padding: 20px;
 
+  &--pointer {
+    display: none;
+  }
+
   &--nav {
     padding: 0;
     border: none;
@@ -194,14 +198,13 @@
     color: $dark-50;
     height: 40px;
 
-    &.-selected-,
-    &.-selected-:hover{
-      background: $primary-gradient;
-      border-radius: 22px;
-    }
+
 
     &.-range-from- {
       position: relative;
+      border: none;
+      background: none;
+
       &::after {
         position: absolute;
         right: 0;
@@ -211,10 +214,6 @@
         background: $primary-gradient;
         opacity: .25;
       }
-    }
-
-    &.-range-to- {
-      position: relative;
       
       &::before {
         position: absolute;
@@ -224,6 +223,38 @@
         height: 100%;
         background: $primary-gradient;
         opacity: .25;
+        border-bottom-left-radius: 22px;
+        border-top-left-radius: 22px;
+        border: none;
+      }
+    }
+
+    &.-range-to- {
+      position: relative;
+      border: none;
+      background: none;
+      
+      &::before {
+        position: absolute;
+        left: 0;
+        content: '';
+        width: 50%;
+        height: 100%;
+        background: $primary-gradient;
+        opacity: .25;
+      }
+
+      &::after {
+        position: absolute;
+        right: 0;
+        content: '';
+        width: 50%;
+        height: 100%;
+        background: $primary-gradient;
+        opacity: .25;
+        border-bottom-right-radius: 22px;
+        border-top-right-radius: 22px;
+        border: none;
       }
     }
     
@@ -242,6 +273,12 @@
         background: $primary-gradient;
         opacity: .25;
       }
+    }
+
+    &.-selected-,
+    &.-selected-:hover{
+      background: $primary-gradient;
+      border-radius: 22px;
     }
 
     &.-current- {

@@ -26,6 +26,7 @@ const datepickerBlocks = $('.js_form_datepicker, .js_form_datepicker_separated')
     dateFormat: 'd M',
     clearButton: true,
     minDate: new Date('2019-08-19'),
+    offset: 15,
     navTitles: {
       days: 'MM yyyy'
     }
