@@ -17,12 +17,12 @@ export default class Datepicker {
 
     this.settings = (!this.isSeparated) ? options : {
       ...options,
-      onSelect: (_, date) => this._selectDate(date, this.$datepicker, this.$endDate),
-      onHide: (inst) => this._selectDate(inst.selectedDates, this.$datepicker, this.$endDate)
+      onSelect: (formattedDate) => {
+        this._selectDate(formattedDate, this.$datepicker, this.$endDate)
+      }
     };
 
-    this._render();
-    
+    this._render();    
     this._addApplyButton();
     this._attachEventHandlers();
   }
@@ -30,25 +30,7 @@ export default class Datepicker {
   _attachEventHandlers() {
     const { $node, $endDate, $datepicker, datepickerData, $applyBtn, _setDate } = this;
 
-    $node.click(() => datepickerData.show())    
-
-    if (this.isSeparated) {
-      // start date element event handlers
-      $datepicker.change((e) => _setDate(e.target.value, e.target, datepickerData))
-
-      // end date element event handlers
-      $endDate.focus((e) => {
-        e.target.value = '';
-        const startDate = datepickerData.selectedDates[0];
-        datepickerData.selectDate(startDate);
-      });
-
-      $endDate.change((e) => {
-        
-        _setDate(e.target.value, e.target, datepickerData)
-      })
-    }
-
+    $node.click(() => datepickerData.show())
 
     //apply button event handlers
     $applyBtn.click((e) => {
@@ -58,58 +40,35 @@ export default class Datepicker {
 
   _render() {
     this.datepickerData = this.$datepicker.datepicker(this.settings).data('datepicker');
+
+    if (this.isSeparated) this.datepickerData.update('dateFormat', 'dd.mm.yyyy')
   }
 
   _addEndDateInput() {
     const { labelSecond, valueSecond } = this.data;
 
-    this.$endDate = this.$node.append('<div class="form_datepicker_wrapper"><label class="form_datepicker__label like_h3">' + labelSecond + '</label><div class="form_datepicker__input_wrapper"><input class="form_datepicker__end_date_input js_datepicker_masked" type="text" class=classList placeholder="ДД.ММ.ГГГГ" data-date=' + valueSecond + ' /></div></div>').find('.form_datepicker__end_date_input')
+    this.$endDate = this.$node.append('<div class="form_datepicker_wrapper"><label class="form_datepicker__label like_h3">' + labelSecond + '</label><div class="form_datepicker__input_wrapper"><input class="form_datepicker__end_date_input js_datepicker_masked" type="text" placeholder="ДД.ММ.ГГГГ" data-date=' + valueSecond + ' readonly /></div></div>').find('.form_datepicker__end_date_input')
   }
 
   _addApplyButton() {
     this.$applyBtn = this.datepickerData.$datepicker.find('.datepicker--buttons').append('<button type="button" class="datepicker--button-apply">Применить</button>').find('.datepicker--button-apply')
   }
 
-  _selectDate(date, startEl, endEl) {
-    
-    let start, end;
+  _selectDate(formattedDate, startEl, endEl) {    
+    const dates = formattedDate.split(' - ')
 
-    switch (date.length) {
+    switch (dates.length) {
       case 1:
-        start = date[0].toLocaleDateString();
-        if (startEl) $(startEl).val(start);
+        $(startEl).val(dates[0]);
         break;
-      case 2:
-        end = date[1].toLocaleDateString();
-        start = date[0].toLocaleDateString();
-        if (startEl) $(startEl).val(start);
-        if (endEl) $(endEl).val(end)
+      case 2:        
+        $(startEl).val(dates[0]);
+        $(endEl).val(dates[1])
         break;
       default:
         $(startEl).val('');
-        $(endEl).val('')
+        $(endEl).val('');
         break;
     }
-  }
-
-  _setDate(date, input, calendar) {
-
-    const dateString = date.split('.').reverse().join('-');
-    let startDate, endDate;
-
-    if (input.classList.contains('start_date')) {
-      console.log("start")
-
-      startDate = new Date(dateString)
-      endDate = calendar.selectedDates[1] ? calendar.selectedDates[1] : startDate
-
-    } else if (input.classList.contains('form_datepicker__end_date_input')) {
-
-      endDate = new Date(dateString)
-      startDate = calendar.selectedDates[0] ? calendar.selectedDates[0] : new Date()
-    }
-
-    const dateArr = [startDate, endDate]
-    calendar.selectDate(dateArr)
   }
 }
