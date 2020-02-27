@@ -1,4 +1,5 @@
-console.log("testing");
+//Scripts loading
 
+
+//Style loading
 import "./main.scss";
-

@@ -1,0 +1,46 @@
+@import "../../settings.scss";
+
+.rate_button {
+  height: auto;
+  font-size: 0;
+
+  &__input {
+    position: relative;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 24px;
+    height: 24px;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: Material Icons;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 20px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      content: "star";
+      background: $primary-gradient;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      box-sizing: border-box;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &:checked ~ input::after {
+      content: "star_border";
+    }
+  }
+}

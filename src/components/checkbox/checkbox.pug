@@ -1,0 +1,28 @@
+include ./__option/option
+
+mixin checkboxList(params)
+  -
+    var { checkboxLabel, list={}, opened=false, type } = params
+    var classList = "form__checkbox"
+    switch (type) {
+      case "expandable":
+        classList += " form__checkbox_expandable"
+        if (opened)
+          classList += " form__checkbox_expandable_opened"
+        break
+      case "rich":
+        classList += " form__checkbox_rich"
+        break
+    }
+
+
+  div(class=classList)
+    .checkbox__label_wrapper
+      p.checkbox__label=checkboxLabel
+    .checkbox__options
+      each item, index in list
+        .checkbox__option_wrapper
+          +checkOption(item)
+          if type == "rich"
+            p.checkbox__option_description=item.description
+

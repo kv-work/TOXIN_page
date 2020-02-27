@@ -1,8 +1,8 @@
-@import "./__sample_text/sample_text.scss";
-@import "./__tag_name/tag_name.scss";
+@import './__sample_text/sample_text.scss';
+@import './__tag_name/tag_name.scss';
 
 .type_example {
-	display: grid;
-	grid-template-columns: 37px 1fr;
-	grid-column-gap: 30px;
+  display: grid;
+  grid-template-columns: 37px 1fr;
+  grid-column-gap: 30px;
 }

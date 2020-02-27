@@ -1,0 +1,335 @@
+@import "../../settings.scss";
+@import 'air-datepicker/dist/css/datepicker.min';
+
+.form_datepicker {
+
+  &__label {
+    display: block;
+    padding: 3px 0 5px 0;
+    
+  }
+}
+
+.js_form_datepicker_separated {  
+  width: 100%;
+  display: grid;
+  grid-template-columns: 150px 150px;
+  grid-column-gap: 20px;
+}
+
+.form_datepicker__input_wrapper {
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: $dark-75;
+  height: 44px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #FFFFFF;
+  border: 1px solid $dark-25;
+  box-sizing: border-box;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &::after {
+    font-family: "Material Icons";
+    width: 42px;
+    height: 44px;
+    font-size: 24px;
+    line-height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content: "expand_more";
+    top: -13px;
+  }
+}
+
+.form_datepicker__input,
+.form_datepicker__end_date_input {
+  font-family: Montserrat, Arial, sans-serif;
+  padding: 1px 0 0 14px;
+  cursor: inherit;
+  border: none;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 18px;
+  color: $dark-75;
+  max-width: calc(100% - 44px);
+
+  &:hover,
+  &:focus {    
+    outline: none;
+  }
+  
+  &::placeholder {
+    font-family: Montserrat, Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: $dark-75;
+  }
+}
+
+
+//editing plugin styles
+.form_datepicker .datepicker {  
+  border: 1px solid $dark-25;  
+  box-shadow: 0 10px 20px $dark-5;  
+
+}
+
+.datepicker--cell-day.-other-month- {
+  color: $dark-25;
+}
+
+.datepicker {
+  width: 320px;
+  background-color: #fff;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 20px;
+
+  &--pointer {
+    display: none;
+  }
+
+  &--nav {
+    padding: 0;
+    border: none;
+
+    &-title {
+      font-family: Quicksand, "Open Sans",  Arial, sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 19px;
+      line-height: 24px;
+      text-align: center;
+      color: $dark-100;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    &-action:nth-child(1) {
+      width: 24px;
+      height: 24px;
+      
+      &::after {
+        font-family: "Material Icons";
+        font-size: 24px;
+        line-height: 24px;
+        width: 24px;
+        height: 24px;
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+        content: "arrow_back";
+        background: $primary-gradient;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      & svg {
+        display: none;
+      }
+    }
+
+      &-action:nth-child(3) {
+        width: 24px;
+        height: 24px;
+        
+        &::after {
+          font-family: "Material Icons";
+          font-size: 24px;
+          line-height: 24px;
+          width: 24px;
+          height: 24px;
+          display: inline-block;
+          text-align: center;
+          vertical-align: middle;
+          content: "arrow_forward";
+          background: $primary-gradient;
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+      & svg {
+        display: none;
+      }    
+    }
+  }
+
+  &--content {
+    padding: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  &--days-names {
+    margin: 0;
+  }
+
+  &--day-name {
+    font-family: Montserrat,"Open Sans", Arial, sans-serif;
+    font-weight: bold;
+    color: $primary-purple;
+    font-size: 12px;
+    line-height: 15px;
+    width: 40px;
+    height: 40px;
+    text-transform: none;
+  }
+
+  &--cell {
+    padding: 0;
+    margin: 0;
+    font-family: Montserrat, Arial, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $dark-50;
+    height: 40px;
+
+
+
+    &.-range-from- {
+      position: relative;
+      border: none;
+      background: none;
+
+      &::after {
+        position: absolute;
+        right: 0;
+        content: '';
+        width: 50%;
+        height: 100%;
+        background: $primary-gradient;
+        opacity: .25;
+      }
+      
+      &::before {
+        position: absolute;
+        left: 0;
+        content: '';
+        width: 50%;
+        height: 100%;
+        background: $primary-gradient;
+        opacity: .25;
+        border-bottom-left-radius: 22px;
+        border-top-left-radius: 22px;
+        border: none;
+      }
+    }
+
+    &.-range-to- {
+      position: relative;
+      border: none;
+      background: none;
+      
+      &::before {
+        position: absolute;
+        left: 0;
+        content: '';
+        width: 50%;
+        height: 100%;
+        background: $primary-gradient;
+        opacity: .25;
+      }
+
+      &::after {
+        position: absolute;
+        right: 0;
+        content: '';
+        width: 50%;
+        height: 100%;
+        background: $primary-gradient;
+        opacity: .25;
+        border-bottom-right-radius: 22px;
+        border-top-right-radius: 22px;
+        border: none;
+      }
+    }
+    
+
+
+    &.-in-range- {
+      position: relative;
+      background: none;
+
+      &::before {
+        position: absolute;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background: $primary-gradient;
+        opacity: .25;
+      }
+    }
+
+    &.-selected-,
+    &.-selected-:hover{
+      background: $primary-gradient;
+      border-radius: 22px;
+    }
+
+    &.-current- {
+      background: $secondary-gradient;
+      border-radius: 22px;
+      color: white;
+    }
+
+    &.-current-.-in-range- {
+      color: white;
+    }
+  }
+
+  &--buttons {
+    padding: 0;
+    border: none;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+  }
+
+  &--button {
+    display: inline-block;
+    flex: 0;
+    height: auto;
+    font-family: Montserrat, Arial, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+
+    &-apply {
+      padding: 0;
+      display: inline-block;
+      flex: 0;
+      height: auto;
+      font-family: Montserrat, Arial, sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 15px;
+      text-transform: uppercase;
+      color: $primary-purple;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+
+    &[data-action="clear"] {
+      color: $dark-50;
+    }
+  }
+}

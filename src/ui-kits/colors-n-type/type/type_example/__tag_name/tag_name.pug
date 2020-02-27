@@ -1,9 +1,8 @@
 mixin tagName(tagName)
-	-
-		var classList = "type_example__tag_name"
-		if (tagName) {			
-			classList += " "+classList+"_size_"+tagName.toLowerCase()
-		}
+  -
+    var classList = "type_example__tag_name"
+    if (tagName) {			
+      classList += " "+classList+"_size_"+tagName.toLowerCase()
+    }
 
-	div(class=classList)=tagName
-		
+  div(class=classList)=tagName

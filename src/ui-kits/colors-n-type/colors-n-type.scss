@@ -1,21 +1,22 @@
-@import "../logo/logo.scss";
-@import "./color_palettes/color_palettes.scss";
-@import "./type/type.scss";
+@import '../../settings.scss';
+@import '../logo/logo.scss';
+@import './color_palettes/color_palettes.scss';
+@import './type/type.scss';
 
-.logo {
-	position: absolute;
-	top: 30px;
-	left: 30px;
+.logo_wrapper {
+  position: absolute;
+  top: 30px;
+  left: 30px;
 }
 
-.colors_palettes {
-	position: absolute;
-	top: 145px;
-	left: 149.75px;
+.colors_wrapper {
+  position: absolute;
+  top: 145px;
+  left: 149.75px;
 }
 
-.type {
-	position: absolute;
-	top: 145px;
-	left: 846px;
+.type_wrapper {
+  position: absolute;
+  top: 145px;
+  left: 846px;
 }

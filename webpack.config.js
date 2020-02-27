@@ -1,85 +1,149 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const webpack = require('webpack');
 
 module.exports = (env = {}) => {
 
-	const { mode = "development" } = env;
-	
-	const isProd = mode === "production";
-	const isDev = mode === "development";
+  const {
+    mode = "development"
+  } = env;
 
-	function getStyleLoaders() {
-		return [
-			isProd ? MiniCssExtractPlugin.loader : 'style-loader',
-			'css-loader'
-		]
-	}
+  const isProd = mode === "production";
+  const isDev = mode === "development";
 
-	function getPlugins() {
-		const plugins = [	new HtmlWebpackPlugin(
-					{	filename: "index.html",
-						template: "./src/index.pug"}
-				) ];
+  function getStyleLoaders() {
+    return [
+      isProd ? MiniCssExtractPlugin.loader : 'style-loader',
+      'css-loader'
+    ]
+  }
 
-		if (isProd) {
-			plugins.push( new MiniCssExtractPlugin() )
-		}
+  //Функция для настройки подключаемых plagin'ов
+  function getPlugins() {
+    const plugins = [
+      new HtmlWebpackPlugin({
+        chunks: ['main'],
+        filename: "index.html",
+        template: "./src/index.pug"
+      }),
 
-		return plugins
-	}
+      new HtmlWebpackPlugin({
+        chunks: ['colors'],
+        filename: "colors/colors.html",
+        template: "./src/ui-kits/colors-n-type/colors-n-type.pug"
+      }),
 
+      new HtmlWebpackPlugin({
+        chunks: ['form'],
+        filename: "form/form.html",
+        template: "./src/pages/form-elements/form_elements.pug"
+      }),
 
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery'
+      })
+    ];
 
+    if (isProd) {
+      plugins.push(new MiniCssExtractPlugin({
+        moduleFilename: ({
+          name
+        }) => name === 'main' ? '[name].css' : '[name]/[name].css'
+      }))
+    }
 
-	return {
-		
-			mode,
+    return plugins
+  }
 
-			module: {
-				rules: [
-		
-					//Loading .pug
-					{
-						test: /\.pug$/,
-						loader: "pug-loader",
-						options: {
-							pretty: true
-						}
-					},
-		
-					//Loading CSS
-					{
-						test: /\.css$/,
-						use: getStyleLoaders()
-					},
-		
-					//Loading SCSS/Sass
-					{
-						test: /\.(s[ca]ss)$/,
-						use: [ ...getStyleLoaders(), "sass-loader"]
-					},
+  //Объект настроек
+  return {
 
-					//Loadin Fonts
-					{
-						test: /\.(ttf|woff|otf|woff2|eot|svg)$/,
-						use: [{
-							loader: 'file-loader',
-							options: {
-								publicPath: 'fonts',
-								outputPath: 'fonts',
-								name: '[name].[ext]'
-							}
-						}]
-					}
-		
-				]
-			},
-		
-			plugins: getPlugins()
-			
-		}
+    mode,
 
-	}
+    entry: {
+      'main': './src/index.js',
+      'colors': './src/ui-kits/colors-n-type/colors.js',
+      'form': './src/pages/form-elements/form.js'
+    },
 
-	
-	
+    output: {
+      // path: __dirname,
+      filename: ({
+        chunk
+      }) => chunk.name === 'main' ? '[name].js' : '[name]/[name].js'
+    },
+
+    module: {
+      rules: [
+        //Loading .pug
+        {
+          test: /\.pug$/,
+          loader: "pug-loader",
+          options: {
+            pretty: true
+          }
+        },
+
+        //Loading CSS
+        {
+          test: /\.css$/,
+          use: getStyleLoaders()
+        },
+
+        //Loading SCSS/Sass
+        {
+          test: /\.(s[ca]ss)$/,
+          exclude: /img/,
+          use: [
+            ...getStyleLoaders(),
+            {
+              loader: 'resolve-url-loader'
+            },
+            {
+              loader: "sass-loader",
+              options: {
+                sourceMap: true
+              }
+            }
+          ]
+        },
+
+        //Loadin Fonts
+        {
+          test: /\.(ttf|woff|otf|woff2|eot|svg)$/,
+          exclude: /img/,
+          use: [{
+            loader: 'file-loader',
+            options: {
+              publicPath: '../fonts',
+              outputPath: 'fonts',
+              name: '[name].[ext]'
+            }
+          }]
+        },
+
+        //Loading images
+        {
+          test: /\.(png|gif|jpeg|jpg|svg)$/,
+          exclude: /fonts/,
+          use: [{
+            loader: 'file-loader',
+            options: {
+              publicPath: '../img',
+              outputPath: 'img',
+              name: '[name].[ext]'
+            }
+          }]
+        }
+
+      ]
+    },
+
+    //Loading plugins
+    plugins: getPlugins()
+
+  }
+
+}

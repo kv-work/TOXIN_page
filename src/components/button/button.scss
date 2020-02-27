@@ -1,0 +1,81 @@
+@import "../../settings.scss";
+
+.button {
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: $primary-purple;
+  padding: 0;
+  border: 2px solid $primary-purple;
+  letter-spacing: -0.02em;
+  padding-right: 3px;
+  padding-bottom: 1px;
+  height: 44px;
+  border-radius: 22px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background: none;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+
+  &_disabled {
+    border: 2px solid transparentize($primary-purple, 0.5);
+  }
+
+  &_no_borders {
+    width: auto;
+    border: none;
+    letter-spacing: 0;
+    height: auto;
+
+    &.button_disabled {
+      color: $dark-50;
+    }
+  }
+
+  &_filled {
+    color: white;
+    background: $primary-gradient;
+    border: none;
+
+    &.button_disabled {
+      opacity: .5;
+    }
+  }
+
+  &_with_arrow {
+    vertical-align: middle;
+    text-align: center;
+    position: relative;
+    letter-spacing: 0;
+
+    & i {
+      position: absolute;
+      right: 0;
+      top: 0;
+      line-height: 44px;
+      width: 44px;
+      height: 44px;
+    }
+
+
+    // &::after {
+    //   font-family: "Material Icons";
+    //   font-style: normal;
+    //   font-weight: normal;
+    //   font-size: 24px;
+    //   line-height: 24px;
+    //   width: 44px;
+    //   height: 44px;
+    //   display: flex;
+    //   align-items: center;
+    //   text-align: center;
+    //   content: "arrow_forward";
+    // }
+  }
+}

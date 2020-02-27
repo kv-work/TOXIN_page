@@ -1,12 +1,12 @@
 mixin description(color, colorName, opacity)
-	.palette__description
-		-
-			var nameArr = colorName.split("_")
-			var nameOfColor = nameArr.join(" ")
-			if (opacity) {
-				var name = nameOfColor+" "+opacity
-			} else {
-				var name = nameOfColor
-			}
-		div.palette__name=name
-		div.palette__hex=color
+  .palette__description
+    -
+      var nameArr = colorName.split("_")
+      var nameOfColor = nameArr.join(" ")
+      if (opacity) {
+        var name = nameOfColor+" "+opacity
+      } else {
+        var name = nameOfColor
+      }
+    div.palette__name=name
+    div.palette__hex=color

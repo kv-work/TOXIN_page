@@ -1,6 +1,14 @@
-include ../logo/logo
+extends ../../base/base
 
-.colors-n-types
-	+logo('48', '48', "#1F2041", '.25')
-	include ./color_palettes/color_palettes
-	include ./type/type
+block variables
+  include ../logo/logo
+  - var pageTitle = 'Colors and type'
+
+block content
+  .colors-n-types
+    .logo_wrapper
+      +logo({width: "48", height: "48", fill: "#1F2041", fillOpacity: ".25"})
+    .colors_wrapper
+      include ./color_palettes/color_palettes
+    .type_wrapper
+      include ./type/type
