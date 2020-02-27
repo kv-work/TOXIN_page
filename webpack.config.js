@@ -39,6 +39,12 @@ module.exports = (env = {}) => {
         template: "./src/pages/form-elements/form_elements.pug"
       }),
 
+      new HtmlWebpackPlugin({
+        chunks: ['cards'],
+        filename: "cards/cards.html",
+        template: "./src/pages/cards/cards.pug"
+      }),
+
       new webpack.ProvidePlugin({
         $: 'jquery',
         jQuery: 'jquery',
@@ -65,7 +71,8 @@ module.exports = (env = {}) => {
     entry: {
       'main': './src/index.js',
       'colors': './src/pages/colors-n-type/colors.js',
-      'form': './src/pages/form-elements/form.js'
+      'form': './src/pages/form-elements/form.js',
+      'cards': './src/pages/cards/cards.js'
     },
 
     output: {
