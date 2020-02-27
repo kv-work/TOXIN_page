@@ -30,7 +30,7 @@ module.exports = (env = {}) => {
       new HtmlWebpackPlugin({
         chunks: ['colors'],
         filename: "colors/colors.html",
-        template: "./src/ui-kits/colors-n-type/colors-n-type.pug"
+        template: "./src/pages/colors-n-type/colors-n-type.pug"
       }),
 
       new HtmlWebpackPlugin({
@@ -64,7 +64,7 @@ module.exports = (env = {}) => {
 
     entry: {
       'main': './src/index.js',
-      'colors': './src/ui-kits/colors-n-type/colors.js',
+      'colors': './src/pages/colors-n-type/colors.js',
       'form': './src/pages/form-elements/form.js'
     },
 

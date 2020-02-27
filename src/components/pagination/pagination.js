@@ -1,4 +1,4 @@
-import 'paginationjs/dist/pagination.min.js'
+import 'paginationjs/dist/pagination.min'
 import "paginationjs/dist/pagination.css";
 import './pagination.scss';
 

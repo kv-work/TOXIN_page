@@ -1,7 +1,8 @@
-extends ../../base/base
+extends ../base/base_fix
 
 block variables
-  include ../logo/logo
+  include ../../components/logo/logo
+
   - var pageTitle = 'Colors and type'
 
 block content
@@ -9,6 +10,6 @@ block content
     .logo_wrapper
       +logo({width: "48", height: "48", fill: "#1F2041", fillOpacity: ".25"})
     .colors_wrapper
-      include ./color_palettes/color_palettes
+      include ../../components/color_palettes/color_palettes
     .type_wrapper
-      include ./type/type
+      include ../../components/type/type
