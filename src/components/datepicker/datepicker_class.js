@@ -6,6 +6,7 @@ export default class Datepicker {
     this.isSeparated = this.$node.hasClass('js_form_datepicker_separated');
     this.wrapper = this.$node.find('.form_datepicker_wrapper');
     this.data = this.$node.find('input').data()
+    console.log(this.data)
 
     if (this.isSeparated) {
       this.$datepicker = this.$node.find('.js_datepicker_separated');
@@ -18,30 +19,56 @@ export default class Datepicker {
     this.settings = (!this.isSeparated) ? options : {
       ...options,
       onSelect: (formattedDate) => {
-        this._selectDate(formattedDate, this.$datepicker, this.$endDate)
+        this._selectDate(formattedDate)
       }
     };
 
-    this._render();    
+    this._init();
+  }
+
+  _init() {
+    this.datepickerData = this.$datepicker.datepicker(this.settings).data('datepicker');
+
+    if (this.isSeparated) this.datepickerData.update('dateFormat', 'dd.mm.yyyy')
+
+    const { data, datepickerData } = this;
+
+    if (data.date) {
+      const dateString = data.date.split('.').reverse().join('-')
+      const date = new Date(dateString)
+      const dates = [];
+
+      datepickerData.update('startDate', date)
+      
+      dates.push(date);
+
+      if (data.valueSecond) {
+        const dateString = data.valueSecond.split('.').reverse().join('-')
+        const date = new Date(dateString)
+        dates.push(date);
+      }
+
+      datepickerData.selectDate(dates)
+    }    
+
+    this.$inputWrapper = this.$node.find('.form_datepicker__input_wrapper')
+      
     this._addApplyButton();
     this._attachEventHandlers();
   }
 
   _attachEventHandlers() {
-    const { $node, $endDate, $datepicker, datepickerData, $applyBtn, _setDate } = this;
+    const { $node, $endDate, $datepicker, datepickerData, $applyBtn, _setDate, $inputWrapper } = this;
 
-    $node.click(() => datepickerData.show())
+    $inputWrapper.click((e) => {
+      this.$opener = $(e.currentTarget).find('input');
+      datepickerData.show()
+    })
 
     //apply button event handlers
     $applyBtn.click((e) => {
       console.log(e.target)
     })
-  }
-
-  _render() {
-    this.datepickerData = this.$datepicker.datepicker(this.settings).data('datepicker');
-
-    if (this.isSeparated) this.datepickerData.update('dateFormat', 'dd.mm.yyyy')
   }
 
   _addEndDateInput() {
@@ -54,21 +81,40 @@ export default class Datepicker {
     this.$applyBtn = this.datepickerData.$datepicker.find('.datepicker--buttons').append('<button type="button" class="datepicker--button-apply">Применить</button>').find('.datepicker--button-apply')
   }
 
-  _selectDate(formattedDate, startEl, endEl) {    
-    const dates = formattedDate.split(' - ')
+  _selectDate(formattedDate) {    
+    const dates = formattedDate.split(' - ');
+    const { $opener, $datepicker, $endDate } = this;
 
+    // console.log($opener.hasClass('form_datepicker__end_date_input'))
+    
     switch (dates.length) {
       case 1:
-        $(startEl).val(dates[0]);
+        $($datepicker).val(dates[0]);
         break;
       case 2:        
-        $(startEl).val(dates[0]);
-        $(endEl).val(dates[1])
+        $($datepicker).val(dates[0]);
+        $($endDate).val(dates[1])
         break;
       default:
-        $(startEl).val('');
-        $(endEl).val('');
         break;
+    }
+
+    if (!dates[0]) {
+      $($datepicker).val('');
+      $($endDate).val('');
+    }
+  }
+
+  _setStartDate(date) {
+    const { $opener, $datepicker, datepickerData } = this;
+    const dates = datepickerData.selectedDates;
+
+    if ($opener.hasClass('form_datepicker__end_date_input')) {
+      return
+    }
+
+    if (dates[1]) {
+      datepickerData.update('maxDate', dates[1])
     }
   }
 }
