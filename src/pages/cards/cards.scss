@@ -1,11 +1,62 @@
 @import "../../settings.scss";
 
 .cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 40px;
+  max-width: 1920px;
+  min-width: 320px;
+  margin: auto;
 
-  & .col {
-    border: 1px solid;
+  &_grid {
+    max-width: 1440px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 380px));
+    grid-template-rows: auto;
+    column-gap: 40px;
+    row-gap: 40px;
+    grid-auto-flow: row dense;
+    justify-content: center;
+    
+    &_col {
+      border: 2px solid red;
+    }
   }
 }
+
+  .room_search_card {
+    border: 1px solid blue;
+    height: 374px;
+    min-width: 320px;
+  }
+
+  .account_registration_card {
+    border: 1px solid blue;
+    height: 646px;
+    min-width: 320px;
+    grid-row: 2/5;
+  }
+
+  .room_rate_card {
+    border: 1px solid blue;
+    height: 511px;
+    min-width: 320px;
+    grid-row: 1/3;
+  }
+
+  .login_card {
+    border: 1px solid blue;
+    height: 358px;
+    min-width: 320px;
+    grid-row: 3;
+  }
+
+  .calendar_card {
+    border: 1px solid blue;
+    height: 369px;
+    min-width: 320px;
+  }
+
+  .room_card {
+    border: 1px solid blue;
+    height: 257px;
+    min-width: 320px;
+  }
