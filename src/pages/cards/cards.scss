@@ -12,7 +12,6 @@
     grid-template-columns: repeat(auto-fill, minmax(320px, 380px));
     grid-template-rows: auto;
     column-gap: 40px;
-    row-gap: 40px; 
     grid-auto-flow: row dense;
     justify-content: center;
     
@@ -20,14 +19,16 @@
       border: 2px solid green;
       display: flex;
       flex-direction: column;
-      // -moz-gap: 40px;
+
+      & > div:nth-child(n) {
+        margin-bottom: 40px;
+      }
     }
   }
 }
 
   .room_search_card {
     border: 1px solid blue;
-    min-width: 320px;
 
     & .content {
       height: 374px;
@@ -36,8 +37,6 @@
 
   .account_registration_card {
     border: 1px solid blue;
-    min-width: 320px;
-    // grid-row: 2/5;
 
     & .content {
       height: 646px;
@@ -46,8 +45,6 @@
 
   .room_rate_card {
     border: 1px solid blue;
-    min-width: 320px;
-    // grid-row: 1;
 
     & .content {
       height: 511px;
@@ -56,8 +53,6 @@
 
   .login_card {
     border: 1px solid blue;
-    min-width: 320px;
-    // grid-row: 2;
 
     & .content {
       height: 358px;
@@ -66,7 +61,7 @@
 
   .calendar_card {
     border: 1px solid blue;
-    min-width: 320px;
+    width: 320px;
 
     & .content {
       height: 369px;
@@ -75,7 +70,7 @@
 
   .room_card {
     border: 1px solid blue;
-    min-width: 320px;
+    width: 270px;
 
     & .content {
       height: 257px;
