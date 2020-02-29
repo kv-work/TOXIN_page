@@ -1,9 +1,0 @@
-include ./__radio/radio
-
-mixin radioButtons(params)
-  -
-    var {list} = params
-
-  .radio_buttons
-    each item, index in list
-      +radio({list: item, value: index})
