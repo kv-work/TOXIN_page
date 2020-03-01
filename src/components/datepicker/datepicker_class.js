@@ -6,7 +6,7 @@ export default class Datepicker {
     this.isSeparated = this.$node.hasClass('js_form_datepicker_separated');
     this.wrapper = this.$node.find('.form_datepicker_wrapper');
     this.data = this.$node.find('input').data()
-    console.log(this.data)
+
 
     if (this.isSeparated) {
       this.$datepicker = this.$node.find('.js_datepicker_separated');
@@ -18,8 +18,20 @@ export default class Datepicker {
 
     this.settings = (!this.isSeparated) ? options : {
       ...options,
+      showEvent: 'none',
       onSelect: (formattedDate) => {
-        this._selectDate(formattedDate)
+        if (this.$opener.hasClass('form_datepicker__end_date_input')) {
+          this._setEndDate(formattedDate)
+        } else if (this.$opener.hasClass('start_date')) {
+          this._setStartDate(formattedDate)
+        }
+      },
+      onShow: () => {
+        if (this.$opener.hasClass('form_datepicker__end_date_input')) {
+          this._showWithEndOpener()
+        } else if (this.$opener.hasClass('start_date')) {
+          this._showWithStartOpener()
+        }
       }
     };
 
@@ -105,7 +117,7 @@ export default class Datepicker {
     }
   }
 
-  _setStartDate(date) {
+  _setEndDate(date) {
     const { $opener, $datepicker, datepickerData } = this;
     const dates = datepickerData.selectedDates;
 
@@ -115,6 +127,41 @@ export default class Datepicker {
 
     if (dates[1]) {
       datepickerData.update('maxDate', dates[1])
+    }    
+  }
+
+  _setStartDate(date) {
+    const { $opener, datepickerData, $datepicker, $endDate } = this;
+
+    const selectedDates = datepickerData.selectedDates;
+    
+    console.log(date)
+    console.log(selectedDates)
+  }
+  
+  _showWithEndOpener() {
+    const { $opener, datepickerData, $datepicker, $endDate } = this;
+
+    const selectedDates = datepickerData.selectedDates;
+    datepickerData.update('minDate', null)
+
+    if (selectedDates.length > 0) {
+      datepickerData.update('minDate', selectedDates[0])
+      datepickerData.selectDate(selectedDates[0])
+      return
+    }
+  }
+
+  _showWithStartOpener() {
+    const { $opener, datepickerData, $datepicker, $endDate } = this;
+
+    const selectedDates = datepickerData.selectedDates;
+    datepickerData.update('minDate', new Date('2019-08-19'))
+
+    if (selectedDates.length == 2) {
+      datepickerData.update('maxDate', selectedDates[1])
+      datepickerData.selectDate(selectedDates[1])
+      return
     }
   }
 }
