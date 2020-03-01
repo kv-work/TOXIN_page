@@ -1,9 +1,32 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require('webpack');
-const ghpages = require('gh-pages')
+const ghpages = require('gh-pages');
+const path = require('path');
+const fs = require('fs');
 
 ghpages.publish('dist', function(err) {});
+
+const pages = [];
+
+fs
+  .readdirSync(path.resolve(__dirname, 'src', 'pages'))
+  .filter((file) => {
+    return file.indexOf('base') !== 0;
+  })
+  .forEach((file) => {
+    pages.push(file.split('/', 2));
+  });
+
+// console.log(pages)
+
+// fs.readFile(path.resolve(__dirname, 'src/pages/form-elements/form_elements.pug'), {encoding: 'utf-8'}, function(err, data) {
+//   if (err) {
+//     console.log(err)
+//   } else {
+//     console.log(data)
+//   }
+// })
 
 module.exports = (env = {}) => {
 
