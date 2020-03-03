@@ -3,118 +3,139 @@ import 'air-datepicker/dist/js/datepicker.min';
 export default class Datepicker {
   constructor(node, options) {
     this.$node = $(node);
+    this.data = this.$node.find('input').data();
     this.isSeparated = this.$node.hasClass('js_form_datepicker_separated');
-    this.wrapper = this.$node.find('.form_datepicker_wrapper');
-    this.data = this.$node.find('input').data()
-    console.log(this.data)
+    this.$datepicker = this.isSeparated ? this.$node.find('.js_datepicker_separated') : this.$node.find('.js_datepicker');
 
-    if (this.isSeparated) {
-      this.$datepicker = this.$node.find('.js_datepicker_separated');
-    } else {
-      this.$datepicker = this.$node.find('.js_datepicker');
+    this.options = !this.isSeparated ? options : {
+      ...options,
+      showEvent: 'none',
+      onSelect: (formDate, date, inst) => {
+        this._selectDate(formDate, date)
+      },
+      onShow: (inst, animComplete) => { 
+        if (animComplete) this._openDatepicker()
+      }
     }
 
-    if (this.isSeparated) this._addEndDateInput();
-
-    this.settings = (!this.isSeparated) ? options : {
-      ...options,
-      onSelect: (formattedDate) => {
-        this._selectDate(formattedDate)
-      }
-    };
-
-    this._init();
+    this._init()
   }
 
   _init() {
-    this.datepickerData = this.$datepicker.datepicker(this.settings).data('datepicker');
+    this.datepickerData = this.$datepicker.datepicker(this.options).data('datepicker')
 
-    if (this.isSeparated) this.datepickerData.update('dateFormat', 'dd.mm.yyyy')
+    if (this.isSeparated) {
+      this._addEndDateInput()
+      this.datepickerData.update('dateFormat', 'dd.mm.yyyy')
+    }
 
-    const { data, datepickerData } = this;
+    this.$wrapper = this.$node.find('.form_datepicker__input_wrapper')
 
-    if (data.date) {
-      const dateString = data.date.split('.').reverse().join('-')
-      const date = new Date(dateString)
-      const dates = [];
-
-      datepickerData.update('startDate', date)
-      
-      dates.push(date);
-
-      if (data.valueSecond) {
-        const dateString = data.valueSecond.split('.').reverse().join('-')
-        const date = new Date(dateString)
-        dates.push(date);
-      }
-
-      datepickerData.selectDate(dates)
-    }    
-
-    this.$inputWrapper = this.$node.find('.form_datepicker__input_wrapper')
-      
-    this._addApplyButton();
-    this._attachEventHandlers();
+    this._setDataValues()
+    this._addApplyButton()
+    this._attachEventHandlers()
   }
 
-  _attachEventHandlers() {
-    const { $node, $endDate, $datepicker, datepickerData, $applyBtn, _setDate, $inputWrapper } = this;
+  //Установка дат переданных с помощью data-атрибутов
+  _setDataValues() {
+    const {date, valueSecond} = this.data;
 
-    $inputWrapper.click((e) => {
-      this.$opener = $(e.currentTarget).find('input');
-      datepickerData.show()
-    })
+    const startDateStr  = date ? date.split('.').reverse().join('-') : '',
+          endDateStr    = valueSecond ? valueSecond.split('.').reverse().join('-') : '';
 
-    //apply button event handlers
-    $applyBtn.click((e) => {
-      console.log(e.target)
-    })
+    this.startDate = new Date(startDateStr || endDateStr) || new Date()
+    this.endDate = new Date(endDateStr || startDateStr) || new Date()
+
+    this.datepickerData.selectDate( [this.startDate, this.endDate] )
   }
 
+  //Создание инпута, который будет отображать конечную дату диапозона
   _addEndDateInput() {
     const { labelSecond, valueSecond } = this.data;
 
     this.$endDate = this.$node.append('<div class="form_datepicker_wrapper"><label class="form_datepicker__label like_h3">' + labelSecond + '</label><div class="form_datepicker__input_wrapper"><input class="form_datepicker__end_date_input js_datepicker_masked" type="text" placeholder="ДД.ММ.ГГГГ" data-date=' + valueSecond + ' readonly /></div></div>').find('.form_datepicker__end_date_input')
   }
 
+  //Добавление кнопки "применить"
   _addApplyButton() {
     this.$applyBtn = this.datepickerData.$datepicker.find('.datepicker--buttons').append('<button type="button" class="datepicker--button-apply">Применить</button>').find('.datepicker--button-apply')
   }
 
-  _selectDate(formattedDate) {    
-    const dates = formattedDate.split(' - ');
-    const { $opener, $datepicker, $endDate } = this;
+  //Создание обработчиков событий
+  _attachEventHandlers() {
 
-    // console.log($opener.hasClass('form_datepicker__end_date_input'))
-    
-    switch (dates.length) {
-      case 1:
-        $($datepicker).val(dates[0]);
-        break;
-      case 2:        
-        $($datepicker).val(dates[0]);
-        $($endDate).val(dates[1])
-        break;
-      default:
-        break;
+    this.$wrapper.click( (e) => {
+      this.$opener = $(e.currentTarget).find('input')
+      this.datepickerData.show()
+    } )
+
+    //apply button event handlers
+    this.$applyBtn.click((e) => {
+      this.datepickerData.hide()
+    })
+  }
+
+  _selectDate(formattedDates, date) {    
+    const dates = formattedDates.split(' - ')
+    const { $datepicker, $endDate } = this;
+
+    if (this.$opener && this.$opener.hasClass('start_date')) {
+      this.startDate = date[0]
+      $datepicker.val(dates[0]);   
+      this.datepickerData.selectedDates = [this.startDate, this.endDate]
+      this.datepickerData.maxRange = this.endDate;
     }
 
-    if (!dates[0]) {
-      $($datepicker).val('');
-      $($endDate).val('');
+    if (this.$opener && this.$opener.hasClass('form_datepicker__end_date_input')) {
+      this.endDate = date[0];
+      $datepicker.val(this.startDate.toLocaleDateString()); 
+      $endDate.val(dates[0])
+      this.datepickerData.minRange = this.startDate;
+      this.datepickerData.selectedDates = [this.startDate, this.endDate]
+      this.datepickerData.maxRange = this.endDate;  
+    }
+    
+    if (!this.$opener) {
+      switch (dates.length) {
+        case 1:
+          this.startDate = date[0];
+          $datepicker.val(dates[0]);        
+          break;
+        case 2: 
+          this.startDate = date[0];
+          this.endDate = date[1];       
+          $datepicker.val(dates[0]);
+          $endDate.val(dates[1])
+          break;
+        default:
+          break;
+      }
+    }
+
+    if (!date) {
+      this.startDate = ''
+      this.endDate = ''
+      $datepicker.val('')
+      $endDate.val('')
     }
   }
 
-  _setStartDate(date) {
-    const { $opener, $datepicker, datepickerData } = this;
-    const dates = datepickerData.selectedDates;
+  _openDatepicker() {
+    const {$opener, datepickerData, startDate, endDate, $datepicker, $endDate} = this;
+
+    datepickerData.update({
+      'minDate': '',
+      'maxDate': ''
+    })
+
+    if ($opener.hasClass('start_date')) {
+      datepickerData.update('maxDate', endDate)
+    }
 
     if ($opener.hasClass('form_datepicker__end_date_input')) {
-      return
+      datepickerData.update('minDate', startDate)
     }
 
-    if (dates[1]) {
-      datepickerData.update('maxDate', dates[1])
-    }
+    $datepicker.val(startDate ? startDate.toLocaleDateString() : '')
   }
 }

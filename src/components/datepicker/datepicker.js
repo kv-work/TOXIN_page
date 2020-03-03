@@ -25,7 +25,7 @@ const datepickerBlocks = $('.js_form_datepicker, .js_form_datepicker_separated')
     multipleDatesSeparator: " - ",
     dateFormat: 'd M',
     clearButton: true,
-    minDate: new Date('2019-08-19'),
+    // minDate: new Date('2019-08-19'),
     offset: 15,
     navTitles: {
       days: 'MM yyyy'
@@ -35,12 +35,6 @@ const datepickerBlocks = $('.js_form_datepicker, .js_form_datepicker_separated')
   const datepicker = new Datepicker(this, options);
 
   return datepicker;
-})
-
-//Set initial value  
-$('.js_datepicker_masked').toArray().forEach(function (field) {
-  const inputValue = $(field).attr('data-date')
-  $(field).val(inputValue)
 })
 
 //Add a mask to enter the date
