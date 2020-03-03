@@ -4,21 +4,28 @@
   max-width: 1920px;
   min-width: 320px;
   margin: auto;
+  padding-top: 150px;
+  background-color: #f4f4f6;
+  position: relative;
 
   &_grid {
     max-width: 1440px;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 380px));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 380px));
     grid-template-rows: auto;
     column-gap: 40px;
     grid-auto-flow: row dense;
     justify-content: center;
-    
+
     &_col {
       border: 2px solid green;
       display: flex;
       flex-direction: column;
+
+      &:nth-child(3) {
+        width: 320px;
+      }
 
       & > div:nth-child(n) {
         margin-bottom: 40px;
@@ -27,57 +34,62 @@
   }
 }
 
-  .room_search_card {
-    border: 1px solid blue;
+.logo_wrapper {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
 
-    & .content {
-      height: 374px;
-    }
+.room_search_card_wrapper  {
+  border: 1px solid blue;
+
+  & .content {
+    height: 374px;
   }
+}
 
-  .account_registration_card {
-    border: 1px solid blue;
+.account_registration_card_wrapper  {
+  border: 1px solid blue;
 
-    & .content {
-      height: 646px;
-    }
+  & .content {
+    height: 646px;
   }
+}
 
-  .room_rate_card {
-    border: 1px solid blue;
+.room_rate_card_wrapper  {
+  border: 1px solid blue;
 
-    & .content {
-      height: 511px;
-    }
+  & .content {
+    height: 511px;
   }
+}
 
-  .login_card {
-    border: 1px solid blue;
+.login_card_wrapper  {
+  border: 1px solid blue;
 
-    & .content {
-      height: 358px;
-    }
+  & .content {
+    height: 358px;
   }
+}
 
-  .calendar_card {
-    border: 1px solid blue;
-    width: 320px;
+.calendar_card_wrapper  {
+  border: 1px solid blue;
+  width: 320px;
 
-    & .content {
-      height: 369px;
-    }
+  & .content {
+    height: 369px;
   }
+}
 
-  .room_card {
-    border: 1px solid blue;
-    width: 270px;
+.room_card_wrapper  {
+  border: 1px solid blue;
+  width: 270px;
 
-    & .content {
-      height: 257px;
-    }
+  & .content {
+    height: 257px;
   }
+}
 
-
-  .content {
-    background: yellow;
-  }
+.content {
+  background: yellow;
+}

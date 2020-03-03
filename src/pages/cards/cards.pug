@@ -1,26 +1,31 @@
 extends ../base/base
 
 block variables
+  include ../../components/logo/logo
+  include ../../components/room-search-card/room-search-card
 
   - var pageTitle = 'Cards'
 
 block content
   .cards
+    .logo_wrapper
+      +logo({width: "48", height: "48", fill: "#1F2041", fillOpacity: ".25"})
     .cards_grid
       .cards_grid_col
-        .room_search_card 
-          .content Room Search Card
-        .account_registration_card
+        .room_search_card_wrapper 
+          //- .content Room Search Card
+          +roomSearchCard({label: "Найдем номера под ваши\u00A0пожелания"})
+        .account_registration_card_wrapper 
           .content Account Registration Card
       .cards_grid_col
-        .room_rate_card
+        .room_rate_card_wrapper 
           .content Room Rate Card
-        .login_card 
+        .login_card_wrapper 
           .content Login Card
       .cards_grid_col
-        .calendar_card
+        .calendar_card_wrapper 
           .content Calendar Card
-        .room_card
+        .room_card_wrapper 
           .content Room Card
-        .room_card 
+        .room_card_wrapper 
           .content Room Card
