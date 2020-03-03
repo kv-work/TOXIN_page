@@ -1,0 +1,25 @@
+include ../datepicker/datepicker
+include ../dropdown/dropdown
+include ../button/button
+
+mixin roomSearchCard(params)
+  -
+    var { label } = params
+    
+    
+  .room_search_card
+    h1.room_search_card__label=label
+    .room_search_card__datepicker_is_separated
+      +datepicker({label: "Прибытие", separated: true, labelSecond: "Выезд"})
+    
+    .room_search_card__guest_select_dropdown
+      -
+        var items = [
+          {itemLabel: "Взрослые", itemCount: 0},
+          {itemLabel: "Дети", itemCount: 0},
+          {itemLabel: "Младенцы", itemCount: 0},
+        ]
+      +dropdown({label:"Гости", text: "Сколько гостей", items})
+
+    .room_search_card__submit_button
+      +button( {label: "подобрать номер", style: "filled", arrow: true } )
