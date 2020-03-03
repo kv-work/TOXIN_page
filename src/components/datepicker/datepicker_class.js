@@ -9,7 +9,7 @@ export default class Datepicker {
 
     this.options = !this.isSeparated ? options : {
       ...options,
-      showEvent: 'none',
+      showEvent: 'focus',
       onSelect: (formDate, date, inst) => {
         this._selectDate(formDate, date)
       },
@@ -31,7 +31,7 @@ export default class Datepicker {
 
     this.$wrapper = this.$node.find('.form_datepicker__input_wrapper')
 
-    this._setDataValues()
+    if (this.data.date || this.data.valueSecond) this._setDataValues();
     this._addApplyButton()
     this._attachEventHandlers()
   }
@@ -43,8 +43,8 @@ export default class Datepicker {
     const startDateStr  = date ? date.split('.').reverse().join('-') : '',
           endDateStr    = valueSecond ? valueSecond.split('.').reverse().join('-') : '';
 
-    this.startDate = new Date(startDateStr || endDateStr) || new Date()
-    this.endDate = new Date(endDateStr || startDateStr) || new Date()
+    this.startDate = new Date(startDateStr || endDateStr)
+    this.endDate = new Date(endDateStr || startDateStr)
 
     this.datepickerData.selectDate( [this.startDate, this.endDate] )
   }
@@ -121,12 +121,14 @@ export default class Datepicker {
   }
 
   _openDatepicker() {
-    const {$opener, datepickerData, startDate, endDate, $datepicker, $endDate} = this;
+    const {$opener, datepickerData, startDate, endDate, $datepicker} = this;
 
     datepickerData.update({
       'minDate': '',
       'maxDate': ''
     })
+
+    console.log("opened")
 
     if ($opener.hasClass('start_date')) {
       datepickerData.update('maxDate', endDate)
