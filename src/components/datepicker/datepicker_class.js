@@ -3,9 +3,18 @@ import 'air-datepicker/dist/js/datepicker.min';
 export default class Datepicker {
   constructor(node, options) {
     this.$node = $(node);
-    this.data = this.$node.find('input').data();
+    this.isInline = this.$node.hasClass('js_form_datepicker_inline');
+    
+    this.data = this.isInline ? this.$node.data() : this.$node.find('input').data();
+
     this.isSeparated = this.$node.hasClass('js_form_datepicker_separated');
-    this.$datepicker = this.isSeparated ? this.$node.find('.js_datepicker_separated') : this.$node.find('.js_datepicker');
+
+    if (this.isInline) {
+      this.$datepicker = this.$node
+    } else {
+      this.$datepicker = this.isSeparated ? this.$node.find('.js_datepicker_separated') : this.$node.find('.js_datepicker');
+    }
+
 
     this.options = !this.isSeparated ? options : {
       ...options,

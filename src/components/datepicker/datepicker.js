@@ -3,7 +3,7 @@ import 'cleave.js';
 import Datepicker from './datepicker_class';
 import './datepicker.scss';
 
-const datepickerBlocks = $('.js_form_datepicker, .js_form_datepicker_separated').each(function () {
+const datepickerBlocks = $('.js_form_datepicker, .js_form_datepicker_separated, .js_form_datepicker_inline').each(function () {
   //config datepicker's language
   $.fn.datepicker.language['my-lang'] = {
     days: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],

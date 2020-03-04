@@ -75,21 +75,21 @@
 
 
 //editing plugin styles
-.form_datepicker .datepicker {  
-  border: 1px solid $dark-25;  
-  box-shadow: 0 10px 20px $dark-5;  
-
-}
-
 .datepicker--cell-day.-other-month- {
   color: $dark-25;
+}
+
+.datepicker-inline .datepicker {
+  box-shadow: 0 10px 20px $dark-5;
 }
 
 .datepicker {
   width: 320px;
   background-color: #fff;
   box-sizing: border-box;
+  border: 1px solid $dark-25;
   border-radius: 4px;
+  box-shadow: 0 10px 20px $dark-5;
   padding: 20px;
 
   &--pointer {
