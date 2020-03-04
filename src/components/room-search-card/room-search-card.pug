@@ -7,7 +7,7 @@ mixin roomSearchCard(params)
     var { label } = params
     
     
-  .room_search_card
+  form.room_search_card
     h1.room_search_card__label=label
     .room_search_card__datepicker_is_separated
       +datepicker({label: "Прибытие", separated: true, labelSecond: "Выезд"})
