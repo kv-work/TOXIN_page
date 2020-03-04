@@ -1,0 +1,33 @@
+include ../input/input
+include ../button/button
+
+mixin loginCard(params)
+  -
+    var {label} = params
+
+  form.login_card
+    h1.login_card__label=label
+    .login_card__email_input
+      +input({
+        type: "email",
+        placeholder: "email"
+        })(required=true)
+    .login_card__pass_input
+      +input({
+        type: "password",
+        placeholder: "Пароль"
+      })(required=true)
+    .login_card__submit_button
+      +button({
+        label: "войти",
+        style: "filled",
+        arrow: true
+        })
+
+    .login_card__options
+      .login_card__option_label Нет аккаунта на Toxin?
+      .login_card__option_button
+        +button({
+          label: "создать",
+          style: "no fill"
+          })
