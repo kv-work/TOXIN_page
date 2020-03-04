@@ -12,7 +12,7 @@
     max-width: 1440px;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, auto));
+    grid-template-columns: repeat(2, minmax(320px, 380px)) 320px;
     grid-template-rows: auto;
     column-gap: 40px;
     grid-auto-flow: row dense;
@@ -73,4 +73,16 @@
 
 .content {
   background: yellow;
+}
+
+@media screen and (max-width: 1040px) {
+  .cards_grid {
+    grid-template-columns: repeat(2, minmax(320px, 380px));
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .cards_grid {
+    grid-template-columns: minmax(320px, 380px);
+  }
 }
