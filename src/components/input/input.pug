@@ -1,7 +1,6 @@
 mixin input(params)
-
   -
-    var { label, placeholder, masked = false, subscription = false } = params
+    var { label="", type="text", placeholder, masked = false, subscription = false } = params
     var classList = "form_input__input"
     var modClass = ""
 
@@ -14,6 +13,7 @@ mixin input(params)
     }
     
   .form_input(class=modClass)
-    label.form_input__label
-      p.like_h3=label
-    input( class=classList placeholder=placeholder )&attributes(attributes)
+    if (label)
+      label.form_input__label
+        p.like_h3=label
+    input( class=classList type=type placeholder=placeholder )&attributes(attributes)
