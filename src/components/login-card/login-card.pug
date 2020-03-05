@@ -20,13 +20,14 @@ mixin loginCard(params)
     .login_card__submit_button
       +button({
         label: "войти",
+        type: "submit",
         style: "filled",
         arrow: true
         })
 
     .login_card__options
       .login_card__option_label Нет аккаунта на Toxin?
-      .login_card__option_button
+      a.login_card__option_button(href="../")
         +button({
           label: "создать",
           style: "no fill"
