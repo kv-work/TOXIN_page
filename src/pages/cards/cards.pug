@@ -3,6 +3,7 @@ extends ../base/base
 block variables
   include ../../components/logo/logo
   include ../../components/room-search-card/room-search-card
+  include ../../components/registration-card/registration-card
   include ../../components/login-card/login-card
 
   - var pageTitle = 'Cards'
@@ -16,7 +17,7 @@ block content
         .room_search_card_wrapper 
           +roomSearchCard({label: "Найдем номера под ваши\u00A0пожелания"})
         .account_registration_card_wrapper 
-          .content Account Registration Card
+          +registrationCard({label: "Регистрация аккаунта"})
       .cards_grid_col
         .room_rate_card_wrapper 
           .content Room Rate Card
