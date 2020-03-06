@@ -25,15 +25,18 @@ class RateButton {
   }
 }
 
-export default function renderRateButtons(callbackFunc) {
-  $( () => {
-    const rateButtons = $('.js_rate_button').map((idx, node) => {
-      return new RateButton(node);
-    })
+// export default function renderRateButtons(callbackFunc) {
+//   $( () => {
+//     const rateButtons = $('.js_rate_button').map((idx, node) => {
+//       return new RateButton(node);
+//     })
 
-    if (callbackFunc && typeof callbackFunc === 'function') {
-      callbackFunc(rateButtons)
-    }
-  })
-}
+//     if (callbackFunc && typeof callbackFunc === 'function') {
+//       callbackFunc(rateButtons)
+//     }
+//   })
+// }
 
+// renderRateButtons()
+
+export { RateButton };
