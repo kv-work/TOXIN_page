@@ -6,87 +6,87 @@
         "img/room_888_2.png",
         "img/room_888_3.png"
       ],
-      "price": "9990",
-      "isLux": "true",
-      "rate": "5",
-      "numOfReviews": "145"
+      "price": 9990,
+      "isLux": true,
+      "rate": 5,
+      "numOfReviews": 145
     },
     "840": {
       "images": ["img/room_840.png"],
-      "price": "9900",
-      "isLux": "false",
-      "rate": "4",
-      "numOfReviews": "65"
+      "price": 9900,
+      "isLux": false,
+      "rate": 4,
+      "numOfReviews": 65
     },
     "980": {
       "images": ["img/room_840.png"],
-      "price": "8500",
-      "isLux": "true",
-      "rate": "3",
-      "numOfReviews": "35"
+      "price": 8500,
+      "isLux": true,
+      "rate": 3,
+      "numOfReviews": 35
     },
     "856": {
       "images": ["img/room_856.png"],
-      "price": "7300",
-      "isLux": "false",
-      "rate": "5",
-      "numOfReviews": "19"
+      "price": 7300,
+      "isLux": false,
+      "rate": 5,
+      "numOfReviews": 19
     },
     "740": {
       "images": ["img/room_740.png"],
-      "price": "6000",
-      "isLux": "false",
-      "rate": "4",
-      "numOfReviews": "44"
+      "price": 6000,
+      "isLux": false,
+      "rate": 4,
+      "numOfReviews": 44
     },
     "982": {
       "images": ["img/room_856.png"],
-      "price": "5800",
-      "isLux": "false",
-      "rate": "3",
-      "numOfReviews": "56"
+      "price": 5800,
+      "isLux": false,
+      "rate": 3,
+      "numOfReviews": 56
     },
     "678": {
       "images": ["img/room_678.png"],
-      "price": "5500",
-      "isLux": "false",
-      "rate": "5",
-      "numOfReviews": "45"
+      "price": 5500,
+      "isLux": false,
+      "rate": 5,
+      "numOfReviews": 45
     },
     "450": {
       "images": ["img/room_450.png"],
-      "price": "5300",
-      "isLux": "false",
-      "rate": "4",
-      "numOfReviews": "39"
+      "price": 5300,
+      "isLux": false,
+      "rate": 4,
+      "numOfReviews": 39
     },
     "350": {
       "images": ["img/room_350.png"],
-      "price": "5000",
-      "isLux": "false",
-      "rate": "3",
-      "numOfReviews": "77"
+      "price": 5000,
+      "isLux": false,
+      "rate": 3,
+      "numOfReviews": 77
     },
     "666": {
       "images": ["img/room_666.png"],
-      "price": "5000",
-      "isLux": "false",
-      "rate": "5",
-      "numOfReviews": "25"
+      "price": 5000,
+      "isLux": false,
+      "rate": 5,
+      "numOfReviews": 25
     },
     "444": {
       "images": ["img/room_444.png"],
-      "price": "5000",
-      "isLux": "false",
-      "rate": "3",
-      "numOfReviews": "15"
+      "price": 5000,
+      "isLux": false,
+      "rate": 3,
+      "numOfReviews": 15
     },
     "352": {
       "images": ["img/room_352.png"],
-      "price": "5000",
-      "isLux": "false",
-      "rate": "3",
-      "numOfReviews": "55"
+      "price": 5000,
+      "isLux": false,
+      "rate": 3,
+      "numOfReviews": 55
     }
   }
 }
