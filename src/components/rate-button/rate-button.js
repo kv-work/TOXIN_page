@@ -7,25 +7,33 @@ class RateButton {
 
     this.$buttons = this.$node.find('input');
 
-    // console.log(this.$buttons)
     this._init()
   }
 
   _init() {
     const initRate = this.data.rate;
-    // this.setRate(initRate)
+
+    this.setRate(initRate)
   }
 
   setRate(rate) {
     const {$buttons} = this;
+    const idxOfBtn = --rate;
 
-    console.log($buttons.eq(rate))
-    console.log(rate)
-
-    $buttons.eq(rate--).change()
+    $buttons.eq(idxOfBtn).prop('checked', true)
+    $buttons.eq(idxOfBtn).change()
   }
 }
 
-$('.js_rate_button').each(function() {
-  const rateButton = new RateButton(this);
-})
+export default function renderRateButtons(callbackFunc) {
+  $( () => {
+    const rateButtons = $('.js_rate_button').map((idx, node) => {
+      return new RateButton(node);
+    })
+
+    if (callbackFunc && typeof callbackFunc === 'function') {
+      callbackFunc(rateButtons)
+    }
+  })
+}
+
