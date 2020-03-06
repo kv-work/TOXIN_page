@@ -45,3 +45,7 @@
     }
   }
 }
+
+.rate_button_disabled .rate_button__input {
+  cursor: default;
+}
