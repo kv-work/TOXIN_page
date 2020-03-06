@@ -11,6 +11,8 @@ mixin roomCard(params)
       span.room_card__number_sign №
       span.room_card__number=number
     .room_card__price
+      span.room_card__price_text ₽ в сутки
     .room_card__rate
       +rateButton({name: rateName, disabled: true})
     .room_card__reviews
+      span.room_card__review_text Отзывов

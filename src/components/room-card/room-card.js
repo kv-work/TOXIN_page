@@ -1,5 +1,6 @@
 import './room-card.scss'
 import roomsData from '../../data/data.json'
+import { RateButton } from '../rate-button/rate-button'
 
 class RoomCard {
   constructor(node) {
@@ -12,9 +13,9 @@ class RoomCard {
     this.$rateBlock = this.$node.find('.room_card__rate');
     this.$reviewsBlock = this.$node.find('.room_card__reviews');
 
+    this.rateButton = new RateButton( this.$rateBlock.find('.js_rate_button')[0] );
 
     this._init()
-    // console.log(this.roomData)
   }
 
   _init() {
@@ -24,7 +25,9 @@ class RoomCard {
     if (this.roomData.isLux) {
       this._displayLuxSign();
     }
-      
+    
+    this._displayRoomRate();
+    this._displayNumOfReviews();
   }
 
   _getData() {
@@ -33,8 +36,11 @@ class RoomCard {
     this.roomData = roomsData.rooms[numOfRoom]
   }
 
-  // _createRoomImageBlocks() {    
-  // }
+  _createRoomImageBlocks() {
+    const {$imagesBlock, roomData} = this;
+    const imgArr = roomData.images;
+
+  }
 
   _displayLuxSign() {
     const {$numberBlock} = this;
@@ -45,11 +51,24 @@ class RoomCard {
   _displayPrice() {
     const {$priceBlock, roomData} = this;
 
-    $priceBlock.html(`${roomData.price}₽ в сутки`)
+    $priceBlock.prepend('<span class="room_card__price">'+roomData.price+'</span>')
   }
 
+  _displayRoomRate() {
+    const {rateButton, roomData} = this;
+    const roomRate = roomData.rate;
+    
+    rateButton.setRate(roomRate);
+  }
+
+  _displayNumOfReviews() {
+    const {$reviewsBlock, roomData} = this;
+    const numOfReviews = roomData.numOfReviews;
+
+    $reviewsBlock.prepend('<span class="room_card__number_of_reviews">'+numOfReviews+'</span>')
+  }
 }
 
 $('.js_room_card').each(function() {
-  const roomCard = new RoomCard(this);
+  new RoomCard(this);
 })
