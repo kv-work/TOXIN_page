@@ -1,8 +1,9 @@
 mixin rateButton(params)
   -
-    var { name, rate } = params
+    var { name="rate", rate=5, disabled=false } = params
     var n = 0
+    var className = disabled ? "rate_button_disabled" : "rate_button"
 
-  .rate_button
+  div(class=className)
     while n < 5
-      input.rate_button__input(type="radio" name=name checked=(n++ == rate))
+      input.rate_button__input(type="radio" name=name checked=(n++ == rate) disabled=disabled)
