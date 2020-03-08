@@ -4,6 +4,7 @@
   background: #FFFFFF;
   box-shadow: 0px 10px 20px $dark-5;
   border-radius: 4px;
+  width: 270px;
 
   &__number_block {
     font-family: Quicksand;
@@ -15,5 +16,22 @@
 
   &__number {
     font-size: 19px;
+  }
+
+  &__images_block {
+    padding: 0;
+    margin: 0;
+
+    & > li {
+      list-style-type: none;
+      height: 151px;
+      background-repeat: no-repeat;
+      background-clip: border-box;
+      display: none;
+
+      &.active {
+        display: block;
+      }
+    }
   }
 }
