@@ -37,22 +37,69 @@ class RoomCard {
     this.roomData = roomsData.rooms[this.numOfRoom]
   }
 
+  //Создаем карусель картинок на подобии бутстраповского
   _createRoomImageBlocks() {
     const {$imagesBlock, numOfRoom, roomData} = this;
     const imgArr = roomData.images;
+    const $carouselInner = $('<div>', {class: 'carousel-inner'});
+    const $carouselIndicators = $('<ol>', {class: 'carousel-indicators'});
 
+
+    //Добавляем слайды
     imgArr.forEach((item, idx, array) => {
-      const $roomImg = $('<li>', { class: 'room_card__image_room_'+numOfRoom+'_'+idx })
-      const isActive = idx === 0;
+      const $roomImgWrapper = $('<div>', { class: 'room_card__room_image_wrapper' });
+      const $roomImg = $('<img>', {
+              class: 'room_card__room_image',
+              src: item,
+              alt: `${idx+1} slide`
+            });
+      const  isActive = idx === 0;
 
-      if (isActive) $roomImg.addClass('active')
+      $roomImgWrapper.append($roomImg);
 
-      $roomImg.css({
-        'background-image': `url(${item})`
+      if (isActive) $roomImgWrapper.addClass('active')
+
+      $carouselInner.append($roomImgWrapper)
+    })
+
+    //Добавляем индикаторы
+    for (let i = 0; i < 4; i++) {
+      const $indicator = $('<li>', {
+        'data-slide-to': i,
+        class: (i === 0 ) ? 'active' : ''
       })
 
-      $imagesBlock.append($roomImg)
-    })
+      $carouselIndicators.append($indicator)
+    }
+
+    //Элементы управления
+    const $carouselControlPrev = $('<a>', {
+      class: 'carousel-control-prev',
+      role: 'button',
+      'data-slide': 'prev'
+    }).append($('<span>', {
+        class: 'carousel-control-prev-icon material-icons',
+        'aria-hidden': true,
+        text: 'expand_more'
+      }))
+
+      const $carouselControlNext = $('<a>', {
+        class: 'carousel-control-next',
+        role: 'button',
+        'data-slide': 'next'
+      }).append($('<span>', {
+          class: 'carousel-control-next-icon material-icons',
+          'aria-hidden': true,
+          text: 'expand_more'
+        }))
+
+    $imagesBlock.append($carouselIndicators)
+    $imagesBlock.append($carouselInner)
+
+    if (imgArr.length > 1) {
+      $imagesBlock.append($carouselControlPrev)
+      $imagesBlock.append($carouselControlNext)
+    }
   }
 
   _displayLuxSign() {

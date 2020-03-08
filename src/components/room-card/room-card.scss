@@ -18,20 +18,16 @@
     font-size: 19px;
   }
 
-  &__images_block {
-    padding: 0;
-    margin: 0;
+  &__room_image_wrapper {
+    height: 151px;
+    display: none;
 
-    & > li {
-      list-style-type: none;
-      height: 151px;
-      background-repeat: no-repeat;
-      background-clip: border-box;
-      display: none;
-
-      &.active {
-        display: block;
-      }
+    &.active {
+      display: block;
     }
+  }
+
+  &__room_image {
+    width: 100%;
   }
 }
