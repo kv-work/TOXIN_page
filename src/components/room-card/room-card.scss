@@ -5,6 +5,9 @@
   box-shadow: 0px 10px 20px $dark-5;
   border-radius: 4px;
   width: 270px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   &__number_block {
     font-family: Quicksand;
@@ -16,6 +19,12 @@
 
   &__number {
     font-size: 19px;
+  }
+
+  &__delimiter {
+    width: 230px;
+    height: 1px;
+    background-color: $dark-10;
   }
 
   &__room_image_wrapper {
