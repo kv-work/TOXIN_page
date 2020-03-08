@@ -1,6 +1,6 @@
 import './room-card.scss'
 import roomsData from '../../data/data.json'
-import { RateButton } from '../rate-button/rate-button'
+import RateButton from '../rate-button/rate-button'
 
 class RoomCard {
   constructor(node) {
@@ -20,6 +20,7 @@ class RoomCard {
 
   _init() {
     this._getData();
+    this._createRoomImageBlocks();
     this._displayPrice();
     
     if (this.roomData.isLux) {
@@ -31,15 +32,27 @@ class RoomCard {
   }
 
   _getData() {
-    const numOfRoom = this.data.number;
+    this.numOfRoom = this.data.number;
 
-    this.roomData = roomsData.rooms[numOfRoom]
+    this.roomData = roomsData.rooms[this.numOfRoom]
   }
 
   _createRoomImageBlocks() {
-    const {$imagesBlock, roomData} = this;
+    const {$imagesBlock, numOfRoom, roomData} = this;
     const imgArr = roomData.images;
 
+    imgArr.forEach((item, idx, array) => {
+      const $roomImg = $('<li>', { class: 'room_card__image_room_'+numOfRoom+'_'+idx })
+      const isActive = idx === 0;
+
+      if (isActive) $roomImg.addClass('active')
+
+      $roomImg.css({
+        'background-image': `url(${item})`
+      })
+
+      $imagesBlock.append($roomImg)
+    })
   }
 
   _displayLuxSign() {
