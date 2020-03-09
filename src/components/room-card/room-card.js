@@ -9,7 +9,7 @@ class RoomCard {
 
     this.$numberBlock = this.$node.find('.room_card__number_block');
     this.$imagesBlock = this.$node.find('.room_card__images_block');
-    this.$priceBlock = this.$node.find('.room_card__price');
+    this.$priceBlock = this.$node.find('.room_card__price_block');
     this.$rateBlock = this.$node.find('.room_card__rate');
     this.$reviewsBlock = this.$node.find('.room_card__reviews');
 
@@ -111,7 +111,7 @@ class RoomCard {
   _displayPrice() {
     const {$priceBlock, roomData} = this;
 
-    $priceBlock.prepend('<span class="room_card__price">'+roomData.price+'</span>')
+    $priceBlock.prepend('<span class="room_card__price">'+roomData.price+'₽</span>')
   }
 
   _displayRoomRate() {

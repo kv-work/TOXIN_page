@@ -21,10 +21,49 @@
     font-size: 19px;
   }
 
+  &__lux_flag {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $primary-purple;
+  }
+
+  &__price_block {
+    font-family: Montserrat;
+    font-style: normal;
+    color: $dark-50;
+    line-height: 18px;
+  }
+
+  &__price {
+    font-weight: bold;
+    font-size: 14px;
+
+  }
+
+  &__price_text {
+    font-size: 12px;
+  }
+
   &__delimiter {
     width: 230px;
     height: 1px;
     background-color: $dark-10;
+  }
+
+  &__reviews {
+    color: $dark-50;
+  }
+
+  &__number_of_reviews {
+    font-weight: bold;
+  }
+
+  &__review_text {
+    margin-left: 3px;
   }
 
   &__room_image_wrapper {
