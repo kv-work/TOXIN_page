@@ -66,37 +66,66 @@
     margin-left: 3px;
   }
 
-  &__room_image_wrapper {
-    height: 151px;
-    display: none;
-
-    &.active {
-      display: block;
-    }
-  }
-
   &__images_block {
+    height: 151px;
+    width: 270px;
     position: relative;
+    
   }
 
-  &__room_image_wrapper {
-    position: relative;
-    display: none;
-    float: left;
-    width: 100%;
-    margin-right: -100%;
-    backface-visibility: hidden;
-    transition: transform 0.6s ease-in-out;
+  &__image {
+    background: url(../../img/room_888_1.png) no-repeat;
+    height: 100%;
+  }
 
-    &.active {
-      display: block;
+  &__control_prev {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:before {
+      font-family: 'Material icons';
+      content: 'expand_more';
+      font-size: 24px;
+      height: 44px;
+      width: 44px;
+      line-height: 44px;
+      text-align: center;
+      vertical-align: middle;
+      color: #fff;
+      transform: rotate(90deg);
     }
   }
 
-  &__room_image {
-    width: 100%;
-  }
+  &__control_next {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 
+    &:before {
+      font-family: 'Material icons';
+      content: 'expand_more';
+      font-size: 24px;
+      height: 44px;
+      width: 44px;
+      line-height: 44px;
+      text-align: center;
+      vertical-align: middle;
+      color: #fff;
+      transform: rotate(90deg);
+    }
+  }
 
 }
 

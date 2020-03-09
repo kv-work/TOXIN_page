@@ -20,7 +20,7 @@ class RoomCard {
 
   _init() {
     this._getData();
-    this._createRoomImageBlocks();
+    // this._createRoomImageBlocks();
     this._displayPrice();
     
     if (this.roomData.isLux) {
