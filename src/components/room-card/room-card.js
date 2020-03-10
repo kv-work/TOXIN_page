@@ -10,8 +10,8 @@ class RoomCard {
     this.$numberBlock = this.$node.find('.room_card__number_block');
     this.$imagesBlock = this.$node.find('.room_card__images_block');
     this.$priceBlock = this.$node.find('.room_card__price_block');
-    this.$rateBlock = this.$node.find('.room_card__rate');
-    this.$reviewsBlock = this.$node.find('.room_card__reviews');
+    this.$rateBlock = this.$node.find('.room_card__rate_block');
+    this.$reviewsBlock = this.$node.find('.room_card__reviews_block');
 
     this.rateButton = new RateButton( this.$rateBlock.find('.js_rate_button')[0] );
 
@@ -95,8 +95,9 @@ class RoomCard {
 
   _displayPrice() {
     const {$priceBlock, roomData} = this;
+    const formattedPrice = roomData.price.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1 ')
 
-    $priceBlock.prepend('<span class="room_card__price">'+roomData.price+'₽</span>')
+    $priceBlock.prepend('<span class="room_card__price">'+formattedPrice+'₽</span>')
   }
 
   _displayRoomRate() {
