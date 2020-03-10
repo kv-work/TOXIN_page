@@ -29,6 +29,8 @@ class RoomCard {
     
     this._displayRoomRate();
     this._displayNumOfReviews();
+
+    this._attachEventHandlers()
   }
 
   _getData() {
@@ -41,8 +43,8 @@ class RoomCard {
   _createRoomImageBlocks() {
     const {$imagesBlock, numOfRoom, roomData} = this;
     const imgArr = roomData.images;
-    const $images = $('<div>', {class: 'room_card__images'})
-    const $indicators = $('<ol>', {class: 'room_card__indicators'})
+    this.$images = $('<div>', {class: 'room_card__images'})
+    this.$indicators = $('<ol>', {class: 'room_card__indicators'})
 
 
     //Добавляем слайды
@@ -57,34 +59,46 @@ class RoomCard {
       
       const  isActive = idx === 0;
 
-      if (isActive) $roomImg.addClass('active')
+      if (isActive) {
+        $roomImg.addClass('active')
+        this.$images.data({'active-slide': 0})
+      }
 
-      $images.append($roomImg)
+      this.$images.append($roomImg)
     })
 
     //Добавляем индикаторы
     for (let i = 0; i < 4; i++) {
       const $indicator = $('<li>', {
         'data-slide-to': i,
-        class: (i === 0 ) ? 'active' : ''
+        class: 'indicator'
       })
 
-      $indicators.append($indicator)
+      if (i === 0) {
+        $indicator.addClass('active')
+        this.$indicators.data({'active-slide': 0})
+      }
+
+      if (!imgArr[i]) {
+        $indicator.addClass('disabled')
+      }
+
+      this.$indicators.append($indicator)
     }
 
     //Элементы управления
-    const $controlPrev = $('<div>', {class: 'room_card__control_prev'})
-    const $controlNext = $('<div>', {class: 'room_card__control_next'})
+    this.$controlPrev = $('<div>', {class: 'room_card__control_prev'})
+    this.$controlNext = $('<div>', {class: 'room_card__control_next'})
 
  
-    $imagesBlock.append($images)
+    $imagesBlock.append(this.$images)
 
     if (imgArr.length > 1) {
-      $imagesBlock.append($controlPrev)
-      $imagesBlock.append($controlNext)
+      $imagesBlock.append(this.$controlPrev)
+      $imagesBlock.append(this.$controlNext)
     }
 
-    $imagesBlock.append($indicators)
+    $imagesBlock.append(this.$indicators)
   }
 
   _displayLuxSign() {
@@ -112,6 +126,38 @@ class RoomCard {
     const numOfReviews = roomData.numOfReviews;
 
     $reviewsBlock.prepend('<span class="room_card__number_of_reviews">'+numOfReviews+'</span>')
+  }
+
+  _attachEventHandlers() {
+    const {$indicators, $controlPrev, $controlNext, $images} = this;
+
+    $indicators.click( (e) => {
+      if (!e.target.classList.contains('indicator') || e.target.classList.contains('disabled')) {
+        return
+      }
+
+      const slideTo = $(e.target).data().slideTo;
+      const currentSlide = $images.data().activeSlide;
+
+      if (slideTo != currentSlide) {
+        $images.find('div').eq(currentSlide).removeClass('active')
+        $images.find('div').eq(slideTo).addClass('active')
+
+        $indicators.find('li').eq(currentSlide).removeClass('active')
+        $indicators.find('li').eq(slideTo).addClass('active')
+        
+        $images.data({'active-slide': slideTo})
+        $indicators.data({'active-slide': slideTo})
+      }
+    })
+
+    $controlPrev.click( (e) => {
+      console.log(e.target)
+    })
+
+    $controlNext.click( (e) => {
+      console.log(e.target)
+    })
   }
 }
 
