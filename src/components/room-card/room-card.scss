@@ -112,6 +112,10 @@
         border: none;
         background-color: #fff;
       }
+
+      &.disabled {
+        cursor: default;
+      }
     }
   }
 
