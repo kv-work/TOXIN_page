@@ -73,9 +73,18 @@
     
   }
 
-  &__image {
-    background: url(../../img/room_888_1.png) no-repeat;
+  &__images {
     height: 100%;
+  }
+
+  &__image {
+    background-repeat: no-repeat;
+    height: 100%;
+    display: none;
+
+    &.active {
+      display: block;
+    }
   }
 
   &__control_prev {

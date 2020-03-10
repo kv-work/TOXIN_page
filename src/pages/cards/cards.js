@@ -6,5 +6,3 @@ function requireAll(requireContext) {
 }
 
 requireAll(require.context('../../components', true, /\.(js)$/));
-
-requireAll(require.context('../../img', true, /\.(png)$/));

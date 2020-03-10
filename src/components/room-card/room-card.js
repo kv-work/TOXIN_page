@@ -1,5 +1,5 @@
 import './room-card.scss'
-import roomsData from '../../data/data.json'
+import roomsData from './data.json'
 import RateButton from '../rate-button/rate-button'
 
 class RoomCard {
@@ -20,7 +20,7 @@ class RoomCard {
 
   _init() {
     this._getData();
-    // this._createRoomImageBlocks();
+    this._createRoomImageBlocks();
     this._displayPrice();
     
     if (this.roomData.isLux) {
@@ -37,69 +37,46 @@ class RoomCard {
     this.roomData = roomsData.rooms[this.numOfRoom]
   }
 
-  //Создаем карусель картинок на подобии бутстраповского
+  //Создаем карусель картинок
   _createRoomImageBlocks() {
     const {$imagesBlock, numOfRoom, roomData} = this;
     const imgArr = roomData.images;
-    const $carouselInner = $('<div>', {class: 'carousel-inner'});
-    const $carouselIndicators = $('<ol>', {class: 'carousel-indicators'});
+    const $images = $('<div>', {class: 'room_card__images'})
 
 
     //Добавляем слайды
     imgArr.forEach((item, idx, array) => {
-      const $roomImgWrapper = $('<div>', { class: 'room_card__room_image_wrapper' });
-      const $roomImg = $('<img>', {
-              class: 'room_card__room_image',
-              src: item,
-              alt: `${idx+1} slide`
-            });
+      
+      const $roomImg = $('<div>', { class: 'room_card__image'});
+      const imgUrl = require(`${item}`).default;
+      
+      $roomImg.css({
+          'background-image': `url(${imgUrl})`
+        })
+      
       const  isActive = idx === 0;
 
-      $roomImgWrapper.append($roomImg);
+      if (isActive) $roomImg.addClass('active')
 
-      if (isActive) $roomImgWrapper.addClass('active')
-
-      $carouselInner.append($roomImgWrapper)
+      $images.append($roomImg)
     })
 
     //Добавляем индикаторы
-    for (let i = 0; i < 4; i++) {
-      const $indicator = $('<li>', {
-        'data-slide-to': i,
-        class: (i === 0 ) ? 'active' : ''
-      })
-
-      $carouselIndicators.append($indicator)
-    }
+    // for (let i = 0; i < 4; i++) {
+    //   const $indicator = $('<li>', {
+    //     'data-slide-to': i,
+    //     class: (i === 0 ) ? 'active' : ''
+    //   })
+    // }
 
     //Элементы управления
-    const $carouselControlPrev = $('<a>', {
-      class: 'carousel-control-prev',
-      role: 'button',
-      'data-slide': 'prev'
-    }).append($('<span>', {
-        class: 'carousel-control-prev-icon material-icons',
-        'aria-hidden': true,
-        text: 'expand_more'
-      }))
 
-      const $carouselControlNext = $('<a>', {
-        class: 'carousel-control-next',
-        role: 'button',
-        'data-slide': 'next'
-      }).append($('<span>', {
-          class: 'carousel-control-next-icon material-icons',
-          'aria-hidden': true,
-          text: 'expand_more'
-        }))
 
-    $imagesBlock.append($carouselIndicators)
-    $imagesBlock.append($carouselInner)
+    // $imagesBlock.append($carouselIndicators)
+    $imagesBlock.append($images)
 
-    if (imgArr.length > 1) {
-      $imagesBlock.append($carouselControlPrev)
-      $imagesBlock.append($carouselControlNext)
-    }
+    // if (imgArr.length > 1) {
+    // }
   }
 
   _displayLuxSign() {
