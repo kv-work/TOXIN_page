@@ -42,6 +42,7 @@ class RoomCard {
     const {$imagesBlock, numOfRoom, roomData} = this;
     const imgArr = roomData.images;
     const $images = $('<div>', {class: 'room_card__images'})
+    const $indicators = $('<ol>', {class: 'room_card__indicators'})
 
 
     //Добавляем слайды
@@ -62,24 +63,28 @@ class RoomCard {
     })
 
     //Добавляем индикаторы
-    // for (let i = 0; i < 4; i++) {
-    //   const $indicator = $('<li>', {
-    //     'data-slide-to': i,
-    //     class: (i === 0 ) ? 'active' : ''
-    //   })
-    // }
+    for (let i = 0; i < 4; i++) {
+      const $indicator = $('<li>', {
+        'data-slide-to': i,
+        class: (i === 0 ) ? 'active' : ''
+      })
+
+      $indicators.append($indicator)
+    }
 
     //Элементы управления
     const $controlPrev = $('<div>', {class: 'room_card__control_prev'})
     const $controlNext = $('<div>', {class: 'room_card__control_next'})
 
-    // $imagesBlock.append($carouselIndicators)
+ 
     $imagesBlock.append($images)
 
     if (imgArr.length > 1) {
       $imagesBlock.append($controlPrev)
       $imagesBlock.append($controlNext)
     }
+
+    $imagesBlock.append($indicators)
   }
 
   _displayLuxSign() {
