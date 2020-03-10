@@ -70,13 +70,16 @@ class RoomCard {
     // }
 
     //Элементы управления
-
+    const $controlPrev = $('<div>', {class: 'room_card__control_prev'})
+    const $controlNext = $('<div>', {class: 'room_card__control_next'})
 
     // $imagesBlock.append($carouselIndicators)
     $imagesBlock.append($images)
 
-    // if (imgArr.length > 1) {
-    // }
+    if (imgArr.length > 1) {
+      $imagesBlock.append($controlPrev)
+      $imagesBlock.append($controlNext)
+    }
   }
 
   _displayLuxSign() {
