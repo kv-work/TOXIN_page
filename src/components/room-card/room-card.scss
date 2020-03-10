@@ -146,9 +146,7 @@
     align-items: center;
     border-top-left-radius: 4px;
 
-    &:before {
-      font-family: 'Material icons';
-      content: 'expand_more';
+    & .room_card__control_icon {
       font-size: 24px;
       height: 44px;
       width: 44px;
@@ -172,9 +170,7 @@
     align-items: center;
     border-top-left-radius: 4px;
 
-    &:before {
-      font-family: 'Material icons';
-      content: 'expand_more';
+    & .room_card__control_icon {
       font-size: 24px;
       height: 44px;
       width: 44px;

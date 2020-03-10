@@ -90,6 +90,18 @@ class RoomCard {
     this.$controlPrev = $('<div>', {class: 'room_card__control_prev'})
     this.$controlNext = $('<div>', {class: 'room_card__control_next'})
 
+    const $controlIconPrev = $('<i>', {
+      class: 'material-icons room_card__control_icon',
+      text: 'expand_more'
+    })
+    const $controlIconNext = $('<i>', {
+      class: 'material-icons room_card__control_icon',
+      text: 'expand_more'
+    })
+
+    this.$controlPrev.append($controlIconPrev)
+    this.$controlNext.append($controlIconNext)
+
  
     $imagesBlock.append(this.$images)
 
@@ -128,35 +140,53 @@ class RoomCard {
     $reviewsBlock.prepend('<span class="room_card__number_of_reviews">'+numOfReviews+'</span>')
   }
 
+  _changeSlide(slide) {
+    const {$indicators, $images, roomData} = this;
+    const numOfSlides = roomData.images.length;
+    const currentSlide = $images.data().activeSlide;
+
+    if (slide != currentSlide && slide <= numOfSlides) {
+      $images.find('div').eq(currentSlide).removeClass('active')
+      $images.find('div').eq(slide).addClass('active')
+  
+      $indicators.find('li').eq(currentSlide).removeClass('active')
+      $indicators.find('li').eq(slide).addClass('active')
+          
+      $images.data({'active-slide': slide})
+      $indicators.data({'active-slide': slide})
+    }
+  }
+
   _attachEventHandlers() {
-    const {$indicators, $controlPrev, $controlNext, $images} = this;
+    const {$indicators, $controlPrev, $controlNext, $images, roomData} = this;
+    const numOfSlides = roomData.images.length;
 
     $indicators.click( (e) => {
-      if (!e.target.classList.contains('indicator') || e.target.classList.contains('disabled')) {
-        return
-      }
+      const $target = $(e.target)
 
-      const slideTo = $(e.target).data().slideTo;
-      const currentSlide = $images.data().activeSlide;
+      if ( $target.hasClass('indicator') && !$target.hasClass('disabled') ) {
+        const slideTo = $(e.target).data().slideTo;
 
-      if (slideTo != currentSlide) {
-        $images.find('div').eq(currentSlide).removeClass('active')
-        $images.find('div').eq(slideTo).addClass('active')
-
-        $indicators.find('li').eq(currentSlide).removeClass('active')
-        $indicators.find('li').eq(slideTo).addClass('active')
-        
-        $images.data({'active-slide': slideTo})
-        $indicators.data({'active-slide': slideTo})
+        this._changeSlide(slideTo)
       }
     })
 
     $controlPrev.click( (e) => {
-      console.log(e.target)
+      if ( e.target.classList.contains('room_card__control_icon') ) {
+        const currentSlide = $images.data().activeSlide;
+        const slide = (currentSlide - 1 + numOfSlides) % numOfSlides;
+
+        this._changeSlide(slide);
+      }
     })
 
     $controlNext.click( (e) => {
-      console.log(e.target)
+      if ( e.target.classList.contains('room_card__control_icon') ) {
+        const currentSlide = $images.data().activeSlide;
+        const slide = (currentSlide + 1) % numOfSlides;
+
+        this._changeSlide(slide);
+      }
     })
   }
 }
