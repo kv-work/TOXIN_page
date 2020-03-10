@@ -2,68 +2,68 @@
 
 .room_card {
   background: #FFFFFF;
-  box-shadow: 0px 10px 20px $dark-5;
-  border-radius: 4px;
-  width: 270px;
+  box-shadow: 0rem 0.625rem 1.25rem $dark-5;
+  border-radius: 0.25rem;
+  width: 16.875rem;
   
 
   &__room_info_block {
     display: grid;
     grid-template-columns: repeat(2, auto);
-    padding: 24px 17px 7px 20px;
+    padding: 1.5rem 1.0625rem 0.4375rem 1.25rem;
   }
 
   &__number_block {
     font-family: Quicksand;
     font-style: normal;
     font-weight: bold;
-    font-size: 14px;
-    line-height: 17px;
+    font-size: 0.875rem;
+    line-height: 1.0625rem;
   }
 
   &__number_sign {
-    margin-right: 4px;
+    margin-right: 0.25rem;
   }
 
   &__number {
-    font-size: 19px;
+    font-size: 1.1875rem;
   }
 
   &__lux_flag {
     font-family: Montserrat;
     font-style: normal;
     font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
+    font-size: 0.75rem;
+    line-height: 0.9375rem;
     text-transform: uppercase;
     color: $primary-purple;
-    margin-left: 5px;
+    margin-left: 0.3125rem;
   }
 
   &__price_block {
     font-family: Montserrat;
     font-style: normal;
     color: $dark-50;
-    line-height: 18px;
+    line-height: 1.125rem;
     justify-self: end;
   }
 
   &__price {
     font-weight: bold;
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 
   &__price_text {
-    font-size: 12px;
-    margin-left: 5px;
+    font-size: 0.75rem;
+    margin-left: 0.3125rem;
   }
 
   &__delimiter {
     grid-column: 1 / -1;
-    height: 1px;
+    height: 0.0625rem;
     background-color: $dark-10;
-    margin-top: 12px;
-    margin-bottom: 8px;
+    margin-top: 0.75rem;
+    margin-bottom: 0.5rem;
   }
 
   &__reviews_block {
@@ -76,15 +76,15 @@
   }
 
   &__review_text {
-    margin-left: 3px;
-    padding-right: 3px;
+    margin-left: 0.1875rem;
+    padding-right: 0.1875rem;
   }
 
   &__images_block {
-    height: 151px;
-    width: 270px;
+    height: 9.4375rem;
+    width: 16.875rem;
     position: relative;
-    border-radius: 4px;
+    border-radius: 0.25rem;
     
   }
 
@@ -93,19 +93,19 @@
     margin: 0;
     position: absolute;
     display: flex;
-    right: 15px;
-    bottom: 15.11px;
-    width: 41.25px;
+    right: 0.9375rem;
+    bottom: 0.9444rem;
+    width: 2.5781rem;
     justify-content: space-between;
 
     & > li {
       list-style-type: none;
-      width: 7.5px;
-      height: 7.5px;
-      border: 1px solid white;
+      width: 0.4688rem;
+      height: 0.4688rem;
+      border: 0.0625rem solid white;
       border-radius: 50%;
       box-sizing: border-box;
-      box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3);
+      box-shadow: 0rem 0.3125rem 0.3125rem rgba(31, 32, 65, 0.3);
       cursor: pointer;
 
       &.active {
@@ -128,8 +128,8 @@
     height: 100%;
     display: none;
     background-size: cover;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
 
     &.active {
       display: block;
@@ -144,13 +144,13 @@
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
     display: flex;
     align-items: center;
-    border-top-left-radius: 4px;
+    border-top-left-radius: 0.25rem;
 
     & .room_card__control_icon {
-      font-size: 24px;
-      height: 44px;
-      width: 44px;
-      line-height: 44px;
+      font-size: 1.5rem;
+      height: 2.75rem;
+      width: 2.75rem;
+      line-height: 2.75rem;
       text-align: center;
       vertical-align: middle;
       color: #fff;
@@ -168,13 +168,13 @@
     transform: matrix(-1, 0, 0, 1, 0, 0);
     display: flex;
     align-items: center;
-    border-top-left-radius: 4px;
+    border-top-left-radius: 0.25rem;
 
     & .room_card__control_icon {
-      font-size: 24px;
-      height: 44px;
-      width: 44px;
-      line-height: 44px;
+      font-size: 1.5rem;
+      height: 2.75rem;
+      width: 2.75rem;
+      line-height: 2.75rem;
       text-align: center;
       vertical-align: middle;
       color: #fff;
