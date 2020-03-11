@@ -4,6 +4,7 @@ block variables
   include ../../components/logo/logo
   include ../../components/room-search-card/room-search-card
   include ../../components/registration-card/registration-card
+  include ../../components/room-rate-card/room-rate-card
   include ../../components/login-card/login-card
   include ../../components/room-card/room-card
 
@@ -21,7 +22,7 @@ block content
           +registrationCard({label: "Регистрация аккаунта"})
       .cards_grid_col
         .room_rate_card_wrapper 
-          .content Room Rate Card
+          +roomRateCard()
         .login_card_wrapper
           +loginCard({label: "Войти"})
       .cards_grid_col

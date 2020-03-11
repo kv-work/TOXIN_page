@@ -42,13 +42,8 @@
 // .account_registration_card_wrapper  {
 // }
 
-.room_rate_card_wrapper  {
-  border: 1px solid blue;
-
-  & .content {
-    height: 511px;
-  }
-}
+// .room_rate_card_wrapper  {
+// }
 
 // .login_card_wrapper  {
 // }
@@ -58,10 +53,6 @@
 
 // .room_card_wrapper  {
 // }
-
-.content {
-  background: yellow;
-}
 
 @media screen and (max-width: 1040px) {
   .cards_grid {
