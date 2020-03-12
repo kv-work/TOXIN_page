@@ -4,7 +4,8 @@ class RoomRateCard {
   constructor(node) {
     this.$node = $(node);
     this.$infoBlock = this.$node.find('.room_rate_card__room_info_block');
-    this.datepicker = this.$node.find('.js_datepicker_separated').datepicker().data('datepicker');
+    this.datepickerData = this.$node.find('.js_datepicker_separated').datepicker().data('datepicker');
+    this.numOfDays = this._getNumOfDays();
     this.$dropdown = this.$node.find('.js_form_dropdown');
     this.$calcBlock = this.$node.find('.room_rate_card__calculations_block');
     this.$total = this.$node.find('.room_rate_card__total_cost');
@@ -14,6 +15,24 @@ class RoomRateCard {
 
   _init() {
     this._displayInfoOfRoom()
+  }
+
+  _getNumOfDays() {
+    const {selectedDates} = this.datepickerData;
+
+    if (selectedDates.length > 0) {
+      const firstDate = selectedDates[0];
+      const secondDate = selectedDates[1];
+
+      const numOfDays = Math.ceil(Math.abs(secondDate.getTime() - firstDate.getTime()) / (1000 * 3600 * 24));
+      console.log(numOfDays)
+
+      return numOfDays
+    }
+
+    alert('выбкерите дату')
+    
+    return 0
   }
 
   _displayInfoOfRoom() {
