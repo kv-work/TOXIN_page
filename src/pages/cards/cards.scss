@@ -12,7 +12,7 @@
     max-width: 1440px;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(2, minmax(320px, 380px)) 320px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, auto));
     grid-template-rows: auto;
     column-gap: 40px;
     grid-auto-flow: row dense;
@@ -34,34 +34,4 @@
   position: absolute;
   top: 30px;
   left: 30px;
-}
-
-// .room_search_card_wrapper  {
-// }
-
-// .account_registration_card_wrapper  {
-// }
-
-// .room_rate_card_wrapper  {
-// }
-
-// .login_card_wrapper  {
-// }
-
-// .calendar_card_wrapper  {
-// }
-
-// .room_card_wrapper  {
-// }
-
-@media screen and (max-width: 1040px) {
-  .cards_grid {
-    grid-template-columns: repeat(2, minmax(320px, 380px));
-  }
-}
-
-@media screen and (max-width: 680px) {
-  .cards_grid {
-    grid-template-columns: minmax(320px, 380px);
-  }
 }
