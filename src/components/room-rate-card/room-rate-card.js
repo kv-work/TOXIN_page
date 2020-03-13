@@ -1,8 +1,10 @@
 import './room-rate-card.scss'
+import data from './data.json'
 
 class RoomRateCard {
   constructor(node) {
     this.$node = $(node);
+    this.data = data;
     this.$infoBlock = this.$node.find('.room_rate_card__room_info_block');
     this.datepickerData = this.$node.find('.js_datepicker_separated').datepicker().data('datepicker');
     this.numOfDays = this._getNumOfDays();
@@ -15,6 +17,17 @@ class RoomRateCard {
 
   _init() {
     this._displayInfoOfRoom()
+
+    this._setDates()
+  }
+
+  _setDates() {
+    const {dates} = this.data
+
+    const datesArr = dates.map( (date) => new Date(date.split('.').reverse().join('-')) )
+    // console.log(datesArr)
+    // console.log(this.datepickerData)
+    this.datepickerData.selectDate(datesArr)
   }
 
   _getNumOfDays() {
