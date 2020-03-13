@@ -1,0 +1,28 @@
+{
+  "room" : {
+      "888": {
+      "images": [
+        "./img/room_888_1.png",
+        "./img/room_888_2.png",
+        "./img/room_888_3.png"
+      ],
+      "price": 9990,
+      "isLux": true,
+      "rate": 5,
+      "numOfReviews": 145
+    }
+  },
+  "dates" : ["19.08.2019", "23.08.2019"],
+  "guests": {
+    "adult": 2,
+    "children": 1,
+    "infants": 0
+  },
+  "services": [],
+  "discount": 2179,
+  "additionalServices": [
+    "Письменный стол",
+    "Стул для кормления",
+    "Кроватка"
+  ]
+}
