@@ -52,10 +52,17 @@ export default class Datepicker {
     const startDateStr  = date ? date.split('.').reverse().join('-') : '',
           endDateStr    = valueSecond ? valueSecond.split('.').reverse().join('-') : '';
 
-    this.startDate = new Date(startDateStr || endDateStr)
-    this.endDate = new Date(endDateStr || startDateStr)
+    this.startDate = startDateStr ? new Date(startDateStr) : '';
+    this.endDate = endDateStr ? new Date(endDateStr) : '';
+    
+    if (!this.isSeparated) {
+      return this.datepickerData.selectDate( [this.startDate, this.endDate] )
+    }
 
-    this.datepickerData.selectDate( [this.startDate, this.endDate] )
+    this.$datepicker.val(date)
+    this.$endDate.val(valueSecond)
+    this.datepickerData.selectedDates = [this.startDate, this.endDate]
+    console.log(this.datepickerData)
   }
 
   //Создание инпута, который будет отображать конечную дату диапозона
@@ -97,7 +104,7 @@ export default class Datepicker {
 
     if (this.$opener && this.$opener.hasClass('form_datepicker__end_date_input')) {
       this.endDate = date[0];
-      $datepicker.val(this.startDate.toLocaleDateString()); 
+      $datepicker.val(this.startDate ? this.startDate.toLocaleDateString() : ''); 
       $endDate.val(dates[0])
       this.datepickerData.minRange = this.startDate;
       this.datepickerData.selectedDates = [this.startDate, this.endDate]
@@ -126,20 +133,27 @@ export default class Datepicker {
       this.endDate = ''
       $datepicker.val('')
       $endDate.val('')
+      this.datepickerData.update({
+        'minDate': '',
+        'maxDate': ''
+      })
     }
   }
 
   _openDatepicker() {
     const {$opener, datepickerData, startDate, endDate, $datepicker} = this;
 
+    
+
     datepickerData.update({
       'minDate': '',
       'maxDate': ''
     })
 
-    console.log("opened")
-
     if ($opener.hasClass('start_date')) {
+      if (!startDate) {
+        this.datepickerData.maxRange = this.endDate; 
+      }
       datepickerData.update('maxDate', endDate)
     }
 
