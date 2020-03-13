@@ -18,7 +18,7 @@ export default class Datepicker {
 
     this.options = !this.isSeparated ? options : {
       ...options,
-      showEvent: 'focus',
+      showEvent: 'none',
       onSelect: (formDate, date, inst) => {
         this._selectDate(formDate, date)
       },
@@ -62,7 +62,6 @@ export default class Datepicker {
     this.$datepicker.val(date)
     this.$endDate.val(valueSecond)
     this.datepickerData.selectedDates = [this.startDate, this.endDate]
-    console.log(this.datepickerData)
   }
 
   //Создание инпута, который будет отображать конечную дату диапозона
@@ -82,6 +81,7 @@ export default class Datepicker {
 
     this.$wrapper.click( (e) => {
       this.$opener = $(e.currentTarget).find('input')
+      console.log(this.$opener)
       this.datepickerData.show()
     } )
 
@@ -89,6 +89,7 @@ export default class Datepicker {
     this.$applyBtn.click((e) => {
       this.datepickerData.hide()
     })
+
   }
 
   _selectDate(formattedDates, date) {    
@@ -152,7 +153,9 @@ export default class Datepicker {
 
     if ($opener.hasClass('start_date')) {
       if (!startDate) {
-        this.datepickerData.maxRange = this.endDate; 
+        this.datepickerData.maxRange = this.endDate;
+        this.datepickerData.selectedDates = [this.startDate, this.endDate]
+        console.log(this.datepickerData.selectedDates)
       }
       datepickerData.update('maxDate', endDate)
     }
