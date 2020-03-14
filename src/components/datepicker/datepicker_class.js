@@ -22,9 +22,9 @@ export default class Datepicker {
       onSelect: (formDate, date, inst) => {
         this._selectDate(formDate, date)
       },
-      onShow: (inst, animComplete) => { 
-        if (animComplete) this._openDatepicker()
-      }
+      // onShow: (inst, animComplete) => { 
+      //   if (animComplete) this._openDatepicker()
+      // }
     }
 
     this._init()
@@ -81,8 +81,8 @@ export default class Datepicker {
 
     this.$wrapper.click( (e) => {
       this.$opener = $(e.currentTarget).find('input')
-      console.log(this.$opener)
       this.datepickerData.show()
+      this._openDatepicker()
     } )
 
     //apply button event handlers
@@ -111,7 +111,8 @@ export default class Datepicker {
       this.datepickerData.selectedDates = [this.startDate, this.endDate]
       this.datepickerData.maxRange = this.endDate;  
     }
-    
+
+    //Установка дат до открытия
     if (!this.$opener) {
       switch (dates.length) {
         case 1:
@@ -129,6 +130,7 @@ export default class Datepicker {
       }
     }
 
+    //Сброс дат
     if (!date) {
       this.startDate = ''
       this.endDate = ''
@@ -142,9 +144,7 @@ export default class Datepicker {
   }
 
   _openDatepicker() {
-    const {$opener, datepickerData, startDate, endDate, $datepicker} = this;
-
-    
+    const {$opener, datepickerData, startDate, endDate, $datepicker} = this;    
 
     datepickerData.update({
       'minDate': '',
@@ -152,10 +152,8 @@ export default class Datepicker {
     })
 
     if ($opener.hasClass('start_date')) {
-      if (!startDate) {
-        this.datepickerData.maxRange = this.endDate;
-        this.datepickerData.selectedDates = [this.startDate, this.endDate]
-        console.log(this.datepickerData.selectedDates)
+      if (!startDate && endDate) {
+        datepickerData.selectDate([endDate, endDate])
       }
       datepickerData.update('maxDate', endDate)
     }
