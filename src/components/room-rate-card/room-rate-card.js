@@ -7,7 +7,6 @@ class RoomRateCard {
     this.data = data;
     this.$infoBlock = this.$node.find('.room_rate_card__room_info_block');
     this.datepickerData = this.$node.find('.js_datepicker_separated').datepicker().data('datepicker');
-    this.numOfDays = this._getNumOfDays();
     this.$dropdown = this.$node.find('.js_form_dropdown');
     this.$calcBlock = this.$node.find('.room_rate_card__calculations_block');
     this.$total = this.$node.find('.room_rate_card__total_cost');
@@ -25,8 +24,6 @@ class RoomRateCard {
     const {dates} = this.data
 
     const datesArr = dates.map( (date) => new Date(date.split('.').reverse().join('-')) )
-    // console.log(datesArr)
-    // console.log(this.datepickerData)
     this.datepickerData.selectDate(datesArr)
   }
 
@@ -38,12 +35,11 @@ class RoomRateCard {
       const secondDate = selectedDates[1];
 
       const numOfDays = Math.ceil(Math.abs(secondDate.getTime() - firstDate.getTime()) / (1000 * 3600 * 24));
-      console.log(numOfDays)
 
       return numOfDays
     }
 
-    alert('выбкерите дату')
+    alert('выберите даты')
     
     return 0
   }

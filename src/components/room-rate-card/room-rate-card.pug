@@ -24,6 +24,20 @@ mixin roomRateCard()
     .room_rate_card__guest_select_dropdown
       +dropdown({label:"Гости", text: "Сколько гостей", items: dropdownItems})
     .room_rate_card__calculations_block
+      .room_rate_card__days_cost_calc
+        span.room_rate_card__cost_calc 9 990₽ x 4 суток
+        span.room_rate_card__days__total_cost 39 960₽
+      .room_rate_card__services_calc
+        span.room_rate_card__services_text Сбор за услуги: скидка 2 179₽
+        span.room_rate_card__services_info i
+        span.room_rate_card__services_total_cost 0₽
+      .room_rate_card__additional_services_calc
+        span.room_rate_card__additional_services_text Сбор за дополнительные услуги
+        span.room_rate_card__additional_services_info i
+        span.room_rate_card__additional_services_total_cost 300₽
     .room_rate_card__total_cost
+      span.room_rate_card__total_text Итого
+      .room_rate_card__dashed_border
+      span.room_rate_card__total 38 081₽
     .room_rate_card__submit_button
       +button( {label: "забронировать", style: "filled", arrow: true } )

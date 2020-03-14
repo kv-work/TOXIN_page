@@ -61,4 +61,30 @@
     font-size: 0.75rem;
     margin-left: 0.3125rem;
   }
+
+  &__days_cost_calc,
+  &__services_calc,
+  &__additional_services_calc,
+  &__total_cost {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  &__services_info,
+  &__additional_services_info {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    color: $dark-25;
+    background: #FFFFFF;
+    border: 1px solid $dark-25;
+    box-sizing: border-box;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+    vertical-align: middle;
+  }
+
+  
 }
