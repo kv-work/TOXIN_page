@@ -5,6 +5,7 @@ export default class Datepicker {
     this.$node = $(node);
     this.isInline = this.$node.hasClass('js_form_datepicker_inline');
     
+    
     this.data = this.isInline ? this.$node.data() : this.$node.find('input').data();
 
     this.isSeparated = this.$node.hasClass('js_form_datepicker_separated');
@@ -20,18 +21,18 @@ export default class Datepicker {
       ...options,
       showEvent: 'none',
       onSelect: (formDate, date, inst) => {
+        console.log('onSelect event')
+        console.log(formDate)
         this._selectDate(formDate, date)
-      },
-      // onShow: (inst, animComplete) => { 
-      //   if (animComplete) this._openDatepicker()
-      // }
+      }
     }
 
     this._init()
   }
 
   _init() {
-    this.datepickerData = this.$datepicker.datepicker(this.options).data('datepicker')
+    this.datepickerData = this.$datepicker.datepicker(this.options).data('datepicker');
+    this.clearBtn = this.datepickerData.$datepicker.find('span.datepicker--button[data-action=clear')
 
     if (this.isSeparated) {
       this._addEndDateInput()
@@ -85,6 +86,19 @@ export default class Datepicker {
       this._openDatepicker()
     } )
 
+    //clear button event handler
+    this.clearBtn.click( () => {
+      console.log('click clear btn')
+      this.startDate = ''
+      this.endDate = ''
+      this.$datepicker.val('')
+      this.$endDate.val('')
+      this.datepickerData.update({
+        'minDate': '',
+        'maxDate': ''
+      })
+    })
+
     //apply button event handlers
     this.$applyBtn.click((e) => {
       this.datepickerData.hide()
@@ -97,6 +111,7 @@ export default class Datepicker {
     const { $datepicker, $endDate } = this;
 
     if (this.$opener && this.$opener.hasClass('start_date')) {
+      console.log('start opener')
       this.startDate = date[0]
       $datepicker.val(dates[0]);   
       this.datepickerData.selectedDates = [this.startDate, this.endDate]
@@ -104,6 +119,7 @@ export default class Datepicker {
     }
 
     if (this.$opener && this.$opener.hasClass('form_datepicker__end_date_input')) {
+      console.log('end opener')
       this.endDate = date[0];
       $datepicker.val(this.startDate ? this.startDate.toLocaleDateString() : ''); 
       $endDate.val(dates[0])
@@ -114,6 +130,7 @@ export default class Datepicker {
 
     //Установка дат до открытия
     if (!this.$opener) {
+      console.log('none opener')
       switch (dates.length) {
         case 1:
           this.startDate = date[0];
@@ -132,6 +149,7 @@ export default class Datepicker {
 
     //Сброс дат
     if (!date) {
+      console.log('undefined date')
       this.startDate = ''
       this.endDate = ''
       $datepicker.val('')
@@ -144,7 +162,7 @@ export default class Datepicker {
   }
 
   _openDatepicker() {
-    const {$opener, datepickerData, startDate, endDate, $datepicker} = this;    
+    const {$opener, datepickerData, startDate, endDate, $datepicker} = this;
 
     datepickerData.update({
       'minDate': '',
@@ -152,10 +170,8 @@ export default class Datepicker {
     })
 
     if ($opener.hasClass('start_date')) {
-      if (!startDate && endDate) {
-        datepickerData.selectDate([endDate, endDate])
-      }
       datepickerData.update('maxDate', endDate)
+      datepickerData.maxRange = endDate;  
     }
 
     if ($opener.hasClass('form_datepicker__end_date_input')) {
