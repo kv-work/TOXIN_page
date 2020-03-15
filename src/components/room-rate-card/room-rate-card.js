@@ -20,6 +20,7 @@ class RoomRateCard {
 
     this._calcDaysTotalCost()
     this._calcServices()
+    this._calcAdditionalServices()
   }
 
   _setDates() {
@@ -105,6 +106,25 @@ class RoomRateCard {
     $displayServicesText.html(servicesText);
     $displayServicesTotalCost.html(this._formatPrice(this.servicesCost))
 
+  }
+
+  _calcAdditionalServices() {
+    const { $calcBlock, data } = this;
+    const $displayAddServicesText = $calcBlock.find('.room_rate_card__additional_services_text');
+    const $displayAddServicesTotalCost = $calcBlock.find('.room_rate_card__additional_services_total_cost');
+    let addServicesText = 'Сбор за дополнительные услуги';
+
+    const addServices = data.additionalServices;
+    this.addServicesCost = 0;
+
+    if (addServices.length > 0) {
+      addServices.forEach( (service) => {
+        this.addServicesCost += service.cost;
+      } )
+    }
+
+    $displayAddServicesText.html(addServicesText);
+    $displayAddServicesTotalCost.html(this._formatPrice(this.addServicesCost))
   }
 }
 
