@@ -29,9 +29,7 @@ class RoomRateCard {
   _attachEventHandlers() {
     const { $datepicker, datepickerData } = this;
 
-    $datepicker.trigger('updateDates')
-
-    $datepicker.bind('updateDates', () => {
+    $datepicker.on('updateDates', () => {
       if (datepickerData.selectedDates.length == 2) {
         console.log('update')
       } else {
