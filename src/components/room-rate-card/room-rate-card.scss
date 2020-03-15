@@ -98,6 +98,7 @@
 
   &__services_info,
   &__additional_services_info {
+    position: relative;
     display: inline-block;
     width: 1.25rem;
     height: 1.25rem;
@@ -112,6 +113,42 @@
     justify-self: start;
     margin-top: 1px;
     margin-left: 5px;
+    cursor: default;
+
+    &:hover {
+      color: $dark-75;
+      border-color: $dark-75;
+
+      & > .room_rate_card__services_list {
+        display: inline-block;
+      }
+    }
+  }
+
+  &__services_list,
+  &__additional_services_list {
+    position: absolute;
+    top: 25px;
+    left: -100px;
+    padding: 10px;
+    margin: 0;
+    width: 200px;
+    color: $dark-75;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    z-index: 9999;
+    display: none
+  }
+
+  &__services_list_item {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 1px solid $dark-5;
+    margin-bottom: 3px;
   }
 
   &__additional_services_info {

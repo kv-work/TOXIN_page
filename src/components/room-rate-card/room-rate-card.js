@@ -84,9 +84,44 @@ class RoomRateCard {
     $displayTotalBlock.html(this._formatPrice(this.daysTotalCost))
   }
 
+  _renderServices(servicesData, $servicesDisplay) {
+    let servicesCost = 0;
+
+    if (servicesData.length > 0) {
+      services.forEach( (service) => {
+        servicesCost += service.cost;
+        
+        const $serviceListItem = $('<li>', {class: 'room_rate_card__services_list_item'});
+        const $serviceName = $('<span>', {
+          class: 'room_rate_card__service_name',
+          text: service.name
+        });
+        const $serviceCost = $('<span>', {
+          class: 'room_rate_card__service_cost',
+          text: this._formatPrice(service.cost)
+        });
+
+        $serviceListItem
+          .append($serviceName)
+          .append($serviceCost)
+
+        $servicesDisplay.append($serviceListItem)
+      } )
+    } else {
+      const $serviceListItem = $('<li>', {
+        class: 'room_rate_card__services_list_item',
+        text: 'Не выбрано никаких услуг'
+      });
+      $servicesDisplay.append($serviceListItem)
+    }
+
+    return servicesCost;
+  }
+
   _calcServices() {
     const { $calcBlock, data } = this;
     const $displayServicesText = $calcBlock.find('.room_rate_card__services_text');
+    const $servicesList = $calcBlock.find('.room_rate_card__services_info > .room_rate_card__services_list');
     const $displayServicesTotalCost = $calcBlock.find('.room_rate_card__services_total_cost');
     let servicesText = 'Сбор за услуги';
 
@@ -96,8 +131,30 @@ class RoomRateCard {
     if (services.length > 0) {
       services.forEach( (service) => {
         this.servicesCost += service.cost;
+        
+        const $serviceListItem = $('<li>', {class: 'room_rate_card__services_list_item'});
+        const $serviceName = $('<span>', {
+          class: 'room_rate_card__service_name',
+          text: service.name
+        });
+        const $serviceCost = $('<span>', {
+          class: 'room_rate_card__service_cost',
+          text: this._formatPrice(service.cost)
+        });
+
+        $serviceListItem
+          .append($serviceName)
+          .append($serviceCost)
+
+        $servicesList.append($serviceListItem)
       } )
-    } 
+    } else {
+      const $serviceListItem = $('<li>', {
+        class: 'room_rate_card__services_list_item',
+        text: 'Не выбрано никаких услуг'
+      });
+      $servicesList.append($serviceListItem)
+    }
 
     if (data.discount) {
       this.discount = data.discount;
