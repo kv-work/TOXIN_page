@@ -16,8 +16,10 @@ class RoomRateCard {
 
   _init() {
     this._displayInfoOfRoom()
-
     this._setDates()
+
+    this._calcDaysTotalCost()
+    this._calcServices()
   }
 
   _setDates() {
@@ -44,22 +46,65 @@ class RoomRateCard {
     return 0
   }
 
+  _formatPrice(price) {
+    return `${price.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1 ')}₽`
+  }
+
   _displayInfoOfRoom() {
     const 
       {$infoBlock, data} = this,
       numOfRoom = data.room.number,
       $num = $infoBlock.find('.room_rate_card__number'),
       $price = $infoBlock.find('.room_rate_card__price'),      
-      $luxFlag = $('<span>', {class: 'room_rate_card__lux_flag', text: 'люкс'}),
-      price = data.room.price,
-      formattedPrice = `${price.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1 ')}₽`;
+      $luxFlag = $('<span>', {class: 'room_rate_card__lux_flag', text: 'люкс'});
+      
+    this.price = data.room.price;
+    this.formattedPrice = this._formatPrice(this.price);
 
       $num.html(numOfRoom)
-      $price.html(formattedPrice)
+      $price.html(this.formattedPrice)
 
       if (data.room.isLux) {
         $infoBlock.find('.room_rate_card__number_block').append($luxFlag)
       }
+  }
+
+  _calcDaysTotalCost() {
+    const { $calcBlock, price, formattedPrice } = this;
+    const $displayCalcBlock = $calcBlock.find('.room_rate_card__cost_calc');
+    const $displayTotalBlock = $calcBlock.find('.room_rate_card__days_total_cost');
+
+    const numOfDays = this._getNumOfDays();
+
+    this.daysTotalCost = price * numOfDays;
+
+    $displayCalcBlock.html(`${formattedPrice} x ${numOfDays} суток`)
+    $displayTotalBlock.html(this._formatPrice(this.daysTotalCost))
+  }
+
+  _calcServices() {
+    const { $calcBlock, data } = this;
+    const $displayServicesText = $calcBlock.find('.room_rate_card__services_text');
+    const $displayServicesTotalCost = $calcBlock.find('.room_rate_card__services_total_cost');
+    let servicesText = 'Сбор за услуги';
+
+    const services = data.services;
+    this.servicesCost = 0;
+
+    if (services.length > 0) {
+      services.forEach( (service) => {
+        this.servicesCost += service.cost;
+      } )
+    } 
+
+    if (data.discount) {
+      this.discount = data.discount;
+      servicesText += `: скидка ${this._formatPrice(this.discount)}`
+    }
+
+    $displayServicesText.html(servicesText);
+    $displayServicesTotalCost.html(this._formatPrice(this.servicesCost))
+
   }
 }
 

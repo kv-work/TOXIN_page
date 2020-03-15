@@ -17,7 +17,20 @@
     "children": 1,
     "infants": 0
   },
-  "services": [],
+  "services": [
+    {
+      "name": "breakfast",
+      "cost": 100
+    },
+    {
+      "name": "cleaning",
+      "cost": 150
+    },
+    {
+      "name": "dinner",
+      "cost": 300
+    }
+  ],
   "discount": 2179,
   "additionalServices": [
     "Письменный стол",
