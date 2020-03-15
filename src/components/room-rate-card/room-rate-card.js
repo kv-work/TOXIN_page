@@ -84,11 +84,12 @@ class RoomRateCard {
     $displayTotalBlock.html(this._formatPrice(this.daysTotalCost))
   }
 
+  //return sum of services cost
   _renderServices(servicesData, $servicesDisplay) {
     let servicesCost = 0;
 
     if (servicesData.length > 0) {
-      services.forEach( (service) => {
+      servicesData.forEach( (service) => {
         servicesCost += service.cost;
         
         const $serviceListItem = $('<li>', {class: 'room_rate_card__services_list_item'});
@@ -126,35 +127,7 @@ class RoomRateCard {
     let servicesText = 'Сбор за услуги';
 
     const services = data.services;
-    this.servicesCost = 0;
-
-    if (services.length > 0) {
-      services.forEach( (service) => {
-        this.servicesCost += service.cost;
-        
-        const $serviceListItem = $('<li>', {class: 'room_rate_card__services_list_item'});
-        const $serviceName = $('<span>', {
-          class: 'room_rate_card__service_name',
-          text: service.name
-        });
-        const $serviceCost = $('<span>', {
-          class: 'room_rate_card__service_cost',
-          text: this._formatPrice(service.cost)
-        });
-
-        $serviceListItem
-          .append($serviceName)
-          .append($serviceCost)
-
-        $servicesList.append($serviceListItem)
-      } )
-    } else {
-      const $serviceListItem = $('<li>', {
-        class: 'room_rate_card__services_list_item',
-        text: 'Не выбрано никаких услуг'
-      });
-      $servicesList.append($serviceListItem)
-    }
+    this.servicesCost = this._renderServices(services, $servicesList);
 
     if (data.discount) {
       this.discount = data.discount;
@@ -169,17 +142,12 @@ class RoomRateCard {
   _calcAdditionalServices() {
     const { $calcBlock, data } = this;
     const $displayAddServicesText = $calcBlock.find('.room_rate_card__additional_services_text');
+    const $servicesList = $calcBlock.find('.room_rate_card__additional_services_info > .room_rate_card__services_list');
     const $displayAddServicesTotalCost = $calcBlock.find('.room_rate_card__additional_services_total_cost');
     let addServicesText = 'Сбор за дополнительные услуги';
 
     const addServices = data.additionalServices;
-    this.addServicesCost = 0;
-
-    if (addServices.length > 0) {
-      addServices.forEach( (service) => {
-        this.addServicesCost += service.cost;
-      } )
-    }
+    this.addServicesCost = this._renderServices(addServices, $servicesList);;
 
     $displayAddServicesText.html(addServicesText);
     $displayAddServicesTotalCost.html(this._formatPrice(this.addServicesCost))
