@@ -19,6 +19,12 @@ mixin roomRateCard()
 
   form.room_rate_card.js_room_rate_card
     .room_rate_card__room_info_block
+      .room_rate_card__number_block
+        span.room_rate_card__number_sign №
+        span.room_rate_card__number 888
+      .room_rate_card__price_block
+        span.room_rate_card__price
+        span.room_rate_card__price_text в сутки
     .room_rate_card__datepicker_is_separated
       +datepicker(datepickerParams)
     .room_rate_card__guest_select_dropdown
@@ -41,3 +47,5 @@ mixin roomRateCard()
       span.room_rate_card__total 38 081₽
     .room_rate_card__submit_button
       +button( {label: "забронировать", style: "filled", arrow: true } )
+
++roomRateCard()

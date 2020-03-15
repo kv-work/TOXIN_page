@@ -46,29 +46,20 @@ class RoomRateCard {
 
   _displayInfoOfRoom() {
     const 
-      {$infoBlock} = this,
-      $numBlock = $('<span>', {class: 'room_rate_card__number_block'}),
-      $numSign = $('<span>', {class: 'room_rate_card__number_sign', text: '№'}),
-      $num = $('<span>', {class: 'room_rate_card__number', text: 888}),
+      {$infoBlock, data} = this,
+      numOfRoom = data.room.number,
+      $num = $infoBlock.find('.room_rate_card__number'),
+      $price = $infoBlock.find('.room_rate_card__price'),      
       $luxFlag = $('<span>', {class: 'room_rate_card__lux_flag', text: 'люкс'}),
-      $priceBlock = $('<span>', {class: 'room_rate_card__price_block'}),
-      price = '9990',
-      formattedPrice = `${price.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1 ')}₽`,
-      $price = $('<span>', {class: 'room_rate_card__price', text: formattedPrice}),
-      $priceText = $('<span>', {class: 'room_rate_card__price_text', text: 'в сутки'});
+      price = data.room.price,
+      formattedPrice = `${price.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1 ')}₽`;
 
-    $numBlock
-      .append($numSign)
-      .append($num)
-      .append($luxFlag)
+      $num.html(numOfRoom)
+      $price.html(formattedPrice)
 
-    $priceBlock
-      .append($price)
-      .append($priceText)
-
-    $infoBlock
-      .append($numBlock)
-      .append($priceBlock)
+      if (data.room.isLux) {
+        $infoBlock.find('.room_rate_card__number_block').append($luxFlag)
+      }
   }
 }
 
