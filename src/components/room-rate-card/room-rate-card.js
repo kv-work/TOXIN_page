@@ -21,6 +21,7 @@ class RoomRateCard {
     this._calcDaysTotalCost()
     this._calcServices()
     this._calcAdditionalServices()
+    this._renderTotalCost()
   }
 
   _setDates() {
@@ -125,6 +126,26 @@ class RoomRateCard {
 
     $displayAddServicesText.html(addServicesText);
     $displayAddServicesTotalCost.html(this._formatPrice(this.addServicesCost))
+  }
+
+  _renderTotalCost() {
+    this.total = this.daysTotalCost;
+
+    if (this.servicesCost) {
+      this.total += this.servicesCost;
+    }
+
+    if (this.addServicesCost) {
+      this.total += this.addServicesCost;
+    }
+
+    if (this.discount) {
+      this.total -= this.discount
+    }
+
+    this.$total
+      .find('.room_rate_card__total')
+      .html(this._formatPrice(this.total))
   }
 }
 

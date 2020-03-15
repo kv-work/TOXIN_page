@@ -35,16 +35,16 @@ mixin roomRateCard()
         span.room_rate_card__days_total_cost
       .room_rate_card__services_calc
         span.room_rate_card__services_text
-        span.room_rate_card__services_info i
+        .room_rate_card__services_info i
         span.room_rate_card__services_total_cost
       .room_rate_card__additional_services_calc
         span.room_rate_card__additional_services_text
-        span.room_rate_card__additional_services_info i
+        .room_rate_card__additional_services_info i
         span.room_rate_card__additional_services_total_cost
     .room_rate_card__total_cost
       span.room_rate_card__total_text Итого
       .room_rate_card__dashed_border
-      span.room_rate_card__total 38 081₽
+      span.room_rate_card__total
     .room_rate_card__submit_button
       +button( {label: "забронировать", style: "filled", arrow: true } )
 
