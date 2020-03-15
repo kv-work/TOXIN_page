@@ -6,6 +6,7 @@ class RoomRateCard {
     this.$node = $(node);
     this.data = data;
     this.$infoBlock = this.$node.find('.room_rate_card__room_info_block');
+    this.$datepicker = this.$node.find('.room_rate_card__datepicker_is_separated');
     this.datepickerData = this.$node.find('.js_datepicker_separated').datepicker().data('datepicker');
     this.$dropdown = this.$node.find('.js_form_dropdown');
     this.$calcBlock = this.$node.find('.room_rate_card__calculations_block');
@@ -17,11 +18,26 @@ class RoomRateCard {
   _init() {
     this._displayInfoOfRoom()
     this._setDates()
+    this._attachEventHandlers()
 
     this._calcDaysTotalCost()
     this._calcServices()
     this._calcAdditionalServices()
     this._renderTotalCost()
+  }
+
+  _attachEventHandlers() {
+    const { $datepicker, datepickerData } = this;
+
+    $datepicker.trigger('updateDates')
+
+    $datepicker.bind('updateDates', () => {
+      if (datepickerData.selectedDates.length == 2) {
+        console.log('update')
+      } else {
+        console.log('not update')
+      }
+    })
   }
 
   _setDates() {

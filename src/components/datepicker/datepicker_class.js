@@ -87,6 +87,13 @@ export default class Datepicker {
 
     //apply button event handlers
     this.$applyBtn.click((e) => {
+      const updateEvent = new Event('updateDates', {bubbles: true})
+      // e.target.dispatchEvent(updateEvent)
+      this.$node.each( function() {
+        this.dispatchEvent(updateEvent)
+        console.log(this)
+      } )
+      
       this.datepickerData.hide()
     })
 
