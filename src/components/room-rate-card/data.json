@@ -1,16 +1,15 @@
 {
   "room" : {
-      "888": {
-      "images": [
+    "number": "888",
+    "images": [
         "./img/room_888_1.png",
         "./img/room_888_2.png",
         "./img/room_888_3.png"
-      ],
-      "price": 9990,
-      "isLux": true,
-      "rate": 5,
-      "numOfReviews": 145
-    }
+     ],
+    "price": 9990,
+    "isLux": true,
+    "rate": 5,
+    "numOfReviews": 145
   },
   "dates" : ["19.08.2019", "23.08.2019"],
   "guests": {
