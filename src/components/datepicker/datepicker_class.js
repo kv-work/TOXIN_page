@@ -17,9 +17,14 @@ export default class Datepicker {
       this.options = {
         ...options,
         showEvent: 'none',
-        onSelect: (formDate, date, inst) => {
+        onSelect: (formDate, date) => {
           this._selectDate(formDate, date)
-        }        
+        },
+        onHide: (_, animationCompleted) => {
+          if (animationCompleted) {
+            this.$node.trigger('updateDates')
+          }
+        }
       }
     }
 
@@ -104,7 +109,7 @@ export default class Datepicker {
     } )
 
     //apply button event handlers
-    this.$applyBtn.click((e) => {
+    this.$applyBtn.click((e) => {      
       this.datepickerData.hide()
     })
 
