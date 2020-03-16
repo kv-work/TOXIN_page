@@ -21,9 +21,13 @@ export default class Datepicker {
       ...options,
       showEvent: 'none',
       onSelect: (formDate, date, inst) => {
-        console.log('onSelect event')
         console.log(formDate)
         this._selectDate(formDate, date)
+      },
+      onShow: (_, animComplete) => {
+        if (animComplete) {
+          this._openDatepicker()
+        }
       }
     }
 
@@ -81,23 +85,10 @@ export default class Datepicker {
   _attachEventHandlers() {
 
     this.$wrapper.click( (e) => {
+
       this.$opener = $(e.currentTarget).find('input')
       this.datepickerData.show()
-      this._openDatepicker()
     } )
-
-    //clear button event handler
-    this.clearBtn.click( () => {
-      console.log('click clear btn')
-      this.startDate = ''
-      this.endDate = ''
-      this.$datepicker.val('')
-      this.$endDate.val('')
-      this.datepickerData.update({
-        'minDate': '',
-        'maxDate': ''
-      })
-    })
 
     //apply button event handlers
     this.$applyBtn.click((e) => {
@@ -110,22 +101,25 @@ export default class Datepicker {
     const dates = formattedDates.split(' - ')
     const { $datepicker, $endDate } = this;
 
-    if (this.$opener && this.$opener.hasClass('start_date')) {
+    if (this.$opener && this.$opener.hasClass('start_date') && date) {
       console.log('start opener')
       this.startDate = date[0]
-      $datepicker.val(dates[0]);   
+      $datepicker.val(dates[0]);
+      $endDate.val(this.endDate ? this.endDate.toLocaleDateString() : '');
       this.datepickerData.selectedDates = [this.startDate, this.endDate]
       this.datepickerData.maxRange = this.endDate;
+
     }
 
-    if (this.$opener && this.$opener.hasClass('form_datepicker__end_date_input')) {
+    if (this.$opener && this.$opener.hasClass('form_datepicker__end_date_input') && date) {
       console.log('end opener')
       this.endDate = date[0];
       $datepicker.val(this.startDate ? this.startDate.toLocaleDateString() : ''); 
       $endDate.val(dates[0])
       this.datepickerData.minRange = this.startDate;
       this.datepickerData.selectedDates = [this.startDate, this.endDate]
-      this.datepickerData.maxRange = this.endDate;  
+      this.datepickerData.maxRange = this.endDate;
+
     }
 
     //Установка дат до открытия
