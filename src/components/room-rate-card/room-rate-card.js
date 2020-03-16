@@ -30,11 +30,7 @@ class RoomRateCard {
     const { $datepicker, datepickerData } = this;
 
     $datepicker.on('updateDates', () => {
-      if (datepickerData.selectedDates.length == 2) {
-        console.log('update')
-      } else {
-        console.log('not update')
-      }
+      this._updateTotal()
     })
   }
 
@@ -48,7 +44,7 @@ class RoomRateCard {
   _getNumOfDays() {
     const {selectedDates} = this.datepickerData;
 
-    if (selectedDates.length > 0) {
+    if (selectedDates[0] && selectedDates[1]) {
       const firstDate = selectedDates[0];
       const secondDate = selectedDates[1];
 
@@ -179,12 +175,17 @@ class RoomRateCard {
     }
 
     if (this.discount) {
-      this.total -= this.discount
+      this.total = (this.total > this.discount) ? this.total - this.discount : 0;      
     }
 
     this.$total
       .find('.room_rate_card__total')
       .html(this._formatPrice(this.total))
+  }
+
+  _updateTotal() {
+    this._calcDaysTotalCost()
+    this._renderTotalCost()
   }
 }
 

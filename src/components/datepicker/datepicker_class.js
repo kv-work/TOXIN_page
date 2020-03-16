@@ -22,9 +22,11 @@ export default class Datepicker {
       onSelect: (formDate, date, inst) => {
         this._selectDate(formDate, date)
       },
-      // onShow: (inst, animComplete) => { 
-      //   if (animComplete) this._openDatepicker()
-      // }
+      onHide: (_, animationCompleted) => {
+        if (animationCompleted) {
+          this.$node.trigger('updateDates')
+        }
+      }
     }
 
     this._init()
@@ -87,8 +89,6 @@ export default class Datepicker {
 
     //apply button event handlers
     this.$applyBtn.click((e) => {      
-      this.$node.trigger('updateDates')
-      
       this.datepickerData.hide()
     })
 
@@ -98,14 +98,17 @@ export default class Datepicker {
     const dates = formattedDates.split(' - ')
     const { $datepicker, $endDate } = this;
 
-    if (this.$opener && this.$opener.hasClass('start_date')) {
+    if (this.$opener && this.$opener.hasClass('start_date') && date) {
+      
       this.startDate = date[0]
+      
       $datepicker.val(dates[0]);   
       this.datepickerData.selectedDates = [this.startDate, this.endDate]
       this.datepickerData.maxRange = this.endDate;
+      
     }
 
-    if (this.$opener && this.$opener.hasClass('form_datepicker__end_date_input')) {
+    if (this.$opener && this.$opener.hasClass('form_datepicker__end_date_input') && date) {
       this.endDate = date[0];
       $datepicker.val(this.startDate ? this.startDate.toLocaleDateString() : ''); 
       $endDate.val(dates[0])
