@@ -26,7 +26,8 @@ export default class Datepicker {
       },
       onShow: (_, animComplete) => {
         if (animComplete) {
-          this._openDatepicker()
+          console.log('open')
+          
         }
       }
     }
@@ -87,7 +88,13 @@ export default class Datepicker {
     this.$wrapper.click( (e) => {
 
       this.$opener = $(e.currentTarget).find('input')
+      console.log(this.datepickerData.selectedDates)
       this.datepickerData.show()
+      if (this.isSeparated) this._openDatepicker()
+    } )
+
+    this.clearBtn.click( () => {
+      this.clearing = true
     } )
 
     //apply button event handlers
@@ -142,7 +149,7 @@ export default class Datepicker {
     }
 
     //Сброс дат
-    if (!date) {
+    if (!date && this.clearing) {
       console.log('undefined date')
       this.startDate = ''
       this.endDate = ''
@@ -152,6 +159,7 @@ export default class Datepicker {
         'minDate': '',
         'maxDate': ''
       })
+      this.clearing = false
     }
   }
 
@@ -172,6 +180,13 @@ export default class Datepicker {
       datepickerData.update('minDate', startDate)
     }
 
-    $datepicker.val(startDate ? startDate.toLocaleDateString() : '')
+    if (startDate) {
+      $datepicker.val(startDate.toLocaleDateString())
+    }
+
+    if (!datepickerData.selectedDates[0]) {
+      $datepicker.val('')
+    }
+    // $datepicker.val(startDate ? startDate.toLocaleDateString() : '')
   }
 }
