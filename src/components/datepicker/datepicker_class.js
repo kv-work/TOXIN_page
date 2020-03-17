@@ -53,7 +53,13 @@ export default class Datepicker {
   _addEndDateInput() {
     const { labelSecond, valueSecond } = this.data;
   
-    this.$endDate = this.$node.append('<div class="form_datepicker_wrapper"><label class="form_datepicker__label like_h3">' + labelSecond + '</label><div class="form_datepicker__input_wrapper"><input class="form_datepicker__end_date_input js_datepicker_masked" type="text" placeholder="ДД.ММ.ГГГГ" data-date=' + valueSecond + ' readonly /></div></div>').find('.form_datepicker__end_date_input')
+    this.$endDate = this.$node.append(
+      `<div class="form_datepicker_wrapper">
+        <label class="form_datepicker__label like_h3">${labelSecond}</label>
+        <div class="form_datepicker__input_wrapper">
+          <input class="form_datepicker__end_date_input js_datepicker_masked" type="text" placeholder="ДД.ММ.ГГГГ" data-date=${valueSecond} readonly />
+        </div>
+      </div>`).find(`.form_datepicker__end_date_input`)
   }
 
   //Установка дат переданных с помощью data-атрибутов
