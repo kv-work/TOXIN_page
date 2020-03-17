@@ -73,12 +73,19 @@ export default class Datepicker {
     this.endDate = endDateStr ? new Date(endDateStr) : '';
     
     if (!this.isSeparated) {
-      return this.datepickerData.selectDate( [this.startDate, this.endDate] ) // здесь нужно что то придумать на случай передачи "" вместо одной из дат
+      const dates = []
+      if (this.startDate) dates.push(this.startDate);
+      if (this.endDate) dates.push(this.endDate);
+      return this.datepickerData.selectDate( dates );
     }
 
     this.$datepicker.val(date)
     this.$endDate.val(valueSecond)
-    this.datepickerData.selectedDates = [this.startDate, this.endDate] // здесь нужно что то придумать на случай передачи "" вместо одной из дат
+
+    const dates = []
+    if (this.startDate) dates.push(this.startDate);
+    if (this.endDate) dates.push(this.endDate);
+    this.datepickerData.selectedDates = dates;
   }
 
   //Добавление кнопки "применить"
