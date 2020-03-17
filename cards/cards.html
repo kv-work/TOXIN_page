@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cards</title>
+  <link href="../cards/cards.css" rel="stylesheet"></head>
+  <body>
+    <div class="cards">
+      <div class="logo_wrapper">
+        <svg class="logo" width="48" height="48" viewBox="0 0 48 48">
+          <path class="logo__circle" d="M24 48C10.7647 48 0 37.2353 0 24C0 10.7647 10.7647 0 24 0C37.2353 0 48 10.7647 48 24C48 37.2353 37.2353 48 24 48ZM24 2.82353C12.3176 2.82353 2.82353 12.3176 2.82353 24C2.82353 35.6824 12.3176 45.1765 24 45.1765C35.6824 45.1765 45.1765 35.6824 45.1765 24C45.1765 12.3176 35.6824 2.82353 24 2.82353Z" fill="#1F2041" fill-opacity=".25"/>
+          <path class="logo__line_1" d="M36.7068 19.7653C36.7068 20.5418 36.0715 21.177 35.295 21.177C31.9421 21.177 28.9421 22.8712 27.1774 25.4476C26.7892 24.4594 26.3303 23.5418 25.7656 22.6947C28.095 20.0123 31.5186 18.3535 35.295 18.3535C36.0715 18.3535 36.7068 18.9888 36.7068 19.7653Z" fill="#1F2041" fill-opacity=".25"/>
+          <path class="logo__line_2" d="M23.9989 32.4712C23.2224 32.4712 22.5871 31.8359 22.5871 31.0594C22.5871 25.6241 18.14 21.177 12.7047 21.177C11.9283 21.177 11.293 20.5418 11.293 19.7653C11.293 18.9888 11.9283 18.3535 12.7047 18.3535C19.7283 18.3535 25.4106 24.0359 25.4106 31.0594C25.4106 31.8359 24.7753 32.4712 23.9989 32.4712Z" fill="#1F2041" fill-opacity=".25"/>
+        </svg>
+      </div>
+      <div class="cards_grid">
+        <div class="cards_grid_col">
+          <form class="room_search_card">
+            <h1 class="room_search_card__label">Найдем номера под ваши пожелания</h1>
+            <div class="room_search_card__datepicker_is_separated">
+              <div class="form_datepicker js_form_datepicker_separated">
+                <div class="form_datepicker_wrapper">
+                  <label class="form_datepicker__label like_h3">Прибытие</label>
+                  <div class="form_datepicker__input_wrapper">
+                    <input class="form_datepicker__input js_datepicker_separated js_datepicker_masked start_date" type="text" placeholder="ДД.ММ.ГГГГ" readonly data-date="" data-separated data-label-second="Выезд" data-value-second="">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="room_search_card__guest_select_dropdown">
+              <div class="form_dropdown">
+                <label class="form_dropdown__label like_h3">Гости</label>
+                <div class="iqdropdown js_form_dropdown">
+                  <div class="iqdropdown-selection-wrapper">
+                    <p class="iqdropdown-selection">Сколько гостей</p>
+                    <div class="iqdropdown-menu">
+                      <div class="iqdropdown-menu-option" data-id="item-1" data-defaultcount="0">
+                        <div>
+                          <p class="iqdropdown-item">Взрослые</p>
+                        </div>
+                      </div>
+                      <div class="iqdropdown-menu-option" data-id="item-2" data-defaultcount="0">
+                        <div>
+                          <p class="iqdropdown-item">Дети</p>
+                        </div>
+                      </div>
+                      <div class="iqdropdown-menu-option" data-id="item-3" data-defaultcount="0">
+                        <div>
+                          <p class="iqdropdown-item">Младенцы</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="room_search_card__submit_button">
+              <button class="button button_filled button_with_arrow" type="button">подобрать номер<i class="material-icons">arrow_forward</i>
+              </button>
+            </div>
+          </form>
+          <form class="registration_card">
+            <h1 class="registration_card__label">Регистрация аккаунта</h1>
+            <div class="registration_card__name_input">
+              <div class="form_input">
+                <input class="form_input__input" type="text" placeholder="Имя" required>
+              </div>
+            </div>
+            <div class="registration_card__surname_input">
+              <div class="form_input">
+                <input class="form_input__input" type="text" placeholder="Фамилия" required>
+              </div>
+            </div>
+            <div class="registration_card__gender_radio_buttons">
+              <div class="radio_buttons">
+                <label class="radio_buttons__radio radio_buttons__radio_label radio_buttons__radio_label_checked">Мужчина
+                  <input class="radio_buttons__radio_input" type="radio" name="gender" checked value="0">
+                </label>
+                <label class="radio_buttons__radio radio_buttons__radio_label">Женщина
+                  <input class="radio_buttons__radio_input" type="radio" name="gender" value="1">
+                </label>
+              </div>
+            </div>
+            <div class="registration_card__date_input_is_masked">
+              <div class="form_input form_input_masked">
+                <label class="form_input__label">
+                  <p class="like_h3">дата рождения</p>
+                </label>
+                <input class="form_input__input" type="text" placeholder="ДД.ММ.ГГГГ" required>
+              </div>
+            </div>
+            <div class="registration_card__email_input">
+              <div class="form_input">
+                <label class="form_input__label">
+                  <p class="like_h3">Данные для входа в сервис</p>
+                </label>
+                <input class="form_input__input" type="email" placeholder="email" required>
+              </div>
+            </div>
+            <div class="registration_card__password_input">
+              <div class="form_input">
+                <input class="form_input__input" type="password" placeholder="Пароль" required>
+              </div>
+            </div>
+            <div class="registration_card__toggle_button">
+              <label class="toggle_button toggle_button_label">Получать спецпредложения
+                <input class="toggle_button__input" type="checkbox">
+              </label>
+            </div>
+            <div class="registration_card__submit_button">
+              <button class="button button_filled button_with_arrow" type="submit">перейти к оплате<i class="material-icons">arrow_forward</i>
+              </button>
+            </div>
+            <div class="registration_card__options">
+              <div class="registration_card__option_label">Уже есть аккаунт на Toxin</div><a class="registration_card__option_button" href="../">
+                <button class="button" type="button">войти
+                </button></a>
+            </div>
+          </form>
+        </div>
+        <div class="cards_grid_col">
+          <form class="room_rate_card js_room_rate_card">
+            <div class="room_rate_card__room_info_block">
+              <div class="room_rate_card__number_block"><span class="room_rate_card__number_sign">№</span><span class="room_rate_card__number">888</span></div>
+              <div class="room_rate_card__price_block"><span class="room_rate_card__price"></span><span class="room_rate_card__price_text">в сутки</span></div>
+            </div>
+            <div class="room_rate_card__datepicker_is_separated">
+              <div class="form_datepicker js_form_datepicker_separated">
+                <div class="form_datepicker_wrapper">
+                  <label class="form_datepicker__label like_h3">Прибытие</label>
+                  <div class="form_datepicker__input_wrapper">
+                    <input class="form_datepicker__input js_datepicker_separated js_datepicker_masked start_date" type="text" placeholder="ДД.ММ.ГГГГ" readonly data-date="19.08.2019" data-separated data-label-second="Выезд" data-value-second="23.08.2019">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="room_rate_card__guest_select_dropdown">
+              <div class="form_dropdown">
+                <label class="form_dropdown__label like_h3">Гости</label>
+                <div class="iqdropdown js_form_dropdown">
+                  <div class="iqdropdown-selection-wrapper">
+                    <p class="iqdropdown-selection">Сколько гостей</p>
+                    <div class="iqdropdown-menu">
+                      <div class="iqdropdown-menu-option" data-id="item-1" data-defaultcount="2">
+                        <div>
+                          <p class="iqdropdown-item">Взрослые</p>
+                        </div>
+                      </div>
+                      <div class="iqdropdown-menu-option" data-id="item-2" data-defaultcount="1">
+                        <div>
+                          <p class="iqdropdown-item">Дети</p>
+                        </div>
+                      </div>
+                      <div class="iqdropdown-menu-option" data-id="item-3" data-defaultcount="0">
+                        <div>
+                          <p class="iqdropdown-item">Младенцы</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="room_rate_card__calculations_block">
+              <div class="room_rate_card__days_cost_calc"><span class="room_rate_card__cost_calc"></span><span class="room_rate_card__days_total_cost"></span></div>
+              <div class="room_rate_card__services_calc"><span class="room_rate_card__services_text"></span>
+                <div class="room_rate_card__services_info">i
+                  <ol class="room_rate_card__services_list"></ol>
+                </div><span class="room_rate_card__services_total_cost"></span>
+              </div>
+              <div class="room_rate_card__additional_services_calc"><span class="room_rate_card__additional_services_text"></span>
+                <div class="room_rate_card__additional_services_info">i
+                  <ol class="room_rate_card__services_list"></ol>
+                </div><span class="room_rate_card__additional_services_total_cost"></span>
+              </div>
+            </div>
+            <div class="room_rate_card__total_cost"><span class="room_rate_card__total_text">Итого</span>
+              <div class="room_rate_card__dashed_border"></div><span class="room_rate_card__total"></span>
+            </div>
+            <div class="room_rate_card__submit_button">
+              <button class="button button_filled button_with_arrow" type="button">забронировать<i class="material-icons">arrow_forward</i>
+              </button>
+            </div>
+          </form>
+          <form class="login_card">
+            <h1 class="login_card__label">Войти</h1>
+            <div class="login_card__email_input">
+              <div class="form_input">
+                <input class="form_input__input" type="email" placeholder="email" required>
+              </div>
+            </div>
+            <div class="login_card__pass_input">
+              <div class="form_input">
+                <input class="form_input__input" type="password" placeholder="Пароль" required>
+              </div>
+            </div>
+            <div class="login_card__submit_button">
+              <button class="button button_filled button_with_arrow" type="submit">войти<i class="material-icons">arrow_forward</i>
+              </button>
+            </div>
+            <div class="login_card__options">
+              <div class="login_card__option_label">Нет аккаунта на Toxin?</div><a class="login_card__option_button" href="../">
+                <button class="button" type="button">создать
+                </button></a>
+            </div>
+          </form>
+        </div>
+        <div class="cards_grid_col"> 
+          <div class="calendar_card js_form_datepicker_inline" data-date="19.08.2019" data-value-second="23.08.2019"> </div>
+          <div class="room_card js_room_card" data-number="888">
+            <div class="room_card__images_block"></div>
+            <div class="room_card__room_info_block">
+              <div class="room_card__number_block"><span class="room_card__number_sign">№</span><span class="room_card__number">888</span></div>
+              <div class="room_card__price_block"><span class="room_card__price_text">в сутки</span></div>
+              <div class="room_card__delimiter"></div>
+              <div class="room_card__rate_block">
+                <div class="rate_button_disabled js_rate_button" data-rate="4">
+                  <input class="rate_button__input" type="radio" name="rate888" disabled>
+                  <input class="rate_button__input" type="radio" name="rate888" disabled>
+                  <input class="rate_button__input" type="radio" name="rate888" disabled>
+                  <input class="rate_button__input" type="radio" name="rate888" checked disabled>
+                  <input class="rate_button__input" type="radio" name="rate888" disabled>
+                </div>
+              </div>
+              <div class="room_card__reviews_block"><span class="room_card__review_text">Отзывов</span></div>
+            </div>
+          </div>
+          <div class="room_card js_room_card" data-number="840">
+            <div class="room_card__images_block"></div>
+            <div class="room_card__room_info_block">
+              <div class="room_card__number_block"><span class="room_card__number_sign">№</span><span class="room_card__number">840</span></div>
+              <div class="room_card__price_block"><span class="room_card__price_text">в сутки</span></div>
+              <div class="room_card__delimiter"></div>
+              <div class="room_card__rate_block">
+                <div class="rate_button_disabled js_rate_button" data-rate="4">
+                  <input class="rate_button__input" type="radio" name="rate840" disabled>
+                  <input class="rate_button__input" type="radio" name="rate840" disabled>
+                  <input class="rate_button__input" type="radio" name="rate840" disabled>
+                  <input class="rate_button__input" type="radio" name="rate840" checked disabled>
+                  <input class="rate_button__input" type="radio" name="rate840" disabled>
+                </div>
+              </div>
+              <div class="room_card__reviews_block"><span class="room_card__review_text">Отзывов</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <script type="text/javascript" src="../cards/cards.js"></script></body>
+</html>
