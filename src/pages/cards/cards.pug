@@ -16,19 +16,12 @@ block content
       +logo({width: "48", height: "48", fill: "#1F2041", fillOpacity: ".25"})
     .cards_grid
       .cards_grid_col
-        .room_search_card_wrapper 
-          +roomSearchCard({label: "Найдем номера под ваши\u00A0пожелания"})
-        .account_registration_card_wrapper 
-          +registrationCard({label: "Регистрация аккаунта"})
+        +roomSearchCard({label: "Найдем номера под ваши\u00A0пожелания"}) 
+        +registrationCard({label: "Регистрация аккаунта"})
       .cards_grid_col
-        .room_rate_card_wrapper 
-          +roomRateCard()
-        .login_card_wrapper
-          +loginCard({label: "Войти"})
-      .cards_grid_col
-        .calendar_card_wrapper 
-          .calendar_card.js_form_datepicker_inline(data-date="19.08.2019" data-value-second="23.08.2019")
-        .room_card_wrapper 
-          +roomCard({number: 888})
-        .room_card_wrapper 
-          +roomCard({number: 840})
+        +roomRateCard()
+        +loginCard({label: "Войти"})
+      .cards_grid_col 
+        .calendar_card.js_form_datepicker_inline(data-date="19.08.2019" data-value-second="23.08.2019") 
+        +roomCard({number: 888})
+        +roomCard({number: 840})

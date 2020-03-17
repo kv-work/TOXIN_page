@@ -12,18 +12,20 @@
     max-width: 1440px;
     margin: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, auto));
-    grid-template-rows: auto;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 380px));
     column-gap: 40px;
-    grid-auto-flow: row dense;
     justify-content: center;
-
+    
     &_col {
       display: flex;
       flex-direction: column;
       max-width: 380px;
 
       & > div:nth-child(n) {
+        margin-bottom: 40px;
+      }
+
+      & > form:nth-child(n) {
         margin-bottom: 40px;
       }
     }
