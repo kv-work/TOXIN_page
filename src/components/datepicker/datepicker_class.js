@@ -4,41 +4,38 @@ export default class Datepicker {
   constructor(node, options) {
     this.$node = $(node);
     this.isInline = this.$node.hasClass('js_form_datepicker_inline');
-    
-    
+    this.isSeparated = this.$node.hasClass('js_form_datepicker_separated');
     this.data = this.isInline ? this.$node.data() : this.$node.find('input').data();
 
-    this.isSeparated = this.$node.hasClass('js_form_datepicker_separated');
+    this.$datepicker = this.$node.find('.js_datepicker');
+    if (this.isInline) this.$datepicker = this.$node;
+    if (this.isSeparated) this.$datepicker = this.$node.find('.js_datepicker_separated');
 
-    if (this.isInline) {
-      this.$datepicker = this.$node
-    } else {
-      this.$datepicker = this.isSeparated ? this.$node.find('.js_datepicker_separated') : this.$node.find('.js_datepicker');
-    }
+    this.options = options;
 
-
-    this.options = !this.isSeparated ? options : {
-      ...options,
-      showEvent: 'none',
-      onSelect: (formDate, date, inst) => {
-        console.log(formDate)
-        this._selectDate(formDate, date)
-      },
-      onShow: (_, animComplete) => {
-        if (animComplete) {
-          console.log('open')
-          
+    if (this.isSeparated) {
+      this.options = {
+        ...options,
+        showEvent: 'none',
+        onSelect: (formDate, date, inst) => {
+          console.log(formDate) // убрать в продакшене
+          this._selectDate(formDate, date)
+        },
+        onShow: (_, animComplete) => {
+          if (animComplete) {
+            console.log('open') // убрать в продакшене
+          }
         }
       }
     }
+
+    this.datepickerData = this.$datepicker.datepicker(this.options).data('datepicker');
+    this.clearBtn = this.datepickerData.$datepicker.find('span.datepicker--button[data-action=clear')
 
     this._init()
   }
 
   _init() {
-    this.datepickerData = this.$datepicker.datepicker(this.options).data('datepicker');
-    this.clearBtn = this.datepickerData.$datepicker.find('span.datepicker--button[data-action=clear')
-
     if (this.isSeparated) {
       this._addEndDateInput()
       this.datepickerData.update('dateFormat', 'dd.mm.yyyy')
@@ -47,8 +44,16 @@ export default class Datepicker {
     this.$wrapper = this.$node.find('.form_datepicker__input_wrapper')
 
     if (this.data.date || this.data.valueSecond) this._setDataValues();
+
     this._addApplyButton()
     this._attachEventHandlers()
+  }
+
+  //Создание инпута, который будет отображать конечную дату диапозона
+  _addEndDateInput() {
+    const { labelSecond, valueSecond } = this.data;
+  
+    this.$endDate = this.$node.append('<div class="form_datepicker_wrapper"><label class="form_datepicker__label like_h3">' + labelSecond + '</label><div class="form_datepicker__input_wrapper"><input class="form_datepicker__end_date_input js_datepicker_masked" type="text" placeholder="ДД.ММ.ГГГГ" data-date=' + valueSecond + ' readonly /></div></div>').find('.form_datepicker__end_date_input')
   }
 
   //Установка дат переданных с помощью data-атрибутов
@@ -62,33 +67,27 @@ export default class Datepicker {
     this.endDate = endDateStr ? new Date(endDateStr) : '';
     
     if (!this.isSeparated) {
-      return this.datepickerData.selectDate( [this.startDate, this.endDate] )
+      return this.datepickerData.selectDate( [this.startDate, this.endDate] ) // здесь нужно что то придумать на случай передачи "" вместо одной из дат
     }
 
     this.$datepicker.val(date)
     this.$endDate.val(valueSecond)
-    this.datepickerData.selectedDates = [this.startDate, this.endDate]
-  }
-
-  //Создание инпута, который будет отображать конечную дату диапозона
-  _addEndDateInput() {
-    const { labelSecond, valueSecond } = this.data;
-
-    this.$endDate = this.$node.append('<div class="form_datepicker_wrapper"><label class="form_datepicker__label like_h3">' + labelSecond + '</label><div class="form_datepicker__input_wrapper"><input class="form_datepicker__end_date_input js_datepicker_masked" type="text" placeholder="ДД.ММ.ГГГГ" data-date=' + valueSecond + ' readonly /></div></div>').find('.form_datepicker__end_date_input')
+    this.datepickerData.selectedDates = [this.startDate, this.endDate] // здесь нужно что то придумать на случай передачи "" вместо одной из дат
   }
 
   //Добавление кнопки "применить"
   _addApplyButton() {
-    this.$applyBtn = this.datepickerData.$datepicker.find('.datepicker--buttons').append('<button type="button" class="datepicker--button-apply">Применить</button>').find('.datepicker--button-apply')
+    this.$applyBtn = this.datepickerData.$datepicker.find('.datepicker--buttons')
+                                                    .append('<button type="button" class="datepicker--button-apply">Применить</button>')
+                                                    .find('.datepicker--button-apply')
   }
 
   //Создание обработчиков событий
   _attachEventHandlers() {
 
     this.$wrapper.click( (e) => {
-
       this.$opener = $(e.currentTarget).find('input')
-      console.log(this.datepickerData.selectedDates)
+      console.log(this.datepickerData.selectedDates) // убрать в продакшене
       this.datepickerData.show()
       if (this.isSeparated) this._openDatepicker()
     } )
