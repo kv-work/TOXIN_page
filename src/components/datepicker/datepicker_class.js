@@ -18,14 +18,8 @@ export default class Datepicker {
         ...options,
         showEvent: 'none',
         onSelect: (formDate, date, inst) => {
-          console.log(formDate) // убрать в продакшене
           this._selectDate(formDate, date)
-        },
-        onShow: (_, animComplete) => {
-          if (animComplete) {
-            console.log('open') // убрать в продакшене
-          }
-        }
+        }        
       }
     }
 
@@ -59,7 +53,8 @@ export default class Datepicker {
         <div class="form_datepicker__input_wrapper">
           <input class="form_datepicker__end_date_input js_datepicker_masked" type="text" placeholder="ДД.ММ.ГГГГ" data-date=${valueSecond} readonly />
         </div>
-      </div>`).find(`.form_datepicker__end_date_input`)
+      </div>`
+      ).find(`.form_datepicker__end_date_input`)
   }
 
   //Установка дат переданных с помощью data-атрибутов
@@ -100,13 +95,11 @@ export default class Datepicker {
 
     this.$wrapper.click( (e) => {
       this.$opener = $(e.currentTarget).find('input')
-      console.log(this.datepickerData.selectedDates) // убрать в продакшене
       this.datepickerData.show()
       if (this.isSeparated) this._openDatepicker()
     } )
 
     this.clearBtn.click( () => {
-      console.log('click on clear-button') //убрать на продакшене
       this._clearDates()
     } )
 
@@ -121,80 +114,37 @@ export default class Datepicker {
     const formattedDatesArr = formattedDates.split(' - ')
     const { $datepicker, $endDate, datepickerData, $opener } = this;
 
-    //выбор даты начала диапозона, если не выбрана дата конца
+    //выбор даты начала диапозона, если НЕ выбрана дата конца
     if ($opener && $opener.hasClass('start_date') && date && !this.endDate ) {
-      console.log('select start without end')
-
-      this.startDate = date[0];
+      this.startDate = date;
       $datepicker.val(formattedDates);
-      datepickerData.selectedDates = [this.startDate, this.startDate];
+      datepickerData.selectedDates = [this.startDate];
     }
 
     //выбор даты начала диапозона, если выбрана дата конца
     if ($opener && $opener.hasClass('start_date') && date && this.endDate ) {
-      console.log('select start with end')
       this.startDate = date[0]
       $datepicker.val(formattedDatesArr[0]);
       datepickerData.selectedDates = [this.startDate, this.endDate];
       datepickerData.maxRange = this.endDate;
     }
 
-    //выбор даты конца диапозона, если не выбрана дата начала
+    //выбор даты конца диапозона, если НЕ выбрана дата начала
     if ( $opener && $opener.hasClass('form_datepicker__end_date_input') && date && !this.startDate ) {
-      console.log('select end without start')
-      this.endDate = date[0];
+      this.endDate = date;
       $endDate.val(formattedDates);
       $datepicker.val('');
-      datepickerData.selectedDates = [this.endDate, this.endDate];
+      datepickerData.selectedDates = [this.endDate];
     }
-
-    // //выбор даты конца диапозона, если выбрана дата начала
-    // if ( $opener && $opener.hasClass('form_datepicker__end_date_input') && date && startDate ) {
-    //   console.log('select end with start')
-    //   endDate = date[0];
-    //   $endDate.val(formattedDatesArr[1]);
-    //   datepickerData.selectedDates = [startDate, endDate];
-    //   datepickerData.minRange = startDate;
-    // }
 
     //выбор даты конца диапозона, если выбрана дата начала
-    if (this.$opener && this.$opener.hasClass('form_datepicker__end_date_input') && date && this.startDate ) {
-      console.log('end opener')
-      this.endDate = date[0];
-      $datepicker.val(this.startDate ? this.startDate.toLocaleDateString() : ''); 
-      $endDate.val(formattedDatesArr[0])
-      this.datepickerData.minRange = this.startDate;
-
-      const dates = []
-      if (this.startDate) dates.push(this.startDate);
-      if (this.endDate) dates.push(this.endDate);
-      this.datepickerData.selectedDates = dates;
-
-      this.datepickerData.maxRange = this.endDate;
-    }
-
-    //Установка дат до открытия (!не факт что нужна!)
-    if (!this.$opener) {
-      console.log('none opener')
-      switch (formattedDatesArr.length) {
-        case 1:
-          this.startDate = date[0];
-          $datepicker.val(formattedDatesArr[0]);        
-          break;
-        case 2: 
-          this.startDate = date[0];
-          this.endDate = date[1];       
-          $datepicker.val(formattedDatesArr[0]);
-          $endDate.val(formattedDatesArr[1])
-          break;
-        default:
-          break;
-      }
-    }
-
-    //проверка валидности выбранной даты (!не факт что нужна!)
-    if (!date ) {
-      console.log('undefined date')
+    if ($opener && $opener.hasClass('form_datepicker__end_date_input') && date && this.startDate ) {
+      this.endDate = (this.endDate) ? date[0] : date[1];
+      $datepicker.val(this.startDate.toLocaleDateString()); 
+      $endDate.val(this.endDate.toLocaleDateString())
+      datepickerData.minRange = this.startDate;
+      datepickerData.selectedDates = [this.startDate, this.endDate];
+      datepickerData.maxRange = this.endDate;
     }
   }
 
@@ -207,34 +157,50 @@ export default class Datepicker {
     $datepicker.val('');
     $endDate.val('');
     datepickerData.update({
-      'minDate': '',
-      'maxDate': ''
+      minDate: '',
+      maxDate: '',
+      range: false
     });
   }
 
   _openDatepicker() {
     const {$opener, datepickerData, startDate, endDate, $datepicker} = this;
-    console.log('_openDatepicker')
 
     datepickerData.update({
       'minDate': '',
       'maxDate': ''
     })
 
-    if ($opener.hasClass('start_date')) {
-      if (this.endDate) datepickerData.update('maxDate', endDate)
+    //клик на $datepicker НЕ выбран конец диапазона
+    if ($opener.hasClass('start_date') && !endDate) {
+      datepickerData.update({
+        range: false
+      })
     }
 
-    if ($opener.hasClass('form_datepicker__end_date_input')) {
-      datepickerData.update('minDate', startDate)
+    // клик на $datepicker выбран конец диапазона
+    if ($opener.hasClass('start_date') && endDate) {
+      datepickerData.update({
+        range: true,
+        maxDate: endDate
+      })
     }
 
-    if (startDate) {
-      $datepicker.val(startDate.toLocaleDateString())
+    //клик на $endDate НЕ выбран старт диапазона
+    if ($opener.hasClass('form_datepicker__end_date_input') && !startDate) {
+      datepickerData.update({
+        range: false
+      })
     }
 
-    if (!datepickerData.selectedDates[0]) {
-      $datepicker.val('')
+    //клик на $endDate выбран старт диапазона
+    if ($opener.hasClass('form_datepicker__end_date_input') && startDate) {
+      datepickerData.update({
+        minDate: startDate,
+        range: true
+      })
     }
+
+    if (startDate) $datepicker.val(startDate.toLocaleDateString())
   }
 }
