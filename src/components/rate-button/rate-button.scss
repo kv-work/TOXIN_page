@@ -1,6 +1,7 @@
 @import "../../settings.scss";
 
-.rate_button {
+.rate_button,
+.rate_button_disabled {
   height: auto;
   font-size: 0;
 
@@ -43,4 +44,8 @@
       content: "star_border";
     }
   }
+}
+
+.rate_button_disabled .rate_button__input {
+  cursor: default;
 }

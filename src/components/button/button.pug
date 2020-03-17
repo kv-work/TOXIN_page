@@ -1,6 +1,6 @@
 mixin button(params)
   -
-    var {label, style, disabled = false, arrow = false} = params
+    var {label, type="button", style, disabled = false, arrow = false} = params
     var classList = "button"
     if (style == "filled") 
       classList += " button_filled"
@@ -13,6 +13,6 @@ mixin button(params)
       classList += " button_with_arrow"
     }
   
-  button(class=classList)=label
+  button(class=classList type=type)=label
     if (arrow)
       i.material-icons arrow_forward

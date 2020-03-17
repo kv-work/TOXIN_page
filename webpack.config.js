@@ -1,32 +1,9 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require('webpack');
-const ghpages = require('gh-pages');
-const path = require('path');
-const fs = require('fs');
+const ghpages = require('gh-pages')
 
 ghpages.publish('dist', function(err) {});
-
-const pages = [];
-
-fs
-  .readdirSync(path.resolve(__dirname, 'src', 'pages'))
-  .filter((file) => {
-    return file.indexOf('base') !== 0;
-  })
-  .forEach((file) => {
-    pages.push(file.split('/', 2));
-  });
-
-// console.log(pages)
-
-// fs.readFile(path.resolve(__dirname, 'src/pages/form-elements/form_elements.pug'), {encoding: 'utf-8'}, function(err, data) {
-//   if (err) {
-//     console.log(err)
-//   } else {
-//     console.log(data)
-//   }
-// })
 
 module.exports = (env = {}) => {
 
@@ -65,6 +42,12 @@ module.exports = (env = {}) => {
         template: "./src/pages/form-elements/form_elements.pug"
       }),
 
+      new HtmlWebpackPlugin({
+        chunks: ['cards'],
+        filename: "cards/cards.html",
+        template: "./src/pages/cards/cards.pug"
+      }),
+
       new webpack.ProvidePlugin({
         $: 'jquery',
         jQuery: 'jquery',
@@ -91,7 +74,8 @@ module.exports = (env = {}) => {
     entry: {
       'main': './src/index.js',
       'colors': './src/pages/colors-n-type/colors.js',
-      'form': './src/pages/form-elements/form.js'
+      'form': './src/pages/form-elements/form.js',
+      'cards': './src/pages/cards/cards.js'
     },
 
     output: {

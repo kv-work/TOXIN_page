@@ -1,0 +1,63 @@
+include ../input/input
+include ../button/button
+include ../radio-buttons/radio-buttons
+include ../toggle-button/toggle-button
+
+mixin registrationCard(params)
+  -
+    var {label} = params
+
+  form.registration_card
+    h1.registration_card__label=label
+    .registration_card__name_input
+      +input({
+        type: "text",
+        placeholder: "Имя"
+        })(required=true)
+    .registration_card__surname_input
+      +input({
+        type: "text",
+        placeholder: "Фамилия"
+        })(required=true)
+    .registration_card__gender_radio_buttons
+      +radioButtons({
+        list: [
+              {label: "Мужчина", checked: true},
+              {label: "Женщина"}
+            ]
+      } )
+    .registration_card__date_input_is_masked
+      +input({
+        label: "дата рождения",
+        type: "text",
+        placeholder: "ДД.ММ.ГГГГ",
+        masked: true,
+        })(required=true)
+    .registration_card__email_input
+      +input({
+        label: "Данные для входа в сервис",
+        type: "email",
+        placeholder: "email"
+        })(required=true)
+    .registration_card__password_input
+      +input({
+        type: "password",
+        placeholder: "Пароль"
+        })(required=true)
+    .registration_card__toggle_button
+      +toggleButton({label: "Получать спецпредложения"})
+    .registration_card__submit_button
+      +button({
+          label: "перейти к оплате",
+          type: "submit",
+          style: "filled",
+          arrow: true
+          })
+
+    .registration_card__options
+      .registration_card__option_label Уже есть аккаунт на Toxin
+      a.registration_card__option_button(href="../")
+        +button({
+          label: "войти",
+          style: "no fill"
+          })

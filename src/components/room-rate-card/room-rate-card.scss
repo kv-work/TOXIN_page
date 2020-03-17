@@ -1,0 +1,207 @@
+@import '../../settings.scss';
+
+.room_rate_card {
+  width: 100%;
+  display: grid;
+  grid-auto-flow: row;
+  padding: 40px calc(50% - 160px) 30px;
+
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  &__room_info_block {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+  }
+
+  &__number_block {
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  &__number_sign {
+    margin-right: 4px;
+  }
+
+  &__number {
+    font-size: 1.5rem;
+    line-height: 28px;
+  }
+
+  &__lux_flag {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $primary-purple;
+    margin-left: 5px;
+  }
+
+  &__price_block {
+    font-family: Montserrat;
+    font-style: normal;
+    color: $dark-50;
+    line-height: 37px;
+    justify-self: end;
+  }
+
+  &__price {
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  &__price_text {
+    font-size: 12px;
+    margin-left: 5px;
+  }
+
+  &__datepicker_is_separated {
+    margin-top: 9px;
+  }
+
+  &__guest_select_dropdown {
+    margin-top: 17px;
+  }
+
+  &__calculations_block {
+    margin-top: 18px;
+    padding-left: 1px;
+  }
+
+  &__days_cost_calc,
+  &__services_calc,
+  &__additional_services_calc {
+    display: grid;
+    grid-template-columns: 13.375rem auto auto;
+    grid-auto-flow: column;
+    margin-bottom: 0.625rem;
+
+    & span:last-child {
+      justify-self: end;
+    }
+  }
+
+  &__cost_calc {
+    grid-column: 1 / 3;
+  }
+
+  // &__days_total_cost {
+  // }
+
+  &__services_info,
+  &__additional_services_info {
+    position: relative;
+    display: inline-block;
+    width: 1.25rem;
+    height: 1.25rem;
+    color: $dark-25;
+    background: #FFFFFF;
+    border: 0.0625rem solid $dark-25;
+    box-sizing: border-box;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 1.25rem;
+    vertical-align: middle;
+    justify-self: start;
+    margin-top: 1px;
+    margin-left: 5px;
+    cursor: default;
+
+    &:hover {
+      color: $dark-75;
+      border-color: $dark-75;
+
+      & > .room_rate_card__services_list {
+        display: inline-block;
+      }
+    }
+  }
+
+  &__services_list,
+  &__additional_services_list {
+    position: absolute;
+    top: 25px;
+    left: -100px;
+    padding: 10px;
+    margin: 0;
+    width: 200px;
+    color: $dark-75;
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    z-index: 9999;
+    display: none
+  }
+
+  &__services_list_item {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom: 1px solid $dark-5;
+    margin-bottom: 3px;
+  }
+
+  &__service_name {
+    text-align: left;
+  }
+
+  &__additional_services_info {
+    margin-top: 3px;
+  }
+
+  &__additional_services_text {
+    line-height: 18px;
+    padding-top: 3px;
+  }
+
+  &__total_cost {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    column-gap: 5px;
+    align-items: baseline;
+    margin-top: 20px;
+  }
+
+  &__total_text,
+  &__total {
+    font-family: Quicksand, 'Open Sans';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 24px;
+    color: $dark-100;
+  }
+
+  &__dashed_border {
+    height: 1px;
+    border-bottom: 1px dotted $dark-25;
+    box-sizing: border-box;
+  }
+
+  &__submit_button {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .room_rate_card {
+    padding: 40px 10px 30px;
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12); 
+    
+    &__datepicker_is_separated {
+      margin-top: 18px;
+      max-width: 300px;
+    }
+  }
+}

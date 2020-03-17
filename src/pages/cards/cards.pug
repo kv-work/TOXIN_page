@@ -1,0 +1,27 @@
+extends ../base/base
+
+block variables
+  include ../../components/logo/logo
+  include ../../components/room-search-card/room-search-card
+  include ../../components/registration-card/registration-card
+  include ../../components/room-rate-card/room-rate-card
+  include ../../components/login-card/login-card
+  include ../../components/room-card/room-card
+
+  - var pageTitle = "Cards"
+
+block content
+  .cards
+    .logo_wrapper
+      +logo({width: "48", height: "48", fill: "#1F2041", fillOpacity: ".25"})
+    .cards_grid
+      .cards_grid_col
+        +roomSearchCard({label: "Найдем номера под ваши\u00A0пожелания"}) 
+        +registrationCard({label: "Регистрация аккаунта"})
+      .cards_grid_col
+        +roomRateCard()
+        +loginCard({label: "Войти"})
+      .cards_grid_col 
+        .calendar_card.js_form_datepicker_inline(data-date="19.08.2019" data-value-second="23.08.2019") 
+        +roomCard({number: 888})
+        +roomCard({number: 840})
