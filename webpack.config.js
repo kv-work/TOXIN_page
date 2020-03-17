@@ -1,7 +1,9 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const webpack = require('webpack');
-const ghpages = require('gh-pages')
+const ghpages = require('gh-pages');
+const fs = require('fs');
+const path = require('path');
 
 ghpages.publish('dist', function(err) {});
 
@@ -14,6 +16,43 @@ module.exports = (env = {}) => {
   const isProd = mode === "production";
   const isDev = mode === "development";
 
+
+  const pages = [];
+
+  fs
+    .readdirSync(path.resolve(__dirname, 'src', 'pages'))
+    .filter((file) => {
+      return file.indexOf('base') !== 0;
+    })
+    .forEach((file) => {
+      pages.push(file.split('/', 2));
+    });
+
+  function getHtmlPluginForMultiPages(pagesArr) {
+    const plugins = pagesArr.map( (page) => {
+      const pageName = page[0]
+      return new HtmlWebpackPlugin({
+        chunks: page,
+        filename: `${pageName}/index.html`,
+        template: path.resolve(__dirname, `src/pages/${pageName}/${pageName}.pug` )
+      })
+    
+    } )
+
+    return plugins
+  }
+
+  function getEntries(entriesArr) {
+    let obj = {};
+    entriesArr.forEach( (entry) => {
+      const entryName = entry[0]
+      obj[entryName] = `./src/pages/${entryName}/${entryName}.js`
+    } )
+
+    return obj;
+  }
+
+  //Функция для настройки loader'ов стилей
   function getStyleLoaders() {
     return [
       isProd ? MiniCssExtractPlugin.loader : 'style-loader',
@@ -24,28 +63,13 @@ module.exports = (env = {}) => {
   //Функция для настройки подключаемых plagin'ов
   function getPlugins() {
     const plugins = [
+      ...getHtmlPluginForMultiPages(pages),
+
+      //тестовая страница для просмотра всех страниц (удалить при верстке landing-page)
       new HtmlWebpackPlugin({
         chunks: ['main'],
         filename: "index.html",
         template: "./src/index.pug"
-      }),
-
-      new HtmlWebpackPlugin({
-        chunks: ['colors'],
-        filename: "colors/colors.html",
-        template: "./src/pages/colors-n-type/colors-n-type.pug"
-      }),
-
-      new HtmlWebpackPlugin({
-        chunks: ['form'],
-        filename: "form/form.html",
-        template: "./src/pages/form-elements/form_elements.pug"
-      }),
-
-      new HtmlWebpackPlugin({
-        chunks: ['cards'],
-        filename: "cards/cards.html",
-        template: "./src/pages/cards/cards.pug"
       }),
 
       new webpack.ProvidePlugin({
@@ -72,10 +96,8 @@ module.exports = (env = {}) => {
     mode,
 
     entry: {
-      'main': './src/index.js',
-      'colors': './src/pages/colors-n-type/colors.js',
-      'form': './src/pages/form-elements/form.js',
-      'cards': './src/pages/cards/cards.js'
+      ...getEntries(pages),
+      'main': './src/index.js'
     },
 
     output: {

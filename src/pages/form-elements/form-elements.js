@@ -1,6 +1,6 @@
 //Loading styles
 import '../../main.scss'
-import './form_elements.scss'
+import './form-elements.scss'
 
 //Loading scripts
 
