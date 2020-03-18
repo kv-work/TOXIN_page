@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1440">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form-elements</title>
+  <link href="../form-elements/form-elements.css" rel="stylesheet"></head>
+  <body>
+    <div class="form_elements">
+      <div class="logo_wrapper">
+        <svg class="logo" width="48" height="48" viewBox="0 0 48 48">
+          <path class="logo__circle" d="M24 48C10.7647 48 0 37.2353 0 24C0 10.7647 10.7647 0 24 0C37.2353 0 48 10.7647 48 24C48 37.2353 37.2353 48 24 48ZM24 2.82353C12.3176 2.82353 2.82353 12.3176 2.82353 24C2.82353 35.6824 12.3176 45.1765 24 45.1765C35.6824 45.1765 45.1765 35.6824 45.1765 24C45.1765 12.3176 35.6824 2.82353 24 2.82353Z" fill="#1F2041" fill-opacity=".25"/>
+          <path class="logo__line_1" d="M36.7068 19.7653C36.7068 20.5418 36.0715 21.177 35.295 21.177C31.9421 21.177 28.9421 22.8712 27.1774 25.4476C26.7892 24.4594 26.3303 23.5418 25.7656 22.6947C28.095 20.0123 31.5186 18.3535 35.295 18.3535C36.0715 18.3535 36.7068 18.9888 36.7068 19.7653Z" fill="#1F2041" fill-opacity=".25"/>
+          <path class="logo__line_2" d="M23.9989 32.4712C23.2224 32.4712 22.5871 31.8359 22.5871 31.0594C22.5871 25.6241 18.14 21.177 12.7047 21.177C11.9283 21.177 11.293 20.5418 11.293 19.7653C11.293 18.9888 11.9283 18.3535 12.7047 18.3535C19.7283 18.3535 25.4106 24.0359 25.4106 31.0594C25.4106 31.8359 24.7753 32.4712 23.9989 32.4712Z" fill="#1F2041" fill-opacity=".25"/>
+        </svg>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="input_wrapper default"><span class="style">default</span>
+            <div class="form_input">
+              <label class="form_input__label">
+                <p class="like_h3">text field</p>
+              </label>
+              <input class="form_input__input" type="text" placeholder="Email">
+            </div>
+          </div>
+          <div class="input_wrapper hover_focus"><span class="style hover_focus">hover / focus</span>
+            <div class="form_input">
+              <label class="form_input__label">
+                <p class="like_h3">text field</p>
+              </label>
+              <input class="form_input__input form_input__input_isFocused" type="text" placeholder="This is pretty awesome">
+            </div>
+          </div>
+          <div class="dropdown_wrapper default"><span class="style">DEFAULT</span>
+            <div class="form_dropdown">
+              <label class="form_dropdown__label like_h3">dropdown</label>
+              <div class="iqdropdown js_form_dropdown">
+                <div class="iqdropdown-selection-wrapper">
+                  <p class="iqdropdown-selection">Сколько гостей</p>
+                  <div class="iqdropdown-menu">
+                    <div class="iqdropdown-menu-option" data-id="item-1" data-defaultcount="0">
+                      <div>
+                        <p class="iqdropdown-item">Взрослые</p>
+                      </div>
+                    </div>
+                    <div class="iqdropdown-menu-option" data-id="item-2" data-defaultcount="0">
+                      <div>
+                        <p class="iqdropdown-item">Дети</p>
+                      </div>
+                    </div>
+                    <div class="iqdropdown-menu-option" data-id="item-3" data-defaultcount="0">
+                      <div>
+                        <p class="iqdropdown-item">Младенцы</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="input_wrapper default masked"><span class="style">default</span>
+            <div class="form_input form_input_masked">
+              <label class="form_input__label">
+                <p class="like_h3">masked text field</p>
+              </label>
+              <input class="form_input__input" type="text" placeholder="ДД.ММ.ГГГГ">
+            </div>
+          </div>
+          <div class="datepickers_wrapper">
+            <div class="form_datepicker js_form_datepicker_separated">
+              <div class="form_datepicker_wrapper">
+                <label class="form_datepicker__label like_h3">date dropdown</label>
+                <div class="form_datepicker__input_wrapper">
+                  <input class="form_datepicker__input js_datepicker_separated js_datepicker_masked start_date" type="text" placeholder="ДД.ММ.ГГГГ" readonly data-date="" data-separated data-label-second="date dropdown" data-value-second="19.08.2019">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="datepicker_wrapper_filtered">
+            <div class="form_datepicker js_form_datepicker">
+              <div class="form_datepicker_wrapper">
+                <label class="form_datepicker__label like_h3">filter date dropdown</label>
+                <div class="form_datepicker__input_wrapper">
+                  <input class="form_datepicker__input js_datepicker" type="text" placeholder="ДД.ММ.ГГГГ" readonly data-date="19.08.2019" data-label-second="" data-value-second="23.08.2019">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="input_wrapper_with_subscription">
+            <div class="form_input form_input_with_subscription">
+              <label class="form_input__label">
+                <p class="like_h3">subscription text field</p>
+              </label>
+              <input class="form_input__input" type="text" placeholder="Email">
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="checkbox_buttons_wrapper">
+            <div class="form__checkbox">
+              <div class="checkbox__label_wrapper">
+                <p class="checkbox__label">checkbox buttons</p>
+              </div>
+              <div class="checkbox__options">
+                <div class="checkbox__option_wrapper">
+                  <label class="checkbox__option checkbox__option_label">Можно курить
+                    <input class="checkbox__input" type="checkbox">
+                  </label>
+                </div>
+                <div class="checkbox__option_wrapper">
+                  <label class="checkbox__option checkbox__option_label">Можно с питомцами
+                    <input class="checkbox__input" type="checkbox" checked>
+                  </label>
+                </div>
+                <div class="checkbox__option_wrapper">
+                  <label class="checkbox__option checkbox__option_label">Можно пригласить гостей (до 10 человек)
+                    <input class="checkbox__input" type="checkbox" checked>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="radio_buttons_wrapper">
+            <h3 class="radio_buttons_label">radio buttons</h3>
+            <div class="radio_buttons">
+              <label class="radio_buttons__radio radio_buttons__radio_label radio_buttons__radio_label_checked">Мужчина
+                <input class="radio_buttons__radio_input" type="radio" name="gender" checked value="0">
+              </label>
+              <label class="radio_buttons__radio radio_buttons__radio_label">Женщина
+                <input class="radio_buttons__radio_input" type="radio" name="gender" value="1">
+              </label>
+            </div>
+          </div>
+          <div class="toggle_buttons_wrapper">
+            <h3 class="toggle_buttons_label">toggle</h3>
+            <label class="toggle_button toggle_button_label">Получать спецпредложения
+              <input class="toggle_button__input" type="checkbox" checked>
+            </label>
+            <label class="toggle_button toggle_button_label">Получать спецпредложения
+              <input class="toggle_button__input" type="checkbox">
+            </label>
+          </div>
+          <div class="like_buttons_wrapper">
+            <h3 class="like_buttons_label">like button</h3>
+            <div class="like_buttons">
+              <label class="like_button like_button__label">
+                <p>2</p>
+                <input class="like_button__input" type="checkbox">
+              </label>
+              <label class="like_button like_button__label like_button__label_checked">
+                <p>12</p>
+                <input class="like_button__input" type="checkbox" checked>
+              </label>
+            </div>
+          </div>
+          <div class="rate_buttons_wrapper">
+            <h3 class="rate_buttons__label">rate button</h3>
+            <div class="rate_button js_rate_button" data-rate="3">
+              <input class="rate_button__input" type="radio" name="rate_1">
+              <input class="rate_button__input" type="radio" name="rate_1">
+              <input class="rate_button__input" type="radio" name="rate_1" checked>
+              <input class="rate_button__input" type="radio" name="rate_1">
+              <input class="rate_button__input" type="radio" name="rate_1">
+            </div>
+            <div class="rate_button js_rate_button" data-rate="4">
+              <input class="rate_button__input" type="radio" name="rate_2">
+              <input class="rate_button__input" type="radio" name="rate_2">
+              <input class="rate_button__input" type="radio" name="rate_2">
+              <input class="rate_button__input" type="radio" name="rate_2" checked>
+              <input class="rate_button__input" type="radio" name="rate_2">
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="range_slider_wrapper">
+            <label class="js_range_slider range_slider">
+              <h3 class="range_slider__label">range slider</h3>
+              <p class="range_slider__value"></p>
+              <input class="range_slider__input" type="text" name="range" value="" data-type="double" data-min="0" data-max="16000" data-from="5000" data-to="10000" data-skin="round" data-postfix="₽" data-hide-min-max="true" data-hide-from-to="true" data-step="100" data-extra-classes="range_slider__slider">
+            </label>
+          </div>
+          <div class="buttons_block">
+            <h3 class="buttons_block_label">buttons</h3>
+            <div class="buttons_block_wrapper">
+              <div class="buttons_block_buttons">
+                <button class="button button_filled" type="button">Click me
+                </button>
+                <button class="button button_filled button_disabled" type="button">Click me
+                </button>
+                <button class="button" type="button">Click me
+                </button>
+                <button class="button button_disabled" type="button">Click me
+                </button>
+                <div class="buttons_block_no_borders">
+                  <button class="button button_no_borders" type="button">Click me
+                  </button>
+                  <button class="button button_no_borders button_disabled" type="button">Click me
+                  </button>
+                </div>
+              </div>
+              <div class="buttons_block_with_arrow">
+                <button class="button button_filled button_with_arrow" type="button">Перейти к оплате<i class="material-icons">arrow_forward</i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="pagination_block_wrapper">
+            <h3 class="pagination_block_wrapper_label">pagination</h3>
+            <div class="pagination_block">
+              <div id="data-container"></div>
+              <div class="pagination_block__pagination js-pagination" data-pages="15"></div>
+              <div class="pagination_block__description">1 – 12 из 100+ вариантов аренды</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="dropdown_multiple_items_wrapper"><span class="style">DEFAULT</span>
+            <div class="form_dropdown">
+              <label class="form_dropdown__label like_h3">dropdown</label>
+              <div class="iqdropdown js_form_dropdown_multiple">
+                <div class="iqdropdown-selection-wrapper">
+                  <p class="iqdropdown-selection">Сколько гостей</p>
+                  <div class="iqdropdown-menu">
+                    <div class="iqdropdown-menu-option" data-id="item-1" data-defaultcount="2">
+                      <div>
+                        <p class="iqdropdown-item">Спальни</p>
+                      </div>
+                    </div>
+                    <div class="iqdropdown-menu-option" data-id="item-2" data-defaultcount="2">
+                      <div>
+                        <p class="iqdropdown-item">Кровати</p>
+                      </div>
+                    </div>
+                    <div class="iqdropdown-menu-option" data-id="item-3" data-defaultcount="0">
+                      <div>
+                        <p class="iqdropdown-item">Ванные комнаты</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="dropdown_multiple_items_expanded_wrapper"><span class="style">expanded</span>
+            <div class="form_dropdown">
+              <label class="form_dropdown__label like_h3">dropdown</label>
+              <div class="iqdropdown js_form_dropdown_multiple menu-open">
+                <div class="iqdropdown-selection-wrapper">
+                  <p class="iqdropdown-selection">Сколько гостей</p>
+                  <div class="iqdropdown-menu">
+                    <div class="iqdropdown-menu-option" data-id="item-1" data-defaultcount="2">
+                      <div>
+                        <p class="iqdropdown-item">Спальни</p>
+                      </div>
+                    </div>
+                    <div class="iqdropdown-menu-option" data-id="item-2" data-defaultcount="2">
+                      <div>
+                        <p class="iqdropdown-item">Кровати</p>
+                      </div>
+                    </div>
+                    <div class="iqdropdown-menu-option" data-id="item-3" data-defaultcount="0">
+                      <div>
+                        <p class="iqdropdown-item">Ванные комнаты</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="dropdown_wrapper_expanded">
+            <div class="form_dropdown">
+              <label class="form_dropdown__label like_h3">dropdown</label>
+              <div class="iqdropdown js_form_dropdown menu-open">
+                <div class="iqdropdown-selection-wrapper">
+                  <p class="iqdropdown-selection">Сколько гостей</p>
+                  <div class="iqdropdown-menu">
+                    <div class="iqdropdown-menu-option" data-id="item-1" data-defaultcount="0">
+                      <div>
+                        <p class="iqdropdown-item">Взрослые</p>
+                      </div>
+                    </div>
+                    <div class="iqdropdown-menu-option" data-id="item-2" data-defaultcount="0">
+                      <div>
+                        <p class="iqdropdown-item">Дети</p>
+                      </div>
+                    </div>
+                    <div class="iqdropdown-menu-option" data-id="item-3" data-defaultcount="0">
+                      <div>
+                        <p class="iqdropdown-item">Младенцы</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="dropdown_wrapper_expanded">
+            <div class="form_dropdown">
+              <label class="form_dropdown__label like_h3">dropdown</label>
+              <div class="iqdropdown js_form_dropdown menu-open">
+                <div class="iqdropdown-selection-wrapper">
+                  <p class="iqdropdown-selection">Сколько гостей</p>
+                  <div class="iqdropdown-menu">
+                    <div class="iqdropdown-menu-option" data-id="item-1" data-defaultcount="2">
+                      <div>
+                        <p class="iqdropdown-item">Взрослые</p>
+                      </div>
+                    </div>
+                    <div class="iqdropdown-menu-option" data-id="item-2" data-defaultcount="1">
+                      <div>
+                        <p class="iqdropdown-item">Дети</p>
+                      </div>
+                    </div>
+                    <div class="iqdropdown-menu-option" data-id="item-3" data-defaultcount="0">
+                      <div>
+                        <p class="iqdropdown-item">Младенцы</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="expandable_checkbox_wrapper">
+            <div class="form__checkbox form__checkbox_expandable">
+              <div class="checkbox__label_wrapper">
+                <p class="checkbox__label">expandable checkbox list</p>
+              </div>
+              <div class="checkbox__options">
+                <div class="checkbox__option_wrapper">
+                  <label class="checkbox__option checkbox__option_label">Завтрак
+                    <input class="checkbox__input" type="checkbox">
+                  </label>
+                </div>
+                <div class="checkbox__option_wrapper">
+                  <label class="checkbox__option checkbox__option_label">Письменный стол
+                    <input class="checkbox__input" type="checkbox" checked>
+                  </label>
+                </div>
+                <div class="checkbox__option_wrapper">
+                  <label class="checkbox__option checkbox__option_label">Стул для кормления
+                    <input class="checkbox__input" type="checkbox" checked>
+                  </label>
+                </div>
+                <div class="checkbox__option_wrapper">
+                  <label class="checkbox__option checkbox__option_label">Кроватка
+                    <input class="checkbox__input" type="checkbox" checked>
+                  </label>
+                </div>
+                <div class="checkbox__option_wrapper">
+                  <label class="checkbox__option checkbox__option_label">Телевизор
+                    <input class="checkbox__input" type="checkbox">
+                  </label>
+                </div>
+                <div class="checkbox__option_wrapper">
+                  <label class="checkbox__option checkbox__option_label">Шампунь
+                    <input class="checkbox__input" type="checkbox">
+                  </label>
+                </div>
+                <div class="checkbox__option_wrapper">
+                  <label class="checkbox__option checkbox__option_label">Телевизор
+                    <input class="checkbox__input" type="checkbox">
+                  </label>
+                </div>
+                <div class="checkbox__option_wrapper">
+                  <label class="checkbox__option checkbox__option_label">Шампунь
+                    <input class="checkbox__input" type="checkbox">
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="expandable_checkbox_wrapper">
+            <div class="form__checkbox form__checkbox_expandable form__checkbox_expandable_opened">
+              <div class="checkbox__label_wrapper">
+                <p class="checkbox__label">expandable checkbox list</p>
+              </div>
+              <div class="checkbox__options">
+                <div class="checkbox__option_wrapper">
+                  <label class="checkbox__option checkbox__option_label">Завтрак
+                    <input class="checkbox__input" type="checkbox">
+                  </label>
+                </div>
+                <div class="checkbox__option_wrapper">
+                  <label class="checkbox__option checkbox__option_label">Письменный стол
+                    <input class="checkbox__input" type="checkbox" checked>
+                  </label>
+                </div>
+                <div class="checkbox__option_wrapper">
+                  <label class="checkbox__option checkbox__option_label">Стул для кормления
+                    <input class="checkbox__input" type="checkbox" checked>
+                  </label>
+                </div>
+                <div class="checkbox__option_wrapper">
+                  <label class="checkbox__option checkbox__option_label">Кроватка
+                    <input class="checkbox__input" type="checkbox" checked>
+                  </label>
+                </div>
+                <div class="checkbox__option_wrapper">
+                  <label class="checkbox__option checkbox__option_label">Телевизор
+                    <input class="checkbox__input" type="checkbox">
+                  </label>
+                </div>
+                <div class="checkbox__option_wrapper">
+                  <label class="checkbox__option checkbox__option_label">Шампунь
+                    <input class="checkbox__input" type="checkbox">
+                  </label>
+                </div>
+                <div class="checkbox__option_wrapper">
+                  <label class="checkbox__option checkbox__option_label">Телевизор
+                    <input class="checkbox__input" type="checkbox">
+                  </label>
+                </div>
+                <div class="checkbox__option_wrapper">
+                  <label class="checkbox__option checkbox__option_label">Шампунь
+                    <input class="checkbox__input" type="checkbox">
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="rich_checkbox_buttons">
+            <div class="form__checkbox form__checkbox_rich">
+              <div class="checkbox__label_wrapper">
+                <p class="checkbox__label">rich checkbox buttons</p>
+              </div>
+              <div class="checkbox__options">
+                <div class="checkbox__option_wrapper">
+                  <label class="checkbox__option checkbox__option_label">Широкий коридор
+                    <input class="checkbox__input" type="checkbox">
+                  </label>
+                  <p class="checkbox__option_description">Ширина коридоров в номере не менее 91 см.</p>
+                </div>
+                <div class="checkbox__option_wrapper">
+                  <label class="checkbox__option checkbox__option_label">Помощник для инвалидов
+                    <input class="checkbox__input" type="checkbox">
+                  </label>
+                  <p class="checkbox__option_description">На 1 этаже вас встретит специалист и проводит до номера.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="bullet_list_wrapper">
+            <lh class="bullet_list__label like_h3">bullet list</lh>
+            <ul class="bullet_list__list">
+              <li class="bullet_list__item bullet_list__item_color_dark_25">Нельзя с питомцами</li>
+              <li class="bullet_list__item bullet_list__item_color_dark_25">Без вечеринок и мероприятий</li>
+              <li class="bullet_list__item bullet_list__item_color_dark_25">Время прибытия — после 13:00, а выезд до 12:00</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="icon_item_list_wrapper">
+            <div class="icon_item_list">
+              <div class="icon_item">
+                <div class="icon_item__icon"><i class="material-icons">insert_emoticon</i></div>
+                <div class="icon_item__text">
+                  <p class="icon_item__label">Комфорт</p>
+                  <p class="icon_item__desription">Шумопоглощающие стены</p>
+                </div>
+              </div>
+              <div class="icon_item">
+                <div class="icon_item__icon"><i class="material-icons">location_city</i></div>
+                <div class="icon_item__text">
+                  <p class="icon_item__label">Удобство</p>
+                  <p class="icon_item__desription">Окно в каждой из спален</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="comment_block_wrapper">
+            <div class="comment_block">
+              <div class="comment_block__img"></div>
+              <div class="comment_block__name_block">
+                <div class="comment_block__name">Мурад Сарафанов</div>
+                <div class="comment_block__date">5 дней назад</div>
+              </div>
+              <div class="comment_block__like_button">
+                <label class="like_button like_button__label like_button__label_checked">
+                  <p>12</p>
+                  <input class="like_button__input" type="checkbox" checked>
+                </label>
+              </div>
+              <div class="comment_block__comment">Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <script type="text/javascript" src="../form-elements/form-elements.js"></script></body>
+</html>
