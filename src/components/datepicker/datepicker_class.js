@@ -85,7 +85,13 @@ export default class Datepicker {
     const dates = []
     if (this.startDate) dates.push(this.startDate);
     if (this.endDate) dates.push(this.endDate);
-    this.datepickerData.selectedDates = dates;
+
+
+    if (dates.length == 2 ) {
+      this.datepickerData.selectDate(dates);
+    } else {
+      this.datepickerData.selectedDates = dates;
+    }
   }
 
   //Добавление кнопки "применить"
@@ -150,6 +156,26 @@ export default class Datepicker {
       datepickerData.minRange = this.startDate;
       datepickerData.selectedDates = [this.startDate, this.endDate];
       datepickerData.maxRange = this.endDate;
+    }
+
+    //отображение дат до открытия календаря
+    if (!this.$opener) {
+      
+      switch (formattedDatesArr.length) {
+        case 1:
+          this.startDate = date[0];
+          $datepicker.val(formattedDatesArr[0]);        
+          break;
+        case 2: 
+          this.startDate = date[0];
+          this.endDate = date[1];       
+          $datepicker.val(formattedDatesArr[0]);
+          $endDate.val(formattedDatesArr[1])
+          break;
+        default:
+          break;
+      }
+      debugger
     }
   }
 
