@@ -7,7 +7,7 @@ mixin registrationCard(params)
   -
     var {label} = params
 
-  form.registration_card
+  form.registration_card(action="/registration" method="post" name="registration-form")
     h1.registration_card__label=label
     .registration_card__name_input
       +input({

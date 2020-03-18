@@ -17,7 +17,7 @@ mixin roomRateCard()
         valueSecond: "23.08.2019"
       }
 
-  form.room_rate_card.js_room_rate_card
+  form.room_rate_card.js_room_rate_card(action="/room-rate" method="post" name="room-rate-form")
     .room_rate_card__room_info_block
       .room_rate_card__number_block
         span.room_rate_card__number_sign №
@@ -48,4 +48,4 @@ mixin roomRateCard()
       .room_rate_card__dashed_border
       span.room_rate_card__total
     .room_rate_card__submit_button
-      +button( {label: "забронировать", style: "filled", arrow: true } )
+      +button( {label: "забронировать", style: "filled", arrow: true, type: "submit" } )
