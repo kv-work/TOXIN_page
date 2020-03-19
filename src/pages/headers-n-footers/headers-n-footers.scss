@@ -1,0 +1,28 @@
+@import "../../settings.scss";
+
+.headers_n_footers {
+  max-width: 1920px;
+  min-width: 320px;
+  margin: auto;
+  padding-top: 150px;
+  background-color: #f4f4f6;
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: 40px;
+
+  &__header {}
+
+  &__header_logged_in {}
+
+  &__footer_with_widgets {}
+
+  &__footer {}
+}
+
+.logo_wrapper {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}

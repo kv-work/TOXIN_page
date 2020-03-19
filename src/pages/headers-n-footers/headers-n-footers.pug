@@ -1,0 +1,15 @@
+extends ../base/base
+
+block variables
+  include ../../components/logo/logo
+  
+  - var pageTitle="Headers & Footers"
+
+block content
+  .headers_n_footers
+    .logo_wrapper
+      +logo({width: "48", height: "48", fill: "#1F2041", fillOpacity: ".25"})
+    .headers_n_footers__header
+    .headers_n_footers__header_logged_in
+    .headers_n_footers__footer_with_widgets
+    .headers_n_footers__footer
