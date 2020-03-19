@@ -1,0 +1,32 @@
+include ../button/button
+
+mixin header(params)
+  -
+    var { isLoggedIn=false, navItemList, loginLabel="login", regLabel="register", userName } = params
+    var classList = "header"
+    if (isLoggedIn)
+      classList += " header_logged_in"
+
+  div(class=classList)
+    .header__logo
+      .header__logo_image
+      .header__logo_title
+    nav.header__nav_bar
+      ul.header__nav_list
+        each item in navItemList
+          li.header__nav_item=item
+
+    if isLoggedIn
+      span.header__user_name=userName
+    else
+      .header__buttons
+        a.header__login_button(href="/login")
+          +button({
+            label: loginLabel,
+            style: "no fill"
+            })
+        a.header__registration_button(href="/registration")
+          +button({
+            label: regLabel,
+            style: "fill"
+            })
