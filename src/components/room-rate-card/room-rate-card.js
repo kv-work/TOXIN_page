@@ -27,11 +27,13 @@ class RoomRateCard {
   }
 
   _attachEventHandlers() {
-    const { $datepicker, datepickerData } = this;
+    const { $node, $datepicker, datepickerData } = this;
 
     $datepicker.on('updateDates', () => {
       this._updateTotal()
     })
+
+    $node.submit( e => this._submitForm(e))
   }
 
   _setDates() {
@@ -186,6 +188,12 @@ class RoomRateCard {
   _updateTotal() {
     this._calcDaysTotalCost()
     this._renderTotalCost()
+  }
+
+  _submitForm(event) {
+    event.preventDefault()
+
+    console.log('room-rate-card form submit')
   }
 }
 
