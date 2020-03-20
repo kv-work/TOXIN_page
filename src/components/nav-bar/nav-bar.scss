@@ -6,12 +6,43 @@
   padding: 0;
   display: flex;
 
+  &__item {
+    margin-right: 30px;
+  }
+
+  &__item_link {
+    color: $dark-50;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  &__item:first-child > &__item_link {
+    font-weight: bold;
+    color: $dark-75;
+  }
+
   &__item_nested {
     position: relative;
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-right: 20px;
+
+    &::after {
+      font-family: "Material Icons";
+      font-size: 24px;
+      line-height: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      content: "expand_more";
+    }
 
     &:hover > ul {
       display: block;
       position: absolute;
+      top: 24px;
+      padding-left: 10px;
     }
   }
 

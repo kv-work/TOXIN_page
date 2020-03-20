@@ -12,7 +12,8 @@ mixin navBarItem(params)
         each item in nestedItems
           +navBarItem(item)
   else
-    li.nav_bar__item=label
+    li.nav_bar__item
+      a.nav_bar__item_link(href=`/${label}`)=label
 
 
 mixin navBar(params)
