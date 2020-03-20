@@ -17,14 +17,11 @@
 
   &__buttons {
     display: flex;
+    height: 34px;
 
     & > a:first-child {
       margin-right: 20px;
     }
-  }
-
-  &__registration_button {
-    min-width: 101px;
   }
 
   &__user_name {
