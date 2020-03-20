@@ -27,6 +27,7 @@
     display: grid;
     grid-template-columns: auto auto;
     margin-right: 20px;
+    color: $dark-50;
 
     &::after {
       font-family: "Material Icons";
@@ -36,6 +37,7 @@
       justify-content: center;
       align-items: center;
       content: "expand_more";
+      color: $dark-50;
     }
 
     &:hover > ul {
@@ -51,5 +53,6 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
+    background-color: #fff;
   }
 }
