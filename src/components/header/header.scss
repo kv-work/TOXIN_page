@@ -3,6 +3,11 @@
 .header {
   display: flex;
   padding: 15px 140px;
+  align-items: center;
+
+  & div:first-child {
+    margin-right: 20px;
+  }
 
   &__nav_bar {
     margin-left: auto;
@@ -10,5 +15,17 @@
 
   &__buttons {
     display: flex;
+
+    & > a:first-child {
+      margin-right: 20px;
+    }
+  }
+
+  &__registration_button {
+    min-width: 101px;
+  }
+
+  &__user_name {
+    color: $dark-50;
   }
 }
