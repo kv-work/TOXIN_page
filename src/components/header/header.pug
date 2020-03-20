@@ -12,9 +12,7 @@ mixin header(params)
 
   header(class=classList)
     .header__logo
-      .header__logo_image
-        +logo({width: "40", height: "40", fill: "#1F2041", fillOpacity: ".25"})
-      .header__logo_title
+      img(src=require('../../img/Logo.svg').default alt="TOXIN")
     nav.header__nav_bar
       +navBar({itemList: navItemList, display: "horizontal"})
 
