@@ -1,20 +1,20 @@
 include ../button/button
+include ../nav-bar/nav-bar
 
 mixin header(params)
   -
     var { isLoggedIn=false, navItemList, loginLabel="login", regLabel="register", userName } = params
     var classList = "header"
+
     if (isLoggedIn)
       classList += " header_logged_in"
 
-  div(class=classList)
+  header(class=classList)
     .header__logo
       .header__logo_image
       .header__logo_title
     nav.header__nav_bar
-      ul.header__nav_list
-        each item in navItemList
-          li.header__nav_item=item
+      +navBar({itemList: navItemList, display: "horizontal"})
 
     if isLoggedIn
       span.header__user_name=userName
@@ -30,3 +30,13 @@ mixin header(params)
             label: regLabel,
             style: "fill"
             })
+
+//- +header( {isLoggedIn: false, navItemList: [
+//-       {label: "home"},
+//-       {label: "About Us"},
+//-       { label: "Services", isNestedList:true, nestedItems: [
+//-         {label: "service_1"},
+//-         {label: "service_2"} 
+//-         ] }, {label: "Careers"},
+//-       {label: "News"},
+//-       {label: "Documentation"}]  })

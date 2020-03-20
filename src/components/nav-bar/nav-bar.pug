@@ -5,11 +5,14 @@ mixin navBarItem(params)
     if (isNestedList)
       classList += "_nested"
 
-  li.nav_bar__item=label
-    if isNestedList
-      ul.nav_bar__item_nested_list
+  
+  if isNestedList
+    li.nav_bar__item_nested=label
+      ul.nav_bar__nested_list
         each item in nestedItems
           +navBarItem(item)
+  else
+    li.nav_bar__item=label
 
 
 mixin navBar(params)
