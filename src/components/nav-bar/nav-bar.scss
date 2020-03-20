@@ -1,1 +1,24 @@
 @import "../../settings.scss";
+
+.nav_bar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+
+  &__item_nested {
+    position: relative;
+
+    &:hover > ul {
+      display: block;
+      position: absolute;
+    }
+  }
+
+  &__nested_list {
+    display: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}

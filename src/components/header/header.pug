@@ -1,5 +1,6 @@
 include ../button/button
 include ../nav-bar/nav-bar
+include ../logo/logo
 
 mixin header(params)
   -
@@ -12,6 +13,7 @@ mixin header(params)
   header(class=classList)
     .header__logo
       .header__logo_image
+        +logo({width: "40", height: "40", fill: "#1F2041", fillOpacity: ".25"})
       .header__logo_title
     nav.header__nav_bar
       +navBar({itemList: navItemList, display: "horizontal"})
@@ -28,15 +30,5 @@ mixin header(params)
         a.header__registration_button(href="/registration")
           +button({
             label: regLabel,
-            style: "fill"
+            style: "filled"
             })
-
-//- +header( {isLoggedIn: false, navItemList: [
-//-       {label: "home"},
-//-       {label: "About Us"},
-//-       { label: "Services", isNestedList:true, nestedItems: [
-//-         {label: "service_1"},
-//-         {label: "service_2"} 
-//-         ] }, {label: "Careers"},
-//-       {label: "News"},
-//-       {label: "Documentation"}]  })

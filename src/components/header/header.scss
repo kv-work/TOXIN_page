@@ -1,1 +1,14 @@
 @import "../../settings.scss";
+
+.header {
+  display: flex;
+  padding: 15px 140px;
+
+  &__nav_bar {
+    margin-left: auto;
+  }
+
+  &__buttons {
+    display: flex;
+  }
+}

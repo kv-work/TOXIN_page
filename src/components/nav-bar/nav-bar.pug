@@ -20,27 +20,8 @@ mixin navBar(params)
     var {itemList, display="vertical"} = params
     classList = "nav_bar"
     if (display == "horizontal")
-      classList += "_horizontal"
+      classList += " nav_bar_horizontal"
 
   ul(class=classList)
     each item in itemList
       +navBarItem(item)
-
-
-//- +navBar({
-//-   itemList: [
-//-     {label: "home"},
-//-     {label: "About Us"},
-//-     {
-//-       label: "Services",
-//-       isNestedList:true,
-//-       nestedItems:[
-//-         {label: "service_1"},
-//-         {label: "service_2"}
-//-       ]
-//-     },
-//-     {label: "Careers"},
-//-     {label: "News"},
-//-     {label: "Documentation"}
-//-   ] 
-//- })
