@@ -10,15 +10,7 @@
 
   display: grid;
   grid-template-columns: 1fr;
-  column-gap: 40px;
-
-  &__header {}
-
-  &__header_logged_in {}
-
-  &__footer_with_widgets {}
-
-  &__footer {}
+  row-gap: 40px;
 }
 
 .logo_wrapper {

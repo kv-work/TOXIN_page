@@ -10,8 +10,7 @@ block content
   .headers_n_footers
     .logo_wrapper
       +logo({width: "48", height: "48", fill: "#1F2041", fillOpacity: ".25"})
-    .headers_n_footers__header
-      +header( {isLoggedIn: false, navItemList: [
+    +header( {isLoggedIn: false, navItemList: [
       {label: "Home"},
       {label: "About Us"},
       { label: "Services", isNestedList:true, nestedItems: [
@@ -20,16 +19,17 @@ block content
         ] }, {label: "Careers"},
       {label: "News"},
       {label: "Documentation"}]  })
-    .headers_n_footers__header_logged_in
-      +header( {isLoggedIn: true, navItemList: [
-        {label: "Home"},
-        {label: "About Us"},
-        { label: "Services", isNestedList:true, nestedItems: [
-          {label: "service_1"},
-          {label: "service_2"} 
-          ] }, {label: "Careers"},
-        {label: "News"},
-        {label: "Documentation"}],
-        userName: "Cosmin Negoita"  })
+    +header( {isLoggedIn: true, navItemList: [
+      {label: "Home"},
+      {label: "About Us"},
+      { label: "Services", isNestedList:true, nestedItems: [
+        {label: "service_1"},
+        {label: "service_2"} 
+      ] },
+      {label: "Careers"},
+      {label: "News"},
+      {label: "Documentation"}],
+      userName: "Cosmin Negoita" 
+    })
     .headers_n_footers__footer_with_widgets
     .headers_n_footers__footer
