@@ -17,6 +17,7 @@ mixin header(params)
       +navBar({itemList: navItemList, display: "horizontal"})
 
     if isLoggedIn
+      .header__delimiter
       span.header__user_name=userName
     else
       .header__buttons
