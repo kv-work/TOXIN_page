@@ -4,7 +4,9 @@ include ../input/input
 
 mixin footer(params)
   -
-    var { lang, withWidgets = true } = params
+    //- var data = require('../../components/footer/footer.json').dataEn
+    var { lang, withWidgets = true, data } = params
+    var { descriptionText, navigationList, aboutUsList, supportList, subscribeBlock, copyrightText } = data
     
     var classList = "footer"
     if (withWidgets)
@@ -13,10 +15,23 @@ mixin footer(params)
   footer(class=classList)
     .footer__logo_block
       img(class="footer__logo" src=require('../../img/Logo.svg').default alt="TOXIN")
+      .footer__description= descriptionText
     if (withWidgets)
       .footer__navigation_block
+        .footer__navigation_list_title= navigationList.title
+        .footer__navigation_list
+          +navBar({itemList: navigationList.list})
       .footer__about_us_block
+        .footer__about_us_list_title= aboutUsList.title
+        .footer__about_us_list
+          +navBar( {itemList: aboutUsList.list} )
       .footer__support_block
+        .footer__support_list_title= supportList.title
+        .footer__support_list
+          +navBar( {itemList: supportList.list})
       .footer__subscribe_block
+        .footer__subscribe_title= subscribeBlock.title
+        .footer__subscribe_text= subscribeBlock.text
+        +input( {placeholder: subscribeBlock.placeholder, subscription: true })
       .footer__copyright_block
     .footer__socials_block
