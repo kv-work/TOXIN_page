@@ -1,0 +1,22 @@
+include ../nav-bar/nav-bar
+include ../button/button
+include ../input/input
+
+mixin footer(params)
+  -
+    var { lang, withWidgets = true } = params
+    
+    var classList = "footer"
+    if (withWidgets)
+      classList += " footer_with_widgets"
+
+  footer(class=classList)
+    .footer__logo_block
+      img(class="footer__logo" src=require('../../img/Logo.svg').default alt="TOXIN")
+    if (withWidgets)
+      .footer__navigation_block
+      .footer__about_us_block
+      .footer__support_block
+      .footer__subscribe_block
+      .footer__copyright_block
+    .footer__socials_block
