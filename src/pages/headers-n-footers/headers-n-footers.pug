@@ -3,8 +3,10 @@ extends ../base/base
 block variables
   include ../../components/logo/logo
   include ../../components/header/header
+  include ../../components/footer/footer
   
-  - var pageTitle="Headers & Footers"
+  -
+    var pageTitle="Headers & Footers"
 
 block content
   .headers_n_footers
@@ -32,4 +34,5 @@ block content
       userName: "Cosmin Negoita" 
     })
     .headers_n_footers__footer_with_widgets
+      +footer( {lang: "en"} )
     .headers_n_footers__footer
