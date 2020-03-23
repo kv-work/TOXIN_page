@@ -6,7 +6,12 @@ mixin footer(params)
   -
     //- var data = require('../../components/footer/footer.json').dataEn
     var { lang, withWidgets = true, data } = params
-    var { descriptionText, navigationList, aboutUsList, supportList, subscribeBlock, copyrightText } = data
+    if (lang == "en")
+      var currData = data.dataEn.footer
+    else
+      var currData = data.dateRu.footer
+
+    var { descriptionText, navigationList, aboutUsList, supportList, subscribeBlock, copyrightText } = currData
     
     var classList = "footer"
     if (withWidgets)
@@ -32,6 +37,6 @@ mixin footer(params)
       .footer__subscribe_block
         .footer__subscribe_title= subscribeBlock.title
         .footer__subscribe_text= subscribeBlock.text
-        +input( {placeholder: subscribeBlock.placeholder, subscription: true })
+        +input( {placeholder: subscribeBlock.inputPlaceholder, subscription: true })
       .footer__copyright_block
     .footer__socials_block

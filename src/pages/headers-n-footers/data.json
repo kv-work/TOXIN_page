@@ -9,27 +9,27 @@
       "navigationList": {
         "title": "navigation",
         "list": [
-          "About Us",
-          "News",
-          "Support",
-          "Products"
+          {"label": "About Us"},
+          {"label": "News"},
+          {"label": "Support"},
+          {"label": "Products"}
         ]
       },
       "aboutUsList": {
         "title": "about us",
         "list": [
-          "Who we are",
-          "Our team",
-          "Careers",
-          "Investors"
+          {"label": "Who we are"},
+          {"label": "Our team"},
+          {"label": "Careers"},
+          {"label": "Investors"}
         ]
       },
       "supportList": {
         "title": "support",
         "list": [
-          "Documentation",
-          "Community",
-          "Get in Touch"
+          {"label": "Documentation"},
+          {"label": "Community"},
+          {"label": "Get in Touch"}
         ]
       },
       "subscribeBlock": {
