@@ -4,7 +4,6 @@ include ../input/input
 
 mixin footer(params)
   -
-    //- var data = require('../../components/footer/footer.json').dataEn
     var { lang, withWidgets = true, data } = params
     if (lang == "en")
       var currData = data.dataEn.footer
@@ -18,25 +17,38 @@ mixin footer(params)
       classList += " footer_with_widgets"
 
   footer(class=classList)
-    .footer__logo_block
-      img(class="footer__logo" src=require('../../img/Logo.svg').default alt="TOXIN")
-      .footer__description= descriptionText
-    if (withWidgets)
-      .footer__navigation_block
-        .footer__navigation_list_title= navigationList.title
-        .footer__navigation_list
-          +navBar({itemList: navigationList.list})
-      .footer__about_us_block
-        .footer__about_us_list_title= aboutUsList.title
-        .footer__about_us_list
-          +navBar( {itemList: aboutUsList.list} )
-      .footer__support_block
-        .footer__support_list_title= supportList.title
-        .footer__support_list
-          +navBar( {itemList: supportList.list})
-      .footer__subscribe_block
-        .footer__subscribe_title= subscribeBlock.title
-        .footer__subscribe_text= subscribeBlock.text
-        +input( {placeholder: subscribeBlock.inputPlaceholder, subscription: true })
-      .footer__copyright_block
-    .footer__socials_block
+    .footer__logo_n_widgets_block
+      .footer__logo_block
+        img(class="footer__logo" src=require('../../img/Logo.svg').default alt="TOXIN")
+        .footer__description= descriptionText
+      if (withWidgets)
+        .footer__widgets_block
+          .footer__navigation_block
+            h3.footer__navigation_list_title= navigationList.title
+            .footer__navigation_list
+              +navBar({itemList: navigationList.list})
+          .footer__about_us_block
+            h3.footer__about_us_list_title= aboutUsList.title
+            .footer__about_us_list
+              +navBar( {itemList: aboutUsList.list} )
+          .footer__support_block
+            h3.footer__support_list_title= supportList.title
+            .footer__support_list
+              +navBar( {itemList: supportList.list})
+          .footer__subscribe_block
+            h3.footer__subscribe_title= subscribeBlock.title
+            .footer__subscribe_text= subscribeBlock.text
+            .footer__subscribe_input
+              +input( {placeholder: subscribeBlock.inputPlaceholder, subscription: true })
+    .footer__delimiter
+    .footer__copyright_n_socials_block
+      if (withWidgets)
+        .footer__copyright_block= copyrightText
+      .footer__socials_block
+        span.footer__social
+          i(class="fab fa-twitter")
+        span.footer__social
+          i(class="fab fa-facebook-square")
+        span.footer__social
+          i(class="fab fa-instagram")
+        
