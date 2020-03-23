@@ -32,9 +32,20 @@ module.exports = (env = {}) => {
     const plugins = pagesArr.map( (page) => {
       const pageName = page[0]
       return new HtmlWebpackPlugin({
+        getData: () => {
+          try {
+            const data = JSON.parse(fs.readFileSync(path.resolve(__dirname, `src/pages/${pageName}/data.json`), 'utf8'))
+            return data
+          } catch(err) {
+            console.log(err)
+            return {}
+          }
+
+        },
         chunks: page,
         filename: `${pageName}/index.html`,
-        template: path.resolve(__dirname, `src/pages/${pageName}/${pageName}.pug` )
+        template: path.resolve(__dirname, `src/pages/${pageName}/${pageName}.pug` ),
+        inject: 'body'
       })
     
     } )
