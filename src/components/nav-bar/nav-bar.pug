@@ -9,12 +9,12 @@ mixin navBarItem(params)
 
   
   if isNestedList
-    li.nav_bar__item_nested=label
+    li(class= classList)= label
       ul.nav_bar__nested_list
         each item in nestedItems
           +navBarItem(item)
   else
-    li.nav_bar__item
+    li(class= classList)
       a.nav_bar__item_link(href=`/${label}`)=label
 
 

@@ -25,7 +25,9 @@
   }
 
   &__nav_bar {
+    position: relative;
     margin-left: auto;
+    flex-shrink: 2;
   }
 
   &__buttons {
@@ -48,4 +50,55 @@
   &__user_name {
     color: $dark-50;
   }
+}
+
+@media screen and (max-width: 576px) {
+  .header {
+    padding: 15px;
+
+    &__elements {
+      flex-wrap: wrap;
+    }
+
+    &__nav_bar {
+      margin: auto;
+      display: flex;
+      padding: 0 10px 0 15px;
+      border-left: 1px solid $dark-10;
+      border-right: 1px solid $dark-10;
+
+      & > ul {
+        display: none;
+      }
+
+      &::before {
+        font-family: Montserrat, Arial, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        content: "menu";
+      }
+  
+      &::after {
+        font-family: "Material Icons";
+        font-size: 30px;
+        line-height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        content: "expand_more";
+        color: $dark-50;
+      }
+  
+      &:hover > ul {
+        display: block;
+        position: absolute;
+        top: 24px;
+        padding-left: 10px;
+        background-color: #fff;
+        z-index: 999;
+      }
+    }
+  }
+  
 }

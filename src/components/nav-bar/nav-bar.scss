@@ -37,8 +37,7 @@
   &__item_nested {
     position: relative;
     cursor: pointer;
-    display: grid;
-    grid-template-columns: auto auto;
+    display: flex;
     margin-right: 20px;
     color: $dark-50;
 
@@ -67,5 +66,27 @@
     margin: 0;
     padding: 0;
     background-color: #fff;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .nav_bar {
+    flex-direction: column;
+
+    &__item_nested {
+
+      &:hover {
+
+        &::after {
+          transform: rotate(270deg);
+        }
+      
+        & > ul {
+          border: 1px solid $dark-10;
+          top: 0;
+          left: 100px;
+        }
+      }
+    }
   }
 }
