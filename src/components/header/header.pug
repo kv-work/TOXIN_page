@@ -11,23 +11,24 @@ mixin header(params)
       classList += " header_logged_in"
 
   header(class=classList)
-    .header__logo
-      img(src=require('../../img/Logo.svg').default alt="TOXIN")
-    nav.header__nav_bar
-      +navBar({itemList: navItemList, display: "horizontal"})
+    .header__elements
+      .header__logo
+        img(src=require('../../img/Logo.svg').default alt="TOXIN")
+      nav.header__nav_bar
+        +navBar({itemList: navItemList, display: "horizontal"})
 
-    if isLoggedIn
-      .header__delimiter
-      span.header__user_name=userName
-    else
-      .header__buttons
-        a.header__login_button(href="/login")
-          +button({
-            label: loginLabel,
-            style: "no fill"
-            })
-        a.header__registration_button(href="/registration")
-          +button({
-            label: regLabel,
-            style: "filled"
-            })
+      if isLoggedIn
+        .header__delimiter
+        span.header__user_name=userName
+      else
+        .header__buttons
+          a.header__login_button(href="/login")
+            +button({
+              label: loginLabel,
+              style: "no fill"
+              })
+          a.header__registration_button(href="/registration")
+            +button({
+              label: regLabel,
+              style: "filled"
+              })

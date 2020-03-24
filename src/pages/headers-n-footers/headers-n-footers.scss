@@ -16,5 +16,11 @@
 .logo_wrapper {
   position: absolute;
   top: 30px;
-  left: 30px;
+  left: calc(50% - 720px + 30px);
+}
+
+@media screen and (max-width: 1440px) {
+  .logo_wrapper {
+    left: 30px;
+  }
 }
