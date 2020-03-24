@@ -10,15 +10,14 @@
   &__elements {
     max-width: 1160px;
     margin: auto;
-    display: flex;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
 
     & div:first-child {
       margin-right: 20px;
     }
   }
-
-  
 
   &__logo {
     line-height: 10px;
@@ -49,6 +48,14 @@
 
   &__user_name {
     color: $dark-50;
+    border-left: 1px solid $dark-10;
+    padding-left: 30px;
+  }
+}
+
+@media screen and (max-width: 1220px) {
+  .header {
+    padding: 15px 30px;
   }
 }
 
