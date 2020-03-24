@@ -1,7 +1,20 @@
 {
   "dataEn": {
     "header": {
-
+      "navigationList": [
+        {"label": "Home", "isActive": true},
+        {"label": "About Us"},
+        { "label": "Services", "isNestedList": true, "nestedItems": [
+          {"label": "service_1"},
+          {"label": "service_2"} 
+          ] 
+        },
+        {"label": "Careers"},
+        {"label": "News"},
+        {"label": "Documentation"}
+      ],
+      "loginLabel": "login",
+      "regLabel": "register"
     },
     "footer": {
       "descriptionText": "Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.",
@@ -41,7 +54,22 @@
   },
   "dataRu": {
     "header": {
-
+      "navigationList": [
+        {"label": "О нас"},
+        { "label": "Услуги", "isNestedList": true, "nestedItems": [
+          {"label": "Услуга_1"},
+          {"label": "Услуга_2"} 
+          ] 
+        },
+        {"label": "Вакансии"},
+        {"label": "Новости"},
+        {"label": "Соглашения", "isNestedList": true, "nestedItems": [
+          {"label": "Соглашения_1"},
+          {"label": "Соглашения_2"}
+        ]}
+      ],
+      "loginLabel": "войти",
+      "regLabel": "зарегистрироваться"
     },
     "footer": {
       "descriptionText": "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»",
