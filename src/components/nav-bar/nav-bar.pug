@@ -1,9 +1,11 @@
 mixin navBarItem(params)
   -
-    var {label, isNestedList=false, nestedItems=[]} = params
+    var {label, isNestedList=false, nestedItems=[], isActive=false} = params
     var classList = "nav_bar__item"
     if (isNestedList)
       classList += "_nested"
+    if (isActive)
+      classList += " active"
 
   
   if isNestedList
