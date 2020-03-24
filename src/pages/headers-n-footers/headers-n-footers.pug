@@ -14,7 +14,7 @@ block content
     .logo_wrapper
       +logo({width: "48", height: "48", fill: "#1F2041", fillOpacity: ".25"})
     +header( {isLoggedIn: false, navItemList: [
-      {label: "Home"},
+      {label: "Home", active: true},
       {label: "About Us"},
       { label: "Services", isNestedList:true, nestedItems: [
         {label: "service_1"},
@@ -23,7 +23,7 @@ block content
       {label: "News"},
       {label: "Documentation"}]  })
     +header( {isLoggedIn: true, navItemList: [
-      {label: "Home"},
+      {label: "Home", active: true},
       {label: "About Us"},
       { label: "Services", isNestedList:true, nestedItems: [
         {label: "service_1"},
@@ -34,6 +34,5 @@ block content
       {label: "Documentation"}],
       userName: "Cosmin Negoita" 
     })
-    .headers_n_footers__footer_with_widgets
-      +footer( {lang: "en", data} )
-    .headers_n_footers__footer
+    +footer( {lang: "en", data} )
+    +footer( {lang: "en", data, withWidgets: false} )
