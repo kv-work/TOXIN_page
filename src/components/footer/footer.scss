@@ -8,7 +8,16 @@
     display: grid;
     grid-template-columns: 260px auto;
     column-gap: 40px;
-    padding: 100px 140px;    
+    padding: 100px 140px 97px; 
+    border-bottom: 1px solid $dark-10;   
+  }
+
+  &__logo {
+    text-align: center;
+    max-width: 560px;
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 27px;
   }
 
   &__description {
@@ -28,6 +37,12 @@
     padding-top: 4px;
   }
 
+  &__navigation_list_title,
+  &__about_us_list_title,
+  &__services_list_title {
+    margin-bottom: 18px;
+  }
+
   &__subscribe_block {
     flex-basis: 260px;
     flex-grow: 0;
@@ -41,16 +56,16 @@
     margin-top: 22px;
   }
 
-  &__delimiter {
-    height: 1px;
-    background-color: $dark-10;
-  }
-
   &__socials_block {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, auto);
     column-gap: 20px;
-    justify-content: end;
+    justify-content: center;
+  }
+
+  &__socials {
+    text-align: center;
+    margin-bottom: 110px;
   }
 
   &__social {
