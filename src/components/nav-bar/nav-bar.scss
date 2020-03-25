@@ -5,6 +5,7 @@
   margin: 0;
   padding: 0;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 
   &_vertical {
@@ -69,22 +70,57 @@
   }
 }
 
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 750px) {
+  .nav_bar {
+    justify-content: space-between;
+    
+    & > li:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
   .nav_bar {
     flex-direction: column;
+    justify-content: flex-end;
+
+    &__item {
+      margin-right: 0;
+      padding-right: 10px;
+      text-align: end;
+    }
 
     &__item_nested {
+      margin-right: 0px;
+      padding-right: 10px;
+      justify-content: flex-end;
+
+      &::before {
+        font-family: "Material Icons";
+        font-size: 24px;
+        line-height: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        content: "expand_more";
+        color: $dark-50;
+      }
+
+      &::after {
+        display: none;
+      }
 
       &:hover {
 
-        &::after {
-          transform: rotate(270deg);
+        &::before {
+          transform: rotate(90deg);
         }
       
         & > ul {
           border: 1px solid $dark-10;
           top: 0;
-          left: 100px;
+          right: 100%;
         }
       }
     }
