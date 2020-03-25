@@ -4,7 +4,14 @@ include ../logo/logo
 
 mixin header(params)
   -
-    var { isLoggedIn=false, navItemList, loginLabel="login", regLabel="register", userName } = params
+    var {lang="en", isLoggedIn=false, userName } = params
+    if (lang == "en")
+      var currData = data.dataEn.header
+    else if (lang == "ru")
+      var currData = data.dataRu.header
+
+    var { navigationList, loginLabel, regLabel } = currData
+    
     var classList = "header"
 
     if (isLoggedIn)
@@ -15,10 +22,9 @@ mixin header(params)
       .header__logo
         img(src=require('../../img/Logo.svg').default alt="TOXIN")
       nav.header__nav_bar
-        +navBar({itemList: navItemList, display: "horizontal"})
+        +navBar({itemList: navigationList, display: "horizontal"})
 
       if isLoggedIn
-        //- .header__delimiter
         span.header__user_name=userName
       else
         .header__buttons

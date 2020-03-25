@@ -13,36 +13,8 @@ block content
   .headers_n_footers
     .logo_wrapper
       +logo({width: "48", height: "48", fill: "#1F2041", fillOpacity: ".25"})
-    +header( {isLoggedIn: false, navItemList: [
-      {label: "Home", isActive: true},
-      {label: "About Us"},
-      { label: "Services", isNestedList:true, nestedItems: [
-        {label: "service_1"},
-        {label: "service_2"} 
-        ] }, {label: "Careers"},
-      {label: "News"},
-      {label: "Documentation"}]  })
-    +header( {isLoggedIn: true, navItemList: [
-      {label: "Home", isActive: true},
-      {label: "About Us"},
-      { label: "Services", isNestedList:true, nestedItems: [
-        {label: "service_1"},
-        {label: "service_2"} 
-      ] },
-      {label: "Careers"},
-      {label: "News"},
-      {label: "Documentation"}],
-      userName: "Cosmin Negoita" 
-    })
-    +header( {isLoggedIn: false, navItemList: [
-      {label: "Home", isActive: true},
-      {label: "About Us"},
-      { label: "Services", isNestedList:true, nestedItems: [
-        {label: "service_1"},
-        {label: "service_2"} 
-        ] }, {label: "Careers"},
-      {label: "News"},
-      {label: "Documentation"}],
-      loginLabel: "войти", regLabel: "зарегистрироваться"  })
+    +header( {isLoggedIn: false, data })
+    +header( {isLoggedIn: true, data, userName: "Cosmin Negoita" })
+    +header( {lang: "ru", isLoggedIn: false, data })
     //- +footer( {lang: "en", data} )
     //- +footer( {lang: "en", data, withWidgets: false} )
