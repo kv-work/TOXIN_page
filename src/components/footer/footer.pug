@@ -7,8 +7,8 @@ mixin footer(params)
     var { lang, withWidgets = true, data } = params
     if (lang == "en")
       var currData = data.dataEn.footer
-    else
-      var currData = data.dateRu.footer
+    else if (lang == "ru")
+      var currData = data.dataRu.footer
 
     var { descriptionText, navigationList, aboutUsList, supportList, subscribeBlock, copyrightText } = currData
     
@@ -35,11 +35,11 @@ mixin footer(params)
             h3.footer__support_list_title= supportList.title
             .footer__support_list
               +navBar( {itemList: supportList.list})
-          .footer__subscribe_block
-            h3.footer__subscribe_title= subscribeBlock.title
-            .footer__subscribe_text= subscribeBlock.text
-            .footer__subscribe_input
-              +input( {placeholder: subscribeBlock.inputPlaceholder, subscription: true })
+        .footer__subscribe_block
+          h3.footer__subscribe_title= subscribeBlock.title
+          .footer__subscribe_text= subscribeBlock.text
+          .footer__subscribe_input
+            +input( {placeholder: subscribeBlock.inputPlaceholder, subscription: true })
     div(class= (withWidgets) ? "footer__copyright_n_socials_block" : "footer__socials")
       if (withWidgets)
         .footer__copyright_block= copyrightText

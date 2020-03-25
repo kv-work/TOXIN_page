@@ -5,10 +5,12 @@
   box-shadow: 0px 10px 20px $dark-5;
 
   &__logo_n_widgets_block {
+    max-width: 1160px;
+    margin: auto;
     display: grid;
-    grid-template-columns: 260px auto;
+    grid-template-columns: 260px auto 260px;
     column-gap: 40px;
-    padding: 100px 140px 97px; 
+    padding: 100px 0px 97px; 
     border-bottom: 1px solid $dark-10;   
   }
 
@@ -28,7 +30,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 23px 140px;
+    max-width: 1160px;
+    margin: auto;
+    padding: 23px 0;
   }
 
   &__widgets_block {
@@ -39,13 +43,12 @@
 
   &__navigation_list_title,
   &__about_us_list_title,
-  &__services_list_title {
+  &__support_list_title {
     margin-bottom: 18px;
   }
 
   &__subscribe_block {
-    flex-basis: 260px;
-    flex-grow: 0;
+    padding-top: 4px;
   }
 
   &__subscribe_text {
