@@ -8,11 +8,16 @@
   justify-content: center;
   flex-wrap: wrap;
 
+  &__item {
+    margin-right: 30px;
+  }
+
   &_vertical {
     flex-direction: column;
 
     & > li {
       margin-bottom: 14px;
+      margin-right: 0;
     }
 
     & > li:last-child {
@@ -20,9 +25,7 @@
     }
   }
 
-  &__item {
-    margin-right: 30px;
-  }
+
 
   &__item_link {
     color: $dark-50;
