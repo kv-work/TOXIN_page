@@ -9,14 +9,14 @@
   flex-wrap: wrap;
 
   &__item {
-    margin-right: 30px;
+    margin-right: 1.875rem;
   }
 
   &_vertical {
     flex-direction: column;
 
     & > li {
-      margin-bottom: 14px;
+      margin-bottom: 0.875rem;
       margin-right: 0;
     }
 
@@ -42,13 +42,13 @@
     position: relative;
     cursor: pointer;
     display: flex;
-    margin-right: 20px;
+    margin-right: 1.25rem;
     color: $dark-50;
 
     &::after {
       font-family: "Material Icons";
-      font-size: 24px;
-      line-height: 20px;
+      font-size: 1.5rem;
+      line-height: 1.25rem;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -59,8 +59,8 @@
     &:hover > ul {
       display: block;
       position: absolute;
-      top: 24px;
-      padding-left: 10px;
+      top: 1.5rem;
+      padding-left: 0.625rem;
     }
   }
 
@@ -73,7 +73,7 @@
   }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 46.875rem) {
   .nav_bar {
     justify-content: space-between;
     
@@ -83,26 +83,26 @@
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 37.5rem) {
   .nav_bar {
     flex-direction: column;
     justify-content: flex-end;
 
     &__item {
       margin-right: 0;
-      padding-right: 10px;
+      padding-right: 0.625rem;
       text-align: end;
     }
 
     &__item_nested {
-      margin-right: 0px;
-      padding-right: 10px;
+      margin-right: 0rem;
+      padding-right: 0.625rem;
       justify-content: flex-end;
 
       &::before {
         font-family: "Material Icons";
-        font-size: 24px;
-        line-height: 20px;
+        font-size: 1.5rem;
+        line-height: 1.25rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -121,7 +121,7 @@
         }
       
         & > ul {
-          border: 1px solid $dark-10;
+          border: 0.0625rem solid $dark-10;
           top: 0;
           right: 100%;
         }

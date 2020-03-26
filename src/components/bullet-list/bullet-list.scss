@@ -7,25 +7,25 @@
     margin: 0;
     list-style: none;
     display: grid;
-    row-gap: 10px;
-    padding-top: 9px;
-    padding-right: 28.59px;
+    row-gap: 0.625rem;
+    padding-top: 0.5625rem;
+    padding-right: 1.7869rem;
   }
 
   &__item {
     display: grid;
     grid-template-columns: auto 1fr;
-    column-gap: 10.43px;
+    column-gap: 0.6519rem;
     align-items: baseline;
 
     &::before {
       display: block;
-      width: 10.43px;
-      height: 10px;
+      width: 0.6519rem;
+      height: 0.625rem;
       background: $dark-25;
       content: '';
       border-radius: 50%;
-      margin-top: 7px;
+      margin-top: 0.4375rem;
     }
   }
 }

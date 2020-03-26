@@ -2,19 +2,19 @@
 
 .icon_item {
   width: 100%;
-  height: 69px;
+  height: 4.3125rem;
   display: grid;
   grid-template-columns: auto 1fr;
-  grid-column-gap: 10px;
-  border-bottom: 1px solid $dark-10;
+  grid-column-gap: 0.625rem;
+  border-bottom: 0.0625rem solid $dark-10;
 
   &__icon {
-    width: 48px;
-    height: 48px;
+    width: 3rem;
+    height: 3rem;
 
     & i {
-      font-size: 48px;
-      line-height: 48px;
+      font-size: 3rem;
+      line-height: 3rem;
       text-align: center;
       vertical-align: middle;
       //set text-color: gradient
@@ -28,7 +28,7 @@
 
   &__label {
     font-weight: bold;
-    font-size: 14px;
-    line-height: 24px;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
   }
 }

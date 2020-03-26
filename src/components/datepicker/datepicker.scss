@@ -5,7 +5,7 @@
 
   &__label {
     display: block;
-    padding: 3px 0 5px 0;
+    padding: 0.1875rem 0 0.3125rem 0;
     
   }
 }
@@ -13,50 +13,50 @@
 .js_form_datepicker_separated {  
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(2, minmax(45%, 150px));
-  grid-column-gap: 20px;
+  grid-template-columns: repeat(2, minmax(45%, 9.375rem));
+  grid-column-gap: 1.25rem;
 }
 
 .form_datepicker__input_wrapper {
   font-family: Montserrat, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 24px;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
   color: $dark-75;
-  height: 44px;
+  height: 2.75rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background: #FFFFFF;
-  border: 1px solid $dark-25;
+  border: 0.0625rem solid $dark-25;
   box-sizing: border-box;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   cursor: pointer;
 
   &::after {
     font-family: "Material Icons";
-    width: 42px;
-    height: 44px;
-    font-size: 24px;
-    line-height: 44px;
+    width: 2.625rem;
+    height: 2.75rem;
+    font-size: 1.5rem;
+    line-height: 2.75rem;
     display: flex;
     justify-content: center;
     align-items: center;
     content: "expand_more";
-    top: -13px;
+    top: -0.8125rem;
   }
 }
 
 .form_datepicker__input,
 .form_datepicker__end_date_input {
   font-family: Montserrat, Arial, sans-serif;
-  padding: 1px 0 0 14px;
+  padding: 0.0625rem 0 0 0.875rem;
   cursor: inherit;
   border: none;
   box-sizing: border-box;
-  font-size: 14px;
-  line-height: 18px;
+  font-size: 0.875rem;
+  line-height: 1.125rem;
   color: $dark-75;
-  max-width: calc(100% - 44px);
+  max-width: calc(100% - 2.75rem);
 
   &:hover,
   &:focus {    
@@ -67,8 +67,8 @@
     font-family: Montserrat, Arial, sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
-    line-height: 18px;
+    font-size: 0.875rem;
+    line-height: 1.125rem;
     color: $dark-75;
   }
 }
@@ -80,17 +80,17 @@
 }
 
 .datepicker-inline .datepicker {
-  box-shadow: 0 10px 20px $dark-5;
+  box-shadow: 0 0.625rem 1.25rem $dark-5;
 }
 
 .datepicker {
-  width: 320px;
+  width: 20rem;
   background-color: #fff;
   box-sizing: border-box;
-  border: 1px solid $dark-25;
-  border-radius: 4px;
-  box-shadow: 0 10px 20px $dark-5;
-  padding: 20px;
+  border: 0.0625rem solid $dark-25;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.625rem 1.25rem $dark-5;
+  padding: 1.25rem;
 
   &--pointer {
     display: none;
@@ -104,8 +104,8 @@
       font-family: Quicksand, 'Open Sans', sans-serif;
       font-style: normal;
       font-weight: bold;
-      font-size: 19px;
-      line-height: 24px;
+      font-size: 1.1875rem;
+      line-height: 1.5rem;
       text-align: center;
       color: $dark-100;
       display: inline-block;
@@ -113,15 +113,15 @@
     }
 
     &-action:nth-child(1) {
-      width: 24px;
-      height: 24px;
+      width: 1.5rem;
+      height: 1.5rem;
       
       &::after {
         font-family: "Material Icons";
-        font-size: 24px;
-        line-height: 24px;
-        width: 24px;
-        height: 24px;
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
         display: inline-block;
         text-align: center;
         vertical-align: middle;
@@ -138,15 +138,15 @@
     }
 
       &-action:nth-child(3) {
-        width: 24px;
-        height: 24px;
+        width: 1.5rem;
+        height: 1.5rem;
         
         &::after {
           font-family: "Material Icons";
-          font-size: 24px;
-          line-height: 24px;
-          width: 24px;
-          height: 24px;
+          font-size: 1.5rem;
+          line-height: 1.5rem;
+          width: 1.5rem;
+          height: 1.5rem;
           display: inline-block;
           text-align: center;
           vertical-align: middle;
@@ -165,8 +165,8 @@
 
   &--content {
     padding: 0;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
   }
 
   &--days-names {
@@ -177,10 +177,10 @@
     font-family: Montserrat,"Open Sans", Arial, sans-serif;
     font-weight: bold;
     color: $primary-purple;
-    font-size: 12px;
-    line-height: 15px;
-    width: 40px;
-    height: 40px;
+    font-size: 0.75rem;
+    line-height: 0.9375rem;
+    width: 2.5rem;
+    height: 2.5rem;
     text-transform: none;
   }
 
@@ -190,13 +190,13 @@
     font-family: Montserrat, Arial, sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 12px;
-    line-height: 15px;
+    font-size: 0.75rem;
+    line-height: 0.9375rem;
     display: flex;
     align-items: center;
     justify-content: center;
     color: $dark-50;
-    height: 40px;
+    height: 2.5rem;
 
 
 
@@ -223,8 +223,8 @@
         height: 100%;
         background: $primary-gradient;
         opacity: .25;
-        border-bottom-left-radius: 22px;
-        border-top-left-radius: 22px;
+        border-bottom-left-radius: 1.375rem;
+        border-top-left-radius: 1.375rem;
         border: none;
       }
     }
@@ -252,8 +252,8 @@
         height: 100%;
         background: $primary-gradient;
         opacity: .25;
-        border-bottom-right-radius: 22px;
-        border-top-right-radius: 22px;
+        border-bottom-right-radius: 1.375rem;
+        border-top-right-radius: 1.375rem;
         border: none;
       }
     }
@@ -278,12 +278,12 @@
     &.-selected-,
     &.-selected-:hover{
       background: $primary-gradient;
-      border-radius: 22px;
+      border-radius: 1.375rem;
     }
 
     &.-current- {
       background: $secondary-gradient;
-      border-radius: 22px;
+      border-radius: 1.375rem;
       color: white;
     }
 
@@ -307,8 +307,8 @@
     font-family: Montserrat, Arial, sans-serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
+    font-size: 0.75rem;
+    line-height: 0.9375rem;
     text-transform: uppercase;
 
     &-apply {
@@ -319,8 +319,8 @@
       font-family: Montserrat, Arial, sans-serif;
       font-style: normal;
       font-weight: bold;
-      font-size: 12px;
-      line-height: 15px;
+      font-size: 0.75rem;
+      line-height: 0.9375rem;
       text-transform: uppercase;
       color: $primary-purple;
       border: none;

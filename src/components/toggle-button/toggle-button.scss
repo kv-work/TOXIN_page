@@ -4,7 +4,7 @@
   width: 100%;
   display: grid;
   grid-template-columns: auto 1fr;
-  column-gap: 10px;
+  column-gap: 0.625rem;
   padding: 0;
   margin: 0;
   align-items: center;
@@ -13,10 +13,10 @@
     display: inline-block;
     grid-column: 1;
     grid-row: 1;
-    width: 40px;
-    height: 20px;
-    border: 1px solid $dark-25;
-    border-radius: 10px;
+    width: 2.5rem;
+    height: 1.25rem;
+    border: 0.0625rem solid $dark-25;
+    border-radius: 0.625rem;
     box-sizing: border-box;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -27,8 +27,8 @@
     position: relative;
 
     &::after {
-      width: 12px;
-      height: 12px;
+      width: 0.75rem;
+      height: 0.75rem;
       border-radius: 50%;
       background: $dark-25;
       content: "";
@@ -43,12 +43,12 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      border: 1px solid $primary-purple;
+      border: 0.0625rem solid $primary-purple;
       position: relative;
 
       &::after {
-        width: 12px;
-        height: 12px;
+        width: 0.75rem;
+        height: 0.75rem;
         border-radius: 50%;
         background: $primary-gradient;
         content: "";
