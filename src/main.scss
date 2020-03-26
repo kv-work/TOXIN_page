@@ -43,3 +43,9 @@ p {
   padding: 0;
   margin: 0;
 }
+
+@media screen and (max-width: 340px) {
+  html {
+    font-size: 14px;
+  }
+}

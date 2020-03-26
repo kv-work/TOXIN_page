@@ -194,15 +194,15 @@
   }
 }
 
-@media screen and (max-width: 21.25rem) {
+@media screen and (max-width: 340px) {
   .room_rate_card {
-    padding: 2.5rem 0.625rem 1.875rem;
+    
     border-top: 0.0625rem solid rgba(0, 0, 0, 0.12);
     border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.12); 
     
     &__datepicker_is_separated {
       margin-top: 1.125rem;
-      max-width: 18.75rem;
+      max-width: 320px;
     }
   }
 }
