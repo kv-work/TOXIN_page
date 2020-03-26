@@ -17,14 +17,14 @@
       </div>
       <div class="cards_grid">
         <div class="cards_grid_col">
-          <form class="room_search_card">
+          <form class="room_search_card" action="/room-search" method="post" name="room-search-form">
             <h1 class="room_search_card__label">Найдем номера под ваши пожелания</h1>
             <div class="room_search_card__datepicker_is_separated">
               <div class="form_datepicker js_form_datepicker_separated">
                 <div class="form_datepicker_wrapper">
                   <label class="form_datepicker__label like_h3">Прибытие</label>
                   <div class="form_datepicker__input_wrapper">
-                    <input class="form_datepicker__input js_datepicker_separated js_datepicker_masked start_date" type="text" placeholder="ДД.ММ.ГГГГ" readonly data-date="" data-separated data-label-second="Выезд" data-value-second="">
+                    <input class="form_datepicker__input js_datepicker_separated js_datepicker_masked start_date" type="text" placeholder="ДД.ММ.ГГГГ" required readonly data-date="" data-separated data-label-second="Выезд" data-value-second="">
                   </div>
                 </div>
               </div>
@@ -57,11 +57,11 @@
               </div>
             </div>
             <div class="room_search_card__submit_button">
-              <button class="button button_filled button_with_arrow" type="button">подобрать номер<i class="material-icons">arrow_forward</i>
+              <button class="button button_filled button_with_arrow" type="submit">подобрать номер<i class="material-icons">arrow_forward</i>
               </button>
             </div>
           </form>
-          <form class="registration_card">
+          <form class="registration_card" action="/registration" method="post" name="registration-form">
             <h1 class="registration_card__label">Регистрация аккаунта</h1>
             <div class="registration_card__name_input">
               <div class="form_input">
@@ -121,7 +121,7 @@
           </form>
         </div>
         <div class="cards_grid_col">
-          <form class="room_rate_card js_room_rate_card">
+          <form class="room_rate_card js_room_rate_card" action="/room-rate" method="post" name="room-rate-form">
             <div class="room_rate_card__room_info_block">
               <div class="room_rate_card__number_block"><span class="room_rate_card__number_sign">№</span><span class="room_rate_card__number">888</span></div>
               <div class="room_rate_card__price_block"><span class="room_rate_card__price"></span><span class="room_rate_card__price_text">в сутки</span></div>
@@ -131,7 +131,7 @@
                 <div class="form_datepicker_wrapper">
                   <label class="form_datepicker__label like_h3">Прибытие</label>
                   <div class="form_datepicker__input_wrapper">
-                    <input class="form_datepicker__input js_datepicker_separated js_datepicker_masked start_date" type="text" placeholder="ДД.ММ.ГГГГ" readonly data-date="19.08.2019" data-separated data-label-second="Выезд" data-value-second="23.08.2019">
+                    <input class="form_datepicker__input js_datepicker_separated js_datepicker_masked start_date" type="text" placeholder="ДД.ММ.ГГГГ" required readonly data-date="19.08.2019" data-separated data-label-second="Выезд" data-value-second="23.08.2019">
                   </div>
                 </div>
               </div>
@@ -180,11 +180,11 @@
               <div class="room_rate_card__dashed_border"></div><span class="room_rate_card__total"></span>
             </div>
             <div class="room_rate_card__submit_button">
-              <button class="button button_filled button_with_arrow" type="button">забронировать<i class="material-icons">arrow_forward</i>
+              <button class="button button_filled button_with_arrow" type="submit">забронировать<i class="material-icons">arrow_forward</i>
               </button>
             </div>
           </form>
-          <form class="login_card">
+          <form class="login_card" action="/login" method="post" name="login-form">
             <h1 class="login_card__label">Войти</h1>
             <div class="login_card__email_input">
               <div class="form_input">
