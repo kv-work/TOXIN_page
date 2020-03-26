@@ -2,24 +2,24 @@
 
 .header {
   
-  padding: 15px 0px;
+  padding: 0.9375rem 0rem;
   
   background: #FFFFFF;
-  box-shadow: 0px 10px 20px $dark-5;
+  box-shadow: 0rem 0.625rem 1.25rem $dark-5;
 
   &__elements {
-    max-width: 1160px;
+    max-width: 72.5rem;
     margin: auto;
     display: flex;
     align-items: center;
 
     & div:first-child {
-      margin-right: 20px;
+      margin-right: 1.25rem;
     }
   }
 
   &__logo {
-    line-height: 10px;
+    line-height: 0.625rem;
   }
 
   &__nav_bar {
@@ -30,35 +30,35 @@
 
   &__buttons {
     display: flex;
-    height: 34px;
+    height: 2.125rem;
 
     & > a:first-child {
-      margin-right: 20px;
+      margin-right: 1.25rem;
     }
   }
 
   &__delimiter {
-    width: 1px;
+    width: 0.0625rem;
     align-self: stretch;
     background-color: $dark-10;
-    margin: 5px 30px 5px 0px;
+    margin: 0.3125rem 1.875rem 0.3125rem 0rem;
     display: flex;
   }
 
   &__user_name {
     color: $dark-50;
-    border-left: 1px solid $dark-10;
-    padding-left: 30px;
+    border-left: 0.0625rem solid $dark-10;
+    padding-left: 1.875rem;
   }
 }
 
-@media screen and (max-width: 1220px) {
+@media screen and (max-width: 76.25rem) {
   .header {
-    padding: 15px 30px;
+    padding: 0.9375rem 1.875rem;
   }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 46.875rem) {
   .header {
 
     &__elements {
@@ -69,14 +69,14 @@
     &__nav_bar {
       order: 2;
       flex-basis: 100%;
-      margin-top: 15px;
+      margin-top: 0.9375rem;
     }
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 37.5rem) {
   .header {
-    padding: 15px;
+    padding: 0.9375rem;
 
     &__elements {
       flex-wrap: wrap;
@@ -84,15 +84,15 @@
 
     &__logo {
       order: 1;
-      margin-top: 15px;
+      margin-top: 0.9375rem;
     }
 
     &__nav_bar {
       flex-basis: auto;
       display: flex;
-      padding: 0 10px 0 15px;
-      border-left: 1px solid $dark-10;
-      border-right: 1px solid $dark-10;
+      padding: 0 0.625rem 0 0.9375rem;
+      border-left: 0.0625rem solid $dark-10;
+      border-right: 0.0625rem solid $dark-10;
 
       & > ul {
         display: none;
@@ -100,7 +100,7 @@
 
       &::after {
         font-family: Montserrat, Arial, sans-serif;
-        font-size: 16px;
+        font-size: 1rem;
         font-weight: bold;
         text-transform: uppercase;
         content: "menu";
@@ -108,8 +108,8 @@
   
       &::before {
         font-family: "Material Icons";
-        font-size: 30px;
-        line-height: 20px;
+        font-size: 1.875rem;
+        line-height: 1.25rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -120,7 +120,7 @@
       &:hover > ul {
         display: block;
         position: absolute;
-        top: 24px;
+        top: 1.5rem;
         right: 0;
         background-color: #fff;
         z-index: 999;

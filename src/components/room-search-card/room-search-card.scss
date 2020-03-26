@@ -4,41 +4,41 @@
   width: 100%;
   display: grid;
   grid-auto-flow: row;
-  padding: 40px calc(50% - 160px) 30px;
+  padding: 2.5rem calc(50% - 10rem) 1.875rem;
 
   background: #FFFFFF;
-  border: 1px solid rgba(0, 0, 0, 0.12);
+  border: 0.0625rem solid rgba(0, 0, 0, 0.12);
   box-sizing: border-box;
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
+  box-shadow: 0rem 0rem 1.5625rem rgba(0, 0, 0, 0.2);
+  border-radius: 0.25rem;
 
   &__label {
-    line-height: 30px;
+    line-height: 1.875rem;
   }
 
   &__datepicker_is_separated {
-    margin-top: 18px;
+    margin-top: 1.125rem;
   }
 
   &__guest_select_dropdown {
-    margin-top: 18px;
+    margin-top: 1.125rem;
   }
 
   &__submit_button {
-    margin-top: 30px;
-    height: 44px;
+    margin-top: 1.875rem;
+    height: 2.75rem;
   }
 }
 
-@media screen and (max-width: 340px) {
+@media screen and (max-width: 21.25rem) {
   .room_search_card {
-    padding: 40px 10px 30px;
-    border-top: 1px solid rgba(0, 0, 0, 0.12);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.12); 
+    padding: 2.5rem 0.625rem 1.875rem;
+    border-top: 0.0625rem solid rgba(0, 0, 0, 0.12);
+    border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.12); 
     
     &__datepicker_is_separated {
-      margin-top: 18px;
-      max-width: 300px;
+      margin-top: 1.125rem;
+      max-width: 18.75rem;
     }
   }
 }
