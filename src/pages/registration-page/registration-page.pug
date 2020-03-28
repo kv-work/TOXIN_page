@@ -1,0 +1,18 @@
+extends ../base/base
+
+block variables
+  include ../../components/header/header
+  include ../../components/footer/footer
+  include ../../components/registration-card/registration-card
+
+  -
+    var pageTitle="Registration Page"
+    data = htmlWebpackPlugin.options.getData()
+
+block content
+  .registration_page
+    +header( {lang: "ru", isLoggedIn: false, data })
+    .registration_page__content
+      .registration_page__registration_form
+        +registrationCard({label: "Регистрация аккаунта"})
+    +footer( {lang: "ru", data} )

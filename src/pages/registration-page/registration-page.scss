@@ -1,0 +1,14 @@
+@import '../../settings.scss';
+
+.registration_page {
+  height: 100vh;
+  max-height: 1211px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background-image: url(../../img/image4.png);
+
+  &__registration_form {
+    max-width: 380px;
+    margin: 30px auto auto;
+  }
+}
