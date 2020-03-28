@@ -1,14 +1,20 @@
 @import '../../settings.scss';
 
-.registration_page {
+.login_page {
   height: 100vh;
   max-height: 1211px;
   display: grid;
   grid-template-rows: auto 1fr auto;
   background-image: url(../../img/image4.png);
 
-  &__registration_form {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__login_form {
     max-width: 380px;
-    margin: 30px auto auto;
+    margin-left: calc(50% - 190px);
   }
 }
