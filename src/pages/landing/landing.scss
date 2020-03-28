@@ -1,1 +1,28 @@
 @import "../../settings.scss";
+
+.landing {
+  min-height: 100vh;
+  max-height: 1343px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background-image: url(../../img/image3.png);
+
+  &__content {
+    width: 100%;
+    max-width: 1160px;
+    margin: 70px auto 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__form_search_room {
+    max-width: 380px;
+  }
+
+  &__slogan {
+    text-align: right;
+    width: 300px;
+    align-self: flex-end;
+  }
+}
