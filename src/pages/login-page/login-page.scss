@@ -6,15 +6,20 @@
   display: grid;
   grid-template-rows: auto 1fr auto;
   background-image: url(../../img/image4.png);
+  background-position: top center;
+  background-repeat: no-repeat;
 
   &__content {
     display: flex;
-    flex-direction: column;
     justify-content: center;
+    align-items: center;
   }
 
   &__login_form {
+    display: flex;
+    align-items: center;
     max-width: 380px;
-    margin-left: calc(50% - 190px);
+    width: 100%;
+    margin: 163px auto;
   }
 }
