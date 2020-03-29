@@ -2,7 +2,7 @@
 
 .login_page {
   height: 100vh;
-  max-height: 1211px;
+  max-height: 75.6875rem;
   display: grid;
   grid-template-rows: auto 1fr auto;
   background-image: url(../../img/image4.png);
@@ -18,8 +18,8 @@
   &__login_form {
     display: flex;
     align-items: center;
-    max-width: 380px;
+    max-width: 23.75rem;
     width: 100%;
-    margin: 163px auto;
+    margin: 10.1875rem auto;
   }
 }

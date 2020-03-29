@@ -2,13 +2,13 @@
 
 .registration_page {
   height: 100vh;
-  max-height: 1211px;
+  max-height: 75.6875rem;
   display: grid;
   grid-template-rows: auto 1fr auto;
   background-image: url(../../img/image4.png);
 
   &__registration_form {
-    max-width: 380px;
-    margin: 30px auto auto;
+    max-width: 23.75rem;
+    margin: 1.875rem auto auto;
   }
 }

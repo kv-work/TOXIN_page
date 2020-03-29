@@ -2,27 +2,27 @@
 
 .landing {
   min-height: 100vh;
-  max-height: 1343px;
+  max-height: 83.9375rem;
   display: grid;
   grid-template-rows: auto 1fr auto;
   background-image: url(../../img/image3.png);
 
   &__content {
     width: 100%;
-    max-width: 1160px;
-    margin: 70px auto 18px;
+    max-width: 72.5rem;
+    margin: 4.375rem auto 1.125rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
 
   &__form_search_room {
-    max-width: 380px;
+    max-width: 23.75rem;
   }
 
   &__slogan {
     text-align: right;
-    width: 300px;
+    width: 18.75rem;
     align-self: flex-end;
   }
 }
