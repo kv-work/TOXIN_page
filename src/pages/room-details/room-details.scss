@@ -1,0 +1,8 @@
+@import '../../settings.scss';
+
+.room-details {
+  height: 100vh;
+  max-height: 75.6875rem;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}

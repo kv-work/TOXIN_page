@@ -1,0 +1,8 @@
+import '../../main.scss'
+import './room-details.scss'
+
+function requireAll(requireContext) {
+  return requireContext.keys().map(requireContext);
+}
+
+requireAll(require.context('../../components', true, /\.(js)$/));

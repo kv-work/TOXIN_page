@@ -1,0 +1,19 @@
+extends ../base/base
+
+block variables
+  include ../../components/header/header
+  include ../../components/footer/footer
+  include ../../components/room-rate-card/room-rate-card
+  include ../../components/bullet-list/bullet-list
+  include ../../components/comment-block/comment-block
+  include ../../components/icon-item/icon-item
+  
+  -
+    var pageTitle = "Room Details"
+    data = htmlWebpackPlugin.options.getData()
+
+block content
+  .room_details
+    +header( {lang: "ru", isLoggedIn: false, data })
+    .room-details__content
+    +footer( {lang: "ru", data} )
