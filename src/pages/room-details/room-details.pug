@@ -20,7 +20,7 @@ block content
       .room_details__details_block
         .room_details__info_block
           .room_details__room_info
-            h3.room_details__room_info_label= "Сведения о номере"
+            h2.room_details__room_info_label= "Сведения о номере"
             .room_details__room_info_items
               +iconItem( {
                 icon: "insert_emoticon",
@@ -41,7 +41,7 @@ block content
               } )
           .room_details__room_impressions
           .room_details__guest_reviews_block
-            h3.room_details__guest_reviews_label= "Отзывы посетителей номера"
+            h2.room_details__guest_reviews_label= "Отзывы посетителей номера"
             .room_details__guest_reviews_count
             .room_details__guest_reviews
               +commentBlock({
@@ -60,7 +60,8 @@ block content
                   count: "2",
                   checked: false
               }})
-          .room_details__room_rules
+          .room_details__room_rules_block
+            h2.room_details__room_rules_title= "Правила"
             -
               var itemList = [
                 {label: "Нельзя с питомцами"},
@@ -68,9 +69,9 @@ block content
                 {label: "Время прибытия — после 13:00, а выезд до 12:00"}
               ]
 
-            +bulletList({label: "Правила", itemList})
+            +bulletList({label: "", itemList})
           .room_details__cancel_reservation
-            h3.room_details__cancel_reservation_label= "Отмена"
+            h2.room_details__cancel_reservation_label= "Отмена"
             .room_details__cancel_reservation_text= "Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги."
         .room_details__booking_form
           +roomRateCard()
