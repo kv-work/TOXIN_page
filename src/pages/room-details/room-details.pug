@@ -15,5 +15,63 @@ block variables
 block content
   .room_details
     +header( {lang: "ru", isLoggedIn: false, data })
-    .room-details__content
+    .room_details__content
+      .room_details__images
+      .room_details__details_block
+        .room_details__info_block
+          .room_details__room_info
+            h3.room_details__room_info_label= "Сведения о номере"
+            .room_details__room_info_items
+              +iconItem( {
+                icon: "insert_emoticon",
+                label: "Комфорт",
+                description: "Шумопоглощающие стены"
+                } )
+
+              +iconItem( {
+                icon: "location_city",
+                label: "Удобство",
+                description: "Окно в каждой из спален"
+              } )
+
+              +iconItem( {
+                icon: "whatshot",
+                label: "Уют",
+                description: "Номер оснащён камином"
+              } )
+          .room_details__room_impressions
+          .room_details__guest_reviews_block
+            h3.room_details__guest_reviews_label= "Отзывы посетителей номера"
+            .room_details__guest_reviews_count
+            .room_details__guest_reviews
+              +commentBlock({
+                name: "Мурад Сарафанов",
+                date: "5 дней назад",
+                comment: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
+                likes: {
+                  count: "12",
+                  checked: true
+              }})
+              +commentBlock({
+                name: "Патрисия Стёклышкова",
+                date: "Неделю назад",
+                comment: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",
+                likes: {
+                  count: "2",
+                  checked: false
+              }})
+          .room_details__room_rules
+            -
+              var itemList = [
+                {label: "Нельзя с питомцами"},
+                {label: "Без вечеринок и мероприятий"},
+                {label: "Время прибытия — после 13:00, а выезд до 12:00"}
+              ]
+
+            +bulletList({label: "Правила", itemList})
+          .room_details__cancel_reservation
+            h3.room_details__cancel_reservation_label= "Отмена"
+            .room_details__cancel_reservation_text= "Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги."
+        .room_details__booking_form
+          +roomRateCard()
     +footer( {lang: "ru", data} )

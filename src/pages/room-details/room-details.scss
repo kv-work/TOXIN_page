@@ -1,8 +1,27 @@
 @import '../../settings.scss';
 
-.room-details {
+.room_details {
   height: 100vh;
-  max-height: 75.6875rem;
   display: grid;
   grid-template-rows: auto 1fr auto;
+
+  &__details_block {
+    width: 100%;
+    max-width: 1160px;
+    margin: 70px auto;
+    display: grid;
+    grid-template-columns: 1fr minmax(320px, 380px);
+    column-gap: 70px;
+    
+  }
+
+  &__info_block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 30px;
+  }
+
+  &__guest_reviews_block {
+    grid-column: 1/3;
+  }
 }
