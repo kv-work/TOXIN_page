@@ -23,5 +23,15 @@
 
   &__guest_reviews_block {
     grid-column: 1/3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  &__guest_reviews_count {
+    justify-self: right;
+  }
+
+  &__guest_reviews {
+    grid-column: 1/3;
   }
 }
