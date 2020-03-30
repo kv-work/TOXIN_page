@@ -1,5 +1,41 @@
+include ../bullet-list/bullet-list
+
+mixin chart()
+  svg.chart(width="100%" height="100%" viewBox="0 0 42 42")
+    circle.chart__hole(cx="21" cy="21" r="15.91549430918954" fill="#fff")
+    circle.chart__segment(cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="url(#primary_grad)" stroke-width="4" stroke-dasharray="23 77" stroke-dashoffset="24")
+    circle.chart__segment(cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="url(#secondary_grad)" stroke-width="4" stroke-dasharray="23 77" stroke-dashoffset="-1")
+    circle.chart__segment(cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="url(#yellow_grad)" stroke-width="4" stroke-dasharray="48 52" stroke-dashoffset="74")
+    circle.chart__segment(cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="url(#black_grad)" stroke-width="4" stroke-dasharray="0 100" stroke-dashoffset="0")
+    //- circle.chart__delimiter(cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#fff" stroke-width="4" stroke-dasharray="2 23" stroke-dashoffset="26")
+
+    linearGradient#secondary_grad(x1="21" y1="0" x2="21" y2="42" gradientUnits="userSpaceOnUse")
+      stop(stop-color="#6FCF97")
+      stop(offset="1" stop-color="#66D2EA")
+    linearGradient#primary_grad(x1="21" y1="0" x2="21" y2="42" gradientUnits="userSpaceOnUse")
+      stop( stop-color="#BC9CFF")
+      stop( offset="1" stop-color="#8BA4F9")
+    linearGradient#yellow_grad(x1="21" y1="0" x2="21" y2="42" gradientUnits="userSpaceOnUse")
+      stop( stop-color="#FFE39C")
+      stop( offset="1" stop-color="#FFBA9C")
+    linearGradient#black_grad(x1="21" y1="0" x2="21" y2="42" gradientUnits="userSpaceOnUse")
+      stop( stop-color="#919191")
+      stop( offset="1" stop-color="#3D4975")
+
 mixin pieChart(params)
   -
-    var {label} = params
+    var {label=""} = params
   
-  .pie_chart.js_pie_chart
+  figure.pie_chart.js_pie_chart
+    .pie_chart__content
+      +chart()
+
+    figcaption.pie_chart__legend
+      +bulletList({
+        itemList: [
+          {label: "Великолепно", color: "yellow gradient"},
+          {label: "Хорошо", color: "secondary gradient"},
+          {label: "Удовлетворительно", color: "primary gradient"},
+          {label: "Разочарован", color: "black gradient"},
+        ]
+      })

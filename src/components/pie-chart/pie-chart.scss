@@ -1,5 +1,10 @@
 @import "../../settings.scss";
 
 .pie_chart {
-  width: 313px;
+  width: 100%;
+  display: flex;
+
+  &__content {
+    width: 120px;
+  }
 }
