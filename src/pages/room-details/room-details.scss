@@ -17,8 +17,9 @@
 
   &__info_block {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 280px 1fr;
     row-gap: 30px;
+    column-gap: 70px;
   }
 
   &__guest_reviews_block {

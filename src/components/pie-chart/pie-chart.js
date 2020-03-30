@@ -16,19 +16,27 @@ function drawCharts() {
     ]);
 
   const pieOptions = {
-    pieHole: 0.9,
+    pieHole: 0.91,
+    // pieStartAngle: 180,
+    reverseCategories: true,
+    sliceVisibilityThreshold: 0,
     pieSliceTextStyle: {
       color: 'black'
     },
     slices: {
-      0: {color: '#FFE39C'},
-      1: {color: '#6FCF97'},
-      2: {color: '#BC9CFF'},
-      3: {color: '#919191'}
+      3: {color: '#FFE39C'},
+      2: {color: '#6FCF97'},
+      1: {color: '#BC9CFF'},
+      0: {color: '#919191'},  
     },
     legend: {
       position: 'right',
-      textStyle: { color: 'rgba(31, 32, 65, 0.75)' }
+      alignment: 'end',
+      textStyle: { 
+        color: 'rgba(31, 32, 65, 0.75)',
+        fontSize: 14,
+        fontName: 'Montserrat'
+       }
     },
     title: 'Впечатления от номера',
     titleTextStyle: {
@@ -36,8 +44,18 @@ function drawCharts() {
       fontSize: 19,
       fontName: 'Quicksand, "Open Sans", sans-serif'
     },
-    chartArea: {left: 0, top: 0, width: '100%', height: '80%'},
-    pieSliceText: 'none'
+    chartArea: {left: 11, top: 24, width: '100%', height: '120px'},
+    pieSliceText: 'none',
+    tooltip: {
+      text: 'value',
+      showColorCode: true,
+      textStyle: {
+        color: 'rgba(31, 32, 65, 0.75)',
+        fontSize: 12,
+        fontName: 'Montserrat',
+
+      }
+    }
   };
 
   $('.js_pie_chart').each(function() {
