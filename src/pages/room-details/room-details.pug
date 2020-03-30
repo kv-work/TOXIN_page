@@ -7,6 +7,7 @@ block variables
   include ../../components/bullet-list/bullet-list
   include ../../components/comment-block/comment-block
   include ../../components/icon-item/icon-item
+  include ../../components/pie-chart/pie-chart
   
   -
     var pageTitle = "Room Details"
@@ -40,6 +41,7 @@ block content
                 description: "Номер оснащён камином"
               } )
           .room_details__room_impressions
+            +pieChart({label: 'Впечатления от номера'})
           .room_details__guest_reviews_block
             h2.room_details__guest_reviews_label= "Отзывы посетителей номера"
             .room_details__guest_reviews_count= "2 отзыва"
