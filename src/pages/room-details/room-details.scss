@@ -5,6 +5,32 @@
   display: grid;
   grid-template-rows: auto 1fr auto;
 
+  &__images_block {
+    display: grid;
+    grid-template-columns: minmax(320px, 981px) 1fr;
+    height: 485px;
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+  }
+
+  &__image:nth-child(1) {
+    background-image: url('../../img/room_888.png');
+    background-repeat: no-repeat;
+    grid-row: 1/3;
+  }
+
+  &__image:nth-child(2) {
+    background-image: url('../../img/room_888_2.png');
+    background-repeat: no-repeat;
+  }
+
+  &__image:nth-child(3) {
+    background-image: url('../../img/room_888_3.png');
+    background-repeat: no-repeat;
+  }
+
+
   &__details_block {
     width: 100%;
     max-width: 1160px;
@@ -12,7 +38,6 @@
     display: grid;
     grid-template-columns: 1fr minmax(320px, 380px);
     column-gap: 70px;
-    
   }
 
   &__info_block {
@@ -54,5 +79,9 @@
 
   &__cancel_reservation_label {
     margin-bottom: 17px;
+  }
+
+  &__footer {
+    border-top: 1px solid $dark-75;
   }
 }
