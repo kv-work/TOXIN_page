@@ -17,7 +17,8 @@ class PieChart {
 
   _addDonutChart() {
     const { data } = this;
-    // const donutChart = $(`<svg class="chart" width="100%" height="100%" viewBox="0 0 120 120"></svg>`)
+
+    const radius = 58;
 
     const donutChart = $(document.createElementNS("http://www.w3.org/2000/svg", "svg")).attr({
       class: 'chart',
@@ -29,7 +30,7 @@ class PieChart {
       class: 'chart__hole',
       cx: 60,
       cy: 60,
-      r: 60,
+      r: radius,
       fill: '#fff'
     })
 
@@ -41,6 +42,9 @@ class PieChart {
       sumOfImpressions += data[key]
     }
 
+    const sumOfImpressionsDisplay = this._createTextDisplay(sumOfImpressions);
+
+
     let currentCount = 0
 
     for (const key in data) {
@@ -48,13 +52,13 @@ class PieChart {
 
       switch (key) {
         case 'Great':
-          color = 'primary_grad';
+          color = 'yellow_grad';
           break;
         case 'Good':
           color = 'secondary_grad';
           break;
         case 'Satisfactory':
-          color = 'yellow_grad';
+          color = 'primary_grad';
           break;
         case 'disappointed':
           color = 'black_grad';
@@ -65,16 +69,15 @@ class PieChart {
 
       currentCount += data[key];
 
-      
-      const circumference = 2 * 60 * Math.PI;
+      const circumference = 2 * radius * Math.PI;
       const segmentPercent = currentCount / sumOfImpressions;
-      const segmentVal = segmentPercent * circumference;
+      const segmentVal = data[key] / sumOfImpressions * circumference;
 
       const donutSegment = $(document.createElementNS("http://www.w3.org/2000/svg", "circle")).attr({
         class: 'chart__segment',
         cx: 60,
         cy: 60,
-        r: 60,
+        r: radius,
         fill: 'transparent',
         stroke: `url(#${color})`,
         'stroke-width': 4,
@@ -91,12 +94,38 @@ class PieChart {
     const blackGradient = this._createGradient('black_grad', '#919191', '#3D4975');
 
     donutChart
+      .append(sumOfImpressionsDisplay)
       .append(primeryGradient)
       .append(secondaryGradient)
       .append(yellowGradient)
       .append(blackGradient)
 
     this.$container.append(donutChart)
+  }
+
+  _createTextDisplay(num) {
+    const textDisplay = 
+      $(document.createElementNS("http://www.w3.org/2000/svg", 'g')).attr({ class: 'chart__sum_of_impress' });
+    
+    const numLabel = $(document.createElementNS("http://www.w3.org/2000/svg", 'text')).attr({
+      class: 'chart__num_label',
+      'text-anchor': 'middle',
+      x: '50%',
+      y: '49%'
+    }).html(num);
+
+    const textLabel = $(document.createElementNS("http://www.w3.org/2000/svg", 'text')).attr({
+      class: 'chart__text_label',
+      'text-anchor': 'middle',
+      x: '50%',
+      y: '64%'
+    }).html('голосов');
+
+    textDisplay
+      .append(numLabel)
+      .append(textLabel);
+
+    return textDisplay;
   }
 
   _createGradient(id, color1, color2) {
@@ -111,23 +140,6 @@ class PieChart {
 
     const stop1 = $(document.createElementNS("http://www.w3.org/2000/svg", "stop")).attr({'stop-color': color1})
     const stop2 = $(document.createElementNS("http://www.w3.org/2000/svg", "stop")).attr({'offset': 1, 'stop-color': color2})
-    // const linearGradiend = $(`
-    //   <linearGradient id=${id} x1=60 y1=0 x2=60 y2=120 gradientUnits="userSpaceOnUse">
-    //     <stop stop-color=${color1} />
-    //     <stop offset="1" stop-color=${color2} />
-    //   </linearGradient>
-    // `)
-      {/* {
-      id: id,
-      x1: 60,
-      y1: 0,
-      x2: 60,
-      y2: 120,
-      gradientUnits: 'userSpaceOnUse'
-    }) */}
-
-    // const stop1 = $('<stop>', {'stop-color': color1})
-    // const stop2 = $('<stop>', {  'stop-color': color2 })
 
     linearGradiend
       .append(stop1)
