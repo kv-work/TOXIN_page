@@ -35,4 +35,12 @@
   &__guest_reviews {
     grid-column: 1/3;
   }
+
+  &__cancel_reservation {
+    max-width: 341px;
+  }
+
+  &__cancel_reservation_label {
+    margin-bottom: 17px;
+  }
 }
