@@ -2,6 +2,10 @@
 
 .pie_chart {
 
+  &__title {
+    margin-bottom: 21px;
+  }
+
   &__chart {
     width: 100%;
     display: grid;
