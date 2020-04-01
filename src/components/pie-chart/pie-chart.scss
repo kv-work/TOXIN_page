@@ -4,13 +4,64 @@
 
   &__chart {
     width: 100%;
-    display: flex;
+    display: grid;
+    grid-template-columns: 120px auto;
+    column-gap: 30px;
+    align-items: end;
     margin: 0;
     padding: 0;
   }
 
   &__content {
     width: 120px;
+  }
+
+  &__legend_list {
+    padding: 0 0 5px;
+    margin: 0;
+    list-style: none;
+  }
+
+  [class^="pie_chart__legend_list_item"] {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 5px;
+    align-items: baseline;
+
+    &::before {
+      display: block;
+      width: 10px;
+      height: 10px;
+      content: '';
+      border-radius: 50%;
+    }
+  }
+
+  &__legend_list_item_color {
+
+    &_primary_grad {
+      &:before {
+        background: $primary-gradient;
+      }
+    }
+
+    &_yellow_grad {
+      &::before {
+        background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+      }
+    }
+
+    &_secondary_grad {
+      &::before {
+        background: $secondary-gradient;
+      }
+    }
+
+    &_black_grad {
+      &::before {
+        background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+      }
+    }
   }
 }
 
@@ -22,12 +73,6 @@
     font-weight: bold;
     font-size: 24px;
     line-height: 30px;
-
-
-    // display: flex;
-    // align-items: center;
-    // text-align: center;
-
     fill: $primary-purple;
   }
 

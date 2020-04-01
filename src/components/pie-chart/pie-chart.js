@@ -6,6 +6,7 @@ class PieChart {
   constructor(node) {
     this.$node = $(node);
     this.$container = this.$node.find('.pie_chart__content');
+    this.$legend = this.$node.find('.pie_chart__legend')
     this.data = data.impressions;
 
     this._init()
@@ -25,47 +26,54 @@ class PieChart {
       width: '100%',
       height: '100%',
       viewBox: '0 0 120 120'
-    })
+    });
     const donutHole = $(document.createElementNS("http://www.w3.org/2000/svg", "circle")).attr({
       class: 'chart__hole',
       cx: 60,
       cy: 60,
       r: radius,
       fill: '#fff'
-    })
+    });
+
+    const chartLegend = $('<ul>', {class: 'pie_chart__legend_list'});
 
     donutChart.append(donutHole);
 
-    let sumOfImpressions = 0
+    let sumOfImpressions = 0;
 
     for (const key in data) {
       sumOfImpressions += data[key]
-    }
+    };
 
     const sumOfImpressionsDisplay = this._createTextDisplay(sumOfImpressions);
 
 
-    let currentCount = 0
+    let currentCount = 0;
 
     for (const key in data) {
-      let color = 'primary_grad'
+      let color = 'primary_grad';
+      let label = 'Великолепно'
 
       switch (key) {
         case 'Great':
           color = 'yellow_grad';
+          label = 'Великолепно';
           break;
         case 'Good':
           color = 'secondary_grad';
+          label = 'Хорошо';
           break;
         case 'Satisfactory':
           color = 'primary_grad';
+          label = 'Удовлетворительно';
           break;
         case 'disappointed':
           color = 'black_grad';
+          label = 'Разочарован';
           break;
         default:
           break;
-      }
+      };
 
       currentCount += data[key];
 
@@ -83,9 +91,13 @@ class PieChart {
         'stroke-width': 4,
         'stroke-dasharray': `${segmentVal} ${circumference - segmentVal}`,
         'stroke-dashoffset': `${(segmentPercent + 0.25) * circumference}`
-      })
+      });
 
-      donutChart.append(donutSegment)
+      donutChart.append(donutSegment);
+
+      const chartLegendItem = $('<li>', {class: `pie_chart__legend_list_item_color_${color}`}).html(label);
+
+      chartLegend.append(chartLegendItem);
     }
 
     const primeryGradient = this._createGradient('primary_grad', '#BC9CFF', '#8BA4F9');
@@ -101,6 +113,7 @@ class PieChart {
       .append(blackGradient)
 
     this.$container.append(donutChart)
+    this.$legend.append(chartLegend)
   }
 
   _createTextDisplay(num) {
