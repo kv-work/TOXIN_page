@@ -17,9 +17,13 @@
 
   &__info_block {
     display: grid;
-    grid-template-columns: 280px 1fr;
+    grid-template-columns: 290px 1fr;
     row-gap: 30px;
-    column-gap: 81px;
+    column-gap: 71px;
+  }
+
+  &__room_info {
+    max-width: 280px;
   }
 
   &__guest_reviews_block {
@@ -34,6 +38,11 @@
 
   &__guest_reviews {
     grid-column: 1/3;
+  }
+
+  &__room_rules_title {
+    padding-left: 20px;
+    margin-bottom: 8px;
   }
 
   &__cancel_reservation {
