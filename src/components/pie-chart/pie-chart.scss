@@ -3,25 +3,25 @@
 .pie_chart {
 
   &__title {
-    margin-bottom: 21px;
+    margin-bottom: 1.3125rem;
   }
 
   &__chart {
     width: 100%;
     display: grid;
-    grid-template-columns: 120px auto;
-    column-gap: 30px;
+    grid-template-columns: 7.5rem auto;
+    column-gap: 1.875rem;
     align-items: end;
     margin: 0;
     padding: 0;
   }
 
   &__content {
-    width: 120px;
+    width: 7.5rem;
   }
 
   &__legend_list {
-    padding: 0 0 5px;
+    padding: 0 0 0.3125rem;
     margin: 0;
     list-style: none;
   }
@@ -29,13 +29,13 @@
   [class^="pie_chart__legend_list_item"] {
     display: grid;
     grid-template-columns: auto 1fr;
-    column-gap: 5px;
+    column-gap: 0.3125rem;
     align-items: baseline;
 
     &::before {
       display: block;
-      width: 10px;
-      height: 10px;
+      width: 0.625rem;
+      height: 0.625rem;
       content: '';
       border-radius: 50%;
     }
@@ -75,8 +75,8 @@
     font-family: Quicksand, 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 24px;
-    line-height: 30px;
+    font-size: 1.5rem;
+    line-height: 1.875rem;
     fill: $primary-purple;
   }
 
@@ -84,8 +84,8 @@
     font-family: Montserrat;
     font-style: normal;
     font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
+    font-size: 0.75rem;
+    line-height: 0.9375rem;
     text-align: center;
     text-transform: uppercase;
     fill: $primary-purple;
