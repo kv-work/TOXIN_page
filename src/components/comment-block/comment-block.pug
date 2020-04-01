@@ -2,10 +2,11 @@ include ../like-button/like-button
 
 mixin commentBlock(params)
   -
-    var { name, date, comment, likes} = params
+    var { name, img="avatar_1.png", date, comment, likes} = params
 
   .comment_block
-    .comment_block__img
+    .comment_block__img_block
+      img.comment_block__image(src=require(`../../img/${img}`).default)
     .comment_block__name_block
       .comment_block__name=name
       .comment_block__date=date

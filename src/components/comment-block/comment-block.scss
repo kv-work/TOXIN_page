@@ -7,19 +7,22 @@
   column-gap: 0.625rem;
   row-gap: 0.625rem;
 
-  &__img {
-    width: 3rem;
-    height: 3rem;
-    border: 0.125rem solid white;
+  &__img_block {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    border: 2px solid white;
     box-sizing: border-box;
-    box-shadow: 0rem 0.625rem 1.25rem rgba(31, 32, 65, 0.1);
-    border-radius: 2rem;
-    // background: #E5DDDA;
-    background: url("../../img/avatar_1.png") no-repeat;
-    background-size: 200% auto;
-    background-position: 50% 25%;
+    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.1);
+    border-radius: 32px;
     align-self: start;
     justify-self: center;
+  }
+
+  &__image {
+    position: absolute;
+    left: -22px;
+    top: -12px;
   }
 
   &__name_block {
