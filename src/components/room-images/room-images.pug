@@ -1,5 +1,5 @@
 mixin roomImages(params)
   -
-    var {room} = params
+    var {room="888"} = params
 
-  .room_images.js_room_images
+  .room_images.js_room_images(data-room= room)

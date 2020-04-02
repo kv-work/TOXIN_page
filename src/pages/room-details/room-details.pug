@@ -8,6 +8,8 @@ block variables
   include ../../components/comment-block/comment-block
   include ../../components/icon-item/icon-item
   include ../../components/pie-chart/pie-chart
+
+  include ../../components/room-images/room-images
   
   -
     var pageTitle = "Room Details"
@@ -18,9 +20,7 @@ block content
     +header( {lang: "ru", isLoggedIn: false, data })
     .room_details__content
       .room_details__images_block
-        .room_details__image
-        .room_details__image
-        .room_details__image
+        +roomImages({room: 888})
       .room_details__details_block
         .room_details__info_block
           .room_details__room_info
