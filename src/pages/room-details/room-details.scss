@@ -44,21 +44,21 @@
   }
 
   &__info_block {
-    display: grid;
-    grid-template-columns: 290px 1fr;
-    row-gap: 34px;
-    column-gap: 71px;
+    display: flex;
+    flex-wrap: wrap;
   }
 
   &__room_info {
-    max-width: 280px;
+    flex: 0 0 280px;
+    margin-right: 81px;
   }
 
   &__guest_reviews_block {
-    grid-column: 1/3;
+    flex: 1 0 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     row-gap: 19px;
+    margin: 34px 0;
   }
 
   &__guest_reviews_count {
@@ -71,17 +71,27 @@
     row-gap: 23px;
   }
 
+  &__room_rules_block {
+    flex: 0 0 290px
+  }
+
   &__room_rules_title {
     padding-left: 20px;
     margin-bottom: 8px;
   }
 
   &__cancel_reservation {
-    max-width: 341px;
+    flex: 1 0 320px;
+    margin-left: auto;
+    max-width: 349px;
   }
 
   &__cancel_reservation_label {
     margin-bottom: 17px;
+  }
+
+  &__cancel_reservation_text {
+    max-width: 341px;
   }
 
   &__delimiter {
