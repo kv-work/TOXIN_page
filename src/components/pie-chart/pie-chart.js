@@ -81,19 +81,21 @@ class PieChart {
       const segmentPercent = currentCount / sumOfImpressions;
       const segmentVal = data[key] / sumOfImpressions * circumference;
 
-      const donutSegment = $(document.createElementNS("http://www.w3.org/2000/svg", "circle")).attr({
-        class: 'chart__segment',
-        cx: 60,
-        cy: 60,
-        r: radius,
-        fill: 'transparent',
-        stroke: `url(#${color})`,
-        'stroke-width': 4,
-        'stroke-dasharray': `${segmentVal} ${circumference - segmentVal}`,
-        'stroke-dashoffset': `${(segmentPercent + 0.25) * circumference}`
-      });
+      if (data[key] != 0) {
+        const donutSegment = $(document.createElementNS("http://www.w3.org/2000/svg", "circle")).attr({
+          class: 'chart__segment',
+          cx: 60,
+          cy: 60,
+          r: radius,
+          fill: 'transparent',
+          stroke: `url(#${color})`,
+          'stroke-width': 4,
+          'stroke-dasharray': `${segmentVal - 2 } ${circumference - segmentVal + 2}`,
+          'stroke-dashoffset': `${(segmentPercent + 0.25) * circumference - 1}`
+        });
 
-      donutChart.append(donutSegment);
+        donutChart.append(donutSegment);
+      }      
 
       const chartLegendItem = $('<li>', {class: `pie_chart__legend_list_item_color_${color}`}).html(label);
 
