@@ -46,6 +46,12 @@
   &__info_block {
     display: flex;
     flex-wrap: wrap;
+    max-width: 710px;
+    margin: auto;
+
+    & > div:nth-child(n) {
+      margin-bottom: 34px;
+    }
   }
 
   &__room_info {
@@ -56,9 +62,8 @@
   &__guest_reviews_block {
     flex: 1 0 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto 1fr;
     row-gap: 19px;
-    margin: 34px 0;
   }
 
   &__guest_reviews_count {
@@ -81,7 +86,7 @@
   }
 
   &__cancel_reservation {
-    flex: 1 0 320px;
+    flex: 1 1 320px;
     margin-left: auto;
     max-width: 349px;
   }
@@ -118,8 +123,79 @@
     }
 
     &__booking_form {
-      width: 380px;
+      width: 100%;
+      max-width: 380px;
       margin: auto;
+    }
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .room_details {
+
+    &__room_info {
+      margin-right: 0;
+    }
+
+    &__images_block {
+      grid-template-columns: 1fr;
+    }
+
+    &__image:nth-child(1) {
+      grid-row: 1;
+    }
+
+    &__image:nth-child(2) {
+      background-size: cover;
+      display: none;
+    }
+  
+    &__image:nth-child(3) {
+      background-size: cover;
+      display: none;
+    }
+
+    &__cancel_reservation {
+      margin-left: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .room_details {
+
+    &__details_block {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &__info_block {
+      max-width: 380px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .room_details {
+
+    &__guest_reviews_block {
+      grid-template-columns: auto minmax(70px, 1fr);
+    }
+
+    &__info_block {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .room_details {
+
+    &__booking_form {
+      max-width: 320px;
     }
   }
 }
