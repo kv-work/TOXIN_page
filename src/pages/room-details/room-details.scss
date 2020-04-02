@@ -3,7 +3,7 @@
 .room_details {
   height: 100vh;
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr auto auto;
 
   &__images_block {
     display: grid;
@@ -79,6 +79,14 @@
 
   &__cancel_reservation_label {
     margin-bottom: 17px;
+  }
+
+  &__delimiter {
+    max-width: 1440px;
+    width: 100%;
+    margin: auto;
+    height: 1px;
+    background-color: $dark-25;
   }
 
   &__footer {
