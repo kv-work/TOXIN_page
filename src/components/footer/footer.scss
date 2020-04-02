@@ -96,16 +96,20 @@
 
 @media screen and (max-width: 76.25rem) {
   .footer {
-    padding: 0 1.875rem;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    &__logo,
+    &__logo_n_widgets_block,
+    &__socials,
+    &__copyright_n_socials_block {
+      padding-right: 1.875rem;
+      padding-left: 1.875rem;
+    }
 
     &__widgets_block {
       padding-right: 0;
     }
-  }
-}
-
-@media screen and (max-width: 76.25rem) {
-  .footer {
 
     &__logo_n_widgets_block {
       grid-template-columns: repeat(2, minmax(auto, 30rem));
