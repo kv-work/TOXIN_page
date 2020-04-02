@@ -3,7 +3,8 @@ import '../../main.scss'
 import './form-elements.scss'
 
 //Loading scripts
-
+//import favicon
+import '../../favicons/favicon'
 
 
 

@@ -1,6 +1,9 @@
 import '../../main.scss'
 import './cards.scss'
 
+//import favicon
+import '../../favicons/favicon'
+
 function requireAll(requireContext) {
   return requireContext.keys().map(requireContext);
 }
