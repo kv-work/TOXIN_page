@@ -15,15 +15,11 @@ class Pagination {
       this.options = {
         ...options,
         dataSource: this.data,
-        callback: function(data, pagination) {
-          var html = RoomCard.template(data);
-          $('#data-container').html(html);
-        }
+        pageSize: 12,
+        
+        callback: (data) => this._createContent(data)
       }
     }
-
-    
-    
 
     this._init()
   }
@@ -32,6 +28,26 @@ class Pagination {
     const { $pagination, options } = this;
 
     $pagination.pagination(options)
+  }
+
+  _createContent(data) {
+    const cards = data.map(number => {
+      return RoomCard.template(number)
+    })
+
+    let html = "";
+
+    cards.forEach( card => {
+      html += card
+    })
+
+    console.log(html)
+
+    $('#data-container').html(html);
+
+    $('#data-container').find('.js_room_card').each(function() {
+      new RoomCard(this);
+    })
   }
 }
 

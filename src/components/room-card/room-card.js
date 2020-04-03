@@ -20,6 +20,7 @@ export default class RoomCard {
   }
 
   _init() {
+    console.log('room-card init')
     this._getData();
     this._createRoomImageBlocks();
     this._displayPrice();
