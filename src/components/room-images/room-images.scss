@@ -2,7 +2,7 @@
 
 .room_images {
   display: grid;
-  grid-template-columns: minmax(320px, 1fr) minmax(320px, 461px);
+  grid-template-columns: minmax(50%, 1fr) 461px;
   height: 100%;
   width: 100%;
 
@@ -13,5 +13,108 @@
   
   &__image:nth-child(n) {
     background-repeat: no-repeat;
+  }
+
+  &__indicators_block,
+  &__control_prev,
+  &__control_next {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 922px) {
+  .room_images {
+    display: block;
+    height: 244px;
+    position: relative;
+    
+    &__image {
+      display: none;
+      height: 100%;
+      background-size: cover;
+
+      &.active {
+        display: block;
+      }
+    }
+  
+    &__indicators_block {
+      padding: 0;
+      margin: 0;
+      position: absolute;
+      display: flex;
+      text-align: center;
+      left: calc(50% - 20px);
+      bottom: 15px;
+      width: 40px;
+      justify-content: space-between;
+  
+      & > li {
+        list-style-type: none;
+        width: 7.5008px;
+        height: 7.5008px;
+        border: 1px solid white;
+        border-radius: 50%;
+        box-sizing: border-box;
+        box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3);
+        cursor: pointer;
+  
+        &.active {
+          border: none;
+          background-color: #fff;
+        }
+  
+        &.disabled {
+          cursor: default;
+        }
+      }
+    }
+  
+    &__control_prev {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+      display: flex;
+      align-items: center;
+      border-top-left-radius: 4px;
+  
+      & .room_images__control_icon {
+        font-size: 24px;
+        height: 44px;
+        width: 44px;
+        line-height: 44px;
+        text-align: center;
+        vertical-align: middle;
+        color: #fff;
+        transform: rotate(90deg);
+        cursor: pointer;
+      }
+    }
+  
+    &__control_next {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+      display: flex;
+      align-items: center;
+      border-top-left-radius: 4px;
+  
+      & .room_images__control_icon {
+        font-size: 24px;
+        height: 44px;
+        width: 44px;
+        line-height: 44px;
+        text-align: center;
+        vertical-align: middle;
+        color: #fff;
+        transform: rotate(90deg);
+        cursor: pointer;
+      }
+    }
   }
 }

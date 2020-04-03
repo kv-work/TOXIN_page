@@ -108,6 +108,15 @@
   }
 }
 
+@media screen and (max-width: 922px) {
+  .room_details {
+  
+    &__images_block {
+      height: 244px;
+    }
+  }
+}
+
 @media screen and (max-width: 670px) {
   .room_details {
 
