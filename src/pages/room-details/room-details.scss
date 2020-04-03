@@ -6,42 +6,42 @@
   grid-template-rows: auto 1fr auto auto;
 
   &__images_block {
-    height: 485px;
+    height: 30.3125rem;
     width: 100%;
-    max-width: 1440px;
+    max-width: 90rem;
     margin: auto;
   }
 
   &__details_block {
     width: 100%;
-    max-width: 1160px;
-    margin: 70px auto;
+    max-width: 72.5rem;
+    margin: 4.375rem auto;
     display: grid;
-    grid-template-columns: 1fr 380px;
-    column-gap: 70px;
+    grid-template-columns: 1fr 23.75rem;
+    column-gap: 4.375rem;
   }
 
   &__info_block {
     display: flex;
     flex-wrap: wrap;
-    max-width: 710px;
+    max-width: 44.375rem;
     margin: auto;
 
     & > div:nth-child(n) {
-      margin-bottom: 34px;
+      margin-bottom: 2.125rem;
     }
   }
 
   &__room_info {
-    flex: 0 0 280px;
-    margin-right: 81px;
+    flex: 0 0 17.5rem;
+    margin-right: 5.0625rem;
   }
 
   &__guest_reviews_block {
     flex: 1 0 100%;
     display: grid;
     grid-template-columns: auto 1fr;
-    row-gap: 19px;
+    row-gap: 1.1875rem;
   }
 
   &__guest_reviews_count {
@@ -51,73 +51,73 @@
   &__guest_reviews {
     grid-column: 1/3;
     display: grid;
-    row-gap: 23px;
+    row-gap: 1.4375rem;
   }
 
   &__room_rules_block {
-    flex: 0 0 290px
+    flex: 0 0 18.125rem
   }
 
   &__room_rules_title {
-    padding-left: 20px;
-    margin-bottom: 8px;
+    padding-left: 1.25rem;
+    margin-bottom: 0.5rem;
   }
 
   &__cancel_reservation {
-    flex: 1 1 320px;
+    flex: 1 1 20rem;
     margin-left: auto;
-    max-width: 349px;
+    max-width: 21.8125rem;
   }
 
   &__cancel_reservation_label {
-    margin-bottom: 17px;
+    margin-bottom: 1.0625rem;
   }
 
   &__cancel_reservation_text {
-    max-width: 341px;
+    max-width: 21.3125rem;
   }
 
   &__delimiter {
-    max-width: 1440px;
+    max-width: 90rem;
     width: 100%;
     margin: auto;
-    height: 1px;
+    height: 0.0625rem;
     background-color: $dark-25;
   }
 
   &__footer {
-    border-top: 1px solid $dark-75;
+    border-top: 0.0625rem solid $dark-75;
   }
 }
 
-@media screen and (max-width: 1140px) {
+@media screen and (max-width: 71.25rem) {
   .room_details {
 
     &__details_block {
       grid-template-columns: 1fr;
-      row-gap: 50px;
-      padding-left: 30px;
-      padding-right: 30px;
+      row-gap: 3.125rem;
+      padding-left: 1.875rem;
+      padding-right: 1.875rem;
     }
 
     &__booking_form {
       width: 100%;
-      max-width: 380px;
+      max-width: 23.75rem;
       margin: auto;
     }
   }
 }
 
-@media screen and (max-width: 922px) {
+@media screen and (max-width: 57.625rem) {
   .room_details {
   
     &__images_block {
-      height: 244px;
+      height: 15.25rem;
     }
   }
 }
 
-@media screen and (max-width: 670px) {
+@media screen and (max-width: 41.875rem) {
   .room_details {
 
     &__room_info {
@@ -134,7 +134,7 @@
   }
 }
 
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 27.5rem) {
   .room_details {
 
     &__details_block {
@@ -143,7 +143,7 @@
     }
 
     &__info_block {
-      max-width: 380px;
+      max-width: 23.75rem;
       margin-right: auto;
       margin-left: auto;
     }
@@ -154,21 +154,16 @@
   .room_details {
 
     &__guest_reviews_block {
-      grid-template-columns: auto minmax(70px, 1fr);
+      grid-template-columns: auto minmax(4.375rem, 1fr);
     }
 
     &__info_block {
-      padding-left: 10px;
-      padding-right: 10px;
+      padding-left: 0.625rem;
+      padding-right: 0.625rem;
     }
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .room_details {
 
     &__booking_form {
-      max-width: 320px;
+      width: 100%;
     }
   }
 }

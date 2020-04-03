@@ -2,7 +2,7 @@
 
 .room_images {
   display: grid;
-  grid-template-columns: minmax(50%, 1fr) 461px;
+  grid-template-columns: minmax(50%, 1fr) 28.8125rem;
   height: 100%;
   width: 100%;
 
@@ -22,10 +22,10 @@
   }
 }
 
-@media screen and (max-width: 922px) {
+@media screen and (max-width: 57.625rem) {
   .room_images {
     display: block;
-    height: 244px;
+    height: 15.25rem;
     position: relative;
     
     &__image {
@@ -44,19 +44,19 @@
       position: absolute;
       display: flex;
       text-align: center;
-      left: calc(50% - 20px);
-      bottom: 15px;
-      width: 40px;
+      left: calc(50% - 1.25rem);
+      bottom: 0.9375rem;
+      width: 2.5rem;
       justify-content: space-between;
   
       & > li {
         list-style-type: none;
-        width: 7.5008px;
-        height: 7.5008px;
-        border: 1px solid white;
+        width: 0.4688rem;
+        height: 0.4688rem;
+        border: 0.0625rem solid white;
         border-radius: 50%;
         box-sizing: border-box;
-        box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3);
+        box-shadow: 0rem 0.3125rem 0.3125rem rgba(31, 32, 65, 0.3);
         cursor: pointer;
   
         &.active {
@@ -78,13 +78,13 @@
       background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
       display: flex;
       align-items: center;
-      border-top-left-radius: 4px;
+      border-top-left-radius: 0.25rem;
   
       & .room_images__control_icon {
-        font-size: 24px;
-        height: 44px;
-        width: 44px;
-        line-height: 44px;
+        font-size: 1.5rem;
+        height: 2.75rem;
+        width: 2.75rem;
+        line-height: 2.75rem;
         text-align: center;
         vertical-align: middle;
         color: #fff;
@@ -102,13 +102,13 @@
       transform: matrix(-1, 0, 0, 1, 0, 0);
       display: flex;
       align-items: center;
-      border-top-left-radius: 4px;
+      border-top-left-radius: 0.25rem;
   
       & .room_images__control_icon {
-        font-size: 24px;
-        height: 44px;
-        width: 44px;
-        line-height: 44px;
+        font-size: 1.5rem;
+        height: 2.75rem;
+        width: 2.75rem;
+        line-height: 2.75rem;
         text-align: center;
         vertical-align: middle;
         color: #fff;
