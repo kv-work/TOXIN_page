@@ -2,7 +2,7 @@
 
 mixin rangeSlider(params={})
   -
-    var { label, value } = params
+    var { label, value, text="" } = params
 
   label.js_range_slider.range_slider
     h3.range_slider__label=label
@@ -20,3 +20,4 @@ mixin rangeSlider(params={})
       data-step="100"
       data-extra-classes="range_slider__slider"
     )
+    .range_slider__text= text
