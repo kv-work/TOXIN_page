@@ -1,8 +1,8 @@
 mixin pagination(params)
   -
-    var {numberOfPages, description} = params
+    var {numberOfPages, description, data=[]} = params
 
-  .pagination_block
+  .pagination_block(data-rooms= data)
     #data-container
     .pagination_block__pagination.js-pagination(data-pages=numberOfPages)
     .pagination_block__description=description

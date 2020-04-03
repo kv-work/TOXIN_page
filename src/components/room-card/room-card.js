@@ -1,8 +1,9 @@
 import './room-card.scss'
 import roomsData from './data.json'
 import RateButton from '../rate-button/rate-button'
+import template from './template.pug'
 
-class RoomCard {
+export default class RoomCard {
   constructor(node) {
     this.$node = $(node);
     this.data = this.$node.data();
@@ -32,6 +33,11 @@ class RoomCard {
 
     this._attachEventHandlers()
   }
+
+  static template(roomNum) {
+    const params = {number: roomNum};
+    return template({params})
+  } 
 
   _getData() {
     this.numOfRoom = this.data.number;
