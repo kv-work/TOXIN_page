@@ -1,1 +1,30 @@
 @import "../../settings.scss";
+
+.search_room {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto auto;
+
+  &__content {
+    display: grid;
+    grid-template-columns: 266px 1fr;
+    column-gap: 60px;
+    width: 100%;
+    max-width: 1160px;
+    margin: 30px auto 70px;
+  }
+
+  &__range_slider_label {
+    font-size: 12px;
+    line-height: 14px;
+    color: $dark-50;
+  }
+
+  &__delimiter {
+    max-width: 90rem;
+    width: 100%;
+    margin: auto;
+    height: 0.0625rem;
+    background-color: $dark-25;
+  }
+}
