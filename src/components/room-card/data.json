@@ -19,7 +19,7 @@
       "numOfReviews": 65
     },
     "980": {
-      "images": ["./img/room_840.png"],
+      "images": ["./img/room_980.png"],
       "price": 8500,
       "isLux": true,
       "rate": 3,
@@ -40,7 +40,7 @@
       "numOfReviews": 44
     },
     "982": {
-      "images": ["./img/room_856.png"],
+      "images": ["./img/room_982.png"],
       "price": 5800,
       "isLux": false,
       "rate": 3,
