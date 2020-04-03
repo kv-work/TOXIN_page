@@ -30,14 +30,13 @@ block content
             ]
           +dropdown({label:"гости", text: "Сколько гостей", items})
         .search_room__range_slider
-          +rangeSlider( {label: "Диапазон цены", value: [5000, 10000]} )
-          .search_room__range_slider_label= "Стоимость за сутки пребывания в номере"
+          +rangeSlider( {label: "Диапазон цены", value: [5000, 10000], text: "Стоимость за сутки пребывания в номере"} )
         .search_room__checkbox
           -
             var list = [
               {label: "Можно курить"},
               {label:"Можно с питомцами", checked: true},
-              {label:"Можно пригласить гостей (до 10 человек)", checked: true}
+              {label:"Можно пригласить гостей (до\u00A010\u00A0человек)", checked: true}
             ]
           +checkboxList({checkboxLabel: "checkbox buttons", list: list})
         .search_room__rich_checkbox
@@ -67,7 +66,7 @@ block content
               {label: "Телевизор"},
               {label: "Шампунь"}
             ]
-          +checkboxList({checkboxLabel: "дополнительные удобства", list, type: "expandable", opened: true})
+          +checkboxList({checkboxLabel: "дополнительные удобства", list, type: "expandable"})
       .search_room__rooms_block
         h1.search_room__rooms_title= "Номера, которые мы для вас подобрали"
         .search_room__pagination

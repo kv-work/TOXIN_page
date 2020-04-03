@@ -11,13 +11,31 @@
     column-gap: 60px;
     width: 100%;
     max-width: 1160px;
-    margin: 30px auto 70px;
+    margin: 27px auto 70px;
   }
 
-  &__range_slider_label {
-    font-size: 12px;
-    line-height: 14px;
-    color: $dark-50;
+  &__guest_dropdown {
+    margin-top: 17px;
+  }
+
+  &__range_slider {
+    margin-top: 30px;
+  }
+
+  &__checkbox {
+    margin-top: 26px;
+  }
+
+  &__rich_checkbox {
+    margin-top: 29px;
+  }
+
+  &__comfort_dropdown {
+    margin-top: 26px;
+  }
+
+  &__additional_services_checkbox {
+    margin-top: 15px;
   }
 
   &__delimiter {
