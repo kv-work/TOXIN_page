@@ -1,0 +1,17 @@
+exclude ../base/base
+
+block variables
+  include ../../components/header/header
+  include ../../components/footer/footer
+
+
+  -
+    var pageTitle = "Search Room"
+    data = htmlWebpackPlugin.options.getData()
+
+block content
+  .search_room
+    +header( {lang: "ru", isLoggedIn: false, data })
+
+
+    +footer( {lang: "ru", data} )
