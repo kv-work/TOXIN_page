@@ -38,6 +38,24 @@
     margin-top: 15px;
   }
 
+  &__rooms_title {
+    margin: 4px 0 21px;
+  }
+
+  &__rooms {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 270px);
+    column-gap: 12px;
+    row-gap: 20px;
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 1px;
+  }
+
   &__delimiter {
     max-width: 90rem;
     width: 100%;

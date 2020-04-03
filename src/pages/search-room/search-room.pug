@@ -9,6 +9,7 @@ block variables
   include ../../components/range-slider/range-slider
   include ../../components/checkbox/checkbox
   include ../../components/pagination/pagination
+  include ../../components/room-card/room-card
 
   -
     var pageTitle = "Search Room"
@@ -69,6 +70,19 @@ block content
           +checkboxList({checkboxLabel: "дополнительные удобства", list, type: "expandable"})
       .search_room__rooms_block
         h1.search_room__rooms_title= "Номера, которые мы для вас подобрали"
+        .search_room__rooms
+          +roomCard({number: 888})
+          +roomCard({number: 840})
+          +roomCard({number: 980})
+          +roomCard({number: 856})
+          +roomCard({number: 740})
+          +roomCard({number: 982})
+          +roomCard({number: 678})
+          +roomCard({number: 450})
+          +roomCard({number: 350})
+          +roomCard({number: 666})
+          +roomCard({number: 444})
+          +roomCard({number: 352})
         .search_room__pagination
           +pagination({numberOfPages: 15, description: "1 – 12 из 100+ вариантов аренды"})
     
