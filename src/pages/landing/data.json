@@ -106,5 +106,6 @@
         "inputPlaceholder": "Email"
       }
     }
-  }
+  },
+  "landingBG": ["./img/image3.png", "./img/image2.png", "./img/image.png"]
 }

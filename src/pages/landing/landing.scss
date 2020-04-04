@@ -5,7 +5,7 @@
   max-height: 83.9375rem;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  background-image: url(../../img/image3.png);
+  transition: background-image 1s;
 
   &__content {
     width: 100%;
