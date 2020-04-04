@@ -2,17 +2,17 @@
 
 .search_room {
   height: 100vh;
-  max-height: 1880px;
+  max-height: 117.5rem;
   display: grid;
   grid-template-rows: auto 1fr auto auto;
 
   &__content {
     display: grid;
-    grid-template-columns: 266px 1fr;
-    column-gap: 60px;
+    grid-template-columns: 16.625rem 1fr;
+    column-gap: 3.75rem;
     width: 100%;
-    max-width: 1160px;
-    margin: 27px auto 70px;
+    max-width: 72.5rem;
+    margin: 1.6875rem auto 4.375rem;
   }
 
   &__filter_toggler {
@@ -20,45 +20,45 @@
   }
 
   &__guest_dropdown {
-    margin-top: 17px;
+    margin-top: 1.0625rem;
   }
 
   &__range_slider {
-    margin-top: 30px;
+    margin-top: 1.875rem;
   }
 
   &__checkbox {
-    margin-top: 26px;
+    margin-top: 1.625rem;
   }
 
   &__rich_checkbox {
-    margin-top: 29px;
+    margin-top: 1.8125rem;
   }
 
   &__comfort_dropdown {
-    margin-top: 26px;
+    margin-top: 1.625rem;
   }
 
   &__additional_services_checkbox {
-    margin-top: 15px;
+    margin-top: 0.9375rem;
   }
 
   &__rooms_title {
-    margin: 4px 0 21px;
+    margin: 0.25rem 0 1.3125rem;
   }
 
   &__rooms {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 270px);
-    column-gap: 12px;
-    row-gap: 20px;
+    grid-template-columns: repeat(auto-fill, 16.875rem);
+    column-gap: 0.75rem;
+    row-gap: 1.25rem;
   }
 
   &__delimiter {
-    max-width: 90rem;
+    max-width: 1440px;
     width: 100%;
     margin: auto;
-    height: 0.0625rem;
+    height: 1px;
     background-color: $dark-25;
   }
 }
@@ -67,8 +67,8 @@
   .search_room {
 
     &__content {
-      padding-left: 30px;
-      padding-right: 30px;
+      padding-left: 1.875rem;
+      padding-right: 1.875rem;
     }
   }
 }
@@ -82,23 +82,23 @@
     }
   
     &__filter_toggler {
-      height: 40px;
+      height: 2.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 20px;
-      padding-right: 10px;
+      padding: 1.25rem;
+      padding-right: 0.625rem;
       box-sizing: border-box;
-      border: 1px solid $dark-50;
-      border-radius: 10px;
-      margin-bottom: 30px;
-      box-shadow: 0rem 0.625rem 1.25rem rgba(31, 32, 65, 0.05);
+      border: 0.0625rem solid $dark-50;
+      border-radius: 0.625rem;
+      margin-bottom: 1.875rem;
+      box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
       cursor: pointer;
 
       &::after {
         font-family: "Material Icons";
-        font-size: 30px;
-        line-height: 20px;
+        font-size: 1.875rem;
+        line-height: 1.25rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -124,12 +124,13 @@
 
       &.opened {
         display: block;
-        padding: 20px 10px 20px 20px;
-        border: 1px solid $dark-50;
-        border-bottom-left-radius: 10px;
-        border-bottom-right-radius: 10px;
-        box-shadow: 0rem 0.625rem 1.25rem rgba(31, 32, 65, 0.05);
-        margin-bottom: 30px;
+        height: 100%;
+        padding: 1.25rem 0.625rem 1.25rem 1.25rem;
+        border: 0.0625rem solid $dark-50;
+        border-bottom-left-radius: 0.625rem;
+        border-bottom-right-radius: 0.625rem;
+        box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+        margin-bottom: 1.875rem;
       }
     }
   }

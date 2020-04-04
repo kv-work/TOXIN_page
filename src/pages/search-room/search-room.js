@@ -27,7 +27,7 @@ class SearchRoomContent {
     const {$toggler, $filters} = this;
 
     $toggler.click( () => {
-      $toggler.toggleClass('opened')
+      $toggler.toggleClass('opened');
       $filters.toggleClass('opened');
     } )
   }
