@@ -8,13 +8,14 @@ class Pagination {
     this.$node = $(node);
     this.$pagination = this.$node.find('.js-pagination');
     this.data = this.$node.data().rooms
+    this.numOfPages = this.$pagination.data().pages
 
     if (this.data.length === 0) {
       this.options = options
     } else {
       this.options = {
         ...options,
-        dataSource: this.data,
+        dataSource: this._createData(this.data, this.numOfPages),
         pageSize: 12,
         
         callback: (data) => this._createContent(data)
@@ -26,8 +27,33 @@ class Pagination {
 
   _init() {
     const { $pagination, options } = this;
-
     $pagination.pagination(options)
+  }
+
+  _createData(data, totalPages) {
+    let newData = [...data];
+
+    for (let i = 1; i < totalPages; i++) {
+      const shuffledData = this._shuffle(data);
+      shuffledData.forEach(elem => {
+        newData.push(elem)
+      })
+    };
+
+    return newData;
+  }
+
+  _shuffle(arr) {
+    let j, temp;
+
+    for (let i = arr.length - 1; i > 0; i--) {
+      j = Math.floor(Math.random()*(i + 1));
+      temp = arr[j];
+      arr[j] = arr[i];
+      arr[i] = temp;
+    }
+
+    return arr;
   }
 
   _createContent(data) {
@@ -40,8 +66,6 @@ class Pagination {
     cards.forEach( card => {
       html += card
     })
-
-    console.log(html)
 
     $('#data-container').html(html);
 
