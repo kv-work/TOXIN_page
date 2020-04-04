@@ -56,7 +56,7 @@ export default class Datepicker {
       `<div class="form_datepicker_wrapper">
         <label class="form_datepicker__label like_h3">${labelSecond}</label>
         <div class="form_datepicker__input_wrapper">
-          <input class="form_datepicker__end_date_input js_datepicker_masked" type="text" placeholder="ДД.ММ.ГГГГ" data-date=${valueSecond} readonly required/>
+          <input class="form_datepicker__end_date_input js_datepicker_masked" type="text" placeholder="ДД.ММ.ГГГГ" readonly required ${valueSecond ? "data-date="+valueSecond : " "} />
         </div>
       </div>`
       ).find(`.form_datepicker__end_date_input`)
@@ -129,6 +129,7 @@ export default class Datepicker {
     if ($opener && $opener.hasClass('start_date') && date && !this.endDate ) {
       this.startDate = date;
       $datepicker.val(formattedDates);
+      $datepicker.data('date', formattedDates);
       datepickerData.selectedDates = [this.startDate];
     }
 
@@ -136,6 +137,7 @@ export default class Datepicker {
     if ($opener && $opener.hasClass('start_date') && date && this.endDate ) {
       this.startDate = date[0]
       $datepicker.val(formattedDatesArr[0]);
+      $datepicker.data('date', formattedDatesArr[0]);
       datepickerData.selectedDates = [this.startDate, this.endDate];
       datepickerData.maxRange = this.endDate;
     }
@@ -144,6 +146,7 @@ export default class Datepicker {
     if ( $opener && $opener.hasClass('form_datepicker__end_date_input') && date && !this.startDate ) {
       this.endDate = date;
       $endDate.val(formattedDates);
+      $endDate.data('date', formattedDates)
       $datepicker.val('');
       datepickerData.selectedDates = [this.endDate];
     }
@@ -153,6 +156,7 @@ export default class Datepicker {
       this.endDate = (this.endDate) ? date[0] : date[1];
       $datepicker.val(this.startDate.toLocaleDateString()); 
       $endDate.val(this.endDate.toLocaleDateString())
+      $endDate.data('date', this.endDate.toLocaleDateString())
       datepickerData.minRange = this.startDate;
       datepickerData.selectedDates = [this.startDate, this.endDate];
       datepickerData.maxRange = this.endDate;
