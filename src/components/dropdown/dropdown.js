@@ -17,21 +17,29 @@ $('.js_form_dropdown').iqDropdown( {
   },
   onChange: function (id, count, totalItems) {},
   setCustomMessage(itemCount, totalItems) {
-    if (totalItems == 0) {
-      return this.initialText
+    const infants = itemCount['item-3'];
+    const guests = itemCount['item-1'] + itemCount['item-2'];
+    let message = +guests;
+
+    if ( guests == 0) {
+      message = this.initialText;
+    } else if (guests == 1) {
+      message += ` ${this.selectionText}`;
+    } else if (guests < 5) {
+      message += ` ${this.textPlural}`;
+    } else if (guests >= 5) {
+      message += ` ${this.moreThenFiveText}`
     }
 
-    if (totalItems == 1) {
-      return `1 ${this.selectionText}`
+    if ( infants == 1 ) {
+      message += `, 1 младенец`;
+    } else if ( infants > 1 && infants < 5) {
+      message += `, ${infants} младенца`;
+    } else if (infants >= 5) {
+      message += `, ${infants} младенцев`;
     }
 
-    if (totalItems < 5) {
-      return `${totalItems} ${this.textPlural}`
-    }
-
-    if (totalItems >= 5) {
-      return `${totalItems} ${this.moreThenFiveText}`
-    }
+    return message;
   },
   onApply: () => {}
 } )
