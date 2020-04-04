@@ -7,16 +7,22 @@ class Pagination {
   constructor(node, options) {
     this.$node = $(node);
     this.$pagination = this.$node.find('.js-pagination');
-    this.data = this.$node.data().rooms
-    this.numOfPages = this.$pagination.data().pages
+    this.$description = this.$node.find('.pagination_block__description');
+    this.data = this.$node.data().rooms;
+    this.numOfPages = this.$pagination.data().pages;
+    this.pageSize = 12;
+    this.createdData = this._createData(this.data, this.numOfPages);
 
     if (this.data.length === 0) {
       this.options = options
     } else {
       this.options = {
         ...options,
-        dataSource: this._createData(this.data, this.numOfPages),
-        pageSize: 12,
+        dataSource: this.createdData,
+        pageSize: this.pageSize,
+        beforePaging: (page) => {
+          this._displayDescription(page)
+        },
         
         callback: (data) => this._createContent(data)
       }
@@ -72,6 +78,18 @@ class Pagination {
     $('#data-container').find('.js_room_card').each(function() {
       new RoomCard(this);
     })
+  }
+
+  _displayDescription(page) {
+    const {$description, pageSize, createdData} = this;
+
+    const totalItems = createdData.length > 100 ? '100+' : createdData.length;
+    const displayItemsStart = pageSize * (page - 1) + 1;
+    const displayItemsEnd = (pageSize * page) > createdData.length ? totalItems.length : (pageSize * page);
+    const displayItems = `${displayItemsStart} - ${displayItemsEnd}`;
+    const descriptionString = `${displayItems} из ${totalItems} вариантов аренды`;
+
+    $description.html(descriptionString);
   }
 }
 

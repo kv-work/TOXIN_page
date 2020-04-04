@@ -1,6 +1,6 @@
 mixin pagination(params)
   -
-    var {numberOfPages, description, data=[]} = params
+    var {numberOfPages, description="1 – 12 из 100+ вариантов аренды", data=[]} = params
 
   .pagination_block(data-rooms= data)
     #data-container
