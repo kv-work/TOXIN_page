@@ -12,7 +12,6 @@ class Button {
 
     $this.click(function() {
       const button = this;
-      console.log(button)
     })
   }
 }
