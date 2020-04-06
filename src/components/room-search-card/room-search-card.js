@@ -2,9 +2,10 @@ import './room-search-card.scss';
 
 class RoomSearchCard {
   constructor(node) {
-    this.$node = $(node);
+    this.$form = $(node);
 
-    this.$datepickerBlock = this.$node.find('.form_datepicker');
+    this.$datepickerBlock = this.$form.find('.form_datepicker');
+    this.$dropdownBlock = this.$form.find('.js_form_dropdown');
 
     this._init();
   };
@@ -14,20 +15,34 @@ class RoomSearchCard {
   };
 
   _attachEventHandlers() {
-    const { $node, _submitForm } = this;
+    const { $form, _submitForm } = this;
 
-    $node.submit( (e) => {
-      console.log(this.$datepickerBlock.find('input.js_datepicker_separated').data())
-      console.log(this.$datepickerBlock.find('input.form_datepicker__end_date_input').data())
-      _submitForm(e);
+    this.$form.submit( (e) => {
+      this._submitForm(e)
     } )
   };
 
   _submitForm(event) {
     event.preventDefault();
-    console.log('room-search-card form submit');
+
+    const { $form, $dropdownBlock } = this;
+    const action = event.target.action;
+
+    const formData = new FormData($form[0]);
+    const dropdownData = $dropdownBlock.data().items;
+
+    for (let key in dropdownData) {
+      formData.set(key, dropdownData[key])
+    }
+
+    let requestString = '?';
+		formData.forEach((value, key) => {
+      requestString += `${key}=${value}&`
+    });
+
+    const encodeString = encodeURI(requestString.slice(0, -1))
     
-    // document.location.href = '/search-room';
+    document.location.href = action + encodeString
   };
 };
 
