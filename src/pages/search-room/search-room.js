@@ -21,6 +21,20 @@ class SearchRoomContent {
 
   _init() {
     this._attachEventHandlers();
+    this._getData();
+  }
+
+  _getData() {
+    this.data = window
+      .location
+      .search
+      .replace('?','')
+      .split('&')
+      .reduce( (prev,elem) => {
+        const arr = elem.split('=');
+        prev[ decodeURIComponent(arr[0])] = decodeURIComponent(arr[1]);
+        return prev;
+      }, {});
   }
 
   _attachEventHandlers() {
