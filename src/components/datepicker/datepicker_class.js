@@ -56,7 +56,7 @@ export default class Datepicker {
       `<div class="form_datepicker_wrapper">
         <label class="form_datepicker__label like_h3">${labelSecond}</label>
         <div class="form_datepicker__input_wrapper">
-          <input class="form_datepicker__end_date_input js_datepicker_masked" type="text" placeholder="ДД.ММ.ГГГГ" readonly required ${valueSecond ? "data-date="+valueSecond : " "} />
+          <input class="form_datepicker__end_date_input js_datepicker_masked" type="text" name="end-date" placeholder="ДД.ММ.ГГГГ" readonly required ${valueSecond ? "data-date="+valueSecond : " "} />
         </div>
       </div>`
       ).find(`.form_datepicker__end_date_input`)
