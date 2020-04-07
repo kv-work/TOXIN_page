@@ -43,7 +43,7 @@ module.exports = (env = {}) => {
 
         },
         chunks: [...page, 'main'],
-        filename: `${pageName}/index.html`,
+        filename: (pageName === 'landing') ? 'index.html' : `${pageName}/index.html`,
         template: path.resolve(__dirname, `src/pages/${pageName}/${pageName}.pug` ),
         inject: 'body'
       })
@@ -76,13 +76,6 @@ module.exports = (env = {}) => {
     const plugins = [
       ...getHtmlPluginForMultiPages(pages),
 
-      //тестовая страница для просмотра всех страниц (удалить при верстке landing-page)
-      new HtmlWebpackPlugin({
-        chunks: ['main'],
-        filename: "index.html",
-        template: "./src/index.pug"
-      }),
-
       new webpack.ProvidePlugin({
         $: 'jquery',
         jQuery: 'jquery',
@@ -94,7 +87,7 @@ module.exports = (env = {}) => {
       plugins.push(new MiniCssExtractPlugin({
         moduleFilename: ({
           name
-        }) => name === 'main' ? '[name].css' : '[name]/[name].css'
+        }) => (name === 'loading' || name === 'main') ? '[name].css' : '[name]/[name].css'
       }))
     }
 
