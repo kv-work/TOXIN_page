@@ -1,15 +1,4 @@
-import '../../main.scss';
 import './search-room.scss';
-
-//import favicon
-import '../../favicons/favicon'
-
-function requireAll(requireContext) {
-  return requireContext.keys().map(requireContext);
-}
-
-requireAll(require.context('../../components', true, /\.(js)$/));
-
 class SearchRoomContent {
   constructor(node) {
     this.$content = $(node);
@@ -69,6 +58,7 @@ class SearchRoomContent {
   }
 
   _selectRoom(event) {
+    console.log(event.target)
     const targetClasses = event.target.classList;
     
     if ( !( targetClasses.contains('room_card__control_prev') ||

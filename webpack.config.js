@@ -42,7 +42,7 @@ module.exports = (env = {}) => {
           }
 
         },
-        chunks: page,
+        chunks: [...page, 'main'],
         filename: `${pageName}/index.html`,
         template: path.resolve(__dirname, `src/pages/${pageName}/${pageName}.pug` ),
         inject: 'body'
@@ -107,8 +107,8 @@ module.exports = (env = {}) => {
     mode,
 
     entry: {
-      ...getEntries(pages),
-      'main': './src/index.js'
+      'main': './src/index.js',
+      ...getEntries(pages)      
     },
 
     output: {

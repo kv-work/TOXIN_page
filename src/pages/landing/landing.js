@@ -1,16 +1,5 @@
-import '../../main.scss';
 import './landing.scss';
 import data from './data.json';
-
-//import favicon
-import '../../favicons/favicon'
-
-function requireAll(requireContext) {
-  return requireContext.keys().map(requireContext);
-}
-
-requireAll(require.context('../../components', true, /\.(js)$/));
-
 class Landing {
   constructor(node) {
     this.$landing = $(node);
