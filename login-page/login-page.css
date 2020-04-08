@@ -1,2 +1,2 @@
-.login_page{height:100vh;max-height:75.6875rem;display:grid;grid-template-rows:auto 1fr auto;background-image:url(img/image4.png);background-position:top center;background-repeat:no-repeat}.login_page__content{display:flex;justify-content:center;align-items:center}.login_page__login_form{display:flex;align-items:center;max-width:23.75rem;width:100%;margin:10.1875rem auto}
+.login_page{height:100vh;max-height:75.6875rem;display:grid;grid-template-rows:auto 1fr auto;background-image:url(../img/image4.png);background-position:top center;background-repeat:no-repeat}.login_page__content{display:flex;justify-content:center;align-items:center}.login_page__login_form{display:flex;align-items:center;max-width:23.75rem;width:100%;margin:10.1875rem auto}
 
