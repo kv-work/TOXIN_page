@@ -42,8 +42,7 @@ module.exports = (env = {}) => {
           }
 
         },
-        chunks: [...page, 'main'],
-        filename: `${pageName}/index.html`,
+        filename: (pageName === 'landing') ? 'index.html' : `${pageName}.html`,
         template: path.resolve(__dirname, `src/pages/${pageName}/${pageName}.pug` ),
         inject: 'body'
       })
@@ -51,16 +50,6 @@ module.exports = (env = {}) => {
     } )
 
     return plugins
-  }
-
-  function getEntries(entriesArr) {
-    let obj = {};
-    entriesArr.forEach( (entry) => {
-      const entryName = entry[0]
-      obj[entryName] = `./src/pages/${entryName}/${entryName}.js`
-    } )
-
-    return obj;
   }
 
   //Функция для настройки loader'ов стилей
@@ -85,9 +74,7 @@ module.exports = (env = {}) => {
 
     if (isProd) {
       plugins.push(new MiniCssExtractPlugin({
-        moduleFilename: ({
-          name
-        }) => (name === 'main') ? '[name].css' : '[name]/[name].css'
+        filename: '[name].css'
       }))
     }
 
@@ -99,16 +86,10 @@ module.exports = (env = {}) => {
 
     mode,
 
-    entry: {
-      'main': './src/index.js',
-      ...getEntries(pages)      
-    },
+    entry: './src/index.js',
 
     output: {
-      // path: __dirname,
-      filename: ({
-        chunk
-      }) => chunk.name === 'main' ? '[name].js' : '[name]/[name].js'
+      filename: 'index.js'
     },
 
     module: {
@@ -167,7 +148,7 @@ module.exports = (env = {}) => {
           use: [{
             loader: 'file-loader',
             options: {
-              publicPath: '../img',
+              publicPath: './img',
               outputPath: 'img',
               name: '[name].[ext]'
             }
