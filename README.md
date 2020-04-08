@@ -33,7 +33,15 @@ npm start
   *  [pug-loader](https://github.com/pugjs/pug-loader)
   *  [sass-loader](https://webpack.js.org/loaders/sass-loader/)
   *  [style-loader](https://webpack.js.org/loaders/style-loader/)
+  *  [resolve-url-loader](https://github.com/bholloway/resolve-url-loader)
 
 2.  [node-sass](https://github.com/sass/node-sass)
 3.  [pug](https://pugjs.org/api/getting-started.html)
 4.  [jquery](https://jquery.com/)
+5.  [item-quantity-dropdown](https://github.com/kv-work/item-quantity-dropdown.git#custom-dropdown)
+6.  [air-datepicker](http://t1m0n.name/air-datepicker/docs/index-ru.html)
+7.  [cleave.js][(https://nosir.github.io/cleave.js/)]
+8.  [ion-rangeslider](http://ionden.com/a/plugins/ion.rangeSlider/)
+9.  [material-icons](https://google.github.io/material-design-icons/)
+10. [paginationjs](https://pagination.js.org/)
+11. [gh-pages](https://github.com/tschaub/gh-pages)
