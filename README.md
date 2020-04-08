@@ -6,7 +6,8 @@
 В данном проекте реализованная lending страница сайта и страница поиска с функцией фильтра результатов.
 
 **Верстка макета:**
-***[kv-work.github.io](http://kv-work.github.io/the_2nd_task/)***
+***[kv-work.github.io](http://kv-work.github.io/the_2nd_task/landing/)***
+
 ***[UI Kit](http://kv-work.github.io/the_2nd_task/ui-kit-nav/)***
 
 **Установка:**
