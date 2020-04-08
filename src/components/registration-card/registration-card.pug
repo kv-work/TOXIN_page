@@ -7,7 +7,7 @@ mixin registrationCard(params)
   -
     var {label} = params
 
-  form.registration_card(action="/registration" method="post" name="registration-form")
+  form.registration_card(action="/mock-address/change-me" method="post" name="registration-form")
     h1.registration_card__label=label
     .registration_card__name_input
       +input({
@@ -56,7 +56,7 @@ mixin registrationCard(params)
 
     .registration_card__options
       .registration_card__option_label Уже есть аккаунт на Toxin
-      a.registration_card__option_button(href="/login-page/")
+      a.registration_card__option_button(href="../login-page/")
         +button({
           label: "войти",
           style: "no fill"

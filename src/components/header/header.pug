@@ -28,12 +28,12 @@ mixin header(params)
         span.header__user_name=userName
       else
         .header__buttons
-          a.header__login_button(href="/login-page/")
+          a.header__login_button(href="../login-page/")
             +button({
               label: loginLabel,
               style: "no fill"
               })
-          a.header__registration_button(href="/registration-page/")
+          a.header__registration_button(href="../registration-page/")
             +button({
               label: regLabel,
               style: "filled"

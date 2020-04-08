@@ -68,8 +68,7 @@ class SearchRoomContent {
             targetClasses.contains('indicator') ) ) {
       console.log($(event.currentTarget).data())
 
-      const {$filters} = this;
-      const action = '/room-details';
+      const action = '../room-details';
       const selectedRoom = $(event.currentTarget).data();
 
       const formData = this._getFormData();

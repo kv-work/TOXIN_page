@@ -43,7 +43,7 @@ module.exports = (env = {}) => {
 
         },
         chunks: [...page, 'main'],
-        filename: (pageName === 'landing') ? 'index.html' : `${pageName}/index.html`,
+        filename: `${pageName}/index.html`,
         template: path.resolve(__dirname, `src/pages/${pageName}/${pageName}.pug` ),
         inject: 'body'
       })
@@ -87,7 +87,7 @@ module.exports = (env = {}) => {
       plugins.push(new MiniCssExtractPlugin({
         moduleFilename: ({
           name
-        }) => (name === 'loading' || name === 'main') ? '[name].css' : '[name]/[name].css'
+        }) => (name === 'main') ? '[name].css' : '[name]/[name].css'
       }))
     }
 
@@ -153,7 +153,7 @@ module.exports = (env = {}) => {
           use: [{
             loader: 'file-loader',
             options: {
-              publicPath: '../fonts',
+              publicPath: './fonts',
               outputPath: 'fonts',
               name: '[name].[ext]'
             }

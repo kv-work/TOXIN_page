@@ -5,7 +5,7 @@ mixin loginCard(params)
   -
     var {label} = params
 
-  form.login_card(action="/login" method="post" name="login-form")
+  form.login_card(action="/mock-address/change-me" method="post" name="login-form")
     h1.login_card__label=label
     .login_card__email_input
       +input({
@@ -27,7 +27,7 @@ mixin loginCard(params)
 
     .login_card__options
       .login_card__option_label Нет аккаунта на Toxin?
-      a.login_card__option_button(href="/registration-page/")
+      a.login_card__option_button(href="../registration-page/")
         +button({
           label: "создать",
           style: "no fill"
