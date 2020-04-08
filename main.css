@@ -5879,32 +5879,32 @@
 
 @font-face {
   font-family: Quicksand;
-  src: url(/Quicksand-Bold.eot);
-  src: local("☺"), url(/Quicksand-Bold.ttf) format("truetype"), url(/Quicksand-Bold.woff) format("woff"), url(/Quicksand-Bold.svg) format("svg");
+  src: url(src/fonts/quicksand/quicksand-bold/Quicksand-Bold.eot);
+  src: local("☺"), url(src/fonts/quicksand/quicksand-bold/Quicksand-Bold.ttf) format("truetype"), url(src/fonts/quicksand/quicksand-bold/Quicksand-Bold.woff) format("woff"), url(src/fonts/quicksand/quicksand-bold/Quicksand-Bold.svg) format("svg");
   font-weight: bold;
   font-style: normal
 }
 
 @font-face {
   font-family: Quicksand;
-  src: url(/Quicksand-Regular.eot);
-  src: local("☺"), url(/Quicksand-Regular.ttf) format("truetype"), url(/Quicksand-Regular.woff) format("woff"), url(/Quicksand-Regular.svg) format("svg");
+  src: url(src/fonts/quicksand/quicksand-regular/Quicksand-Regular.eot);
+  src: local("☺"), url(src/fonts/quicksand/quicksand-regular/Quicksand-Regular.ttf) format("truetype"), url(src/fonts/quicksand/quicksand-regular/Quicksand-Regular.woff) format("woff"), url(src/fonts/quicksand/quicksand-regular/Quicksand-Regular.svg) format("svg");
   font-weight: normal;
   font-style: normal
 }
 
 @font-face {
   font-family: Montserrat;
-  src: url(/Montserrat-Regular.eot);
-  src: local("☺"), url(/Montserrat-Regular.ttf) format("truetype"), url(/Montserrat-Regular.woff) format("woff"), url(/Montserrat-Regular.svg) format("svg");
+  src: url(src/fonts/montserrat/montserrat-regular/Montserrat-Regular.eot);
+  src: local("☺"), url(src/fonts/montserrat/montserrat-regular/Montserrat-Regular.ttf) format("truetype"), url(src/fonts/montserrat/montserrat-regular/Montserrat-Regular.woff) format("woff"), url(src/fonts/montserrat/montserrat-regular/Montserrat-Regular.svg) format("svg");
   font-weight: normal;
   font-style: normal
 }
 
 @font-face {
   font-family: Montserrat;
-  src: url(/Montserrat-Bold.eot);
-  src: local("☺"), url(/Montserrat-Bold.ttf) format("truetype"), url(/Montserrat-Bold.woff) format("woff"), url(/Montserrat-Bold.svg) format("svg");
+  src: url(src/fonts/montserrat/montserrat-bold/Montserrat-Bold.eot);
+  src: local("☺"), url(src/fonts/montserrat/montserrat-bold/Montserrat-Bold.ttf) format("truetype"), url(src/fonts/montserrat/montserrat-bold/Montserrat-Bold.woff) format("woff"), url(src/fonts/montserrat/montserrat-bold/Montserrat-Bold.svg) format("svg");
   font-weight: bold;
   font-style: normal
 }
@@ -5913,8 +5913,8 @@
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: bold;
-  src: url(/OpenSans-Bold.eot);
-  src: local("Open Sans Bold"), local("OpenSans-Bold"), url(/OpenSans-Bold.woff2) format("woff2"), url(/OpenSans-Bold.ttf) format("truetype"), url(/OpenSans-Bold.woff) format("woff");
+  src: url(src/fonts/open-sans/open-sans-bold/OpenSans-Bold.eot);
+  src: local("Open Sans Bold"), local("OpenSans-Bold"), url(src/fonts/open-sans/open-sans-bold/OpenSans-Bold.woff2) format("woff2"), url(src/fonts/open-sans/open-sans-bold/OpenSans-Bold.ttf) format("truetype"), url(src/fonts/open-sans/open-sans-bold/OpenSans-Bold.woff) format("woff");
   unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116
 }
 
@@ -5923,8 +5923,8 @@
   font-style: normal;
   font-weight: 400;
   font-display: auto;
-  src: url(/fa-brands-400.eot);
-  src: url(/fa-brands-400.eot) format("embedded-opentype"), url(/fa-brands-400.woff2) format("woff2"), url(/fa-brands-400.woff) format("woff"), url(/fa-brands-400.ttf) format("truetype"), url(/fa-brands-400.svg) format("svg")
+  src: url(src/fonts/font-awesome/fa-brands-400.eot);
+  src: url(src/fonts/font-awesome/fa-brands-400.eot) format("embedded-opentype"), url(src/fonts/font-awesome/fa-brands-400.woff2) format("woff2"), url(src/fonts/font-awesome/fa-brands-400.woff) format("woff"), url(src/fonts/font-awesome/fa-brands-400.ttf) format("truetype"), url(src/fonts/font-awesome/fa-brands-400.svg) format("svg")
 }
 
 .fab {
@@ -5936,8 +5936,8 @@
   font-family: "Material Icons";
   font-style: normal;
   font-weight: 400;
-  src: url(/MaterialIcons-Regular.eot);
-  src: local("Material Icons"), local("MaterialIcons-Regular"), url(/MaterialIcons-Regular.woff2) format("woff2"), url(/MaterialIcons-Regular.woff) format("woff"), url(/MaterialIcons-Regular.ttf) format("truetype")
+  src: url(node_modules/material-icons/iconfont/MaterialIcons-Regular.eot);
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url(node_modules/material-icons/iconfont/MaterialIcons-Regular.woff2) format("woff2"), url(node_modules/material-icons/iconfont/MaterialIcons-Regular.woff) format("woff"), url(node_modules/material-icons/iconfont/MaterialIcons-Regular.ttf) format("truetype")
 }
 
 .material-icons {
