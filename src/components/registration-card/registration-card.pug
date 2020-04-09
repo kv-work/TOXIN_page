@@ -12,12 +12,14 @@ mixin registrationCard(params)
     .registration_card__name_input
       +input({
         type: "text",
-        placeholder: "Имя"
+        placeholder: "Имя",
+        name: "name"
         })(required=true)
     .registration_card__surname_input
       +input({
         type: "text",
-        placeholder: "Фамилия"
+        placeholder: "Фамилия",
+        name: "surname"
         })(required=true)
     .registration_card__gender_radio_buttons
       +radioButtons({
@@ -31,6 +33,7 @@ mixin registrationCard(params)
         label: "дата рождения",
         type: "text",
         placeholder: "ДД.ММ.ГГГГ",
+        name: "dateOfBirth"
         masked: true,
         })(required=true)
     .registration_card__email_input
@@ -38,14 +41,16 @@ mixin registrationCard(params)
         label: "Данные для входа в сервис",
         type: "email",
         placeholder: "email"
+        name: "email"
         })(required=true)
     .registration_card__password_input
       +input({
         type: "password",
-        placeholder: "Пароль"
+        placeholder: "Пароль",
+        name: "password"
         })(required=true)
     .registration_card__toggle_button
-      +toggleButton({label: "Получать спецпредложения"})
+      +toggleButton({label: "Получать спецпредложения", name="subscription"})
     .registration_card__submit_button
       +button({
           label: "перейти к оплате",

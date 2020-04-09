@@ -2,7 +2,7 @@ import './registration-card.scss'
 
 class RegistrationCard {
   constructor(node) {
-    this.$node = $(node)
+    this.$form = $(node)
 
     this._init()
   }
@@ -12,15 +12,29 @@ class RegistrationCard {
   }
 
   _attachEventHandlers() {
-    const {$node} = this;
+    const {$form} = this;
 
-    $node.submit( e => this._submitForm(e) )
+    $form.submit( e => this._submitForm(e) )
   }
 
   _submitForm(event) {
     event.preventDefault()
 
-    console.log('registration-card form submit')
+    const {$form} = this;
+
+    const formData = new FormData($form)
+    const url = $form.action;
+
+    const response = await fetch(url, {
+      method: 'POST',
+      body: formData,
+    })
+
+    if (!response.ok) {
+      throw new Error(`Не удалость отправить данные по адресу ${url}. Статус: ${response.status}`)
+    }
+    // Получаем ответ
+    return await response.json()
   }
 }
 
