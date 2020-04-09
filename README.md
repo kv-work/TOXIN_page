@@ -3,7 +3,7 @@
 
 Краткое описание:
 Представляю вашему вниманию сайт toxic - лучший сервис для подбора номеров лучших отелей 2019 года по версии ассоциации "Отельные взгляды".
-В данном проекте реализованная lending страница сайта и страница поиска с функцией фильтра результатов.
+В данном проекте реализованны landing страница сайта, страница поиска с функцией фильтра результатов, страница информации и бронирования номера, страницы регистрации и входа.
 
 **Верстка макета:**
 ***[kv-work.github.io](http://kv-work.github.io/the_2nd_task/)***
@@ -40,7 +40,7 @@ npm start
 4.  [jquery](https://jquery.com/)
 5.  [item-quantity-dropdown](https://github.com/kv-work/item-quantity-dropdown.git#custom-dropdown)
 6.  [air-datepicker](http://t1m0n.name/air-datepicker/docs/index-ru.html)
-7.  [cleave.js][(https://nosir.github.io/cleave.js/)]
+7.  [cleave.js](https://nosir.github.io/cleave.js/)
 8.  [ion-rangeslider](http://ionden.com/a/plugins/ion.rangeSlider/)
 9.  [material-icons](https://google.github.io/material-design-icons/)
 10. [paginationjs](https://pagination.js.org/)
