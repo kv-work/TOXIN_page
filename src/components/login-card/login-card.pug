@@ -10,12 +10,14 @@ mixin loginCard(params)
     .login_card__email_input
       +input({
         type: "email",
-        placeholder: "email"
+        placeholder: "email",
+        name: "email"
         })(required=true)
     .login_card__pass_input
       +input({
         type: "password",
-        placeholder: "Пароль"
+        placeholder: "Пароль",
+        name: "password"
       })(required=true)
     .login_card__submit_button
       +button({
