@@ -33,14 +33,14 @@ mixin registrationCard(params)
         label: "дата рождения",
         type: "text",
         placeholder: "ДД.ММ.ГГГГ",
-        name: "dateOfBirth"
+        name: "dateOfBirth",
         masked: true,
         })(required=true)
     .registration_card__email_input
       +input({
         label: "Данные для входа в сервис",
         type: "email",
-        placeholder: "email"
+        placeholder: "email",
         name: "email"
         })(required=true)
     .registration_card__password_input
@@ -50,7 +50,7 @@ mixin registrationCard(params)
         name: "password"
         })(required=true)
     .registration_card__toggle_button
-      +toggleButton({label: "Получать спецпредложения", name="subscription"})
+      +toggleButton({label: "Получать спецпредложения", name:"subscription"})
     .registration_card__submit_button
       +button({
           label: "перейти к оплате",
