@@ -12,6 +12,7 @@ class RoomRateCard {
     this.$calcBlock = this.$node.find('.room_rate_card__calculations_block');
     this.$total = this.$node.find('.room_rate_card__total_cost');
 
+    console.log(this.$dropdown.data())
     this._init()
   }
 
@@ -190,10 +191,44 @@ class RoomRateCard {
     this._renderTotalCost()
   }
 
-  _submitForm(event) {
+  async _submitForm(event) {
     event.preventDefault()
 
-    console.log('room-rate-card form submit')
+    const form = this.$node[0];
+
+    const formData = new FormData(form);
+    const url = form.action;
+    const method = form.method;
+
+    const obj = {};
+		formData.forEach((value, key) => {
+			obj[key] = value;
+    });
+    
+    obj['guests'] = this.$dropdown.data().items;
+    obj['services'] = this.data.services;
+    obj['additionalServices'] = this.data.additionalServices;
+
+    const formDataJson = JSON.stringify(obj);
+
+    const response = await fetch(url, {
+      method: method,
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8'
+      },
+      body: formDataJson,
+    })
+
+    if (!response.ok) {
+      // throw new Error(`Не удалость отправить данные по адресу ${url}. Статус: ${response.status}`)
+      console.log(`Не удалость отправить данные по адресу ${url}. Статус: ${response.status}`)
+    } else {
+      console.log('room-rate-card form submit')
+      // Получаем ответ
+      return await response.json()
+    }
+
+    
   }
 }
 
