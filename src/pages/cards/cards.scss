@@ -7,6 +7,13 @@
   padding-top: 9.375rem;
   background-color: #f4f4f6;
   position: relative;
+  margin-left: 3.4375rem;
+
+  &__logo_wrapper {
+    position: absolute;
+    top: 1.875rem;
+    left: -1.625rem;
+  }
 
   &_grid {
     max-width: 90rem;
@@ -32,8 +39,12 @@
   }
 }
 
-.logo_wrapper {
-  position: absolute;
-  top: 1.875rem;
-  left: 1.875rem;
+@media screen and (max-width: 855px) {
+  .cards {
+    margin-left: 0;
+
+    &__logo_wrapper {
+      left: 1.875rem;
+    }
+  }
 }

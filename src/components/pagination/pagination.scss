@@ -9,12 +9,22 @@
     padding-bottom: 0.5rem;
     display: flex;
     justify-content: center;
-    margin-right: 15px;
+    margin-right: 0.9375rem;
   }
 
   &__description {
-    padding-right: 17px;
+    padding-right: 1.0625rem;
     margin: auto;
+  }
+
+  &_without_data {
+    .pagination_block__pagination {
+      justify-content: start;
+    }
+
+    .pagination_block__description {
+      margin: 0 0 0 0.375rem;
+    }
   }
 }
 

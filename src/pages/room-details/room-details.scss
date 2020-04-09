@@ -15,7 +15,7 @@
   &__details_block {
     width: 100%;
     max-width: 72.5rem;
-    margin: 4.375rem auto 0;
+    margin: 4.375rem auto 2.3125rem;
     display: grid;
     grid-template-columns: 1fr 23.75rem;
     column-gap: 4.375rem;
@@ -35,6 +35,10 @@
   &__room_info {
     flex: 0 0 17.5rem;
     margin-right: 5.0625rem;
+
+    &_label {
+      margin-bottom: 1.25rem;
+    }
   }
 
   &__guest_reviews_block {

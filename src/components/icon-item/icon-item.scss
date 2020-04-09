@@ -6,7 +6,11 @@
   grid-template-columns: auto 1fr;
   grid-column-gap: 0.625rem;
   border-bottom: 0.0625rem solid $dark-10;
-  padding: 1.25rem 0;
+  padding: 1.25rem 0 1.25rem;
+
+  &:first-child {
+    padding-top: 0;
+  }
 
   &__icon {
     width: 3rem;

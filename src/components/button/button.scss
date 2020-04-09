@@ -10,7 +10,7 @@
   color: $primary-purple;
   padding: 0 1.125rem;
   border: 0.125rem solid $primary-purple;
-  letter-spacing: -0.02em;
+  // letter-spacing: -0.02em;
   padding-bottom: 0.0625rem;
   max-height: 2.75rem;
   height: 100%;
@@ -19,6 +19,7 @@
   cursor: pointer;
   background: none;
   width: 100%;
+  white-space: nowrap;
 
   &:focus {
     outline: none;
