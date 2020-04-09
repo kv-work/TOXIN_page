@@ -92,9 +92,19 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+  &_ru {
+    & .footer__widgets_block {
+      padding-right: 0.75rem;
+    }
+
+    & .footer__about_us_block {
+      margin-right: 2.125rem;
+    }
+  }
 }
 
-@media screen and (max-width: 76.25rem) {
+@media screen and (max-width: 1220px) {
   .footer {
     padding-top: 0;
     padding-bottom: 0;
@@ -112,7 +122,7 @@
     }
 
     &__logo_n_widgets_block {
-      grid-template-columns: repeat(2, minmax(auto, 30rem));
+      grid-template-columns: repeat(2, minmax(auto, 480px));
       justify-content: space-between;  
     }
 
@@ -147,6 +157,7 @@
       align-items: center;
       content: "expand_more";
       color: $dark-50;
+      margin-right: 0;
     }
 
     &__navigation_list,
@@ -157,8 +168,15 @@
       z-index: 999;
     }
 
-    &__navigation_block:hover > div,
     &__about_us_block:hover > div,
+    &__navigation_block:hover > div {
+      display: block;
+      position: absolute;
+      top: 1.25rem;
+      padding: 0.9375rem;
+    }
+    
+
     &__support_block:hover > div {
       display: block;
       position: absolute;
@@ -181,7 +199,8 @@
     &__logo_n_widgets_block {
       grid-template-columns: auto;
       justify-content: center;
-      padding: 2.5rem 0; 
+      padding: 2.5rem 2rem;
+      text-align: center;
     }
 
     &__widgets_block {
@@ -199,11 +218,22 @@
       margin: 0 auto;
     }
 
+    
+    &__navigation_block:hover > div li {
+        text-align: left;
+    }
+    
+    &__about_us_block:hover > div,
+    &__support_block:hover > div {
+      top: 1.25rem;
+      right: -0.9375rem;
+    }
+
     &__copyright_n_socials_block {
       flex-wrap: wrap;
       justify-content: center;
       text-align: center;
-      padding: 1.25rem 0;
+      padding: 1.25rem 2rem;
     }
 
     &__copyright_block {

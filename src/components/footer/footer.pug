@@ -5,6 +5,7 @@ include ../input/input
 mixin footer(params)
   -
     var { lang, withWidgets = true, data } = params
+    
     if (lang == "en")
       var currData = data.dataEn.footer
     else if (lang == "ru")
@@ -13,6 +14,9 @@ mixin footer(params)
     var { descriptionText, navigationList, aboutUsList, supportList, subscribeBlock, copyrightText } = currData
     
     var classList = "footer"
+    if (lang == "ru")
+      classList += " footer_ru"
+
     if (withWidgets)
       classList += " footer_with_widgets"
 

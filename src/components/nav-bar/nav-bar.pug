@@ -20,8 +20,10 @@ mixin navBarItem(params)
 
 mixin navBar(params)
   -
-    var {itemList, display="vertical"} = params
+    var {itemList, display="vertical", lang="en"} = params
     classList = "nav_bar"
+    if (lang === "ru")
+      classList += " nav_bar_ru"
     if (display == "vertical")
       classList += " nav_bar_vertical"
 

@@ -25,12 +25,11 @@
     }
   }
 
-
-
   &__item_link {
     color: $dark-50;
     text-decoration: none;
     white-space: nowrap;
+    letter-spacing: -0.013rem;
   }
 
   &__item.active {
@@ -47,8 +46,8 @@
 
     &::after {
       font-family: "Material Icons";
-      font-size: 1.5rem;
-      line-height: 1.25rem;
+      font-size: 24px;
+      line-height: 20px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -70,10 +69,17 @@
     margin: 0;
     padding: 0;
     background-color: #fff;
+    z-index: 2;
+  }
+
+  &_ru {
+    & > .nav_bar__item {
+      margin-right: 1.4375rem;
+    }
   }
 }
 
-@media screen and (max-width: 46.875rem) {
+@media screen and (max-width: 750px) {
   .nav_bar {
     justify-content: space-between;
     
@@ -83,7 +89,7 @@
   }
 }
 
-@media screen and (max-width: 37.5rem) {
+@media screen and (max-width: 600px) {
   .nav_bar {
     flex-direction: column;
     justify-content: flex-end;
@@ -95,7 +101,7 @@
     }
 
     &__item_nested {
-      margin-right: 0rem;
+      margin-right: 0;
       padding-right: 0.625rem;
       justify-content: flex-end;
 
@@ -121,7 +127,7 @@
         }
       
         & > ul {
-          border: 0.0625rem solid $dark-10;
+          border: 1px solid $dark-10;
           top: 0;
           right: 100%;
         }
