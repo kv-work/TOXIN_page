@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
     <title>Form-elements</title>
   <link href="main.css" rel="stylesheet"></head>
-  <body>
+  <body style="width: 1440px">
     <div class="form_elements">
       <div class="logo_wrapper">
         <svg class="logo" width="48" height="48" viewBox="0 0 48 48">
@@ -23,7 +23,7 @@
               <label class="form_input__label">
                 <p class="like_h3">text field</p>
               </label>
-              <input class="form_input__input" type="text" placeholder="Email">
+              <input class="form_input__input" name="name" type="text" placeholder="Email">
             </div>
           </div>
           <div class="input_wrapper hover_focus"><span class="style hover_focus">hover / focus</span>
@@ -31,7 +31,7 @@
               <label class="form_input__label">
                 <p class="like_h3">text field</p>
               </label>
-              <input class="form_input__input form_input__input_isFocused" type="text" placeholder="This is pretty awesome">
+              <input class="form_input__input form_input__input_isFocused" name="name" type="text" placeholder="This is pretty awesome">
             </div>
           </div>
           <div class="dropdown_wrapper default"><span class="style">DEFAULT</span>
@@ -66,7 +66,7 @@
               <label class="form_input__label">
                 <p class="like_h3">masked text field</p>
               </label>
-              <input class="form_input__input" type="text" placeholder="ДД.ММ.ГГГГ">
+              <input class="form_input__input" name="name" type="text" placeholder="ДД.ММ.ГГГГ">
             </div>
           </div>
           <div class="datepickers_wrapper">
@@ -94,7 +94,7 @@
               <label class="form_input__label">
                 <p class="like_h3">subscription text field</p>
               </label>
-              <input class="form_input__input" type="text" placeholder="Email">
+              <input class="form_input__input" name="name" type="text" placeholder="Email">
             </div>
           </div>
         </div>
@@ -137,10 +137,10 @@
           <div class="toggle_buttons_wrapper">
             <h3 class="toggle_buttons_label">toggle</h3>
             <label class="toggle_button toggle_button_label">Получать спецпредложения
-              <input class="toggle_button__input" type="checkbox" checked>
+              <input class="toggle_button__input" type="checkbox" name="label" checked>
             </label>
             <label class="toggle_button toggle_button_label">Получать спецпредложения
-              <input class="toggle_button__input" type="checkbox">
+              <input class="toggle_button__input" type="checkbox" name="label">
             </label>
           </div>
           <div class="like_buttons_wrapper">
@@ -158,19 +158,19 @@
           </div>
           <div class="rate_buttons_wrapper">
             <h3 class="rate_buttons__label">rate button</h3>
-            <div class="rate_button js_rate_button" data-rate="3">
+            <div class="rate_button js_rate_button" data-rate="4">
+              <input class="rate_button__input" type="radio" name="rate_1">
               <input class="rate_button__input" type="radio" name="rate_1">
               <input class="rate_button__input" type="radio" name="rate_1">
               <input class="rate_button__input" type="radio" name="rate_1" checked>
               <input class="rate_button__input" type="radio" name="rate_1">
-              <input class="rate_button__input" type="radio" name="rate_1">
             </div>
-            <div class="rate_button js_rate_button" data-rate="4">
+            <div class="rate_button js_rate_button" data-rate="5">
+              <input class="rate_button__input" type="radio" name="rate_2">
               <input class="rate_button__input" type="radio" name="rate_2">
               <input class="rate_button__input" type="radio" name="rate_2">
               <input class="rate_button__input" type="radio" name="rate_2">
               <input class="rate_button__input" type="radio" name="rate_2" checked>
-              <input class="rate_button__input" type="radio" name="rate_2">
             </div>
           </div>
         </div>
@@ -210,8 +210,7 @@
           </div>
           <div class="pagination_block_wrapper">
             <h3 class="pagination_block_wrapper_label">pagination</h3>
-            <div class="pagination_block" data-rooms="[]">
-              <div id="data-container"></div>
+            <div class="pagination_block pagination_block_without_data" data-rooms="[]">
               <div class="pagination_block__pagination js-pagination" data-pages="15"></div>
               <div class="pagination_block__description">1 – 12 из 100+ вариантов аренды</div>
             </div>

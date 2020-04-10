@@ -13,7 +13,7 @@
         <div class="header__elements">
           <div class="header__logo"><img src="./img/Logo.svg" alt="TOXIN"></div>
           <nav class="header__nav_bar">
-            <ul class="nav_bar">
+            <ul class="nav_bar nav_bar_ru">
               <li class="nav_bar__item"><a class="nav_bar__item_link" href="/mock-address/change-me">О нас</a></li>
               <li class="nav_bar__item_nested">Услуги
                 <ul class="nav_bar__nested_list">
@@ -44,12 +44,12 @@
             <h1 class="registration_card__label">Регистрация аккаунта</h1>
             <div class="registration_card__name_input">
               <div class="form_input">
-                <input class="form_input__input" type="text" placeholder="Имя" required>
+                <input class="form_input__input" name="name" type="text" placeholder="Имя" required>
               </div>
             </div>
             <div class="registration_card__surname_input">
               <div class="form_input">
-                <input class="form_input__input" type="text" placeholder="Фамилия" required>
+                <input class="form_input__input" name="surname" type="text" placeholder="Фамилия" required>
               </div>
             </div>
             <div class="registration_card__gender_radio_buttons">
@@ -67,7 +67,7 @@
                 <label class="form_input__label">
                   <p class="like_h3">дата рождения</p>
                 </label>
-                <input class="form_input__input" type="text" placeholder="ДД.ММ.ГГГГ" required>
+                <input class="form_input__input" name="dateOfBirth" type="text" placeholder="ДД.ММ.ГГГГ" required>
               </div>
             </div>
             <div class="registration_card__email_input">
@@ -75,17 +75,17 @@
                 <label class="form_input__label">
                   <p class="like_h3">Данные для входа в сервис</p>
                 </label>
-                <input class="form_input__input" type="email" placeholder="email" required>
+                <input class="form_input__input" name="email" type="email" placeholder="email" required>
               </div>
             </div>
             <div class="registration_card__password_input">
               <div class="form_input">
-                <input class="form_input__input" type="password" placeholder="Пароль" required>
+                <input class="form_input__input" name="password" type="password" placeholder="Пароль" required>
               </div>
             </div>
             <div class="registration_card__toggle_button">
               <label class="toggle_button toggle_button_label">Получать спецпредложения
-                <input class="toggle_button__input" type="checkbox">
+                <input class="toggle_button__input" type="checkbox" name="subscription">
               </label>
             </div>
             <div class="registration_card__submit_button">
@@ -100,7 +100,7 @@
           </form>
         </div>
       </div>
-      <footer class="footer footer_with_widgets">
+      <footer class="footer footer_ru footer_with_widgets">
         <div class="footer__logo_n_widgets_block">
           <div class="footer__logo_block"><img class="footer__logo_img" src="./img/Logo.svg" alt="TOXIN">
             <div class="footer__description">Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</div>
@@ -144,7 +144,7 @@
             <div class="footer__subscribe_text">Получайте специальные предложения и новости сервиса</div>
             <div class="footer__subscribe_input">
               <div class="form_input form_input_with_subscription">
-                <input class="form_input__input" type="text" placeholder="Email">
+                <input class="form_input__input" name="name" type="text" placeholder="Email">
               </div>
             </div>
           </div>
