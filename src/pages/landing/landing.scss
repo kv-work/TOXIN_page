@@ -1,16 +1,16 @@
 @import "../../settings.scss";
 
 .landing {
-  height: 100vh;
-  max-height: 83.9375rem;
   display: grid;
   grid-template-rows: auto 1fr auto;
   transition: background-image 1s;
+  background-position: top center;
+  background-repeat: no-repeat;
 
   &__content {
     width: 100%;
     max-width: 72.5rem;
-    margin: 4.375rem auto 1.125rem;
+    margin: 70px auto 22px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -18,11 +18,13 @@
 
   &__form_search_room {
     max-width: 23.75rem;
+    margin-bottom: 314px;
   }
 
   &__slogan {
     text-align: right;
     width: 18.75rem;
     align-self: flex-end;
+    margin: 0 -5px;
   }
 }
