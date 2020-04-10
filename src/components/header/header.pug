@@ -19,7 +19,8 @@ mixin header(params)
 
   header(class=classList)
     .header__elements
-      .header__logo
+      
+      a.header__logo(href="./")
         img(src=require('../../img/Logo.svg').default alt="TOXIN")
       nav.header__nav_bar
         +navBar({itemList: navigationList, display: "horizontal", lang: lang})
