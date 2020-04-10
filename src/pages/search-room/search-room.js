@@ -5,7 +5,7 @@ class SearchRoomContent {
     this.$toggler = this.$content.find('.search_room__filter_toggler');
     this.$filters = this.$content.find('.search_room__filters_block');
     this.$rooms = this.$content.find('.search_room__rooms_block');
-    this.$roomCards = this.$rooms.find('.room_card');
+    this.$roomCards = this.$rooms.find('#data-container');
 
     this.$datepicker = this.$filters.find('.js_form_datepicker');
     this.$dropdown = this.$filters.find('.js_form_dropdown');
@@ -58,7 +58,7 @@ class SearchRoomContent {
   }
 
   _selectRoom(event) {
-    console.log(event.target)
+
     const targetClasses = event.target.classList;
     
     if ( !( targetClasses.contains('room_card__control_prev') ||
@@ -66,10 +66,9 @@ class SearchRoomContent {
             targetClasses.contains('room_card__indicators') ||
             targetClasses.contains('room_card__control_icon') ||
             targetClasses.contains('indicator') ) ) {
-      console.log($(event.currentTarget).data())
 
       const action = './room-details.html';
-      const selectedRoom = $(event.currentTarget).data();
+      const selectedRoom = $(event.target).closest('.room_card').data();
 
       const formData = this._getFormData();
 
