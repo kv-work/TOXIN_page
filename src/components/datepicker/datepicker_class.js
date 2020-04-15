@@ -87,7 +87,7 @@ export default class Datepicker {
     if (this.endDate) dates.push(this.endDate);
 
 
-    if (dates.length == 2 ) {
+    if (dates.length === 2 ) {
       this.datepickerData.selectDate(dates);
     } else {
       this.datepickerData.selectedDates = dates;

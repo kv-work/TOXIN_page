@@ -21,9 +21,9 @@ $('.js_form_dropdown').iqDropdown( {
     const guests = itemCount['item-1'] + itemCount['item-2'];
     let message = +guests;
 
-    if ( guests == 0) {
+    if ( guests === 0) {
       message = this.initialText;
-    } else if (guests == 1) {
+    } else if (guests === 1) {
       message += ` ${this.selectionText}`;
     } else if (guests < 5) {
       message += ` ${this.textPlural}`;
@@ -31,7 +31,7 @@ $('.js_form_dropdown').iqDropdown( {
       message += ` ${this.moreThenFiveText}`
     }
 
-    if ( infants == 1 ) {
+    if ( infants === 1 ) {
       message += `, 1 младенец`;
     } else if ( infants > 1 && infants < 5) {
       message += `, ${infants} младенца`;
