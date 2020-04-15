@@ -34,7 +34,7 @@ class SearchRoomContent {
 
   _setDropdownData() {
     const { $dropdown, data } = this;
-    const total = parseInt(data['item-1'])+parseInt(data['item-2'])+parseInt(data['item-3']);
+    const total = parseInt(data['item-1'], 10)+parseInt(data['item-2'], 10)+parseInt(data['item-3'], 10);
 
     $dropdown.data({
       "items": {
