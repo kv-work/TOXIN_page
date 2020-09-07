@@ -11,6 +11,10 @@
     "deploy": "gh-pages -d dist",
     "eslint": "eslint src/**"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kv-work/toxin_page.git"
+  },
   "author": "Komarov Vyacheslav",
   "license": "ISC",
   "devDependencies": {

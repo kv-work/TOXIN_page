@@ -6,9 +6,9 @@
 В данном проекте реализованны landing страница сайта, страница поиска с функцией фильтра результатов, страница информации и бронирования номера, страницы регистрации и входа.
 
 **Верстка макета:**
-***[kv-work.github.io](http://kv-work.github.io/the_2nd_task/)***
+***[kv-work.github.io](https://kv-work.github.io/TOXIN_page/)***
 
-***[UI Kit](http://kv-work.github.io/the_2nd_task/ui-kit-nav.html)***
+***[UI Kit](http://kv-work.github.io/TOXIN_page/ui-kit-nav.html)***
 
 **Установка:**
 npm install
