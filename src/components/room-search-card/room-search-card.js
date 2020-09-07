@@ -5,7 +5,7 @@ class RoomSearchCard {
     this.$form = $(node);
 
     this.$datepickerBlock = this.$form.find('.form_datepicker');
-    this.$dropdownBlock = this.$form.find('.js_form_dropdown');
+    this.$dropdownBlock = this.$form.find('.js-form_dropdown');
 
     this._init();
   };

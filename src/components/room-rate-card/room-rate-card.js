@@ -1,5 +1,5 @@
-import './room-rate-card.scss'
-import data from './data.json'
+import './room-rate-card.scss';
+import data from './data.json';
 
 class RoomRateCard {
   constructor(node) {
@@ -7,13 +7,12 @@ class RoomRateCard {
     this.data = data;
     this.$infoBlock = this.$node.find('.room_rate_card__room_info_block');
     this.$datepicker = this.$node.find('.room_rate_card__datepicker_is_separated');
-    this.datepickerData = this.$node.find('.js_datepicker_separated').datepicker().data('datepicker');
-    this.$dropdown = this.$node.find('.js_form_dropdown');
+    this.datepickerData = this.$node.find('.js-datepicker_separated').data('datepicker');
+    this.$dropdown = this.$node.find('.js-form_dropdown');
     this.$calcBlock = this.$node.find('.room_rate_card__calculations_block');
     this.$total = this.$node.find('.room_rate_card__total_cost');
 
-    console.log(this.$dropdown.data())
-    this._init()
+    this._init();
   }
 
   _init() {
