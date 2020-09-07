@@ -1,1 +1,1 @@
-import './color_palettes.scss'
+import './color_palettes.scss';
