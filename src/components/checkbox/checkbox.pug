@@ -6,7 +6,7 @@ mixin checkboxList(params)
     var classList = "form__checkbox"
     switch (type) {
       case "expandable":
-        classList += " form__checkbox_expandable"
+        classList += ".js-form__checkbox_expandable form__checkbox_expandable"
         if (opened)
           classList += " form__checkbox_expandable_opened"
         break
