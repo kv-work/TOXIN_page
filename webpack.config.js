@@ -1,66 +1,59 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require('webpack');
 const ghpages = require('gh-pages');
 const fs = require('fs');
 const path = require('path');
 
-ghpages.publish('dist', function(err) {});
+ghpages.publish('dist', () => {});
 
 module.exports = (env = {}) => {
-
   const {
-    mode = "development"
+    mode = 'development',
+    index = 'index.html',
   } = env;
 
-  const isProd = mode === "production";
-  const isDev = mode === "development";
-
+  const isProd = mode === 'production';
 
   const pages = [];
 
   fs
     .readdirSync(path.resolve(__dirname, 'src', 'pages'))
-    .filter((file) => {
-      return file.indexOf('base') !== 0;
-    })
+    .filter((file) => file.indexOf('base') !== 0)
     .forEach((file) => {
       pages.push(file.split('/', 2));
     });
 
   function getHtmlPluginForMultiPages(pagesArr) {
-    const plugins = pagesArr.map( (page) => {
-      const pageName = page[0]
+    const plugins = pagesArr.map((page) => {
+      const pageName = page[0];
       return new HtmlWebpackPlugin({
         getData: () => {
           try {
-            const data = JSON.parse(fs.readFileSync(path.resolve(__dirname, `src/pages/${pageName}/data.json`), 'utf8'))
-            return data
-          } catch(err) {
-            console.log(err)
-            return {}
+            const data = JSON.parse(fs.readFileSync(path.resolve(__dirname, `src/pages/${pageName}/data.json`), 'utf8'));
+            return data;
+          } catch (err) {
+            return {};
           }
-
         },
         filename: (pageName === 'landing') ? 'index.html' : `${pageName}.html`,
-        template: path.resolve(__dirname, `src/pages/${pageName}/${pageName}.pug` ),
-        inject: 'body'
-      })
-    
-    } )
+        template: path.resolve(__dirname, `src/pages/${pageName}/${pageName}.pug`),
+        inject: 'body',
+      });
+    });
 
-    return plugins
+    return plugins;
   }
 
-  //Функция для настройки loader'ов стилей
+  // Функция для настройки loader'ов стилей
   function getStyleLoaders() {
     return [
       isProd ? MiniCssExtractPlugin.loader : 'style-loader',
-      'css-loader'
-    ]
+      'css-loader',
+    ];
   }
 
-  //Функция для настройки подключаемых plagin'ов
+  // Функция для настройки подключаемых plagin'ов
   function getPlugins() {
     const plugins = [
       ...getHtmlPluginForMultiPages(pages),
@@ -68,20 +61,20 @@ module.exports = (env = {}) => {
       new webpack.ProvidePlugin({
         $: 'jquery',
         jQuery: 'jquery',
-        'window.jQuery': 'jquery'
-      })
+        'window.jQuery': 'jquery',
+      }),
     ];
 
     if (isProd) {
       plugins.push(new MiniCssExtractPlugin({
-        filename: '[name].css'
-      }))
+        filename: '[name].css',
+      }));
     }
 
-    return plugins
+    return plugins;
   }
 
-  //Объект настроек
+  // Объект настроек
   return {
 
     mode,
@@ -89,45 +82,45 @@ module.exports = (env = {}) => {
     entry: './src/index.js',
 
     output: {
-      filename: 'index.js'
+      filename: 'index.js',
     },
 
     module: {
       rules: [
-        //Loading .pug
+        // Loading .pug
         {
           test: /\.pug$/,
-          loader: "pug-loader",
+          loader: 'pug-loader',
           options: {
-            pretty: true
-          }
+            pretty: true,
+          },
         },
 
-        //Loading CSS
+        // Loading CSS
         {
           test: /\.css$/,
-          use: getStyleLoaders()
+          use: getStyleLoaders(),
         },
 
-        //Loading SCSS/Sass
+        // Loading SCSS/Sass
         {
           test: /\.(s[ca]ss)$/,
           exclude: /img/,
           use: [
             ...getStyleLoaders(),
             {
-              loader: 'resolve-url-loader'
+              loader: 'resolve-url-loader',
             },
             {
-              loader: "sass-loader",
+              loader: 'sass-loader',
               options: {
-                sourceMap: true
-              }
-            }
-          ]
+                sourceMap: true,
+              },
+            },
+          ],
         },
 
-        //Loadin Fonts
+        // Loadin Fonts
         {
           test: /\.(ttf|woff|otf|woff2|eot|svg)$/,
           exclude: /img/,
@@ -136,12 +129,12 @@ module.exports = (env = {}) => {
             options: {
               publicPath: './fonts',
               outputPath: 'fonts',
-              name: '[name].[ext]'
-            }
-          }]
+              name: '[name].[ext]',
+            },
+          }],
         },
 
-        //Loading images
+        // Loading images
         {
           test: /\.(png|gif|jpeg|jpg|svg)$/,
           exclude: /fonts/,
@@ -150,17 +143,16 @@ module.exports = (env = {}) => {
             options: {
               publicPath: './img',
               outputPath: 'img',
-              name: '[name].[ext]'
-            }
-          }]
-        }
-
-      ]
+              name: '[name].[ext]',
+            },
+          }],
+        },
+      ],
     },
 
-    //Loading plugins
-    plugins: getPlugins()
+    // Loading plugins
+    plugins: getPlugins(),
 
-  }
-
-}
+    devServer: { index },
+  };
+};
