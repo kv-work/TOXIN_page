@@ -21,7 +21,7 @@ class ExpandableCheckboxList {
   }
 }
 
-$('.js-form__checkbox_expandable').each((node) => {
+$('.js-form__checkbox_expandable').each((_, node) => {
   const checkbox = new ExpandableCheckboxList(node);
 
   return checkbox;
