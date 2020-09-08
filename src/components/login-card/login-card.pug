@@ -5,7 +5,7 @@ mixin loginCard(params)
   -
     var {label} = params
 
-  form.login_card(action="/mock-address/change-me" method="post" name="login-form")
+  form.js-login_card.login_card(action="/mock-address/change-me" method="post" name="login-form")
     h1.login_card__label=label
     .login_card__email_input
       +input({

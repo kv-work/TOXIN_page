@@ -1,10 +1,11 @@
 import './login-card.scss';
+import $ from 'jquery';
 
 class LoginCard {
   constructor(node) {
     this.$form = $(node);
 
-    this._init()
+    this._init();
   }
 
   _init() {
@@ -14,33 +15,32 @@ class LoginCard {
   _attachEventHandlers() {
     const { $form } = this;
 
-    $form.submit( e => this._submitForm(e) )
+    $form.on('submit', this._submitForm.bind(this));
   }
 
   async _submitForm(event) {
-    event.preventDefault()
+    event.preventDefault();
 
-    const {$form} = this;
+    const { $form } = this;
 
-    const formData = new FormData($form[0])
+    const formData = new FormData($form[0]);
     const url = $form[0].action;
 
     const response = await fetch(url, {
       method: 'POST',
       body: formData,
-    })
+    });
 
     if (!response.ok) {
-      // throw new Error(`Не удалость отправить данные по адресу ${url}. Статус: ${response.status}`)
-      console.log(`Не удалость отправить данные по адресу ${url}. Статус: ${response.status}`)
+      throw new Error(`Не удалость отправить данные по адресу ${url}. Статус: ${response.status}`);
     } else {
-      // Получаем ответ
-      return await response.json()
+      // const json = await response.json();
     }
-
   }
 }
 
-$('.login_card').each(function() {
-  new LoginCard(this)
-})
+$('.js-login_card').each((_, node) => {
+  const loginCard = new LoginCard(node);
+
+  return loginCard;
+});
