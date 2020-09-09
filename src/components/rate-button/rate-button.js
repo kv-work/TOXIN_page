@@ -1,26 +1,26 @@
-import './rate-button.scss'
+import './rate-button.scss';
+import $ from 'jquery';
 
 export default class RateButton {
   constructor(node) {
     this.$node = $(node);
-    this.data = this.$node.data();
 
     this.$buttons = this.$node.find('input');
 
-    this._init()
+    this._init();
   }
 
   _init() {
-    const initRate = this.data.rate;
+    const initRate = this.$node.data('rate');
 
-    this.setRate(initRate)
+    this.setRate(initRate);
   }
 
   setRate(rate) {
-    const {$buttons} = this;
-    const idxOfBtn = --rate;
+    const { $buttons } = this;
+    const idxOfBtn = rate - 1;
 
-    $buttons.eq(idxOfBtn).prop('checked', true)
-    $buttons.eq(idxOfBtn).change()
+    $buttons.eq(idxOfBtn).prop('checked', true);
+    $buttons.eq(idxOfBtn).change();
   }
 }
