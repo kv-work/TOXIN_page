@@ -1,7 +1,11 @@
 mixin pagination(params)
   -
     var {numberOfPages, description="1 – 12 из 100+ вариантов аренды", data=[]} = params
-    var classMod = (data.length != 0) ? "pagination_block_with_data" : "pagination_block_without_data"
+    var classMod = "js-pagination_block"
+    if ((data.length != 0))
+      classMod += " pagination_block_with_data"
+    else
+      classMod += " pagination_block_without_data"
 
   .pagination_block(data-rooms= data class= classMod)
     if (data.length != 0)

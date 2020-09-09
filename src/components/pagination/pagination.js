@@ -1,5 +1,6 @@
-import 'paginationjs/dist/pagination.min'
-import "paginationjs/dist/pagination.css";
+import $ from 'jquery';
+import 'paginationjs/dist/pagination.min';
+import 'paginationjs/dist/pagination.css';
 import './pagination.scss';
 import RoomCard from '../room-card/room-card';
 
@@ -11,105 +12,110 @@ class Pagination {
     this.data = this.$node.data().rooms;
     this.numOfPages = this.$pagination.data().pages;
     this.pageSize = 12;
-    this.createdData = this._createData(this.data, this.numOfPages);
+    this.createdData = Pagination._createData(this.data, this.numOfPages);
 
     if (this.data.length === 0) {
-      this.options = options
+      this.options = options;
     } else {
       this.options = {
         ...options,
         dataSource: this.createdData,
         pageSize: this.pageSize,
-        beforePaging: (page) => {
-          this._displayDescription(page)
-        },
-        
-        callback: (data) => this._createContent(data)
-      }
+        beforePaging: (page) => this._displayDescription(page),
+        callback: (data) => Pagination._createContent(data),
+      };
     }
 
-    this._init()
+    this._init();
   }
 
   _init() {
     const { $pagination, options } = this;
-    $pagination.pagination(options)
+    $pagination.pagination(options);
   }
 
-  _createData(data, totalPages) {
-    let newData = [...data];
+  static _createData(data, totalPages) {
+    const newData = [...data];
 
-    for (let i = 1; i < totalPages; i++) {
-      const shuffledData = this._shuffle(data);
-      shuffledData.forEach(elem => {
-        newData.push(elem)
-      })
-    };
+    for (let i = 1; i < totalPages; i += 1) {
+      const shuffledData = Pagination._shuffle(data);
+      shuffledData.forEach((elem) => newData.push(elem));
+    }
 
     return newData;
   }
 
-  _shuffle(arr) {
-    let j, temp;
-
-    for (let i = arr.length - 1; i > 0; i--) {
-      j = Math.floor(Math.random()*(i + 1));
-      temp = arr[j];
-      arr[j] = arr[i];
-      arr[i] = temp;
-    }
-
-    return arr;
-  }
-
-  _createContent(data) {
-    const cards = data.map(number => {
-      return RoomCard.template(number)
-    })
-
-    let html = "";
-
-    cards.forEach( card => {
-      html += card
-    })
-
-    $('#data-container').html(html);
-
-    $('#data-container').find('.js_room_card').each(function() {
-      new RoomCard(this);
-    })
-  }
-
   _displayDescription(page) {
-    const {$description, pageSize, createdData} = this;
+    const { $description, pageSize, createdData } = this;
 
     const totalItems = createdData.length > 100 ? '100+' : createdData.length;
     const displayItemsStart = pageSize * (page - 1) + 1;
-    const displayItemsEnd = (pageSize * page) > createdData.length ? totalItems.length : (pageSize * page);
+
+    let displayItemsEnd;
+    if ((pageSize * page) > createdData.length) {
+      displayItemsEnd = totalItems.length;
+    } else {
+      displayItemsEnd = pageSize * page;
+    }
+
     const displayItems = `${displayItemsStart} - ${displayItemsEnd}`;
     const descriptionString = `${displayItems} из ${totalItems} вариантов аренды`;
 
     $description.html(descriptionString);
   }
+
+  static _shuffle(arr) {
+    let j;
+    let temp;
+    const tempArr = arr;
+
+    for (let i = arr.length - 1; i > 0; i -= 1) {
+      j = Math.floor(Math.random() * (i + 1));
+      temp = arr[j];
+      tempArr[j] = arr[i];
+      tempArr[i] = temp;
+    }
+
+    return tempArr;
+  }
+
+  static _createContent(data) {
+    const cards = data.map((number) => RoomCard.template(number));
+
+    let html = '';
+
+    cards.forEach((card) => {
+      html += card;
+    });
+
+    // eslint-disable-next-line fsd/jq-cache-dom-elements
+    $('#data-container').html(html);
+
+    $('#data-container').find('.js_room_card').each(function createNewRommCard() {
+      const roomCard = new RoomCard(this);
+
+      return roomCard;
+    });
+  }
 }
 
-const pagination = $('.pagination_block').each( function() {
+$('.js-pagination_block').each(function createPagination() {
   const options = {
-    dataSource: function(done) {
+    dataSource: (done) => {
       const numberOfPages = $('.js-pagination')[0].dataset.pages;
-      let result = [];
-      for (var i = 1; i <= numberOfPages; i++) {
-          result.push(i);
+      const result = [];
+      for (let i = 1; i <= numberOfPages; i += 1) {
+        result.push(i);
       }
       done(result);
     },
     pageSize: 1,
     pageRange: 1,
     autoHidePrevious: true,
-    autoHideNext: true
-  }
+    autoHideNext: true,
+  };
 
-  const pagination = new Pagination(this, options)
-} )
+  const pagination = new Pagination(this, options);
 
-
+  return pagination;
+});
