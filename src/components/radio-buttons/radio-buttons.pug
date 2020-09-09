@@ -4,6 +4,6 @@ mixin radioButtons(params)
   -
     var {list} = params
 
-  .radio_buttons
+  .radio_buttons.js-radio_buttons
     each item, index in list
       +radio({list: item, value: index})
