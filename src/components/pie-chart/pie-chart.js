@@ -35,14 +35,10 @@ class PieChart {
 
     donutChart.append(donutHole);
 
-    let sumOfImpressions = 0;
     let currentCount = 0;
     const keys = Object.keys(impressions);
 
-    keys.forEach((key) => {
-      sumOfImpressions += impressions[key];
-    });
-
+    const sumOfImpressions = keys.reduce((sum, key) => sum + impressions[key], 0);
     const sumOfImpressionsDisplay = PieChart._createTextDisplay(sumOfImpressions);
 
     keys.forEach((key) => {
