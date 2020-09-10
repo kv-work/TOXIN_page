@@ -1,7 +1,9 @@
-import './room-card.scss'
-import roomsData from './data.json'
-import RateButton from '../rate-button/rate-button'
-import template from './template.pug'
+import './room-card.scss';
+import $ from 'jquery';
+import './image-loader';
+import roomsData from './data.json';
+import RateButton from '../rate-button/rate-button';
+import template from './template.pug';
 
 export default class RoomCard {
   constructor(node) {
@@ -14,189 +16,191 @@ export default class RoomCard {
     this.$rateBlock = this.$node.find('.room_card__rate_block');
     this.$reviewsBlock = this.$node.find('.room_card__reviews_block');
 
-    this.rateButton = new RateButton( this.$rateBlock.find('.js_rate_button')[0] );
+    this.rateButton = new RateButton(this.$rateBlock.find('.js_rate_button')[0]);
 
-    this._init()
+    this._init();
   }
 
   _init() {
     this._getData();
     this._createRoomImageBlocks();
     this._displayPrice();
-    
+
     if (this.roomData.isLux) {
       this._displayLuxSign();
     }
-    
+
     this._displayRoomRate();
     this._displayNumOfReviews();
 
-    this._attachEventHandlers()
+    this._attachEventHandlers();
   }
 
   static template(roomNum) {
-    const params = {number: roomNum};
-    return template({params})
-  } 
+    const params = { number: roomNum };
+    return template({ params });
+  }
 
   _getData() {
     this.numOfRoom = this.data.number;
-
-    this.roomData = roomsData.rooms[this.numOfRoom]
+    this.roomData = roomsData.rooms[this.numOfRoom];
   }
 
-  //Создаем карусель картинок
+  // Создаем карусель картинок
   _createRoomImageBlocks() {
-    const {$imagesBlock, numOfRoom, roomData} = this;
+    const { $imagesBlock, roomData } = this;
     const imgArr = roomData.images;
-    this.$images = $('<div>', {class: 'room_card__images'})
-    this.$indicators = $('<ol>', {class: 'room_card__indicators'})
+    this.$images = $('<div>', { class: 'room_card__images' });
+    this.$indicators = $('<ol>', { class: 'room_card__indicators' });
 
+    // Добавляем слайды
+    imgArr.forEach((item, idx) => {
+      const $roomImg = $('<div>', { class: 'room_card__image' });
 
-    //Добавляем слайды
-    imgArr.forEach((item, idx, array) => {
-      
-      const $roomImg = $('<div>', { class: 'room_card__image'});
-      const imgUrl = require(`${item}`).default;
-      
       $roomImg.css({
-          'background-image': `url(${imgUrl})`
-        })
-      
-      const  isActive = idx === 0;
+        'background-image': `url(${item})`,
+      });
+
+      const isActive = idx === 0;
 
       if (isActive) {
-        $roomImg.addClass('active')
-        this.$images.data({'active-slide': 0})
+        $roomImg.addClass('active');
+        this.$images.data({ 'active-slide': 0 });
       }
 
-      this.$images.append($roomImg)
-    })
+      this.$images.append($roomImg);
+    });
 
-    //Добавляем индикаторы
-    for (let i = 0; i < 4; i++) {
+    // Добавляем индикаторы
+    for (let i = 0; i < 4; i += 1) {
       const $indicator = $('<li>', {
         'data-slide-to': i,
-        class: 'indicator'
-      })
+        class: 'indicator',
+      });
 
       if (i === 0) {
-        $indicator.addClass('active')
-        this.$indicators.data({'active-slide': 0})
+        $indicator.addClass('active');
+        this.$indicators.data({ 'active-slide': 0 });
       }
 
       if (!imgArr[i]) {
-        $indicator.addClass('disabled')
+        $indicator.addClass('disabled');
       }
 
-      this.$indicators.append($indicator)
+      this.$indicators.append($indicator);
     }
 
-    //Элементы управления
-    this.$controlPrev = $('<div>', {class: 'room_card__control_prev'})
-    this.$controlNext = $('<div>', {class: 'room_card__control_next'})
+    // Элементы управления
+    this.$controlPrev = $('<div>', { class: 'room_card__control_prev' });
+    this.$controlNext = $('<div>', { class: 'room_card__control_next' });
 
     const $controlIconPrev = $('<i>', {
       class: 'material-icons room_card__control_icon',
-      text: 'expand_more'
-    })
+      text: 'expand_more',
+    });
     const $controlIconNext = $('<i>', {
       class: 'material-icons room_card__control_icon',
-      text: 'expand_more'
-    })
+      text: 'expand_more',
+    });
 
-    this.$controlPrev.append($controlIconPrev)
-    this.$controlNext.append($controlIconNext)
+    this.$controlPrev.append($controlIconPrev);
+    this.$controlNext.append($controlIconNext);
 
- 
-    $imagesBlock.append(this.$images)
+    $imagesBlock.append(this.$images);
 
     if (imgArr.length > 1) {
-      $imagesBlock.append(this.$controlPrev)
-      $imagesBlock.append(this.$controlNext)
+      $imagesBlock.append(this.$controlPrev);
+      $imagesBlock.append(this.$controlNext);
     }
 
-    $imagesBlock.append(this.$indicators)
+    $imagesBlock.append(this.$indicators);
   }
 
   _displayLuxSign() {
-    const {$numberBlock} = this;
+    const { $numberBlock } = this;
 
-    $numberBlock.append('<span class="room_card__lux_flag">люкс</span>')
+    $numberBlock.append('<span class="room_card__lux_flag">люкс</span>');
   }
 
   _displayPrice() {
-    const {$priceBlock, roomData} = this;
-    const formattedPrice = roomData.price.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1 ')
+    const { $priceBlock, roomData } = this;
+    const formattedPrice = roomData.price.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1 ');
 
-    $priceBlock.prepend('<span class="room_card__price">'+formattedPrice+'₽</span>')
+    $priceBlock.prepend(`<span class="room_card__price">${formattedPrice}₽</span>`);
   }
 
   _displayRoomRate() {
-    const {rateButton, roomData} = this;
+    const { rateButton, roomData } = this;
     const roomRate = roomData.rate;
-    
     rateButton.setRate(roomRate);
   }
 
   _displayNumOfReviews() {
-    const {$reviewsBlock, roomData} = this;
-    const numOfReviews = roomData.numOfReviews;
+    const { $reviewsBlock } = this;
+    const { numOfReviews } = this.roomData;
 
-    $reviewsBlock.prepend('<span class="room_card__number_of_reviews">'+numOfReviews+'</span>')
+    $reviewsBlock.prepend(`<span class="room_card__number_of_reviews">${numOfReviews}</span>`);
   }
 
   _changeSlide(slide) {
-    const {$indicators, $images, roomData} = this;
+    const { $indicators, $images, roomData } = this;
     const numOfSlides = roomData.images.length;
     const currentSlide = $images.data().activeSlide;
 
-    if (slide != currentSlide && slide <= numOfSlides) {
-      $images.find('div').eq(currentSlide).removeClass('active')
-      $images.find('div').eq(slide).addClass('active')
-  
-      $indicators.find('li').eq(currentSlide).removeClass('active')
-      $indicators.find('li').eq(slide).addClass('active')
-          
-      $images.data({'active-slide': slide})
-      $indicators.data({'active-slide': slide})
+    if (slide !== currentSlide && slide <= numOfSlides) {
+      $images.find('div').eq(currentSlide).removeClass('active');
+      $images.find('div').eq(slide).addClass('active');
+
+      $indicators.find('li').eq(currentSlide).removeClass('active');
+      $indicators.find('li').eq(slide).addClass('active');
+
+      $images.data({ 'active-slide': slide });
+      $indicators.data({ 'active-slide': slide });
     }
   }
 
   _attachEventHandlers() {
-    const {$indicators, $controlPrev, $controlNext, $images, roomData} = this;
+    const {
+      $indicators,
+      $controlPrev,
+      $controlNext,
+      $images,
+      roomData,
+    } = this;
     const numOfSlides = roomData.images.length;
 
-    $indicators.click( (e) => {
-      const $target = $(e.target)
+    $indicators.click((e) => {
+      const $target = $(e.target);
 
-      if ( $target.hasClass('indicator') && !$target.hasClass('disabled') ) {
-        const slideTo = $(e.target).data().slideTo;
+      if ($target.hasClass('indicator') && !$target.hasClass('disabled')) {
+        const { slideTo } = $(e.target).data();
 
-        this._changeSlide(slideTo)
+        this._changeSlide(slideTo);
       }
-    })
+    });
 
-    $controlPrev.click( (e) => {
-      if ( e.target.classList.contains('room_card__control_icon') ) {
+    $controlPrev.click((e) => {
+      if (e.target.classList.contains('room_card__control_icon')) {
         const currentSlide = $images.data().activeSlide;
         const slide = (currentSlide - 1 + numOfSlides) % numOfSlides;
 
         this._changeSlide(slide);
       }
-    })
+    });
 
-    $controlNext.click( (e) => {
-      if ( e.target.classList.contains('room_card__control_icon') ) {
+    $controlNext.click((e) => {
+      if (e.target.classList.contains('room_card__control_icon')) {
         const currentSlide = $images.data().activeSlide;
         const slide = (currentSlide + 1) % numOfSlides;
 
         this._changeSlide(slide);
       }
-    })
+    });
   }
 }
 
-$('.js_room_card').each(function() {
-  new RoomCard(this);
-})
+$('.js-room_card').each(function addRoomCard() {
+  const roomCard = new RoomCard(this);
+
+  return roomCard;
+});

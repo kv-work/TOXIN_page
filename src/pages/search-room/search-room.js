@@ -1,4 +1,6 @@
 import './search-room.scss';
+import $ from 'jquery';
+
 class SearchRoomContent {
   constructor(node) {
     this.$content = $(node);
@@ -7,8 +9,8 @@ class SearchRoomContent {
     this.$rooms = this.$content.find('.search_room__rooms_block');
     this.$roomCards = this.$rooms.find('#data-container');
 
-    this.$datepicker = this.$filters.find('.js_form_datepicker');
-    this.$dropdown = this.$filters.find('.js_form_dropdown');
+    this.$datepicker = this.$filters.find('.js-form_datepicker');
+    this.$dropdown = this.$filters.find('.js-form_dropdown');
 
     this._init();
   }
