@@ -1,6 +1,6 @@
 import './room-card.scss';
 import $ from 'jquery';
-import './image-loader';
+import './img/image-loader';
 import roomsData from './data.json';
 import RateButton from '../rate-button/rate-button';
 import template from './template.pug';

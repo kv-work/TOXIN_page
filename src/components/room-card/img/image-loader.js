@@ -1,5 +1,5 @@
 const imgContext = require.context(
-  '!!file-loader?name=[name].[ext]!.',
+  '!!file-loader?name=img/[name].[ext]!.',
   true,
   /\.(png)$/,
 );
