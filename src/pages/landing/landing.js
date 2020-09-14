@@ -1,38 +1,33 @@
 import './landing.scss';
+import $ from 'jquery';
 import data from './data.json';
+
 class Landing {
   constructor(node) {
     this.$landing = $(node);
     this.bgArr = data.landingBG;
     this.currentBG = 0;
-    this.images = [];
 
     this._init();
   }
 
   _init() {
-    this._preloadImages()
     this._setBGImage(this.currentBG);
 
-    const timerId = setInterval(() => {
+    setInterval(() => {
       const img = (this.currentBG + 1) % this.bgArr.length;
       this._setBGImage(img);
-    }, 10000)
-  }
-
-  _preloadImages() {
-    this.bgArr.forEach(imgUrl => {
-      const image = require(`${imgUrl}`).default;
-      this.images.push(image);
-    });
+    }, 10000);
   }
 
   _setBGImage(img) {
-    this.$landing.css({'background-image': `url(${this.images[img]})`});
+    this.$landing.css({ 'background-image': `url(${this.bgArr[img]})` });
     this.currentBG = img;
   }
 }
 
-$('.js_landing').each(function() {
-  new Landing(this)
-})
+$('.js-landing').each(function addLanding() {
+  const landing = new Landing(this);
+
+  return landing;
+});
