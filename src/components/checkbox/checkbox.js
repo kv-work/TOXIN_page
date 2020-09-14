@@ -15,9 +15,11 @@ class ExpandableCheckboxList {
     $options.click((e) => {
       e.stopPropagation();
     });
-    $list.click(function toggleClass() {
-      $(this).toggleClass('form__checkbox_expandable_opened');
-    });
+    $list.on('click', this._toggleClass.bind(this));
+  }
+
+  _toggleClass() {
+    $(this).toggleClass('form__checkbox_expandable_opened');
   }
 }
 

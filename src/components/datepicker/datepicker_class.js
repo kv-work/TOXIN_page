@@ -110,20 +110,22 @@ export default class Datepicker {
 
   // Создание обработчиков событий
   _attachEventHandlers() {
-    this.$wrapper.click((e) => {
-      this.$opener = $(e.currentTarget).find('input');
-      this.datepickerData.show();
-      if (this.isSeparated) this._openDatepicker();
-    });
+    this.$wrapper.on('click', this._clickOnWrapperHandler.bind(this));
 
-    this.clearBtn.click(() => {
-      this._clearDates();
-    });
+    this.clearBtn.on('click', this._clearDates.bind(this));
 
     // apply button event handlers
-    this.$applyBtn.click(() => {
-      this.datepickerData.hide();
-    });
+    this.$applyBtn.on('click', this._clickOnApplyBtn.bind(this));
+  }
+
+  _clickOnApplyBtn() {
+    this.datepickerData.hide();
+  }
+
+  _clickOnWrapperHandler(event) {
+    this.$opener = $(event.currentTarget).find('input');
+    this.datepickerData.show();
+    if (this.isSeparated) this._openDatepicker();
   }
 
   _selectDate(formattedDates, date) {
