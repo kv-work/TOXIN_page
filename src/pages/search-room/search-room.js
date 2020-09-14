@@ -25,50 +25,45 @@ class SearchRoomContent {
     this.data = window
       .location
       .search
-      .replace('?','')
+      .replace('?', '')
       .split('&')
-      .reduce( (prev,elem) => {
+      .reduce((prev, elem) => {
         const arr = elem.split('=');
-        prev[ decodeURIComponent(arr[0])] = decodeURIComponent(arr[1]);
-        return prev;
+        const acc = { ...prev };
+        acc[decodeURIComponent(arr[0])] = decodeURIComponent(arr[1]);
+        return acc;
       }, {});
   }
 
   _setDropdownData() {
     const { $dropdown, data } = this;
-    const total = parseInt(data['item-1'], 10)+parseInt(data['item-2'], 10)+parseInt(data['item-3'], 10);
+    const total = parseInt(data['item-1'], 10) + parseInt(data['item-2'], 10) + parseInt(data['item-3'], 10);
 
     $dropdown.data({
-      "items": {
-        "item-1": data['item-1'],
-        "item-2": data['item-2'],
-        "item-3": data['item-3']
+      items: {
+        'item-1': data['item-1'],
+        'item-2': data['item-2'],
+        'item-3': data['item-3'],
       },
-      total: total
-    })
+      total,
+    });
 
-    const $dropdownOptions = $dropdown.find('.iqdropdown-menu-option')
+    const $dropdownOptions = $dropdown.find('.iqdropdown-menu-option');
 
-    $dropdownOptions.each( function(idx) {
-      const elemData = $(this).data()
-      $(this).data('defaultcount', data[elemData.id])
-    } )
-  }
-
-  _submitForm(event) {
-    event.preventDefault();
+    $dropdownOptions.each(function setDefaultCount() {
+      const elemData = $(this).data();
+      $(this).data('defaultcount', data[elemData.id]);
+    });
   }
 
   _selectRoom(event) {
-
     const targetClasses = event.target.classList;
-    
-    if ( !( targetClasses.contains('room_card__control_prev') ||
-            targetClasses.contains('room_card__control_next') ||
-            targetClasses.contains('room_card__indicators') ||
-            targetClasses.contains('room_card__control_icon') ||
-            targetClasses.contains('indicator') ) ) {
 
+    if (!(targetClasses.contains('room_card__control_prev')
+          || targetClasses.contains('room_card__control_next')
+          || targetClasses.contains('room_card__indicators')
+          || targetClasses.contains('room_card__control_icon')
+          || targetClasses.contains('indicator'))) {
       const action = './room-details.html';
       const selectedRoom = $(event.target).closest('.room_card').data();
 
@@ -78,44 +73,51 @@ class SearchRoomContent {
 
       let requestString = '?';
       formData.forEach((value, key) => {
-        requestString += `${key}=${value}&`
+        requestString += `${key}=${value}&`;
       });
 
-      const encodeString = encodeURI(requestString.slice(0, -1))
+      const encodeString = encodeURI(requestString.slice(0, -1));
 
-      document.location.href = action + encodeString
+      document.location.href = action + encodeString;
     }
   }
 
   _getFormData() {
-    const {$filters, $dropdown} = this;
+    const { $filters, $dropdown } = this;
 
     const formData = new FormData($filters[0]);
     const dropdownData = $dropdown.data().items;
 
-    for (let key in dropdownData) {
-      formData.set(key, dropdownData[key])
-    }
+    const keysArr = Object.keys(dropdownData);
+    keysArr.forEach((key) => {
+      formData.set(key, dropdownData[key]);
+    });
 
     return formData;
   }
 
   _attachEventHandlers() {
-    const {$toggler, $filters, $roomCards} = this;
+    const { $toggler, $filters, $roomCards } = this;
 
-    $toggler.click( () => {
-      $toggler.toggleClass('opened');
-      $filters.toggleClass('opened');
-    } )
+    $toggler.on('click', this._clickOnTogglerHandler.bind(this));
 
-    $filters.submit( (e) => {
-      this._submitForm(e);
-    } )
+    $filters.on('submit', SearchRoomContent.submitForm);
 
-    $roomCards.click( (e) => this._selectRoom(e) );
+    $roomCards.on('click', this._selectRoom.bind(this));
+  }
+
+  _clickOnTogglerHandler() {
+    this.$toggler.toggleClass('opened');
+    this.$filters.toggleClass('opened');
+  }
+
+  static submitForm(event) {
+    event.preventDefault();
   }
 }
 
-$('.search_room__content').each( function() {
-  new SearchRoomContent(this);
-} )
+$('.js-search_room__content').each(function addSearchRoomContent() {
+  const searchRoomContent = new SearchRoomContent(this);
+
+  return searchRoomContent;
+});
