@@ -18,14 +18,14 @@
       </div>
       <div class="cards_grid">
         <div class="cards_grid_col">
-          <form class="room_search_card" action="./search-room.html" method="get" name="room-search-form">
+          <form class="room_search_card js-room_search_card" action="./search-room.html" method="get" name="room-search-form">
             <h1 class="room_search_card__label">Найдем номера под ваши пожелания</h1>
             <div class="room_search_card__datepicker_is_separated">
-              <div class="form_datepicker js_form_datepicker_separated">
+              <div class="form_datepicker js-form_datepicker_separated">
                 <div class="form_datepicker_wrapper">
                   <label class="form_datepicker__label like_h3">Прибытие</label>
                   <div class="form_datepicker__input_wrapper">
-                    <input class="form_datepicker__input js_datepicker_separated js_datepicker_masked start_date" type="text" name="start-date" placeholder="ДД.ММ.ГГГГ" required readonly data-date="" data-separated data-label-second="Выезд" data-value-second="">
+                    <input class="form_datepicker__input js-datepicker_separated js-datepicker_masked start_date" type="text" name="start-date" placeholder="ДД.ММ.ГГГГ" required readonly data-date="" data-separated data-label-second="Выезд" data-value-second="">
                   </div>
                 </div>
               </div>
@@ -33,7 +33,7 @@
             <div class="room_search_card__guest_select_dropdown">
               <div class="form_dropdown">
                 <label class="form_dropdown__label like_h3">Гости</label>
-                <div class="iqdropdown js_form_dropdown">
+                <div class="iqdropdown js-form_dropdown">
                   <div class="iqdropdown-selection-wrapper">
                     <p class="iqdropdown-selection">Сколько гостей</p>
                     <div class="iqdropdown-menu">
@@ -62,7 +62,7 @@
               </button>
             </div>
           </form>
-          <form class="registration_card" action="/mock-address/change-me" method="post" name="registration-form">
+          <form class="registration_card js-registration_card" action="/mock-address/change-me" method="post" name="registration-form">
             <h1 class="registration_card__label">Регистрация аккаунта</h1>
             <div class="registration_card__name_input">
               <div class="form_input">
@@ -75,7 +75,7 @@
               </div>
             </div>
             <div class="registration_card__gender_radio_buttons">
-              <div class="radio_buttons">
+              <div class="radio_buttons js-radio_buttons">
                 <label class="radio_buttons__radio radio_buttons__radio_label radio_buttons__radio_label_checked">Мужчина
                   <input class="radio_buttons__radio_input" type="radio" name="gender" checked value="0">
                 </label>
@@ -89,7 +89,7 @@
                 <label class="form_input__label">
                   <p class="like_h3">дата рождения</p>
                 </label>
-                <input class="form_input__input" name="dateOfBirth" type="text" placeholder="ДД.ММ.ГГГГ" required>
+                <input class="form_input__input js-form_input__input_masked" name="dateOfBirth" type="text" placeholder="ДД.ММ.ГГГГ" required>
               </div>
             </div>
             <div class="registration_card__email_input">
@@ -122,17 +122,17 @@
           </form>
         </div>
         <div class="cards_grid_col">
-          <form class="room_rate_card js_room_rate_card" action="/mock-address/change-me" method="post" name="room-rate-form">
+          <form class="room_rate_card js-room_rate_card" action="/mock-address/change-me" method="post" name="room-rate-form">
             <div class="room_rate_card__room_info_block">
               <div class="room_rate_card__number_block"><span class="room_rate_card__number_sign">№</span><span class="room_rate_card__number">888</span></div>
               <div class="room_rate_card__price_block"><span class="room_rate_card__price"></span><span class="room_rate_card__price_text">в сутки</span></div>
             </div>
             <div class="room_rate_card__datepicker_is_separated">
-              <div class="form_datepicker js_form_datepicker_separated">
+              <div class="form_datepicker js-form_datepicker_separated">
                 <div class="form_datepicker_wrapper">
                   <label class="form_datepicker__label like_h3">Прибытие</label>
                   <div class="form_datepicker__input_wrapper">
-                    <input class="form_datepicker__input js_datepicker_separated js_datepicker_masked start_date" type="text" name="start-date" placeholder="ДД.ММ.ГГГГ" required readonly data-date="19.08.2019" data-separated data-label-second="Выезд" data-value-second="23.08.2019">
+                    <input class="form_datepicker__input js-datepicker_separated js-datepicker_masked start_date" type="text" name="start-date" placeholder="ДД.ММ.ГГГГ" required readonly data-date="19.08.2019" data-separated data-label-second="Выезд" data-value-second="23.08.2019">
                   </div>
                 </div>
               </div>
@@ -140,7 +140,7 @@
             <div class="room_rate_card__guest_select_dropdown">
               <div class="form_dropdown">
                 <label class="form_dropdown__label like_h3">Гости</label>
-                <div class="iqdropdown js_form_dropdown">
+                <div class="iqdropdown js-form_dropdown">
                   <div class="iqdropdown-selection-wrapper">
                     <p class="iqdropdown-selection">Сколько гостей</p>
                     <div class="iqdropdown-menu">
@@ -185,7 +185,7 @@
               </button>
             </div>
           </form>
-          <form class="login_card" action="/mock-address/change-me" method="post" name="login-form">
+          <form class="js-login_card login_card" action="/mock-address/change-me" method="post" name="login-form">
             <h1 class="login_card__label">Войти</h1>
             <div class="login_card__email_input">
               <div class="form_input">
@@ -210,7 +210,7 @@
         </div>
         <div class="cards_grid_col"> 
           <div class="calendar_card js_form_datepicker_inline" data-date="19.08.2019" data-value-second="23.08.2019"> </div>
-          <div class="room_card js_room_card" data-number="888">
+          <div class="room_card js-room_card" data-number="888">
             <div class="room_card__images_block"></div>
             <div class="room_card__room_info_block">
               <div class="room_card__number_block"><span class="room_card__number_sign">№</span><span class="room_card__number">888</span></div>
@@ -228,7 +228,7 @@
               <div class="room_card__reviews_block"><span class="room_card__review_text">Отзывов</span></div>
             </div>
           </div>
-          <div class="room_card js_room_card" data-number="840">
+          <div class="room_card js-room_card" data-number="840">
             <div class="room_card__images_block"></div>
             <div class="room_card__room_info_block">
               <div class="room_card__number_block"><span class="room_card__number_sign">№</span><span class="room_card__number">840</span></div>

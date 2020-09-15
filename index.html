@@ -8,7 +8,7 @@
     <title>Landing Page</title>
   <link href="main.css" rel="stylesheet"></head>
   <body>
-    <div class="landing js_landing">
+    <div class="landing js-landing">
       <header class="header">
         <div class="header__elements"><a class="header__logo" href="./"><img src="./img/Logo.svg" alt="TOXIN"></a>
           <nav class="header__nav_bar">
@@ -39,14 +39,14 @@
       </header>
       <div class="landing__content">
         <div class="landing__form_search_room">
-          <form class="room_search_card" action="./search-room.html" method="get" name="room-search-form">
+          <form class="room_search_card js-room_search_card" action="./search-room.html" method="get" name="room-search-form">
             <h1 class="room_search_card__label">Найдем номера под ваши пожелания</h1>
             <div class="room_search_card__datepicker_is_separated">
-              <div class="form_datepicker js_form_datepicker_separated">
+              <div class="form_datepicker js-form_datepicker_separated">
                 <div class="form_datepicker_wrapper">
                   <label class="form_datepicker__label like_h3">Прибытие</label>
                   <div class="form_datepicker__input_wrapper">
-                    <input class="form_datepicker__input js_datepicker_separated js_datepicker_masked start_date" type="text" name="start-date" placeholder="ДД.ММ.ГГГГ" required readonly data-date="" data-separated data-label-second="Выезд" data-value-second="">
+                    <input class="form_datepicker__input js-datepicker_separated js-datepicker_masked start_date" type="text" name="start-date" placeholder="ДД.ММ.ГГГГ" required readonly data-date="" data-separated data-label-second="Выезд" data-value-second="">
                   </div>
                 </div>
               </div>
@@ -54,7 +54,7 @@
             <div class="room_search_card__guest_select_dropdown">
               <div class="form_dropdown">
                 <label class="form_dropdown__label like_h3">Гости</label>
-                <div class="iqdropdown js_form_dropdown">
+                <div class="iqdropdown js-form_dropdown">
                   <div class="iqdropdown-selection-wrapper">
                     <p class="iqdropdown-selection">Сколько гостей</p>
                     <div class="iqdropdown-menu">

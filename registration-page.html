@@ -39,7 +39,7 @@
       </header>
       <div class="registration_page__content">
         <div class="registration_page__registration_form">
-          <form class="registration_card" action="/mock-address/change-me" method="post" name="registration-form">
+          <form class="registration_card js-registration_card" action="/mock-address/change-me" method="post" name="registration-form">
             <h1 class="registration_card__label">Регистрация аккаунта</h1>
             <div class="registration_card__name_input">
               <div class="form_input">
@@ -52,7 +52,7 @@
               </div>
             </div>
             <div class="registration_card__gender_radio_buttons">
-              <div class="radio_buttons">
+              <div class="radio_buttons js-radio_buttons">
                 <label class="radio_buttons__radio radio_buttons__radio_label radio_buttons__radio_label_checked">Мужчина
                   <input class="radio_buttons__radio_input" type="radio" name="gender" checked value="0">
                 </label>
@@ -66,7 +66,7 @@
                 <label class="form_input__label">
                   <p class="like_h3">дата рождения</p>
                 </label>
-                <input class="form_input__input" name="dateOfBirth" type="text" placeholder="ДД.ММ.ГГГГ" required>
+                <input class="form_input__input js-form_input__input_masked" name="dateOfBirth" type="text" placeholder="ДД.ММ.ГГГГ" required>
               </div>
             </div>
             <div class="registration_card__email_input">
