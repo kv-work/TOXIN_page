@@ -19,7 +19,7 @@ class ExpandableCheckboxList {
   }
 
   _toggleClass() {
-    $(this).toggleClass('form__checkbox_expandable_opened');
+    this.$list.toggleClass('form__checkbox_expandable_opened');
   }
 }
 
