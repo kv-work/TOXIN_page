@@ -1,5 +1,5 @@
-@import "../../settings.scss";
-@import "./__option/option.scss";
+@import '../../settings.scss';
+@import './__option/option.scss';
 
 .form__checkbox {
 
@@ -36,7 +36,7 @@
       }
 
       &::after {
-        font-family: "Material Icons";
+        font-family: 'Material Icons';
         width: 2.75rem;
         height: 2.75rem;
         font-size: 1.5rem;
@@ -44,13 +44,13 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        content: "expand_more";
+        content: 'expand_more';
       }
     }
 
     .checkbox__options {
       display: none;
-      padding-top: 0.25rem;    
+      padding-top: 0.25rem;
     }
 
     &_opened {
@@ -60,7 +60,7 @@
 
       & .checkbox__options {
         display: grid;
-        grid-row-gap: 0.625rem;     
+        grid-row-gap: 0.625rem;
       }
     }
   }

@@ -73,7 +73,7 @@
           background: $secondary-gradient;
           border-radius: 1.375rem;
           cursor: pointer;
-          
+
           &:before {
             font-family: Material Icons;
             font-style: normal;
@@ -82,7 +82,7 @@
             line-height: 1.25rem;
             display: flex;
             align-items: center;
-            text-align: center;            
+            text-align: center;
             color: #FFFFFF;
             content: "arrow_back";
           }
@@ -97,7 +97,7 @@
           background: $secondary-gradient;
           border-radius: 1.375rem;
           cursor: pointer;
-          
+
           &:before {
             font-family: Material Icons;
             font-style: normal;
@@ -106,7 +106,7 @@
             line-height: 1.25rem;
             display: flex;
             align-items: center;
-            text-align: center;            
+            text-align: center;
             color: #FFFFFF;
             content: "arrow_forward";
           }

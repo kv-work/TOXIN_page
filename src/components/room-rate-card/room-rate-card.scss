@@ -93,9 +93,6 @@
     grid-column: 1 / 3;
   }
 
-  // &__days_total_cost {
-  // }
-
   &__services_info,
   &__additional_services_info {
     position: relative;
@@ -196,10 +193,10 @@
 
 @media screen and (max-width: 340px) {
   .room_rate_card {
-    
+
     border-top: 0.0625rem solid rgba(0, 0, 0, 0.12);
     border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.12); 
-    
+
     &__datepicker_is_separated {
       margin-top: 1.125rem;
       max-width: 20rem;

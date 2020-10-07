@@ -142,7 +142,7 @@
     &__navigation_block,
     &__about_us_block,
     &__support_block {
-      display: flex;      
+      display: flex;
       position: relative;
     }
 
@@ -175,7 +175,6 @@
       top: 1.25rem;
       padding: 0.9375rem;
     }
-    
 
     &__support_block:hover > div {
       display: block;
@@ -218,11 +217,10 @@
       margin: 0 auto;
     }
 
-    
     &__navigation_block:hover > div li {
         text-align: left;
     }
-    
+
     &__about_us_block:hover > div,
     &__support_block:hover > div {
       top: 1.25rem;

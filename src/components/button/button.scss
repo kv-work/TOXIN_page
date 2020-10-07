@@ -1,4 +1,4 @@
-@import "../../settings.scss";
+@import '../../settings.scss';
 
 .button {
   font-family: Montserrat, Arial, sans-serif;
@@ -10,7 +10,6 @@
   color: $primary-purple;
   padding: 0 1.125rem;
   border: 0.125rem solid $primary-purple;
-  // letter-spacing: -0.02em;
   padding-bottom: 0.0625rem;
   max-height: 2.75rem;
   height: 100%;

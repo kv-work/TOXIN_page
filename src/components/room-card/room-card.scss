@@ -5,7 +5,6 @@
   box-shadow: 0rem 0.625rem 1.25rem $dark-5;
   border-radius: 0.25rem;
   width: 16.875rem;
-  
 
   &__room_info_block {
     display: grid;
@@ -85,7 +84,6 @@
     width: 16.875rem;
     position: relative;
     border-radius: 0.25rem;
-    
   }
 
   &__indicators {
@@ -182,5 +180,4 @@
       cursor: pointer;
     }
   }
-
 }

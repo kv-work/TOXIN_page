@@ -13,7 +13,7 @@
   &_label_checked {
     color: $dark-75;
   }
-  
+
   &_input {
     display: inline-block;
     grid-column: 1;
@@ -38,7 +38,6 @@
       position: relative;
 
       &::after {
-        // display: inline-block;
         width: 60%;
         height: 60%;
         border-radius: 50%;
