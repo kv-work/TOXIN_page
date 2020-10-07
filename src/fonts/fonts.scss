@@ -1,4 +1,4 @@
-@import "./fontawesome.scss";
+@import './fontawesome.scss';
 
 @font-face {
   font-family: Quicksand;
@@ -59,12 +59,12 @@
   font-style: normal;
   font-weight: 400;
   font-display: auto;
-  src: url("font-awesome/fa-brands-400.eot");
-  src: url("font-awesome/fa-brands-400.eot?#iefix") format("embedded-opentype"),
-    url("font-awesome/fa-brands-400.woff2") format("woff2"),
-    url("font-awesome/fa-brands-400.woff") format("woff"),
-    url("font-awesome/fa-brands-400.ttf") format("truetype"),
-    url("font-awesome/fa-brands-400.svg#fontawesome") format("svg"); }
+  src: url('font-awesome/fa-brands-400.eot');
+  src: url('font-awesome/fa-brands-400.eot?#iefix') format('embedded-opentype'),
+    url('font-awesome/fa-brands-400.woff2') format('woff2'),
+    url('font-awesome/fa-brands-400.woff') format('woff'),
+    url('font-awesome/fa-brands-400.ttf') format('truetype'),
+    url('font-awesome/fa-brands-400.svg#fontawesome') format('svg'); }
 
 .fab {
   font-family: 'Font Awesome 5 Brands';

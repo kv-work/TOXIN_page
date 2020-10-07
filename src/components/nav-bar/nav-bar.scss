@@ -1,4 +1,4 @@
-@import "../../settings.scss";
+@import '../../settings.scss';
 
 .nav_bar {
   list-style-type: none;
@@ -45,13 +45,13 @@
     color: $dark-50;
 
     &::after {
-      font-family: "Material Icons";
+      font-family: 'Material Icons';
       font-size: 24px;
       line-height: 20px;
       display: flex;
       justify-content: center;
       align-items: center;
-      content: "expand_more";
+      content: 'expand_more';
       color: $dark-50;
     }
 
@@ -106,13 +106,13 @@
       justify-content: flex-end;
 
       &::before {
-        font-family: "Material Icons";
+        font-family: 'Material Icons';
         font-size: 1.5rem;
         line-height: 1.25rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        content: "expand_more";
+        content: 'expand_more';
         color: $dark-50;
       }
 

@@ -1,4 +1,4 @@
-@import "../../settings.scss";
+@import '../../settings.scss';
 
 .like_button {
   border: 0.0625rem solid $dark-25;
@@ -17,7 +17,7 @@
     color: $dark-25;
 
     &::before {
-      font-family: "Material Icons";
+      font-family: 'Material Icons';
       font-size: 0.625rem;
       line-height: 1.25rem;
       display: inline-block;
@@ -25,7 +25,7 @@
       width: 1.25rem;
       height: 1.25rem;
       text-align: center;
-      content: "favorite";
+      content: 'favorite';
       vertical-align: middle;
     }
 

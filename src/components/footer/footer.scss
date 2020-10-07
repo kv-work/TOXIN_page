@@ -1,4 +1,4 @@
-@import "../../settings.scss";
+@import '../../settings.scss';
 
 .footer {
   background: #FFFFFF;
@@ -149,13 +149,13 @@
     &__navigation_block::after,
     &__about_us_block::after,
     &__support_block::after {
-      font-family: "Material Icons";
+      font-family: 'Material Icons';
       font-size: 1.25rem;
       line-height: 0.9375rem;
       display: flex;
       justify-content: center;
       align-items: center;
-      content: "expand_more";
+      content: 'expand_more';
       color: $dark-50;
       margin-right: 0;
     }

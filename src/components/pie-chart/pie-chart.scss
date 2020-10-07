@@ -1,4 +1,4 @@
-@import "../../settings.scss";
+@import '../../settings.scss';
 
 .pie_chart {
 
@@ -26,7 +26,7 @@
     list-style: none;
   }
 
-  [class^="pie_chart__legend_list_item"] {
+  [class^='pie_chart__legend_list_item'] {
     display: grid;
     grid-template-columns: auto 1fr;
     column-gap: 0.3125rem;

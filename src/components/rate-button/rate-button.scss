@@ -1,4 +1,4 @@
-@import "../../settings.scss";
+@import '../../settings.scss';
 
 .rate_button,
 .rate_button_disabled {
@@ -28,7 +28,7 @@
       display: flex;
       align-items: center;
       text-align: center;
-      content: "star";
+      content: 'star';
       background: $primary-gradient;
       -webkit-background-clip: text;
       background-clip: text;
@@ -41,7 +41,7 @@
     }
 
     &:checked ~ input::after {
-      content: "star_border";
+      content: 'star_border';
     }
   }
 }

@@ -1,4 +1,4 @@
-@import "../../settings.scss";
+@import '../../settings.scss';
 
 .pagination_block {
   display: flex;
@@ -84,7 +84,7 @@
             align-items: center;
             text-align: center;
             color: #FFFFFF;
-            content: "arrow_back";
+            content: 'arrow_back';
           }
 
           & a {
@@ -108,7 +108,7 @@
             align-items: center;
             text-align: center;
             color: #FFFFFF;
-            content: "arrow_forward";
+            content: 'arrow_forward';
           }
 
           & a {
