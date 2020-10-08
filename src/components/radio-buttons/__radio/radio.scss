@@ -38,8 +38,8 @@
       position: relative;
 
       &::after {
-        width: 60%;
-        height: 60%;
+        width: 0.75rem;
+        height: 0.75rem;
         border-radius: 50%;
         background: $primary-gradient;
         content: '';
