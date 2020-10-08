@@ -5,11 +5,28 @@
   background: #FFFFFF;
   box-shadow: 0rem 0.625rem 1.25rem $dark-5;
 
+  @media screen and (max-width: 76.25rem) {
+    padding: 0.9375rem 1.875rem;
+  }
+
+  @media screen and (max-width: 37.5rem) {
+    padding: 0.9375rem;
+  }
+
   &__elements {
     max-width: 72.5rem;
     margin: auto;
     display: flex;
     align-items: center;
+
+    @media screen and (max-width: 46.875rem) {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    @media screen and (max-width: 37.5rem) {
+      flex-wrap: wrap;
+    }
 
     & div:first-child {
       margin-right: 1.25rem;
@@ -18,17 +35,85 @@
 
   &__logo {
     line-height: 0.625rem;
+
+    @media screen and (max-width: 37.5rem) {
+      order: 1;
+      margin-top: 0.9375rem;
+    }
   }
 
   &__nav_bar {
     position: relative;
     margin-left: auto;
     flex-shrink: 2;
+
+    @media screen and (max-width: 46.875rem) {
+      order: 2;
+      flex-basis: 100%;
+      margin-top: 0.9375rem;
+    }
+
+    @media screen and (max-width: 37.5rem) {
+      flex-basis: auto;
+      display: flex;
+      padding: 0 0.625rem 0 0.9375rem;
+      border-left: 0.0625rem solid $dark-10;
+      border-right: 0.0625rem solid $dark-10;
+    }
+
+    & > ul {
+
+      @media screen and (max-width: 37.5rem) {
+        display: none;
+      }
+    }
+
+    &::after {
+
+      @media screen and (max-width: 37.5rem) {
+        font-family: Montserrat, Arial, sans-serif;
+        font-size: 1rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        content: 'menu';
+      }
+    }
+
+    &::before {
+
+      @media screen and (max-width: 37.5rem) {
+        font-family: 'Material Icons';
+        font-size: 1.875rem;
+        line-height: 1.25rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        content: 'expand_more';
+        color: $dark-50;
+      }
+    }
+
+    &:hover > ul {
+
+      @media screen and (max-width: 37.5rem) {
+        display: block;
+        position: absolute;
+        top: 1.5rem;
+        right: 0;
+        background-color: #fff;
+        z-index: 999;
+      }
+    }
   }
 
   &__buttons {
     display: flex;
     height: 2.125rem;
+
+    @media screen and (max-width: 37.5rem) {
+      flex-basis: 100%;
+      justify-content: flex-end;
+    }
 
     & > a:first-child {
       margin-right: 1.25rem;
@@ -48,50 +133,19 @@
     border-left: 0.0625rem solid $dark-10;
     padding-left: 1.875rem;
     margin-left: 0.3125rem;
-  }
-}
 
-@media screen and (max-width: 76.25rem) {
-  .header {
-    padding: 0.9375rem 1.875rem;
-  }
-}
-
-@media screen and (max-width: 46.875rem) {
-  .header {
-
-    &__elements {
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-
-    &__nav_bar {
-      order: 2;
+    @media screen and (max-width: 37.5rem) {
       flex-basis: 100%;
-      margin-top: 0.9375rem;
+      justify-content: flex-end;
     }
   }
 }
 
 @media screen and (max-width: 37.5rem) {
   .header {
-    padding: 0.9375rem;
-
-    &__elements {
-      flex-wrap: wrap;
-    }
-
-    &__logo {
-      order: 1;
-      margin-top: 0.9375rem;
-    }
 
     &__nav_bar {
-      flex-basis: auto;
-      display: flex;
-      padding: 0 0.625rem 0 0.9375rem;
-      border-left: 0.0625rem solid $dark-10;
-      border-right: 0.0625rem solid $dark-10;
+      
 
       & > ul {
         display: none;
@@ -124,12 +178,6 @@
         background-color: #fff;
         z-index: 999;
       }
-    }
-
-    &__buttons,
-    &__user_name {
-      flex-basis: 100%;
-      justify-content: flex-end;
     }
   }
 }
