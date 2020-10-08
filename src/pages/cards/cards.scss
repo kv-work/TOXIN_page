@@ -9,10 +9,18 @@
   position: relative;
   margin-left: 3.4375rem;
 
+  @media screen and (max-width: 53.4375rem) {
+    margin-left: 0;
+  }
+
   &__logo_wrapper {
     position: absolute;
     top: 1.875rem;
     left: -1.625rem;
+
+    @media screen and (max-width: 53.4375rem) {
+      left: 1.875rem;
+    }
   }
 
   &_grid {
@@ -35,16 +43,6 @@
       & > form:nth-child(n) {
         margin-bottom: 2.5rem;
       }
-    }
-  }
-}
-
-@media screen and (max-width: 855px) {
-  .cards {
-    margin-left: 0;
-
-    &__logo_wrapper {
-      left: 1.875rem;
     }
   }
 }

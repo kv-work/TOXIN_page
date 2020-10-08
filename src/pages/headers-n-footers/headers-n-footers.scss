@@ -17,10 +17,8 @@
   position: absolute;
   top: 1.875rem;
   left: calc(50% - 45rem + 1.875rem);
-}
 
-@media screen and (max-width: 90rem) {
-  .logo_wrapper {
+  @media screen and (max-width: 90rem) {
     left: 1.875rem;
   }
 }
