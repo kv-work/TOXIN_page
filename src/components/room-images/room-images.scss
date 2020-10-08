@@ -6,39 +6,41 @@
   height: 100%;
   width: 100%;
 
-  &__image:nth-child(1) {
-    grid-row: 1/3;
-    background-position: center;
-  }
-
-  &__image:nth-child(n) {
-    background-repeat: no-repeat;
-  }
-
-  &__indicators_block,
-  &__control_prev,
-  &__control_next {
-    display: none;
-  }
-}
-
-@media screen and (max-width: 57.625rem) {
-  .room_images {
+  @media screen and (max-width: 57.625rem) {
     display: block;
     height: 15.25rem;
     position: relative;
+  }
 
-    &__image {
+  &__image {
+
+    @media screen and (max-width: 57.625rem) {
       display: none;
       height: 100%;
       background-size: cover;
+    }
 
-      &.active {
+    &.active {
+
+      @media screen and (max-width: 57.625rem) {
         display: block;
       }
     }
 
-    &__indicators_block {
+    &:nth-child(1) {
+      grid-row: 1/3;
+      background-position: center;
+    }
+  
+    &:nth-child(n) {
+      background-repeat: no-repeat;
+    }
+  }
+
+  &__indicators_block {
+    display: none;
+
+    @media screen and (max-width: 57.625rem) {
       padding: 0;
       margin: 0;
       position: absolute;
@@ -48,8 +50,11 @@
       bottom: 0.9375rem;
       width: 2.5rem;
       justify-content: space-between;
+    }
 
-      & > li {
+    & > li {
+
+      @media screen and (max-width: 57.625rem) {
         list-style-type: none;
         width: 0.4688rem;
         height: 0.4688rem;
@@ -58,19 +63,29 @@
         box-sizing: border-box;
         box-shadow: 0rem 0.3125rem 0.3125rem rgba(31, 32, 65, 0.3);
         cursor: pointer;
+      }
 
-        &.active {
+      &.active {
+
+        @media screen and (max-width: 57.625rem) {
           border: none;
           background-color: #fff;
         }
+      }
 
-        &.disabled {
+      &.disabled {
+
+        @media screen and (max-width: 57.625rem) {
           cursor: default;
         }
       }
     }
+  }
 
-    &__control_prev {
+  &__control_prev {
+    display: none;
+
+    @media screen and (max-width: 57.625rem) {
       position: absolute;
       left: 0;
       top: 0;
@@ -79,8 +94,11 @@
       display: flex;
       align-items: center;
       border-top-left-radius: 0.25rem;
+    }
 
-      & .room_images__control_icon {
+    & .room_images__control_icon {
+
+      @media screen and (max-width: 57.625rem) {
         font-size: 1.5rem;
         height: 2.75rem;
         width: 2.75rem;
@@ -92,8 +110,12 @@
         cursor: pointer;
       }
     }
+  }
 
-    &__control_next {
+  &__control_next {
+    display: none;
+
+    @media screen and (max-width: 57.625rem) {
       position: absolute;
       right: 0;
       top: 0;
@@ -103,8 +125,11 @@
       display: flex;
       align-items: center;
       border-top-left-radius: 0.25rem;
+    }
 
-      & .room_images__control_icon {
+    & .room_images__control_icon {
+
+      @media screen and (max-width: 57.625rem) {
         font-size: 1.5rem;
         height: 2.75rem;
         width: 2.75rem;
