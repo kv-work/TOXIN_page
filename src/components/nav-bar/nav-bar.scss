@@ -137,6 +137,10 @@
   &_ru {
     & > .nav_bar__item {
       margin-right: 1.4375rem;
+
+      @media screen and (max-width: 37.5rem) {
+        margin-right: 0;
+      }
     }
   }
 }
