@@ -23,7 +23,7 @@ mixin footer(params)
   footer(class=classList)
     div(class= (withWidgets) ? "footer__logo_n_widgets_block" : "footer__logo")
       .footer__logo_block
-        img(class="footer__logo_img" src=require('../../img/Logo.svg').default alt="TOXIN")
+        img(class="footer__logo_img" src="./img/logo.svg" alt="TOXIN")
         .footer__description= descriptionText
       if (withWidgets)
         .footer__widgets_block

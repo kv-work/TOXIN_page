@@ -21,7 +21,7 @@ mixin header(params)
     .header__elements
       
       a.header__logo(href="./")
-        img(src=require("../../img/Logo.svg").default alt="TOXIN")
+        img(src="./img/logo.svg" alt="TOXIN")
       nav.header__nav_bar
         +navBar({itemList: navigationList, display: "horizontal", lang: lang})
 
