@@ -2,9 +2,9 @@
   "rooms":{
     "888": {
       "images": [
-        "./img/room_888_1.png",
-        "./img/room_888_2.png",
-        "./img/room_888_3.png"
+        "./img/room-888-1.png",
+        "./img/room-888-2.png",
+        "./img/room-888-3.png"
       ],
       "price": 9990,
       "isLux": true,
@@ -12,77 +12,77 @@
       "numOfReviews": 145
     },
     "840": {
-      "images": ["./img/room_840.png"],
+      "images": ["./img/room-840.png"],
       "price": 9900,
       "isLux": false,
       "rate": 4,
       "numOfReviews": 65
     },
     "980": {
-      "images": ["./img/room_980.png"],
+      "images": ["./img/room-980.png"],
       "price": 8500,
       "isLux": true,
       "rate": 3,
       "numOfReviews": 35
     },
     "856": {
-      "images": ["./img/room_856.png"],
+      "images": ["./img/room-856.png"],
       "price": 7300,
       "isLux": false,
       "rate": 5,
       "numOfReviews": 19
     },
     "740": {
-      "images": ["./img/room_740.png"],
+      "images": ["./img/room-740.png"],
       "price": 6000,
       "isLux": false,
       "rate": 4,
       "numOfReviews": 44
     },
     "982": {
-      "images": ["./img/room_982.png"],
+      "images": ["./img/room-982.png"],
       "price": 5800,
       "isLux": false,
       "rate": 3,
       "numOfReviews": 56
     },
     "678": {
-      "images": ["./img/room_678.png"],
+      "images": ["./img/room-678.png"],
       "price": 5500,
       "isLux": false,
       "rate": 5,
       "numOfReviews": 45
     },
     "450": {
-      "images": ["./img/room_450.png"],
+      "images": ["./img/room-450.png"],
       "price": 5300,
       "isLux": false,
       "rate": 4,
       "numOfReviews": 39
     },
     "350": {
-      "images": ["./img/room_350.png"],
+      "images": ["./img/room-350.png"],
       "price": 5000,
       "isLux": false,
       "rate": 3,
       "numOfReviews": 77
     },
     "666": {
-      "images": ["./img/room_666.png"],
+      "images": ["./img/room-666.png"],
       "price": 5000,
       "isLux": false,
       "rate": 5,
       "numOfReviews": 25
     },
     "444": {
-      "images": ["./img/room_444.png"],
+      "images": ["./img/room-444.png"],
       "price": 5000,
       "isLux": false,
       "rate": 3,
       "numOfReviews": 15
     },
     "352": {
-      "images": ["./img/room_352.png"],
+      "images": ["./img/room-352.png"],
       "price": 5000,
       "isLux": false,
       "rate": 3,
