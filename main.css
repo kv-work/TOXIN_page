@@ -68,7 +68,7 @@ html{box-sizing:border-box}html *{box-sizing:inherit}html *::after,html *::befor
 
 .headers_n_footers{max-width:120rem;min-width:20rem;margin:auto;padding-top:9.375rem;background-color:#f4f4f6;position:relative;display:grid;grid-template-columns:1fr;row-gap:2.5rem}.logo_wrapper{position:absolute;top:1.875rem;left:calc(50% - 45rem + 1.875rem)}@media screen and (max-width: 90rem){.logo_wrapper{left:1.875rem}}
 
-.landing{display:grid;grid-template-rows:auto 1fr auto;transition:background-image 1s;background-position:top center;background-repeat:no-repeat}.landing__content{width:100%;max-width:72.5rem;margin:70px auto 22px;display:flex;flex-direction:column;justify-content:space-between}.landing__form_search_room{max-width:23.75rem;margin-bottom:314px}.landing__slogan{text-align:right;width:18.75rem;align-self:flex-end;margin:0 -5px}
+.landing{display:grid;grid-template-rows:auto 1fr auto;transition:background-image 1s;background-position:bottom center;background-repeat:no-repeat}.landing__content{width:100%;max-width:72.5rem;margin:70px auto 22px;display:flex;flex-direction:column;justify-content:space-between}.landing__form_search_room{max-width:23.75rem;margin-bottom:314px}.landing__slogan{text-align:right;width:18.75rem;align-self:flex-end;margin:0 -5px}
 
 .login_page{height:100vh;max-height:74.8125rem;display:grid;grid-template-rows:auto 1fr auto;background-image:url(./img/image4.png);background-position:top center;background-repeat:no-repeat}.login_page__content{display:flex;justify-content:center;align-items:center}.login_page__login_form{display:flex;align-items:center;max-width:23.75rem;width:100%;margin:10.1875rem auto}
 
