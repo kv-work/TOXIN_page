@@ -2,40 +2,40 @@
 
 @font-face {
   font-family: Quicksand;
-  src: url('quicksand/quicksand-bold/Quicksand-Bold.eot');
-  src: local('☺'), url('quicksand/quicksand-bold/Quicksand-Bold.ttf') format('truetype'),
-    url('quicksand/quicksand-bold/Quicksand-Bold.woff') format('woff'),
-    url('quicksand/quicksand-bold/Quicksand-Bold.svg') format('svg');
+  src: url('quicksand/quicksand-bold/quicksand-bold.eot');
+  src: local('☺'), url('quicksand/quicksand-bold/quicksand-bold.ttf') format('truetype'),
+    url('quicksand/quicksand-bold/quicksand-bold.woff') format('woff'),
+    url('quicksand/quicksand-bold/quicksand-bold.svg') format('svg');
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
   font-family: Quicksand;
-  src: url('quicksand/quicksand-regular/Quicksand-Regular.eot');
-  src: local('☺'), url('quicksand/quicksand-regular/Quicksand-Regular.ttf') format('truetype'),
-    url('quicksand/quicksand-regular/Quicksand-Regular.woff') format('woff'),
-    url('quicksand/quicksand-regular/Quicksand-Regular.svg') format('svg');
+  src: url('quicksand/quicksand-regular/quicksand-regular.eot');
+  src: local('☺'), url('quicksand/quicksand-regular/quicksand-regular.ttf') format('truetype'),
+    url('quicksand/quicksand-regular/quicksand-regular.woff') format('woff'),
+    url('quicksand/quicksand-regular/quicksand-regular.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: Montserrat;
-  src: url('montserrat/montserrat-regular/Montserrat-Regular.eot');
-  src: local('☺'), url('montserrat/montserrat-regular/Montserrat-Regular.ttf') format('truetype'),
-    url('montserrat/montserrat-regular/Montserrat-Regular.woff') format('woff'),
-    url('montserrat/montserrat-regular/Montserrat-Regular.svg') format('svg');
+  src: url('montserrat/montserrat-regular/montserrat-regular.eot');
+  src: local('☺'), url('montserrat/montserrat-regular/montserrat-regular.ttf') format('truetype'),
+    url('montserrat/montserrat-regular/montserrat-regular.woff') format('woff'),
+    url('montserrat/montserrat-regular/montserrat-regular.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: Montserrat;
-  src: url('montserrat/montserrat-bold/Montserrat-Bold.eot');
+  src: url('montserrat/montserrat-bold/montserrat-bold.eot');
   src: local('☺'), url('montserrat/montserrat-bold/Montserrat-Bold.ttf') format('truetype'),
-    url('montserrat/montserrat-bold/Montserrat-Bold.woff') format('woff'),
-    url('montserrat/montserrat-bold/Montserrat-Bold.svg') format('svg');
+    url('montserrat/montserrat-bold/montserrat-bold.woff') format('woff'),
+    url('montserrat/montserrat-bold/montserrat-bold.svg') format('svg');
   font-weight: bold;
   font-style: normal;
 }
@@ -45,11 +45,11 @@
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: bold;
-  src: url('open-sans/open-sans-bold/OpenSans-Bold.eot');
-  src:  local('Open Sans Bold'), local('OpenSans-Bold'), 
-        url('open-sans/open-sans-bold/OpenSans-Bold.woff2') format('woff2'),
-        url('open-sans/open-sans-bold/OpenSans-Bold.ttf') format('truetype'),
-        url('open-sans/open-sans-bold/OpenSans-Bold.woff') format('woff');
+  src: url('open-sans/open-sans-bold/open-sans-bold.eot');
+  src:  local('Open Sans Bold'), local('open-sans-bold'), 
+        url('open-sans/open-sans-bold/open-sans-bold.woff2') format('woff2'),
+        url('open-sans/open-sans-bold/open-sans-bold.ttf') format('truetype'),
+        url('open-sans/open-sans-bold/open-sans-bold.woff') format('woff');
   unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
 
