@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png">
     <title>Landing Page</title>
   <link href="main.css" rel="stylesheet"></head>
   <body>
-    <div class="landing js_landing">
+    <div class="landing js-landing">
       <header class="header">
-        <div class="header__elements"><a class="header__logo" href="./"><img src="./img/Logo.svg" alt="TOXIN"></a>
+        <div class="header__elements"><a class="header__logo" href="./"><img src="./img/logo.svg" alt="TOXIN"></a>
           <nav class="header__nav_bar">
             <ul class="nav_bar nav_bar_ru">
               <li class="nav_bar__item"><a class="nav_bar__item_link" href="/mock-address/change-me">О нас</a></li>
@@ -39,14 +39,14 @@
       </header>
       <div class="landing__content">
         <div class="landing__form_search_room">
-          <form class="room_search_card" action="./search-room.html" method="get" name="room-search-form">
+          <form class="room_search_card js-room_search_card" action="./search-room.html" method="get" name="room-search-form">
             <h1 class="room_search_card__label">Найдем номера под ваши пожелания</h1>
             <div class="room_search_card__datepicker_is_separated">
-              <div class="form_datepicker js_form_datepicker_separated">
+              <div class="form_datepicker js-form_datepicker_separated">
                 <div class="form_datepicker_wrapper">
                   <label class="form_datepicker__label like_h3">Прибытие</label>
                   <div class="form_datepicker__input_wrapper">
-                    <input class="form_datepicker__input js_datepicker_separated js_datepicker_masked start_date" type="text" name="start-date" placeholder="ДД.ММ.ГГГГ" required readonly data-date="" data-separated data-label-second="Выезд" data-value-second="">
+                    <input class="form_datepicker__input js-datepicker_separated js-datepicker_masked start_date" type="text" name="start-date" placeholder="ДД.ММ.ГГГГ" required readonly data-date="" data-separated data-label-second="Выезд" data-value-second="">
                   </div>
                 </div>
               </div>
@@ -54,7 +54,7 @@
             <div class="room_search_card__guest_select_dropdown">
               <div class="form_dropdown">
                 <label class="form_dropdown__label like_h3">Гости</label>
-                <div class="iqdropdown js_form_dropdown">
+                <div class="iqdropdown js-form_dropdown">
                   <div class="iqdropdown-selection-wrapper">
                     <p class="iqdropdown-selection">Сколько гостей</p>
                     <div class="iqdropdown-menu">
@@ -86,61 +86,61 @@
         </div>
         <div class="landing__slogan">Лучшие номера для вашей работы, отдыха и просто вдохновения</div>
       </div>
-      <footer class="footer footer_ru footer_with_widgets">
-        <div class="footer__logo_n_widgets_block">
-          <div class="footer__logo_block"><img class="footer__logo_img" src="./img/Logo.svg" alt="TOXIN">
-            <div class="footer__description">Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</div>
-          </div>
-          <div class="footer__widgets_block">
-            <div class="footer__navigation_block">
-              <h3 class="footer__navigation_list_title">навигация</h3>
-              <div class="footer__navigation_list">
-                <ul class="nav_bar nav_bar_vertical">
-                  <li class="nav_bar__item"><a class="nav_bar__item_link" href="/mock-address/change-me">О нас</a></li>
-                  <li class="nav_bar__item"><a class="nav_bar__item_link" href="/mock-address/change-me">Новости</a></li>
-                  <li class="nav_bar__item"><a class="nav_bar__item_link" href="/mock-address/change-me">Служба поддержки</a></li>
-                  <li class="nav_bar__item"><a class="nav_bar__item_link" href="/mock-address/change-me">Услуги</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="footer__about_us_block">
-              <h3 class="footer__about_us_list_title">О нас</h3>
-              <div class="footer__about_us_list">
-                <ul class="nav_bar nav_bar_vertical">
-                  <li class="nav_bar__item"><a class="nav_bar__item_link" href="/mock-address/change-me">О сервисе</a></li>
-                  <li class="nav_bar__item"><a class="nav_bar__item_link" href="/mock-address/change-me">Наша команда</a></li>
-                  <li class="nav_bar__item"><a class="nav_bar__item_link" href="/mock-address/change-me">Вакансии</a></li>
-                  <li class="nav_bar__item"><a class="nav_bar__item_link" href="/mock-address/change-me">Инвесторы</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="footer__support_block">
-              <h3 class="footer__support_list_title">служба поддержки</h3>
-              <div class="footer__support_list">
-                <ul class="nav_bar nav_bar_vertical">
-                  <li class="nav_bar__item"><a class="nav_bar__item_link" href="/mock-address/change-me">Соглашения</a></li>
-                  <li class="nav_bar__item"><a class="nav_bar__item_link" href="/mock-address/change-me">Сообщества</a></li>
-                  <li class="nav_bar__item"><a class="nav_bar__item_link" href="/mock-address/change-me">Связь с нами</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="footer__subscribe_block">
-            <h3 class="footer__subscribe_title">подписка</h3>
-            <div class="footer__subscribe_text">Получайте специальные предложения и новости сервиса</div>
-            <div class="footer__subscribe_input">
-              <div class="form_input form_input_with_subscription">
-                <input class="form_input__input" name="name" type="text" placeholder="Email">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="footer__delimiter"></div>
-        <div class="footer__copyright_n_socials_block">
-          <div class="footer__copyright_block">Copyright © 2018 Toxin отель. Все права зачищены.</div>
-          <div class="footer__socials_block"><span class="footer__social"><i class="fab fa-twitter"></i></span><span class="footer__social"><i class="fab fa-facebook-square"></i></span><span class="footer__social"><i class="fab fa-instagram"></i></span></div>
-        </div>
-      </footer>
     </div>
+    <footer class="footer footer_ru footer_with_widgets">
+      <div class="footer__logo_n_widgets_block">
+        <div class="footer__logo_block"><img class="footer__logo_img" src="./img/logo.svg" alt="TOXIN">
+          <div class="footer__description">Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</div>
+        </div>
+        <div class="footer__widgets_block">
+          <div class="footer__navigation_block">
+            <h3 class="footer__navigation_list_title">навигация</h3>
+            <div class="footer__navigation_list">
+              <ul class="nav_bar nav_bar_vertical">
+                <li class="nav_bar__item"><a class="nav_bar__item_link" href="/mock-address/change-me">О нас</a></li>
+                <li class="nav_bar__item"><a class="nav_bar__item_link" href="/mock-address/change-me">Новости</a></li>
+                <li class="nav_bar__item"><a class="nav_bar__item_link" href="/mock-address/change-me">Служба поддержки</a></li>
+                <li class="nav_bar__item"><a class="nav_bar__item_link" href="/mock-address/change-me">Услуги</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer__about_us_block">
+            <h3 class="footer__about_us_list_title">О нас</h3>
+            <div class="footer__about_us_list">
+              <ul class="nav_bar nav_bar_vertical">
+                <li class="nav_bar__item"><a class="nav_bar__item_link" href="/mock-address/change-me">О сервисе</a></li>
+                <li class="nav_bar__item"><a class="nav_bar__item_link" href="/mock-address/change-me">Наша команда</a></li>
+                <li class="nav_bar__item"><a class="nav_bar__item_link" href="/mock-address/change-me">Вакансии</a></li>
+                <li class="nav_bar__item"><a class="nav_bar__item_link" href="/mock-address/change-me">Инвесторы</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer__support_block">
+            <h3 class="footer__support_list_title">служба поддержки</h3>
+            <div class="footer__support_list">
+              <ul class="nav_bar nav_bar_vertical">
+                <li class="nav_bar__item"><a class="nav_bar__item_link" href="/mock-address/change-me">Соглашения</a></li>
+                <li class="nav_bar__item"><a class="nav_bar__item_link" href="/mock-address/change-me">Сообщества</a></li>
+                <li class="nav_bar__item"><a class="nav_bar__item_link" href="/mock-address/change-me">Связь с нами</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer__subscribe_block">
+          <h3 class="footer__subscribe_title">подписка</h3>
+          <div class="footer__subscribe_text">Получайте специальные предложения и новости сервиса</div>
+          <div class="footer__subscribe_input">
+            <div class="form_input  form_input_with_subscription">
+              <input class="form_input__input" name="name" type="text" placeholder="Email">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__delimiter"></div>
+      <div class="footer__copyright_n_socials_block">
+        <div class="footer__copyright_block">Copyright © 2018 Toxin отель. Все права зачищены.</div>
+        <div class="footer__socials_block"><a class="footer__social" href="/mock-address/change-me" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a><a class="footer__social" href="/mock-address/change-me" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-square"></i></a><a class="footer__social" href="/mock-address/change-me" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></div>
+      </div>
+    </footer>
   <script type="text/javascript" src="index.js"></script></body>
 </html>

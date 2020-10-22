@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1440">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon.png">
     <title>Form-elements</title>
   <link href="main.css" rel="stylesheet"></head>
   <body style="width: 1440px">
@@ -37,7 +37,7 @@
           <div class="dropdown_wrapper default"><span class="style">DEFAULT</span>
             <div class="form_dropdown">
               <label class="form_dropdown__label like_h3">dropdown</label>
-              <div class="iqdropdown js_form_dropdown">
+              <div class="iqdropdown js-form_dropdown">
                 <div class="iqdropdown-selection-wrapper">
                   <p class="iqdropdown-selection">Сколько гостей</p>
                   <div class="iqdropdown-menu">
@@ -62,35 +62,35 @@
             </div>
           </div>
           <div class="input_wrapper default masked"><span class="style">default</span>
-            <div class="form_input form_input_masked">
+            <div class="form_input  form_input_masked">
               <label class="form_input__label">
                 <p class="like_h3">masked text field</p>
               </label>
-              <input class="form_input__input" name="name" type="text" placeholder="ДД.ММ.ГГГГ">
+              <input class="form_input__input js-form_input__input_masked" name="name" type="text" placeholder="ДД.ММ.ГГГГ">
             </div>
           </div>
           <div class="datepickers_wrapper">
-            <div class="form_datepicker js_form_datepicker_separated">
+            <div class="form_datepicker js-form_datepicker_separated">
               <div class="form_datepicker_wrapper">
                 <label class="form_datepicker__label like_h3">date dropdown</label>
                 <div class="form_datepicker__input_wrapper">
-                  <input class="form_datepicker__input js_datepicker_separated js_datepicker_masked start_date" type="text" name="start-date" placeholder="ДД.ММ.ГГГГ" required readonly data-date="" data-separated data-label-second="date dropdown" data-value-second="19.08.2019">
+                  <input class="form_datepicker__input js-datepicker_separated js-datepicker_masked start_date" type="text" name="start-date" placeholder="ДД.ММ.ГГГГ" required readonly data-date="" data-separated data-label-second="date dropdown" data-value-second="19.08.2019">
                 </div>
               </div>
             </div>
           </div>
           <div class="datepicker_wrapper_filtered">
-            <div class="form_datepicker js_form_datepicker">
+            <div class="form_datepicker js-form_datepicker">
               <div class="form_datepicker_wrapper">
                 <label class="form_datepicker__label like_h3">filter date dropdown</label>
                 <div class="form_datepicker__input_wrapper">
-                  <input class="form_datepicker__input js_datepicker" type="text" name="start-date" placeholder="ДД.ММ.ГГГГ" required readonly data-date="19.08.2019" data-label-second="" data-value-second="23.08.2019">
+                  <input class="form_datepicker__input js-datepicker" type="text" name="start-date" placeholder="ДД.ММ.ГГГГ" required readonly data-date="19.08.2019" data-label-second="" data-value-second="23.08.2019">
                 </div>
               </div>
             </div>
           </div>
           <div class="input_wrapper_with_subscription">
-            <div class="form_input form_input_with_subscription">
+            <div class="form_input  form_input_with_subscription">
               <label class="form_input__label">
                 <p class="like_h3">subscription text field</p>
               </label>
@@ -125,7 +125,7 @@
           </div>
           <div class="radio_buttons_wrapper">
             <h3 class="radio_buttons_label">radio buttons</h3>
-            <div class="radio_buttons">
+            <div class="radio_buttons js-radio_buttons">
               <label class="radio_buttons__radio radio_buttons__radio_label radio_buttons__radio_label_checked">Мужчина
                 <input class="radio_buttons__radio_input" type="radio" name="gender" checked value="0">
               </label>
@@ -146,11 +146,11 @@
           <div class="like_buttons_wrapper">
             <h3 class="like_buttons_label">like button</h3>
             <div class="like_buttons">
-              <label class="like_button like_button__label">
+              <label class="like_button js-like_button like_button__label">
                 <p>2</p>
                 <input class="like_button__input" type="checkbox">
               </label>
-              <label class="like_button like_button__label like_button__label_checked">
+              <label class="like_button js-like_button like_button__label like_button__label_checked">
                 <p>12</p>
                 <input class="like_button__input" type="checkbox" checked>
               </label>
@@ -176,7 +176,7 @@
         </div>
         <div class="col">
           <div class="range_slider_wrapper">
-            <label class="js_range_slider range_slider">
+            <label class="js-range_slider range_slider">
               <h3 class="range_slider__label">range slider</h3>
               <p class="range_slider__value"></p>
               <input class="range_slider__input" type="text" name="range" value="" data-type="double" data-min="0" data-max="16000" data-from="5000" data-to="10000" data-skin="round" data-postfix="₽" data-hide-min-max="true" data-hide-from-to="true" data-step="100" data-extra-classes="range_slider__slider">
@@ -210,7 +210,7 @@
           </div>
           <div class="pagination_block_wrapper">
             <h3 class="pagination_block_wrapper_label">pagination</h3>
-            <div class="pagination_block pagination_block_without_data" data-rooms="[]">
+            <div class="pagination_block js-pagination_block pagination_block_without_data" data-rooms="[]">
               <div class="pagination_block__pagination js-pagination" data-pages="15"></div>
               <div class="pagination_block__description">1 – 12 из 100+ вариантов аренды</div>
             </div>
@@ -222,7 +222,7 @@
           <div class="dropdown_multiple_items_wrapper"><span class="style">DEFAULT</span>
             <div class="form_dropdown">
               <label class="form_dropdown__label like_h3">dropdown</label>
-              <div class="iqdropdown js_form_dropdown_multiple">
+              <div class="iqdropdown js-form_dropdown_multiple">
                 <div class="iqdropdown-selection-wrapper">
                   <p class="iqdropdown-selection">Сколько гостей</p>
                   <div class="iqdropdown-menu">
@@ -249,7 +249,7 @@
           <div class="dropdown_multiple_items_expanded_wrapper"><span class="style">expanded</span>
             <div class="form_dropdown">
               <label class="form_dropdown__label like_h3">dropdown</label>
-              <div class="iqdropdown js_form_dropdown_multiple menu-open">
+              <div class="iqdropdown js-form_dropdown_multiple menu-open">
                 <div class="iqdropdown-selection-wrapper">
                   <p class="iqdropdown-selection">Сколько гостей</p>
                   <div class="iqdropdown-menu">
@@ -278,7 +278,7 @@
           <div class="dropdown_wrapper_expanded">
             <div class="form_dropdown">
               <label class="form_dropdown__label like_h3">dropdown</label>
-              <div class="iqdropdown js_form_dropdown menu-open">
+              <div class="iqdropdown js-form_dropdown menu-open">
                 <div class="iqdropdown-selection-wrapper">
                   <p class="iqdropdown-selection">Сколько гостей</p>
                   <div class="iqdropdown-menu">
@@ -307,7 +307,7 @@
           <div class="dropdown_wrapper_expanded">
             <div class="form_dropdown">
               <label class="form_dropdown__label like_h3">dropdown</label>
-              <div class="iqdropdown js_form_dropdown menu-open">
+              <div class="iqdropdown js-form_dropdown menu-open">
                 <div class="iqdropdown-selection-wrapper">
                   <p class="iqdropdown-selection">Сколько гостей</p>
                   <div class="iqdropdown-menu">
@@ -336,7 +336,7 @@
       <div class="row">
         <div class="col">
           <div class="expandable_checkbox_wrapper">
-            <div class="form__checkbox form__checkbox_expandable">
+            <div class="form__checkbox js-form__checkbox_expandable form__checkbox_expandable">
               <div class="checkbox__label_wrapper">
                 <p class="checkbox__label">expandable checkbox list</p>
               </div>
@@ -385,7 +385,7 @@
             </div>
           </div>
           <div class="expandable_checkbox_wrapper">
-            <div class="form__checkbox form__checkbox_expandable form__checkbox_expandable_opened">
+            <div class="form__checkbox js-form__checkbox_expandable form__checkbox_expandable form__checkbox_expandable_opened">
               <div class="checkbox__label_wrapper">
                 <p class="checkbox__label">expandable checkbox list</p>
               </div>
@@ -492,13 +492,13 @@
         <div class="col">
           <div class="comment_block_wrapper">
             <div class="comment_block">
-              <div class="comment_block__img_block"><img class="comment_block__image" src="./img/avatar_1.png"></div>
+              <div class="comment_block__img_block"><img class="comment_block__image" src="./img/avatar-1.png"></div>
               <div class="comment_block__name_block">
                 <div class="comment_block__name">Мурад Сарафанов</div>
                 <div class="comment_block__date">5 дней назад</div>
               </div>
               <div class="comment_block__like_button">
-                <label class="like_button like_button__label like_button__label_checked">
+                <label class="like_button js-like_button like_button__label like_button__label_checked">
                   <p>12</p>
                   <input class="like_button__input" type="checkbox" checked>
                 </label>
