@@ -10,8 +10,8 @@ block variables
     data = htmlWebpackPlugin.options.getData()
 
 block content
+  +header( {lang: "ru", isLoggedIn: false, data })
   .landing.js-landing
-    +header( {lang: "ru", isLoggedIn: false, data })
     .landing__content
       .landing__form_search_room
         +roomSearchCard({label: "Найдем номера под ваши\u00A0пожелания"})
