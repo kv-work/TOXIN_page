@@ -5,6 +5,7 @@ import './dropdown.scss';
 
 // Creating dropdown
 $('.js-form_dropdown').iqDropdown({
+  maxItems: 10,
   initialText: 'Сколько гостей',
   selectionText: 'гость',
   textPlural: 'гостя',
