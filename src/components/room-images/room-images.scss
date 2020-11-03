@@ -2,17 +2,18 @@
 
 .room_images {
   display: grid;
-  grid-template-columns: minmax(50%, 1fr) 28.8125rem;
+  grid-template-columns: minmax(50%, 1fr) minmax(461px, 1fr);
   height: 100%;
   width: 100%;
 
-  @media screen and (max-width: 57.625rem) {
+  @media screen and (max-width: 922px) {
     display: block;
     height: 15.25rem;
     position: relative;
   }
 
   &__image {
+    background-size: cover;
 
     @media screen and (max-width: 57.625rem) {
       display: none;
