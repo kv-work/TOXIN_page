@@ -12,11 +12,23 @@
     margin: 70px auto 22px;
     display: flex;
     flex-direction: column;
-  }
+
+    @media screen and (max-width: 1220px) {
+      padding: 0.9375rem;
+    }
+
+    @media screen and (max-width: 440px) {
+      padding: 0;
+    }
+  } 
 
   &__form_search_room {
     max-width: 23.75rem;
     margin-bottom: 314px;
+
+    @media screen and (max-width: 440px) {
+      margin: 0 auto 314px;
+    }
   }
 
   &__slogan {
