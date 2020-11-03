@@ -90,6 +90,7 @@
   border-radius: 0.25rem;
   box-shadow: 0 0.625rem 1.25rem $dark-5;
   padding: 1.25rem;
+  z-index: 100000;
 
   &--pointer {
     display: none;
