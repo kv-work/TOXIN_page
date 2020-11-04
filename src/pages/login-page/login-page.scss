@@ -5,14 +5,14 @@
   max-height: 74.8125rem;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  background-image: url(./img/image4.png);
-  background-position: top center;
-  background-repeat: no-repeat;
 
   &__content {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-image: url(./img/image4.png);
+    background-size: cover;
+    background-position: bottom;
   }
 
   &__login_form {
