@@ -44,7 +44,6 @@ mixin footer(params)
           .footer__subscribe_text= subscribeBlock.text
           .footer__subscribe_input
             +input( {placeholder: subscribeBlock.inputPlaceholder, subscription: true })
-    .footer__delimiter
     div(class= (withWidgets) ? "footer__copyright_n_socials_block" : "footer__socials")
       if (withWidgets)
         .footer__copyright_block= copyrightText

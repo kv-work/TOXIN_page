@@ -254,13 +254,6 @@
     margin-top: 1.375rem;
   }
 
-  &__delimiter {
-    max-width: 90rem;
-    margin: auto;
-    height: 0.0625rem;
-    background-color: $dark-10;
-  }
-
   &__socials_block {
     display: grid;
     grid-template-columns: repeat(3, auto);
