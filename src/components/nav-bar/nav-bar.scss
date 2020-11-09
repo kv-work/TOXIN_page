@@ -94,26 +94,22 @@
       }
     }
 
-    &:hover {
-    
-      & > ul {
-        display: block;
-        position: absolute;
-        top: 1.5rem;
-        padding-left: 0.625rem;
+    & > ul {
+      position: absolute;
+      top: 1.5rem;
+      padding-left: 0.625rem;
 
-        @media screen and (max-width: 37.5rem) {
-          border: 1px solid $dark-10;
-          top: 0;
-          right: 100%;
-        }
+      @media screen and (max-width: 37.5rem) {
+        border: 1px solid $dark-10;
+        top: 0;
+        right: 100%;
       }
+    }
 
-      &::before {
+    &::before {
 
-        @media screen and (max-width: 37.5rem) {
-          transform: rotate(90deg);
-        }
+      @media screen and (max-width: 37.5rem) {
+        transform: rotate(90deg);
       }
     }
   }

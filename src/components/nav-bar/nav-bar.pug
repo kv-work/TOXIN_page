@@ -1,11 +1,11 @@
 mixin navBarItem(params)
   -
-    var {label, isNestedList=false, nestedItems=[], isActive=false} = params
-    var classList = "nav_bar__item"
+    const {label, isNestedList=false, nestedItems=[], isActive=false} = params;
+    let classList = "nav_bar__item";
     if (isNestedList)
-      classList += "_nested"
+      classList += "_nested js-item_nested";
     if (isActive)
-      classList += " active"
+      classList += " active";
 
   
   if isNestedList
@@ -20,12 +20,12 @@ mixin navBarItem(params)
 
 mixin navBar(params)
   -
-    var {itemList, display="vertical", lang="en"} = params
-    classList = "nav_bar"
+    const {itemList, display="vertical", lang="en"} = params;
+    let classList = "nav_bar";
     if (lang === "ru")
-      classList += " nav_bar_ru"
+      classList += " nav_bar_ru";
     if (display == "vertical")
-      classList += " nav_bar_vertical"
+      classList += " nav_bar_vertical";
 
   ul(class=classList)
     each item in itemList
