@@ -1,5 +1,3 @@
-import '../../main.scss';
-import './room-images.scss';
 import $ from 'jquery';
 import './img/image-loader';
 import data from './data.json';

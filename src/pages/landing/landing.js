@@ -1,4 +1,3 @@
-import './landing.scss';
 import $ from 'jquery';
 import data from './data.json';
 

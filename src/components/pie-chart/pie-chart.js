@@ -1,6 +1,4 @@
 import $ from 'jquery';
-import '../../main.scss';
-import './pie-chart.scss';
 import data from './data.json';
 
 class PieChart {

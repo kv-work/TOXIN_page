@@ -1,4 +1,3 @@
-import './checkbox.scss';
 import $ from 'jquery';
 
 class ExpandableCheckboxList {

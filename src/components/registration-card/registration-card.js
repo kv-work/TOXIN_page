@@ -1,4 +1,3 @@
-import './registration-card.scss';
 import $ from 'jquery';
 
 class RegistrationCard {

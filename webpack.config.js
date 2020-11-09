@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const globImporter = require('node-sass-glob-importer');
 const webpack = require('webpack');
 const ghpages = require('gh-pages');
 const fs = require('fs');
@@ -115,6 +116,9 @@ module.exports = (env = {}) => {
               loader: 'sass-loader',
               options: {
                 sourceMap: true,
+                sassOptions: {
+                  importer: globImporter(),
+                },
               },
             },
           ],

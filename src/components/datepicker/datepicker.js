@@ -2,7 +2,6 @@ import $ from 'jquery';
 import 'air-datepicker/dist/js/datepicker.min';
 import Cleave from 'cleave.js';
 import Datepicker from './datepicker-class';
-import './datepicker.scss';
 
 $('.js-form_datepicker, .js-form_datepicker_separated, .js-form_datepicker_inline').each(function addDatepicker() {
   // config datepicker's language

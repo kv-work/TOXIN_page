@@ -1,4 +1,3 @@
-import './rate-button.scss';
 import $ from 'jquery';
 
 export default class RateButton {

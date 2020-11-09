@@ -1,4 +1,3 @@
-import './room-search-card.scss';
 import $ from 'jquery';
 
 class RoomSearchCard {

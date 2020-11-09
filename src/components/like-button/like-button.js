@@ -1,5 +1,4 @@
 import $ from 'jquery';
-import './like-button.scss';
 
 class LikeButton {
   constructor(node) {

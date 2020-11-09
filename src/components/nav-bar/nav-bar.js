@@ -1,7 +1,5 @@
 import $ from 'jquery';
 
-import './nav-bar.scss';
-
 class NestedItem {
   constructor(node) {
     this.$nestedItem = $(node);

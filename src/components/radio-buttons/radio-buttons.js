@@ -1,4 +1,3 @@
-import './radio-buttons.scss';
 import $ from 'jquery';
 
 class Radio {

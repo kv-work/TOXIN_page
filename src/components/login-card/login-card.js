@@ -1,4 +1,3 @@
-import './login-card.scss';
 import $ from 'jquery';
 
 class LoginCard {

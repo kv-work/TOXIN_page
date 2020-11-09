@@ -1,4 +1,3 @@
-import './search-room.scss';
 import $ from 'jquery';
 
 class SearchRoomContent {
