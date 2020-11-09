@@ -1,17 +1,17 @@
 include ./option/option
 
-mixin checkboxList(params)
+mixin checkboxList(params = {})
   -
-    var { checkboxLabel, list={}, opened=false, type } = params
-    var classList = "form__checkbox"
+    const { checkboxLabel = "", list = {}, opened = false, type } = params;
+    let classList = "form__checkbox";
     switch (type) {
       case "expandable":
-        classList += " js-form__checkbox_expandable form__checkbox_expandable"
+        classList += " js-form__checkbox_expandable form__checkbox_expandable";
         if (opened)
-          classList += " form__checkbox_expandable_opened"
+          classList += " form__checkbox_expandable_opened";
         break
       case "rich":
-        classList += " form__checkbox_rich"
+        classList += " form__checkbox_rich";
         break
     }
 

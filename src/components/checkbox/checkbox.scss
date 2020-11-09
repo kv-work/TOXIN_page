@@ -12,10 +12,7 @@
   }
   
   .checkbox__label {
-    font-family: Montserrat, Arial, sans-serif;
-    font-weight: bold;
-    font-size: 0.75rem;
-    line-height: 0.9375rem;
+    font: bold 0.75rem/1.25 Montserrat, Arial, sans-serif;
     color: $dark-100;
     text-transform: uppercase;
     margin: 0;
@@ -36,11 +33,9 @@
       }
 
       &::after {
-        font-family: 'Material Icons';
+        font: 1.5rem/1.833 'Material Icons';
         width: 2.75rem;
         height: 2.75rem;
-        font-size: 1.5rem;
-        line-height: 2.75rem;
         display: flex;
         justify-content: center;
         align-items: center;
