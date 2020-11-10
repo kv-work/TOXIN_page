@@ -1,7 +1,5 @@
 import $ from 'jquery';
 import 'item-quantity-dropdown/lib/item-quantity-dropdown.min';
-import 'item-quantity-dropdown/lib/item-quantity-dropdown.min.css';
-import './dropdown.scss';
 
 // Creating dropdown
 $('.js-form_dropdown').iqDropdown({
