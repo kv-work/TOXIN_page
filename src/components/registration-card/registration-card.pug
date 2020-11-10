@@ -13,19 +13,19 @@ mixin registrationCard(params)
       +input({
         type: "text",
         placeholder: "Имя",
-        name: "name"
+        name: "name",
         })(required=true)
     .registration_card__surname_input
       +input({
         type: "text",
         placeholder: "Фамилия",
-        name: "surname"
+        name: "surname",
         })(required=true)
     .registration_card__gender_radio_buttons
       +radioButtons({
         list: [
               {label: "Мужчина", checked: true},
-              {label: "Женщина"}
+              {label: "Женщина"},
             ]
       } )
     .registration_card__date_input_is_masked
@@ -41,13 +41,13 @@ mixin registrationCard(params)
         label: "Данные для входа в сервис",
         type: "email",
         placeholder: "email",
-        name: "email"
+        name: "email",
         })(required=true)
     .registration_card__password_input
       +input({
         type: "password",
         placeholder: "Пароль",
-        name: "password"
+        name: "password",
         })(required=true)
     .registration_card__toggle_button
       +toggleButton({label: "Получать спецпредложения", name:"subscription"})
@@ -55,14 +55,11 @@ mixin registrationCard(params)
       +button({
           label: "перейти к оплате",
           type: "submit",
-          style: "filled",
-          arrow: true
+          filled: true,
+          withArrow: true,
           })
 
     .registration_card__options
       .registration_card__option_label Уже есть аккаунт на Toxin
       a.registration_card__option_button(href="./login-page.html")
-        +button({
-          label: "войти",
-          style: "no fill"
-          })
+        +button({ label: "войти" })

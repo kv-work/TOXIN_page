@@ -30,12 +30,9 @@ mixin header(params)
       else
         .header__buttons
           a.header__login_button(href="./login-page.html")
-            +button({
-              label: loginLabel,
-              style: "no fill"
-              })
+            +button({ label: loginLabel })
           a.header__registration_button(href="./registration-page.html")
             +button({
               label: regLabel,
-              style: "filled"
+              filled: true
               })

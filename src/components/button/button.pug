@@ -4,8 +4,8 @@ mixin button(params = {})
     let classList = "button";
     if (filled) 
       classList += " button_filled";
-    if (!withBorders)
-      classList += " button_no_borders";
+    if (withBorders)
+      classList += " button_with-borders";
     if (disabled) {
       classList += " button_disabled";
     }
@@ -13,6 +13,6 @@ mixin button(params = {})
       classList += " button_with-arrow";
     }
   
-  button(class=classList type=type)=label
-    if (arrow)
+  button(class=classList type=type disabled)=label
+    if (withArrow)
       i.material-icons arrow_forward

@@ -23,7 +23,7 @@ mixin loginCard(params)
       +button({
         label: "войти",
         type: "submit",
-        style: "filled",
+        filled: true,
         arrow: true
         })
 
@@ -32,5 +32,4 @@ mixin loginCard(params)
       a.login_card__option_button(href="./registration-page.html")
         +button({
           label: "создать",
-          style: "no fill"
           })
