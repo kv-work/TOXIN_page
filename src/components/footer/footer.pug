@@ -1,23 +1,24 @@
 include ../nav-bar/nav-bar
 include ../input/input
 
-mixin footer(params)
+mixin footer(params = {})
   -
-    var { lang, withWidgets = true, data } = params
+    const { lang, withWidgets = true, data } = params;
+    let currData;
     
     if (lang == "en")
-      var currData = data.dataEn.footer
+      currData = data.dataEn.footer;
     else if (lang == "ru")
-      var currData = data.dataRu.footer
+      currData = data.dataRu.footer;
 
-    var { descriptionText, navigationList, aboutUsList, supportList, subscribeBlock, copyrightText } = currData
+    const { descriptionText, navigationList, aboutUsList, supportList, subscribeBlock, copyrightText } = currData;
     
-    var classList = "footer"
+    let classList = "footer";
     if (lang == "ru")
-      classList += " footer_ru"
+      classList += " footer_ru";
 
     if (withWidgets)
-      classList += " footer_with_widgets"
+      classList += " footer_with_widgets";
 
   footer(class=classList)
     div(class= (withWidgets) ? "footer__logo_n_widgets_block" : "footer__logo")

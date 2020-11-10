@@ -130,9 +130,7 @@
     &::after {
 
       @media screen and (max-width: 76.25rem) {
-        font-family: 'Material Icons';
-        font-size: 1.25rem;
-        line-height: 0.9375rem;
+        font: 1.25rem/0.75 'Material Icons';
         display: flex;
         justify-content: center;
         align-items: center;
@@ -171,9 +169,7 @@
     &::after {
 
       @media screen and (max-width: 76.25rem) {
-        font-family: 'Material Icons';
-        font-size: 1.25rem;
-        line-height: 0.9375rem;
+        font: 1.25rem/0.75 'Material Icons';
         display: flex;
         justify-content: center;
         align-items: center;
@@ -213,9 +209,7 @@
     &::after {
 
       @media screen and (max-width: 76.25rem) {
-        font-family: 'Material Icons';
-        font-size: 1.25rem;
-        line-height: 0.9375rem;
+        font: 1.25rem/0.75 'Material Icons';
         display: flex;
         justify-content: center;
         align-items: center;
@@ -273,7 +267,7 @@
 
   &__social {
     font-size: 1.5rem;
-    line-height: 1.4375rem;    
+    line-height: 0.9583333;
     display: flex;
     align-items: center;
     text-align: center;
