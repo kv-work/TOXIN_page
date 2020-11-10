@@ -110,9 +110,9 @@ export default class Datepicker {
 
   // Создание обработчиков событий
   _attachEventHandlers() {
-    this.$wrapper.on('focus', this._clickOnWrapperHandler.bind(this));
+    this.$wrapper.on('focus', this._focusOnWrapperHandler.bind(this));
     this.$wrapper.on('blur', this._unfocusHandler.bind(this));
-    this.$wrapper.on('click', this._clickOnWrapperHandler.bind(this));
+    this.$wrapper.on('click', Datepicker._clickOnWrapperHandler.bind(this));
 
     this.clearBtn.on('click', this._clearDates.bind(this));
 
@@ -124,7 +124,7 @@ export default class Datepicker {
     this.datepickerData.hide();
   }
 
-  _clickOnWrapperHandler(event) {
+  _focusOnWrapperHandler(event) {
     this.$opener = $(event.currentTarget).find('input');
     this.datepickerData.show();
     if (this.isSeparated) this._openDatepicker();
@@ -259,5 +259,9 @@ export default class Datepicker {
     }
 
     if (startDate) $datepicker.val(startDate.toLocaleDateString());
+  }
+
+  static _clickOnWrapperHandler(e) {
+    $(e.currentTarget).trigger('focus');
   }
 }
