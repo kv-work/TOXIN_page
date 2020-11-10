@@ -1,8 +1,8 @@
 include ../like-button/like-button
 
-mixin commentBlock(params)
+mixin commentBlock(params = {})
   -
-    var { name, img="avatar-1.png", date, comment, likes} = params
+    const { name, img="avatar-1.png", date, comment, likes} = params;
 
   .comment_block
     .comment_block__img_block

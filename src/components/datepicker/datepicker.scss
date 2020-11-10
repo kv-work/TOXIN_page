@@ -17,9 +17,7 @@
 }
 
 .form_datepicker__input_wrapper {
-  font-family: Montserrat, Arial, sans-serif;
-  font-size: 0.875rem;
-  line-height: 1.5rem;
+  font: 0.875rem/1.7143 Montserrat, Arial, sans-serif;
   color: $dark-75;
   height: 2.75rem;
   display: flex;
@@ -32,11 +30,9 @@
   cursor: pointer;
 
   &::after {
-    font-family: 'Material Icons';
+    font: 1.5rem/1.8333 'Material Icons';
     width: 2.625rem;
     height: 2.75rem;
-    font-size: 1.5rem;
-    line-height: 2.75rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,13 +43,11 @@
 
 .form_datepicker__input,
 .form_datepicker__end_date_input {
-  font-family: Montserrat, Arial, sans-serif;
+  font: 0.875rem/1.2857 Montserrat, Arial, sans-serif;
   padding: 0.0625rem 0 0 0.875rem;
   cursor: inherit;
   border: none;
   box-sizing: border-box;
-  font-size: 0.875rem;
-  line-height: 1.125rem;
   color: $dark-75;
   max-width: calc(100% - 2.75rem);
 
@@ -63,11 +57,7 @@
   }
 
   &::placeholder {
-    font-family: Montserrat, Arial, sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 0.875rem;
-    line-height: 1.125rem;
+    font: normal 0.875rem/1.2857 Montserrat, Arial, sans-serif;
     color: $dark-75;
   }
 }
@@ -101,11 +91,7 @@
     border: none;
 
     &-title {
-      font-family: Quicksand, 'Open Sans', sans-serif;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 1.1875rem;
-      line-height: 1.5rem;
+      font: bold 1.1875rem/1.263 Quicksand, 'Open Sans', sans-serif;
       text-align: center;
       color: $dark-100;
       display: inline-block;
@@ -117,9 +103,7 @@
       height: 1.5rem;
 
       &::after {
-        font-family: 'Material Icons';
-        font-size: 1.5rem;
-        line-height: 1.5rem;
+        font: 1.5rem/1 'Material Icons';
         width: 1.5rem;
         height: 1.5rem;
         display: inline-block;
@@ -142,9 +126,7 @@
         height: 1.5rem;
 
         &::after {
-          font-family: 'Material Icons';
-          font-size: 1.5rem;
-          line-height: 1.5rem;
+          font: 1.5rem/1 'Material Icons';
           width: 1.5rem;
           height: 1.5rem;
           display: inline-block;
@@ -174,11 +156,8 @@
   }
 
   &--day-name {
-    font-family: Montserrat, 'Open Sans', Arial, sans-serif;
-    font-weight: bold;
+    font: bold 0.75rem/1.25 Montserrat, 'Open Sans', Arial, sans-serif;
     color: $primary-purple;
-    font-size: 0.75rem;
-    line-height: 0.9375rem;
     width: 2.5rem;
     height: 2.5rem;
     text-transform: none;
@@ -187,11 +166,7 @@
   &--cell {
     padding: 0;
     margin: 0;
-    font-family: Montserrat, Arial, sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 0.75rem;
-    line-height: 0.9375rem;
+    font: normal 0.75rem/1.25 Montserrat, Arial, sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -300,11 +275,7 @@
     display: inline-block;
     flex: 0;
     height: auto;
-    font-family: Montserrat, Arial, sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 0.75rem;
-    line-height: 0.9375rem;
+    font: bold 0.75rem/1.25 Montserrat, Arial, sans-serif;
     text-transform: uppercase;
 
     &-apply {
@@ -312,11 +283,7 @@
       display: inline-block;
       flex: 0;
       height: auto;
-      font-family: Montserrat, Arial, sans-serif;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 0.75rem;
-      line-height: 0.9375rem;
+      font: bold 0.75rem/1.25 Montserrat, Arial, sans-serif;
       text-transform: uppercase;
       color: $primary-purple;
       border: none;
