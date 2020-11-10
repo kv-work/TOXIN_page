@@ -4,31 +4,32 @@
   border-radius: 0.375rem;
 
   &_coloris {
-    &_dark_shade_100 {
+    &-dark_shade_100,
+    &-dark_shade {
       background-color: $dark-100;
     }
 
-    &_dark_shade_75 {
+    &-dark_shade_75 {
       background-color: $dark-75;
     }
 
-    &_dark_shade_50 {
+    &-dark_shade_50 {
       background-color: $dark-50;
     }
 
-    &_dark_shade_25 {
+    &-dark_shade_25 {
       background-color: $dark-25;
     }
 
-    &_dark_shade_5 {
+    &-dark_shade_5 {
       background-color: $dark-5;
     }
 
-    &_purple {
+    &-purple {
       background-color: $primary-purple;
     }
 
-    &_green {
+    &-green {
       background-color: $primary-green;
     }
   }

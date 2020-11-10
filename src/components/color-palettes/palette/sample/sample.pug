@@ -1,9 +1,0 @@
-mixin sample(colorName, opacity)
-	-
-		var className="palette__sample"+" "+"palette__sample_coloris_"+colorName.toLowerCase()
-
-		if (opacity) {
-			className += "_"+opacity.split("%")[0]
-		}
-		
-	div(class=className)

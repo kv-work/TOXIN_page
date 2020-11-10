@@ -2,6 +2,8 @@ extends ../base/base_fix
 
 block variables
   include ../../components/logo/logo
+  include ../../components/palette/palette
+  include ../../components/type-example/type-example
 
   - var pageTitle = "Colors and type"
 
@@ -10,6 +12,17 @@ block content
     .logo_wrapper
       +logo({width: "48", height: "48", fill: "#1F2041", fillOpacity: ".25"})
     .colors_wrapper
-      include ../../components/color-palettes/color-palettes
+      .colors_palettes
+        +palette()
+        +palette({ color: "#1F2041", colorName: "Dark_Shade", opacity: "75%" })
+        +palette({ color: "#1F2041", colorName: "Dark_Shade", opacity: "50%" })
+        +palette({ color: "#1F2041", colorName: "Dark_Shade", opacity: "25%" })
+        +palette({ color: "#1F2041", colorName: "Dark_Shade", opacity: "5%" })
+        +palette({ color: "#BC9CFF", colorName: "Purple" })
+        +palette({ color: "#6FCF97", colorName: "Green" })
     .type_wrapper
-      include ../../components/type/type
+      .type
+        +typeExample({ tagName: "H1", text: "This one is the sub-section or widget title" })
+        +typeExample({ tagName: "H2", text: "Next one is the item title inside widgets" })
+        +typeExample({ tagName: "H3", text: "This is a label or CTA text" })
+        +typeExample({ tagName: "Body", text: "This is the body text which is used for most of the design, like paragraphs, lists, etc." })

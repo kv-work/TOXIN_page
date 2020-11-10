@@ -1,0 +1,9 @@
+include ./sample-text/sample-text
+include ./tag-name/tag-name
+
+mixin typeExample(params = {})
+  -
+    const { tagName = "div", text = "" } = params;
+  .type_example
+    +tagName(tagName)
+    +sampleText({ tagName, text })
