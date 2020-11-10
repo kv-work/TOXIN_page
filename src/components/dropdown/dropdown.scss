@@ -10,9 +10,7 @@
   //input styles
   &__input {
     border: none;
-    font-family: Montserrat, Arial, sans-serif;
-    font-size: 0.875rem;
-    line-height: 1.5rem;
+    font: 0.875rem/1.714 Montserrat, Arial, sans-serif;
     color: $dark-75;
     cursor: inherit;
     padding-left: 0.9375rem;
@@ -36,11 +34,7 @@
   padding-bottom: 0.75rem;
 
   .button-clear {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 0.75rem;
-    line-height: 0.9375rem;
+    font: bold 0.75rem/1.25 Montserrat;
     text-transform: uppercase;
     color: $dark-50;
     padding: 0;
@@ -48,11 +42,7 @@
   }
 
   .button-apply {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 0.75rem;
-    line-height: 0.9375rem;
+    font: bold 0.75rem/1.25 Montserrat;
     text-transform: uppercase;
     color: $primary-purple;
     padding: 0;
@@ -93,11 +83,7 @@
   }
 
   .iqdropdown-selection {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 0.875rem;
-    line-height: 1.125rem;
+    font: 0.875rem/1.2857 Montserrat;
     color: $dark-75;
     white-space: nowrap;
     overflow: hidden;
@@ -116,11 +102,9 @@
       justify-content: space-between;
 
       &::after {
-        font-family: 'Material Icons';
+        font: 1.5rem/1.833 'Material Icons';
         width: 2.75rem;
         height: 2.75rem;
-        font-size: 1.5rem;
-        line-height: 2.75rem;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -138,11 +122,8 @@
   }
 
   &-item {
-    font-family: Montserrat;
-    font-size: 0.75rem;
-    font-weight: bold;
+    font: bold 0.75rem/1.25 Montserrat;
     text-transform: uppercase;
-    line-height: 0.9375rem;
     color: $dark-100;
     padding-bottom: 0.0625rem;
   }
@@ -165,7 +146,7 @@
         content: '-';
         color: $dark-50;
         font-size: 1.125rem;
-        line-height: 1.375rem;
+        line-height: 1.2222;
       }
     }
 
@@ -185,7 +166,7 @@
         content: '+';
         color: $dark-50;
         font-size: 1.125rem;
-        line-height: 1.375rem;
+        line-height: 1.2222;
       }
     }
 
@@ -200,11 +181,7 @@
     .counter {
       padding: 0;
       border: none;
-      font-family: Montserrat;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 0.75rem;
-      line-height: 0.9375rem;
+      font: bold 0.75rem/1.25 Montserrat;
       text-align: center;
       text-transform: uppercase;
       color: $dark-100;
