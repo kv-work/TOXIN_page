@@ -1,16 +1,16 @@
-mixin button(params)
+mixin button(params = {})
   -
-    var {label, type="button", style, disabled = false, arrow = false} = params
-    var classList = "button"
-    if (style == "filled") 
-      classList += " button_filled"
-    if (style == "no borders")
-      classList += " button_no_borders"
+    const { label = "", type="button", disabled = false, filled = false, withArrow = false, withBorders = true } = params;
+    let classList = "button";
+    if (filled) 
+      classList += " button_filled";
+    if (!withBorders)
+      classList += " button_no_borders";
     if (disabled) {
-      classList += " button_disabled"
+      classList += " button_disabled";
     }
-    if (arrow) {
-      classList += " button_with_arrow"
+    if (withArrow) {
+      classList += " button_with-arrow";
     }
   
   button(class=classList type=type)=label
