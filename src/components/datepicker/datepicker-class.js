@@ -59,8 +59,8 @@ export default class Datepicker {
     this.$endDate = this.$node.append(
       `<div class="form_datepicker_wrapper">
         <label class="form_datepicker__label like_h3">${labelSecond}</label>
-        <div class="form_datepicker__input_wrapper">
-          <input class="form_datepicker__end_date_input js-datepicker_masked" type="text" name="end-date" placeholder="ДД.ММ.ГГГГ" readonly required 
+        <div class="form_datepicker__input_wrapper" tabindex=0>
+          <input class="form_datepicker__end_date_input js-datepicker_masked" type="text" name="end-date" placeholder="ДД.ММ.ГГГГ" readonly required tabindex=-1
           ${valueSecond ? `data-date=${valueSecond}` : ' '} />
         </div>
       </div>`,
@@ -110,6 +110,8 @@ export default class Datepicker {
 
   // Создание обработчиков событий
   _attachEventHandlers() {
+    this.$wrapper.on('focus', this._clickOnWrapperHandler.bind(this));
+    this.$wrapper.on('blur', this._unfocusHandler.bind(this));
     this.$wrapper.on('click', this._clickOnWrapperHandler.bind(this));
 
     this.clearBtn.on('click', this._clearDates.bind(this));
@@ -126,6 +128,10 @@ export default class Datepicker {
     this.$opener = $(event.currentTarget).find('input');
     this.datepickerData.show();
     if (this.isSeparated) this._openDatepicker();
+  }
+
+  _unfocusHandler() {
+    this.datepickerData.hide();
   }
 
   _selectDate(formattedDates, date) {

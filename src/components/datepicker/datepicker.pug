@@ -9,7 +9,7 @@ mixin datepicker(params = {})
   div(class=classListBlock)
     .form_datepicker_wrapper
       label.form_datepicker__label.like_h3=label
-      .form_datepicker__input_wrapper
+      .form_datepicker__input_wrapper(tabindex=0)
         input.form_datepicker__input(
           type="text" 
           class=classList
@@ -17,6 +17,7 @@ mixin datepicker(params = {})
           placeholder="ДД.ММ.ГГГГ"
           required=true
           readonly=true
+          tabindex=-1
           data-date=value 
           data-separated=separated 
           data-label-second=labelSecond 
