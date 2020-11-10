@@ -1,7 +1,5 @@
 import $ from 'jquery';
 import 'paginationjs/dist/pagination.min';
-import 'paginationjs/dist/pagination.css';
-import './pagination.scss';
 import RoomCard from '../room-card/room-card';
 
 class Pagination {
