@@ -2,9 +2,9 @@ include ../datepicker/datepicker
 include ../dropdown/dropdown
 include ../button/button
 
-mixin roomSearchCard(params)
+mixin roomSearchCard(params = {})
   -
-    var { label } = params
+    const { label } = params;
     
     
   form.room_search_card.js-room_search_card(action="./search-room.html" method="get" name="room-search-form")
@@ -22,4 +22,4 @@ mixin roomSearchCard(params)
       +dropdown({label:"Гости", text: "Сколько гостей", items})
 
     .room_search_card__submit_button
-      +button( {label: "подобрать номер", filled: true, withArrow: true, type: "submit" } )
+      +button( { label: "подобрать номер", filled: true, withArrow: true, type: "submit" } )
