@@ -2,10 +2,10 @@ include circle/circle
 include line_1/line_1
 include line_2/line_2
 
-mixin logo(params)
-  - var {width, height, fill, fillOpacity} = params
+mixin logo(params = {})
+  - const {width, height, fill, fillOpacity} = params;
   svg.logo(width=width, height=height viewBox="0 0 48 48")
-    +circle({fill: fill, fillOpacity: fillOpacity})
-    +lineOne({fill: fill, fillOpacity: fillOpacity})
-    +lineTwo({fill: fill, fillOpacity: fillOpacity})
+    +circle({ fill: fill, fillOpacity: fillOpacity })
+    +lineOne({ fill: fill, fillOpacity: fillOpacity })
+    +lineTwo({ fill: fill, fillOpacity: fillOpacity })
 

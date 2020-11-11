@@ -18,7 +18,7 @@
 
     & i {
       font-size: 3rem;
-      line-height: 3rem;
+      line-height: 1;
       text-align: center;
       vertical-align: middle;
       background: $primary-gradient;
@@ -31,7 +31,7 @@
   &__label {
     font-weight: bold;
     font-size: 0.875rem;
-    line-height: 1.5rem;
+    line-height: 1.71429;
   }
 
   &:last-child {

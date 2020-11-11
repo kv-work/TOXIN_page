@@ -72,20 +72,12 @@
 .chart {
 
   &__num_label {
-    font-family: Quicksand, 'Open Sans', sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 1.5rem;
-    line-height: 1.875rem;
+    font: bold 1.5rem/1.25 Quicksand, 'Open Sans', sans-serif;
     fill: $primary-purple;
   }
 
   &__text_label {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 0.75rem;
-    line-height: 0.9375rem;
+    font: bold 0.75rem/1.25 Montserrat;
     text-align: center;
     text-transform: uppercase;
     fill: $primary-purple;

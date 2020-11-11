@@ -2,20 +2,22 @@ include ../button/button
 include ../nav-bar/nav-bar
 include ../logo/logo
 
-mixin header(params)
+mixin header(params = {})
   -
-    var {lang="en", isLoggedIn=false, userName } = params
-    if (lang == "en")
-      var currData = data.dataEn.header
-    else if (lang == "ru")
-      var currData = data.dataRu.header
+    const { lang = "en", isLoggedIn = false, userName } = params;
+    let currData;
 
-    var { navigationList, loginLabel, regLabel } = currData
+    if (lang == "en")
+      currData = data.dataEn.header;
+    else if (lang == "ru")
+      currData = data.dataRu.header;
+
+    const { navigationList, loginLabel, regLabel } = currData;
     
-    var classList = "header"
+    let classList = "header";
 
     if (isLoggedIn)
-      classList += " header_logged_in"
+      classList += " header_logged_in";
 
   header(class=classList)
     .header__elements
@@ -23,7 +25,7 @@ mixin header(params)
       a.header__logo(href="./")
         img(src="./img/logo.svg" alt="TOXIN")
       nav.header__nav_bar
-        +navBar({itemList: navigationList, display: "horizontal", lang: lang})
+        +navBar({ itemList: navigationList, display: "horizontal", lang: lang })
 
       if isLoggedIn
         span.header__user_name=userName

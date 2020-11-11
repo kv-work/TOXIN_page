@@ -1,6 +1,6 @@
-mixin navBarItem(params)
+mixin navBarItem(params = {})
   -
-    const {label, isNestedList=false, nestedItems=[], isActive=false} = params;
+    const { label, isNestedList = false, nestedItems = [], isActive = false } = params;
     let classList = "nav_bar__item";
     if (isNestedList)
       classList += "_nested js-item_nested";
@@ -18,9 +18,9 @@ mixin navBarItem(params)
       a.nav_bar__item_link(href=`/mock-address/change-me`)=label
 
 
-mixin navBar(params)
+mixin navBar(params = {})
   -
-    const {itemList, display="vertical", lang="en"} = params;
+    const { itemList, display="vertical", lang="en" } = params;
     let classList = "nav_bar";
     if (lang === "ru")
       classList += " nav_bar_ru";

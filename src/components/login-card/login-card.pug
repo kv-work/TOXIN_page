@@ -1,9 +1,9 @@
 include ../input/input
 include ../button/button
 
-mixin loginCard(params)
+mixin loginCard(params = {})
   -
-    var {label} = params
+    const {label} = params;
 
   form.js-login_card.login_card(action="/mock-address/change-me" method="post" name="login-form")
     h1.login_card__label=label

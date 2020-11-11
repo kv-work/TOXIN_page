@@ -16,11 +16,7 @@
     cursor: pointer;
 
     &::after {
-      font-family: Material Icons;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 1.5rem;
-      line-height: 1.25rem;
+      font: 1.5rem/0.8333 Material Icons;
       display: flex;
       align-items: center;
       text-align: center;

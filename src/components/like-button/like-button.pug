@@ -1,9 +1,9 @@
-mixin likeButton(params)
+mixin likeButton(params = {})
   -
-    var {count, checked=false} = params
-    var labelClass = "js-like_button like_button__label"
+    const { count, checked = false } = params;
+    let labelClass = "js-like_button like_button__label";
     if (checked) 
-      labelClass += " like_button__label_checked"
+      labelClass += " like_button__label_checked";
 
   label.like_button(class=labelClass)
     p=count

@@ -1,16 +1,16 @@
-mixin input(params)
+mixin input(params = {})
   -
-    var { label="", type="text", name='name', placeholder, masked = false, subscription = false } = params
-    var classList = "form_input__input"
-    var modClass = ""
+    const { label = "", type = "text", name = 'name', placeholder, masked = false, subscription = false } = params;
+    let classList = "form_input__input";
+    let modClass = "";
 
     if (masked) {
-      modClass += " form_input_masked"
-      classList += " js-form_input__input_masked"
+      modClass += " form_input_masked";
+      classList += " js-form_input__input_masked";
     }
 
     if (subscription) {
-      modClass += " form_input_with_subscription"
+      modClass += " form_input_with_subscription";
     }
     
   .form_input(class=modClass)

@@ -1,8 +1,8 @@
 include ../bullet-list/bullet-list
 
-mixin pieChart(params)
+mixin pieChart(params = {})
   -
-    var {label=""} = params
+    const {label = ""} = params;
   
   .pie_chart
     h2.pie_chart__title= label

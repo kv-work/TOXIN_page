@@ -68,9 +68,7 @@
     &::before {
 
       @media screen and (max-width: 37.5rem) {
-        font-family: 'Material Icons';
-        font-size: 1.5rem;
-        line-height: 1.25rem;
+        font: 1.5rem/0.8333 'Material Icons';
         display: flex;
         justify-content: center;
         align-items: center;
@@ -80,9 +78,7 @@
     }
 
     &::after {
-      font-family: 'Material Icons';
-      font-size: 24px;
-      line-height: 20px;
+      font-family: 1.5rem/0.8333 'Material Icons';
       display: flex;
       justify-content: center;
       align-items: center;

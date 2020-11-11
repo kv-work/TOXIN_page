@@ -1,8 +1,8 @@
-mixin rateButton(params)
+mixin rateButton(params = {})
   -
-    var { name, rate=4, disabled=false } = params
-    var n = 1
-    var className = disabled ? "rate_button_disabled js_rate_button" : "rate_button js_rate_button"
+    const { name, rate = 4, disabled = false } = params;
+    let n = 1;
+    const className = disabled ? "rate_button_disabled js_rate_button" : "rate_button js_rate_button";
 
   div(class=className data-rate=rate)
     while n < 6

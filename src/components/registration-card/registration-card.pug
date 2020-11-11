@@ -3,9 +3,9 @@ include ../button/button
 include ../radio-buttons/radio-buttons
 include ../toggle-button/toggle-button
 
-mixin registrationCard(params)
+mixin registrationCard(params = {})
   -
-    var {label} = params
+    const {label} = params;
 
   form.registration_card(action="/mock-address/change-me" method="post" name="registration-form" class="js-registration_card")
     h1.registration_card__label=label
@@ -50,7 +50,7 @@ mixin registrationCard(params)
         name: "password",
         })(required=true)
     .registration_card__toggle_button
-      +toggleButton({label: "Получать спецпредложения", name:"subscription"})
+      +toggleButton({ label: "Получать спецпредложения", name:"subscription" })
     .registration_card__submit_button
       +button({
           label: "перейти к оплате",

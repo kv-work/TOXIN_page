@@ -1,8 +1,8 @@
 include ./radio/radio
 
-mixin radioButtons(params)
+mixin radioButtons(params = {})
   -
-    var {list} = params
+    const { list } = params;
 
   .radio_buttons.js-radio_buttons
     each item, index in list
