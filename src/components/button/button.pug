@@ -13,6 +13,6 @@ mixin button(params = {})
       classList += " button_with-arrow";
     }
   
-  button(class=classList type=type disabled)=label
+  button(class=classList type=type disabled=disabled)=label
     if (withArrow)
       i.material-icons arrow_forward
