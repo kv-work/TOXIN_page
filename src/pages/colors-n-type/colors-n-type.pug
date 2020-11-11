@@ -5,12 +5,12 @@ block variables
   include ../../components/palette/palette
   include ../../components/type-example/type-example
 
-  - var pageTitle = "Colors and type"
+  - const pageTitle = "Colors and type";
 
 block content
   .colors-n-types
     .logo_wrapper
-      +logo({width: "48", height: "48", fill: "#1F2041", fillOpacity: ".25"})
+      +logo({ width: "48", height: "48", fill: "#1F2041", fillOpacity: ".25" })
     .colors_wrapper
       .colors_palettes
         +palette()

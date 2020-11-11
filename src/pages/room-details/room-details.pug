@@ -12,39 +12,39 @@ block variables
   include ../../components/room-images/room-images
   
   -
-    var pageTitle = "Room Details"
-    data = htmlWebpackPlugin.options.getData()
+    const pageTitle = "Room Details";
+    const data = htmlWebpackPlugin.options.getData();
 
 block content
   .room_details
-    +header( {lang: "ru", isLoggedIn: false, data })
+    +header({ lang: "ru", isLoggedIn: false, data })
     .room_details__content
       .room_details__images_block
-        +roomImages({room: 888})
+        +roomImages({ room: 888 })
       .room_details__details_block
         .room_details__info_block
           .room_details__room_info
             h2.room_details__room_info_label= "Сведения о номере"
             .room_details__room_info_items
-              +iconItem( {
+              +iconItem({
                 icon: "insert_emoticon",
                 label: "Комфорт",
-                description: "Шумопоглощающие стены"
-                } )
+                description: "Шумопоглощающие стены",
+                })
 
-              +iconItem( {
+              +iconItem({
                 icon: "location_city",
                 label: "Удобство",
-                description: "Окно в каждой из спален"
-              } )
+                description: "Окно в каждой из спален",
+              })
 
-              +iconItem( {
+              +iconItem({
                 icon: "whatshot",
                 label: "Уют",
-                description: "Номер оснащён камином"
-              } )
+                description: "Номер оснащён камином",
+              })
           .room_details__room_impressions
-            +pieChart({label: "Впечатления от номера"})
+            +pieChart({ label: "Впечатления от номера" })
           .room_details__guest_reviews_block
             h2.room_details__guest_reviews_label= "Отзывы посетителей номера"
             .room_details__guest_reviews_count= "2 отзыва"
@@ -55,8 +55,9 @@ block content
                 comment: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
                 likes: {
                   count: "12",
-                  checked: true
-              }})
+                  checked: true,
+                },
+              })
               +commentBlock({
                 name: "Патрисия Стёклышкова",
                 img: "avatar-2.png",
@@ -69,17 +70,17 @@ block content
           .room_details__room_rules_block
             h2.room_details__room_rules_title= "Правила"
             -
-              var itemList = [
-                {label: "Нельзя с питомцами"},
-                {label: "Без вечеринок и мероприятий"},
-                {label: "Время прибытия — после 13:00, а выезд до 12:00"}
-              ]
+              const itemList = [
+                { label: "Нельзя с питомцами" },
+                { label: "Без вечеринок и мероприятий" },
+                { label: "Время прибытия — после 13:00, а выезд до 12:00" }
+              ];
 
-            +bulletList({label: "", itemList})
+            +bulletList({ label: "", itemList })
           .room_details__cancel_reservation
             h2.room_details__cancel_reservation_label= "Отмена"
             .room_details__cancel_reservation_text= "Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги."
         .room_details__booking_form
           +roomRateCard()
     .room_details__delimiter
-    +footer( {lang: "ru", data} )
+    +footer({ lang: "ru", data })

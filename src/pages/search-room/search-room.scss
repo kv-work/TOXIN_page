@@ -46,9 +46,7 @@
     &::after {
 
       @media screen and (max-width: 41rem) {
-        font-family: 'Material Icons';
-        font-size: 1.875rem;
-        line-height: 1.25rem;
+        font: 1.875rem/0.66667 'Material Icons';
         display: flex;
         justify-content: center;
         align-items: center;

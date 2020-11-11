@@ -12,54 +12,54 @@ block variables
   include ../../components/room-card/room-card
 
   -
-    var pageTitle = "Search Room"
-    data = htmlWebpackPlugin.options.getData()
+    const pageTitle = "Search Room";
+    const data = htmlWebpackPlugin.options.getData();
 
 block content
   .search_room
-    +header( {lang: "ru", isLoggedIn: false, data })
+    +header({ lang: "ru", isLoggedIn: false, data })
     .search_room__content.js-search_room__content
       .search_room__filter_toggler
         h2.search_room__filter_toggler_title= "Фильтры поиска"
       form.search_room__filters_block(method="get")
         .search_room__datepicker
-          +datepicker({label: "даты пребывания в отеле", value:"19.08.2019", valueSecond:"23.08.2019"})
+          +datepicker({ label: "даты пребывания в отеле", value:"19.08.2019", valueSecond:"23.08.2019" })
         .search_room__guest_dropdown
           -
-            var items = [
-              {itemLabel: "Взрослые", itemCount: 2},
-              {itemLabel: "Дети", itemCount: 1},
-              {itemLabel: "Младенцы", itemCount: 1},
-            ]
-          +dropdown({label:"гости", text: "Сколько гостей", items})
+            const guestsItems = [
+              { itemLabel: "Взрослые", itemCount: 2 },
+              { itemLabel: "Дети", itemCount: 1 },
+              { itemLabel: "Младенцы", itemCount: 1 },
+            ];
+          +dropdown({ label:"гости", text: "Сколько гостей", items: guestsItems })
         .search_room__range_slider
           +rangeSlider( {label: "Диапазон цены", value: [5000, 10000], text: "Стоимость за сутки пребывания в номере"} )
         .search_room__checkbox
           -
-            var list = [
-              {label: "Можно курить"},
-              {label:"Можно с питомцами", checked: true},
-              {label:"Можно пригласить гостей (до\u00A010\u00A0человек)", checked: true}
-            ]
-          +checkboxList({checkboxLabel: "checkbox buttons", list: list})
+            const checkboxList = [
+              { label: "Можно курить" },
+              { label:"Можно с питомцами", checked: true },
+              { label:"Можно пригласить гостей (до\u00A010\u00A0человек)", checked: true },
+            ];
+          +checkboxList({checkboxLabel: "checkbox buttons", list: checkboxList})
         .search_room__rich_checkbox
           -
-            var list = [
+            const accessibilityList = [
               {label: "Широкий коридор", description: "Ширина коридоров в номере не\u00A0менее 91 см.", checked: false},
-              {label: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист и проводит до номера."}
-            ]
-          +checkboxList({checkboxLabel: "доступность", list, type: "rich" })
+              {label: "Помощник для инвалидов", description: "На 1 этаже вас встретит специалист и проводит до номера."},
+            ];
+          +checkboxList({checkboxLabel: "доступность", list: accessibilityList, type: "rich" })
         .search_room__comfort_dropdown
           -
-            var items = [
-              {itemLabel: "Спальни", itemCount: 2},
-              {itemLabel: "Кровати", itemCount: 2},
-              {itemLabel: "Ванные комнаты", itemCount: 0},
-            ]
-          +dropdown({label:"удобства номера", text: "Сколько гостей", items, multiple: true})
+            const comfortItems = [
+              { itemLabel: "Спальни", itemCount: 2 },
+              { itemLabel: "Кровати", itemCount: 2 },
+              { itemLabel: "Ванные комнаты", itemCount: 0 },
+            ];
+          +dropdown({label:"удобства номера", text: "Сколько гостей", items: comfortItems, multiple: true})
         .search_room__additional_services_checkbox
           -
-            var list = [
+            const additionalServicesList = [
               {label:"Завтрак"},
               {label:"Письменный стол", checked: true},
               {label: "Стул для кормления", checked: true},
@@ -67,9 +67,9 @@ block content
               {label: "Телевизор"},
               {label: "Шампунь"},
               {label: "Телевизор"},
-              {label: "Шампунь"}
-            ]
-          +checkboxList({checkboxLabel: "дополнительные удобства", list, type: "expandable"})
+              {label: "Шампунь"},
+            ];
+          +checkboxList({checkboxLabel: "дополнительные удобства", list: additionalServicesList, type: "expandable"})
       .search_room__rooms_block
         h1.search_room__rooms_title= "Номера, которые мы для вас подобрали"
         .search_room__pagination

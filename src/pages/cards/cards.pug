@@ -8,20 +8,20 @@ block variables
   include ../../components/login-card/login-card
   include ../../components/room-card/room-card
 
-  - var pageTitle = "Cards"
+  - const pageTitle = "Cards";
 
 block content
   .cards
     .cards__logo_wrapper
-      +logo({width: "48", height: "48", fill: "#1F2041", fillOpacity: ".25"})
+      +logo({ width: "48", height: "48", fill: "#1F2041", fillOpacity: ".25" })
     .cards_grid
       .cards_grid_col
-        +roomSearchCard({label: "Найдем номера под ваши\u00A0пожелания"}) 
-        +registrationCard({label: "Регистрация аккаунта"})
+        +roomSearchCard({ label: "Найдем номера под ваши\u00A0пожелания" }) 
+        +registrationCard({ label: "Регистрация аккаунта" })
       .cards_grid_col
         +roomRateCard()
-        +loginCard({label: "Войти"})
+        +loginCard({ label: "Войти" })
       .cards_grid_col 
         .calendar_card.js-form_datepicker_inline(data-date="19.08.2019" data-value-second="23.08.2019") 
-        +roomCard({number: 888})
-        +roomCard({number: 840})
+        +roomCard({ number: 888 })
+        +roomCard({ number: 840 })

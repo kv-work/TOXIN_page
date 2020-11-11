@@ -6,14 +6,14 @@ block variables
   include ../../components/room-search-card/room-search-card
 
   -
-    var pageTitle="Landing Page"
-    data = htmlWebpackPlugin.options.getData()
+    const pageTitle="Landing Page";
+    const data = htmlWebpackPlugin.options.getData();
 
 block content
-  +header( {lang: "ru", isLoggedIn: false, data })
+  +header({ lang: "ru", isLoggedIn: false, data })
   .landing.js-landing
     .landing__content
       .landing__form_search_room
-        +roomSearchCard({label: "Найдем номера под ваши\u00A0пожелания"})
+        +roomSearchCard({ label: "Найдем номера под ваши\u00A0пожелания" })
       .landing__slogan Лучшие номера для вашей работы, отдыха и просто вдохновения
-  +footer( {lang: "ru", data} )
+  +footer({ lang: "ru", data })
