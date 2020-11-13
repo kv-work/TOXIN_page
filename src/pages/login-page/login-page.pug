@@ -6,13 +6,13 @@ block variables
   include ../../components/login-card/login-card
 
   -
-    const pageTitle="Login Page";
+    const pageTitle = 'Login Page';
     const data = htmlWebpackPlugin.options.getData();
 
 block content
   .login_page
-    +header({ lang: "ru", isLoggedIn: false, data })
+    +header({ lang: 'ru', isLoggedIn: false, data })
     .login_page__content
       .login_page__login_form
-        +loginCard({ label: "Войти" })
-    +footer({ lang: "ru", data })
+        +loginCard({ label: 'Войти' })
+    +footer({ lang: 'ru', data })
