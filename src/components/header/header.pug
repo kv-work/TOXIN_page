@@ -4,37 +4,29 @@ include ../logo/logo
 
 mixin header(params = {})
   -
-    const { lang = "en", isLoggedIn = false, userName } = params;
+    const { lang = 'en', isLoggedIn = false, userName } = params;
     let currData;
-
-    if (lang == "en")
+    if (lang === 'en')
       currData = data.dataEn.header;
-    else if (lang == "ru")
+    else if (lang === 'ru')
       currData = data.dataRu.header;
 
     const { navigationList, loginLabel, regLabel } = currData;
-    
-    let classList = "header";
-
+    let classList = 'header';
     if (isLoggedIn)
-      classList += " header_logged_in";
+      classList += ' header_logged_in';
 
   header(class=classList)
     .header__elements
-      
       a.header__logo(href="./")
         img(src="./img/logo.svg" alt="TOXIN")
       nav.header__nav_bar
-        +navBar({ itemList: navigationList, display: "horizontal", lang: lang })
-
-      if isLoggedIn
-        span.header__user_name=userName
+        +navBar({ itemList: navigationList, display: 'horizontal', lang })
+      if (isLoggedIn)
+        span.header__user_name= userName
       else
         .header__buttons
           a.header__login_button(href="./login-page.html")
             +button({ label: loginLabel })
           a.header__registration_button(href="./registration-page.html")
-            +button({
-              label: regLabel,
-              filled: true
-              })
+            +button({ label: regLabel, filled: true })

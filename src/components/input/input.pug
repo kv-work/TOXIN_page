@@ -1,20 +1,27 @@
 mixin input(params = {})
   -
-    const { label = "", type = "text", name = 'name', placeholder, masked = false, subscription = false } = params;
-    let classList = "form_input__input";
-    let modClass = "";
+    const {
+      label = '',
+      type = 'text',
+      name = 'name',
+      placeholder,
+      masked = false,
+      subscription = false,
+    } = params;
+    let classList = 'form_input__input';
+    let modClass = '';
 
     if (masked) {
-      modClass += " form_input_masked";
-      classList += " js-form_input__input_masked";
+      modClass += ' form_input_masked';
+      classList += ' js-form_input__input_masked';
     }
 
     if (subscription) {
-      modClass += " form_input_with_subscription";
+      modClass += ' form_input_with_subscription';
     }
-    
+
   .form_input(class=modClass)
     if (label)
       label.form_input__label
-        p.like_h3=label
-    input( class=classList name=name type=type placeholder=placeholder )&attributes(attributes)
+        p.like_h3= label
+    input(class=classList name=name type=type placeholder=placeholder)&attributes(attributes)

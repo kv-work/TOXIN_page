@@ -5,23 +5,23 @@ mixin footer(params = {})
   -
     const { lang, withWidgets = true, data } = params;
     let currData;
-    
-    if (lang == "en")
+
+    if (lang === 'en')
       currData = data.dataEn.footer;
-    else if (lang == "ru")
+    else if (lang === 'ru')
       currData = data.dataRu.footer;
 
     const { descriptionText, navigationList, aboutUsList, supportList, subscribeBlock, copyrightText } = currData;
-    
-    let classList = "footer";
-    if (lang == "ru")
-      classList += " footer_ru";
+
+    let classList = 'footer';
+    if (lang === 'ru')
+      classList += ' footer_ru';
 
     if (withWidgets)
-      classList += " footer_with_widgets";
+      classList += ' footer_with_widgets';
 
   footer(class=classList)
-    div(class= (withWidgets) ? "footer__logo_n_widgets_block" : "footer__logo")
+    div(class=(withWidgets) ? "footer__logo_n_widgets_block" : "footer__logo")
       .footer__logo_block
         img(class="footer__logo_img" src="./img/logo.svg" alt="TOXIN")
         .footer__description= descriptionText
@@ -30,21 +30,21 @@ mixin footer(params = {})
           .footer__navigation_block
             h3.footer__navigation_list_title= navigationList.title
             .footer__navigation_list
-              +navBar({itemList: navigationList.list})
+              +navBar({ itemList: navigationList.list })
           .footer__about_us_block
             h3.footer__about_us_list_title= aboutUsList.title
             .footer__about_us_list
-              +navBar( {itemList: aboutUsList.list} )
+              +navBar({ itemList: aboutUsList.list })
           .footer__support_block
             h3.footer__support_list_title= supportList.title
             .footer__support_list
-              +navBar( {itemList: supportList.list})
+              +navBar({ itemList: supportList.list })
         .footer__subscribe_block
           h3.footer__subscribe_title= subscribeBlock.title
           .footer__subscribe_text= subscribeBlock.text
           .footer__subscribe_input
-            +input( {placeholder: subscribeBlock.inputPlaceholder, subscription: true })
-    div(class= (withWidgets) ? "footer__copyright_n_socials_block" : "footer__socials")
+            +input({ placeholder: subscribeBlock.inputPlaceholder, subscription: true })
+    div(class=(withWidgets) ? "footer__copyright_n_socials_block" : "footer__socials")
       if (withWidgets)
         .footer__copyright_block= copyrightText
       .footer__socials_block
@@ -54,4 +54,3 @@ mixin footer(params = {})
           i(class="fab fa-facebook-square")
         a.footer__social(href="/mock-address/change-me" target="_blank" rel="noopener noreferrer")
           i(class="fab fa-instagram")
-        
