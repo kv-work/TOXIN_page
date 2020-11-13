@@ -1,14 +1,12 @@
 mixin datepicker(params = {})
   -
-    const {label, separated=false, labelSecond="", value="", valueSecond=""} = params;
-    const classList = separated ? "js-datepicker_separated js-datepicker_masked start_date" : "js-datepicker";
-    const classListBlock = separated ? "form_datepicker js-form_datepicker_separated" : "form_datepicker js-form_datepicker";
-
-
+    const { label, separated = false, labelSecond = '', value = '', valueSecond = '' } = params;
+    const classList = separated ? 'js-datepicker_separated js-datepicker_masked start_date' : 'js-datepicker';
+    const classListBlock = separated ? 'form_datepicker js-form_datepicker_separated' : 'form_datepicker js-form_datepicker';
 
   div(class=classListBlock)
     .form_datepicker_wrapper
-      label.form_datepicker__label.like_h3=label
+      label.form_datepicker__label.like_h3= label
       .form_datepicker__input_wrapper(tabindex=0)
         input.form_datepicker__input(
           type="text" 

@@ -1,18 +1,25 @@
 mixin button(params = {})
   -
-    const { label = "", type="button", disabled = false, filled = false, withArrow = false, withBorders = true } = params;
-    let classList = "button";
+    const {
+      label = '',
+      type = 'button',
+      disabled = false,
+      filled = false,
+      withArrow = false,
+      withBorders = true,
+    } = params;
+    let classList = 'button';
     if (filled) 
-      classList += " button_filled";
+      classList += ' button_filled';
     if (withBorders)
-      classList += " button_with-borders";
+      classList += ' button_with-borders';
     if (disabled) {
-      classList += " button_disabled";
+      classList += ' button_disabled';
     }
     if (withArrow) {
-      classList += " button_with-arrow";
+      classList += ' button_with-arrow';
     }
-  
-  button(class=classList type=type disabled=disabled)=label
+
+  button(class=classList type=type disabled=disabled)= label
     if (withArrow)
       i.material-icons arrow_forward

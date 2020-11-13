@@ -1,22 +1,20 @@
 mixin dropdownItem(index, item)
-  - const {itemLabel, itemCount = 0} = item;
+  - const { itemLabel, itemCount = 0} = item;
 
   .iqdropdown-menu-option(data-id=`item-${index}` data-defaultcount=itemCount)
     div
-      p.iqdropdown-item=itemLabel 
-
+      p.iqdropdown-item= itemLabel
 
 mixin dropdown(params = {})
-
   -
-    const {label, text, items, multiple = false} = params;
-    const classList = (multiple) ? "js-form_dropdown_multiple" : "js-form_dropdown";
+    const { label, text, items, multiple = false } = params;
+    const classList = (multiple) ? 'js-form_dropdown_multiple' : 'js-form_dropdown';
 
   .form_dropdown
-    label.form_dropdown__label.like_h3=label      
+    label.form_dropdown__label.like_h3= label
     .iqdropdown(class=classList)&attributes(attributes)
       .iqdropdown-selection-wrapper
-        p.iqdropdown-selection=text
+        p.iqdropdown-selection= text
         .iqdropdown-menu
           each item, index in items
             +dropdownItem(index+1, item)
