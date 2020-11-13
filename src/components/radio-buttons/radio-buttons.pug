@@ -1,9 +1,8 @@
 include ./radio/radio
 
 mixin radioButtons(params = {})
-  -
-    const { list } = params;
+  - const { list } = params;
 
   .radio_buttons.js-radio_buttons
     each item, index in list
-      +radio({list: item, value: index})
+      +radio({ list: item, value: index })

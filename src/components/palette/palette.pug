@@ -4,11 +4,13 @@ include ./description/description
 mixin palette(params = {})
   -
     const {
-      color = "#1F2041",
-      colorName = "Dark_Shade",
+      color = '#1F2041',
+      colorName = 'Dark_Shade',
       opacity,
       } = params;
 
   .palette
     +sample({ colorName, opacity })
     +description({ color, colorName, opacity })
+
++palette()

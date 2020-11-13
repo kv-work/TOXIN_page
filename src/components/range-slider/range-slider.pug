@@ -1,12 +1,14 @@
 mixin rangeSlider(params = {})
-  -
-    const { label, value, text = "" } = params;
+  - const { label, value, text = '' } = params;
 
   label.js-range_slider.range_slider
-    h3.range_slider__label=label
+    h3.range_slider__label= label
     p.range_slider__value
     input.range_slider__input(
-      type="text" name="range" value=""   data-type="double"
+      type="text"
+      name="range"
+      value=""
+      data-type="double"
       data-min=0
       data-max=16000
       data-from=value[0]

@@ -1,14 +1,14 @@
 mixin pagination(params = {})
   -
-    const { numberOfPages, description = "1 – 12 из 100+ вариантов аренды", data = [] } = params;
-    let classMod = "js-pagination_block";
-    if ((data.length != 0))
-      classMod += " pagination_block_with_data";
+    const { numberOfPages, description = '1 – 12 из 100+ вариантов аренды', data = [] } = params;
+    let classMod = 'js-pagination_block';
+    if (data.length !== 0)
+      classMod += ' pagination_block_with_data';
     else
-      classMod += " pagination_block_without_data";
+      classMod += ' pagination_block_without_data';
 
-  .pagination_block(data-rooms= data class= classMod)
-    if (data.length != 0)
+  .pagination_block(data-rooms=data class=classMod)
+    if (data.length !== 0)
       #data-container
     .pagination_block__pagination.js-pagination(data-pages=numberOfPages)
-    .pagination_block__description=description
+    .pagination_block__description= description

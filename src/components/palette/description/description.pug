@@ -2,12 +2,12 @@ mixin description(params = {})
   .palette__description
     -
       const { color, colorName, opacity } = params;
-      const nameArr = colorName.split("_");
-      const nameOfColor = nameArr.join(" ");
+      const nameArr = colorName.split('_');
+      const nameOfColor = nameArr.join(' ');
       let name = nameOfColor;
       if (opacity) {
-        name = nameOfColor+" "+opacity;
+        name = nameOfColor + ' ' + opacity;
       }
 
-    .palette__name=name
-    .palette__hex=color
+    .palette__name= name
+    .palette__hex= color
