@@ -5,16 +5,16 @@ include ../button/button
 mixin roomRateCard()
   -
     const dropdownItems = [
-          {itemLabel: "Взрослые", itemCount: 2},
-          {itemLabel: "Дети", itemCount: 1},
-          {itemLabel: "Младенцы", itemCount: 0},
+          {itemLabel: 'Взрослые', itemCount: 2},
+          {itemLabel: 'Дети', itemCount: 1},
+          {itemLabel: 'Младенцы', itemCount: 0},
         ];
     const datepickerParams = {
-        label: "Прибытие",
+        label: 'Прибытие',
         separated: true,
-        labelSecond: "Выезд",
-        value: "19.08.2019",
-        valueSecond: "23.08.2019"
+        labelSecond: 'Выезд',
+        value: '19.08.2019',
+        valueSecond: '23.08.2019'
       };
 
   form.room_rate_card.js-room_rate_card(action="/mock-address/change-me" method="post" name="room-rate-form")
@@ -28,7 +28,7 @@ mixin roomRateCard()
     .room_rate_card__datepicker_is_separated
       +datepicker(datepickerParams)
     .room_rate_card__guest_select_dropdown
-      +dropdown({label:"Гости", text: "Сколько гостей", items: dropdownItems})
+      +dropdown({ label:'Гости', text: 'Сколько гостей', items: dropdownItems })
     .room_rate_card__calculations_block
       .room_rate_card__days_cost_calc
         span.room_rate_card__cost_calc
@@ -48,4 +48,9 @@ mixin roomRateCard()
       .room_rate_card__dashed_border
       span.room_rate_card__total
     .room_rate_card__submit_button
-      +button( {label: "забронировать", filled: true, withArrow: true, type: "submit" } )
+      +button({
+        label: 'забронировать',
+        filled: true,
+        withArrow: true,
+        type: 'submit',
+      })

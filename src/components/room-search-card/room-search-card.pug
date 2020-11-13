@@ -3,23 +3,19 @@ include ../dropdown/dropdown
 include ../button/button
 
 mixin roomSearchCard(params = {})
-  -
-    const { label } = params;
-    
-    
+  - const { label } = params;
+
   form.room_search_card.js-room_search_card(action="./search-room.html" method="get" name="room-search-form")
-    h1.room_search_card__label=label
+    h1.room_search_card__label= label
     .room_search_card__datepicker_is_separated
-      +datepicker({label: "Прибытие", separated: true, labelSecond: "Выезд"})
-    
+      +datepicker({label: 'Прибытие', separated: true, labelSecond: 'Выезд'})
     .room_search_card__guest_select_dropdown
       -
-        var items = [
-          {itemLabel: "Взрослые", itemCount: 0},
-          {itemLabel: "Дети", itemCount: 0},
-          {itemLabel: "Младенцы", itemCount: 0},
-        ]
-      +dropdown({label:"Гости", text: "Сколько гостей", items})
-
+        const items = [
+          { itemLabel: 'Взрослые', itemCount: 0 },
+          { itemLabel: 'Дети', itemCount: 0 },
+          { itemLabel: 'Младенцы', itemCount: 0 },
+        ];
+      +dropdown({ label:'Гости', text: 'Сколько гостей', items })
     .room_search_card__submit_button
-      +button( { label: "подобрать номер", filled: true, withArrow: true, type: "submit" } )
+      +button({ label: 'подобрать номер', filled: true, withArrow: true, type: 'submit' })
