@@ -1,0 +1,79 @@
+.nav_bar__item {
+  margin-right: 1.875rem;
+
+  @media screen and (max-width: 37.5rem) {
+    margin-right: 0;
+    padding-right: 0.625rem;
+    text-align: end;
+  }
+
+  &.active {
+    font-weight: bold;
+    color: $dark-75;
+  }
+
+  &_link {
+    color: $dark-50;
+    text-decoration: none;
+    white-space: nowrap;
+    letter-spacing: -0.013rem;
+  }
+
+  &_nested {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    margin-right: 1.25rem;
+    color: $dark-50;
+
+    @media screen and (max-width: 37.5rem) {
+      margin-right: 0;
+      padding-right: 0.625rem;
+      justify-content: flex-end;
+    }
+
+    &::before {
+
+      @media screen and (max-width: 37.5rem) {
+        font: 1.5rem/0.8333 'Material Icons';
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        content: 'expand_more';
+        color: $dark-50;
+      }
+    }
+
+    &::after {
+      font: 1.5rem/0.8333 'Material Icons';
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      content: 'expand_more';
+      color: $dark-50;
+
+      @media screen and (max-width: 37.5rem) {
+        display: none;
+      }
+    }
+
+    & > ul {
+      position: absolute;
+      top: 1.5rem;
+      padding-left: 0.625rem;
+
+      @media screen and (max-width: 37.5rem) {
+        border: 1px solid $dark-10;
+        top: 0;
+        right: 100%;
+      }
+    }
+
+    &::before {
+
+      @media screen and (max-width: 37.5rem) {
+        transform: rotate(90deg);
+      }
+    }
+  }
+}

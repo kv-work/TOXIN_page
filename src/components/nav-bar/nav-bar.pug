@@ -1,20 +1,4 @@
-mixin navBarItem(params = {})
-  -
-    const { label, isNestedList = false, nestedItems = [], isActive = false } = params;
-    let classList = 'nav_bar__item';
-    if (isNestedList)
-      classList += '_nested js-item_nested';
-    if (isActive)
-      classList += ' active';
-
-  if (isNestedList)
-    li(class=classList)= label
-      ul.nav_bar__nested_list
-        each item in nestedItems
-          +navBarItem(item)
-  else
-    li(class= classList)
-      a.nav_bar__item_link(href=`/mock-address/change-me`)= label
+include nav-bar-item/nav-bar-item
 
 mixin navBar(params = {})
   -

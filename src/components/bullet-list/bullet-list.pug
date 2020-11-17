@@ -1,10 +1,3 @@
-mixin bulletListItem(params = {})
-  -
-    const { label = '' } = params;
-    let classList = 'bullet_list__item';
-
-  li(class=classList)= label
-
 mixin bulletList(params = {})
   -
     const { label = '', itemList = [] } = params;
@@ -12,4 +5,4 @@ mixin bulletList(params = {})
   lh.bullet_list__label.like_h3= label
   ul.bullet_list__list
     each item in itemList
-      +bulletListItem(item)
+      li(class="bullet_list__item")= item.label
