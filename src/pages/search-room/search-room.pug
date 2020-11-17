@@ -6,7 +6,7 @@ block variables
   include ../../components/datepicker/datepicker
   include ../../components/dropdown/dropdown
   include ../../components/range-slider/range-slider
-  include ../../components/checkbox/checkbox
+  include ../../components/checkbox-list/checkbox-list
   include ../../components/pagination/pagination
   include ../../components/room-card/room-card
 
@@ -50,7 +50,7 @@ block content
               { label: 'Помощник для инвалидов', description: 'На 1 этаже вас встретит специалист и проводит до номера.' },
             ];
 
-          +checkboxList({ checkboxLabel: 'доступность', list: accessibilityList, type: 'rich' })
+          +checkboxList({ checkboxLabel: 'доступность', list: accessibilityList, rich: true })
         .search_room__comfort_dropdown
           -
             const comfortItems = [
@@ -73,7 +73,7 @@ block content
               { label: 'Шампунь' },
             ];
 
-          +checkboxList({ checkboxLabel: 'дополнительные удобства', list: additionalServicesList, type: 'expandable' })
+          +checkboxList({ checkboxLabel: 'дополнительные удобства', list: additionalServicesList, expandable: true, closed: true })
       .search_room__rooms_block
         h1.search_room__rooms_title Номера, которые мы для вас подобрали
         .search_room__pagination

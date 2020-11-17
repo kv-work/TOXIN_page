@@ -1,0 +1,12 @@
+mixin checkboxOption({ option = {}, rich = false })
+  -
+    const { label = '', checked = false, description = '' } = option;
+    let classList = 'checkbox-option'
+    if (rich)
+      classList += ' checkbox-option_rich'
+
+  div(class=classList)
+    label.checkbox-option__label= label
+      input.checkbox-option__input(type="checkbox" checked=checked)
+    if (rich)
+      p.checkbox-option__description= description

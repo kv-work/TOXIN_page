@@ -6,7 +6,7 @@ block variables
   include ../../components/dropdown/dropdown
   include ../../components/datepicker/datepicker
   include ../../components/icon-item/icon-item
-  include ../../components/checkbox/checkbox
+  include ../../components/checkbox-list/checkbox-list
   include ../../components/bullet-list/bullet-list
   include ../../components/button/button
   include ../../components/radio-buttons/radio-buttons
@@ -150,9 +150,9 @@ block content
               { label: 'Шампунь' },
             ];
 
-          +checkboxList({ checkboxLabel: 'expandable checkbox list', list, type: 'expandable' })
+          +checkboxList({ checkboxLabel: 'expandable checkbox list', list, expandable: true, closed: true })
         .expandable_checkbox_wrapper
-          +checkboxList({ checkboxLabel: 'expandable checkbox list', list, type: 'expandable', opened: true })
+          +checkboxList({ checkboxLabel: 'expandable checkbox list', list, expandable: true })
       .col
         .rich_checkbox_buttons
           -
@@ -161,7 +161,7 @@ block content
               { label: 'Помощник для инвалидов', description: 'На 1 этаже вас встретит специалист и проводит до номера.' },
             ];
 
-          +checkboxList({ checkboxLabel: 'rich checkbox buttons', list, type: 'rich' })
+          +checkboxList({ checkboxLabel: 'rich checkbox buttons', list, rich: true })
       .col
         .bullet_list_wrapper
           -
