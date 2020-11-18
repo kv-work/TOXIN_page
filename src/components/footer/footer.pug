@@ -18,36 +18,36 @@ mixin footer(params = {})
       classList += ' footer_ru';
 
     if (withWidgets)
-      classList += ' footer_with_widgets';
+      classList += ' footer_with-widgets';
 
   footer(class=classList)
-    div(class=(withWidgets) ? "footer__logo_n_widgets_block" : "footer__logo")
-      .footer__logo_block
-        img(class="footer__logo_img" src="./img/logo.svg" alt="TOXIN")
+    div(class=(withWidgets) ? "footer__logo-n-widgets-block" : "footer__logo")
+      .footer__logo-block
+        img(class="footer__logo-img" src="./img/logo.svg" alt="TOXIN")
         .footer__description= descriptionText
       if (withWidgets)
-        .footer__widgets_block
-          .footer__navigation_block
-            h3.footer__navigation_list_title= navigationList.title
-            .footer__navigation_list
+        .footer__widgets-block
+          .footer__navigation-block
+            h3.footer__navigation-list-title= navigationList.title
+            .footer__navigation-list
               +navBar({ itemList: navigationList.list })
-          .footer__about_us_block
-            h3.footer__about_us_list_title= aboutUsList.title
-            .footer__about_us_list
+          .footer__about-us-block
+            h3.footer__about-us-list-title= aboutUsList.title
+            .footer__about-us-list
               +navBar({ itemList: aboutUsList.list })
-          .footer__support_block
-            h3.footer__support_list_title= supportList.title
-            .footer__support_list
+          .footer__support-block
+            h3.footer__support-list-title= supportList.title
+            .footer__support-list
               +navBar({ itemList: supportList.list })
-        .footer__subscribe_block
-          h3.footer__subscribe_title= subscribeBlock.title
-          .footer__subscribe_text= subscribeBlock.text
-          .footer__subscribe_input
+        .footer__subscribe-block
+          h3.footer__subscribe-title= subscribeBlock.title
+          .footer__subscribe-text= subscribeBlock.text
+          .footer__subscribe-input
             +input({ placeholder: subscribeBlock.inputPlaceholder, subscription: true })
-    div(class=(withWidgets) ? "footer__copyright_n_socials_block" : "footer__socials")
+    div(class=(withWidgets) ? "footer__copyright-n-socials-block" : "footer__socials")
       if (withWidgets)
-        .footer__copyright_block= copyrightText
-      .footer__socials_block
+        .footer__copyright-block= copyrightText
+      .footer__socials-block
         a.footer__social(href="/mock-address/change-me" target="_blank" rel="noopener noreferrer")
           i(class="fab fa-twitter")
         a.footer__social(href="/mock-address/change-me" target="_blank" rel="noopener noreferrer")

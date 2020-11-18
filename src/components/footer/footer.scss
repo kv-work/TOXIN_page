@@ -9,7 +9,7 @@
     padding-bottom: 0;
   }
 
-  &__logo_n_widgets_block {
+  &__logo-n-widgets-block {
     max-width: 72.5rem;
     margin: auto;
     display: grid;
@@ -50,7 +50,7 @@
     margin-top: 0.6875rem;
   }
 
-  &__copyright_n_socials_block {
+  &__copyright-n-socials-block {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -71,7 +71,7 @@
     }
   }
 
-  &__widgets_block {
+  &__widgets-block {
     display: flex;
     justify-content: space-between;
     padding-top: 0.25rem;
@@ -94,9 +94,9 @@
     }
   }
 
-  &__navigation_list,
-  &__about_us_list,
-  &__support_list {
+  &__navigation-list,
+  &__about-us-list,
+  &__support-list {
 
     @media screen and (max-width: 76.25rem) {
       display: none;
@@ -105,9 +105,9 @@
     }
   }
 
-  &__navigation_list_title,
-  &__about_us_list_title,
-  &__support_list_title {
+  &__navigation-list-title,
+  &__about-us-list-title,
+  &__support-list-title {
     margin-bottom: 1.125rem;
 
     @media screen and (max-width: 76.25rem) {
@@ -115,7 +115,7 @@
     }
   }
 
-  &__navigation_block {
+  &__navigation-block {
 
     @media screen and (max-width: 76.25rem) {
       margin-right: 1.25rem;
@@ -158,7 +158,7 @@
     }
   }
 
-  &__about_us_block {
+  &__about-us-block {
 
     @media screen and (max-width: 76.25rem) {
       margin-right: 1.25rem;
@@ -195,7 +195,7 @@
     }
   }
 
-  &__support_block {
+  &__support-block {
 
     @media screen and (max-width: 76.25rem) {
       display: flex;
@@ -236,19 +236,19 @@
     }
   }
 
-  &__subscribe_block {
+  &__subscribe-block {
     padding-top: 0.25rem;
   }
 
-  &__subscribe_text {
+  &__subscribe-text {
     margin-top: 1.1875rem;
   }
 
-  &__subscribe_input {
+  &__subscribe-input {
     margin-top: 1.375rem;
   }
 
-  &__socials_block {
+  &__socials-block {
     display: grid;
     grid-template-columns: repeat(3, auto);
     column-gap: 1.25rem;
@@ -279,7 +279,7 @@
     -webkit-text-fill-color: transparent;
   }
 
-  &__copyright_block {
+  &__copyright-block {
 
     @media screen and (max-width: 32.5rem) {
       margin-bottom: 0.9375rem;

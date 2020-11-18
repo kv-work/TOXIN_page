@@ -2,7 +2,7 @@ import $ from 'jquery';
 import 'item-quantity-dropdown/lib/item-quantity-dropdown.min';
 
 // Creating dropdown
-$('.js-form_dropdown').iqDropdown({
+$('.js-dropdown').iqDropdown({
   maxItems: 10,
   initialText: 'Сколько гостей',
   selectionText: 'гость',
@@ -44,7 +44,7 @@ $('.js-form_dropdown').iqDropdown({
 });
 
 // Creating multiple-dropdown
-$('.js-form_dropdown_multiple').iqDropdown({
+$('.js-dropdown_multiple').iqDropdown({
   initialText: 'Выберите удобства',
   controls: {
     controlBtnsCls: 'iqdropdown-menu-control-buttons',
