@@ -1,7 +1,7 @@
 @import '../../settings.scss';
 @import 'air-datepicker/dist/css/datepicker.min';
 
-.form_datepicker {
+.datepicker-block {
 
   &__label {
     display: block;
@@ -9,14 +9,14 @@
   }
 }
 
-.js-form_datepicker_separated {  
+.js-datepicker-block_separated {  
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, minmax(45%, 9.375rem));
   grid-column-gap: 1.25rem;
 }
 
-.form_datepicker__input_wrapper {
+.datepicker-block__input-wrapper {
   font: 0.875rem/1.7143 Montserrat, Arial, sans-serif;
   color: $dark-75;
   height: 2.75rem;
@@ -46,8 +46,8 @@
   }
 }
 
-.form_datepicker__input,
-.form_datepicker__end_date_input {
+.datepicker-block__input,
+.datepicker-block__end-date-input {
   font: 0.875rem/1.2857 Montserrat, Arial, sans-serif;
   padding: 0.0625rem 0 0 0.875rem;
   cursor: inherit;

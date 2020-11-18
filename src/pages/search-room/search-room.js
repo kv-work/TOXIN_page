@@ -8,7 +8,7 @@ class SearchRoomContent {
     this.$rooms = this.$content.find('.search_room__rooms_block');
     this.$roomCards = this.$rooms.find('#data-container');
 
-    this.$datepicker = this.$filters.find('.js-form_datepicker');
+    this.$datepicker = this.$filters.find('.js-datepicker-block');
     this.$dropdown = this.$filters.find('.js-form_dropdown');
 
     this._init();

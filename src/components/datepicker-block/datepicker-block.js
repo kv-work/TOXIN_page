@@ -1,9 +1,9 @@
 import $ from 'jquery';
 import 'air-datepicker/dist/js/datepicker.min';
 import Cleave from 'cleave.js';
-import Datepicker from './datepicker-class';
+import Datepicker from './Datepicker';
 
-$('.js-form_datepicker, .js-form_datepicker_separated, .js-form_datepicker_inline').each(function addDatepicker() {
+$('.js-datepicker-block, .js-datepicker-block_separated, .js-datepicker-block_inline').each(function addDatepicker() {
   // config datepicker's language
   $.fn.datepicker.language['my-lang'] = {
     days: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],

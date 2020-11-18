@@ -8,7 +8,7 @@ mixin roomSearchCard(params = {})
   form.room_search_card.js-room_search_card(action="./search-room.html" method="get" name="room-search-form")
     h1.room_search_card__label= label
     .room_search_card__datepicker_is_separated
-      +datepicker({label: 'Прибытие', separated: true, labelSecond: 'Выезд'})
+      +datepickerBlock({label: 'Прибытие', separated: true, labelSecond: 'Выезд'})
     .room_search_card__guest_select_dropdown
       -
         const items = [

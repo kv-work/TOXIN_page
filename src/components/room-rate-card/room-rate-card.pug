@@ -26,7 +26,7 @@ mixin roomRateCard()
         span.room_rate_card__price
         span.room_rate_card__price_text в сутки
     .room_rate_card__datepicker_is_separated
-      +datepicker(datepickerParams)
+      +datepickerBlock(datepickerParams)
     .room_rate_card__guest_select_dropdown
       +dropdown({ label:'Гости', text: 'Сколько гостей', items: dropdownItems })
     .room_rate_card__calculations_block

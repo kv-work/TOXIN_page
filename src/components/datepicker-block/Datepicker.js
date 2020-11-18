@@ -4,8 +4,8 @@ import $ from 'jquery';
 export default class Datepicker {
   constructor(node, options) {
     this.$node = $(node);
-    this.isInline = this.$node.hasClass('js-form_datepicker_inline');
-    this.isSeparated = this.$node.hasClass('js-form_datepicker_separated');
+    this.isInline = this.$node.hasClass('js-datepicker-block_inline');
+    this.isSeparated = this.$node.hasClass('js-datepicker-block_separated');
     this.data = this.isInline ? this.$node.data() : this.$node.find('input').data();
 
     this.$datepicker = this.$node.find('.js-datepicker');
@@ -41,7 +41,7 @@ export default class Datepicker {
       this.datepickerData.update('dateFormat', 'dd.mm.yyyy');
     }
 
-    this.$wrapper = this.$node.find('.form_datepicker__input_wrapper');
+    this.$wrapper = this.$node.find('.datepicker-block__input-wrapper');
 
     if (this.data.date || this.data.valueSecond) this._setDataValues();
 
@@ -57,14 +57,14 @@ export default class Datepicker {
     } = this.data;
 
     this.$endDate = this.$node.append(
-      `<div class="form_datepicker_wrapper">
-        <label class="form_datepicker__label like_h3">${labelSecond}</label>
-        <div class="form_datepicker__input_wrapper" tabindex=0>
-          <input class="form_datepicker__end_date_input js-datepicker_masked" type="text" name="end-date" placeholder="ДД.ММ.ГГГГ" readonly required tabindex=-1
+      `<div class="datepicker-block_wrapper">
+        <label class="datepicker-block__label like_h3">${labelSecond}</label>
+        <div class="datepicker-block__input-wrapper" tabindex=0>
+          <input class="datepicker-block__end-date-input js-datepicker_masked" type="text" name="end-date" placeholder="ДД.ММ.ГГГГ" readonly required tabindex=-1
           ${valueSecond ? `data-date=${valueSecond}` : ' '} />
         </div>
       </div>`,
-    ).find('.form_datepicker__end_date_input');
+    ).find('.datepicker-block__end-date-input');
   }
 
   // Установка дат переданных с помощью data-атрибутов
@@ -149,7 +149,7 @@ export default class Datepicker {
     if ($opener) {
       if (Array.isArray(date)) {
         [start, end] = date;
-        if ($opener.hasClass('start_date')) {
+        if ($opener.hasClass('start-date')) {
           this.startDate = start;
           $datepicker.val(formattedDatesArr[0]);
           $datepicker.data('date', formattedDatesArr[0]);
@@ -166,7 +166,7 @@ export default class Datepicker {
         }
       } else {
         start = date;
-        if ($opener.hasClass('start_date')) {
+        if ($opener.hasClass('start-date')) {
           this.startDate = start;
           $datepicker.val(formattedDates);
           $datepicker.data('date', formattedDates);
@@ -233,12 +233,12 @@ export default class Datepicker {
     });
 
     // клик на $datepicker НЕ выбран конец диапазона
-    if ($opener.hasClass('start_date') && !endDate) {
+    if ($opener.hasClass('start-date') && !endDate) {
       datepickerData.update({ range: false });
     }
 
     // клик на $datepicker выбран конец диапазона
-    if ($opener.hasClass('start_date') && endDate) {
+    if ($opener.hasClass('start-date') && endDate) {
       datepickerData.update({
         range: true,
         maxDate: endDate,
@@ -246,12 +246,12 @@ export default class Datepicker {
     }
 
     // клик на $endDate НЕ выбран старт диапазона
-    if ($opener.hasClass('form_datepicker__end_date_input') && !startDate) {
+    if ($opener.hasClass('datepicker-block__end-date-input') && !startDate) {
       datepickerData.update({ range: false });
     }
 
     // клик на $endDate выбран старт диапазона
-    if ($opener.hasClass('form_datepicker__end_date_input') && startDate) {
+    if ($opener.hasClass('datepicker-block__end-date-input') && startDate) {
       datepickerData.update({
         minDate: startDate,
         range: true,
