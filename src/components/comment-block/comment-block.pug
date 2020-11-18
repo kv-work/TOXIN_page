@@ -4,12 +4,12 @@ mixin commentBlock(params = {})
   -
     const { name, img = 'avatar-1.png', date, comment, likes } = params;
 
-  .comment_block
-    .comment_block__img_block
-      img.comment_block__image(src=`./img/${img}` alt="avatar")
-    .comment_block__name_block
-      .comment_block__name= name
-      .comment_block__date= date
-    .comment_block__like_button
+  .comment-block
+    .comment-block__img-block
+      img.comment-block__image(src=`./img/${img}` alt="avatar")
+    .comment-block__name-block
+      .comment-block__name= name
+      .comment-block__date= date
+    .comment-block__like-button
       +likeButton(likes)
-    .comment_block__comment= comment
+    .comment-block__comment= comment
