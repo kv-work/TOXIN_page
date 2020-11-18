@@ -1,16 +1,12 @@
 @import '../../settings.scss';
 
-.bullet_list {
-
-  &__list {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    display: grid;
-    row-gap: 0.625rem;
-    padding-top: 0.5625rem;
-    padding-right: 1.7869rem;
-  }
+.bullet-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: grid;
+  row-gap: 0.625rem;
+  padding-top: 0.5625rem;
 
   &__item {
     display: grid;
@@ -25,7 +21,6 @@
       background: $dark-25;
       content: '';
       border-radius: 50%;
-      margin-top: 0.4375rem;
     }
   }
 }

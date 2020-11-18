@@ -164,6 +164,7 @@ block content
           +checkboxList({ checkboxLabel: 'rich checkbox buttons', list, rich: true })
       .col
         .bullet_list_wrapper
+          h3.bullet_list_label bullet list
           -
             const itemList = [
               { label: 'Нельзя с питомцами' },
@@ -171,7 +172,7 @@ block content
               { label: 'Время прибытия — после 13:00, а выезд до 12:00' },
             ];
 
-          +bulletList({ label: 'bullet list', itemList })
+          +bulletList({ itemList })
     .row
       .col
         .icon_item_list_wrapper

@@ -1,8 +1,4 @@
-mixin bulletList(params = {})
-  -
-    const { label = '', itemList = [] } = params;
-
-  lh.bullet_list__label.like_h3= label
-  ul.bullet_list__list
+mixin bulletList({ itemList = [] })
+  ul.bullet-list
     each item in itemList
-      li(class="bullet_list__item")= item.label
+      li(class="bullet-list__item")= item.label
