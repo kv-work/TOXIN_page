@@ -8,20 +8,20 @@ mixin input(params = {})
       masked = false,
       subscription = false,
     } = params;
-    let classList = 'form_input__input';
+    let classList = 'input__input';
     let modClass = '';
 
     if (masked) {
-      modClass += ' form_input_masked';
-      classList += ' js-form_input__input_masked';
+      modClass += ' input_masked';
+      classList += ' js-input__input_masked';
     }
 
     if (subscription) {
-      modClass += ' form_input_with_subscription';
+      modClass += ' input_with-subscription';
     }
 
-  .form_input(class=modClass)
+  .input(class=modClass)
     if (label)
-      label.form_input__label
-        p.like_h3= label
+      label.input__label
+        h3= label
     input(class=classList name=name type=type placeholder=placeholder)&attributes(attributes)
