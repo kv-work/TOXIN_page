@@ -36,7 +36,7 @@ class NestedItem {
   }
 }
 
-$('.js-item_nested').each(function createNestedItem() {
+$('.js-nav-bar-item_nested').each(function createNestedItem() {
   const nestedItem = new NestedItem(this);
 
   return nestedItem;

@@ -1,13 +1,15 @@
-include nav-bar-item/nav-bar-item
+include ../nav-bar-item/nav-bar-item
 
 mixin navBar(params = {})
   -
     const { itemList, display = 'vertical', lang = 'en' } = params;
-    let classList = 'nav_bar';
-    if (lang === 'ru')
-      classList += ' nav_bar_ru';
-    if (display === 'vertical')
-      classList += ' nav_bar_vertical';
+    let classList = 'nav-bar';
+    if (lang === 'ru') {
+      classList += ' nav-bar_ru';
+    }
+    if (display === 'vertical') {
+      classList += ' nav-bar_vertical';
+    }
 
   ul(class=classList)
     each item in itemList

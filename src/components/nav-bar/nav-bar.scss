@@ -1,6 +1,6 @@
 @import '../../settings.scss';
 
-.nav_bar {
+.nav-bar {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -30,15 +30,6 @@
     }
   }
 
-  &__nested_list {
-    display: none;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    background-color: #fff;
-    z-index: 2;
-  }
-
   & > li:last-child {
 
     @media screen and (max-width: 46.875rem) {
@@ -47,7 +38,7 @@
   }
 
   &_ru {
-    & > .nav_bar__item {
+    & > li {
       margin-right: 1.4375rem;
 
       @media screen and (max-width: 37.5rem) {

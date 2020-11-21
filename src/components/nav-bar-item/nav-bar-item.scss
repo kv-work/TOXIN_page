@@ -1,4 +1,4 @@
-.nav_bar__item {
+.nav-bar-item {
   margin-right: 1.875rem;
 
   @media screen and (max-width: 37.5rem) {
@@ -12,11 +12,20 @@
     color: $dark-75;
   }
 
-  &_link {
+  &__link {
     color: $dark-50;
     text-decoration: none;
     white-space: nowrap;
     letter-spacing: -0.013rem;
+  }
+
+  &__nested-list {
+    display: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    z-index: 2;
   }
 
   &_nested {
