@@ -1,6 +1,6 @@
 @import '../../settings.scss';
 
-.login_card {
+.login-card {
   width: 100%;
   display: grid;
   grid-auto-flow: row;
@@ -21,15 +21,15 @@
     line-height: 1.25;
   }
 
-  &__email_input {
+  &__email-input {
     margin-top: 1.25rem;
   }
 
-  &__pass_input {
+  &__pass-input {
     margin-top: 0.5625rem;
   }
 
-  &__submit_button {
+  &__submit-button {
     margin-top: 1.25rem;
     height: 2.75rem;
   }
@@ -41,12 +41,12 @@
     margin-top: 1.875rem;
   }
 
-  &__option_label {
+  &__option-label {
     flex-basis: auto;
     flex-shrink: 1;
   }
 
-  &__option_button {
+  &__option-button {
     flex-basis: 6.1875rem;
     height: 2.75rem;
   }

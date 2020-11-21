@@ -5,13 +5,13 @@ include ../logo/logo
 mixin header(params = {})
   -
     const { lang = 'en', isLoggedIn = false, userName } = params;
-    let currData;
+    let currentData;
     if (lang === 'en') {
-      currData = data.dataEn.header;
+      currentData = data.dataEn.header;
     } else {
-      currData = data.dataRu.header;
+      currentData = data.dataRu.header;
     }
-    const { navigationList, loginLabel, regLabel } = currData;
+    const { navigationList, loginLabel, regLabel } = currentData;
     let classList = 'header';
     if (isLoggedIn) {
       classList += ' header_logged_in';

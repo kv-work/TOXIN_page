@@ -1,10 +1,10 @@
-mixin likeButton(params = {})
+mixin likeButton({ count, checked = false })
   -
-    const { count, checked = false } = params;
-    let labelClass = 'js-like_button like_button__label';
-    if (checked) 
-      labelClass += ' like_button__label_checked';
+    let labelClass = 'js-like-button like-button__label';
+    if (checked) {
+      labelClass += ' like-button__label_checked';
+    }
 
-  label.like_button(class=labelClass)
+  label.like-button(class=labelClass)
     p= count
-    input.like_button__input(type="checkbox" checked=checked)
+    input.like-button__input(type="checkbox" checked=checked)

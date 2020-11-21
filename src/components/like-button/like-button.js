@@ -3,7 +3,7 @@ import $ from 'jquery';
 class LikeButton {
   constructor(node) {
     this.$this = $(node);
-    this.$input = this.$this.find('.like_button__input');
+    this.$input = this.$this.find('.like-button__input');
 
     this._attachEventHandlers();
   }
@@ -19,10 +19,10 @@ class LikeButton {
     let value = $(currentTarget).find('p').text();
 
     if (currentTarget.control.checked) {
-      currentTarget.classList.add('like_button__label_checked');
+      currentTarget.classList.add('like-button__label_checked');
       value = +value + 1;
     } else {
-      currentTarget.classList.remove('like_button__label_checked');
+      currentTarget.classList.remove('like-button__label_checked');
       value = +value - 1;
     }
 
@@ -30,7 +30,7 @@ class LikeButton {
   }
 }
 
-$('.js-like_button').each((_, node) => {
+$('.js-like-button').each((_, node) => {
   const likeButton = new LikeButton(node);
 
   return likeButton;

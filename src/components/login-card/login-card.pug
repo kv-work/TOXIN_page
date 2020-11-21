@@ -1,32 +1,29 @@
 include ../input/input
 include ../button/button
 
-mixin loginCard(params = {})
-  -
-    const { label } = params;
-
-  form.js-login_card.login_card(action="/mock-address/change-me" method="post" name="login-form")
-    h1.login_card__label= label
-    .login_card__email_input
+mixin loginCard({ label })
+  form.js-login-card.login-card(action="/mock-address/change-me" method="post" name="login-form")
+    h1.login-card__label= label
+    .login-card__email-input
       +input({
         type: 'email',
         placeholder: 'email',
         name: 'email',
         })(required=true)
-    .login_card__pass_input
+    .login-card__pass-input
       +input({
         type: 'password',
         placeholder: 'Пароль',
         name: 'password'
       })(required=true)
-    .login_card__submit_button
+    .login-card__submit-button
       +button({
         label: 'войти',
         type: 'submit',
         theme: 'filled',
         arrow: true,
         })
-    .login_card__options
-      .login_card__option_label Нет аккаунта на Toxin?
-      a.login_card__option_button(href="./registration-page.html")
+    .login-card__options
+      .login-card__option-label Нет аккаунта на Toxin?
+      a.login-card__option-button(href="./registration-page.html")
         +button({ label: 'создать', theme: 'outline' })
