@@ -88,15 +88,15 @@ block content
           h3.buttons_block_label buttons
           .buttons_block_wrapper
             .buttons_block_buttons
-              +button({ label: 'Click me', filled: true })
-              +button({ label: 'Click me', filled: true, disabled: true })
-              +button({ label: 'Click me' })
-              +button({ label: 'Click me', disabled: true })
-              .buttons_block_no_borders
-                +button({ label: 'Click me', withBorders: false })
-                +button({ label: 'Click me', withBorders: false, disabled: true })
+              +button({ label: 'Click me', theme: 'filled' })
+              +button({ label: 'Click me', theme: 'filled', disabled: true })
+              +button({ label: 'Click me', theme: 'outline' })
+              +button({ label: 'Click me', theme: 'outline', disabled: true })
+              .buttons_block_theme_text
+                +button({ label: 'Click me', theme: 'text' })
+                +button({ label: 'Click me', theme: 'text', disabled: true })
             .buttons_block_with_arrow
-              +button({ label: 'Перейти к оплате', filled: true, withArrow: true })
+              +button({ label: 'Перейти к оплате', theme: 'filled', withArrow: true })
         .pagination_block_wrapper
           h3.pagination_block_wrapper_label pagination
           +pagination({ numberOfPages: 15, description: '1 – 12 из 100+ вариантов аренды' })

@@ -27,6 +27,6 @@ mixin header(params = {})
       else
         .header__buttons
           a.header__login_button(href="./login-page.html")
-            +button({ label: loginLabel })
+            +button({ label: loginLabel, theme: 'outline' })
           a.header__registration_button(href="./registration-page.html")
-            +button({ label: regLabel, filled: true })
+            +button({ label: regLabel, theme: 'filled' })

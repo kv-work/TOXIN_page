@@ -55,11 +55,11 @@ mixin registrationCard(params = {})
       +button({
           label: 'перейти к оплате',
           type: 'submit',
-          filled: true,
+          theme: 'filled',
           withArrow: true,
           })
 
     .registration_card__options
       .registration_card__option_label Уже есть аккаунт на Toxin
       a.registration_card__option_button(href="./login-page.html")
-        +button({ label: 'войти' })
+        +button({ label: 'войти', theme: 'outline' })

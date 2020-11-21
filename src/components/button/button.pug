@@ -7,17 +7,26 @@ mixin button(params = {})
       filled = false,
       withArrow = false,
       withBorders = true,
+      theme = 'text'
     } = params;
     let classList = 'button';
-    if (filled) 
-      classList += ' button_filled';
-    if (withBorders)
-      classList += ' button_with-borders';
     if (disabled) {
       classList += ' button_disabled';
     }
     if (withArrow) {
       classList += ' button_with-arrow';
+    }
+
+    switch (theme) {
+      case 'outline':
+        classList += ' button_theme_outline';
+        break;
+      case 'filled':
+        classList += ' button_theme_filled';
+        break;
+      case 'text':
+        classList += ' button_theme_text';
+        break;
     }
 
   button(class=classList type=type disabled=disabled)= label
