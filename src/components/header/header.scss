@@ -42,7 +42,7 @@
     }
   }
 
-  &__nav_bar {
+  &__nav-bar {
     position: relative;
     margin-left: auto;
     flex-shrink: 2;
@@ -116,15 +116,7 @@
     }
   }
 
-  &__delimiter {
-    width: 0.0625rem;
-    align-self: stretch;
-    background-color: $dark-10;
-    margin: 0.3125rem 1.875rem 0.3125rem 0rem;
-    display: flex;
-  }
-
-  &__user_name {
+  &__user-name {
     color: $dark-50;
     border-left: 0.0625rem solid $dark-10;
     padding-left: 1.875rem;

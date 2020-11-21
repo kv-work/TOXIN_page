@@ -20,13 +20,13 @@ mixin header(params = {})
     .header__elements
       a.header__logo(href="./")
         img(src="./img/logo.svg" alt="TOXIN")
-      nav.header__nav_bar
+      nav.header__nav-bar
         +navBar({ itemList: navigationList, display: 'horizontal', lang })
       if (isLoggedIn)
-        span.header__user_name= userName
+        span.header__user-name= userName
       else
         .header__buttons
-          a.header__login_button(href="./login-page.html")
+          a.header__login-button(href="./login-page.html")
             +button({ label: loginLabel, theme: 'outline' })
-          a.header__registration_button(href="./registration-page.html")
+          a.header__registration-button(href="./registration-page.html")
             +button({ label: regLabel, theme: 'filled' })
