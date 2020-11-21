@@ -6,7 +6,7 @@ class Pagination {
   constructor(node, options) {
     this.$node = $(node);
     this.$pagination = this.$node.find('.js-pagination');
-    this.$description = this.$node.find('.pagination_block__description');
+    this.$description = this.$node.find('.pagination-block__description');
     this.data = this.$node.data().rooms;
     this.numOfPages = this.$pagination.data().pages;
     this.pageSize = 12;
@@ -97,7 +97,7 @@ class Pagination {
   }
 }
 
-$('.js-pagination_block').each(function createPagination() {
+$('.js-pagination-block').each(function createPagination() {
   const options = {
     dataSource: (done) => {
       const numberOfPages = $('.js-pagination')[0].dataset.pages;

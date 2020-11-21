@@ -1,7 +1,7 @@
 @import '../../settings.scss';
 @import 'paginationjs/dist/pagination';
 
-.pagination_block {
+.pagination-block {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,18 +18,18 @@
     margin: auto;
   }
 
-  &_without_data {
-    .pagination_block__pagination {
+  &_without-data {
+    .pagination-block__pagination {
       justify-content: start;
     }
 
-    .pagination_block__description {
+    .pagination-block__description {
       margin: 0 0 0 0.375rem;
     }
   }
 }
 
-.pagination_block {
+.pagination-block {
   &__pagination {
     & .paginationjs-pages {
       & li {
