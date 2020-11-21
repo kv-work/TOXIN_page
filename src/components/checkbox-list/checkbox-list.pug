@@ -12,13 +12,13 @@ mixin checkboxList(params = {})
     let classList = 'checkbox-list';
     if (expandable) {
       classList += ' js-checkbox-list_expandable checkbox-list_expandable';
-      if (closed)
+      if (closed) {
         classList += ' checkbox-list_closed';
+      }
     }
-
-    if (rich)
+    if (rich) {
       classList += ' checkbox-list_rich';
-
+    }
 
   div(class=classList)
     .checkbox-list__label-wrapper
@@ -26,23 +26,3 @@ mixin checkboxList(params = {})
     .checkbox-list__options
       each item, index in list
         +checkboxOption({ option: item, rich })
-
-//- -
-//-   const newlist = [
-//-     { label:'Завтрак' },
-//-     // { label:'Письменный стол', checked: true },
-//-     // { label: 'Стул для кормления', checked: true },
-//-     // { label: 'Кроватка', checked: true },
-//-     // { label: 'Телевизор' },
-//-     // { label: 'Шампунь' },
-//-     // { label: 'Телевизор' },
-//-     // { label: 'Шампунь' },
-//-   ];
-//-   const richlist = [
-//-     { label: 'Широкий коридор', description: 'Ширина коридоров в номере не\u00A0менее 91 см.', checked: false },
-//-     // { label: 'Помощник для инвалидов', description: 'На 1 этаже вас встретит специалист и проводит до номера.' },
-//-   ];
-
-//- +checkboxList({ checkboxLabel: 'expandable checkbox list', list: newlist, expandable: true, rich: false })
-
-//- +checkboxList({ checkboxLabel: 'rich checkbox buttons', list: richlist, expandable: false, rich: true })

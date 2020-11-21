@@ -3,22 +3,21 @@ include ../input/input
 
 mixin footer(params = {})
   -
-    const { lang, withWidgets = true, data } = params;
+    const { lang = 'ru', withWidgets = true, data } = params;
     let currData;
-
-    if (lang === 'en')
+    if (lang === 'en') {
       currData = data.dataEn.footer;
-    else if (lang === 'ru')
+    } else {
       currData = data.dataRu.footer;
-
+    }
     const { descriptionText, navigationList, aboutUsList, supportList, subscribeBlock, copyrightText } = currData;
-
     let classList = 'footer';
-    if (lang === 'ru')
+    if (lang === 'ru')  {
       classList += ' footer_ru';
-
-    if (withWidgets)
+    }
+    if (withWidgets) {
       classList += ' footer_with-widgets';
+    }
 
   footer(class=classList)
     div(class=(withWidgets) ? "footer__logo-n-widgets-block" : "footer__logo")

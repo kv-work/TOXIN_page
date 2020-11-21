@@ -6,15 +6,16 @@ mixin header(params = {})
   -
     const { lang = 'en', isLoggedIn = false, userName } = params;
     let currData;
-    if (lang === 'en')
+    if (lang === 'en') {
       currData = data.dataEn.header;
-    else if (lang === 'ru')
+    } else {
       currData = data.dataRu.header;
-
+    }
     const { navigationList, loginLabel, regLabel } = currData;
     let classList = 'header';
-    if (isLoggedIn)
+    if (isLoggedIn) {
       classList += ' header_logged_in';
+    }
 
   header(class=classList)
     .header__elements

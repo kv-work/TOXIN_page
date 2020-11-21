@@ -16,7 +16,6 @@ mixin button(params = {})
     if (withArrow) {
       classList += ' button_with-arrow';
     }
-
     switch (theme) {
       case 'outline':
         classList += ' button_theme_outline';
@@ -26,6 +25,8 @@ mixin button(params = {})
         break;
       case 'text':
         classList += ' button_theme_text';
+        break;
+      default:
         break;
     }
 

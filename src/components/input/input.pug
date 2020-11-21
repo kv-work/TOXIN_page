@@ -10,12 +10,10 @@ mixin input(params = {})
     } = params;
     let classList = 'input__input';
     let modClass = '';
-
     if (masked) {
       modClass += ' input_masked';
       classList += ' js-input__input_masked';
     }
-
     if (subscription) {
       modClass += ' input_with-subscription';
     }
