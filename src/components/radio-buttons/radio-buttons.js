@@ -15,18 +15,18 @@ class Radio {
 
   static changeEventHandler(event) {
     const $currentTarget = $(event.currentTarget);
-    const $radioBtns = $currentTarget.find('.radio_buttons__radio');
+    const $radioBtns = $currentTarget.find('.radio-buttons__radio');
     $radioBtns.each(function addCheckedClass() {
       if (this.control.checked) {
-        this.classList.add('radio_buttons__radio_label_checked');
+        this.classList.add('radio-buttons__radio-label_checked');
       } else {
-        this.classList.remove('radio_buttons__radio_label_checked');
+        this.classList.remove('radio-buttons__radio-label_checked');
       }
     });
   }
 }
 
-$('.js-radio_buttons').each(function addRadioBtns() {
+$('.js-radio-buttons').each(function addRadioBtns() {
   const radioButtons = new Radio(this);
 
   return radioButtons;
