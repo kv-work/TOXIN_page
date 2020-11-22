@@ -1,10 +1,10 @@
 mixin rangeSlider(params = {})
   - const { label, value, text = '' } = params;
 
-  label.js-range_slider.range_slider
-    h3.range_slider__label= label
-    p.range_slider__value
-    input.range_slider__input(
+  label.js-range-slider.range-slider
+    h3.range-slider__label= label
+    p.range-slider__value
+    input.range-slider__input(
       type="text"
       name="range"
       value=""
@@ -18,6 +18,6 @@ mixin rangeSlider(params = {})
       data-hide-min-max="true"
       data-hide-from-to="true"
       data-step="100"
-      data-extra-classes="range_slider__slider"
+      data-extra-classes="range-slider__slider"
     )
-    .range_slider__text= text
+    .range-slider__text= text

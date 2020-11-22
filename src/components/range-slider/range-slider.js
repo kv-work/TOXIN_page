@@ -4,7 +4,7 @@ import 'ion-rangeslider/js/ion.rangeSlider.min';
 class Slider {
   constructor(node) {
     this.$this = $(node);
-    this.$displayValue = this.$this.find('.range_slider__value');
+    this.$displayValue = this.$this.find('.range-slider__value');
     this.$slider = this.$this.find('input');
     this.$slider.ionRangeSlider();
     this.sliderData = this.$slider.data('ionRangeSlider');
@@ -33,7 +33,7 @@ class Slider {
   }
 }
 
-$('.js-range_slider').each(function addSlider() {
+$('.js-range-slider').each(function addSlider() {
   const slider = new Slider(this);
 
   return slider;

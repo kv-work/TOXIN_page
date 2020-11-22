@@ -2,8 +2,8 @@ mixin rateButton(params = {})
   -
     const { name, rate = 4, disabled = false } = params;
     let n = 1;
-    const className = disabled ? 'rate_button_disabled js_rate_button' : 'rate_button js_rate_button';
+    const className = disabled ? 'rate-button_disabled js-rate-button' : 'rate-button js-rate-button';
 
   div(class=className data-rate=rate)
     while n < 6
-      input.rate_button__input(type="radio" name=name checked=(n++ == rate) disabled=disabled)
+      input.rate-button__input(type="radio" name=name checked=(n++ === rate) disabled=disabled)

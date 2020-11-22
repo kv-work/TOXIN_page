@@ -38,7 +38,7 @@ class RegistrationCard {
   }
 }
 
-$('.js-registration_card').each(function addRegCard() {
+$('.js-registration-card').each(function addRegCard() {
   const registrationCard = new RegistrationCard(this);
 
   return registrationCard;

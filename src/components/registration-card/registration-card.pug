@@ -3,32 +3,29 @@ include ../button/button
 include ../radio-buttons/radio-buttons
 include ../toggle-button/toggle-button
 
-mixin registrationCard(params = {})
-  -
-    const { label } = params;
-
-  form.registration_card(action="/mock-address/change-me" method="post" name="registration-form" class="js-registration_card")
-    h1.registration_card__label= label
-    .registration_card__name_input
+mixin registrationCard({ label })
+  form.registration-card(action="/mock-address/change-me" method="post" name="registration-form" class="js-registration-card")
+    h1.registration-card__label= label
+    .registration-card__name-input
       +input({
         type: 'text',
         placeholder: 'Имя',
         name: 'name',
         })(required=true)
-    .registration_card__surname_input
+    .registration-card__surname-input
       +input({
         type: 'text',
         placeholder: 'Фамилия',
         name: 'surname',
         })(required=true)
-    .registration_card__gender_radio_buttons
+    .registration-card__gender-radio-buttons
       +radioButtons({
         list: [
               { label: 'Мужчина', checked: true },
               { label: 'Женщина' },
             ]
       } )
-    .registration_card__date_input_is_masked
+    .registration-card__date-input_masked
       +input({
         label: 'дата рождения',
         type: 'text',
@@ -36,30 +33,29 @@ mixin registrationCard(params = {})
         name: 'dateOfBirth',
         masked: true,
         })(required=true)
-    .registration_card__email_input
+    .registration-card__email-input
       +input({
         label: 'Данные для входа в сервис',
         type: 'email',
         placeholder: 'email',
         name: 'email',
         })(required=true)
-    .registration_card__password_input
+    .registration-card__password-input
       +input({
         type: 'password',
         placeholder: 'Пароль',
         name: 'password',
         })(required=true)
-    .registration_card__toggle_button
+    .registration-card__toggle-button
       +toggleButton({ label: 'Получать спецпредложения', name:'subscription' })
-    .registration_card__submit_button
+    .registration-card__submit-button
       +button({
           label: 'перейти к оплате',
           type: 'submit',
           theme: 'filled',
           withArrow: true,
           })
-
-    .registration_card__options
-      .registration_card__option_label Уже есть аккаунт на Toxin
-      a.registration_card__option_button(href="./login-page.html")
+    .registration-card__options
+      .registration-card__option-label Уже есть аккаунт на Toxin
+      a.registration-card__option-button(href="./login-page.html")
         +button({ label: 'войти', theme: 'outline' })

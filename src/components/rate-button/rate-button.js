@@ -20,6 +20,6 @@ export default class RateButton {
     const idxOfBtn = rate - 1;
 
     $buttons.eq(idxOfBtn).prop('checked', true);
-    $buttons.eq(idxOfBtn).change();
+    $buttons.eq(idxOfBtn).trigger('change');
   }
 }

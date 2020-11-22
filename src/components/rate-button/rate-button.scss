@@ -1,7 +1,5 @@
-@import '../../settings.scss';
-
-.rate_button,
-.rate_button_disabled {
+.rate-button,
+.rate-button_disabled {
   height: auto;
   font-size: 0;
 
@@ -38,6 +36,6 @@
   }
 }
 
-.rate_button_disabled .rate_button__input {
+.rate-button_disabled .rate-button__input {
   cursor: default;
 }

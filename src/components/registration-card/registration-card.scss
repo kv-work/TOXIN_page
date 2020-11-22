@@ -1,6 +1,4 @@
-@import '../../settings.scss';
-
-.registration_card {
+.registration-card {
   width: 100%;
   display: grid;
   grid-auto-flow: row;
@@ -21,36 +19,36 @@
     line-height: 1.25;
   }
 
-  &__name_input {
+  &__name-input {
     margin-top: 1.25rem;
   }
 
-  &__surname_input {
+  &__surname-input {
     margin-top: 0.625rem;
   }
 
-  &__gender_radio_buttons {
+  &__gender-radio-buttons {
     width: 13.7963rem;
     margin-top: 0.5625rem;
   }
 
-  &__date_input_is_masked {
+  &__date-input_masked {
     margin-top: 1.125rem;
   }
 
-  &__email_input {
+  &__email-input {
     margin-top: 1.125rem;
   }
 
-  &__password_input {
+  &__password-input {
     margin-top: 0.5625rem;
   }
 
-  &__toggle_button {
+  &__toggle-button {
     margin-top: 0.5rem;
   }
 
-  &__submit_button {
+  &__submit-button {
     margin-top: 1.375rem;
     height: 2.75rem;
   }
@@ -62,12 +60,12 @@
     margin-top: 1.875rem;
   }
 
-  &__option_label {
+  &__option-label {
     flex-basis: auto;
     flex-shrink: 1;
   }
 
-  &__option_button {
+  &__option-button {
     flex-basis: 6.1875rem;
     height: 2.75rem;
   }

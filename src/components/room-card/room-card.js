@@ -14,7 +14,7 @@ export default class RoomCard {
     this.$rateBlock = this.$node.find('.room_card__rate_block');
     this.$reviewsBlock = this.$node.find('.room_card__reviews_block');
 
-    this.rateButton = new RateButton(this.$rateBlock.find('.js_rate_button')[0]);
+    this.rateButton = new RateButton(this.$rateBlock.find('.js-rate-button')[0]);
 
     this._init();
   }
