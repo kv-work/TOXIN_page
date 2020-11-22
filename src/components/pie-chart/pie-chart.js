@@ -4,8 +4,8 @@ import data from './data.json';
 class PieChart {
   constructor(node) {
     this.$node = $(node);
-    this.$container = this.$node.find('.pie_chart__content');
-    this.$legend = this.$node.find('.pie_chart__legend');
+    this.$container = this.$node.find('.pie-chart__content');
+    this.$legend = this.$node.find('.pie-chart__legend');
     this.impressions = data.impressions;
 
     this._addDonutChart();
@@ -29,7 +29,7 @@ class PieChart {
       fill: '#fff',
     });
 
-    const chartLegend = $('<ul>', { class: 'pie_chart__legend_list' });
+    const chartLegend = $('<ul>', { class: 'pie-chart__legend-list' });
 
     donutChart.append(donutHole);
 
@@ -40,24 +40,24 @@ class PieChart {
     const sumOfImpressionsDisplay = PieChart._createTextDisplay(sumOfImpressions);
 
     keys.forEach((key) => {
-      let color = 'primary_grad';
+      let color = 'primary-grad';
       let label = 'Великолепно';
 
       switch (key) {
         case 'Great':
-          color = 'yellow_grad';
+          color = 'yellow-grad';
           label = 'Великолепно';
           break;
         case 'Good':
-          color = 'secondary_grad';
+          color = 'secondary-grad';
           label = 'Хорошо';
           break;
         case 'Satisfactory':
-          color = 'primary_grad';
+          color = 'primary-grad';
           label = 'Удовлетворительно';
           break;
         case 'disappointed':
-          color = 'black_grad';
+          color = 'black-grad';
           label = 'Разочарован';
           break;
         default:
@@ -86,15 +86,15 @@ class PieChart {
         donutChart.append(donutSegment);
       }
 
-      const chartLegendItem = $('<li>', { class: `pie_chart__legend_list_item_color_${color}` }).html(label);
+      const chartLegendItem = $('<li>', { class: `pie-chart__legend-list-item_color_${color}` }).html(label);
 
       chartLegend.append(chartLegendItem);
     });
 
-    const primeryGradient = PieChart._createGradient('primary_grad', '#BC9CFF', '#8BA4F9');
-    const secondaryGradient = PieChart._createGradient('secondary_grad', '#6FCF97', '#66D2EA');
-    const yellowGradient = PieChart._createGradient('yellow_grad', '#FFE39C', '#FFBA9C');
-    const blackGradient = PieChart._createGradient('black_grad', '#919191', '#3D4975');
+    const primeryGradient = PieChart._createGradient('primary-grad', '#BC9CFF', '#8BA4F9');
+    const secondaryGradient = PieChart._createGradient('secondary-grad', '#6FCF97', '#66D2EA');
+    const yellowGradient = PieChart._createGradient('yellow-grad', '#FFE39C', '#FFBA9C');
+    const blackGradient = PieChart._createGradient('black-grad', '#919191', '#3D4975');
 
     donutChart
       .append(sumOfImpressionsDisplay)
@@ -108,17 +108,17 @@ class PieChart {
   }
 
   static _createTextDisplay(num) {
-    const textDisplay = $(document.createElementNS('http://www.w3.org/2000/svg', 'g')).attr({ class: 'chart__sum_of_impress' });
+    const textDisplay = $(document.createElementNS('http://www.w3.org/2000/svg', 'g')).attr({ class: 'chart__sum-of-impress' });
 
     const numLabel = $(document.createElementNS('http://www.w3.org/2000/svg', 'text')).attr({
-      class: 'chart__num_label',
+      class: 'chart__num-label',
       'text-anchor': 'middle',
       x: '50%',
       y: '49%',
     }).html(num);
 
     const textLabel = $(document.createElementNS('http://www.w3.org/2000/svg', 'text')).attr({
-      class: 'chart__text_label',
+      class: 'chart__text-label',
       'text-anchor': 'middle',
       x: '50%',
       y: '64%',
@@ -152,7 +152,7 @@ class PieChart {
   }
 }
 
-$('.js-pie_chart').each(function addPieChart() {
+$('.js-pie-chart').each(function addPieChart() {
   const pieChart = new PieChart(this);
 
   return pieChart;

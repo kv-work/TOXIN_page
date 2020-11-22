@@ -1,6 +1,6 @@
 @import '../../settings.scss';
 
-.pie_chart {
+.pie-chart {
 
   &__title {
     margin-bottom: 1.3125rem;
@@ -20,13 +20,13 @@
     width: 7.5rem;
   }
 
-  &__legend_list {
+  &__legend-list {
     padding: 0 0 0.3125rem;
     margin: 0;
     list-style: none;
   }
 
-  [class^='pie_chart__legend_list_item'] {
+  [class^='pie-chart__legend-list-item'] {
     display: grid;
     grid-template-columns: auto 1fr;
     column-gap: 0.3125rem;
@@ -41,27 +41,27 @@
     }
   }
 
-  &__legend_list_item_color {
+  &__legend-list-item_color {
 
-    &_primary_grad {
+    &_primary-grad {
       &:before {
         background: $primary-gradient;
       }
     }
 
-    &_yellow_grad {
+    &_yellow-grad {
       &::before {
         background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
       }
     }
 
-    &_secondary_grad {
+    &_secondary-grad {
       &::before {
         background: $secondary-gradient;
       }
     }
 
-    &_black_grad {
+    &_black-grad {
       &::before {
         background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
       }
@@ -71,12 +71,12 @@
 
 .chart {
 
-  &__num_label {
+  &__num-label {
     font: bold 1.5rem/1.25 Quicksand, 'Open Sans', sans-serif;
     fill: $primary-purple;
   }
 
-  &__text_label {
+  &__text-label {
     font: bold 0.75rem/1.25 Montserrat;
     text-align: center;
     text-transform: uppercase;
