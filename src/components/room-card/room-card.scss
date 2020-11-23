@@ -1,23 +1,23 @@
 @import '../../settings.scss';
 
-.room_card {
+.room-card {
   background: #FFFFFF;
   box-shadow: 0rem 0.625rem 1.25rem $dark-5;
   border-radius: 0.25rem;
   width: 16.875rem;
   cursor: pointer;
 
-  &__room_info_block {
+  &__room-info-block {
     display: grid;
     grid-template-columns: repeat(2, auto);
     padding: 1.5rem 1.0625rem 0.4375rem 1.25rem;
   }
 
-  &__number_block {
+  &__number-block {
     font: bold 0.875rem/1.21429 Quicksand;
   }
 
-  &__number_sign {
+  &__number-sign {
     margin-right: 0.25rem;
   }
 
@@ -25,17 +25,18 @@
     font-size: 1.1875rem;
   }
 
-  &__lux_flag {
+  &__lux-flag {
     font: bold 0.75rem/1.25 Montserrat;
     text-transform: uppercase;
     color: $primary-purple;
     margin-left: 0.3125rem;
   }
 
-  &__price_block {
+  &__price-block {
     font: 0.875rem/0.984375 Montserrat;
     color: $dark-50;
     justify-self: end;
+    align-self: end;
   }
 
   &__price {
@@ -43,7 +44,7 @@
     font-size: 0.875rem;
   }
 
-  &__price_text {
+  &__price-text {
     font-size: 0.75rem;
     margin-left: 0.3125rem;
   }
@@ -56,21 +57,21 @@
     margin-bottom: 0.5rem;
   }
 
-  &__reviews_block {
+  &__reviews-block {
     color: $dark-50;    
     justify-self: end;
   }
 
-  &__number_of_reviews {
+  &__number-of-reviews {
     font-weight: bold;
   }
 
-  &__review_text {
+  &__review-text {
     margin-left: 0.1875rem;
     padding-right: 0.1875rem;
   }
 
-  &__images_block {
+  &__images-block {
     height: 9.4375rem;
     width: 16.875rem;
     position: relative;
@@ -125,7 +126,7 @@
     }
   }
 
-  &__control_prev {
+  &__control-prev {
     position: absolute;
     left: 0;
     top: 0;
@@ -135,7 +136,7 @@
     align-items: center;
     border-top-left-radius: 0.25rem;
 
-    & .room_card__control_icon {
+    & .room-card__control-icon {
       font-size: 1.5rem;
       height: 2.75rem;
       width: 2.75rem;
@@ -148,7 +149,7 @@
     }
   }
 
-  &__control_next {
+  &__control-next {
     position: absolute;
     right: 0;
     top: 0;
@@ -159,7 +160,7 @@
     align-items: center;
     border-top-left-radius: 0.25rem;
 
-    & .room_card__control_icon {
+    & .room-card__control-icon {
       font-size: 1.5rem;
       height: 2.75rem;
       width: 2.75rem;

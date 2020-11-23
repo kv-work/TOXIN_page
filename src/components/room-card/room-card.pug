@@ -5,16 +5,16 @@ mixin roomCard(params = {})
     const { number } = params;
     const rateName = 'rate' + number;
 
-  .room_card.js-room_card(data-number=number)
-    .room_card__images_block
-    .room_card__room_info_block
-      .room_card__number_block
-        span.room_card__number_sign №
-        span.room_card__number=number
-      .room_card__price_block
-        span.room_card__price_text в сутки
-      .room_card__delimiter
-      .room_card__rate_block
+  .room-card.js-room-card(data-number=number)
+    .room-card__images-block
+    .room-card__room-info-block
+      .room-card__number-block
+        span.room-card__number-sign №
+        span.room-card__number=number
+      .room-card__price-block
+        span.room-card__price-text в сутки
+      .room-card__delimiter
+      .room-card__rate-block
         +rateButton({ name: rateName, disabled: true })
-      .room_card__reviews_block
-        span.room_card__review_text Отзывов
+      .room-card__reviews-block
+        span.room-card__review-text Отзывов

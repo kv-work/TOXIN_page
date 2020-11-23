@@ -8,11 +8,11 @@ export default class RoomCard {
     this.$node = $(node);
     this.data = this.$node.data();
 
-    this.$numberBlock = this.$node.find('.room_card__number_block');
-    this.$imagesBlock = this.$node.find('.room_card__images_block');
-    this.$priceBlock = this.$node.find('.room_card__price_block');
-    this.$rateBlock = this.$node.find('.room_card__rate_block');
-    this.$reviewsBlock = this.$node.find('.room_card__reviews_block');
+    this.$numberBlock = this.$node.find('.room-card__number-block');
+    this.$imagesBlock = this.$node.find('.room-card__images-block');
+    this.$priceBlock = this.$node.find('.room-card__price-block');
+    this.$rateBlock = this.$node.find('.room-card__rate-block');
+    this.$reviewsBlock = this.$node.find('.room-card__reviews-block');
 
     this.rateButton = new RateButton(this.$rateBlock.find('.js-rate-button')[0]);
 
@@ -48,12 +48,12 @@ export default class RoomCard {
   _createRoomImageBlocks() {
     const { $imagesBlock, roomData } = this;
     const imgArr = roomData.images;
-    this.$images = $('<div>', { class: 'room_card__images' });
-    this.$indicators = $('<ol>', { class: 'room_card__indicators' });
+    this.$images = $('<div>', { class: 'room-card__images' });
+    this.$indicators = $('<ol>', { class: 'room-card__indicators' });
 
     // Добавляем слайды
     imgArr.forEach((item, idx) => {
-      const $roomImg = $('<div>', { class: 'room_card__image' });
+      const $roomImg = $('<div>', { class: 'room-card__image' });
 
       $roomImg.css({
         'background-image': `url(${item})`,
@@ -89,15 +89,15 @@ export default class RoomCard {
     }
 
     // Элементы управления
-    this.$controlPrev = $('<div>', { class: 'room_card__control_prev' });
-    this.$controlNext = $('<div>', { class: 'room_card__control_next' });
+    this.$controlPrev = $('<div>', { class: 'room-card__control-prev' });
+    this.$controlNext = $('<div>', { class: 'room-card__control-next' });
 
     const $controlIconPrev = $('<i>', {
-      class: 'material-icons room_card__control_icon',
+      class: 'material-icons room-card__control-icon',
       text: 'expand_more',
     });
     const $controlIconNext = $('<i>', {
-      class: 'material-icons room_card__control_icon',
+      class: 'material-icons room-card__control-icon',
       text: 'expand_more',
     });
 
@@ -117,14 +117,14 @@ export default class RoomCard {
   _displayLuxSign() {
     const { $numberBlock } = this;
 
-    $numberBlock.append('<span class="room_card__lux_flag">люкс</span>');
+    $numberBlock.append('<span class="room-card__lux-flag">люкс</span>');
   }
 
   _displayPrice() {
     const { $priceBlock, roomData } = this;
     const formattedPrice = roomData.price.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1 ');
 
-    $priceBlock.prepend(`<span class="room_card__price">${formattedPrice}₽</span>`);
+    $priceBlock.prepend(`<span class="room-card__price">${formattedPrice}₽</span>`);
   }
 
   _displayRoomRate() {
@@ -137,7 +137,7 @@ export default class RoomCard {
     const { $reviewsBlock } = this;
     const { numOfReviews } = this.roomData;
 
-    $reviewsBlock.prepend(`<span class="room_card__number_of_reviews">${numOfReviews}</span>`);
+    $reviewsBlock.prepend(`<span class="room-card__number-of-reviews">${numOfReviews}</span>`);
   }
 
   _changeSlide(slide) {
@@ -162,42 +162,51 @@ export default class RoomCard {
       $indicators,
       $controlPrev,
       $controlNext,
-      $images,
-      roomData,
     } = this;
+
+    $indicators.on('click', this._indicatorsClickHandler.bind(this));
+
+    $controlPrev.on('click', this._controlPrevClickHandler.bind(this));
+
+    $controlNext.on('click', this._controlNextClickHandler.bind(this));
+  }
+
+  _indicatorsClickHandler(e) {
+    const $target = $(e.target);
+
+    if ($target.hasClass('indicator') && !$target.hasClass('disabled')) {
+      const { slideTo } = $(e.target).data();
+
+      this._changeSlide(slideTo);
+    }
+  }
+
+  _controlPrevClickHandler(e) {
+    const { $images, roomData } = this;
+
     const numOfSlides = roomData.images.length;
+    if (e.target.classList.contains('room-card__control-icon')) {
+      const currentSlide = $images.data().activeSlide;
+      const slide = (currentSlide - 1 + numOfSlides) % numOfSlides;
 
-    $indicators.click((e) => {
-      const $target = $(e.target);
+      this._changeSlide(slide);
+    }
+  }
 
-      if ($target.hasClass('indicator') && !$target.hasClass('disabled')) {
-        const { slideTo } = $(e.target).data();
+  _controlNextClickHandler(e) {
+    const { $images, roomData } = this;
 
-        this._changeSlide(slideTo);
-      }
-    });
+    const numOfSlides = roomData.images.length;
+    if (e.target.classList.contains('room-card__control-icon')) {
+      const currentSlide = $images.data().activeSlide;
+      const slide = (currentSlide + 1) % numOfSlides;
 
-    $controlPrev.click((e) => {
-      if (e.target.classList.contains('room_card__control_icon')) {
-        const currentSlide = $images.data().activeSlide;
-        const slide = (currentSlide - 1 + numOfSlides) % numOfSlides;
-
-        this._changeSlide(slide);
-      }
-    });
-
-    $controlNext.click((e) => {
-      if (e.target.classList.contains('room_card__control_icon')) {
-        const currentSlide = $images.data().activeSlide;
-        const slide = (currentSlide + 1) % numOfSlides;
-
-        this._changeSlide(slide);
-      }
-    });
+      this._changeSlide(slide);
+    }
   }
 }
 
-$('.js-room_card').each(function addRoomCard() {
+$('.js-room-card').each(function addRoomCard() {
   const roomCard = new RoomCard(this);
 
   return roomCard;
