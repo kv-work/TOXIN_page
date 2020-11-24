@@ -21,7 +21,7 @@ class RoomImagesBlock {
     const { $node } = this;
 
     images.forEach((element, idx) => {
-      const $image = $('<div>', { class: 'room_images__image' });
+      const $image = $('<div>', { class: 'room-images__image' });
       $image.css({
         'background-image': `url(${element})`,
       });
@@ -39,16 +39,16 @@ class RoomImagesBlock {
     const images = data.images[this.room];
     const { $node } = this;
 
-    this.$indicators = $('<ol>', { class: 'room_images__indicators_block' });
-    this.$controlPrev = $('<div>', { class: 'room_images__control_prev' });
-    this.$controlNext = $('<div>', { class: 'room_images__control_next' });
+    this.$indicators = $('<ol>', { class: 'room-images__indicators-block' });
+    this.$controlPrev = $('<div>', { class: 'room-images__control-prev' });
+    this.$controlNext = $('<div>', { class: 'room-images__control-next' });
 
     const $controlIconPrev = $('<i>', {
-      class: 'material-icons room_images__control_icon',
+      class: 'material-icons room-images__control-icon',
       text: 'expand_more',
     });
     const $controlIconNext = $('<i>', {
-      class: 'material-icons room_images__control_icon',
+      class: 'material-icons room-images__control-icon',
       text: 'expand_more',
     });
 
@@ -57,7 +57,7 @@ class RoomImagesBlock {
 
     images.forEach((_, idx) => {
       const $indicator = $('<li>', {
-        class: 'room_images__indicator',
+        class: 'room-images__indicator',
         'data-slide-to': idx,
       });
 
@@ -85,8 +85,8 @@ class RoomImagesBlock {
     const currentSlide = $node.data().activeSlide;
 
     if (slide !== currentSlide && slide <= numOfSlides) {
-      $node.find('.room_images__image').eq(currentSlide).removeClass('active');
-      $node.find('.room_images__image').eq(slide).addClass('active');
+      $node.find('.room-images__image').eq(currentSlide).removeClass('active');
+      $node.find('.room-images__image').eq(slide).addClass('active');
 
       $indicators.find('li').eq(currentSlide).removeClass('active');
       $indicators.find('li').eq(slide).addClass('active');
@@ -114,7 +114,7 @@ class RoomImagesBlock {
     const $target = $(event.target);
     const { slideTo } = $target.data();
 
-    if ($target.hasClass('room_images__indicator')) {
+    if ($target.hasClass('room-images__indicator')) {
       this._changeSlide(slideTo);
     }
   }
@@ -124,12 +124,12 @@ class RoomImagesBlock {
     const numOfSlides = images.length;
     const currentSlide = this.$node.data().activeSlide;
     const controlBtn = event.target;
-    if (controlBtn.classList.contains('room_images__control_icon')) {
+    if (controlBtn.classList.contains('room-images__control-icon')) {
       const slide = (currentSlide - 1 + numOfSlides) % numOfSlides;
 
       this._changeSlide(slide);
     }
-    if (controlBtn.classList.contains('room_images__control_icon')) {
+    if (controlBtn.classList.contains('room-images__control-icon')) {
       const slide = (currentSlide + 1) % numOfSlides;
 
       this._changeSlide(slide);
@@ -137,7 +137,7 @@ class RoomImagesBlock {
   }
 }
 
-$('.js-room_images').each(function addRoomImages() {
+$('.js-room-images').each(function addRoomImages() {
   const roomImages = new RoomImagesBlock(this);
 
   return roomImages;

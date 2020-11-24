@@ -1,6 +1,6 @@
 @import '../../settings.scss';
 
-.room_images {
+.room-images {
   display: grid;
   grid-template-columns: minmax(50%, 1fr) minmax(461px, 1fr);
   height: 100%;
@@ -38,7 +38,7 @@
     }
   }
 
-  &__indicators_block {
+  &__indicators-block {
     display: none;
 
     @media screen and (max-width: 57.625rem) {
@@ -83,7 +83,7 @@
     }
   }
 
-  &__control_prev {
+  &__control-prev {
     display: none;
 
     @media screen and (max-width: 57.625rem) {
@@ -97,7 +97,7 @@
       border-top-left-radius: 0.25rem;
     }
 
-    & .room_images__control_icon {
+    & .room-images__control-icon {
 
       @media screen and (max-width: 57.625rem) {
         font-size: 1.5rem;
@@ -113,7 +113,7 @@
     }
   }
 
-  &__control_next {
+  &__control-next {
     display: none;
 
     @media screen and (max-width: 57.625rem) {
@@ -128,7 +128,7 @@
       border-top-left-radius: 0.25rem;
     }
 
-    & .room_images__control_icon {
+    & .room-images__control-icon {
 
       @media screen and (max-width: 57.625rem) {
         font-size: 1.5rem;

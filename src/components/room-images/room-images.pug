@@ -1,4 +1,2 @@
-mixin roomImages(params = {})
-  - const { room = '888' } = params;
-
-  .room_images.js-room_images(data-room=room)
+mixin roomImages({ room = '888' })
+  .room-images.js-room-images(data-room=room)
