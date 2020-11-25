@@ -1,6 +1,6 @@
 @import '../../settings.scss';
 
-.room_rate_card {
+.room-rate-card {
   width: 100%;
   display: grid;
   grid-auto-flow: row;
@@ -16,16 +16,16 @@
     border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.12); 
   }
 
-  &__room_info_block {
+  &__room-info-block {
     display: grid;
     grid-template-columns: repeat(2, auto);
   }
 
-  &__number_block {
+  &__number-block {
     font: bold 0.875rem/1.21429 Quicksand;
   }
 
-  &__number_sign {
+  &__number-sign {
     margin-right: 0.25rem;
   }
 
@@ -34,14 +34,14 @@
     line-height: 1.166667;
   }
 
-  &__lux_flag {
+  &__lux-flag {
     font: bold 0.75rem/1.25 Montserrat;
     text-transform: uppercase;
     color: $primary-purple;
     margin-left: 0.3125rem;
   }
 
-  &__price_block {
+  &__price-block {
     font-family: Montserrat;
     font-style: normal;
     color: $dark-50;
@@ -54,7 +54,7 @@
     font-size: 0.875rem;
   }
 
-  &__price_text {
+  &__price-text {
     font-size: 0.75rem;
     margin-left: 0.3125rem;
   }
@@ -68,18 +68,18 @@
     }
   }
 
-  &__guest_select_dropdown {
+  &__guest-select-dropdown {
     margin-top: 1.0625rem;
   }
 
-  &__calculations_block {
+  &__calculations-block {
     margin-top: 1.125rem;
     padding-left: 0.0625rem;
   }
 
-  &__days_cost_calc,
-  &__services_calc,
-  &__additional_services_calc {
+  &__days-cost-calc,
+  &__services-calc,
+  &__additional-services-calc {
     display: grid;
     grid-template-columns: 13.375rem auto auto;
     grid-auto-flow: column;
@@ -90,12 +90,12 @@
     }
   }
 
-  &__cost_calc {
+  &__cost-calc {
     grid-column: 1 / 3;
   }
 
-  &__services_info,
-  &__additional_services_info {
+  &__services-info,
+  &__additional-services-info {
     position: relative;
     display: inline-block;
     width: 1.25rem;
@@ -117,14 +117,14 @@
       color: $dark-75;
       border-color: $dark-75;
 
-      & > .room_rate_card__services_list {
+      & > .room-rate-card__services-list {
         display: inline-block;
       }
     }
   }
 
-  &__services_list,
-  &__additional_services_list {
+  &__services-list,
+  &__additional-services-list {
     position: absolute;
     top: 1.5625rem;
     left: -6.25rem;
@@ -141,7 +141,7 @@
     display: none
   }
 
-  &__services_list_item {
+  &__services-list-item {
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -149,20 +149,20 @@
     margin-bottom: 0.1875rem;
   }
 
-  &__service_name {
+  &__service-name {
     text-align: left;
   }
 
-  &__additional_services_info {
+  &__additional-services-info {
     margin-top: 0.1875rem;
   }
 
-  &__additional_services_text {
+  &__additional-services-text {
     line-height: 1.2857;
     padding-top: 0.1875rem;
   }
 
-  &__total_cost {
+  &__total-cost {
     display: grid;
     grid-template-columns: auto 1fr auto;
     column-gap: 0.3125rem;
@@ -170,19 +170,19 @@
     margin-top: 1.25rem;
   }
 
-  &__total_text,
+  &__total-text,
   &__total {
     font: bold 1.1875rem/1.26316 Quicksand, 'Open Sans';
     color: $dark-100;
   }
 
-  &__dashed_border {
+  &__dashed-border {
     height: 0.0625rem;
     border-bottom: 0.0625rem dotted $dark-25;
     box-sizing: border-box;
   }
 
-  &__submit_button {
+  &__submit-button {
     margin-top: 1.25rem;
     height: 2.75rem;
   }
