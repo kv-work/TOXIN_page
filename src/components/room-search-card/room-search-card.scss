@@ -1,6 +1,6 @@
 @import '../../settings';
 
-.room_search_card {
+.room-search-card {
   width: auto;
   max-width: 100vw;
   display: grid;
@@ -30,11 +30,11 @@
     }
   }
 
-  &__guest_select_dropdown {
+  &__guest-select-dropdown {
     margin-top: 1.125rem;
   }
 
-  &__submit_button {
+  &__submit-button {
     margin-top: 1.875rem;
     height: 2.75rem;
   }

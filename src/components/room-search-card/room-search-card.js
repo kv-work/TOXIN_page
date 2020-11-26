@@ -45,7 +45,7 @@ class RoomSearchCard {
   }
 }
 
-$('.js-room_search_card').each(function addRoomSearchCard() {
+$('.js-room-search-card').each(function addRoomSearchCard() {
   const roomSearchCard = new RoomSearchCard(this);
 
   return roomSearchCard;
