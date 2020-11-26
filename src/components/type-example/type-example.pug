@@ -1,9 +1,7 @@
 include ./sample-text/sample-text
 include ./tag-name/tag-name
 
-mixin typeExample(params = {})
-  - const { tagName = 'div', text = '' } = params;
-
-  .type_example
+mixin typeExample({ tagName = 'div', text = '' })
+  .type-example
     +tagName(tagName)
     +sampleText({ tagName, text })
