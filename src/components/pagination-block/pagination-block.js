@@ -89,7 +89,7 @@ class Pagination {
     // eslint-disable-next-line fsd/jq-cache-dom-elements
     $('#data-container').html(html);
 
-    $('#data-container').find('.js-room_card').each(function createNewRommCard() {
+    $('#data-container').find('.js-room-card').each(function createNewRommCard() {
       const roomCard = new RoomCard(this);
 
       return roomCard;
