@@ -10,9 +10,9 @@ block variables
     const data = htmlWebpackPlugin.options.getData();
 
 block content
-  .registration_page
+  .registration-page
     +header({ lang: 'ru', isLoggedIn: false, data })
-    .registration_page__content
-      .registration_page__registration_form
+    .registration-page__content
+      .registration-page__registration-form
         +registrationCard({ label: 'Регистрация аккаунта' })
     +footer({ lang: 'ru', data })

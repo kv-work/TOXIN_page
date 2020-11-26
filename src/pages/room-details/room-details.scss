@@ -1,11 +1,11 @@
 @import '../../settings.scss';
 
-.room_details {
+.room-details {
   height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto auto;
 
-  &__images_block {
+  &__images-block {
     height: 34.68vw;
     width: 100%;
 
@@ -18,7 +18,7 @@
     }
   }
 
-  &__details_block {
+  &__details-block {
     width: 100%;
     max-width: 72.5rem;
     margin: 4.375rem auto 2.3125rem;
@@ -39,7 +39,7 @@
     }
   }
 
-  &__info_block {
+  &__info-block {
     display: flex;
     flex-wrap: wrap;
     max-width: 44.375rem;
@@ -61,7 +61,7 @@
     }
   }
 
-  &__room_info {
+  &__room-info {
     flex: 0 0 17.5rem;
     margin-right: 5.0625rem;
 
@@ -69,12 +69,12 @@
       margin-right: 0;
     }
 
-    &_label {
+    &-label {
       margin-bottom: 1.25rem;
     }
   }
 
-  &__guest_reviews_block {
+  &__guest-reviews-block {
     flex: 1 0 100%;
     display: grid;
     grid-template-columns: auto 1fr;
@@ -85,26 +85,26 @@
     }
   }
 
-  &__guest_reviews_count {
+  &__guest-reviews-count {
     justify-self: right;
   }
 
-  &__guest_reviews {
+  &__guest-reviews {
     grid-column: 1/3;
     display: grid;
     row-gap: 1.4375rem;
   }
 
-  &__room_rules_block {
+  &__room-rules-block {
     flex: 0 0 18.125rem
   }
 
-  &__room_rules_title {
+  &__room-rules-title {
     padding-left: 1.25rem;
     margin-bottom: 0.5rem;
   }
 
-  &__booking_form {
+  &__booking-form {
 
     @media screen and (max-width: 1220px) {
       width: 100%;
@@ -117,7 +117,7 @@
     }
   }
 
-  &__cancel_reservation {
+  &__cancel-reservation {
     flex: 1 1 20rem;
     margin-left: auto;
     max-width: 21.8125rem;
@@ -127,11 +127,11 @@
     }
   }
 
-  &__cancel_reservation_label {
+  &__cancel-reservation-label {
     margin-bottom: 1.0625rem;
   }
 
-  &__cancel_reservation_text {
+  &__cancel-reservation-text {
     max-width: 21.3125rem;
   }
 

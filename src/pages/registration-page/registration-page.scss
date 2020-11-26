@@ -1,6 +1,6 @@
 @import '../../settings.scss';
 
-.registration_page {
+.registration-page {
   display: grid;
   grid-template-rows: auto 1fr auto;
 
@@ -10,7 +10,7 @@
     background-position: bottom;
   }
 
-  &__registration_form {
+  &__registration-form {
     max-width: 23.75rem;
     margin: 1.875rem auto 1.5rem;
   }

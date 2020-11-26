@@ -10,9 +10,9 @@ block variables
     const data = htmlWebpackPlugin.options.getData();
 
 block content
-  .login_page
+  .login-page
     +header({ lang: 'ru', isLoggedIn: false, data })
-    .login_page__content
-      .login_page__login_form
+    .login-page__content
+      .login-page__login-form
         +loginCard({ label: 'Войти' })
     +footer({ lang: 'ru', data })

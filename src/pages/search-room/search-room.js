@@ -3,9 +3,9 @@ import $ from 'jquery';
 class SearchRoomContent {
   constructor(node) {
     this.$content = $(node);
-    this.$toggler = this.$content.find('.search_room__filter_toggler');
-    this.$filters = this.$content.find('.search_room__filters_block');
-    this.$rooms = this.$content.find('.search_room__rooms_block');
+    this.$toggler = this.$content.find('.search-room__filter-toggler');
+    this.$filters = this.$content.find('.search-room__filters-block');
+    this.$rooms = this.$content.find('.search-room__rooms-block');
     this.$roomCards = this.$rooms.find('#data-container');
 
     this.$datepicker = this.$filters.find('.js-datepicker-block');
@@ -58,13 +58,13 @@ class SearchRoomContent {
   _selectRoom(event) {
     const targetClasses = event.target.classList;
 
-    if (!(targetClasses.contains('room_card__control_prev')
-          || targetClasses.contains('room_card__control_next')
-          || targetClasses.contains('room_card__indicators')
-          || targetClasses.contains('room_card__control_icon')
+    if (!(targetClasses.contains('room-card__control-prev')
+          || targetClasses.contains('room-card__control-next')
+          || targetClasses.contains('room-card__indicators')
+          || targetClasses.contains('room-card__control-icon')
           || targetClasses.contains('indicator'))) {
       const action = './room-details.html';
-      const selectedRoom = $(event.target).closest('.room_card').data();
+      const selectedRoom = $(event.target).closest('.room-card').data();
 
       const formData = this._getFormData();
 
@@ -115,7 +115,7 @@ class SearchRoomContent {
   }
 }
 
-$('.js-search_room__content').each(function addSearchRoomContent() {
+$('.js-search-room__content').each(function addSearchRoomContent() {
   const searchRoomContent = new SearchRoomContent(this);
 
   return searchRoomContent;

@@ -1,6 +1,6 @@
 @import '../../settings.scss';
 
-.search_room {
+.search-room {
   height: 100vh;
   max-height: 116.875rem;
   display: grid;
@@ -25,7 +25,7 @@
     }
   }
 
-  &__filter_toggler {
+  &__filter-toggler {
     display: none;
 
     @media screen and (max-width: 41rem) {
@@ -74,7 +74,7 @@
     }
   }
 
-  &__filters_block {
+  &__filters-block {
 
     @media screen and (max-width: 41rem) {
       display: none;
@@ -95,11 +95,11 @@
     }
   }
 
-  &__guest_dropdown {
+  &__guest-dropdown {
     margin-top: 1.0625rem;
   }
 
-  &__range_slider {
+  &__range-slider {
     margin-top: 1.875rem;
   }
 
@@ -107,19 +107,19 @@
     margin-top: 1.625rem;
   }
 
-  &__rich_checkbox {
+  &__rich-checkbox {
     margin-top: 1.8125rem;
   }
 
-  &__comfort_dropdown {
+  &__comfort-dropdown {
     margin-top: 1.625rem;
   }
 
-  &__additional_services_checkbox {
+  &__additional-services-checkbox {
     margin-top: 0.9375rem;
   }
 
-  &__rooms_title {
+  &__rooms-title {
     margin: 0.25rem 0 1.3125rem;
   }
 

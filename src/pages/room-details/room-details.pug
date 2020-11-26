@@ -15,16 +15,16 @@ block variables
     const data = htmlWebpackPlugin.options.getData();
 
 block content
-  .room_details
+  .room-details
     +header({ lang: 'ru', isLoggedIn: false, data })
-    .room_details__content
-      .room_details__images_block
+    .room-details__content
+      .room-details__images-block
         +roomImages({ room: 888 })
-      .room_details__details_block
-        .room_details__info_block
-          .room_details__room_info
-            h2.room_details__room_info_label Сведения о номере
-            .room_details__room_info_items
+      .room-details__details-block
+        .room-details__info-block
+          .room-details__room-info
+            h2.room-details__room-info-label Сведения о номере
+            .room-details__room-info-items
               +iconItem({
                 icon: 'insert_emoticon',
                 label: 'Комфорт',
@@ -40,12 +40,12 @@ block content
                 label: 'Уют',
                 description: 'Номер оснащён камином',
               })
-          .room_details__room_impressions
+          .room-details__room-impressions
             +pieChart({ label: 'Впечатления от номера' })
-          .room_details__guest_reviews_block
-            h2.room_details__guest_reviews_label Отзывы посетителей номера
-            .room_details__guest_reviews_count 2 отзыва
-            .room_details__guest_reviews
+          .room-details__guest-reviews-block
+            h2.room-details__guest-reviews-label Отзывы посетителей номера
+            .room-details__guest-reviews-count 2 отзыва
+            .room-details__guest-reviews
               +commentBlock({
                 name: 'Мурад Сарафанов',
                 date: '5 дней назад',
@@ -64,8 +64,8 @@ block content
                   count: '2',
                   checked: false
               }})
-          .room_details__room_rules_block
-            h2.room_details__room_rules_title Правила
+          .room-details__room-rules-block
+            h2.room-details__room-rules-title Правила
             -
               const itemList = [
                 { label: 'Нельзя с питомцами' },
@@ -74,10 +74,10 @@ block content
               ];
 
             +bulletList({ itemList })
-          .room_details__cancel_reservation
-            h2.room_details__cancel_reservation_label Отмена
-            .room_details__cancel_reservation_text= 'Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.'
-        .room_details__booking_form
+          .room-details__cancel-reservation
+            h2.room-details__cancel-reservation-label Отмена
+            .room-details__cancel-reservation-text= 'Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.'
+        .room-details__booking-form
           +roomRateCard()
-    .room_details__delimiter
+    .room-details__delimiter
     +footer({ lang: 'ru', data })

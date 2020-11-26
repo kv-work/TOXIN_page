@@ -20,18 +20,18 @@ block variables
   - const pageTitle = 'Form-elements';
 
 block content
-  .form_elements
-    .logo_wrapper
+  .form-elements
+    .logo-wrapper
       +logo({ width: '48', height: '48', fill: '#1F2041', fillOpacity: '.25' })
     .row
       .col
-        div.input_wrapper.default
+        div.input-wrapper.default
           span.style default
           +input({ label: 'text field', placeholder: 'Email' })
-        div.input_wrapper(class="hover_focus")
+        div.input-wrapper(class="hover_focus")
           span.style.hover_focus hover / focus
           +input({ label: 'text field', placeholder: 'This is pretty awesome' })(class="input__input_focused")
-        .dropdown_wrapper.default
+        .dropdown-wrapper.default
           -
             let items = [
               { itemLabel: 'Взрослые', itemCount: 0 },
@@ -41,17 +41,17 @@ block content
 
           span.style default
           +dropdown({ label:'dropdown', text: 'Сколько гостей', items })
-        .input_wrapper.default.masked
+        .input-wrapper.default.masked
           span.style default
           +input({ label: 'masked text field', placeholder: 'ДД.ММ.ГГГГ', masked: true })
-        .datepickers_wrapper
+        .datepickers-wrapper
           +datepickerBlock({ label: 'date dropdown', separated: true, labelSecond: 'date dropdown', valueSecond: '19.08.2019' })
-        .datepicker_wrapper_filtered
+        .datepicker-wrapper_filtered
           +datepickerBlock({ label: 'filter date dropdown', value:'19.08.2019', valueSecond:'23.08.2019' })
-        .input_wrapper_with_subscription
+        .input-wrapper_with-subscription
           +input({ label: 'subscription text field', placeholder: 'Email', subscription: true })
       .col
-        .checkbox_buttons_wrapper
+        .checkbox-buttons_wrapper
           -
             let list = [
               { label: 'Можно курить' },
@@ -60,49 +60,49 @@ block content
             ];
 
           +checkboxList({ checkboxLabel: 'checkbox buttons', list: list })
-        .radio_buttons_wrapper
-          h3.radio_buttons_label radio buttons
+        .radio-buttons_wrapper
+          h3.radio-buttons-label radio buttons
           +radioButtons({
             list: [
               { label: 'Мужчина', checked: true },
               { label: 'Женщина' }
             ]
           })
-        .toggle_buttons_wrapper
+        .toggle-buttons-wrapper
           h3.toggle_buttons_label toggle
           +toggleButton({ label: 'Получать спецпредложения', checked: true })
           +toggleButton({ label: 'Получать спецпредложения' })
-        .like_buttons_wrapper
-          h3.like_buttons_label like button
-          .like_buttons
+        .like-buttons-wrapper
+          h3.like-buttons-label like button
+          .like-buttons
             +likeButton({ count: 2 })
             +likeButton({ count: 12, checked: true })
-        .rate_buttons_wrapper
+        .rate-buttons-wrapper
           h3.rate_buttons__label rate button
           +rateButton({ name: 'rate_1', rate: 4 })
           +rateButton({ name: 'rate_2', rate: 5 })
       .col
-        .range_slider_wrapper
+        .range-slider-wrapper
           +rangeSlider({ label: 'range slider', value: [5000, 10000] })
-        .buttons_block
-          h3.buttons_block_label buttons
-          .buttons_block_wrapper
-            .buttons_block_buttons
+        .buttons-block
+          h3.buttons-block-label buttons
+          .buttons-block-wrapper
+            .buttons-block-buttons
               +button({ label: 'Click me', theme: 'filled' })
               +button({ label: 'Click me', theme: 'filled', disabled: true })
               +button({ label: 'Click me', theme: 'outline' })
               +button({ label: 'Click me', theme: 'outline', disabled: true })
-              .buttons_block_theme_text
+              .buttons-block_theme-text
                 +button({ label: 'Click me', theme: 'text' })
                 +button({ label: 'Click me', theme: 'text', disabled: true })
-            .buttons_block_with_arrow
+            .buttons-block_with-arrow
               +button({ label: 'Перейти к оплате', theme: 'filled', withArrow: true })
-        .pagination_block_wrapper
-          h3.pagination_block_wrapper_label pagination
+        .pagination-block-wrapper
+          h3.pagination-block-wrapper_label pagination
           +pagination({ numberOfPages: 15, description: '1 – 12 из 100+ вариантов аренды' })
     .row
       .col
-        .dropdown_multiple_items_wrapper
+        .dropdown-multiple-items-wrapper
           -
             items = [
               { itemLabel: 'Спальни', itemCount: 2 },
@@ -112,11 +112,11 @@ block content
 
           span.style default
           +dropdown({ label:'dropdown', text: 'Сколько гостей', items, multiple: true })
-        .dropdown_multiple_items_expanded_wrapper
+        .dropdown-multiple-items-expanded-wrapper
           span.style expanded
           +dropdown({ label:'dropdown', text: 'Сколько гостей', items, multiple: true })(class="menu-open")
       .col
-        .dropdown_wrapper_expanded
+        .dropdown-wrapper_expanded
           -
             items = [
               { itemLabel: 'Взрослые', itemCount: 0 },
@@ -126,7 +126,7 @@ block content
 
           +dropdown({ label:'dropdown', text: 'Сколько гостей', items })(class="menu-open")
       .col
-        .dropdown_wrapper_expanded
+        .dropdown-wrapper_expanded
           -
             items = [
               { itemLabel: 'Взрослые', itemCount: 2 },
@@ -137,7 +137,7 @@ block content
           +dropdown({ label:'dropdown', text: 'Сколько гостей', items })(class="menu-open")
     .row
       .col
-        .expandable_checkbox_wrapper
+        .expandable-checkbox-wrapper
           -
             list = [
               { label:'Завтрак' },
@@ -151,10 +151,10 @@ block content
             ];
 
           +checkboxList({ checkboxLabel: 'expandable checkbox list', list, expandable: true, closed: true })
-        .expandable_checkbox_wrapper
+        .expandable-checkbox-wrapper
           +checkboxList({ checkboxLabel: 'expandable checkbox list', list, expandable: true })
       .col
-        .rich_checkbox_buttons
+        .rich-checkbox-buttons
           -
             list = [
               { label: 'Широкий коридор', description: 'Ширина коридоров в номере не\u00A0менее 91 см.', checked: false },
@@ -163,8 +163,8 @@ block content
 
           +checkboxList({ checkboxLabel: 'rich checkbox buttons', list, rich: true })
       .col
-        .bullet_list_wrapper
-          h3.bullet_list_label bullet list
+        .bullet-list-wrapper
+          h3.bullet-list-label bullet list
           -
             const itemList = [
               { label: 'Нельзя с питомцами' },
@@ -175,8 +175,8 @@ block content
           +bulletList({ itemList })
     .row
       .col
-        .icon_item_list_wrapper
-          .icon_item_list
+        .icon-item-list-wrapper
+          .icon-item-list
             +iconItem({
               icon: 'insert_emoticon',
               label: 'Комфорт',
@@ -188,7 +188,7 @@ block content
               description: 'Окно в каждой из спален',
             })
       .col
-        .comment_block_wrapper
+        .comment-block-wrapper
           +commentBlock({
             name: 'Мурад Сарафанов',
             date: '5 дней назад',
