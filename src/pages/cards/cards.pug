@@ -6,6 +6,7 @@ block variables
   include ../../components/registration-card/registration-card
   include ../../components/room-rate-card/room-rate-card
   include ../../components/login-card/login-card
+  include ../../components/datepicker-block/datepicker-block
   include ../../components/room-card/room-card
 
   - const pageTitle = 'Cards';
@@ -22,6 +23,6 @@ block content
         +roomRateCard()
         +loginCard({ label: 'Войти' })
       .cards-grid__col
-        .calendar_card.js-datepicker-block_inline(data-date='19.08.2019' data-value-second='23.08.2019') 
+        +datepickerBlock({ inline: true })(class="calendar_card" data-date='19.08.2019' data-value-second='23.08.2019')
         +roomCard({ number: 888 })
         +roomCard({ number: 840 })

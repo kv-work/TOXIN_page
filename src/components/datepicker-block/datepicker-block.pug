@@ -1,23 +1,31 @@
 mixin datepickerBlock(params = {})
   -
-    const { label, separated = false, labelSecond = '', value = '', valueSecond = '' } = params;
+    const { label, separated = false, labelSecond = '', value = '', valueSecond = '', inline = false } = params;
     const classList = separated ? 'js-datepicker_separated js-datepicker_masked start-date' : 'js-datepicker';
-    const classListBlock = separated ? 'datepicker-block js-datepicker-block_separated' : 'datepicker-block js-datepicker-block';
+    let classListBlock;
+    if (inline) {
+      classListBlock = 'datepicker-block js-datepicker-block_inline';
+    } else if (separated) {
+      classListBlock = 'datepicker-block js-datepicker-block_separated'
+    } else {
+      classListBlock =  'datepicker-block js-datepicker-block';
+    }
 
-  div(class=classListBlock)
-    .datepicker-block_wrapper
-      label.datepicker-block__label.like_h3= label
-      .datepicker-block__input-wrapper(tabindex=0)
-        input.datepicker-block__input(
-          type="text" 
-          class=classList
-          name="start-date"
-          placeholder="ДД.ММ.ГГГГ"
-          required=true
-          readonly=true
-          tabindex=-1
-          data-date=value 
-          data-separated=separated 
-          data-label-second=labelSecond 
-          data-value-second=valueSecond
-        )
+  div(class=classListBlock)&attributes(attributes)
+    if (!inline)
+      .datepicker-block_wrapper
+        label.datepicker-block__label.like_h3= label
+        .datepicker-block__input-wrapper(tabindex=0)
+          input.datepicker-block__input(
+            type="text" 
+            class=classList
+            name="start-date"
+            placeholder="ДД.ММ.ГГГГ"
+            required=true
+            readonly=true
+            tabindex=-1
+            data-date=value 
+            data-separated=separated 
+            data-label-second=labelSecond 
+            data-value-second=valueSecond
+          )
