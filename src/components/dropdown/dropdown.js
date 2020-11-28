@@ -31,11 +31,11 @@ $('.js-dropdown').iqDropdown({
     }
 
     if (infants === 1) {
-      message += ', 1 младенец';
+      message = (guests === 0) ? '1 младенец' : `${message}, 1 младенец`;
     } else if (infants > 1 && infants < 5) {
-      message += `, ${infants} младенца`;
+      message = (guests === 0) ? `${infants} младенца` : `${message}, ${infants} младенца`;
     } else if (infants >= 5) {
-      message += `, ${infants} младенцев`;
+      message = (guests === 0) ? `${infants} младенцев` : `${message}, ${infants} младенцев`;
     }
 
     return message;
