@@ -15,14 +15,14 @@ block content
   .cards
     .cards__logo-wrapper
       +logo({ width: '48', height: '48', fill: '#1F2041', fillOpacity: '.25' })
-    .cards-grid
-      .cards-grid__col
+    .cards__grid
+      .cards__grid-col
         +roomSearchCard({ label: 'Найдем номера под ваши\u00A0пожелания' }) 
         +registrationCard({ label: 'Регистрация аккаунта' })
-      .cards-grid__col
+      .cards__grid-col
         +roomRateCard()
         +loginCard({ label: 'Войти' })
-      .cards-grid__col
-        +datepickerBlock({ inline: true })(class="calendar_card" data-date='19.08.2019' data-value-second='23.08.2019')
+      .cards__grid-col
+        +datepickerBlock({ inline: true })(data-date='19.08.2019' data-value-second='23.08.2019')
         +roomCard({ number: 888 })
         +roomCard({ number: 840 })

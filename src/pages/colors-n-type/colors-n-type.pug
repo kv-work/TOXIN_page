@@ -9,10 +9,10 @@ block variables
 
 block content
   .colors-n-types
-    .logo-wrapper
+    .colors-n-types__logo-wrapper
       +logo({ width: '48', height: '48', fill: '#1F2041', fillOpacity: '.25' })
-    .colors-wrapper
-      .colors-palettes
+    .colors-n-types__colors-wrapper
+      .colors-n-types__colors-palettes
         +palette()
         +palette({ color: '#1F2041', colorName: 'Dark-Shade', opacity: '75%' })
         +palette({ color: '#1F2041', colorName: 'Dark-Shade', opacity: '50%' })
@@ -20,8 +20,8 @@ block content
         +palette({ color: '#1F2041', colorName: 'Dark-Shade', opacity: '5%' })
         +palette({ color: '#BC9CFF', colorName: 'Purple' })
         +palette({ color: '#6FCF97', colorName: 'Green' })
-    .type-wrapper
-      .type
+    .colors-n-types__types-wrapper
+      .colors-n-types__types
         +typeExample({ tagName: 'H1', text: 'This one is the sub-section or widget title' })
         +typeExample({ tagName: 'H2', text: 'Next one is the item title inside widgets' })
         +typeExample({ tagName: 'H3', text: 'This is a label or CTA text' })

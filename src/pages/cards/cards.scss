@@ -21,7 +21,7 @@
     }
   }
 
-  &-grid {
+  &__grid {
     max-width: 90rem;
     margin: auto;
     display: grid;
@@ -29,7 +29,7 @@
     column-gap: 2.5rem;
     justify-content: center;
     
-    &__col {
+    &-col {
       display: flex;
       flex-direction: column;
       max-width: 23.75rem;
