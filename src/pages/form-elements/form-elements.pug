@@ -21,17 +21,17 @@ block variables
 
 block content
   .form-elements
-    .logo-wrapper
+    .form-elements__logo-wrapper
       +logo({ width: '48', height: '48', fill: '#1F2041', fillOpacity: '.25' })
-    .row
-      .col
-        div.input-wrapper.default
-          span.style default
+    .form-elements__row
+      .form-elements__col
+        div.form-elements__input-wrapper.default
+          span.form-elements__style-name default
           +input({ label: 'text field', placeholder: 'Email' })
-        div.input-wrapper(class="hover_focus")
-          span.style.hover_focus hover / focus
+        div.form-elements__input-wrapper(class="hover_focus")
+          span.form-elements__style-name.hover_focus hover / focus
           +input({ label: 'text field', placeholder: 'This is pretty awesome' })(class="input__input_focused")
-        .dropdown-wrapper.default
+        .form-elements__dropdown-wrapper.default
           -
             let items = [
               { itemLabel: 'Взрослые', itemCount: 0 },
@@ -39,19 +39,19 @@ block content
               { itemLabel: 'Младенцы', itemCount: 0 },
             ];
 
-          span.style default
+          span.form-elements__style-name default
           +dropdown({ label:'dropdown', text: 'Сколько гостей', items })
-        .input-wrapper.default.masked
-          span.style default
+        .form-elements__input-wrapper.default.masked
+          span.form-elements__style-name default
           +input({ label: 'masked text field', placeholder: 'ДД.ММ.ГГГГ', masked: true })
-        .datepickers-wrapper
+        .form-elements__datepickers-wrapper
           +datepickerBlock({ label: 'date dropdown', separated: true, labelSecond: 'date dropdown', valueSecond: '19.08.2019' })
-        .datepicker-wrapper_filtered
+        .form-elements__datepicker-wrapper_filtered
           +datepickerBlock({ label: 'filter date dropdown', value:'19.08.2019', valueSecond:'23.08.2019' })
-        .input-wrapper_with-subscription
+        .form-elements__input-wrapper_with-subscription
           +input({ label: 'subscription text field', placeholder: 'Email', subscription: true })
-      .col
-        .checkbox-buttons_wrapper
+      .form-elements__col
+        .form-elements__checkbox-buttons-wrapper
           -
             let list = [
               { label: 'Можно курить' },
@@ -60,49 +60,49 @@ block content
             ];
 
           +checkboxList({ checkboxLabel: 'checkbox buttons', list: list })
-        .radio-buttons_wrapper
-          h3.radio-buttons-label radio buttons
+        .form-elements__radio-buttons-wrapper
+          h3.form-elements__radio-buttons-label radio buttons
           +radioButtons({
             list: [
               { label: 'Мужчина', checked: true },
               { label: 'Женщина' }
             ]
           })
-        .toggle-buttons-wrapper
-          h3.toggle_buttons_label toggle
+        .form-elements__toggle-buttons-wrapper
+          h3.form-elements__toggle-buttons-label toggle
           +toggleButton({ label: 'Получать спецпредложения', checked: true })
           +toggleButton({ label: 'Получать спецпредложения' })
-        .like-buttons-wrapper
-          h3.like-buttons-label like button
-          .like-buttons
+        .form-elements__like-buttons-wrapper
+          h3.form-elements__like-buttons-label like button
+          .form-elements__like-buttons
             +likeButton({ count: 2 })
             +likeButton({ count: 12, checked: true })
-        .rate-buttons-wrapper
-          h3.rate_buttons__label rate button
+        .form-elements__rate-buttons-wrapper
+          h3.form-elements__rate-buttons-label rate button
           +rateButton({ name: 'rate_1', rate: 4 })
           +rateButton({ name: 'rate_2', rate: 5 })
-      .col
-        .range-slider-wrapper
+      .form-elements__col
+        .form-elements__range-slider-wrapper
           +rangeSlider({ label: 'range slider', value: [5000, 10000] })
-        .buttons-block
-          h3.buttons-block-label buttons
-          .buttons-block-wrapper
-            .buttons-block-buttons
+        .form-elements__buttons-block
+          h3.form-elements__buttons-block-label buttons
+          .form-elements__buttons-block-wrapper
+            .form-elements__buttons-block-buttons
               +button({ label: 'Click me', theme: 'filled' })
               +button({ label: 'Click me', theme: 'filled', disabled: true })
               +button({ label: 'Click me', theme: 'outline' })
               +button({ label: 'Click me', theme: 'outline', disabled: true })
-              .buttons-block_theme-text
+              .form-elements__buttons-block_theme_text
                 +button({ label: 'Click me', theme: 'text' })
                 +button({ label: 'Click me', theme: 'text', disabled: true })
-            .buttons-block_with-arrow
+            .form-elements__buttons-block_with-arrow
               +button({ label: 'Перейти к оплате', theme: 'filled', withArrow: true })
-        .pagination-block-wrapper
-          h3.pagination-block-wrapper_label pagination
+        .form-elements__pagination-block-wrapper
+          h3.form-elements__pagination-block-wrapper-label pagination
           +pagination({ numberOfPages: 15, description: '1 – 12 из 100+ вариантов аренды' })
-    .row
-      .col
-        .dropdown-multiple-items-wrapper
+    .form-elements__row
+      .form-elements__col
+        .form-elements__dropdown-multiple-items-wrapper
           -
             items = [
               { itemLabel: 'Спальни', itemCount: 2 },
@@ -110,13 +110,13 @@ block content
               { itemLabel: 'Ванные комнаты', itemCount: 0 },
             ];
 
-          span.style default
+          span.form-elements__style-name default
           +dropdown({ label:'dropdown', text: 'Сколько гостей', items, multiple: true })
-        .dropdown-multiple-items-expanded-wrapper
-          span.style expanded
+        .form-elements__dropdown-multiple-items-expanded-wrapper
+          span.form-elements__style-name expanded
           +dropdown({ label:'dropdown', text: 'Сколько гостей', items, multiple: true })(class="menu-open")
-      .col
-        .dropdown-wrapper_expanded
+      .form-elements__col
+        .form-elements__dropdown-wrapper-expanded
           -
             items = [
               { itemLabel: 'Взрослые', itemCount: 0 },
@@ -125,8 +125,8 @@ block content
             ];
 
           +dropdown({ label:'dropdown', text: 'Сколько гостей', items })(class="menu-open")
-      .col
-        .dropdown-wrapper_expanded
+      .form-elements__col
+        .form-elements__dropdown-wrapper-expanded
           -
             items = [
               { itemLabel: 'Взрослые', itemCount: 2 },
@@ -135,9 +135,9 @@ block content
             ];
 
           +dropdown({ label:'dropdown', text: 'Сколько гостей', items })(class="menu-open")
-    .row
-      .col
-        .expandable-checkbox-wrapper
+    .form-elements__row
+      .form-elements__col
+        .form-elements__expandable-checkbox-wrapper
           -
             list = [
               { label:'Завтрак' },
@@ -151,10 +151,10 @@ block content
             ];
 
           +checkboxList({ checkboxLabel: 'expandable checkbox list', list, expandable: true, closed: true })
-        .expandable-checkbox-wrapper
+        .form-elements__expandable-checkbox-wrapper
           +checkboxList({ checkboxLabel: 'expandable checkbox list', list, expandable: true })
-      .col
-        .rich-checkbox-buttons
+      .form-elements__col
+        .form-elements__rich-checkbox-buttons
           -
             list = [
               { label: 'Широкий коридор', description: 'Ширина коридоров в номере не\u00A0менее 91 см.', checked: false },
@@ -162,9 +162,9 @@ block content
             ];
 
           +checkboxList({ checkboxLabel: 'rich checkbox buttons', list, rich: true })
-      .col
-        .bullet-list-wrapper
-          h3.bullet-list-label bullet list
+      .form-elements__col
+        .form-elements__bullet-list-wrapper
+          h3.form-elements__bullet-list-label bullet list
           -
             const itemList = [
               { label: 'Нельзя с питомцами' },
@@ -173,10 +173,10 @@ block content
             ];
 
           +bulletList({ itemList })
-    .row
-      .col
-        .icon-item-list-wrapper
-          .icon-item-list
+    .form-elements__row
+      .form-elements__col
+        .form-elements__icon-item-list-wrapper
+          .form-elements__icon-item-list
             +iconItem({
               icon: 'insert_emoticon',
               label: 'Комфорт',
@@ -187,8 +187,8 @@ block content
               label: 'Удобство',
               description: 'Окно в каждой из спален',
             })
-      .col
-        .comment-block-wrapper
+      .form-elements__col
+        .form-elements__comment-block-wrapper
           +commentBlock({
             name: 'Мурад Сарафанов',
             date: '5 дней назад',

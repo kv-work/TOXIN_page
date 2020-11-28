@@ -6,264 +6,262 @@
   display: grid;
   grid-template-rows: auto;
   row-gap: 2.5rem;
-}
 
-.row {
-  position: relative;
-  display: grid;
-  grid-template-columns: 20rem auto 20rem;
-  column-gap: 4.5rem;
 
-  &:nth-child(3) {
-    padding-top: 3.5625rem;
-  }
-}
-
-.col {
-  position: relative;
-  min-width: 20rem;
-  display: flex;
-  flex-direction: column;
-  
-  &:nth-child(2) {
-    padding-left: 3.4375rem;
-  }
-}
-
-.logo-wrapper {
-  position: absolute;
-  top: 1.875rem;
-  left: 1.875rem;
-}
-
-.style  {
-  text-transform: uppercase;
-}
-
-.input-wrapper {
-  position: relative;
-  margin-left: 0.0625rem;
-
-  &.hover_focus {
-    margin-top: 1rem;
-    padding-top: 0.1531rem;
-  }
-
-  &.masked {
-    margin-top: 1.25rem;
-  }
-}
-
-.style {
-  color: $dark-50;
-  position: absolute;
-  right: 0;
-  font-size: 0.75rem;
-  line-height: 1.25;
-
-  &.hover_focus {
-    top: 0.3125rem;
-    letter-spacing: -0.02em;
-  }
-}
-
-.dropdown-wrapper {
-  position: relative;
-  margin-top: 1rem;
-
-  & .style {
-    padding-bottom: 0.3125rem;
-    top: 0.1875rem;
-  }
-
-  &_expanded {
-    width: 20rem;
-  }
-}
-
-.datepickers-wrapper {
-  width: 20rem;
-  margin-top: 2.3125rem;
-  margin-left: 0.0625rem;
-}
-
-.datepicker-wrapper_filtered {
-  width: 16.625rem;
-  margin-top: 2.375rem;
-  margin-left: 0.0625rem;
-}
-
-.input-wrapper_with-subscription {
-  width: 16.6875rem;
-  box-sizing: border-box;
-  margin-top: 2.375rem;
-}
-
-.dropdown-multiple-items {
-  
-  &-wrapper {
-  width: 16.6875rem;
-  position: relative;
-  }
-
-  &-expanded-wrapper {
-    margin-top: 1.0625rem;
-    width: 16.625rem;
+  &__row {
     position: relative;
-    height: 11.5rem;
-  }
-}
-
-.expandable-checkbox-wrapper {
-  width: 16.625rem;
-  box-sizing: border-box;
-
-  &:nth-child(2) {
-    margin-top: 1.25rem;
-  }
-}
-
-.rich-checkbox-buttons {
-  width: 16.625rem;
-  box-sizing: border-box;
-  padding-top: 0.75rem;
-}
-
-.bullet-list-wrapper {
-  width: 16.25rem;
-  padding-top: 0.625rem;
-}
-
-.bullet-list-label {
-  margin-bottom: 0.25rem;
-}
-
-.checkbox-buttons-wrapper {
-  width: 13.875rem;
-}
-
-.buttons-block {
-  width: 20rem;
-  padding-top: 1.8125rem;
-
-  &-wrapper {
     display: grid;
-    grid-template-columns: auto auto;
-    column-gap: 1.25rem;
-    row-gap: 1.875rem;
+    grid-template-columns: 20rem auto 20rem;
+    column-gap: 4.5rem;
+
+    &:nth-child(3) {
+      padding-top: 3.5625rem;
+    }
   }
 
-  &-buttons {
-    padding-top: 0.9375rem;
-    width: 13.625rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    row-gap: 1.875rem;
-    column-gap: 1.25rem;
+  &__col {
+    position: relative;
+    min-width: 20rem;
+    display: flex;
+    flex-direction: column;
 
-    & > button {
+    &:nth-child(2) {
+      padding-left: 3.4375rem;
+    }
+  }
+
+  &__logo-wrapper {
+    position: absolute;
+    top: 1.875rem;
+    left: 1.875rem;
+  }
+
+  &__style-name {
+    text-transform: uppercase;
+    color: $dark-50;
+    position: absolute;
+    right: 0;
+    font-size: 0.75rem;
+    line-height: 1.25;
+
+    &.hover_focus {
+      top: 0.3125rem;
+      letter-spacing: -0.02em;
+    }
+  }
+
+  &__input-wrapper {
+    position: relative;
+    margin-left: 0.0625rem;
+
+    &.hover_focus {
+      margin-top: 1rem;
+      padding-top: 0.1531rem;
+    }
+
+    &.masked {
+      margin-top: 1.25rem;
+    }
+  }
+
+  &__dropdown-wrapper {
+    position: relative;
+    margin-top: 1rem;
+
+    & .style {
+      padding-bottom: 0.3125rem;
+      top: 0.1875rem;
+    }
+
+    &_expanded {
+      width: 20rem;
+    }
+  }
+
+  &__datepickers-wrapper {
+    width: 20rem;
+    margin-top: 2.3125rem;
+    margin-left: 0.0625rem;
+  }
+
+  &__datepicker-wrapper_filtered {
+    width: 16.625rem;
+    margin-top: 2.375rem;
+    margin-left: 0.0625rem;
+  }
+
+  &__input-wrapper_with-subscription {
+    width: 16.6875rem;
+    box-sizing: border-box;
+    margin-top: 2.375rem;
+  }
+
+  &__dropdown-multiple-items {
+
+    &-wrapper {
+      width: 16.6875rem;
+      position: relative;
+    }
+
+    &-expanded-wrapper {
+      margin-top: 1.0625rem;
+      width: 16.625rem;
+      position: relative;
+      height: 11.5rem;
+    }
+  }
+
+  &__expandable-checkbox-wrapper {
+    width: 16.625rem;
+    box-sizing: border-box;
+
+    &:nth-child(2) {
+      margin-top: 1.25rem;
+    }
+  }
+
+  &__rich-checkbox-buttons {
+    width: 16.625rem;
+    box-sizing: border-box;
+    padding-top: 0.75rem;
+  }
+
+  &__bullet-list-wrapper {
+    width: 16.25rem;
+    padding-top: 0.625rem;
+  }
+
+  .bullet-list-label {
+    margin-bottom: 0.25rem;
+  }
+
+  &__checkbox-buttons-wrapper {
+    width: 13.875rem;
+  }
+
+  &__buttons-block {
+    width: 20rem;
+    padding-top: 1.8125rem;
+
+    &-wrapper {
+      display: grid;
+      grid-template-columns: auto auto;
+      column-gap: 1.25rem;
+      row-gap: 1.875rem;
+    }
+
+    &-buttons {
+      padding-top: 0.9375rem;
+      width: 13.625rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      row-gap: 1.875rem;
+      column-gap: 1.25rem;
+
+      &>button {
+        height: 2.75rem;
+      }
+    }
+
+    &_theme_text {
+      grid-column: 1/3;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr) 3.125rem;
+      column-gap: 1.25rem;
+      justify-items: start;
+      align-items: center;
+    }
+
+    &_with-arrow {
+      grid-column: 1/3;
       height: 2.75rem;
     }
   }
 
-  &_theme_text {
-    grid-column: 1/3;
+  &__pagination-block-wrapper {
+    width: 20rem;
+    padding-top: 2.5625rem;
+
+    &-label {
+      padding-bottom: 1rem;
+    }
+  }
+
+  &__radio-buttons {
+    &-wrapper {
+      width: 13.75rem;
+      margin-top: 2.3125rem;
+    }
+
+    &-label {
+      display: inline-block;
+      padding-bottom: 0.875rem;
+    }
+  }
+
+  &__toggle-buttons {
+    &-wrapper {
+      margin-top: 2.4375rem;
+      width: 16.25rem;
+      display: grid;
+      row-gap: 0.625rem;
+      grid-template-rows: 1.1875rem 1.5rem 1.5rem;
+    }
+
+    &-label {
+      display: inline-block;
+      padding-bottom: 0.375rem;
+      letter-spacing: -0.03em;
+    }
+  }
+
+  &__like-buttons {
     display: grid;
-    grid-template-columns: repeat(2, 1fr) 3.125rem;
-    column-gap: 1.25rem;
-    justify-items: start;
-    align-items: center;
+    grid-template-columns: 2.5rem 2.5rem;
+    column-gap: 0.625rem;
+
+    &-wrapper {
+      margin-top: 2.3125rem;
+      width: 5.625rem;
+    }
+
+    &-label {
+      display: inline-block;
+      padding-bottom: 1rem;
+    }
   }
 
-  &_with-arrow {
-    grid-column: 1/3;
-    height: 2.75rem;
-  }
-}
+  &__rate-buttons {
+    &-wrapper {
+      margin-top: 2.5rem;
+      display: grid;
+      grid-template-columns: 7.5rem 7.5rem;
+      column-gap: 1.25rem;
+      row-gap: 1rem;
+    }
 
-.pagination-block-wrapper {
-  width: 20rem;
-  padding-top: 2.5625rem;
-
-  &_label {
-    padding-bottom: 1rem;
-  }
-}
-
-.radio-buttons {
-  &_wrapper {
-    width: 13.75rem;
-    margin-top: 2.3125rem;
+    &-label {
+      grid-column: 1/3;
+    }
   }
 
-  &-label {
-    display: inline-block;
-    padding-bottom: 0.875rem;
+  &__range-slider-wrapper {
+    width: 16.625rem;
+    padding-top: 0.1875rem;
   }
-}
 
-.toggle-buttons {
-  &-wrapper {
-    margin-top: 2.4375rem;
-    width: 16.25rem;
+  &__icon-item-list {
     display: grid;
-    row-gap: 0.625rem;
-    grid-template-rows: 1.1875rem 1.5rem 1.5rem;
+    grid-template-columns: 1fr;
+
+    &-wrapper {
+      width: 18.1875rem;
+    }
   }
 
-  &-label {
-    display: inline-block;
-    padding-bottom: 0.375rem;
-    letter-spacing: -0.03em;
+  &__comment-block-wrapper {
+    grid-column: 2 / 4;
+    width: 44.4375rem;
+    padding-top: 0.625rem;
   }
-}
-
-.like-buttons {  
-  display: grid;
-  grid-template-columns: 2.5rem 2.5rem;
-  column-gap: 0.625rem;
-
-  &-wrapper {
-    margin-top: 2.3125rem;
-    width: 5.625rem;
-  }
-
-  &-label {
-    display: inline-block;
-    padding-bottom: 1rem;
-  }
-}
-
-.rate-buttons {
-  &_wrapper {
-    margin-top: 2.5rem;
-    display: grid;
-    grid-template-columns: 7.5rem 7.5rem;
-    column-gap: 1.25rem;
-    row-gap: 1rem;
-  }
-
-  &__label {
-    grid-column: 1/3;
-  }
-}
-
-.range-slider-wrapper {
-  width: 16.625rem;
-  padding-top: 0.1875rem;
-}
-
-.icon-item-list {
-  display: grid;
-  grid-template-columns: 1fr;
-
-  &_wrapper {
-    width: 18.1875rem;
-  }
-}
-
-.comment-block-wrapper {
-  grid-column: 2 / 4;
-  width: 44.4375rem;
-  padding-top: 0.625rem;
 }
