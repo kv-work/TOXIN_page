@@ -15,7 +15,7 @@
   &__image {
     background-size: cover;
 
-    @media screen and (max-width: 57.625rem) {
+    @media screen and (max-width: 922px) {
       display: none;
       height: 100%;
       background-size: cover;
@@ -23,7 +23,7 @@
 
     &.active {
 
-      @media screen and (max-width: 57.625rem) {
+      @media screen and (max-width: 922px) {
         display: block;
       }
     }
@@ -41,7 +41,7 @@
   &__indicators-block {
     display: none;
 
-    @media screen and (max-width: 57.625rem) {
+    @media screen and (max-width: 922px) {
       padding: 0;
       margin: 0;
       position: absolute;
@@ -55,7 +55,7 @@
 
     & > li {
 
-      @media screen and (max-width: 57.625rem) {
+      @media screen and (max-width: 922px) {
         list-style-type: none;
         width: 0.4688rem;
         height: 0.4688rem;
@@ -68,7 +68,7 @@
 
       &.active {
 
-        @media screen and (max-width: 57.625rem) {
+        @media screen and (max-width: 922px) {
           border: none;
           background-color: #fff;
         }
@@ -76,7 +76,7 @@
 
       &.disabled {
 
-        @media screen and (max-width: 57.625rem) {
+        @media screen and (max-width: 922px) {
           cursor: default;
         }
       }
@@ -86,7 +86,7 @@
   &__control-prev {
     display: none;
 
-    @media screen and (max-width: 57.625rem) {
+    @media screen and (max-width: 922px) {
       position: absolute;
       left: 0;
       top: 0;
@@ -99,7 +99,7 @@
 
     & .room-images__control-icon {
 
-      @media screen and (max-width: 57.625rem) {
+      @media screen and (max-width: 922px) {
         font-size: 1.5rem;
         height: 2.75rem;
         width: 2.75rem;
@@ -116,7 +116,7 @@
   &__control-next {
     display: none;
 
-    @media screen and (max-width: 57.625rem) {
+    @media screen and (max-width: 922px) {
       position: absolute;
       right: 0;
       top: 0;
@@ -130,7 +130,7 @@
 
     & .room-images__control-icon {
 
-      @media screen and (max-width: 57.625rem) {
+      @media screen and (max-width: 922px) {
         font-size: 1.5rem;
         height: 2.75rem;
         width: 2.75rem;

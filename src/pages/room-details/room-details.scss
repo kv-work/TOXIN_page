@@ -9,11 +9,11 @@
     height: 34.68vw;
     width: 100%;
 
-    @media screen and (max-width: 57.625rem) {
+    @media screen and (max-width: 922px) {
       height: 15.25rem;
     }
 
-    @media screen and (max-width: 41.875rem) {
+    @media screen and (max-width: 670px) {
       grid-template-columns: 1fr;
     }
   }
@@ -33,7 +33,7 @@
       padding-right: 1.875rem;
     }
 
-    @media screen and (max-width: 27.5rem) {
+    @media screen and (max-width: 440px) {
       padding-left: 0;
       padding-right: 0;
     }
@@ -45,13 +45,13 @@
     max-width: 44.375rem;
     margin: auto;
 
-    @media screen and (max-width: 27.5rem) {
+    @media screen and (max-width: 440px) {
       max-width: 23.75rem;
       margin-right: auto;
       margin-left: auto;
     }
 
-    @media screen and (max-width: 23.75rem) {
+    @media screen and (max-width: 380px) {
       padding-left: 0.625rem;
       padding-right: 0.625rem;
     }
@@ -65,7 +65,7 @@
     flex: 0 0 17.5rem;
     margin-right: 5.0625rem;
 
-    @media screen and (max-width: 41.875rem) {
+    @media screen and (max-width: 670px) {
       margin-right: 0;
     }
 
@@ -80,7 +80,7 @@
     grid-template-columns: auto 1fr;
     row-gap: 1.1875rem;
 
-    @media screen and (max-width: 23.75rem) {
+    @media screen and (max-width: 380px) {
       grid-template-columns: auto minmax(4.375rem, 1fr);
     }
   }
@@ -112,7 +112,7 @@
       margin: auto;
     }
 
-    @media screen and (max-width: 23.75rem) {
+    @media screen and (max-width: 380px) {
       width: 100%;
     }
   }
@@ -122,7 +122,7 @@
     margin-left: auto;
     max-width: 21.8125rem;
 
-    @media screen and (max-width: 41.875rem) {
+    @media screen and (max-width: 670px) {
       margin-left: 0;
     }
   }

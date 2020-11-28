@@ -1,7 +1,6 @@
 @import '../../settings.scss';
 
 .headers-n-footers {
-  max-width: 120rem;
   min-width: 20rem;
   margin: auto;
   padding-top: 9.375rem;
@@ -9,15 +8,15 @@
   position: relative;
 
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: auto;
   row-gap: 2.5rem;
 
   &__logo-wrapper {
-    position: absolute;
+    position: relative;
     top: 1.875rem;
     left: calc(50% - 45rem + 1.875rem);
-  
-    @media screen and (max-width: 90rem) {
+
+    @media screen and (max-width: 1440px) {
       left: 1.875rem;
     }
   }

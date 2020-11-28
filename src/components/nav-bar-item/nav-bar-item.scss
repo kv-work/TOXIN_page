@@ -1,7 +1,7 @@
 .nav-bar-item {
   margin-right: 1.875rem;
 
-  @media screen and (max-width: 37.5rem) {
+  @media screen and (max-width: 600px) {
     margin-right: 0;
     padding-right: 0.625rem;
     text-align: end;
@@ -35,7 +35,7 @@
     margin-right: 1.25rem;
     color: $dark-50;
 
-    @media screen and (max-width: 37.5rem) {
+    @media screen and (max-width: 600px) {
       margin-right: 0;
       padding-right: 0.625rem;
       justify-content: flex-end;
@@ -43,7 +43,7 @@
 
     &::before {
 
-      @media screen and (max-width: 37.5rem) {
+      @media screen and (max-width: 600px) {
         font: 1.5rem/0.8333 'Material Icons';
         display: flex;
         justify-content: center;
@@ -61,7 +61,7 @@
       content: 'expand_more';
       color: $dark-50;
 
-      @media screen and (max-width: 37.5rem) {
+      @media screen and (max-width: 600px) {
         display: none;
       }
     }
@@ -71,7 +71,7 @@
       top: 1.5rem;
       padding-left: 0.625rem;
 
-      @media screen and (max-width: 37.5rem) {
+      @media screen and (max-width: 600px) {
         border: 1px solid $dark-10;
         top: 0;
         right: 100%;
@@ -80,7 +80,7 @@
 
     &::before {
 
-      @media screen and (max-width: 37.5rem) {
+      @media screen and (max-width: 600px) {
         transform: rotate(90deg);
       }
     }

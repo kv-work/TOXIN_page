@@ -10,7 +10,7 @@
   &__content {
     width: 100%;
     max-width: 72.5rem;
-    margin: 70px auto 22px;
+    margin: 4.375rem auto 1.375rem;
     display: flex;
     flex-direction: column;
 
@@ -25,10 +25,10 @@
 
   &__form-search-room {
     max-width: 23.75rem;
-    margin-bottom: 314px;
+    margin-bottom: 19.625rem;
 
     @media screen and (max-width: 440px) {
-      margin: 0 auto 314px;
+      margin: 0 auto 19.625rem;
     }
   }
 
@@ -36,10 +36,10 @@
     text-align: right;
     width: 18.75rem;
     align-self: flex-end;
-    margin: 0 -5px;
+    margin: 0 -0.3125rem;
 
     @media screen and (max-width: 1440px) {
-      margin: 0 5px;
+      margin: 0 0.3125rem;
     }
   }
 }

@@ -1,22 +1,21 @@
 .cards {
-  max-width: 120rem;
   min-width: 20rem;
+  height: 100vh;
   margin: auto;
-  padding-top: 9.375rem;
   background-color: #f4f4f6;
+  padding-top: 9.375rem;
   position: relative;
-  margin-left: 3.4375rem;
 
-  @media screen and (max-width: 53.4375rem) {
+  @media screen and (max-width: 855px) {
     margin-left: 0;
   }
 
   &__logo-wrapper {
-    position: absolute;
-    top: 1.875rem;
-    left: -1.625rem;
+    position: relative;
+    top: -1.875rem;
+    padding-left: calc(50% - 45rem + 1.875rem);
 
-    @media screen and (max-width: 53.4375rem) {
+    @media screen and (max-width: 1440px) {
       left: 1.875rem;
     }
   }

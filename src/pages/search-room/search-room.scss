@@ -14,12 +14,12 @@
     max-width: 72.5rem;
     margin: 1.6875rem auto 4.375rem;
 
-    @media screen and (max-width: 76.25rem) {
+    @media screen and (max-width: 1220px) {
       padding-left: 1.875rem;
       padding-right: 1.875rem;
     }
 
-    @media screen and (max-width: 41rem) {
+    @media screen and (max-width: 656px) {
       display: grid;
       grid-template-columns: 1fr;
     }
@@ -28,7 +28,7 @@
   &__filter-toggler {
     display: none;
 
-    @media screen and (max-width: 41rem) {
+    @media screen and (max-width: 656px) {
       height: 2.5rem;
       display: flex;
       align-items: center;
@@ -45,7 +45,7 @@
 
     &::after {
 
-      @media screen and (max-width: 41rem) {
+      @media screen and (max-width: 656px) {
         font: 1.875rem/0.66667 'Material Icons';
         display: flex;
         justify-content: center;
@@ -57,7 +57,7 @@
 
     &.opened {
 
-      @media screen and (max-width: 41rem) {
+      @media screen and (max-width: 656px) {
         border-bottom: none;
         box-shadow: none;
         border-bottom-left-radius: 0;
@@ -67,7 +67,7 @@
 
       &::after {
 
-        @media screen and (max-width: 41rem) {
+        @media screen and (max-width: 656px) {
           transform: rotate(180deg);
         }
       }
@@ -76,13 +76,13 @@
 
   &__filters-block {
 
-    @media screen and (max-width: 41rem) {
+    @media screen and (max-width: 656px) {
       display: none;
     }
 
     &.opened {
 
-      @media screen and (max-width: 41rem) {
+      @media screen and (max-width: 656px) {
         display: block;
         height: 100%;
         padding: 1.25rem 0.625rem 1.25rem 1.25rem;

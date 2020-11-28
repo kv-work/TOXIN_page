@@ -5,11 +5,11 @@
   background: #FFFFFF;
   box-shadow: 0rem 0.625rem 1.25rem $dark-5;
 
-  @media screen and (max-width: 76.25rem) {
+  @media screen and (max-width: 1220px) {
     padding: 0.9375rem 1.875rem;
   }
 
-  @media screen and (max-width: 37.5rem) {
+  @media screen and (max-width: 600px) {
     padding: 0.9375rem;
   }
 
@@ -19,12 +19,12 @@
     display: flex;
     align-items: center;
 
-    @media screen and (max-width: 46.875rem) {
+    @media screen and (max-width: 750px) {
       flex-wrap: wrap;
       justify-content: space-between;
     }
 
-    @media screen and (max-width: 37.5rem) {
+    @media screen and (max-width: 600px) {
       flex-wrap: wrap;
     }
 
@@ -36,7 +36,7 @@
   &__logo {
     line-height: 0.71429;
 
-    @media screen and (max-width: 37.5rem) {
+    @media screen and (max-width: 600px) {
       order: 1;
       margin-top: 0.9375rem;
     }
@@ -47,13 +47,13 @@
     margin-left: auto;
     flex-shrink: 2;
 
-    @media screen and (max-width: 46.875rem) {
+    @media screen and (max-width: 750px) {
       order: 2;
       flex-basis: 100%;
       margin-top: 0.9375rem;
     }
 
-    @media screen and (max-width: 37.5rem) {
+    @media screen and (max-width: 600px) {
       flex-basis: auto;
       display: flex;
       padding: 0 0.625rem 0 0.9375rem;
@@ -63,7 +63,7 @@
 
     & > ul {
 
-      @media screen and (max-width: 37.5rem) {
+      @media screen and (max-width: 600px) {
         display: none;
       }
     }
@@ -79,7 +79,7 @@
 
     &::before {
 
-      @media screen and (max-width: 37.5rem) {
+      @media screen and (max-width: 600px) {
         font: 1.875rem/0.6667 'Material Icons';
         display: flex;
         justify-content: center;
@@ -91,7 +91,7 @@
 
     &:hover > ul {
 
-      @media screen and (max-width: 37.5rem) {
+      @media screen and (max-width: 600px) {
         display: block;
         position: absolute;
         top: 1.5rem;
@@ -106,7 +106,7 @@
     display: flex;
     height: 2.125rem;
 
-    @media screen and (max-width: 37.5rem) {
+    @media screen and (max-width: 600px) {
       flex-basis: 100%;
       justify-content: flex-end;
     }
@@ -122,7 +122,7 @@
     padding-left: 1.875rem;
     margin-left: 0.3125rem;
 
-    @media screen and (max-width: 37.5rem) {
+    @media screen and (max-width: 600px) {
       flex-basis: 100%;
       justify-content: flex-end;
     }
