@@ -40,10 +40,8 @@
   }
 
   &__price-block {
-    font-family: Montserrat;
-    font-style: normal;
+    font: 0.875rem/2.64286 Montserrat;
     color: $dark-50;
-    line-height: 2.64286;
     justify-self: end;
   }
 
