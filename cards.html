@@ -16,8 +16,8 @@
           <path class="logo__line-two" d="M23.9989 32.4712C23.2224 32.4712 22.5871 31.8359 22.5871 31.0594C22.5871 25.6241 18.14 21.177 12.7047 21.177C11.9283 21.177 11.293 20.5418 11.293 19.7653C11.293 18.9888 11.9283 18.3535 12.7047 18.3535C19.7283 18.3535 25.4106 24.0359 25.4106 31.0594C25.4106 31.8359 24.7753 32.4712 23.9989 32.4712Z" fill="#1F2041" fill-opacity=".25"/>
         </svg>
       </div>
-      <div class="cards__grid">
-        <div class="cards__grid-col">
+      <div class="cards-grid">
+        <div class="cards-grid__col">
           <form class="room-search-card js-room-search-card" action="./search-room.html" method="get" name="room-search-form">
             <h1 class="room-search-card__label">Найдем номера под ваши пожелания</h1>
             <div class="room-search-card__datepicker_is_separated">
@@ -97,7 +97,7 @@
                 <label class="input__label">
                   <h3>Данные для входа в сервис</h3>
                 </label>
-                <input class="input__input" name="email" type="email" placeholder="Email" required>
+                <input class="input__input" name="email" type="email" placeholder="email" required>
               </div>
             </div>
             <div class="registration-card__password-input">
@@ -121,7 +121,7 @@
             </div>
           </form>
         </div>
-        <div class="cards__grid-col">
+        <div class="cards-grid__col">
           <form class="room-rate-card js-room-rate-card" action="/mock-address/change-me" method="post" name="room-rate-form">
             <div class="room-rate-card__room-info-block">
               <div class="room-rate-card__number-block"><span class="room-rate-card__number-sign">№</span><span class="room-rate-card__number">888</span></div>
@@ -189,7 +189,7 @@
             <h1 class="login-card__label">Войти</h1>
             <div class="login-card__email-input">
               <div class="input">
-                <input class="input__input" name="email" type="email" placeholder="Email" required>
+                <input class="input__input" name="email" type="email" placeholder="email" required>
               </div>
             </div>
             <div class="login-card__pass-input">
@@ -208,9 +208,8 @@
             </div>
           </form>
         </div>
-        <div class="cards__grid-col">
-          <div class="datepicker-block js-datepicker-block_inline" data-date="19.08.2019" data-value-second="23.08.2019">
-          </div>
+        <div class="cards-grid__col">
+          <div class="calendar_card js-datepicker-block_inline" data-date="19.08.2019" data-value-second="23.08.2019"> </div>
           <div class="room-card js-room-card" data-number="888">
             <div class="room-card__images-block"></div>
             <div class="room-card__room-info-block">
