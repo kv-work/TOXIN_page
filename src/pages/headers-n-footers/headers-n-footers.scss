@@ -10,11 +10,11 @@
   row-gap: 2.5rem;
 
   &__logo-wrapper {
-    position: relative;
+    position: absolute;
     top: 1.875rem;
     left: calc(50% - 45rem + 1.875rem);
-
-    @media screen and (max-width: 1440px) {
+  
+    @media screen and (max-width: 90rem) {
       left: 1.875rem;
     }
   }
