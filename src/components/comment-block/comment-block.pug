@@ -5,8 +5,7 @@ mixin commentBlock(params = {})
     const { name, img = 'avatar-1.png', date, comment, likes } = params;
 
   .comment-block
-    .comment-block__img-block
-      img.comment-block__image(src=`./img/${img}` alt="avatar")
+    .comment-block__img-block(style=`background-image: url('./img/${img}')`)
     .comment-block__name-block
       .comment-block__name= name
       .comment-block__date= date

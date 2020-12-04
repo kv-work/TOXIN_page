@@ -7,12 +7,10 @@
 
   &__img-block {
     height: 3rem;
+    width: 3rem;
     align-self: start;
     justify-self: center;
-  }
-
-  &__image {
-    max-width: 3rem;
+    background-size: contain;
     border: 0.125rem solid white;
     box-sizing: border-box;
     box-shadow: 0rem 0.625rem 1.25rem $dark-10;
