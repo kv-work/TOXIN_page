@@ -9,16 +9,16 @@
   <link href="main.css" rel="stylesheet"></head>
   <body style="width: 1440px">
     <div class="form-elements">
-      <div class="logo-wrapper">
+      <div class="form-elements__logo-wrapper">
         <svg class="logo" width="48" height="48" viewBox="0 0 48 48">
           <path class="logo__circle" d="M24 48C10.7647 48 0 37.2353 0 24C0 10.7647 10.7647 0 24 0C37.2353 0 48 10.7647 48 24C48 37.2353 37.2353 48 24 48ZM24 2.82353C12.3176 2.82353 2.82353 12.3176 2.82353 24C2.82353 35.6824 12.3176 45.1765 24 45.1765C35.6824 45.1765 45.1765 35.6824 45.1765 24C45.1765 12.3176 35.6824 2.82353 24 2.82353Z" fill="#1F2041" fill-opacity=".25"/>
           <path class="logo__line-one" d="M36.7068 19.7653C36.7068 20.5418 36.0715 21.177 35.295 21.177C31.9421 21.177 28.9421 22.8712 27.1774 25.4476C26.7892 24.4594 26.3303 23.5418 25.7656 22.6947C28.095 20.0123 31.5186 18.3535 35.295 18.3535C36.0715 18.3535 36.7068 18.9888 36.7068 19.7653Z" fill="#1F2041" fill-opacity=".25"/>
           <path class="logo__line-two" d="M23.9989 32.4712C23.2224 32.4712 22.5871 31.8359 22.5871 31.0594C22.5871 25.6241 18.14 21.177 12.7047 21.177C11.9283 21.177 11.293 20.5418 11.293 19.7653C11.293 18.9888 11.9283 18.3535 12.7047 18.3535C19.7283 18.3535 25.4106 24.0359 25.4106 31.0594C25.4106 31.8359 24.7753 32.4712 23.9989 32.4712Z" fill="#1F2041" fill-opacity=".25"/>
         </svg>
       </div>
-      <div class="row">
-        <div class="col">
-          <div class="input-wrapper default"><span class="style">default</span>
+      <div class="form-elements__row">
+        <div class="form-elements__col">
+          <div class="form-elements__input-wrapper default"><span class="form-elements__style-name">default</span>
             <div class="input">
               <label class="input__label">
                 <h3>text field</h3>
@@ -26,7 +26,7 @@
               <input class="input__input" name="name" type="text" placeholder="Email">
             </div>
           </div>
-          <div class="input-wrapper hover_focus"><span class="style hover_focus">hover / focus</span>
+          <div class="form-elements__input-wrapper hover_focus"><span class="form-elements__style-name hover_focus">hover / focus</span>
             <div class="input">
               <label class="input__label">
                 <h3>text field</h3>
@@ -34,7 +34,7 @@
               <input class="input__input input__input_focused" name="name" type="text" placeholder="This is pretty awesome">
             </div>
           </div>
-          <div class="dropdown-wrapper default"><span class="style">default</span>
+          <div class="form-elements__dropdown-wrapper default"><span class="form-elements__style-name">default</span>
             <div class="dropdown">
               <label class="dropdown__label like_h3">dropdown</label>
               <div class="iqdropdown js-dropdown">
@@ -61,7 +61,7 @@
               </div>
             </div>
           </div>
-          <div class="input-wrapper default masked"><span class="style">default</span>
+          <div class="form-elements__input-wrapper default masked"><span class="form-elements__style-name">default</span>
             <div class="input  input_masked">
               <label class="input__label">
                 <h3>masked text field</h3>
@@ -69,7 +69,7 @@
               <input class="input__input js-input__input_masked" name="name" type="text" placeholder="ДД.ММ.ГГГГ">
             </div>
           </div>
-          <div class="datepickers-wrapper">
+          <div class="form-elements__datepickers-wrapper">
             <div class="datepicker-block js-datepicker-block_separated">
               <div class="datepicker-block_wrapper">
                 <label class="datepicker-block__label like_h3">date dropdown</label>
@@ -79,7 +79,7 @@
               </div>
             </div>
           </div>
-          <div class="datepicker-wrapper_filtered">
+          <div class="form-elements__datepicker-wrapper_filtered">
             <div class="datepicker-block js-datepicker-block">
               <div class="datepicker-block_wrapper">
                 <label class="datepicker-block__label like_h3">filter date dropdown</label>
@@ -89,7 +89,7 @@
               </div>
             </div>
           </div>
-          <div class="input-wrapper_with-subscription">
+          <div class="form-elements__input-wrapper_with-subscription">
             <div class="input  input_with-subscription">
               <label class="input__label">
                 <h3>subscription text field</h3>
@@ -98,8 +98,8 @@
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="checkbox-buttons_wrapper">
+        <div class="form-elements__col">
+          <div class="form-elements__checkbox-buttons-wrapper">
             <div class="checkbox-list">
               <div class="checkbox-list__label-wrapper">
                 <p class="checkbox-list__label">checkbox buttons</p>
@@ -123,8 +123,8 @@
               </div>
             </div>
           </div>
-          <div class="radio-buttons_wrapper">
-            <h3 class="radio-buttons-label">radio buttons</h3>
+          <div class="form-elements__radio-buttons-wrapper">
+            <h3 class="form-elements__radio-buttons-label">radio buttons</h3>
             <div class="radio-buttons js-radio-buttons">
               <label class="radio-buttons__radio radio-buttons__radio-label radio-buttons__radio-label_checked">Мужчина
                 <input class="radio-buttons__radio-input" type="radio" name="gender" checked value="0">
@@ -134,8 +134,8 @@
               </label>
             </div>
           </div>
-          <div class="toggle-buttons-wrapper">
-            <h3 class="toggle_buttons_label">toggle</h3>
+          <div class="form-elements__toggle-buttons-wrapper">
+            <h3 class="form-elements__toggle-buttons-label">toggle</h3>
             <label class="toggle-button">Получать спецпредложения
               <input class="toggle-button__input" type="checkbox" name="label" checked>
             </label>
@@ -143,9 +143,9 @@
               <input class="toggle-button__input" type="checkbox" name="label">
             </label>
           </div>
-          <div class="like-buttons-wrapper">
-            <h3 class="like-buttons-label">like button</h3>
-            <div class="like-buttons">
+          <div class="form-elements__like-buttons-wrapper">
+            <h3 class="form-elements__like-buttons-label">like button</h3>
+            <div class="form-elements__like-buttons">
               <label class="like-button js-like-button like-button__label">
                 <p>2</p>
                 <input class="like-button__input" type="checkbox">
@@ -156,8 +156,8 @@
               </label>
             </div>
           </div>
-          <div class="rate-buttons-wrapper">
-            <h3 class="rate_buttons__label">rate button</h3>
+          <div class="form-elements__rate-buttons-wrapper">
+            <h3 class="form-elements__rate-buttons-label">rate button</h3>
             <div class="rate-button js-rate-button" data-rate="4">
               <input class="rate-button__input" type="radio" name="rate_1">
               <input class="rate-button__input" type="radio" name="rate_1">
@@ -174,8 +174,8 @@
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="range-slider-wrapper">
+        <div class="form-elements__col">
+          <div class="form-elements__range-slider-wrapper">
             <label class="js-range-slider range-slider">
               <h3 class="range-slider__label">range slider</h3>
               <p class="range-slider__value"></p>
@@ -183,10 +183,10 @@
               <div class="range-slider__text"></div>
             </label>
           </div>
-          <div class="buttons-block">
-            <h3 class="buttons-block-label">buttons</h3>
-            <div class="buttons-block-wrapper">
-              <div class="buttons-block-buttons">
+          <div class="form-elements__buttons-block">
+            <h3 class="form-elements__buttons-block-label">buttons</h3>
+            <div class="form-elements__buttons-block-wrapper">
+              <div class="form-elements__buttons-block-buttons">
                 <button class="button button_theme_filled" type="button">Click me
                 </button>
                 <button class="button button_disabled button_theme_filled" type="button" disabled>Click me
@@ -195,21 +195,21 @@
                 </button>
                 <button class="button button_disabled button_theme_outline" type="button" disabled>Click me
                 </button>
-                <div class="buttons-block_theme-text">
+                <div class="form-elements__buttons-block_theme_text">
                   <button class="button button_theme_text" type="button">Click me
                   </button>
                   <button class="button button_disabled button_theme_text" type="button" disabled>Click me
                   </button>
                 </div>
               </div>
-              <div class="buttons-block_with-arrow">
+              <div class="form-elements__buttons-block_with-arrow">
                 <button class="button button_with-arrow button_theme_filled" type="button">Перейти к оплате<i class="material-icons">arrow_forward</i>
                 </button>
               </div>
             </div>
           </div>
-          <div class="pagination-block-wrapper">
-            <h3 class="pagination-block-wrapper_label">pagination</h3>
+          <div class="form-elements__pagination-block-wrapper">
+            <h3 class="form-elements__pagination-block-wrapper-label">pagination</h3>
             <div class="pagination-block js-pagination-block pagination-block_without-data" data-rooms="[]">
               <div class="pagination-block__pagination js-pagination" data-pages="15"></div>
               <div class="pagination-block__description">1 – 12 из 100+ вариантов аренды</div>
@@ -217,9 +217,9 @@
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col">
-          <div class="dropdown-multiple-items-wrapper"><span class="style">default</span>
+      <div class="form-elements__row">
+        <div class="form-elements__col">
+          <div class="form-elements__dropdown-multiple-items-wrapper"><span class="form-elements__style-name">default</span>
             <div class="dropdown">
               <label class="dropdown__label like_h3">dropdown</label>
               <div class="iqdropdown js-dropdown_multiple">
@@ -246,7 +246,7 @@
               </div>
             </div>
           </div>
-          <div class="dropdown-multiple-items-expanded-wrapper"><span class="style">expanded</span>
+          <div class="form-elements__dropdown-multiple-items-expanded-wrapper"><span class="form-elements__style-name">expanded</span>
             <div class="dropdown">
               <label class="dropdown__label like_h3">dropdown</label>
               <div class="iqdropdown js-dropdown_multiple menu-open">
@@ -274,8 +274,8 @@
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="dropdown-wrapper_expanded">
+        <div class="form-elements__col">
+          <div class="form-elements__dropdown-wrapper-expanded">
             <div class="dropdown">
               <label class="dropdown__label like_h3">dropdown</label>
               <div class="iqdropdown js-dropdown menu-open">
@@ -303,8 +303,8 @@
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="dropdown-wrapper_expanded">
+        <div class="form-elements__col">
+          <div class="form-elements__dropdown-wrapper-expanded">
             <div class="dropdown">
               <label class="dropdown__label like_h3">dropdown</label>
               <div class="iqdropdown js-dropdown menu-open">
@@ -333,9 +333,9 @@
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col">
-          <div class="expandable-checkbox-wrapper">
+      <div class="form-elements__row">
+        <div class="form-elements__col">
+          <div class="form-elements__expandable-checkbox-wrapper">
             <div class="checkbox-list js-checkbox-list_expandable checkbox-list_expandable checkbox-list_closed">
               <div class="checkbox-list__label-wrapper">
                 <p class="checkbox-list__label">expandable checkbox list</p>
@@ -384,7 +384,7 @@
               </div>
             </div>
           </div>
-          <div class="expandable-checkbox-wrapper">
+          <div class="form-elements__expandable-checkbox-wrapper">
             <div class="checkbox-list js-checkbox-list_expandable checkbox-list_expandable">
               <div class="checkbox-list__label-wrapper">
                 <p class="checkbox-list__label">expandable checkbox list</p>
@@ -434,9 +434,9 @@
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="rich-checkbox-buttons">
-            <div class="checkbox-list checkbox-list_rich">
+        <div class="form-elements__col">
+          <div class="form-elements__rich-checkbox-buttons">
+            <div class="checkbox-list">
               <div class="checkbox-list__label-wrapper">
                 <p class="checkbox-list__label">rich checkbox buttons</p>
               </div>
@@ -457,9 +457,9 @@
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="bullet-list-wrapper">
-            <h3 class="bullet-list-label">bullet list</h3>
+        <div class="form-elements__col">
+          <div class="form-elements__bullet-list-wrapper">
+            <h3 class="form-elements__bullet-list-label">bullet list</h3>
             <ul class="bullet-list">
               <li class="bullet-list__item">Нельзя с питомцами</li>
               <li class="bullet-list__item">Без вечеринок и мероприятий</li>
@@ -468,10 +468,10 @@
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col">
-          <div class="icon-item-list-wrapper">
-            <div class="icon-item-list">
+      <div class="form-elements__row">
+        <div class="form-elements__col">
+          <div class="form-elements__icon-item-list-wrapper">
+            <div class="form-elements__icon-item-list">
               <div class="icon-item">
                 <div class="icon-item__icon"><i class="material-icons">insert_emoticon</i></div>
                 <div class="icon-item__text">
@@ -489,8 +489,8 @@
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="comment-block-wrapper">
+        <div class="form-elements__col">
+          <div class="form-elements__comment-block-wrapper">
             <div class="comment-block">
               <div class="comment-block__img-block"><img class="comment-block__image" src="./img/avatar-1.png" alt="avatar"></div>
               <div class="comment-block__name-block">
