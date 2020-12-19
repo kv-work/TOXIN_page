@@ -1,6 +1,7 @@
 .pie-chart {
 
   &__title {
+    @include h2-text;
     margin-bottom: 1.3125rem;
   }
 
