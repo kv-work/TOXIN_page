@@ -41,6 +41,10 @@
       cursor: pointer;
     }
 
+    &-title {
+      @include h2-text;
+    }
+
     &::after {
 
       @media screen and (max-width: 656px) {
@@ -118,6 +122,7 @@
   }
 
   &__rooms-title {
+    @include h1-text;
     margin: 0.25rem 0 1.3125rem;
   }
 
