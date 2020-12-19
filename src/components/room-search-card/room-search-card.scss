@@ -16,6 +16,7 @@
   }
 
   &__label {
+    @include h1-text;
     line-height: 1.25;
   }
 
