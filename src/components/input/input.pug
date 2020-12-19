@@ -20,6 +20,5 @@ mixin input(params = {})
 
   .input(class=modClass)
     if (label)
-      label.input__label
-        h3= label
+      label.input__label= label
     input(class=classList name=name type=type placeholder=placeholder)&attributes(attributes)
