@@ -58,7 +58,7 @@ export default class Datepicker {
 
     this.$endDate = this.$node.append(
       `<div class="datepicker-block_wrapper">
-        <label class="datepicker-block__label like_h3">${labelSecond}</label>
+        <label class="datepicker-block__label">${labelSecond}</label>
         <div class="datepicker-block__input-wrapper" tabindex=0>
           <input class="datepicker-block__end-date-input js-datepicker_masked" type="text" name="end-date" placeholder="ДД.ММ.ГГГГ" readonly required tabindex=-1
           ${valueSecond ? `data-date=${valueSecond}` : ' '} />

@@ -14,7 +14,7 @@ mixin datepickerBlock(params = {})
   div(class=classListBlock)&attributes(attributes)
     if (!inline)
       .datepicker-block_wrapper
-        label.datepicker-block__label.like_h3= label
+        label.datepicker-block__label= label
         .datepicker-block__input-wrapper(tabindex=0)
           input.datepicker-block__input(
             type="text" 

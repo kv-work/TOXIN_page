@@ -3,12 +3,13 @@
 .datepicker-block {
 
   &__label {
+    @include h3-text;
     display: block;
     padding: 0.1875rem 0 0.3125rem 0;
   }
 }
 
-.js-datepicker-block_separated {  
+.js-datepicker-block_separated {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, minmax(45%, 9.375rem));

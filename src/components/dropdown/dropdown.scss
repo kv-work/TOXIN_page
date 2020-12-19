@@ -2,6 +2,7 @@
 
 .dropdown {
   &__label {
+    @include h3-text;
     display: block;
     padding: 0.1875rem 0 0.3125rem 0;
   }
