@@ -149,7 +149,7 @@ export default class Datepicker {
     if ($opener) {
       if (Array.isArray(date)) {
         [start, end] = date;
-        if ($opener.hasClass('start-date')) {
+        if ($opener.hasClass('js-datepicker_separated')) {
           this.startDate = start;
           $datepicker.val(formattedDatesArr[0]);
           $datepicker.data('date', formattedDatesArr[0]);
@@ -166,7 +166,7 @@ export default class Datepicker {
         }
       } else {
         start = date;
-        if ($opener.hasClass('start-date')) {
+        if ($opener.hasClass('js-datepicker_separated')) {
           this.startDate = start;
           $datepicker.val(formattedDates);
           $datepicker.data('date', formattedDates);
@@ -233,12 +233,12 @@ export default class Datepicker {
     });
 
     // клик на $datepicker НЕ выбран конец диапазона
-    if ($opener.hasClass('start-date') && !endDate) {
+    if ($opener.hasClass('js-datepicker_separated') && !endDate) {
       datepickerData.update({ range: false });
     }
 
     // клик на $datepicker выбран конец диапазона
-    if ($opener.hasClass('start-date') && endDate) {
+    if ($opener.hasClass('js-datepicker_separated') && endDate) {
       datepickerData.update({
         range: true,
         maxDate: endDate,
