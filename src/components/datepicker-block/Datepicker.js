@@ -1,11 +1,11 @@
-import 'air-datepicker/dist/js/datepicker.min';
+import 'air-datepicker';
 import $ from 'jquery';
 
 export default class Datepicker {
   constructor(node, options) {
     this.$node = $(node);
-    this.isInline = this.$node.hasClass('js-datepicker-block_inline');
-    this.isSeparated = this.$node.hasClass('js-datepicker-block_separated');
+    this.isInline = this.$node.hasClass('datepicker-block_inline');
+    this.isSeparated = this.$node.hasClass('datepicker-block_separated');
     this.data = this.isInline ? this.$node.data() : this.$node.find('input').data();
 
     this.$datepicker = this.$node.find('.js-datepicker');
@@ -60,7 +60,7 @@ export default class Datepicker {
       `<div class="datepicker-block_wrapper">
         <label class="datepicker-block__label">${labelSecond}</label>
         <div class="datepicker-block__input-wrapper" tabindex=0>
-          <input class="datepicker-block__end-date-input js-datepicker_masked" type="text" name="end-date" placeholder="ДД.ММ.ГГГГ" readonly required tabindex=-1
+          <input class="datepicker-block__end-date-input" type="text" name="end-date" placeholder="ДД.ММ.ГГГГ" readonly required tabindex=-1
           ${valueSecond ? `data-date=${valueSecond}` : ' '} />
         </div>
       </div>`,

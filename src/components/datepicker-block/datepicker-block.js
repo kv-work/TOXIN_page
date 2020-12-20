@@ -1,9 +1,7 @@
 import $ from 'jquery';
-import 'air-datepicker/dist/js/datepicker.min';
-import Cleave from 'cleave.js';
 import Datepicker from './Datepicker';
 
-$('.js-datepicker-block, .js-datepicker-block_separated, .js-datepicker-block_inline').each(function addDatepicker() {
+$('.js-datepicker-block').each(function addDatepicker() {
   // config datepicker's language
   $.fn.datepicker.language['my-lang'] = {
     days: ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'],
@@ -25,7 +23,6 @@ $('.js-datepicker-block, .js-datepicker-block_separated, .js-datepicker-block_in
     multipleDatesSeparator: ' - ',
     dateFormat: 'd M',
     clearButton: true,
-    // minDate: new Date('2019-08-19'),
     offset: 15,
     navTitles: {
       days: 'MM yyyy',
@@ -35,15 +32,4 @@ $('.js-datepicker-block, .js-datepicker-block_separated, .js-datepicker-block_in
   const datepicker = new Datepicker(this, options);
 
   return datepicker;
-});
-
-// Add a mask to enter the date
-$('.js-datepicker_masked').toArray().forEach((field) => {
-  const maskedInput = new Cleave(field, {
-    date: true,
-    datePattern: ['d', 'm', 'Y'],
-    delimiters: ['.', '.'],
-  });
-
-  return maskedInput;
 });
