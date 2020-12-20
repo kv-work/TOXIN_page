@@ -8,12 +8,16 @@ export default class Datepicker {
     this.isSeparated = this.$node.hasClass('datepicker-block_separated');
     this.data = this.isInline ? this.$node.data() : this.$node.find('input').data();
 
+    this._initDatepicker(options);
+    this._init();
+  }
+
+  _initDatepicker(options) {
     this.$datepicker = this.$node.find('.js-datepicker');
     if (this.isInline) this.$datepicker = this.$node;
     if (this.isSeparated) this.$datepicker = this.$node.find('.js-datepicker_separated');
 
     this.options = options;
-
     if (this.isSeparated) {
       this.options = {
         ...options,
@@ -31,8 +35,6 @@ export default class Datepicker {
 
     this.datepickerData = this.$datepicker.datepicker(this.options).data('datepicker');
     this.clearBtn = this.datepickerData.$datepicker.find('span.datepicker--button[data-action=clear');
-
-    this._init();
   }
 
   _init() {
@@ -49,7 +51,6 @@ export default class Datepicker {
     this._attachEventHandlers();
   }
 
-  // Создание инпута, который будет отображать конечную дату диапозона
   _addEndDateInput() {
     const {
       labelSecond,
@@ -67,7 +68,6 @@ export default class Datepicker {
     ).find('.datepicker-block__end-date-input');
   }
 
-  // Установка дат переданных с помощью data-атрибутов
   _setDataValues() {
     const {
       date,
@@ -101,14 +101,12 @@ export default class Datepicker {
     }
   }
 
-  // Добавление кнопки "применить"
   _addApplyButton() {
     this.$applyBtn = this.datepickerData.$datepicker.find('.datepicker--buttons')
       .append('<button type="button" class="datepicker--button-apply">Применить</button>')
       .find('.datepicker--button-apply');
   }
 
-  // Создание обработчиков событий
   _attachEventHandlers() {
     this.$wrapper.on('focus', this._focusOnWrapperHandler.bind(this));
     this.$wrapper.on('blur', this._unfocusHandler.bind(this));
@@ -116,7 +114,6 @@ export default class Datepicker {
 
     this.clearBtn.on('click', this._clearDates.bind(this));
 
-    // apply button event handlers
     this.$applyBtn.on('click', this._clickOnApplyBtn.bind(this));
   }
 
@@ -180,7 +177,6 @@ export default class Datepicker {
         }
       }
     } else {
-      // отображение дат до открытия календаря
       switch (formattedDatesArr.length) {
         case 1:
           this.startDate = date;
@@ -199,7 +195,6 @@ export default class Datepicker {
     }
   }
 
-  // Сброс дат
   _clearDates() {
     const {
       $datepicker,
@@ -232,12 +227,10 @@ export default class Datepicker {
       maxDate: '',
     });
 
-    // клик на $datepicker НЕ выбран конец диапазона
     if ($opener.hasClass('js-datepicker_separated') && !endDate) {
       datepickerData.update({ range: false });
     }
 
-    // клик на $datepicker выбран конец диапазона
     if ($opener.hasClass('js-datepicker_separated') && endDate) {
       datepickerData.update({
         range: true,
@@ -245,12 +238,10 @@ export default class Datepicker {
       });
     }
 
-    // клик на $endDate НЕ выбран старт диапазона
     if ($opener.hasClass('datepicker-block__end-date-input') && !startDate) {
       datepickerData.update({ range: false });
     }
 
-    // клик на $endDate выбран старт диапазона
     if ($opener.hasClass('datepicker-block__end-date-input') && startDate) {
       datepickerData.update({
         minDate: startDate,
