@@ -1,7 +1,6 @@
 mixin datepickerBlock(params = {})
   -
     const { label, separated = false, labelSecond = '', value = '', valueSecond = '', inline = false } = params;
-    const classList = separated ? 'js-datepicker_separated' : 'js-datepicker';
     let classListBlock = 'js-datepicker-block';
     if (inline) {
       classListBlock += ' datepicker-block datepicker-block_inline';
@@ -18,7 +17,6 @@ mixin datepickerBlock(params = {})
         .datepicker-block__input-wrapper(tabindex=0)
           input.datepicker-block__input(
             type="text"
-            class=classList
             name="start-date"
             placeholder="ДД.ММ.ГГГГ"
             required=true

@@ -13,9 +13,8 @@ export default class Datepicker {
   }
 
   _initDatepicker(options) {
-    this.$datepicker = this.$node.find('.js-datepicker');
+    this.$datepicker = this.$node.find('.datepicker-block__input');
     if (this.isInline) this.$datepicker = this.$node;
-    if (this.isSeparated) this.$datepicker = this.$node.find('.js-datepicker_separated');
 
     this.options = options;
     if (this.isSeparated) {
@@ -146,7 +145,7 @@ export default class Datepicker {
     if ($opener) {
       if (Array.isArray(date)) {
         [start, end] = date;
-        if ($opener.hasClass('js-datepicker_separated')) {
+        if ($opener.hasClass('datepicker-block__input')) {
           this.startDate = start;
           $datepicker.val(formattedDatesArr[0]);
           $datepicker.data('date', formattedDatesArr[0]);
@@ -163,7 +162,7 @@ export default class Datepicker {
         }
       } else {
         start = date;
-        if ($opener.hasClass('js-datepicker_separated')) {
+        if ($opener.hasClass('datepicker-block__input')) {
           this.startDate = start;
           $datepicker.val(formattedDates);
           $datepicker.data('date', formattedDates);
@@ -227,11 +226,11 @@ export default class Datepicker {
       maxDate: '',
     });
 
-    if ($opener.hasClass('js-datepicker_separated') && !endDate) {
+    if ($opener.hasClass('datepicker-block__input') && !endDate) {
       datepickerData.update({ range: false });
     }
 
-    if ($opener.hasClass('js-datepicker_separated') && endDate) {
+    if ($opener.hasClass('datepicker-block__input') && endDate) {
       datepickerData.update({
         range: true,
         maxDate: endDate,
