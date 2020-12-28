@@ -13,27 +13,20 @@ export default class Datepicker {
   }
 
   _initDatepicker(options) {
-    this.$datepicker = this.$node.find('.datepicker-block__input');
-    if (this.isInline) this.$datepicker = this.$node;
+    this.$datepicker = this.isInline ? this.$node : this.$node.find('.datepicker-block__input');
 
     this.options = options;
     if (this.isSeparated) {
       this.options = {
         ...options,
         showEvent: 'none',
-        onSelect: (formDate, date) => {
-          this._selectDate(formDate, date);
-        },
-        onHide: (_, animationCompleted) => {
-          if (animationCompleted) {
-            this.$node.trigger('updateDates');
-          }
-        },
+        onSelect: this._selectDate.bind(this),
+        onHide: this._hide.bind(this),
       };
     }
 
     this.datepickerData = this.$datepicker.datepicker(this.options).data('datepicker');
-    this.clearBtn = this.datepickerData.$datepicker.find('span.datepicker--button[data-action=clear');
+    this.clearBtn = this.datepickerData.$datepicker.find('span.datepicker--button[data-action=clear]');
   }
 
   _init() {
@@ -108,7 +101,6 @@ export default class Datepicker {
 
   _attachEventHandlers() {
     this.$wrapper.on('focus', this._focusOnWrapperHandler.bind(this));
-    this.$wrapper.on('blur', this._unfocusHandler.bind(this));
     this.$wrapper.on('click', Datepicker._clickOnWrapperHandler.bind(this));
 
     this.clearBtn.on('click', this._clearDates.bind(this));
@@ -194,6 +186,12 @@ export default class Datepicker {
     }
   }
 
+  _hide(_, animationCompleted) {
+    if (animationCompleted) {
+      this.$node.trigger('updateDates');
+    }
+  }
+
   _clearDates() {
     const {
       $datepicker,
@@ -227,7 +225,9 @@ export default class Datepicker {
     });
 
     if ($opener.hasClass('datepicker-block__input') && !endDate) {
-      datepickerData.update({ range: false });
+      datepickerData.update({
+        range: false,
+      });
     }
 
     if ($opener.hasClass('datepicker-block__input') && endDate) {
@@ -238,7 +238,9 @@ export default class Datepicker {
     }
 
     if ($opener.hasClass('datepicker-block__end-date-input') && !startDate) {
-      datepickerData.update({ range: false });
+      datepickerData.update({
+        range: false,
+      });
     }
 
     if ($opener.hasClass('datepicker-block__end-date-input') && startDate) {
