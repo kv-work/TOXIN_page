@@ -1,13 +1,11 @@
 mixin datepickerBlock(params = {})
   -
     const { label, separated = false, labelSecond = '', value = '', valueSecond = '', inline = false } = params;
-    let classListBlock = 'js-datepicker-block';
+    let classListBlock = 'js-datepicker-block datepicker-block';
     if (inline) {
-      classListBlock += ' datepicker-block datepicker-block_inline';
+      classListBlock += ' datepicker-block_inline';
     } else if (separated) {
-      classListBlock += ' datepicker-block datepicker-block_separated'
-    } else {
-      classListBlock += ' datepicker-block';
+      classListBlock += ' datepicker-block_separated'
     }
 
   div(class=classListBlock)&attributes(attributes)
