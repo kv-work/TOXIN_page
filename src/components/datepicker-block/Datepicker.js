@@ -20,21 +20,18 @@ export default class Datepicker {
       this.options = {
         ...options,
         showEvent: 'none',
+        dateFormat: 'dd.mm.yyyy',
         onSelect: this._selectDate.bind(this),
         onHide: this._hide.bind(this),
       };
+      this._addEndDateInput();
     }
 
     this.datepickerData = this.$datepicker.datepicker(this.options).data('datepicker');
-    this.clearBtn = this.datepickerData.$datepicker.find('span.datepicker--button[data-action=clear]');
   }
 
   _init() {
-    if (this.isSeparated) {
-      this._addEndDateInput();
-      this.datepickerData.update('dateFormat', 'dd.mm.yyyy');
-    }
-
+    this.clearBtn = this.datepickerData.$datepicker.find('span.datepicker--button[data-action=clear]');
     this.$wrapper = this.$node.find('.datepicker-block__input-wrapper');
 
     if (this.data.date || this.data.valueSecond) this._setDataValues();
