@@ -97,12 +97,12 @@ export default class Datepicker {
   }
 
   _attachEventHandlers() {
-    this.$wrapper.on('focus', this._focusOnWrapperHandler.bind(this));
-    this.$wrapper.on('click', Datepicker._clickOnWrapperHandler.bind(this));
+    this.$wrapper.on('focus.datepicker', this._focusOnWrapperHandler.bind(this));
+    this.$wrapper.on('click.datepicker', Datepicker._clickOnWrapperHandler);
 
-    this.clearBtn.on('click', this._clearDates.bind(this));
+    this.clearBtn.on('click.datepicker', this._clearDates.bind(this));
 
-    this.$applyBtn.on('click', this._clickOnApplyBtn.bind(this));
+    this.$applyBtn.on('click.datepicker', this._clickOnApplyBtn.bind(this));
   }
 
   _clickOnApplyBtn() {
