@@ -27,11 +27,11 @@ export default class Datepicker {
       this._addEndDateInput();
     }
 
-    this.datepickerData = this.$datepicker.datepicker(this.options).data('datepicker');
+    this.datepicker = this.$datepicker.datepicker(this.options).data('datepicker');
   }
 
   _init() {
-    this.$clearBtn = this.datepickerData.$datepicker.find('span.datepicker--button[data-action=clear]');
+    this.$clearBtn = this.datepicker.$datepicker.find('span.datepicker--button[data-action=clear]');
     this.$wrapper = this.$node.find('.js-datepicker-block__input-wrapper');
 
     if (this.data.date || this.data.valueSecond) this._setDataValues();
@@ -73,7 +73,7 @@ export default class Datepicker {
       const dates = [];
       if (this.startDate) dates.push(this.startDate);
       if (this.endDate) dates.push(this.endDate);
-      this.datepickerData.selectDate(dates);
+      this.datepicker.selectDate(dates);
     } else {
       this.$datepicker.val(date);
       this.$endDate.val(valueSecond);
@@ -83,15 +83,15 @@ export default class Datepicker {
       if (this.endDate) dates.push(this.endDate);
 
       if (dates.length === 2) {
-        this.datepickerData.selectDate(dates);
+        this.datepicker.selectDate(dates);
       } else {
-        this.datepickerData.selectedDates = dates;
+        this.datepicker.selectedDates = dates;
       }
     }
   }
 
   _addApplyButton() {
-    this.$applyBtn = this.datepickerData.$datepicker.find('.datepicker--buttons')
+    this.$applyBtn = this.datepicker.$datepicker.find('.datepicker--buttons')
       .append('<button type="button" class="js-datepicker--button-apply datepicker--button-apply">Применить</button>')
       .find('.js-datepicker--button-apply');
   }
@@ -106,12 +106,12 @@ export default class Datepicker {
   }
 
   _handleApplyButtonClick() {
-    this.datepickerData.hide();
+    this.datepicker.hide();
   }
 
   _handleWrapperFocus(event) {
     this.$opener = $(event.currentTarget).find('input');
-    this.datepickerData.show();
+    this.datepicker.show();
     if (this.isSeparated) this._openDatepicker();
   }
 
@@ -120,7 +120,7 @@ export default class Datepicker {
     const {
       $datepicker,
       $endDate,
-      datepickerData,
+      datepicker,
       $opener,
     } = this;
 
@@ -135,16 +135,16 @@ export default class Datepicker {
           this.startDate = start;
           $datepicker.val(formattedDatesArr[0]);
           $datepicker.data('date', formattedDatesArr[0]);
-          datepickerData.selectedDates = [this.startDate, this.endDate];
-          datepickerData.maxRange = this.endDate;
+          datepicker.selectedDates = [this.startDate, this.endDate];
+          datepicker.maxRange = this.endDate;
         } else {
           this.endDate = (this.endDate) ? start : end;
           $datepicker.val(this.startDate.toLocaleDateString());
           $endDate.val(this.endDate.toLocaleDateString());
           $endDate.data('date', this.endDate.toLocaleDateString());
-          datepickerData.minRange = this.startDate;
-          datepickerData.selectedDates = [this.startDate, this.endDate];
-          datepickerData.maxRange = this.endDate;
+          datepicker.minRange = this.startDate;
+          datepicker.selectedDates = [this.startDate, this.endDate];
+          datepicker.maxRange = this.endDate;
         }
       } else {
         start = date;
@@ -152,13 +152,13 @@ export default class Datepicker {
           this.startDate = start;
           $datepicker.val(formattedDates);
           $datepicker.data('date', formattedDates);
-          datepickerData.selectedDates = [this.startDate];
+          datepicker.selectedDates = [this.startDate];
         } else {
           this.endDate = start;
           $endDate.val(formattedDates);
           $endDate.data('date', formattedDates);
           $datepicker.val('');
-          datepickerData.selectedDates = [this.endDate];
+          datepicker.selectedDates = [this.endDate];
         }
       }
 
@@ -192,14 +192,14 @@ export default class Datepicker {
     const {
       $datepicker,
       $endDate,
-      datepickerData,
+      datepicker,
     } = this;
 
     this.startDate = '';
     this.endDate = '';
     $datepicker.val('');
     $endDate.val('');
-    datepickerData.update({
+    datepicker.update({
       minDate: '',
       maxDate: '',
       range: false,
@@ -209,13 +209,13 @@ export default class Datepicker {
   _openDatepicker() {
     const {
       $opener,
-      datepickerData,
+      datepicker,
       startDate,
       endDate,
       $datepicker,
     } = this;
 
-    datepickerData.update({
+    datepicker.update({
       minDate: '',
       maxDate: '',
     });
@@ -224,26 +224,26 @@ export default class Datepicker {
     const isEndDate = $opener.hasClass('datepicker-block__end-date-input');
 
     if (isStartDate && !endDate) {
-      datepickerData.update({
+      datepicker.update({
         range: false,
       });
     }
 
     if (isStartDate && endDate) {
-      datepickerData.update({
+      datepicker.update({
         range: true,
         maxDate: endDate,
       });
     }
 
     if (isEndDate && !startDate) {
-      datepickerData.update({
+      datepicker.update({
         range: false,
       });
     }
 
     if (isEndDate && startDate) {
-      datepickerData.update({
+      datepicker.update({
         minDate: startDate,
         range: true,
       });
