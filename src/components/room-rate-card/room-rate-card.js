@@ -7,7 +7,7 @@ class RoomRateCard {
     this.roomData = roomData;
     this.$infoBlock = this.$node.find('.room-rate-card__room-info-block');
     this.$datepicker = this.$node.find('.room-rate-card__datepicker_is_separated');
-    this.datepickerData = this.$node.find('.js-datepicker_separated').data('datepicker');
+    this.datepicker = this.$node.find('.js-datepicker-block__input').data('datepicker');
     this.$dropdown = this.$node.find('.js-dropdown');
     this.$calcBlock = this.$node.find('.room-rate-card__calculations-block');
     this.$total = this.$node.find('.room-rate-card__total-cost');
@@ -38,11 +38,11 @@ class RoomRateCard {
     const { dates } = this.roomData;
 
     const datesArr = dates.map((date) => new Date(date.split('.').reverse().join('-')));
-    this.datepickerData.selectDate(datesArr);
+    this.datepicker.selectDate(datesArr);
   }
 
   _getNumOfDays() {
-    const { selectedDates } = this.datepickerData;
+    const { selectedDates } = this.datepicker;
 
     if (selectedDates[0] && selectedDates[1]) {
       const firstDate = selectedDates[0];

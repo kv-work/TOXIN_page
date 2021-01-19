@@ -21,7 +21,7 @@ export default class Datepicker {
         ...options,
         showEvent: 'none',
         dateFormat: 'dd.mm.yyyy',
-        onSelect: this._selectDate.bind(this),
+        onSelect: this._handleDatepickerSelect.bind(this),
         onHide: this._handleDatepickerHide.bind(this),
       };
       this._addEndDateInput();
@@ -63,31 +63,28 @@ export default class Datepicker {
       valueSecond,
     } = this.data;
 
-    const startDateStr = date ? date.split('.').reverse().join('-') : '';
-    const endDateStr = valueSecond ? valueSecond.split('.').reverse().join('-') : '';
+    this.startDate = date ? new Date(date) : '';
+    this.endDate = valueSecond ? new Date(valueSecond) : '';
 
-    this.startDate = startDateStr ? new Date(startDateStr) : '';
-    this.endDate = endDateStr ? new Date(endDateStr) : '';
+    const dates = [];
+    if (this.startDate) dates.push(this.startDate);
+    if (this.endDate) dates.push(this.endDate);
 
-    if (!this.isSeparated) {
-      const dates = [];
-      if (this.startDate) dates.push(this.startDate);
-      if (this.endDate) dates.push(this.endDate);
-      this.datepicker.selectDate(dates);
-    } else {
-      this.$datepicker.val(date);
-      this.$endDate.val(valueSecond);
+    const testDates = [];
+    testDates[0] = this.startDate;
+    testDates[1] = this.endDate;
 
-      const dates = [];
-      if (this.startDate) dates.push(this.startDate);
-      if (this.endDate) dates.push(this.endDate);
+    if (this.isSeparated && dates.length < 2) {
+      const startDateStr = date ? date.split('-').reverse().join('.') : '';
+      const endDateStr = valueSecond ? valueSecond.split('-').reverse().join('.') : '';
+      this.$datepicker.val(startDateStr);
+      this.$endDate.val(endDateStr);
 
-      if (dates.length === 2) {
-        this.datepicker.selectDate(dates);
-      } else {
-        this.datepicker.selectedDates = dates;
-      }
+      this.datepicker.selectedDates = dates;
+      return;
     }
+
+    this.datepicker.selectDate(dates);
   }
 
   _addApplyButton() {
@@ -115,7 +112,7 @@ export default class Datepicker {
     if (this.isSeparated) this._openDatepicker();
   }
 
-  _selectDate(formattedDates, date) {
+  _handleDatepickerSelect(formattedDates, date) {
     const formattedDatesArr = formattedDates.split(' - ');
     const {
       $datepicker,
