@@ -8,7 +8,7 @@ mixin datepickerBlock(params = {})
       classListBlock += ' datepicker-block_separated'
     }
 
-  div(class=classListBlock)&attributes(attributes)
+  div(class=classListBlock)
     if (!inline)
       .datepicker-block_wrapper
         label.datepicker-block__label= label
