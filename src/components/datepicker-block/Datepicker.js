@@ -70,10 +70,6 @@ export default class Datepicker {
     if (this.startDate) dates.push(this.startDate);
     if (this.endDate) dates.push(this.endDate);
 
-    const testDates = [];
-    testDates[0] = this.startDate;
-    testDates[1] = this.endDate;
-
     if (this.isSeparated && !this.startDate) {
       const startDateStr = date ? date.split('-').reverse().join('.') : '';
       const endDateStr = valueSecond ? valueSecond.split('-').reverse().join('.') : '';
