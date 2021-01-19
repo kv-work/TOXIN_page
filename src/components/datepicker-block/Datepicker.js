@@ -47,9 +47,9 @@ export default class Datepicker {
     } = this.data;
 
     this.$endDate = this.$node.append(
-      `<div class="js-datepicker-block__input-wrapper datepicker-block_wrapper">
+      `<div class="datepicker-block_wrapper">
         <label class="datepicker-block__label">${labelSecond}</label>
-        <div class="datepicker-block__input-wrapper" tabindex=0>
+        <div class="js-datepicker-block__input-wrapper datepicker-block__input-wrapper" tabindex=0>
           <input class="js-datepicker-block__end-date-input datepicker-block__end-date-input" type="text" name="end-date" placeholder="ДД.ММ.ГГГГ" readonly required tabindex=-1
           ${valueSecond ? `data-date=${valueSecond}` : ' '} />
         </div>
@@ -74,7 +74,7 @@ export default class Datepicker {
     testDates[0] = this.startDate;
     testDates[1] = this.endDate;
 
-    if (this.isSeparated && dates.length < 2) {
+    if (this.isSeparated && !this.startDate) {
       const startDateStr = date ? date.split('-').reverse().join('.') : '';
       const endDateStr = valueSecond ? valueSecond.split('-').reverse().join('.') : '';
       this.$datepicker.val(startDateStr);
