@@ -22,7 +22,7 @@ export default class Datepicker {
         showEvent: 'none',
         dateFormat: 'dd.mm.yyyy',
         onSelect: this._selectDate.bind(this),
-        onHide: this._hide.bind(this),
+        onHide: this._handleDatepickerHide.bind(this),
       };
       this._addEndDateInput();
     }
@@ -97,26 +97,22 @@ export default class Datepicker {
   }
 
   _attachEventHandlers() {
-    this.$wrapper.on('focus.datepicker', this._focusOnWrapperHandler.bind(this));
-    this.$wrapper.on('click.datepicker', Datepicker._clickOnWrapperHandler);
+    this.$wrapper.on('focus.datepicker', this._handleWrapperFocus.bind(this));
+    this.$wrapper.on('click.datepicker', this._handleWrapperClick);
 
-    this.clearBtn.on('click.datepicker', this._clearDates.bind(this));
+    this.clearBtn.on('click.datepicker', this._handleClearButtonClick.bind(this));
 
-    this.$applyBtn.on('click.datepicker', this._clickOnApplyBtn.bind(this));
+    this.$applyBtn.on('click.datepicker', this._handleApplyButtonClick.bind(this));
   }
 
-  _clickOnApplyBtn() {
+  _handleApplyButtonClick() {
     this.datepickerData.hide();
   }
 
-  _focusOnWrapperHandler(event) {
+  _handleWrapperFocus(event) {
     this.$opener = $(event.currentTarget).find('input');
     this.datepickerData.show();
     if (this.isSeparated) this._openDatepicker();
-  }
-
-  _unfocusHandler() {
-    this.datepickerData.hide();
   }
 
   _selectDate(formattedDates, date) {
@@ -132,9 +128,10 @@ export default class Datepicker {
     let end;
 
     if ($opener) {
+      const isStartDate = $opener.hasClass('datepicker-block__input');
       if (Array.isArray(date)) {
         [start, end] = date;
-        if ($opener.hasClass('datepicker-block__input')) {
+        if (isStartDate) {
           this.startDate = start;
           $datepicker.val(formattedDatesArr[0]);
           $datepicker.data('date', formattedDatesArr[0]);
@@ -151,7 +148,7 @@ export default class Datepicker {
         }
       } else {
         start = date;
-        if ($opener.hasClass('datepicker-block__input')) {
+        if (isStartDate) {
           this.startDate = start;
           $datepicker.val(formattedDates);
           $datepicker.data('date', formattedDates);
@@ -164,32 +161,34 @@ export default class Datepicker {
           datepickerData.selectedDates = [this.endDate];
         }
       }
-    } else {
-      switch (formattedDatesArr.length) {
-        case 1:
-          this.startDate = date;
-          $datepicker.val(formattedDatesArr[0]);
-          break;
-        case 2:
-          [start, end] = date;
-          this.startDate = start;
-          this.endDate = end;
-          $datepicker.val(formattedDatesArr[0]);
-          $endDate.val(formattedDatesArr[1]);
-          break;
-        default:
-          break;
-      }
+
+      return;
+    }
+
+    switch (formattedDatesArr.length) {
+      case 1:
+        this.startDate = date;
+        $datepicker.val(formattedDatesArr[0]);
+        break;
+      case 2:
+        [start, end] = date;
+        this.startDate = start;
+        this.endDate = end;
+        $datepicker.val(formattedDatesArr[0]);
+        $endDate.val(formattedDatesArr[1]);
+        break;
+      default:
+        break;
     }
   }
 
-  _hide(_, animationCompleted) {
+  _handleDatepickerHide(_, animationCompleted) {
     if (animationCompleted) {
       this.$node.trigger('updateDates');
     }
   }
 
-  _clearDates() {
+  _handleClearButtonClick() {
     const {
       $datepicker,
       $endDate,
@@ -250,7 +249,8 @@ export default class Datepicker {
     if (startDate) $datepicker.val(startDate.toLocaleDateString());
   }
 
-  static _clickOnWrapperHandler(e) {
+  // eslint-disable-next-line class-methods-use-this
+  _handleWrapperClick(e) {
     $(e.currentTarget).trigger('focus');
   }
 }
