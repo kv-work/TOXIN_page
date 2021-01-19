@@ -12,8 +12,9 @@ mixin datepickerBlock(params = {})
     if (!inline)
       .datepicker-block_wrapper
         label.datepicker-block__label= label
-        .datepicker-block__input-wrapper(tabindex=0)
+        .datepicker-block__input-wrapper(class="js-datepicker-block__input-wrapper" tabindex=0)
           input.datepicker-block__input(
+            class="js-datepicker-block__input"
             type="text"
             name="start-date"
             placeholder="ДД.ММ.ГГГГ"

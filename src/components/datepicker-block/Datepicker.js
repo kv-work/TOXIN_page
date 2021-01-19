@@ -6,14 +6,14 @@ export default class Datepicker {
     this.$node = $(node);
     this.isInline = this.$node.hasClass('datepicker-block_inline');
     this.isSeparated = this.$node.hasClass('datepicker-block_separated');
-    this.data = this.isInline ? this.$node.data() : this.$node.find('input').data();
+    this.data = this.isInline ? this.$node.data() : this.$node.find('.js-datepicker-block__input').data();
 
     this._initDatepicker(options);
     this._init();
   }
 
   _initDatepicker(options) {
-    this.$datepicker = this.isInline ? this.$node : this.$node.find('.datepicker-block__input');
+    this.$datepicker = this.isInline ? this.$node : this.$node.find('.js-datepicker-block__input');
 
     this.options = options;
     if (this.isSeparated) {
@@ -31,8 +31,8 @@ export default class Datepicker {
   }
 
   _init() {
-    this.clearBtn = this.datepickerData.$datepicker.find('span.datepicker--button[data-action=clear]');
-    this.$wrapper = this.$node.find('.datepicker-block__input-wrapper');
+    this.$clearBtn = this.datepickerData.$datepicker.find('span.datepicker--button[data-action=clear]');
+    this.$wrapper = this.$node.find('.js-datepicker-block__input-wrapper');
 
     if (this.data.date || this.data.valueSecond) this._setDataValues();
 
@@ -47,14 +47,14 @@ export default class Datepicker {
     } = this.data;
 
     this.$endDate = this.$node.append(
-      `<div class="datepicker-block_wrapper">
+      `<div class="js-datepicker-block__input-wrapper datepicker-block_wrapper">
         <label class="datepicker-block__label">${labelSecond}</label>
         <div class="datepicker-block__input-wrapper" tabindex=0>
-          <input class="datepicker-block__end-date-input" type="text" name="end-date" placeholder="ДД.ММ.ГГГГ" readonly required tabindex=-1
+          <input class="js-datepicker-block__end-date-input datepicker-block__end-date-input" type="text" name="end-date" placeholder="ДД.ММ.ГГГГ" readonly required tabindex=-1
           ${valueSecond ? `data-date=${valueSecond}` : ' '} />
         </div>
       </div>`,
-    ).find('.datepicker-block__end-date-input');
+    ).find('.js-datepicker-block__end-date-input');
   }
 
   _setDataValues() {
@@ -92,15 +92,15 @@ export default class Datepicker {
 
   _addApplyButton() {
     this.$applyBtn = this.datepickerData.$datepicker.find('.datepicker--buttons')
-      .append('<button type="button" class="datepicker--button-apply">Применить</button>')
-      .find('.datepicker--button-apply');
+      .append('<button type="button" class="js-datepicker--button-apply datepicker--button-apply">Применить</button>')
+      .find('.js-datepicker--button-apply');
   }
 
   _attachEventHandlers() {
     this.$wrapper.on('focus.datepicker', this._handleWrapperFocus.bind(this));
     this.$wrapper.on('click.datepicker', this._handleWrapperClick);
 
-    this.clearBtn.on('click.datepicker', this._handleClearButtonClick.bind(this));
+    this.$clearBtn.on('click.datepicker', this._handleClearButtonClick.bind(this));
 
     this.$applyBtn.on('click.datepicker', this._handleApplyButtonClick.bind(this));
   }
@@ -220,26 +220,29 @@ export default class Datepicker {
       maxDate: '',
     });
 
-    if ($opener.hasClass('datepicker-block__input') && !endDate) {
+    const isStartDate = $opener.hasClass('datepicker-block__input');
+    const isEndDate = $opener.hasClass('datepicker-block__end-date-input');
+
+    if (isStartDate && !endDate) {
       datepickerData.update({
         range: false,
       });
     }
 
-    if ($opener.hasClass('datepicker-block__input') && endDate) {
+    if (isStartDate && endDate) {
       datepickerData.update({
         range: true,
         maxDate: endDate,
       });
     }
 
-    if ($opener.hasClass('datepicker-block__end-date-input') && !startDate) {
+    if (isEndDate && !startDate) {
       datepickerData.update({
         range: false,
       });
     }
 
-    if ($opener.hasClass('datepicker-block__end-date-input') && startDate) {
+    if (isEndDate && startDate) {
       datepickerData.update({
         minDate: startDate,
         range: true,
