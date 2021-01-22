@@ -34,7 +34,7 @@ export default class Datepicker {
     this.$clearBtn = this.datepicker.$datepicker.find('span.datepicker--button[data-action=clear]');
     this.$wrapper = this.$node.find('.js-datepicker-block__input-wrapper');
 
-    if (this.data.date || this.data.valueSecond) this._setDataValues();
+    this._setDateValues();
 
     this._addApplyButton();
     this._attachEventHandlers();
@@ -57,28 +57,16 @@ export default class Datepicker {
     ).find('.js-datepicker-block__end-date-input');
   }
 
-  _setDataValues() {
+  _setDateValues() {
     const {
       date,
       valueSecond,
     } = this.data;
 
-    this.startDate = date ? new Date(date) : '';
-    this.endDate = valueSecond ? new Date(valueSecond) : '';
+    this.startDate = date ? new Date(date) : null;
+    this.endDate = valueSecond ? new Date(valueSecond) : null;
 
-    const dates = [];
-    if (this.startDate) dates.push(this.startDate);
-    if (this.endDate) dates.push(this.endDate);
-
-    if (this.isSeparated && !this.startDate) {
-      const startDateStr = date ? date.split('-').reverse().join('.') : '';
-      const endDateStr = valueSecond ? valueSecond.split('-').reverse().join('.') : '';
-      this.$datepicker.val(startDateStr);
-      this.$endDate.val(endDateStr);
-
-      this.datepicker.selectedDates = dates;
-      return;
-    }
+    const dates = [this.startDate, this.endDate];
 
     this.datepicker.selectDate(dates);
   }
@@ -117,6 +105,8 @@ export default class Datepicker {
       $opener,
     } = this;
 
+    this._selectDates();
+
     let start;
     let end;
 
@@ -154,24 +144,23 @@ export default class Datepicker {
           datepicker.selectedDates = [this.endDate];
         }
       }
-
-      return;
     }
+  }
 
-    switch (formattedDatesArr.length) {
-      case 1:
-        this.startDate = date;
-        $datepicker.val(formattedDatesArr[0]);
-        break;
-      case 2:
-        [start, end] = date;
-        this.startDate = start;
-        this.endDate = end;
-        $datepicker.val(formattedDatesArr[0]);
-        $endDate.val(formattedDatesArr[1]);
-        break;
-      default:
-        break;
+  _selectDates() {
+    const {
+      $opener,
+      startDate,
+      endDate,
+      $datepicker,
+      $endDate,
+    } = this;
+
+    if (!$opener) {
+      const start = startDate ? startDate.toLocaleDateString() : startDate;
+      const end = endDate ? endDate.toLocaleDateString() : endDate;
+      $datepicker.val(start);
+      $endDate.val(end);
     }
   }
 
