@@ -9,13 +9,15 @@ mixin loginCard({ label })
         type: 'email',
         placeholder: 'Email',
         name: 'email',
-        })(required=true)
+        required: true,
+        })
     .login-card__pass-input
       +input({
         type: 'password',
         placeholder: 'Пароль',
-        name: 'password'
-      })(required=true)
+        name: 'password',
+        required: true,
+      })
     .login-card__submit-button
       +button({
         label: 'войти',

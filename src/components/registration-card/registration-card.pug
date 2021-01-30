@@ -11,13 +11,15 @@ mixin registrationCard({ label })
         type: 'text',
         placeholder: 'Имя',
         name: 'name',
-        })(required=true)
+        required: true,
+        })
     .registration-card__surname-input
       +input({
         type: 'text',
         placeholder: 'Фамилия',
         name: 'surname',
-        })(required=true)
+        required: true,
+        })
     .registration-card__gender-radio-buttons
       +radioButtons({
         list: [
@@ -32,20 +34,23 @@ mixin registrationCard({ label })
         placeholder: 'ДД.ММ.ГГГГ',
         name: 'dateOfBirth',
         masked: true,
-        })(required=true)
+        required: true,
+        })
     .registration-card__email-input
       +input({
         label: 'Данные для входа в сервис',
         type: 'email',
         placeholder: 'Email',
         name: 'email',
-        })(required=true)
+        required: true,
+        })
     .registration-card__password-input
       +input({
         type: 'password',
         placeholder: 'Пароль',
         name: 'password',
-        })(required=true)
+        required: true,
+        })
     .registration-card__toggle-button
       +toggleButton({ label: 'Получать спецпредложения', name:'subscription' })
     .registration-card__submit-button

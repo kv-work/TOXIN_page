@@ -7,6 +7,8 @@ mixin input(params = {})
       placeholder,
       masked = false,
       subscription = false,
+      focused = false,
+      required = false,
     } = params;
     let classList = 'input__input';
     let modClass = '';
@@ -17,8 +19,17 @@ mixin input(params = {})
     if (subscription) {
       modClass += ' input_with-subscription';
     }
+    if (focused) {
+      classList += ' input__input_focused';
+    }
 
   .input(class=modClass)
     if (label)
       label.input__label= label
-    input(class=classList name=name type=type placeholder=placeholder)&attributes(attributes)
+    input(
+      class=classList
+      name=name
+      type=type
+      placeholder=placeholder
+      required=required
+      )

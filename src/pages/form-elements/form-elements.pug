@@ -30,7 +30,7 @@ block content
           +input({ label: 'text field', placeholder: 'Email' })
         div.form-elements__input-wrapper(class="hover_focus")
           span.form-elements__style-name.hover_focus hover / focus
-          +input({ label: 'text field', placeholder: 'This is pretty awesome' })(class="input__input_focused")
+          +input({ label: 'text field', placeholder: 'This is pretty awesome', focused: true })
         .form-elements__dropdown-wrapper.default
           -
             let items = [
