@@ -14,10 +14,10 @@ class LoginCard {
   _attachEventHandlers() {
     const { $form } = this;
 
-    $form.on('submit', this._submitForm.bind(this));
+    $form.on('submit.loginCard', this._handleLoginCardSubmit.bind(this));
   }
 
-  async _submitForm(event) {
+  async _handleLoginCardSubmit(event) {
     event.preventDefault();
 
     const { $form } = this;

@@ -11,7 +11,7 @@ mixin navBarItem(params = {})
 
   if (isNestedList)
     li(class=classList)= label
-      ul.nav-bar-item__nested-list
+      ul.nav-bar-item__nested-list.js-nav-bar-item__nested-list
         each item in nestedItems
           +navBarItem(item)
   else

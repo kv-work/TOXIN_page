@@ -11,4 +11,4 @@ mixin pagination(params = {})
     if (data.length !== 0)
       #data-container
     .pagination-block__pagination.js-pagination(data-pages=numberOfPages)
-    .pagination-block__description= description
+    .pagination-block__description.js-pagination-block__description= description

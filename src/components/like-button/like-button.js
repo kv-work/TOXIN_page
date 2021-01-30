@@ -17,7 +17,8 @@ class LikeButton {
   // eslint-disable-next-line class-methods-use-this
   handleLikeButtonChange(event) {
     const { currentTarget } = event;
-    let value = $(currentTarget).find('.js-like-button__count').text();
+    const $count = $(currentTarget).find('.js-like-button__count');
+    let value = $count.text();
 
     if (currentTarget.control.checked) {
       currentTarget.classList.add('like-button__label_checked');
@@ -27,7 +28,7 @@ class LikeButton {
       value = +value - 1;
     }
 
-    $(currentTarget).find('.js-like-button__count').text(value);
+    $count.text(value);
   }
 }
 

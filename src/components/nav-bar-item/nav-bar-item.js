@@ -10,29 +10,30 @@ class NestedItem {
   _attachEventHandler() {
     const { $nestedItem } = this;
 
-    $nestedItem.on('click', NestedItem.clickHandler.bind(this));
+    $nestedItem.on('click.nestedItem', NestedItem.handleNestedItemClick);
   }
 
-  static clickHandler(e) {
+  static handleNestedItemClick(e) {
     const { target } = e;
 
-    $(target).find('ul').toggle();
+    const $list = $(target).find('.js-nav-bar-item__nested-list');
+    $list.toggle();
 
     setTimeout(() => {
-      $(document).on('click', NestedItem.makeNewClickHandler(target));
+      $(document).on('click.nestedItem', NestedItem.makeClickHandler(target, $list));
     }, 0);
   }
 
-  static makeNewClickHandler(node) {
-    const newClickHandler = (e) => {
+  static makeClickHandler(node, $list) {
+    const handleDocumentClick = (e) => {
       if (e.target !== node) {
-        $(node).find('ul').hide();
+        $list.hide();
       }
 
-      $(document).off('click', newClickHandler);
+      $(document).off('click.nestedItem', handleDocumentClick);
     };
 
-    return newClickHandler;
+    return handleDocumentClick;
   }
 }
 

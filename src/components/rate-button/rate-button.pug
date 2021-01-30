@@ -6,4 +6,4 @@ mixin rateButton(params = {})
 
   div(class=className data-rate=rate)
     while n < 6
-      input.rate-button__input(type="radio" name=name checked=(n++ === rate) disabled=disabled)
+      input.rate-button__input.js-rate-button__input(type="radio" name=name checked=(n++ === rate) disabled=disabled)

@@ -10,12 +10,12 @@ class Radio {
   _attachEventHandlers() {
     const { $this } = this;
 
-    $this.on('change', Radio.changeEventHandler);
+    $this.on('change.radio', Radio.handleRadioChange);
   }
 
-  static changeEventHandler(event) {
+  static handleRadioChange(event) {
     const $currentTarget = $(event.currentTarget);
-    const $radioBtns = $currentTarget.find('.radio-buttons__radio');
+    const $radioBtns = $currentTarget.find('.js-radio-buttons__radio');
     $radioBtns.each(function addCheckedClass() {
       if (this.control.checked) {
         this.classList.add('radio-buttons__radio-label_checked');

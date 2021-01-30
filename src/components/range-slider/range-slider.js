@@ -4,8 +4,8 @@ import 'ion-rangeslider/js/ion.rangeSlider.min';
 class Slider {
   constructor(node) {
     this.$this = $(node);
-    this.$displayValue = this.$this.find('.range-slider__value');
-    this.$slider = this.$this.find('input');
+    this.$displayValue = this.$this.find('.js-range-slider__value');
+    this.$slider = this.$this.find('.js-range-slider__input');
     this.$slider.ionRangeSlider();
     this.sliderData = this.$slider.data('ionRangeSlider');
 
@@ -16,10 +16,10 @@ class Slider {
   _attachEventHandlers() {
     const { $slider } = this;
 
-    $slider.on('change', this._changeEventHandler.bind(this));
+    $slider.on('change.slider', this._handleSliderChange.bind(this));
   }
 
-  _changeEventHandler(event) {
+  _handleSliderChange(event) {
     const { $displayValue } = this;
     const $slider = $(event.currentTarget);
     Slider.renderVal($slider, $displayValue);

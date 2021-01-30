@@ -4,7 +4,7 @@ export default class RateButton {
   constructor(node) {
     this.$node = $(node);
 
-    this.$buttons = this.$node.find('input');
+    this.$buttons = this.$node.find('.js-rate-button__input');
 
     this._init();
   }

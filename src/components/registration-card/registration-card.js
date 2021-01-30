@@ -14,10 +14,10 @@ class RegistrationCard {
   _attachEventHandlers() {
     const { $form } = this;
 
-    $form.on('submit', this._submitForm.bind(this));
+    $form.on('submit.registrationCard', this._handleRegistrationCardSubmit.bind(this));
   }
 
-  async _submitForm(event) {
+  async _handleRegistrationCardSubmit(event) {
     event.preventDefault();
 
     const { $form } = this;

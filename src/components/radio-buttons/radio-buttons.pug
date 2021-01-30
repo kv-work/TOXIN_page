@@ -10,7 +10,7 @@ mixin radioButtons(params = {})
           labelClass += ' radio-buttons__radio-label_checked';
         }
 
-      label.radio-buttons__radio(class=labelClass)= label
+      label.radio-buttons__radio.js-radio-buttons__radio(class=labelClass)= label
         input.radio-buttons__radio-input(
           type="radio"
           name=name
