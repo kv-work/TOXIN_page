@@ -4,7 +4,7 @@ class RoomSearchCard {
   constructor(node) {
     this.$form = $(node);
 
-    this.$datepickerBlock = this.$form.find('.datepicker-block');
+    this.$datepickerBlock = this.$form.find('.js-datepicker-block');
     this.$dropdownBlock = this.$form.find('.js-dropdown');
 
     this._init();
@@ -15,12 +15,12 @@ class RoomSearchCard {
   }
 
   _attachEventHandlers() {
-    const { $form, _submitForm } = this;
+    const { $form, _handleRoomSearchCardSubmit } = this;
 
-    $form.on('submit', _submitForm.bind(this));
+    $form.on('submit.roomSearchCard', _handleRoomSearchCardSubmit.bind(this));
   }
 
-  _submitForm(event) {
+  _handleRoomSearchCardSubmit(event) {
     event.preventDefault();
 
     const { $form, $dropdownBlock } = this;
