@@ -20,6 +20,6 @@ mixin checkboxList(params = {})
   div(class=classList)
     .checkbox-list__label-wrapper
       p.checkbox-list__label= checkboxLabel
-    .checkbox-list__options
+    .checkbox-list__options.js-checkbox-list__options
       each item, index in list
         +checkboxOption({ option: item, rich })

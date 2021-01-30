@@ -3,7 +3,7 @@ import $ from 'jquery';
 class ExpandableCheckboxList {
   constructor(node) {
     this.$list = $(node);
-    this.$options = this.$list.find('.checkbox-list__options');
+    this.$options = this.$list.find('.js-checkbox-list__options');
 
     this._attachEventHandlers();
   }
@@ -11,15 +11,16 @@ class ExpandableCheckboxList {
   _attachEventHandlers() {
     const { $list, $options } = this;
 
-    $options.on('click', ExpandableCheckboxList._optionClickHandler);
-    $list.on('click', this._toggleClass.bind(this));
+    $options.on('click.checkboxList', this._handleOptionClick);
+    $list.on('click.checkboxList', this._handleListClick.bind(this));
   }
 
-  _toggleClass() {
+  _handleListClick() {
     this.$list.toggleClass('checkbox-list_closed');
   }
 
-  static _optionClickHandler(e) {
+  // eslint-disable-next-line class-methods-use-this
+  _handleOptionClick(e) {
     e.stopPropagation();
   }
 }

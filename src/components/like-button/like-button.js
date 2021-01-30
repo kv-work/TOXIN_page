@@ -3,7 +3,7 @@ import $ from 'jquery';
 class LikeButton {
   constructor(node) {
     this.$this = $(node);
-    this.$input = this.$this.find('.like-button__input');
+    this.$input = this.$this.find('.js-like-button__input');
 
     this._attachEventHandlers();
   }
@@ -11,12 +11,13 @@ class LikeButton {
   _attachEventHandlers() {
     const { $this } = this;
 
-    $this.on('change', LikeButton.changeHandler);
+    $this.on('change.likeButton', this.handleLikeButtonChange);
   }
 
-  static changeHandler(event) {
+  // eslint-disable-next-line class-methods-use-this
+  handleLikeButtonChange(event) {
     const { currentTarget } = event;
-    let value = $(currentTarget).find('p').text();
+    let value = $(currentTarget).find('.js-like-button__count').text();
 
     if (currentTarget.control.checked) {
       currentTarget.classList.add('like-button__label_checked');
@@ -26,7 +27,7 @@ class LikeButton {
       value = +value - 1;
     }
 
-    $(currentTarget).find('p').text(value);
+    $(currentTarget).find('.js-like-button__count').text(value);
   }
 }
 
