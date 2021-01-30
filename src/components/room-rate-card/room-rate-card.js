@@ -5,12 +5,12 @@ class RoomRateCard {
   constructor(node, roomData) {
     this.$node = $(node);
     this.roomData = roomData;
-    this.$infoBlock = this.$node.find('.room-rate-card__room-info-block');
-    this.$datepicker = this.$node.find('.room-rate-card__datepicker_is_separated');
+    this.$infoBlock = this.$node.find('.js-room-rate-card__room-info-block');
+    this.$datepicker = this.$node.find('.js-room-rate-card__datepicker_is_separated');
     this.datepicker = this.$node.find('.js-datepicker-block__input').data('datepicker');
     this.$dropdown = this.$node.find('.js-dropdown');
-    this.$calcBlock = this.$node.find('.room-rate-card__calculations-block');
-    this.$total = this.$node.find('.room-rate-card__total-cost');
+    this.$calcBlock = this.$node.find('.js-room-rate-card__calculations-block');
+    this.$total = this.$node.find('.js-room-rate-card__total');
 
     this._init();
   }
@@ -29,9 +29,9 @@ class RoomRateCard {
   _attachEventHandlers() {
     const { $node, $datepicker } = this;
 
-    $datepicker.on('updateDates', this._updateTotal.bind(this));
+    $datepicker.on('updateDates.roomRateCard', this._handleDatepickerUpdateDates.bind(this));
 
-    $node.on('submit', this._submitForm.bind(this));
+    $node.on('submit.roomRateCard', this._handleRoomRateCardSubmit.bind(this));
   }
 
   _setDates() {
@@ -61,8 +61,8 @@ class RoomRateCard {
   _displayInfoOfRoom() {
     const { $infoBlock, roomData } = this;
     const numOfRoom = roomData.room.number;
-    const $num = $infoBlock.find('.room-rate-card__number');
-    const $price = $infoBlock.find('.room-rate-card__price');
+    const $num = $infoBlock.find('.js-room-rate-card__number');
+    const $price = $infoBlock.find('.js-room-rate-card__price');
     const $luxFlag = $('<span>', { class: 'room-rate-card__lux-flag', text: 'люкс' });
 
     this.price = roomData.room.price;
@@ -72,14 +72,14 @@ class RoomRateCard {
     $price.html(this.formattedPrice);
 
     if (roomData.room.isLux) {
-      $infoBlock.find('.room-rate-card__number-block').append($luxFlag);
+      $infoBlock.find('.js-room-rate-card__number-block').append($luxFlag);
     }
   }
 
   _calcDaysTotalCost() {
     const { $calcBlock, price, formattedPrice } = this;
-    const $displayCalcBlock = $calcBlock.find('.room-rate-card__cost-calc');
-    const $displayTotalBlock = $calcBlock.find('.room-rate-card__days-total-cost');
+    const $displayCalcBlock = $calcBlock.find('.js-room-rate-card__cost-calc');
+    const $displayTotalBlock = $calcBlock.find('.js-room-rate-card__days-total-cost');
 
     const numOfDays = this._getNumOfDays();
 
@@ -91,9 +91,9 @@ class RoomRateCard {
 
   _calcServices() {
     const { $calcBlock, roomData } = this;
-    const $displayServicesText = $calcBlock.find('.room-rate-card__services-text');
-    const $servicesList = $calcBlock.find('.room-rate-card__services-info > .room-rate-card__services-list');
-    const $displayServicesTotalCost = $calcBlock.find('.room-rate-card__services-total-cost');
+    const $displayServicesText = $calcBlock.find('.js-room-rate-card__services-text');
+    const $servicesList = $calcBlock.find('.js-room-rate-card__services-info > .room-rate-card__services-list');
+    const $displayServicesTotalCost = $calcBlock.find('.js-room-rate-card__services-total-cost');
     let servicesText = 'Сбор за услуги';
 
     const { services } = roomData;
@@ -110,9 +110,9 @@ class RoomRateCard {
 
   _calcAdditionalServices() {
     const { $calcBlock, roomData } = this;
-    const $displayAddServicesText = $calcBlock.find('.room-rate-card__additional-services-text');
-    const $servicesList = $calcBlock.find('.room-rate-card__additional-services-info > .room-rate-card__services-list');
-    const $displayAddServicesTotalCost = $calcBlock.find('.room-rate-card__additional-services-total-cost');
+    const $displayAddServicesText = $calcBlock.find('.js-room-rate-card__additional-services-text');
+    const $servicesList = $calcBlock.find('.js-room-rate-card__additional-services-info > .room-rate-card__services-list');
+    const $displayAddServicesTotalCost = $calcBlock.find('.js-room-rate-card__additional-services-total-cost');
     const addServicesText = 'Сбор за дополнительные услуги';
 
     const addServices = roomData.additionalServices;
@@ -137,17 +137,15 @@ class RoomRateCard {
       this.total = (this.total > this.discount) ? this.total - this.discount : 0;
     }
 
-    this.$total
-      .find('.room-rate-card__total')
-      .html(RoomRateCard.formatPrice(this.total));
+    this.$total.html(RoomRateCard.formatPrice(this.total));
   }
 
-  _updateTotal() {
+  _handleDatepickerUpdateDates() {
     this._calcDaysTotalCost();
     this._renderTotalCost();
   }
 
-  async _submitForm(event) {
+  async _handleRoomRateCardSubmit(event) {
     event.preventDefault();
 
     const form = this.$node[0];
@@ -186,7 +184,6 @@ class RoomRateCard {
     return `${price.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1 ')}₽`;
   }
 
-  // return sum of services cost
   static renderServices(servicesData, $servicesDisplay) {
     let servicesCost = 0;
 
