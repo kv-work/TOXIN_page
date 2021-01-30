@@ -114,7 +114,7 @@ block content
           +dropdown({ label:'dropdown', text: 'Сколько гостей', items, multiple: true })
         .form-elements__dropdown-multiple-items-expanded-wrapper
           span.form-elements__style-name expanded
-          +dropdown({ label:'dropdown', text: 'Сколько гостей', items, multiple: true })(class="menu-open")
+          +dropdown({ label:'dropdown', text: 'Сколько гостей', items, multiple: true, opened: true })
       .form-elements__col
         .form-elements__dropdown-wrapper-expanded
           -
@@ -124,7 +124,7 @@ block content
               { itemLabel: 'Младенцы', itemCount: 0 },
             ];
 
-          +dropdown({ label:'dropdown', text: 'Сколько гостей', items })(class="menu-open")
+          +dropdown({ label:'dropdown', text: 'Сколько гостей', items, opened: true })
       .form-elements__col
         .form-elements__dropdown-wrapper-expanded
           -
@@ -134,7 +134,7 @@ block content
               { itemLabel: 'Младенцы', itemCount: 0 },
             ];
 
-          +dropdown({ label:'dropdown', text: 'Сколько гостей', items })(class="menu-open")
+          +dropdown({ label:'dropdown', text: 'Сколько гостей', items, opened: true })
     .form-elements__row
       .form-elements__col
         .form-elements__expandable-checkbox-wrapper

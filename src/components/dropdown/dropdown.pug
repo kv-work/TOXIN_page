@@ -1,11 +1,14 @@
 mixin dropdown(params = {})
   -
-    const { label, text, items, multiple = false } = params;
-    const classList = (multiple) ? 'js-dropdown_multiple' : 'js-dropdown';
+    const { label, text, items, multiple = false, opened = false } = params;
+    let classList = (multiple) ? 'js-dropdown_multiple' : 'js-dropdown';
+    if (opened) {
+      classList += ' menu-open'
+    }
 
   .dropdown
     label.dropdown__label= label
-    .iqdropdown(class=classList)&attributes(attributes)
+    .iqdropdown(class=classList)
       .iqdropdown-selection-wrapper
         p.iqdropdown-selection= text
         .iqdropdown-menu
