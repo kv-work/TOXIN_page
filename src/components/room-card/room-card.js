@@ -8,11 +8,11 @@ export default class RoomCard {
     this.$node = $(node);
     this.data = this.$node.data();
 
-    this.$numberBlock = this.$node.find('.room-card__number-block');
-    this.$imagesBlock = this.$node.find('.room-card__images-block');
-    this.$priceBlock = this.$node.find('.room-card__price-block');
-    this.$rateBlock = this.$node.find('.room-card__rate-block');
-    this.$reviewsBlock = this.$node.find('.room-card__reviews-block');
+    this.$numberBlock = this.$node.find('.js-room-card__number-block');
+    this.$imagesBlock = this.$node.find('.js-room-card__images-block');
+    this.$priceBlock = this.$node.find('.js-room-card__price-block');
+    this.$rateBlock = this.$node.find('.js-room-card__rate-block');
+    this.$reviewsBlock = this.$node.find('.js-room-card__reviews-block');
 
     this.rateButton = new RateButton(this.$rateBlock.find('.js-rate-button')[0]);
 
@@ -44,16 +44,14 @@ export default class RoomCard {
     this.roomData = roomsData.rooms[this.numOfRoom];
   }
 
-  // Создаем карусель картинок
   _createRoomImageBlocks() {
     const { $imagesBlock, roomData } = this;
     const imgArr = roomData.images;
     this.$images = $('<div>', { class: 'room-card__images' });
     this.$indicators = $('<ol>', { class: 'room-card__indicators' });
 
-    // Добавляем слайды
     imgArr.forEach((item, idx) => {
-      const $roomImg = $('<div>', { class: 'room-card__image' });
+      const $roomImg = $('<div>', { class: 'room-card__image js-room-card__image' });
 
       $roomImg.css({
         'background-image': `url(${item})`,
@@ -69,11 +67,10 @@ export default class RoomCard {
       this.$images.append($roomImg);
     });
 
-    // Добавляем индикаторы
     for (let i = 0; i < 4; i += 1) {
       const $indicator = $('<li>', {
         'data-slide-to': i,
-        class: 'indicator',
+        class: 'room-card__indicator js-room-card__indicator',
       });
 
       if (i === 0) {
@@ -88,7 +85,6 @@ export default class RoomCard {
       this.$indicators.append($indicator);
     }
 
-    // Элементы управления
     this.$controlPrev = $('<div>', { class: 'room-card__control-prev' });
     this.$controlNext = $('<div>', { class: 'room-card__control-next' });
 
@@ -146,11 +142,13 @@ export default class RoomCard {
     const currentSlide = $images.data().activeSlide;
 
     if (slide !== currentSlide && slide <= numOfSlides) {
-      $images.find('div').eq(currentSlide).removeClass('active');
-      $images.find('div').eq(slide).addClass('active');
+      const $image = $images.find('.js-room-card__image');
+      $image.eq(currentSlide).removeClass('active');
+      $image.eq(slide).addClass('active');
 
-      $indicators.find('li').eq(currentSlide).removeClass('active');
-      $indicators.find('li').eq(slide).addClass('active');
+      const $indicator = $indicators.find('.js-room-card__indicator');
+      $indicator.eq(currentSlide).removeClass('active');
+      $indicator.eq(slide).addClass('active');
 
       $images.data({ 'active-slide': slide });
       $indicators.data({ 'active-slide': slide });
@@ -164,24 +162,24 @@ export default class RoomCard {
       $controlNext,
     } = this;
 
-    $indicators.on('click', this._indicatorsClickHandler.bind(this));
+    $indicators.on('click.roomCard', this._handleIndicatorsClick.bind(this));
 
-    $controlPrev.on('click', this._controlPrevClickHandler.bind(this));
+    $controlPrev.on('click.roomCard', this._handleControlPrevClick.bind(this));
 
-    $controlNext.on('click', this._controlNextClickHandler.bind(this));
+    $controlNext.on('click.roomCard', this._handleControlNextClick.bind(this));
   }
 
-  _indicatorsClickHandler(e) {
+  _handleIndicatorsClick(e) {
     const $target = $(e.target);
 
-    if ($target.hasClass('indicator') && !$target.hasClass('disabled')) {
+    if ($target.hasClass('js-room-card__indicator') && !$target.hasClass('disabled')) {
       const { slideTo } = $(e.target).data();
 
       this._changeSlide(slideTo);
     }
   }
 
-  _controlPrevClickHandler(e) {
+  _handleControlPrevClick(e) {
     const { $images, roomData } = this;
 
     const numOfSlides = roomData.images.length;
@@ -193,7 +191,7 @@ export default class RoomCard {
     }
   }
 
-  _controlNextClickHandler(e) {
+  _handleControlNextClick(e) {
     const { $images, roomData } = this;
 
     const numOfSlides = roomData.images.length;

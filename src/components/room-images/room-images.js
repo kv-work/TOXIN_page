@@ -21,7 +21,7 @@ class RoomImagesBlock {
     const { $node } = this;
 
     images.forEach((element, idx) => {
-      const $image = $('<div>', { class: 'room-images__image' });
+      const $image = $('<div>', { class: 'room-images__image js-room-images__image' });
       $image.css({
         'background-image': `url(${element})`,
       });
@@ -57,7 +57,7 @@ class RoomImagesBlock {
 
     images.forEach((_, idx) => {
       const $indicator = $('<li>', {
-        class: 'room-images__indicator',
+        class: 'room-images__indicator js-room-images__indicator',
         'data-slide-to': idx,
       });
 
@@ -85,11 +85,13 @@ class RoomImagesBlock {
     const currentSlide = $node.data().activeSlide;
 
     if (slide !== currentSlide && slide <= numOfSlides) {
-      $node.find('.room-images__image').eq(currentSlide).removeClass('active');
-      $node.find('.room-images__image').eq(slide).addClass('active');
+      const $image = $node.find('.js-room-images__image');
+      $image.eq(currentSlide).removeClass('active');
+      $image.eq(slide).addClass('active');
 
-      $indicators.find('li').eq(currentSlide).removeClass('active');
-      $indicators.find('li').eq(slide).addClass('active');
+      const $indicator = $indicators.find('.js-room-images__indicator');
+      $indicator.eq(currentSlide).removeClass('active');
+      $indicator.eq(slide).addClass('active');
 
       $node.data({ 'active-slide': slide });
       $indicators.data({ 'active-slide': slide });
@@ -103,14 +105,14 @@ class RoomImagesBlock {
       $controlPrev,
     } = this;
 
-    $indicators.on('click', this._clickOnIndicatorsHandler.bind(this));
+    $indicators.on('click.roomImages', this._handleIndicatorClick.bind(this));
 
-    $controlPrev.on('click', this._clickOnCtrlBtnsHandler.bind(this));
+    $controlPrev.on('click.roomImages', this._handleControlButtonClick.bind(this));
 
-    $controlNext.on('click', this._clickOnCtrlBtnsHandler.bind(this));
+    $controlNext.on('click.roomImages', this._handleControlButtonClick.bind(this));
   }
 
-  _clickOnIndicatorsHandler(event) {
+  _handleIndicatorClick(event) {
     const $target = $(event.target);
     const { slideTo } = $target.data();
 
@@ -119,7 +121,7 @@ class RoomImagesBlock {
     }
   }
 
-  _clickOnCtrlBtnsHandler(event) {
+  _handleControlButtonClick(event) {
     const images = data.images[this.room];
     const numOfSlides = images.length;
     const currentSlide = this.$node.data().activeSlide;

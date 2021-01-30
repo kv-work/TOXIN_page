@@ -6,15 +6,15 @@ mixin roomCard(params = {})
     const rateName = 'rate' + number;
 
   .room-card.js-room-card(data-number=number)
-    .room-card__images-block
+    .room-card__images-block.js-room-card__images-block
     .room-card__room-info-block
-      .room-card__number-block
+      .room-card__number-block.js-room-card__number-block
         span.room-card__number-sign №
         span.room-card__number=number
-      .room-card__price-block
+      .room-card__price-block.js-room-card__price-block
         span.room-card__price-text в сутки
       .room-card__delimiter
-      .room-card__rate-block
+      .room-card__rate-block.js-room-card__rate-block
         +rateButton({ name: rateName, disabled: true })
-      .room-card__reviews-block
+      .room-card__reviews-block.js-room-card__reviews-block
         span.room-card__review-text Отзывов
