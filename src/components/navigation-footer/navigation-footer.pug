@@ -11,40 +11,40 @@ mixin navigationFooter(params = {})
       currData = data.dataRu.footer;
     }
     const { descriptionText, navigationList, aboutUsList, supportList, subscribeBlock, copyrightText } = currData;
-    let classList = 'footer';
+    let classList = 'navigation-footer';
     if (lang === 'ru')  {
-      classList += ' footer_ru';
+      classList += ' navigation-footer_ru';
     }
 
   footer(class=classList)
-    div.footer__logo-n-widgets-block
-      .footer__logo-block
-        img(class="footer__logo-img" src="./img/logo.svg" alt="TOXIN")
-        .footer__description= descriptionText
-      .footer__widgets-block
-        .footer__navigation-block
-          h3.footer__navigation-list-title= navigationList.title
-          .footer__navigation-list
+    div.navigation-footer__logo-n-widgets
+      .navigation-footer__logo-block
+        img(class="navigation-footer__logo-img" src="./img/logo.svg" alt="TOXIN")
+        .navigation-footer__description= descriptionText
+      .navigation-footer__widgets-block
+        .navigation-footer__navigation-block
+          h3.navigation-footer__navigation-list-title= navigationList.title
+          .navigation-footer__navigation-list
             +navBar({ itemList: navigationList.list })
-        .footer__about-us-block
-          h3.footer__about-us-list-title= aboutUsList.title
-          .footer__about-us-list
+        .navigation-footer__about-us-block
+          h3.navigation-footer__about-us-list-title= aboutUsList.title
+          .navigation-footer__about-us-list
             +navBar({ itemList: aboutUsList.list })
-        .footer__support-block
-          h3.footer__support-list-title= supportList.title
-          .footer__support-list
+        .navigation-footer__support-block
+          h3.navigation-footer__support-list-title= supportList.title
+          .navigation-footer__support-list
             +navBar({ itemList: supportList.list })
-      .footer__subscribe-block
-        h3.footer__subscribe-title= subscribeBlock.title
-        .footer__subscribe-text= subscribeBlock.text
-        .footer__subscribe-input
+      .navigation-footer__subscribe-block
+        h3.navigation-footer__subscribe-title= subscribeBlock.title
+        .navigation-footer__subscribe-text= subscribeBlock.text
+        .navigation-footer__subscribe-input
           +input({ placeholder: subscribeBlock.inputPlaceholder, subscription: true })
-    div.footer__copyright-n-socials-block
-      .footer__copyright-block= copyrightText
-    .footer__socials-block
-      a.footer__social(href="/mock-address/change-me" target="_blank" rel="noopener noreferrer")
-        i(class="fab fa-twitter")
-      a.footer__social(href="/mock-address/change-me" target="_blank" rel="noopener noreferrer")
-        i(class="fab fa-facebook-square")
-      a.footer__social(href="/mock-address/change-me" target="_blank" rel="noopener noreferrer")
-        i(class="fab fa-instagram")
+    div.navigation-footer__copyright-n-socials-block
+      .navigation-footer__copyright-block= copyrightText
+      .navigation-footer__socials-block
+        a.navigation-footer__social(href="/mock-address/change-me" target="_blank" rel="noopener noreferrer")
+          i(class="fab fa-twitter")
+        a.navigation-footer__social(href="/mock-address/change-me" target="_blank" rel="noopener noreferrer")
+          i(class="fab fa-facebook-square")
+        a.navigation-footer__social(href="/mock-address/change-me" target="_blank" rel="noopener noreferrer")
+          i(class="fab fa-instagram")
