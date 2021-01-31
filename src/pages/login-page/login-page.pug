@@ -2,7 +2,7 @@ extends ../base/base
 
 block variables
   include ../../components/header/header
-  include ../../components/footer/footer
+  include ../../components/navigation-footer/navigation-footer
   include ../../components/login-card/login-card
 
   -
@@ -15,4 +15,4 @@ block content
     .login-page__content
       .login-page__login-form
         +loginCard({ label: 'Войти' })
-    +footer({ lang: 'ru', data })
+    +navigationFooter({ lang: 'ru', data })

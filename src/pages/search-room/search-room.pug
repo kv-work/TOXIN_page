@@ -2,7 +2,7 @@ extends ../base/base
 
 block variables
   include ../../components/header/header
-  include ../../components/footer/footer
+  include ../../components/navigation-footer/navigation-footer
   include ../../components/datepicker-block/datepicker-block
   include ../../components/dropdown/dropdown
   include ../../components/range-slider/range-slider
@@ -79,4 +79,4 @@ block content
         .search-room__pagination
           +pagination({ numberOfPages: 15, data: [888, 840, 980, 856, 740, 982, 678, 450, 350, 666, 444, 352] })
     .search-room__delimiter
-    +footer( {lang: 'ru', data} )
+    +navigationFooter( {lang: 'ru', data} )

@@ -2,7 +2,7 @@ extends ../base/base
 
 block variables
   include ../../components/header/header
-  include ../../components/footer/footer
+  include ../../components/navigation-footer/navigation-footer
   include ../../components/registration-card/registration-card
 
   -
@@ -15,4 +15,4 @@ block content
     .registration-page__content
       .registration-page__registration-form
         +registrationCard({ label: 'Регистрация аккаунта' })
-    +footer({ lang: 'ru', data })
+    +navigationFooter({ lang: 'ru', data })

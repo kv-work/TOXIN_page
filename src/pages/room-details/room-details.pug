@@ -2,7 +2,7 @@ extends ../base/base
 
 block variables
   include ../../components/header/header
-  include ../../components/footer/footer
+  include ../../components/navigation-footer/navigation-footer
   include ../../components/room-rate-card/room-rate-card
   include ../../components/bullet-list/bullet-list
   include ../../components/comment-block/comment-block
@@ -80,4 +80,4 @@ block content
         .room-details__booking-form
           +roomRateCard()
     .room-details__delimiter
-    +footer({ lang: 'ru', data })
+    +navigationFooter({ lang: 'ru', data })
