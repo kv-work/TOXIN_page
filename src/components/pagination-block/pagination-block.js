@@ -67,12 +67,13 @@ class Pagination {
     let temp;
     const tempArr = arr;
 
-    for (let i = arr.length - 1; i > 0; i -= 1) {
+    arr.forEach((_, index) => {
+      const i = arr.length - 1 - index;
       j = Math.floor(Math.random() * (i + 1));
       temp = arr[j];
       tempArr[j] = arr[i];
       tempArr[i] = temp;
-    }
+    });
 
     return tempArr;
   }
