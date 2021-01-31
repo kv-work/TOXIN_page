@@ -4,7 +4,7 @@ include ../logo/logo
 
 mixin header(params = {})
   -
-    const { lang = 'en', isLoggedIn = false, userName } = params;
+    const { lang = 'ru', isLoggedIn = false, userName } = params;
     let currentData;
     if (lang === 'en') {
       currentData = data.dataEn.header;

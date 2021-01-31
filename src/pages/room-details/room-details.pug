@@ -13,10 +13,11 @@ block variables
   -
     const pageTitle = 'Room Details';
     const data = htmlWebpackPlugin.options.getData();
+    const lang = data.lang;
 
 block content
   .room-details
-    +header({ lang: 'ru', isLoggedIn: false, data })
+    +header({ lang, isLoggedIn: false, data })
     .room-details__content
       .room-details__images-block
         +roomImages({ room: 888 })
@@ -80,4 +81,4 @@ block content
         .room-details__booking-form
           +roomRateCard()
     .room-details__delimiter
-    +navigationFooter({ lang: 'ru', data })
+    +navigationFooter({ lang, data })

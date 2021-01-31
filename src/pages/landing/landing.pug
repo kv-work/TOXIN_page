@@ -8,12 +8,13 @@ block variables
   -
     const pageTitle = 'Landing Page';
     const data = htmlWebpackPlugin.options.getData();
+    const lang = data.lang;
 
 block content
-  +header({ lang: 'ru', isLoggedIn: false, data })
+  +header({ lang, isLoggedIn: false, data })
   .landing.js-landing
     .landing__content
       .landing__form-search-room
         +roomSearchCard({ label: 'Найдем номера под ваши\u00A0пожелания' })
       .landing__slogan Лучшие номера для вашей работы, отдыха и просто вдохновения
-  +navigationFooter({ lang: 'ru', data })
+  +navigationFooter({ lang, data })

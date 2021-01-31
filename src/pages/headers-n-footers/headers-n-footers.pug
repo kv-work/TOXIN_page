@@ -9,12 +9,13 @@ block variables
   -
     const pageTitle = 'Headers & Footers';
     const data = htmlWebpackPlugin.options.getData();
+    const lang = data.lang
 
 block content
   .headers-n-footers
     .headers-n-footers__logo-wrapper
       +logo({ width: '48', height: '48', fill: '#1F2041', fillOpacity: '.25' })
-    +header({ isLoggedIn: false, data })
-    +header({ isLoggedIn: true, data, userName: 'Cosmin Negoita' })
+    +header({ lang, isLoggedIn: false, data })
+    +header({ lang, isLoggedIn: true, data, userName: 'Cosmin Negoita' })
     +navigationFooter({ lang: 'en', data })
-    +footer({ lang: 'en', data, withWidgets: false })
+    +footer({ lang, data, withWidgets: false })

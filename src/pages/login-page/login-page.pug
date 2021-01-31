@@ -8,11 +8,12 @@ block variables
   -
     const pageTitle = 'Login Page';
     const data = htmlWebpackPlugin.options.getData();
+    const lang = data.lang;
 
 block content
   .login-page
-    +header({ lang: 'ru', isLoggedIn: false, data })
+    +header({ lang, isLoggedIn: false, data })
     .login-page__content
       .login-page__login-form
         +loginCard({ label: 'Войти' })
-    +navigationFooter({ lang: 'ru', data })
+    +navigationFooter({ lang, data })

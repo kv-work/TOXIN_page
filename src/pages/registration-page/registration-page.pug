@@ -8,11 +8,12 @@ block variables
   -
     const pageTitle = 'Registration Page';
     const data = htmlWebpackPlugin.options.getData();
+    const lang = data.lang;
 
 block content
   .registration-page
-    +header({ lang: 'ru', isLoggedIn: false, data })
+    +header({ lang, isLoggedIn: false, data })
     .registration-page__content
       .registration-page__registration-form
         +registrationCard({ label: 'Регистрация аккаунта' })
-    +navigationFooter({ lang: 'ru', data })
+    +navigationFooter({ lang, data })
