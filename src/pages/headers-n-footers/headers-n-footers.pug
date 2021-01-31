@@ -4,6 +4,7 @@ block variables
   include ../../components/logo/logo
   include ../../components/header/header
   include ../../components/footer/footer
+  include ../../components/navigation-footer/navigation-footer
 
   -
     const pageTitle = 'Headers & Footers';
@@ -15,5 +16,5 @@ block content
       +logo({ width: '48', height: '48', fill: '#1F2041', fillOpacity: '.25' })
     +header({ isLoggedIn: false, data })
     +header({ isLoggedIn: true, data, userName: 'Cosmin Negoita' })
-    +footer({ lang: 'en', data })
+    +navigationFooter({ lang: 'en', data })
     +footer({ lang: 'en', data, withWidgets: false })
