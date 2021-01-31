@@ -18,9 +18,9 @@ block content
   .search-room
     +header({ lang: 'ru', isLoggedIn: false, data })
     .search-room__content.js-search-room__content
-      .search-room__filter-toggler
+      .search-room__filter-toggler.js-search-room__filter-toggler
         h2.search-room__filter-toggler-title Фильтры поиска
-      form.search-room__filters-block(method="get")
+      form.search-room__filters-block.js-search-room__filters-block(method="get")
         .search-room__datepicker
           +datepickerBlock({ label: 'даты пребывания в отеле', value:'2019-08-19', valueSecond:'2019-08-23' })
         .search-room__guest-dropdown
@@ -74,7 +74,7 @@ block content
             ];
 
           +checkboxList({ checkboxLabel: 'дополнительные удобства', list: additionalServicesList, expandable: true, closed: true })
-      .search-room__rooms-block
+      .search-room__rooms-block.js-search-room__rooms-block
         h1.search-room__rooms-title Номера, которые мы для вас подобрали
         .search-room__pagination
           +pagination({ numberOfPages: 15, data: [888, 840, 980, 856, 740, 982, 678, 450, 350, 666, 444, 352] })

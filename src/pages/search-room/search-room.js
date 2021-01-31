@@ -3,9 +3,9 @@ import $ from 'jquery';
 class SearchRoomContent {
   constructor(node) {
     this.$content = $(node);
-    this.$toggler = this.$content.find('.search-room__filter-toggler');
-    this.$filters = this.$content.find('.search-room__filters-block');
-    this.$rooms = this.$content.find('.search-room__rooms-block');
+    this.$toggler = this.$content.find('.js-search-room__filter-toggler');
+    this.$filters = this.$content.find('.js-search-room__filters-block');
+    this.$rooms = this.$content.find('.js-search-room__rooms-block');
     this.$roomCards = this.$rooms.find('#data-container');
 
     this.$datepicker = this.$filters.find('.js-datepicker-block');
@@ -55,14 +55,14 @@ class SearchRoomContent {
     });
   }
 
-  _selectRoom(event) {
+  _handleRoomCardsClick(event) {
     const targetClasses = event.target.classList;
 
     if (!(targetClasses.contains('room-card__control-prev')
           || targetClasses.contains('room-card__control-next')
           || targetClasses.contains('room-card__indicators')
           || targetClasses.contains('room-card__control-icon')
-          || targetClasses.contains('indicator'))) {
+          || targetClasses.contains('room-card__indicator'))) {
       const action = './room-details.html';
       const selectedRoom = $(event.target).closest('.room-card').data();
 
@@ -98,19 +98,19 @@ class SearchRoomContent {
   _attachEventHandlers() {
     const { $toggler, $filters, $roomCards } = this;
 
-    $toggler.on('click', this._clickOnTogglerHandler.bind(this));
+    $toggler.on('click.searchRoom', this._handleTogglerClick.bind(this));
 
-    $filters.on('submit', SearchRoomContent.submitForm);
+    $filters.on('submit.searchRoom', SearchRoomContent.handleSearchRoomSubmit);
 
-    $roomCards.on('click', this._selectRoom.bind(this));
+    $roomCards.on('click.searchRoom', this._handleRoomCardsClick.bind(this));
   }
 
-  _clickOnTogglerHandler() {
+  _handleTogglerClick() {
     this.$toggler.toggleClass('opened');
     this.$filters.toggleClass('opened');
   }
 
-  static submitForm(event) {
+  static handleSearchRoomSubmit(event) {
     event.preventDefault();
   }
 }
