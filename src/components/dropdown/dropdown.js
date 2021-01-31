@@ -18,7 +18,7 @@ $('.js-dropdown').iqDropdown({
   setCustomMessage(itemCount) {
     const infants = itemCount['item-3'];
     const guests = itemCount['item-1'] + itemCount['item-2'];
-    let message = +guests;
+    let message = guests;
 
     if (guests === 0) {
       message = this.initialText;
