@@ -15,7 +15,7 @@
             <ul class="nav-bar nav-bar_ru">
               <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">О нас</a></li>
               <li class="nav-bar-item_nested js-nav-bar-item_nested">Услуги
-                <ul class="nav-bar-item__nested-list">
+                <ul class="nav-bar-item__nested-list js-nav-bar-item__nested-list">
                   <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">Услуга_1</a></li>
                   <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">Услуга_2</a></li>
                 </ul>
@@ -23,7 +23,7 @@
               <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">Вакансии</a></li>
               <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">Новости</a></li>
               <li class="nav-bar-item_nested js-nav-bar-item_nested">Соглашения
-                <ul class="nav-bar-item__nested-list">
+                <ul class="nav-bar-item__nested-list js-nav-bar-item__nested-list">
                   <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">Соглашения_1</a></li>
                   <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">Соглашения_2</a></li>
                 </ul>
@@ -38,23 +38,23 @@
         </div>
       </header>
       <div class="search-room__content js-search-room__content">
-        <div class="search-room__filter-toggler">
+        <div class="search-room__filter-toggler js-search-room__filter-toggler">
           <h2 class="search-room__filter-toggler-title">Фильтры поиска</h2>
         </div>
-        <form class="search-room__filters-block" method="get">
+        <form class="search-room__filters-block js-search-room__filters-block" method="get">
           <div class="search-room__datepicker">
-            <div class="datepicker-block js-datepicker-block">
+            <div class="js-datepicker-block datepicker-block">
               <div class="datepicker-block_wrapper">
-                <label class="datepicker-block__label like_h3">даты пребывания в отеле</label>
-                <div class="datepicker-block__input-wrapper" tabindex="0">
-                  <input class="datepicker-block__input js-datepicker" type="text" name="start-date" placeholder="ДД.ММ.ГГГГ" required readonly tabindex="-1" data-date="19.08.2019" data-label-second="" data-value-second="23.08.2019">
+                <label class="datepicker-block__label">даты пребывания в отеле</label>
+                <div class="datepicker-block__input-wrapper js-datepicker-block__input-wrapper" tabindex="0">
+                  <input class="datepicker-block__input js-datepicker-block__input" type="text" name="start-date" placeholder="ДД.ММ.ГГГГ" required readonly tabindex="-1" data-date="2019-08-19" data-label-second="" data-value-second="2019-08-23">
                 </div>
               </div>
             </div>
           </div>
           <div class="search-room__guest-dropdown">
             <div class="dropdown">
-              <label class="dropdown__label like_h3">гости</label>
+              <label class="dropdown__label">гости</label>
               <div class="iqdropdown js-dropdown">
                 <div class="iqdropdown-selection-wrapper">
                   <p class="iqdropdown-selection">Сколько гостей</p>
@@ -82,8 +82,8 @@
           <div class="search-room__range-slider">
             <label class="js-range-slider range-slider">
               <h3 class="range-slider__label">Диапазон цены</h3>
-              <p class="range-slider__value"></p>
-              <input class="range-slider__input" type="text" name="range" value="" data-type="double" data-min="0" data-max="16000" data-from="5000" data-to="10000" data-skin="round" data-postfix="₽" data-hide-min-max="true" data-hide-from-to="true" data-step="100" data-extra-classes="range-slider__slider">
+              <p class="range-slider__value js-range-slider__value"></p>
+              <input class="range-slider__input js-range-slider__input" type="text" name="range" value="" data-type="double" data-min="0" data-max="16000" data-from="5000" data-to="10000" data-skin="round" data-postfix="₽" data-hide-min-max="true" data-hide-from-to="true" data-step="100" data-extra-classes="range-slider__slider">
               <div class="range-slider__text">Стоимость за сутки пребывания в номере</div>
             </label>
           </div>
@@ -92,7 +92,7 @@
               <div class="checkbox-list__label-wrapper">
                 <p class="checkbox-list__label">checkbox buttons</p>
               </div>
-              <div class="checkbox-list__options">
+              <div class="checkbox-list__options js-checkbox-list__options">
                 <div class="checkbox-option">
                   <label class="checkbox-option__label">Можно курить
                     <input class="checkbox-option__input" type="checkbox">
@@ -116,7 +116,7 @@
               <div class="checkbox-list__label-wrapper">
                 <p class="checkbox-list__label">доступность</p>
               </div>
-              <div class="checkbox-list__options">
+              <div class="checkbox-list__options js-checkbox-list__options">
                 <div class="checkbox-option checkbox-option_rich">
                   <label class="checkbox-option__label">Широкий коридор
                     <input class="checkbox-option__input" type="checkbox">
@@ -134,7 +134,7 @@
           </div>
           <div class="search-room__comfort-dropdown">
             <div class="dropdown">
-              <label class="dropdown__label like_h3">удобства номера</label>
+              <label class="dropdown__label">удобства номера</label>
               <div class="iqdropdown js-dropdown_multiple">
                 <div class="iqdropdown-selection-wrapper">
                   <p class="iqdropdown-selection">Сколько гостей</p>
@@ -164,7 +164,7 @@
               <div class="checkbox-list__label-wrapper">
                 <p class="checkbox-list__label">дополнительные удобства</p>
               </div>
-              <div class="checkbox-list__options">
+              <div class="checkbox-list__options js-checkbox-list__options">
                 <div class="checkbox-option">
                   <label class="checkbox-option__label">Завтрак
                     <input class="checkbox-option__input" type="checkbox">
@@ -209,27 +209,27 @@
             </div>
           </div>
         </form>
-        <div class="search-room__rooms-block">
+        <div class="search-room__rooms-block js-search-room__rooms-block">
           <h1 class="search-room__rooms-title">Номера, которые мы для вас подобрали</h1>
           <div class="search-room__pagination">
             <div class="pagination-block js-pagination-block pagination-block_with-data" data-rooms="[888,840,980,856,740,982,678,450,350,666,444,352]">
               <div id="data-container"></div>
               <div class="pagination-block__pagination js-pagination" data-pages="15"></div>
-              <div class="pagination-block__description">1 – 12 из 100+ вариантов аренды</div>
+              <div class="pagination-block__description js-pagination-block__description">1 – 12 из 100+ вариантов аренды</div>
             </div>
           </div>
         </div>
       </div>
       <div class="search-room__delimiter"></div>
-      <footer class="footer footer_ru footer_with-widgets">
-        <div class="footer__logo-n-widgets-block">
-          <div class="footer__logo-block"><img class="footer__logo-img" src="./img/logo.svg" alt="TOXIN">
-            <div class="footer__description">Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</div>
+      <footer class="navigation-footer navigation-footer_ru">
+        <div class="navigation-footer__logo-n-widgets">
+          <div class="navigation-footer__logo-block"><img class="navigation-footer__logo-img" src="./img/logo.svg" alt="TOXIN">
+            <div class="navigation-footer__description">Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</div>
           </div>
-          <div class="footer__widgets-block">
-            <div class="footer__navigation-block">
-              <h3 class="footer__navigation-list-title">навигация</h3>
-              <div class="footer__navigation-list">
+          <div class="navigation-footer__widgets-block">
+            <div class="navigation-footer__navigation-block">
+              <h3 class="navigation-footer__navigation-list-title">навигация</h3>
+              <div class="navigation-footer__navigation-list">
                 <ul class="nav-bar nav-bar_vertical">
                   <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">О нас</a></li>
                   <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">Новости</a></li>
@@ -238,9 +238,9 @@
                 </ul>
               </div>
             </div>
-            <div class="footer__about-us-block">
-              <h3 class="footer__about-us-list-title">О нас</h3>
-              <div class="footer__about-us-list">
+            <div class="navigation-footer__about-us-block">
+              <h3 class="navigation-footer__about-us-list-title">О нас</h3>
+              <div class="navigation-footer__about-us-list">
                 <ul class="nav-bar nav-bar_vertical">
                   <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">О сервисе</a></li>
                   <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">Наша команда</a></li>
@@ -249,9 +249,9 @@
                 </ul>
               </div>
             </div>
-            <div class="footer__support-block">
-              <h3 class="footer__support-list-title">служба поддержки</h3>
-              <div class="footer__support-list">
+            <div class="navigation-footer__support-block">
+              <h3 class="navigation-footer__support-list-title">служба поддержки</h3>
+              <div class="navigation-footer__support-list">
                 <ul class="nav-bar nav-bar_vertical">
                   <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">Соглашения</a></li>
                   <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">Сообщества</a></li>
@@ -260,19 +260,19 @@
               </div>
             </div>
           </div>
-          <div class="footer__subscribe-block">
-            <h3 class="footer__subscribe-title">подписка</h3>
-            <div class="footer__subscribe-text">Получайте специальные предложения и новости сервиса</div>
-            <div class="footer__subscribe-input">
+          <div class="navigation-footer__subscribe-block">
+            <h3 class="navigation-footer__subscribe-title">подписка</h3>
+            <div class="navigation-footer__subscribe-text">Получайте специальные предложения и новости сервиса</div>
+            <div class="navigation-footer__subscribe-input">
               <div class="input  input_with-subscription">
                 <input class="input__input" name="name" type="text" placeholder="Email">
               </div>
             </div>
           </div>
         </div>
-        <div class="footer__copyright-n-socials-block">
-          <div class="footer__copyright-block">Copyright © 2018 Toxin отель. Все права зачищены.</div>
-          <div class="footer__socials-block"><a class="footer__social" href="/mock-address/change-me" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a><a class="footer__social" href="/mock-address/change-me" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-square"></i></a><a class="footer__social" href="/mock-address/change-me" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></div>
+        <div class="navigation-footer__copyright-n-socials-block">
+          <div class="navigation-footer__copyright-block">Copyright © 2018 Toxin отель. Все права зачищены.</div>
+          <div class="navigation-footer__socials-block"><a class="navigation-footer__social" href="/mock-address/change-me" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a><a class="navigation-footer__social" href="/mock-address/change-me" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-square"></i></a><a class="navigation-footer__social" href="/mock-address/change-me" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></div>
         </div>
       </footer>
     </div>

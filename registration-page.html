@@ -15,7 +15,7 @@
             <ul class="nav-bar nav-bar_ru">
               <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">О нас</a></li>
               <li class="nav-bar-item_nested js-nav-bar-item_nested">Услуги
-                <ul class="nav-bar-item__nested-list">
+                <ul class="nav-bar-item__nested-list js-nav-bar-item__nested-list">
                   <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">Услуга_1</a></li>
                   <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">Услуга_2</a></li>
                 </ul>
@@ -23,7 +23,7 @@
               <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">Вакансии</a></li>
               <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">Новости</a></li>
               <li class="nav-bar-item_nested js-nav-bar-item_nested">Соглашения
-                <ul class="nav-bar-item__nested-list">
+                <ul class="nav-bar-item__nested-list js-nav-bar-item__nested-list">
                   <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">Соглашения_1</a></li>
                   <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">Соглашения_2</a></li>
                 </ul>
@@ -53,27 +53,23 @@
             </div>
             <div class="registration-card__gender-radio-buttons">
               <div class="radio-buttons js-radio-buttons">
-                <label class="radio-buttons__radio radio-buttons__radio-label radio-buttons__radio-label_checked">Мужчина
+                <label class="radio-buttons__radio js-radio-buttons__radio radio-buttons__radio-label radio-buttons__radio-label_checked">Мужчина
                   <input class="radio-buttons__radio-input" type="radio" name="gender" checked value="0">
                 </label>
-                <label class="radio-buttons__radio radio-buttons__radio-label">Женщина
+                <label class="radio-buttons__radio js-radio-buttons__radio radio-buttons__radio-label">Женщина
                   <input class="radio-buttons__radio-input" type="radio" name="gender" value="1">
                 </label>
               </div>
             </div>
             <div class="registration-card__date-input_masked">
               <div class="input  input_masked">
-                <label class="input__label">
-                  <h3>дата рождения</h3>
-                </label>
+                <label class="input__label">дата рождения</label>
                 <input class="input__input js-input__input_masked" name="dateOfBirth" type="text" placeholder="ДД.ММ.ГГГГ" required>
               </div>
             </div>
             <div class="registration-card__email-input">
               <div class="input">
-                <label class="input__label">
-                  <h3>Данные для входа в сервис</h3>
-                </label>
+                <label class="input__label">Данные для входа в сервис</label>
                 <input class="input__input" name="email" type="email" placeholder="Email" required>
               </div>
             </div>
@@ -99,15 +95,15 @@
           </form>
         </div>
       </div>
-      <footer class="footer footer_ru footer_with-widgets">
-        <div class="footer__logo-n-widgets-block">
-          <div class="footer__logo-block"><img class="footer__logo-img" src="./img/logo.svg" alt="TOXIN">
-            <div class="footer__description">Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</div>
+      <footer class="navigation-footer navigation-footer_ru">
+        <div class="navigation-footer__logo-n-widgets">
+          <div class="navigation-footer__logo-block"><img class="navigation-footer__logo-img" src="./img/logo.svg" alt="TOXIN">
+            <div class="navigation-footer__description">Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</div>
           </div>
-          <div class="footer__widgets-block">
-            <div class="footer__navigation-block">
-              <h3 class="footer__navigation-list-title">навигация</h3>
-              <div class="footer__navigation-list">
+          <div class="navigation-footer__widgets-block">
+            <div class="navigation-footer__navigation-block">
+              <h3 class="navigation-footer__navigation-list-title">навигация</h3>
+              <div class="navigation-footer__navigation-list">
                 <ul class="nav-bar nav-bar_vertical">
                   <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">О нас</a></li>
                   <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">Новости</a></li>
@@ -116,9 +112,9 @@
                 </ul>
               </div>
             </div>
-            <div class="footer__about-us-block">
-              <h3 class="footer__about-us-list-title">О нас</h3>
-              <div class="footer__about-us-list">
+            <div class="navigation-footer__about-us-block">
+              <h3 class="navigation-footer__about-us-list-title">О нас</h3>
+              <div class="navigation-footer__about-us-list">
                 <ul class="nav-bar nav-bar_vertical">
                   <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">О сервисе</a></li>
                   <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">Наша команда</a></li>
@@ -127,9 +123,9 @@
                 </ul>
               </div>
             </div>
-            <div class="footer__support-block">
-              <h3 class="footer__support-list-title">служба поддержки</h3>
-              <div class="footer__support-list">
+            <div class="navigation-footer__support-block">
+              <h3 class="navigation-footer__support-list-title">служба поддержки</h3>
+              <div class="navigation-footer__support-list">
                 <ul class="nav-bar nav-bar_vertical">
                   <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">Соглашения</a></li>
                   <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">Сообщества</a></li>
@@ -138,19 +134,19 @@
               </div>
             </div>
           </div>
-          <div class="footer__subscribe-block">
-            <h3 class="footer__subscribe-title">подписка</h3>
-            <div class="footer__subscribe-text">Получайте специальные предложения и новости сервиса</div>
-            <div class="footer__subscribe-input">
+          <div class="navigation-footer__subscribe-block">
+            <h3 class="navigation-footer__subscribe-title">подписка</h3>
+            <div class="navigation-footer__subscribe-text">Получайте специальные предложения и новости сервиса</div>
+            <div class="navigation-footer__subscribe-input">
               <div class="input  input_with-subscription">
                 <input class="input__input" name="name" type="text" placeholder="Email">
               </div>
             </div>
           </div>
         </div>
-        <div class="footer__copyright-n-socials-block">
-          <div class="footer__copyright-block">Copyright © 2018 Toxin отель. Все права зачищены.</div>
-          <div class="footer__socials-block"><a class="footer__social" href="/mock-address/change-me" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a><a class="footer__social" href="/mock-address/change-me" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-square"></i></a><a class="footer__social" href="/mock-address/change-me" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></div>
+        <div class="navigation-footer__copyright-n-socials-block">
+          <div class="navigation-footer__copyright-block">Copyright © 2018 Toxin отель. Все права зачищены.</div>
+          <div class="navigation-footer__socials-block"><a class="navigation-footer__social" href="/mock-address/change-me" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a><a class="navigation-footer__social" href="/mock-address/change-me" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-square"></i></a><a class="navigation-footer__social" href="/mock-address/change-me" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></div>
         </div>
       </footer>
     </div>
