@@ -74,12 +74,12 @@ export default class RoomCard {
       });
 
       if (i === 0) {
-        $indicator.addClass('active');
+        $indicator.addClass('room-card__indicator_active');
         this.$indicators.data({ 'active-slide': 0 });
       }
 
       if (!imgArr[i]) {
-        $indicator.addClass('disabled');
+        $indicator.addClass('room-card__indicator_disabled');
       }
 
       this.$indicators.append($indicator);
@@ -143,12 +143,12 @@ export default class RoomCard {
 
     if (slide !== currentSlide && slide <= numOfSlides) {
       const $image = $images.find('.js-room-card__image');
-      $image.eq(currentSlide).removeClass('active');
-      $image.eq(slide).addClass('active');
+      $image.eq(currentSlide).removeClass('room-card__image_active');
+      $image.eq(slide).addClass('room-card__image_active');
 
       const $indicator = $indicators.find('.js-room-card__indicator');
-      $indicator.eq(currentSlide).removeClass('active');
-      $indicator.eq(slide).addClass('active');
+      $indicator.eq(currentSlide).removeClass('room-card__indicator_active');
+      $indicator.eq(slide).addClass('room-card__indicator_active');
 
       $images.data({ 'active-slide': slide });
       $indicators.data({ 'active-slide': slide });

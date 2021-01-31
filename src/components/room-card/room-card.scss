@@ -97,12 +97,12 @@
     box-shadow: 0rem 0.3125rem 0.3125rem rgba(31, 32, 65, 0.3);
     cursor: pointer;
 
-    &.active {
+    &_active {
       border: none;
       background-color: #fff;
     }
 
-    &.disabled {
+    &_disabled {
       cursor: default;
     }
   }
@@ -120,7 +120,7 @@
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
 
-    &.active {
+    &_active {
       display: block;
     }
   }

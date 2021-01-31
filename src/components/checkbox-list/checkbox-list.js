@@ -19,7 +19,6 @@ class ExpandableCheckboxList {
     this.$list.toggleClass('checkbox-list_closed');
   }
 
-  // eslint-disable-next-line class-methods-use-this
   _handleOptionClick(e) {
     e.stopPropagation();
   }
