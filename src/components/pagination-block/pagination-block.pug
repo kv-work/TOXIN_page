@@ -9,6 +9,6 @@ mixin pagination(params = {})
 
   .pagination-block(data-rooms=data class=classMod)
     if (data.length !== 0)
-      #data-container
+      .pagination-block__data-container.js-pagination-block__data-container
     .pagination-block__pagination.js-pagination(data-pages=numberOfPages)
     .pagination-block__description.js-pagination-block__description= description

@@ -86,14 +86,16 @@ class Pagination {
       html += card;
     });
 
-    // eslint-disable-next-line fsd/jq-cache-dom-elements
-    $('#data-container').html(html);
+    const $dataContainer = $('.js-pagination-block__data-container');
 
-    $('#data-container').find('.js-room-card').each(function createNewRommCard() {
-      const roomCard = new RoomCard(this);
+    $dataContainer
+      .html(html)
+      .find('.js-room-card')
+      .each(function createNewRoomCard() {
+        const roomCard = new RoomCard(this);
 
-      return roomCard;
-    });
+        return roomCard;
+      });
   }
 }
 

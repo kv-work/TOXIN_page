@@ -5,6 +5,16 @@
   flex-direction: column;
   justify-content: center;
 
+  &__data-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 270px);
+    column-gap: 12px;
+    row-gap: 20px;
+    justify-content: space-evenly;
+    margin-bottom: 40px;
+  }
+
   &__pagination {
     padding-bottom: 0.5rem;
     display: flex;
@@ -106,14 +116,4 @@
       }
     }
   }
-}
-
-#data-container {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 270px);
-  column-gap: 12px;
-  row-gap: 20px;
-  justify-content: space-evenly;
-  margin-bottom: 40px;
 }

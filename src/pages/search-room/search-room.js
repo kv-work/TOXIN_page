@@ -6,7 +6,7 @@ class SearchRoomContent {
     this.$toggler = this.$content.find('.js-search-room__filter-toggler');
     this.$filters = this.$content.find('.js-search-room__filters-block');
     this.$rooms = this.$content.find('.js-search-room__rooms-block');
-    this.$roomCards = this.$rooms.find('#data-container');
+    this.$roomCards = this.$rooms.find('.js-pagination-block__data-container');
 
     this.$datepicker = this.$filters.find('.js-datepicker-block');
     this.$dropdown = this.$filters.find('.js-dropdown');
