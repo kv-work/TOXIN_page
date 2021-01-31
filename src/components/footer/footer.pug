@@ -3,49 +3,25 @@ include ../input/input
 
 mixin footer(params = {})
   -
-    const { lang = 'ru', withWidgets = true, data } = params;
+    const { lang = 'ru', data } = params;
     let currData;
     if (lang === 'en') {
       currData = data.dataEn.footer;
     } else {
       currData = data.dataRu.footer;
     }
-    const { descriptionText, navigationList, aboutUsList, supportList, subscribeBlock, copyrightText } = currData;
+    const { descriptionText } = currData;
     let classList = 'footer';
     if (lang === 'ru')  {
       classList += ' footer_ru';
     }
-    if (withWidgets) {
-      classList += ' footer_with-widgets';
-    }
 
   footer(class=classList)
-    div(class=(withWidgets) ? "footer__logo-n-widgets-block" : "footer__logo")
+    div(class="footer__logo")
       .footer__logo-block
         img(class="footer__logo-img" src="./img/logo.svg" alt="TOXIN")
         .footer__description= descriptionText
-      if (withWidgets)
-        .footer__widgets-block
-          .footer__navigation-block
-            h3.footer__navigation-list-title= navigationList.title
-            .footer__navigation-list
-              +navBar({ itemList: navigationList.list })
-          .footer__about-us-block
-            h3.footer__about-us-list-title= aboutUsList.title
-            .footer__about-us-list
-              +navBar({ itemList: aboutUsList.list })
-          .footer__support-block
-            h3.footer__support-list-title= supportList.title
-            .footer__support-list
-              +navBar({ itemList: supportList.list })
-        .footer__subscribe-block
-          h3.footer__subscribe-title= subscribeBlock.title
-          .footer__subscribe-text= subscribeBlock.text
-          .footer__subscribe-input
-            +input({ placeholder: subscribeBlock.inputPlaceholder, subscription: true })
-    div(class=(withWidgets) ? "footer__copyright-n-socials-block" : "footer__socials")
-      if (withWidgets)
-        .footer__copyright-block= copyrightText
+    div(class="footer__socials")
       .footer__socials-block
         a.footer__social(href="/mock-address/change-me" target="_blank" rel="noopener noreferrer")
           i(class="fab fa-twitter")
