@@ -10,10 +10,10 @@ class Radio {
   _attachEventHandlers() {
     const { $this } = this;
 
-    $this.on('change.radio', Radio.handleRadioChange);
+    $this.on('change.radio', this._handleRadioChange);
   }
 
-  static handleRadioChange(event) {
+  _handleRadioChange(event) {
     const $currentTarget = $(event.currentTarget);
     const $radioBtns = $currentTarget.find('.js-radio-buttons__radio');
     $radioBtns.each(function addCheckedClass() {

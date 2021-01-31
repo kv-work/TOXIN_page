@@ -100,7 +100,7 @@ class SearchRoomContent {
 
     $toggler.on('click.searchRoom', this._handleTogglerClick.bind(this));
 
-    $filters.on('submit.searchRoom', SearchRoomContent.handleSearchRoomSubmit);
+    $filters.on('submit.searchRoom', this._handleSearchRoomSubmit);
 
     $roomCards.on('click.searchRoom', this._handleRoomCardsClick.bind(this));
   }
@@ -110,7 +110,7 @@ class SearchRoomContent {
     this.$filters.toggleClass('opened');
   }
 
-  static handleSearchRoomSubmit(event) {
+  _handleSearchRoomSubmit(event) {
     event.preventDefault();
   }
 }

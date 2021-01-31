@@ -10,7 +10,8 @@
   ],
   "rules": {
     "no-underscore-dangle": "off",
-    "lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }]
+    "lines-between-class-members": ["error", "always", { "exceptAfterSingleLine": true }],
+    "class-methods-use-this": "off"
   },
   "plugins": [
     "fsd"

@@ -10,21 +10,21 @@ class NestedItem {
   _attachEventHandler() {
     const { $nestedItem } = this;
 
-    $nestedItem.on('click.nestedItem', NestedItem.handleNestedItemClick);
+    $nestedItem.on('click.nestedItem', this._handleNestedItemClick);
   }
 
-  static handleNestedItemClick(e) {
+  _handleNestedItemClick(e) {
     const { target } = e;
 
     const $list = $(target).find('.js-nav-bar-item__nested-list');
     $list.toggle();
 
     setTimeout(() => {
-      $(document).on('click.nestedItem', NestedItem.makeClickHandler(target, $list));
+      $(document).on('click.nestedItem', this._makeClickHandler(target, $list));
     }, 0);
   }
 
-  static makeClickHandler(node, $list) {
+  _makeClickHandler(node, $list) {
     const handleDocumentClick = (e) => {
       if (e.target !== node) {
         $list.hide();
