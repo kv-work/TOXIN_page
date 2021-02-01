@@ -27,7 +27,7 @@ class RoomImagesBlock {
       });
 
       if (idx === 0) {
-        $image.addClass('active');
+        $image.addClass('room-images__image_active');
         $node.data({ 'active-slide': 0 });
       }
 
@@ -62,7 +62,7 @@ class RoomImagesBlock {
       });
 
       if (idx === 0) {
-        $indicator.addClass('active');
+        $indicator.addClass('room-images__indicator_active');
         this.$indicators.data({ 'active-slide': 0 });
       }
 
@@ -86,12 +86,12 @@ class RoomImagesBlock {
 
     if (slide !== currentSlide && slide <= numOfSlides) {
       const $image = $node.find('.js-room-images__image');
-      $image.eq(currentSlide).removeClass('active');
-      $image.eq(slide).addClass('active');
+      $image.eq(currentSlide).removeClass('room-images__image_active');
+      $image.eq(slide).addClass('room-images__image_active');
 
       const $indicator = $indicators.find('.js-room-images__indicator');
-      $indicator.eq(currentSlide).removeClass('active');
-      $indicator.eq(slide).addClass('active');
+      $indicator.eq(currentSlide).removeClass('room-images__indicator_active');
+      $indicator.eq(slide).addClass('room-images__indicator_active');
 
       $node.data({ 'active-slide': slide });
       $indicators.data({ 'active-slide': slide });
