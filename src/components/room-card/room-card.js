@@ -60,7 +60,7 @@ export default class RoomCard {
       const isActive = idx === 0;
 
       if (isActive) {
-        $roomImg.addClass('active');
+        $roomImg.addClass('room-card__image_active');
         this.$images.data({ 'active-slide': 0 });
       }
 
@@ -172,7 +172,7 @@ export default class RoomCard {
   _handleIndicatorsClick(e) {
     const $target = $(e.target);
 
-    if ($target.hasClass('js-room-card__indicator') && !$target.hasClass('disabled')) {
+    if ($target.hasClass('js-room-card__indicator') && !$target.hasClass('room-card__indicator_disabled')) {
       const { slideTo } = $(e.target).data();
 
       this._changeSlide(slideTo);
