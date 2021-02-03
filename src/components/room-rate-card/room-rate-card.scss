@@ -80,10 +80,12 @@
     grid-template-columns: 13.375rem auto auto;
     grid-auto-flow: column;
     margin-bottom: 0.625rem;
+  }
 
-    & span:last-child {
-      justify-self: end;
-    }
+  &__days-total-cost,
+  &__services-total-cost,
+  &__additional-services-total-cost {
+    justify-self: end;
   }
 
   &__cost-calc {

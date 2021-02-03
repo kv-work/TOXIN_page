@@ -6,5 +6,5 @@ mixin likeButton({ count, checked = false })
     }
 
   label.like-button(class=labelClass)
-    p.js-like-button__count= count
+    p.like-button__count.js-like-button__count= count
     input.like-button__input(type="checkbox" checked=checked class="js-like-button__input")

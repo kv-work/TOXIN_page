@@ -18,17 +18,17 @@
   &_vertical {
     flex-direction: column;
 
-    & > li {
+    & > .nav-bar-item {
       margin-bottom: 0.875rem;
       margin-right: 0;
-    }
 
-    & > li:last-child {
-      margin-bottom: 0;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 
-  & > li:last-child {
+  & > .nav-bar-item:last-child {
 
     @media screen and (max-width: 750px) {
       margin-right: 0;
@@ -36,7 +36,7 @@
   }
 
   &_ru {
-    & > li {
+    & > .nav-bar-item {
       margin-right: 1.4375rem;
 
       @media screen and (max-width: 600px) {

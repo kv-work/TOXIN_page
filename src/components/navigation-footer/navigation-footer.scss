@@ -126,7 +126,7 @@
       }
     }
 
-    &:hover > div {
+    &:hover > .navigation-footer__navigation-list {
 
       @media screen and (max-width: 1220px) {
         display: block;
@@ -136,7 +136,7 @@
       }
     }
 
-    &:hover > div li {
+    &:hover > .navigation-footer__navigation-list .nav-bar-item {
 
       @media screen and (max-width: 520px) {
         text-align: left;
@@ -165,7 +165,7 @@
       }
     }
 
-    &:hover > div {
+    &:hover > .navigation-footer__about-us-list {
 
       @media screen and (max-width: 1220px) {
         display: block;
@@ -205,7 +205,7 @@
       }
     }
 
-    &:hover > div {
+    &:hover > .navigation-footer__support-list {
 
       @media screen and (max-width: 1220px) {
         display: block;

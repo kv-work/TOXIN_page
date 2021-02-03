@@ -3,8 +3,8 @@ mixin iconItem(params = {})
     const { icon, label, description } = params;
 
   .icon-item
-    .icon-item__icon
-      i.material-icons= icon
+    .icon-item__icon-wrapper
+      i.material-icons.icon-item__icon= icon
     .icon-item__text
       p.icon-item__label= label
       p.icon-item__description= description
