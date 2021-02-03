@@ -22,7 +22,8 @@ mixin header(params = {})
       a.header__logo(href="./")
         img(src="./img/logo.svg" alt="TOXIN")
       nav.header__nav-bar
-        +navBar({ itemList: navigationList, display: 'horizontal', lang })
+        .header__nav-bar-wrapper
+          +navBar({ itemList: navigationList, display: 'horizontal', lang })
       if (isLoggedIn)
         span.header__user-name= userName
       else

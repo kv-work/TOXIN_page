@@ -1,6 +1,6 @@
 .header {
   padding: 0.9375rem 0rem;
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0rem 0.625rem 1.25rem $dark-5;
 
   @media screen and (max-width: 1220px) {
@@ -59,36 +59,26 @@
       border-right: 0.0625rem solid $dark-10;
     }
 
-    & > ul {
-
-      @media screen and (max-width: 600px) {
-        display: none;
-      }
-    }
-
     &::after {
-
       @media screen and (max-width: 37.5rem) {
         font: bold 1rem Montserrat, Arial, sans-serif;
         text-transform: uppercase;
-        content: 'menu';
+        content: "menu";
       }
     }
-
+  
     &::before {
-
       @media screen and (max-width: 600px) {
-        font: 1.875rem/0.6667 'Material Icons';
+        font: 1.875rem/0.6667 "Material Icons";
         display: flex;
         justify-content: center;
         align-items: center;
-        content: 'expand_more';
+        content: "expand_more";
         color: $dark-50;
       }
     }
 
-    &:hover > ul {
-
+    &:hover > &-wrapper {
       @media screen and (max-width: 600px) {
         display: block;
         position: absolute;
@@ -97,6 +87,12 @@
         background-color: #fff;
         z-index: 999;
       }
+    }
+  }
+
+  &__nav-bar-wrapper {
+    @media screen and (max-width: 600px) {
+      display: none;
     }
   }
 
@@ -126,4 +122,3 @@
     }
   }
 }
-
