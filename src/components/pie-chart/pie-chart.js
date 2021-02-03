@@ -15,6 +15,9 @@ class PieChart {
     const { impressions } = this;
 
     const radius = 58;
+    const centerX = 60;
+    const centerY = 60;
+
     const $donutChart = $(document.createElementNS('http://www.w3.org/2000/svg', 'svg')).attr({
       class: 'chart',
       width: '100%',
@@ -23,8 +26,8 @@ class PieChart {
     });
     const $donutHole = $(document.createElementNS('http://www.w3.org/2000/svg', 'circle')).attr({
       class: 'chart__hole',
-      cx: 60,
-      cy: 60,
+      cx: centerX,
+      cy: centerY,
       r: radius,
       fill: '#fff',
     });
@@ -73,8 +76,8 @@ class PieChart {
       if (impressions[key] !== 0) {
         const $donutSegment = $(document.createElementNS('http://www.w3.org/2000/svg', 'circle')).attr({
           class: 'chart__segment',
-          cx: 60,
-          cy: 60,
+          cx: centerX,
+          cy: centerY,
           r: radius,
           fill: 'transparent',
           stroke: `url(#${color})`,
@@ -152,7 +155,7 @@ class PieChart {
   }
 }
 
-$('.js-pie-chart').each(function addPieChart() {
+$('.js-pie-chart__chart').each(function addPieChart() {
   const pieChart = new PieChart(this);
 
   return pieChart;
