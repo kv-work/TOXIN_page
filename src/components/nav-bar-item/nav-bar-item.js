@@ -20,11 +20,11 @@ class NestedItem {
     $list.toggle();
 
     setTimeout(() => {
-      $(document).on('click.nestedItem', this._makeClickHandler(target, $list));
+      $(document).on('click.nestedItem', NestedItem._makeClickHandler(target, $list));
     }, 0);
   }
 
-  _makeClickHandler(node, $list) {
+  static _makeClickHandler(node, $list) {
     const handleDocumentClick = (e) => {
       if (e.target !== node) {
         $list.hide();
