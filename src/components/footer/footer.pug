@@ -1,5 +1,4 @@
-include ../nav-bar/nav-bar
-include ../input/input
+include ../social-link/social-link
 
 mixin footer(footerData)
   -
@@ -12,9 +11,6 @@ mixin footer(footerData)
         .footer__description= descriptionText
     div(class="footer__socials")
       .footer__socials-block
-        a.footer__social(href="/mock-address/change-me" target="_blank" rel="noopener noreferrer")
-          i(class="fab fa-twitter")
-        a.footer__social(href="/mock-address/change-me" target="_blank" rel="noopener noreferrer")
-          i(class="fab fa-facebook-square")
-        a.footer__social(href="/mock-address/change-me" target="_blank" rel="noopener noreferrer")
-          i(class="fab fa-instagram")
+        +social-link('twitter')
+        +social-link('facebook')
+        +social-link('instagram')

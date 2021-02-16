@@ -40,18 +40,4 @@
       padding-left: 1.875rem;
     }
   }
-
-  &__social {
-    font-size: 1.5rem;
-    line-height: 0.9583333;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    
-    background: $primary-gradient;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
 }

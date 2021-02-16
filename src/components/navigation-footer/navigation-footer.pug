@@ -1,5 +1,6 @@
 include ../nav-bar/nav-bar
 include ../input/input
+include ../social-link/social-link
 
 mixin navigationFooter(footerData)
   -
@@ -31,9 +32,6 @@ mixin navigationFooter(footerData)
     div.navigation-footer__copyright-n-socials-block
       .navigation-footer__copyright-block= copyrightText
       .navigation-footer__socials-block
-        a.navigation-footer__social(href="/mock-address/change-me" target="_blank" rel="noopener noreferrer")
-          i(class="fab fa-twitter")
-        a.navigation-footer__social(href="/mock-address/change-me" target="_blank" rel="noopener noreferrer")
-          i(class="fab fa-facebook-square")
-        a.navigation-footer__social(href="/mock-address/change-me" target="_blank" rel="noopener noreferrer")
-          i(class="fab fa-instagram")
+        +social-link('twitter')
+        +social-link('facebook')
+        +social-link('instagram')
