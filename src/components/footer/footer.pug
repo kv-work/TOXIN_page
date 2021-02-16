@@ -1,22 +1,11 @@
 include ../nav-bar/nav-bar
 include ../input/input
 
-mixin footer(params = {})
+mixin footer(footerData)
   -
-    const { lang = 'ru', data } = params;
-    let currData;
-    if (lang === 'en') {
-      currData = data.dataEn.footer;
-    } else {
-      currData = data.dataRu.footer;
-    }
-    const { descriptionText } = currData;
-    let classList = 'footer';
-    if (lang === 'ru')  {
-      classList += ' footer_ru';
-    }
+    const { descriptionText } = footerData;
 
-  footer(class=classList)
+  footer.footer
     div(class="footer__logo")
       .footer__logo-block
         img(class="footer__logo-img" src="./img/logo.svg" alt="TOXIN")

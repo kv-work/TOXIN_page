@@ -1,22 +1,11 @@
 include ../nav-bar/nav-bar
 include ../input/input
 
-mixin navigationFooter(params = {})
+mixin navigationFooter(footerData)
   -
-    const { lang = 'ru', data } = params;
-    let currData;
-    if (lang === 'en') {
-      currData = data.dataEn.footer;
-    } else {
-      currData = data.dataRu.footer;
-    }
-    const { descriptionText, navigationList, aboutUsList, supportList, subscribeBlock, copyrightText } = currData;
-    let classList = 'navigation-footer';
-    if (lang === 'ru')  {
-      classList += ' navigation-footer_ru';
-    }
+    const { descriptionText, navigationList, aboutUsList, supportList, subscribeBlock, copyrightText } = footerData;
 
-  footer(class=classList)
+  footer.navigation-footer
     div.navigation-footer__logo-n-widgets
       .navigation-footer__logo-block
         img(class="navigation-footer__logo-img" src="./img/logo.svg" alt="TOXIN")

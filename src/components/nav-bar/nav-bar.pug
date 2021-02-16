@@ -2,11 +2,8 @@ include ../nav-bar-item/nav-bar-item
 
 mixin navBar(params = {})
   -
-    const { itemList, display = 'vertical', lang = 'en' } = params;
+    const { itemList, display = 'vertical' } = params;
     let classList = 'nav-bar';
-    if (lang === 'ru') {
-      classList += ' nav-bar_ru';
-    }
     if (display === 'vertical') {
       classList += ' nav-bar_vertical';
     }

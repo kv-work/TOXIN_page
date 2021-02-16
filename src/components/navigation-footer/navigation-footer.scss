@@ -60,7 +60,7 @@
     display: flex;
     justify-content: space-between;
     padding-top: 0.25rem;
-    padding-right: 3.125rem;
+    padding-right: 0.75rem;
 
     @media screen and (max-width: 1220px) {
       padding-right: 0;
@@ -145,6 +145,7 @@
   }
 
   &__about-us-block {
+    margin-right: 2.125rem;
 
     @media screen and (max-width: 1220px) {
       margin-right: 1.25rem;
@@ -276,16 +277,6 @@
 
     @media screen and (max-width: 520px) {
       margin-bottom: 0.9375rem;
-    }
-  }
-
-  &_ru {
-    & .navigation-footer__widgets-block {
-      padding-right: 0.75rem;
-    }
-
-    & .navigation-footer__about-us-block {
-      margin-right: 2.125rem;
     }
   }
 }

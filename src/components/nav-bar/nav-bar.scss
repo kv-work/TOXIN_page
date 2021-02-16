@@ -28,18 +28,16 @@
     }
   }
 
-  & > .nav-bar-item:last-child {
+  & > .nav-bar-item {
+    margin-right: 1.4375rem;
 
-    @media screen and (max-width: 750px) {
+    @media screen and (max-width: 600px) {
       margin-right: 0;
     }
-  }
+  
+    &:last-child {
 
-  &_ru {
-    & > .nav-bar-item {
-      margin-right: 1.4375rem;
-
-      @media screen and (max-width: 600px) {
+      @media screen and (max-width: 750px) {
         margin-right: 0;
       }
     }
