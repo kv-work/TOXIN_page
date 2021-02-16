@@ -3,7 +3,7 @@ mixin navBarItem(params = {})
     const { label, isNestedList = false, nestedItems = [], isActive = false } = params;
     let classList = 'nav-bar-item';
     if (isNestedList) {
-      classList += '_nested js-nav-bar-item_nested';
+      classList += ' nav-bar-item_nested js-nav-bar-item_nested';
     }
     if (isActive) {
       classList += ' nav-bar-item_active';
