@@ -1,0 +1,19 @@
+mixin social-link(name, link = '/mock-address/change-me')
+  -
+    let iconClass = 'social-link__icon fab fa-'
+    switch (name) {
+      case 'twitter':
+        iconClass += ' fab fa-twitter';
+        break;
+      case 'facebook':
+        iconClass += ' fab fa-facebook-square';
+        break;
+      case 'instagram':
+        iconClass += ' fab fa-instagram';
+        break;
+      default:
+        break;
+    }
+
+  a.social-link(href=link target="_blank" rel="noopener noreferrer")
+    i(class=iconClass)
