@@ -8,10 +8,10 @@ mixin palette(params = {})
     const nameArr = colorName.split('_');
     const nameOfColor = nameArr.join(' ');
     let name = nameOfColor;
-    let sampleClassName = 'palette__sample_color-is-' + colorName.toLowerCase();
+    let sampleClassName = `palette__sample_color-is-${colorName.toLowerCase()}`;
     if (opacity) {
-      name = nameOfColor + ' ' + opacity;
-      sampleClassName += '-' + opacity.split('%')[0];
+      name = `${nameOfColor} ${opacity}`;
+      sampleClassName += `-${opacity.split('%')[0]}`;
     }
 
   .palette
