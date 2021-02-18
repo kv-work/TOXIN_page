@@ -3,7 +3,7 @@ include ../rate-button/rate-button
 mixin roomCard(params = {})
   -
     const { number } = params;
-    const rateName = 'rate' + number;
+    const rateName = `rate${number}`;
 
   .room-card.js-room-card(data-number=number)
     .room-card__images-block.js-room-card__images-block
