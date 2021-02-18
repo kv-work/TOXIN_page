@@ -3,7 +3,7 @@ mixin sampleText(params = {})
     const { tagName, text } = params;
     let classList = 'type-example__sample-text';
     if (tagName)
-      classList += ' ' + classList + '_tag_' + tagName.toLowerCase();
+      classList += ` ${classList}_tag_${tagName.toLowerCase()}`;
 
   case (tagName)
     when 'H1'

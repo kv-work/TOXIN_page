@@ -2,7 +2,7 @@ mixin tagName(tagName)
   -
     let classList = 'type-example__tag-name';
     if (tagName)
-      classList += ' ' +classList + '_size_' + tagName.toLowerCase();
+      classList += ` ${classList}_size_${tagName.toLowerCase()}`;
 
   case (tagName)
     when "H1"
