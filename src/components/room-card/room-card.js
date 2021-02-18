@@ -51,10 +51,14 @@ export default class RoomCard {
     this.$indicators = $('<ol>', { class: 'room-card__indicators' });
 
     imgArr.forEach((item, idx) => {
-      const $roomImg = $('<div>', { class: 'room-card__image js-room-card__image' });
+      const $roomImg = $('<img>', {
+        class: 'room-card__image js-room-card__image',
+        src: item,
+      });
 
       $roomImg.css({
-        'background-image': `url(${item})`,
+        'object-fit': 'cover',
+        'max-width': '100%',
       });
 
       const isActive = idx === 0;
