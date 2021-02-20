@@ -22,11 +22,6 @@ export default class RoomCard {
     this._attachEventHandlers();
   }
 
-  static template(roomNum) {
-    const params = { number: roomNum };
-    return template({ params });
-  }
-
   _getData() {
     this.numOfRoom = this.data.number;
     this.roomData = this.data.data;
@@ -164,6 +159,11 @@ export default class RoomCard {
 
       this._changeSlide(slide);
     }
+  }
+
+  static template(roomNum) {
+    const params = { number: roomNum };
+    return template({ params });
   }
 }
 
