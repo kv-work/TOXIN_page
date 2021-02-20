@@ -161,8 +161,7 @@ export default class RoomCard {
     }
   }
 
-  static template(roomNum) {
-    const params = { number: roomNum };
+  static template(params) {
     return template({ params });
   }
 }

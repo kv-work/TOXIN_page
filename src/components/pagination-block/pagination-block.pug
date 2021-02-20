@@ -1,13 +1,13 @@
 mixin pagination(params = {})
   -
-    const { numberOfPages, description = '1 – 12 из 100+ вариантов аренды', data = [] } = params;
+    const { numberOfPages, description = '1 – 12 из 100+ вариантов аренды', data = [], roomsData } = params;
     let classMod = 'js-pagination-block';
     if (data.length !== 0)
       classMod += ' pagination-block_with-data';
     else
       classMod += ' pagination-block_without-data';
 
-  .pagination-block(data-rooms=data class=classMod)
+  .pagination-block(class=classMod data-rooms=data data-rooms-data=roomsData)
     if (data.length !== 0)
       .pagination-block__data-container.js-pagination-block__data-container
     .pagination-block__pagination.js-pagination(data-pages=numberOfPages)

@@ -7,12 +7,14 @@ class Pagination {
     this.$node = $(node);
     this.$pagination = this.$node.find('.js-pagination');
     this.$description = this.$node.find('.js-pagination-block__description');
-    this.data = this.$node.data().rooms;
+    this.roomNumbers = this.$node.data().rooms;
+    this.roomsData = this.$node.data().roomsData;
     this.numOfPages = this.$pagination.data().pages;
     this.pageSize = 12;
-    this.createdData = Pagination._createData(this.data, this.numOfPages);
 
-    if (this.data.length === 0) {
+    this.createdData = Pagination._createData(this.roomNumbers, this.roomsData, this.numOfPages);
+
+    if (this.roomNumbers.length === 0) {
       this.options = options;
     } else {
       this.options = {
@@ -30,17 +32,6 @@ class Pagination {
   _init() {
     const { $pagination, options } = this;
     $pagination.pagination(options);
-  }
-
-  static _createData(data, totalPages) {
-    const newData = [...data];
-
-    for (let i = 1; i < totalPages; i += 1) {
-      const shuffledData = Pagination._shuffle(data);
-      shuffledData.forEach((elem) => newData.push(elem));
-    }
-
-    return newData;
   }
 
   _displayDescription(page) {
@@ -78,8 +69,23 @@ class Pagination {
     return tempArr;
   }
 
+  static _createData(roomNumbers, roomsData, totalPages) {
+    const data = roomNumbers.map((number) => ({
+      roomData: roomsData[`room${number}`],
+      number,
+    }));
+    const newData = [...data];
+
+    for (let i = 1; i < totalPages; i += 1) {
+      const shuffledData = Pagination._shuffle(data);
+      shuffledData.forEach((elem) => newData.push(elem));
+    }
+
+    return newData;
+  }
+
   static _createContent(data) {
-    const cards = data.map((number) => RoomCard.template(number));
+    const cards = data.map((roomParams) => RoomCard.template(roomParams));
 
     let html = '';
 
