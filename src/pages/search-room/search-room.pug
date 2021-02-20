@@ -13,7 +13,7 @@ block variables
   -
     const pageTitle = 'Search Room';
     const data = htmlWebpackPlugin.options.getData();
-    const { headerData, footerData } = data;
+    const { headerData, footerData, roomsData } = data;
 
 block content
   .search-room
@@ -78,6 +78,6 @@ block content
       .search-room__rooms-block.js-search-room__rooms-block
         h1.search-room__rooms-title Номера, которые мы для вас подобрали
         .search-room__pagination
-          +pagination({ numberOfPages: 15, data: [888, 840, 980, 856, 740, 982, 678, 450, 350, 666, 444, 352] })
+          +pagination({ numberOfPages: 15, data: [888, 840, 980, 856, 740, 982, 678, 450, 350, 666, 444, 352] }, roomData)
     .search-room__delimiter
     +navigationFooter(footerData)

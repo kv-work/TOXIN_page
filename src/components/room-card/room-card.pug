@@ -2,19 +2,27 @@ include ../rate-button/rate-button
 
 mixin roomCard(params = {})
   -
-    const { number } = params;
+    const { number, roomData } = params;
+    const { images, price, isLux, rate, numOfReviews } = roomData;
+    const cardImage = images[0];
     const rateName = `rate${number}`;
 
-  .room-card.js-room-card(data-number=number)
+  .room-card.js-room-card(data-number=number, data-data=roomData)
     .room-card__images-block.js-room-card__images-block
+      .room-card__images.js-room-card__images
+        img.room-card__image(class="room-card__image_active js-room-card__image" src=cardImage)
     .room-card__room-info-block
       .room-card__number-block.js-room-card__number-block
         span.room-card__number-sign №
         span.room-card__number=number
-      .room-card__price-block.js-room-card__price-block
+        if (isLux)
+          span.room-card__lux-flag люкс
+      .room-card__price-block
+        span.room-card__price.js-room-card__price=`${price}₽`
         span.room-card__price-text в сутки
       .room-card__delimiter
       .room-card__rate-block.js-room-card__rate-block
-        +rateButton({ name: rateName, disabled: true })
+        +rateButton({ name: rateName, rate, disabled: true })
       .room-card__reviews-block.js-room-card__reviews-block
+        span.room-card__number-of-reviews=numOfReviews
         span.room-card__review-text Отзывов

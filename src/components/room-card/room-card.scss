@@ -113,12 +113,12 @@
   }
 
   &__image {
-    background-repeat: no-repeat;
     height: 100%;
     display: none;
-    background-size: cover;
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
+    object-fit: cover;
+    max-width: 100%;
 
     &_active {
       display: block;

@@ -1,6 +1,4 @@
 import $ from 'jquery';
-import roomsData from './data.json';
-import RateButton from '../rate-button/rate-button';
 import template from './template.pug';
 
 export default class RoomCard {
@@ -10,11 +8,8 @@ export default class RoomCard {
 
     this.$numberBlock = this.$node.find('.js-room-card__number-block');
     this.$imagesBlock = this.$node.find('.js-room-card__images-block');
-    this.$priceBlock = this.$node.find('.js-room-card__price-block');
-    this.$rateBlock = this.$node.find('.js-room-card__rate-block');
-    this.$reviewsBlock = this.$node.find('.js-room-card__reviews-block');
-
-    this.rateButton = new RateButton(this.$rateBlock.find('.js-rate-button')[0]);
+    this.$images = this.$node.find('.js-room-card__images');
+    this.$price = this.$node.find('.js-room-card__price');
 
     this._init();
   }
@@ -23,13 +18,6 @@ export default class RoomCard {
     this._getData();
     this._createRoomImageBlocks();
     this._displayPrice();
-
-    if (this.roomData.isLux) {
-      this._displayLuxSign();
-    }
-
-    this._displayRoomRate();
-    this._displayNumOfReviews();
 
     this._attachEventHandlers();
   }
@@ -41,37 +29,27 @@ export default class RoomCard {
 
   _getData() {
     this.numOfRoom = this.data.number;
-    this.roomData = roomsData.rooms[this.numOfRoom];
+    this.roomData = this.data.data;
   }
 
   _createRoomImageBlocks() {
     const { $imagesBlock, roomData } = this;
     const imgArr = roomData.images;
-    this.$images = $('<div>', { class: 'room-card__images' });
     this.$indicators = $('<ol>', { class: 'room-card__indicators' });
+    this.$images.data({ 'active-slide': 0 });
 
     imgArr.forEach((item, idx) => {
-      const $roomImg = $('<img>', {
-        class: 'room-card__image js-room-card__image',
-        src: item,
-      });
+      if (idx !== 0) {
+        const $roomImg = $('<img>', {
+          class: 'room-card__image js-room-card__image',
+          src: item,
+        });
 
-      $roomImg.css({
-        'object-fit': 'cover',
-        'max-width': '100%',
-      });
-
-      const isActive = idx === 0;
-
-      if (isActive) {
-        $roomImg.addClass('room-card__image_active');
-        this.$images.data({ 'active-slide': 0 });
+        this.$images.append($roomImg);
       }
-
-      this.$images.append($roomImg);
     });
 
-    for (let i = 0; i < 4; i += 1) {
+    for (let i = 0; i < imgArr.length; i += 1) {
       const $indicator = $('<li>', {
         'data-slide-to': i,
         class: 'room-card__indicator js-room-card__indicator',
@@ -114,30 +92,11 @@ export default class RoomCard {
     $imagesBlock.append(this.$indicators);
   }
 
-  _displayLuxSign() {
-    const { $numberBlock } = this;
-
-    $numberBlock.append('<span class="room-card__lux-flag">люкс</span>');
-  }
-
   _displayPrice() {
-    const { $priceBlock, roomData } = this;
+    const { $price, roomData } = this;
     const formattedPrice = roomData.price.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1 ');
 
-    $priceBlock.prepend(`<span class="room-card__price">${formattedPrice}₽</span>`);
-  }
-
-  _displayRoomRate() {
-    const { rateButton, roomData } = this;
-    const roomRate = roomData.rate;
-    rateButton.setRate(roomRate);
-  }
-
-  _displayNumOfReviews() {
-    const { $reviewsBlock } = this;
-    const { numOfReviews } = this.roomData;
-
-    $reviewsBlock.prepend(`<span class="room-card__number-of-reviews">${numOfReviews}</span>`);
+    $price.html(`${formattedPrice}₽`);
   }
 
   _changeSlide(slide) {
