@@ -1,10 +1,9 @@
 import $ from 'jquery';
-import data from './data.json';
 
 class RoomRateCard {
-  constructor(node, roomData) {
+  constructor(node) {
     this.$node = $(node);
-    this.roomData = roomData;
+    this.roomData = this.$node.data().data;
     this.$infoBlock = this.$node.find('.js-room-rate-card__room-info-block');
     this.$datepicker = this.$node.find('.js-room-rate-card__datepicker_is_separated');
     this.datepicker = this.$node.find('.js-datepicker-block__input').data('datepicker');
@@ -17,7 +16,6 @@ class RoomRateCard {
 
   _init() {
     this._displayInfoOfRoom();
-    this._setDates();
     this._attachEventHandlers();
 
     this._calcDaysTotalCost();
@@ -32,13 +30,6 @@ class RoomRateCard {
     $datepicker.on('updateDates.roomRateCard', this._handleDatepickerUpdateDates.bind(this));
 
     $node.on('submit.roomRateCard', this._handleRoomRateCardSubmit.bind(this));
-  }
-
-  _setDates() {
-    const { dates } = this.roomData;
-
-    const datesArr = dates.map((date) => new Date(date.split('.').reverse().join('-')));
-    this.datepicker.selectDate(datesArr);
   }
 
   _getNumOfDays() {
@@ -220,7 +211,7 @@ class RoomRateCard {
 }
 
 $('.js-room-rate-card').each(function addRoomRateCard() {
-  const roomRateCard = new RoomRateCard(this, data);
+  const roomRateCard = new RoomRateCard(this);
 
   return roomRateCard;
 });

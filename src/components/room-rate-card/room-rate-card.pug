@@ -12,6 +12,13 @@ mixin roomRateCard(data)
       discount,
       additionalServices,
     } = data;
+    const {
+      number,
+      price,
+      isLux,
+      rate,
+      numOfReviews,
+    } = room;
     const dropdownItems = [
           {itemLabel: 'Взрослые', itemCount: guests.adult},
           {itemLabel: 'Дети', itemCount: guests.children},
@@ -25,13 +32,15 @@ mixin roomRateCard(data)
         valueSecond: dates[1],
       };
 
-  form.room-rate-card.js-room-rate-card(action="/mock-address/change-me" method="post" name="room-rate-form")
+  form.room-rate-card.js-room-rate-card(action="/mock-address/change-me" method="post" name="room-rate-form" data-data=data)
     .room-rate-card__room-info-block.js-room-rate-card__room-info-block
       .room-rate-card__number-block.js-room-rate-card__number-block
         span.room-rate-card__number-sign №
-        span.room-rate-card__number.js-room-rate-card__number 888
+        span.room-rate-card__number.js-room-rate-card__number=number
+        if (isLux)
+          span.room-rate-card__lux-flag люкс
       .room-rate-card__price-block
-        span.room-rate-card__price.js-room-rate-card__price
+        span.room-rate-card__price.js-room-rate-card__price=`${price}₽`
         span.room-rate-card__price-text в сутки
     .room-rate-card__datepicker_is_separated.js-room-rate-card__datepicker_is_separated
       +datepickerBlock(datepickerParams)
