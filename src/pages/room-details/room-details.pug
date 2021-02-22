@@ -13,7 +13,7 @@ block variables
   -
     const pageTitle = 'Room Details';
     const data = htmlWebpackPlugin.options.getData();
-    const { headerData, footerData } = data;
+    const { headerData, footerData, roomDetails } = data;
 
 block content
   .room-details
@@ -79,6 +79,6 @@ block content
             h2.room-details__cancel-reservation-label Отмена
             .room-details__cancel-reservation-text= 'Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.'
         .room-details__booking-form
-          +roomRateCard()
+          +roomRateCard(roomDetails)
     .room-details__delimiter
     +navigationFooter(footerData)

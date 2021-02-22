@@ -2,19 +2,27 @@ include ../datepicker-block/datepicker-block
 include ../dropdown/dropdown
 include ../button/button
 
-mixin roomRateCard()
+mixin roomRateCard(data)
   -
+    const {
+      room,
+      dates,
+      guests,
+      services,
+      discount,
+      additionalServices,
+    } = data;
     const dropdownItems = [
-          {itemLabel: 'Взрослые', itemCount: 2},
-          {itemLabel: 'Дети', itemCount: 1},
-          {itemLabel: 'Младенцы', itemCount: 0},
+          {itemLabel: 'Взрослые', itemCount: guests.adult},
+          {itemLabel: 'Дети', itemCount: guests.children},
+          {itemLabel: 'Младенцы', itemCount: guests.infants},
         ];
     const datepickerParams = {
         label: 'Прибытие',
         separated: true,
         labelSecond: 'Выезд',
-        value: '2019-08-19',
-        valueSecond: '2019-08-23'
+        value: dates[0],
+        valueSecond: dates[1],
       };
 
   form.room-rate-card.js-room-rate-card(action="/mock-address/change-me" method="post" name="room-rate-form")

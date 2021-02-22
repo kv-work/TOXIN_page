@@ -11,7 +11,7 @@ block variables
 
   -
     const data = htmlWebpackPlugin.options.getData();
-    const { roomsData } = data;
+    const { roomsData, roomDetails } = data;
     const { room888, room840 } = roomsData;
     const pageTitle = 'Cards';
 
@@ -27,7 +27,7 @@ block content
           +registrationCard({ label: 'Регистрация аккаунта' })
       .cards__grid-col
         .cards__wrapper
-          +roomRateCard()
+          +roomRateCard(roomDetails)
         .cards__wrapper
           +loginCard({ label: 'Войти' })
       .cards__grid-col

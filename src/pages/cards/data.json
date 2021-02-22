@@ -144,5 +144,36 @@
       "rate": 3,
       "numOfReviews": 55
     }
+  },
+  "roomDetails": {
+    "room": {
+      "number": "888",
+      "price": 9990,
+      "isLux": true,
+      "rate": 5,
+      "numOfReviews": 145
+    },
+    "dates" : ["2019-08-19", "2019-08-23"],
+    "guests": {
+      "adult": 2,
+      "children": 1,
+      "infants": 0
+    },
+    "services": [],
+    "discount": 2179,
+    "additionalServices": [
+      {
+        "name": "Письменный стол",
+        "cost": 100
+      },
+      {
+        "name": "Стул для кормления",
+        "cost": 100
+      },
+      {
+        "name": "Кроватка",
+        "cost": 100
+      }    
+    ]
   }
 }
