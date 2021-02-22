@@ -21,23 +21,28 @@ class RoomImagesBlock {
     const { $node } = this;
 
     images.forEach((element, idx) => {
-      const $image = $('<div>', { class: 'room-images__image js-room-images__image' });
-      $image.css({
-        'background-image': `url(${element})`,
-      });
+      if (idx !== 0) {
+        const $imageWrapper = $('<div>', {
+          class: 'room-images__image-wrapper js-room-images__image-wrapper',
+        });
+        const $image = $('<img>', {
+          class: 'room-images__image js-room-images__image',
+          src: element,
+          alt: `room ${this.room} image ${idx}`,
+        });
 
-      if (idx === 0) {
-        $image.addClass('room-images__image_active');
-        $node.data({ 'active-slide': 0 });
+        $imageWrapper.append($image);
+        $node.append($imageWrapper);
       }
-
-      $node.append($image);
     });
+
+    this.$imageWrapper = $node.find('.js-room-images__image-wrapper');
   }
 
   _createCarouselcontrols() {
     const images = data.images[this.room];
     const { $node } = this;
+    $node.data({ 'active-slide': 0 });
 
     this.$indicators = $('<ol>', { class: 'room-images__indicators-block' });
     this.$controlPrev = $('<div>', { class: 'room-images__control-prev' });
@@ -80,14 +85,13 @@ class RoomImagesBlock {
 
   _changeSlide(slide) {
     const images = data.images[this.room];
-    const { $indicators, $node } = this;
+    const { $indicators, $node, $imageWrapper } = this;
     const numOfSlides = images.length;
     const currentSlide = $node.data().activeSlide;
 
     if (slide !== currentSlide && slide <= numOfSlides) {
-      const $image = $node.find('.js-room-images__image');
-      $image.eq(currentSlide).removeClass('room-images__image_active');
-      $image.eq(slide).addClass('room-images__image_active');
+      $imageWrapper.eq(currentSlide).removeClass('room-images__image-wrapper_active');
+      $imageWrapper.eq(slide).addClass('room-images__image-wrapper_active');
 
       const $indicator = $indicators.find('.js-room-images__indicator');
       $indicator.eq(currentSlide).removeClass('room-images__indicator_active');

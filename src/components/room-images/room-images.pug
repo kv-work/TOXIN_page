@@ -1,2 +1,4 @@
 mixin roomImages({ room = '888' })
   .room-images.js-room-images(data-room=room)
+    .room-images__image-wrapper(class="js-room-images__image-wrapper room-images__image-wrapper_active")
+      img(class="room-images__image js-room-images__image room-images__image_active" src=`./img/room-${room}.png` alt=`room ${room} image`)
