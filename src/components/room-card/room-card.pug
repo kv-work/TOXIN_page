@@ -10,7 +10,7 @@ mixin roomCard(params = {})
   .room-card.js-room-card(data-number=number, data-data=roomData)
     .room-card__images-block.js-room-card__images-block
       .room-card__images.js-room-card__images
-        img.room-card__image(class="room-card__image_active js-room-card__image" src=cardImage)
+        img.room-card__image(class="room-card__image_active js-room-card__image" src=cardImage alt=`room ${number} image`)
     .room-card__room-info-block
       .room-card__number-block.js-room-card__number-block
         span.room-card__number-sign №

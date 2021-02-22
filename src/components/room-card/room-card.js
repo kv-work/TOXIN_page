@@ -38,6 +38,7 @@ export default class RoomCard {
         const $roomImg = $('<img>', {
           class: 'room-card__image js-room-card__image',
           src: item,
+          alt: `room ${this.numOfRoom} image ${idx}`,
         });
 
         this.$images.append($roomImg);
