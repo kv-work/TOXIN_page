@@ -2,10 +2,15 @@ include ../bullet-list/bullet-list
 
 mixin pieChart(params = {})
   -
-    const { label = '' } = params;
+    const { label = '', impressions } = params;
 
   .pie-chart
     h2.pie-chart__title= label
-    figure.pie-chart__chart.js-pie-chart__chart
+    figure.pie-chart__chart.js-pie-chart__chart(data-data=impressions)
       .pie-chart__content.js-pie-chart__content
       figcaption.pie-chart__legend.js-pie-chart__legend
+        ul(class="pie-chart__legend-list js-pie-chart__legend-list")
+          li(class="pie-chart__legend-list-item js-pie-chart__legend-list-item pie-chart__legend-list-item_color-is-yellow-grad" data-impression="great")=`Великолепно - ${impressions.great}`
+          li(class="pie-chart__legend-list-item js-pie-chart__legend-list-item pie-chart__legend-list-item_color-is-secondary-grad" data-impression="good")=`Хорошо - ${impressions.good}`
+          li(class="pie-chart__legend-list-item js-pie-chart__legend-list-item pie-chart__legend-list-item_color-is-primary-grad" data-impression="satisfactory")=`Удовлетворительно - ${impressions.satisfactory}`
+          li(class="pie-chart__legend-list-item js-pie-chart__legend-list-item pie-chart__legend-list-item_color-is-black-grad" disappointed)=`Разачарован - ${impressions.disappointed}`

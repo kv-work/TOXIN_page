@@ -82,5 +82,11 @@
         "cost": 100
       }    
     ]
+  },
+  "impressions": {
+    "great": 130,
+    "good": 65,
+    "satisfactory": 65,
+    "disappointed": 0
   }
 }

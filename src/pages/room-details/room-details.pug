@@ -13,7 +13,12 @@ block variables
   -
     const pageTitle = 'Room Details';
     const data = htmlWebpackPlugin.options.getData();
-    const { headerData, footerData, roomDetails } = data;
+    const {
+      headerData,
+      footerData,
+      roomDetails,
+      impressions,
+    } = data;
 
 block content
   .room-details
@@ -42,7 +47,7 @@ block content
                 description: 'Номер оснащён камином',
               })
           .room-details__room-impressions
-            +pieChart({ label: 'Впечатления от номера' })
+            +pieChart({ label: 'Впечатления от номера', impressions })
           .room-details__guest-reviews-block
             h2.room-details__guest-reviews-label Отзывы посетителей номера
             .room-details__guest-reviews-count 2 отзыва

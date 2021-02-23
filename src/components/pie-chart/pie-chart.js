@@ -1,12 +1,13 @@
 import $ from 'jquery';
-import data from './data.json';
 
 class PieChart {
   constructor(node) {
     this.$node = $(node);
     this.$container = this.$node.find('.js-pie-chart__content');
     this.$legend = this.$node.find('.js-pie-chart__legend');
-    this.impressions = data.impressions;
+    this.$chartLegend = this.$node.find('.js-pie-chart__legend-list');
+    this.$chartLegendItem = this.$node.find('.js-pie-chart__legend-list-item');
+    this.impressions = this.$node.data().data;
 
     this._addDonutChart();
   }
@@ -32,8 +33,6 @@ class PieChart {
       fill: '#fff',
     });
 
-    const $chartLegend = $('<ul>', { class: 'pie-chart__legend-list' });
-
     $donutChart.append($donutHole);
 
     let currentCount = 0;
@@ -47,15 +46,15 @@ class PieChart {
       let label = 'Великолепно';
 
       switch (key) {
-        case 'Great':
+        case 'great':
           color = 'yellow-grad';
           label = 'Великолепно';
           break;
-        case 'Good':
+        case 'good':
           color = 'secondary-grad';
           label = 'Хорошо';
           break;
-        case 'Satisfactory':
+        case 'satisfactory':
           color = 'primary-grad';
           label = 'Удовлетворительно';
           break;
@@ -89,9 +88,9 @@ class PieChart {
         $donutChart.append($donutSegment);
       }
 
-      const $chartLegendItem = $('<li>', { class: `pie-chart__legend-list-item_color_${color}` }).html(label);
-
-      $chartLegend.append($chartLegendItem);
+      this.$chartLegendItem
+        .filter(`.pie-chart__legend-list-item_color-is-${color}`)
+        .html(label);
     });
 
     const $primeryGradient = PieChart._createGradient('primary-grad', '#BC9CFF', '#8BA4F9');
@@ -107,7 +106,6 @@ class PieChart {
       .append($blackGradient);
 
     this.$container.append($donutChart);
-    this.$legend.append($chartLegend);
   }
 
   static _createTextDisplay(num) {

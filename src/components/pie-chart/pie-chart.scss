@@ -25,7 +25,7 @@
     list-style: none;
   }
 
-  [class^='pie-chart__legend-list-item'] {
+  &__legend-list-item {
     display: grid;
     grid-template-columns: auto 1fr;
     column-gap: 0.3125rem;
@@ -42,25 +42,25 @@
 
   &__legend-list-item_color {
 
-    &_primary-grad {
+    &-is-primary-grad {
       &:before {
         background: $primary-gradient;
       }
     }
 
-    &_yellow-grad {
+    &-is-yellow-grad {
       &::before {
         background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
       }
     }
 
-    &_secondary-grad {
+    &-is-secondary-grad {
       &::before {
         background: $secondary-gradient;
       }
     }
 
-    &_black-grad {
+    &-is-black-grad {
       &::before {
         background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
       }
