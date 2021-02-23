@@ -12,23 +12,25 @@
       <header class="header">
         <div class="header__elements"><a class="header__logo" href="./"><img src="./img/logo.svg" alt="TOXIN"></a>
           <nav class="header__nav-bar">
-            <ul class="nav-bar nav-bar_ru">
-              <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">О нас</a></li>
-              <li class="nav-bar-item_nested js-nav-bar-item_nested">Услуги
-                <ul class="nav-bar-item__nested-list js-nav-bar-item__nested-list">
-                  <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">Услуга_1</a></li>
-                  <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">Услуга_2</a></li>
-                </ul>
-              </li>
-              <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">Вакансии</a></li>
-              <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">Новости</a></li>
-              <li class="nav-bar-item_nested js-nav-bar-item_nested">Соглашения
-                <ul class="nav-bar-item__nested-list js-nav-bar-item__nested-list">
-                  <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">Соглашения_1</a></li>
-                  <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">Соглашения_2</a></li>
-                </ul>
-              </li>
-            </ul>
+            <div class="header__nav-bar-wrapper">
+              <ul class="nav-bar">
+                <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">О нас</a></li>
+                <li class="nav-bar-item nav-bar-item_nested js-nav-bar-item_nested">Услуги
+                  <ul class="nav-bar-item__nested-list js-nav-bar-item__nested-list">
+                    <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">Услуга_1</a></li>
+                    <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">Услуга_2</a></li>
+                  </ul>
+                </li>
+                <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">Вакансии</a></li>
+                <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">Новости</a></li>
+                <li class="nav-bar-item nav-bar-item_nested js-nav-bar-item_nested">Соглашения
+                  <ul class="nav-bar-item__nested-list js-nav-bar-item__nested-list">
+                    <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">Соглашения_1</a></li>
+                    <li class="nav-bar-item"><a class="nav-bar-item__link" href="/mock-address/change-me">Соглашения_2</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
           </nav>
           <div class="header__buttons"><a class="header__login-button" href="./login-page.html">
               <button class="button button_theme_outline" type="button">войти
@@ -39,7 +41,9 @@
       </header>
       <div class="room-details__content">
         <div class="room-details__images-block">
-          <div class="room-images js-room-images" data-room="888"></div>
+          <div class="room-images js-room-images" data-room="888">
+            <div class="room-images__image-wrapper js-room-images__image-wrapper room-images__image-wrapper_active"><img class="room-images__image js-room-images__image room-images__image_active" src="./img/room-888.png" alt="room 888 image"></div>
+          </div>
         </div>
         <div class="room-details__details-block">
           <div class="room-details__info-block">
@@ -47,21 +51,21 @@
               <h2 class="room-details__room-info-label">Сведения о номере</h2>
               <div class="room-details__room-info-items">
                 <div class="icon-item">
-                  <div class="icon-item__icon"><i class="material-icons">insert_emoticon</i></div>
+                  <div class="icon-item__icon-wrapper"><i class="material-icons icon-item__icon">insert_emoticon</i></div>
                   <div class="icon-item__text">
                     <p class="icon-item__label">Комфорт</p>
                     <p class="icon-item__description">Шумопоглощающие стены</p>
                   </div>
                 </div>
                 <div class="icon-item">
-                  <div class="icon-item__icon"><i class="material-icons">location_city</i></div>
+                  <div class="icon-item__icon-wrapper"><i class="material-icons icon-item__icon">location_city</i></div>
                   <div class="icon-item__text">
                     <p class="icon-item__label">Удобство</p>
                     <p class="icon-item__description">Окно в каждой из спален</p>
                   </div>
                 </div>
                 <div class="icon-item">
-                  <div class="icon-item__icon"><i class="material-icons">whatshot</i></div>
+                  <div class="icon-item__icon-wrapper"><i class="material-icons icon-item__icon">whatshot</i></div>
                   <div class="icon-item__text">
                     <p class="icon-item__label">Уют</p>
                     <p class="icon-item__description">Номер оснащён камином</p>
@@ -72,7 +76,7 @@
             <div class="room-details__room-impressions">
               <div class="pie-chart">
                 <h2 class="pie-chart__title">Впечатления от номера</h2>
-                <figure class="pie-chart__chart js-pie-chart">
+                <figure class="pie-chart__chart js-pie-chart__chart">
                   <div class="pie-chart__content js-pie-chart__content"></div>
                   <figcaption class="pie-chart__legend js-pie-chart__legend"></figcaption>
                 </figure>
@@ -90,7 +94,7 @@
                   </div>
                   <div class="comment-block__like-button">
                     <label class="like-button js-like-button like-button__label like-button__label_checked">
-                      <p class="js-like-button__count">12</p>
+                      <p class="like-button__count js-like-button__count">12</p>
                       <input class="like-button__input js-like-button__input" type="checkbox" checked>
                     </label>
                   </div>
@@ -104,7 +108,7 @@
                   </div>
                   <div class="comment-block__like-button">
                     <label class="like-button js-like-button like-button__label">
-                      <p class="js-like-button__count">2</p>
+                      <p class="like-button__count js-like-button__count">2</p>
                       <input class="like-button__input js-like-button__input" type="checkbox">
                     </label>
                   </div>
@@ -126,10 +130,11 @@
             </div>
           </div>
           <div class="room-details__booking-form">
-            <form class="room-rate-card js-room-rate-card" action="/mock-address/change-me" method="post" name="room-rate-form">
+            <form class="room-rate-card js-room-rate-card" action="/mock-address/change-me" method="post" name="room-rate-form" data-data="{&quot;room&quot;:{&quot;number&quot;:&quot;888&quot;,&quot;price&quot;:9990,&quot;isLux&quot;:true,&quot;rate&quot;:5,&quot;numOfReviews&quot;:145},&quot;dates&quot;:[&quot;2019-08-19&quot;,&quot;2019-08-23&quot;],&quot;guests&quot;:{&quot;adult&quot;:2,&quot;children&quot;:1,&quot;infants&quot;:0},&quot;services&quot;:[],&quot;discount&quot;:2179,&quot;additionalServices&quot;:[{&quot;name&quot;:&quot;Письменный стол&quot;,&quot;cost&quot;:100},{&quot;name&quot;:&quot;Стул для кормления&quot;,&quot;cost&quot;:100},{&quot;name&quot;:&quot;Кроватка&quot;,&quot;cost&quot;:100}]}">
               <div class="room-rate-card__room-info-block js-room-rate-card__room-info-block">
-                <div class="room-rate-card__number-block js-room-rate-card__number-block"><span class="room-rate-card__number-sign">№</span><span class="room-rate-card__number js-room-rate-card__number">888</span></div>
-                <div class="room-rate-card__price-block"><span class="room-rate-card__price js-room-rate-card__price"></span><span class="room-rate-card__price-text">в сутки</span></div>
+                <div class="room-rate-card__number-block js-room-rate-card__number-block"><span class="room-rate-card__number-sign">№</span><span class="room-rate-card__number js-room-rate-card__number">888</span><span class="room-rate-card__lux-flag">люкс</span>
+                </div>
+                <div class="room-rate-card__price-block"><span class="room-rate-card__price js-room-rate-card__price">9990₽</span><span class="room-rate-card__price-text">в сутки</span></div>
               </div>
               <div class="room-rate-card__datepicker_is_separated js-room-rate-card__datepicker_is_separated">
                 <div class="js-datepicker-block datepicker-block datepicker-block_separated">
@@ -193,7 +198,7 @@
         </div>
       </div>
       <div class="room-details__delimiter"></div>
-      <footer class="navigation-footer navigation-footer_ru">
+      <footer class="navigation-footer">
         <div class="navigation-footer__logo-n-widgets">
           <div class="navigation-footer__logo-block"><img class="navigation-footer__logo-img" src="./img/logo.svg" alt="TOXIN">
             <div class="navigation-footer__description">Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</div>
@@ -232,7 +237,7 @@
               </div>
             </div>
           </div>
-          <div class="navigation-footer__subscribe-block">
+          <form class="navigation-footer__subscribe-block">
             <h3 class="navigation-footer__subscribe-title">подписка</h3>
             <div class="navigation-footer__subscribe-text">Получайте специальные предложения и новости сервиса</div>
             <div class="navigation-footer__subscribe-input">
@@ -240,11 +245,12 @@
                 <input class="input__input" name="name" type="text" placeholder="Email">
               </div>
             </div>
-          </div>
+          </form>
         </div>
         <div class="navigation-footer__copyright-n-socials-block">
           <div class="navigation-footer__copyright-block">Copyright © 2018 Toxin отель. Все права зачищены.</div>
-          <div class="navigation-footer__socials-block"><a class="navigation-footer__social" href="/mock-address/change-me" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a><a class="navigation-footer__social" href="/mock-address/change-me" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-square"></i></a><a class="navigation-footer__social" href="/mock-address/change-me" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a></div>
+          <div class="navigation-footer__socials-block"><a class="social-link" href="/mock-address/change-me" target="_blank" rel="noopener noreferrer"><i class="social-link__icon fab fa-twitter"></i></a><a class="social-link" href="/mock-address/change-me" target="_blank" rel="noopener noreferrer"><i class="social-link__icon fab fa-facebook-square"></i></a><a class="social-link" href="/mock-address/change-me" target="_blank" rel="noopener noreferrer"><i class="social-link__icon fab fa-instagram"></i></a>
+          </div>
         </div>
       </footer>
     </div>
