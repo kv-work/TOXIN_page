@@ -89,7 +89,7 @@ class PieChart {
       }
 
       this.$chartLegendItem
-        .filter(`.pie-chart__legend-list-item_color-is-${color}`)
+        .filter(`.js-pie-chart__legend-list-item_color-is-${color}`)
         .html(label);
     });
 
