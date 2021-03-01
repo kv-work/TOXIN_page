@@ -1,5 +1,4 @@
-.rate-button,
-.rate-button_disabled {
+.rate-button {
   height: auto;
   font-size: 0;
 
@@ -28,14 +27,18 @@
 
     &:focus {
       outline: none;
+      box-shadow: 0px 0px 10px $primary-green;
     }
 
     &:checked ~ input::after {
       content: 'star_border';
     }
   }
-}
 
-.rate-button_disabled .rate-button__input {
-  cursor: default;
+  &_disabled {
+
+    .rate-button__input {
+      cursor: default;
+    }
+  }
 }
