@@ -1,7 +1,23 @@
-include ./sample-text/sample-text
-include ./tag-name/tag-name
-
 mixin typeExample({ tagName = 'div', text = '' })
+  -
+    let tagClassList = 'type-example__tag-name';
+    let sampleClassList = 'type-example__sample-text';
+    if (tagName) {
+      tagClassList += ` ${classList}_size_${tagName.toLowerCase()}`;
+      sampleClassList += ` ${classList}_tag_${tagName.toLowerCase()}`;
+    }
+
   .type-example
-    +tagName(tagName)
-    +sampleText({ tagName, text })
+    case (tagName)
+      when 'H1'
+        h1(class=tagClassList)= tagName
+        h1(class=sampleClassList)= text
+      when 'H2'
+        h2(class=tagClassList)= tagName
+        h2(class=sampleClassList)= text
+      when 'H3'
+        h3(class=tagClassList)= tagName
+        h3(class=sampleClassList)= text
+      default
+        div(class=tagClassList)= tagName
+        div(class=sampleClassList)= text
