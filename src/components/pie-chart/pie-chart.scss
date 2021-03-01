@@ -42,25 +42,25 @@
 
   &__legend-list-item_color {
 
-    &-is-primary-grad {
+    &_primary-grad {
       &:before {
         background: $primary-gradient;
       }
     }
 
-    &-is-yellow-grad {
+    &_yellow-grad {
       &::before {
         background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
       }
     }
 
-    &-is-secondary-grad {
+    &_secondary-grad {
       &::before {
         background: $secondary-gradient;
       }
     }
 
-    &-is-black-grad {
+    &_black-grad {
       &::before {
         background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
       }

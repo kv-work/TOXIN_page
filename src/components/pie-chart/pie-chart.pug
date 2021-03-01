@@ -10,7 +10,7 @@ mixin pieChart(params = {})
       .pie-chart__content.js-pie-chart__content
       figcaption.pie-chart__legend.js-pie-chart__legend
         ul(class="pie-chart__legend-list js-pie-chart__legend-list")
-          li(class="pie-chart__legend-list-item js-pie-chart__legend-list-item pie-chart__legend-list-item_color-is-yellow-grad js-pie-chart__legend-list-item_color-is-yellow-grad" data-impression="great")=`Великолепно - ${impressions.great}`
-          li(class="pie-chart__legend-list-item js-pie-chart__legend-list-item pie-chart__legend-list-item_color-is-secondary-grad js-pie-chart__legend-list-item_color-is-secondary-grad" data-impression="good")=`Хорошо - ${impressions.good}`
-          li(class="pie-chart__legend-list-item js-pie-chart__legend-list-item pie-chart__legend-list-item_color-is-primary-grad js-pie-chart__legend-list-item_color-is-primary-grad" data-impression="satisfactory")=`Удовлетворительно - ${impressions.satisfactory}`
-          li(class="pie-chart__legend-list-item js-pie-chart__legend-list-item pie-chart__legend-list-item_color-is-black-grad js-pie-chart__legend-list-item_color-is-black-grad" disappointed)=`Разачарован - ${impressions.disappointed}`
+          li(class="pie-chart__legend-list-item js-pie-chart__legend-list-item pie-chart__legend-list-item_color_yellow-grad js-pie-chart__legend-list-item_color_yellow-grad" data-impression="great")=`Великолепно - ${impressions.great}`
+          li(class="pie-chart__legend-list-item js-pie-chart__legend-list-item pie-chart__legend-list-item_color_secondary-grad js-pie-chart__legend-list-item_color_secondary-grad" data-impression="good")=`Хорошо - ${impressions.good}`
+          li(class="pie-chart__legend-list-item js-pie-chart__legend-list-item pie-chart__legend-list-item_color_primary-grad js-pie-chart__legend-list-item_color_primary-grad" data-impression="satisfactory")=`Удовлетворительно - ${impressions.satisfactory}`
+          li(class="pie-chart__legend-list-item js-pie-chart__legend-list-item pie-chart__legend-list-item_color_black-grad js-pie-chart__legend-list-item_color_black-grad" disappointed)=`Разачарован - ${impressions.disappointed}`
