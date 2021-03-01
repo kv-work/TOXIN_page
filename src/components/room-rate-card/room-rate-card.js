@@ -85,7 +85,7 @@ class RoomRateCard {
     const $displayServicesText = $calcBlock.find('.js-room-rate-card__services-text');
     const $servicesList = $calcBlock.find('.js-room-rate-card__services-info > .room-rate-card__services-list');
     const $displayServicesTotalCost = $calcBlock.find('.js-room-rate-card__services-total-cost');
-    let servicesText = 'Сбор за услуги';
+    let servicesText = $displayServicesText.html();
 
     const { services } = roomData;
     this.servicesCost = RoomRateCard.renderServices(services, $servicesList);
@@ -101,15 +101,12 @@ class RoomRateCard {
 
   _calcAdditionalServices() {
     const { $calcBlock, roomData } = this;
-    const $displayAddServicesText = $calcBlock.find('.js-room-rate-card__additional-services-text');
     const $servicesList = $calcBlock.find('.js-room-rate-card__additional-services-info > .room-rate-card__services-list');
     const $displayAddServicesTotalCost = $calcBlock.find('.js-room-rate-card__additional-services-total-cost');
-    const addServicesText = 'Сбор за дополнительные услуги';
 
     const addServices = roomData.additionalServices;
     this.addServicesCost = RoomRateCard.renderServices(addServices, $servicesList);
 
-    $displayAddServicesText.html(addServicesText);
     $displayAddServicesTotalCost.html(RoomRateCard.formatPrice(this.addServicesCost));
   }
 
@@ -179,6 +176,7 @@ class RoomRateCard {
     let servicesCost = 0;
 
     if (servicesData.length > 0) {
+      $servicesDisplay.empty();
       servicesData.forEach((service) => {
         servicesCost += service.cost;
 
@@ -198,12 +196,6 @@ class RoomRateCard {
 
         $servicesDisplay.append($serviceListItem);
       });
-    } else {
-      const $serviceListItem = $('<li>', {
-        class: 'room-rate-card__services-list-item',
-        text: 'Не выбрано никаких услуг',
-      });
-      $servicesDisplay.append($serviceListItem);
     }
 
     return servicesCost;
