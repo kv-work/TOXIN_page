@@ -5,7 +5,7 @@ class RoomRateCard {
     this.$node = $(node);
     this.roomData = this.$node.data().data;
     this.$infoBlock = this.$node.find('.js-room-rate-card__room-info-block');
-    this.$datepicker = this.$node.find('.js-room-rate-card__datepicker_is_separated');
+    this.$datepicker = this.$node.find('.js-room-rate-card__datepicker');
     this.datepicker = this.$node.find('.js-datepicker-block__input').data('datepicker');
     this.$dropdown = this.$node.find('.js-dropdown');
     this.$calcBlock = this.$node.find('.js-room-rate-card__calculations-block');

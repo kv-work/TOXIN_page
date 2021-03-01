@@ -42,7 +42,7 @@ mixin roomRateCard(data)
       .room-rate-card__price-block
         span.room-rate-card__price.js-room-rate-card__price=`${price}₽`
         span.room-rate-card__price-text в сутки
-    .room-rate-card__datepicker_is_separated.js-room-rate-card__datepicker_is_separated
+    .room-rate-card__datepicker.js-room-rate-card__datepicker
       +datepickerBlock(datepickerParams)
     .room-rate-card__guest-select-dropdown
       +dropdown({ label:'Гости', text: 'Сколько гостей', items: dropdownItems })
