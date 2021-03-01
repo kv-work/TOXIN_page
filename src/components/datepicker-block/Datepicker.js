@@ -63,8 +63,8 @@ export default class Datepicker {
       valueSecond,
     } = this.data;
 
-    this.startDate = date ? new Date(date) : null;
-    this.endDate = valueSecond ? new Date(valueSecond) : null;
+    this.startDate = date ? new Date(date) : undefined;
+    this.endDate = valueSecond ? new Date(valueSecond) : undefined;
 
     const dates = [this.startDate, this.endDate];
 
