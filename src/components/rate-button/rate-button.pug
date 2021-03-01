@@ -2,9 +2,9 @@ mixin rateButton(params = {})
   -
     const { name, rate = 4, disabled = false } = params;
     let n = 1;
-    const className = disabled ? 'rate-button_disabled js-rate-button' : 'rate-button js-rate-button';
+    const className = disabled ? 'rate-button_disabled js-rate-button' : 'js-rate-button';
 
-  div(class=className data-rate=rate)
+  .rate-button(class=className data-rate=rate)
     while n < 6
       - n += 1;
 
