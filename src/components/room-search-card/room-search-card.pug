@@ -5,7 +5,7 @@ include ../button/button
 mixin roomSearchCard({ label })
   form.room-search-card.js-room-search-card(action="./search-room.html" method="get" name="room-search-form")
     h1.room-search-card__label= label
-    .room-search-card__datepicker_is_separated
+    .room-search-card__datepicker
       +datepickerBlock({label: 'Прибытие', separated: true, labelSecond: 'Выезд'})
     .room-search-card__guest-select-dropdown
       -
