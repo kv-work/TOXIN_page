@@ -161,12 +161,14 @@ export default class Datepicker {
     this.startDate = '';
     this.endDate = '';
     $datepicker.val('');
-    $endDate.val('');
-    datepicker.update({
-      minDate: '',
-      maxDate: '',
-      range: false,
-    });
+    if (this.isSeparated) {
+      $endDate.val('');
+      datepicker.update({
+        minDate: '',
+        maxDate: '',
+        range: false,
+      });
+    }
   }
 
   _openDatepicker() {
