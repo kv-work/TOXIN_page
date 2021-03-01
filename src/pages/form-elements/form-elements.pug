@@ -25,13 +25,13 @@ block content
       +logo({ width: '48', height: '48', fill: '#1F2041', fillOpacity: '.25' })
     .form-elements__row
       .form-elements__col
-        div.form-elements__input-wrapper.default
+        div.form-elements__input-wrapper
           span.form-elements__style-name default
           +input({ label: 'text field', placeholder: 'Email' })
-        div.form-elements__input-wrapper(class="hover_focus")
-          span.form-elements__style-name.hover_focus hover / focus
+        div.form-elements__input-wrapper(class="form-elements__input-wrapper_hovered")
+          span.form-elements__style-name.form-elements__style-name_hovered hover / focus
           +input({ label: 'text field', placeholder: 'This is pretty awesome', focused: true })
-        .form-elements__dropdown-wrapper.default
+        .form-elements__dropdown-wrapper
           -
             let items = [
               { itemLabel: 'Взрослые', itemCount: 0 },
@@ -41,7 +41,7 @@ block content
 
           span.form-elements__style-name default
           +dropdown({ label:'dropdown', text: 'Сколько гостей', items })
-        .form-elements__input-wrapper.default.masked
+        .form-elements__input-wrapper.form-elements__input-wrapper_masked
           span.form-elements__style-name default
           +input({ label: 'masked text field', placeholder: 'ДД.ММ.ГГГГ', masked: true })
         .form-elements__datepickers-wrapper
@@ -112,11 +112,11 @@ block content
 
           span.form-elements__style-name default
           +dropdown({ label:'dropdown', text: 'Сколько гостей', items, multiple: true })
-        .form-elements__dropdown-multiple-items-expanded-wrapper
+        .form-elements__dropdown-multiple-items-wrapper_expanded
           span.form-elements__style-name expanded
           +dropdown({ label:'dropdown', text: 'Сколько гостей', items, multiple: true, opened: true })
       .form-elements__col
-        .form-elements__dropdown-wrapper-expanded
+        .form-elements__dropdown-wrapper_expanded
           -
             items = [
               { itemLabel: 'Взрослые', itemCount: 0 },
@@ -126,7 +126,7 @@ block content
 
           +dropdown({ label:'dropdown', text: 'Сколько гостей', items, opened: true })
       .form-elements__col
-        .form-elements__dropdown-wrapper-expanded
+        .form-elements__dropdown-wrapper_expanded
           -
             items = [
               { itemLabel: 'Взрослые', itemCount: 2 },
