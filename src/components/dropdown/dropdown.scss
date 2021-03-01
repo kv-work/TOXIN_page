@@ -6,23 +6,6 @@
     display: block;
     padding: 0.1875rem 0 0.3125rem 0;
   }
-
-  &__input {
-    border: none;
-    font: 0.875rem/1.714 Montserrat, Arial, sans-serif;
-    color: $dark-75;
-    cursor: inherit;
-    padding-left: 0.9375rem;
-
-    &::placeholder {
-      color: $dark-75;
-    }
-
-    &:hover,
-    &:focus {
-      outline: none;
-    }
-  }
 }
 
 // editing plugin styles
